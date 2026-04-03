@@ -1,6 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
+function esc(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 // Load Data
 const data = JSON.parse(fs.readFileSync('camps_data.json', 'utf8'));
 const lastChecked = "April 2, 2026";
@@ -153,6 +163,11 @@ const html = `
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
             border-radius: 24px;
+            padding: 16px 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
         @media (max-width: 768px) {
@@ -161,12 +176,6 @@ const html = `
                 -webkit-backdrop-filter: blur(8px);
                 background: rgba(15, 23, 42, 0.95);
             }
-        }
-            padding: 16px 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
         }
 
         @media (min-width: 1024px) {
