@@ -436,7 +436,7 @@
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
     "isVerified": true,
     "isChecked": true,
-    "scriptVersion": 9,
+    "scriptVersion": 14,
     "confidenceScore": 60,
     "campTiers": [
       {
@@ -610,9 +610,9 @@
   },
   {
     "university": "Arkansas State",
-    "campUrl": "https://www.arkansas.com/",
+    "campUrl": "https://www.mikesilvabaseballcamps.com/events.cfm",
     "dates": "TBA",
-    "cost": "TBA",
+    "cost": "$244",
     "details": "",
     "contact": "TBA",
     "division": "DI",
@@ -621,8 +621,8 @@
     "logoDomain": "astate.edu",
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/2032.png",
     "isVerified": false,
-    "isChecked": false,
-    "scriptVersion": 0,
+    "isChecked": true,
+    "scriptVersion": 14,
     "campTiers": [
       {
         "name": "Upcoming Camps\nEVENT\tDATES\tGRADES\tCOST\tREGISTER\nJune Prospect Showcase Camp",
@@ -665,17 +665,17 @@
   },
   {
     "university": "Arkansas-Pine Bluff",
-    "campUrl": "https://uapb.edu/athletics/",
-    "dates": "2026-04-01 | 2026-04-03 | 2026-04-06 | 2026-04-20 | 2026-04-27 | 2026-05-01",
-    "cost": "$100",
+    "campUrl": "https://www.pbcommercial.com/news/2026/mar/31/uapb-closes-baseball-homestand-against-uca/",
+    "dates": "March 31, 2026 | March 28, 2026",
+    "cost": "TBA",
     "details": "",
     "contact": "Not Listed",
     "division": "DI",
     "address": "On-campus facility",
     "whatToBring": "Glove, bat, helmet, cleats, baseball pants, water bottle, sunscreen.",
     "isVerified": false,
-    "isChecked": false,
-    "scriptVersion": 0,
+    "isChecked": true,
+    "scriptVersion": 14,
     "autoVerified": true,
     "autoVerifiedPartial": false,
     "logoDomain": "uapblionsroar.com",
@@ -1481,8 +1481,8 @@
     "address": "On-campus facility",
     "whatToBring": "Glove, bat, helmet, cleats, baseball pants, water bottle, sunscreen.",
     "isVerified": false,
-    "isChecked": false,
-    "scriptVersion": 0,
+    "isChecked": true,
+    "scriptVersion": 14,
     "confidenceScore": 75,
     "campTiers": [
       {
@@ -4316,7 +4316,7 @@
   },
   {
     "university": "Little Rock",
-    "campUrl": "https://lrtrojans.com/sports/baseball",
+    "campUrl": "https://baseballcamp.uark.edu/",
     "dates": "TBA",
     "cost": "TBA",
     "details": "",
@@ -4326,7 +4326,7 @@
     "whatToBring": "Glove, bat, helmet, cleats, baseball pants, water bottle, sunscreen.",
     "isVerified": true,
     "isChecked": true,
-    "scriptVersion": 9,
+    "scriptVersion": 14,
     "autoVerified": false,
     "autoVerifiedPartial": false,
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/2031.png",
@@ -21926,7 +21926,7 @@
   },
   {
     "university": "Arkansas Tech University",
-    "campUrl": "https://www.atu.edu",
+    "campUrl": "https://www.atechbaseballcamps.com/",
     "dates": "TBA",
     "cost": "TBA",
     "details": "(URL audit failed: missing_baseball_context; link removed)",
@@ -21937,8 +21937,8 @@
     "logoDomain": "atu.edu",
     "logoFile": "https://www.google.com/s2/favicons?domain=atu.edu&sz=128",
     "isVerified": false,
-    "isChecked": false,
-    "scriptVersion": 9,
+    "isChecked": true,
+    "scriptVersion": 14,
     "autoVerified": false,
     "autoVerifiedPartial": false,
     "conference": "GAC"
@@ -25193,7 +25193,7 @@
   },
   {
     "university": "Southern Arkansas University",
-    "campUrl": "https://www.sautech.edu",
+    "campUrl": "https://www.muleridersbaseballcamps.com/",
     "dates": "TBA",
     "cost": "TBA",
     "details": "(URL audit failed: missing_baseball_context; link removed)",
@@ -25204,8 +25204,8 @@
     "logoDomain": "sautech.edu",
     "logoFile": "https://www.google.com/s2/favicons?domain=sautech.edu&sz=128",
     "isVerified": false,
-    "isChecked": false,
-    "scriptVersion": 5,
+    "isChecked": true,
+    "scriptVersion": 14,
     "campTiers": [
       {
         "name": "Official Camp",
@@ -25967,9 +25967,9 @@
   },
   {
     "university": "University of Arkansas at Monticello",
-    "campUrl": "https://www.ncsasports.org/college-search?query=University%20of%20Arkansas%20at%20Monticello",
+    "campUrl": "https://fundraise.givesmart.com/form/kS64zA?vid=1k6k6z",
     "dates": "TBA",
-    "cost": "TBA",
+    "cost": "$100",
     "details": "No 2026 camps posted as of April 2, 2026",
     "contact": "Head Coach (TBA)",
     "division": "DII",
@@ -25978,7 +25978,9 @@
     "isVerified": false,
     "autoVerified": false,
     "autoVerifiedPartial": true,
-    "conference": "SEC"
+    "conference": "SEC",
+    "isChecked": true,
+    "scriptVersion": 14
   },
   {
     "university": "University of Bridgeport",

@@ -1,16 +1,7 @@
 {
   "queue": [
     {
-      "university": "Florida",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "email"
-      ]
-    },
-    {
-      "university": "Gonzaga",
+      "university": "Little Rock",
       "missing": [
         "campUrl",
         "dates",

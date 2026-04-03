@@ -8625,3 +8625,97 @@
 [2026-04-03T13:29:07.163Z]   ↳ Scraping: https://gozags.com/sports/2018/6/12/camps.aspx
 [2026-04-03T13:29:10.019Z]   ↳ Trying one sub-page: https://gozags.com/sports/2018/6/12/camps.aspx#main-content
 [2026-04-03T13:29:11.800Z] ✅ DONE
+[2026-04-03T13:42:53.638Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T13:42:54.112Z] 
+[1/7] Arkansas | Missing: campUrl, dates, cost, email
+[2026-04-03T13:42:54.166Z]   🔍 Search: Arkansas Razorbacks baseball camp
+[2026-04-03T13:42:58.894Z]   ★ Consensus match: https://baseballcamp.uark.edu/
+[2026-04-03T13:42:58.894Z]   ↳ Scraping: https://baseballcamp.uark.edu/
+[2026-04-03T13:43:01.285Z] 
+[2/7] Arkansas State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:43:01.324Z]   🔍 Search: Arkansas State Red Wolves baseball camp
+[2026-04-03T13:43:05.431Z]   ★ Engine #1: https://www.mikesilvabaseballcamps.com/
+[2026-04-03T13:43:05.431Z]   ↳ Scraping: https://www.mikesilvabaseballcamps.com/
+[2026-04-03T13:43:07.523Z]   ✅ cost: $244
+[2026-04-03T13:43:07.687Z] 
+[3/7] Arkansas-Pine Bluff | Missing: campUrl, dates, cost, email
+[2026-04-03T13:43:07.725Z]   🔍 Search: Arkansas-Pine Bluff Golden Lions baseball camp
+[2026-04-03T13:43:11.743Z]   ★ Consensus match: https://www.pbcommercial.com/news/2026/mar/31/uapb-closes-baseball-homestand-against-uca/
+[2026-04-03T13:43:11.744Z]   ↳ Scraping: https://www.pbcommercial.com/news/2026/mar/31/uapb-closes-baseball-homestand-against-uca/
+[2026-04-03T13:43:14.258Z]   ✅ dates: March 31, 2026 | March 28, 2026
+[2026-04-03T13:43:14.294Z] 
+[4/7] Central Arkansas | Missing: campUrl, dates, cost, email
+[2026-04-03T13:43:14.328Z]   🔍 Search: Central Arkansas Bears baseball camp
+[2026-04-03T13:43:18.840Z]   ★ Consensus match: https://www.ucabearsbaseballcamps.com/
+[2026-04-03T13:43:18.840Z]   ↳ Scraping: https://www.ucabearsbaseballcamps.com/
+[2026-04-03T13:43:20.828Z]   ↳ Trying one sub-page: https://www.ucabearsbaseballcamps.com/#sitePageContent
+[2026-04-03T13:43:22.408Z] 
+[5/7] Arkansas Tech University | Missing: campUrl, dates, cost, email
+[2026-04-03T13:43:22.447Z]   🔍 Search: Arkansas Tech University Wonder Boys baseball camp
+[2026-04-03T13:43:26.825Z]   ★ Consensus match: https://www.atechbaseballcamps.com/
+[2026-04-03T13:43:26.826Z]   ↳ Scraping: https://www.atechbaseballcamps.com/
+[2026-04-03T13:43:28.854Z]   ↳ Trying one sub-page: https://www.atechbaseballcamps.com/#sitePageContent
+[2026-04-03T13:43:30.401Z] 
+[6/7] Southern Arkansas University | Missing: campUrl, dates, cost, email
+[2026-04-03T13:43:30.436Z]   🔍 Search: Southern Arkansas University Muleriders baseball camp
+[2026-04-03T13:43:34.355Z]   ★ Consensus match: https://www.muleridersbaseballcamps.com/
+[2026-04-03T13:43:34.355Z]   ↳ Scraping: https://www.muleridersbaseballcamps.com/
+[2026-04-03T13:43:36.463Z]   ↳ Trying one sub-page: https://www.muleridersbaseballcamps.com/#sitePageContent
+[2026-04-03T13:43:38.031Z] 
+[7/7] University of Arkansas at Monticello | Missing: campUrl, dates, cost, email
+[2026-04-03T13:43:38.068Z]   🔍 Search: University of Arkansas at Monticello Boll Weevils baseball camp
+[2026-04-03T13:43:42.125Z]   ★ Engine #1: https://nationaltoday.com/us/ar/monticello-ar/news/2026/02/09/boll-weevils-break-through-for-baseball-seasons-first-win/
+[2026-04-03T13:43:42.125Z]   ↳ Scraping: https://nationaltoday.com/us/ar/monticello-ar/news/2026/02/09/boll-weevils-break-through-for-baseball-seasons-first-win/
+[2026-04-03T13:43:44.980Z]   ✅ dates: Feb. 9, 2026 | February 8, 2026
+[2026-04-03T13:43:45.227Z] ✅ DONE
+[2026-04-03T13:44:39.050Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T13:44:39.872Z] 
+[1/7] Arkansas | Missing: campUrl, dates, cost, email
+[2026-04-03T13:44:39.918Z]   🔍 Search: Arkansas Razorbacks baseball camp
+[2026-04-03T13:44:44.464Z]   ★ Consensus match: https://baseballcamp.uark.edu/
+[2026-04-03T13:44:44.464Z]   ↳ Scraping: https://baseballcamp.uark.edu/
+[2026-04-03T13:44:46.595Z] 
+[2/7] Arkansas State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:44:46.634Z]   🔍 Search: Arkansas State Red Wolves baseball camp
+[2026-04-03T13:44:50.455Z]   ★ Engine #1: https://www.mikesilvabaseballcamps.com/events.cfm
+[2026-04-03T13:44:50.456Z]   ↳ Scraping: https://www.mikesilvabaseballcamps.com/events.cfm
+[2026-04-03T13:44:52.432Z]   ✅ cost: $244
+[2026-04-03T13:44:52.612Z] 
+[3/7] Arkansas-Pine Bluff | Missing: campUrl, dates, cost, email
+[2026-04-03T13:44:52.643Z]   🔍 Search: Arkansas-Pine Bluff Golden Lions baseball camp
+[2026-04-03T13:44:56.784Z]   ★ Consensus match: https://www.pbcommercial.com/news/2026/mar/31/uapb-closes-baseball-homestand-against-uca/
+[2026-04-03T13:44:56.784Z]   ↳ Scraping: https://www.pbcommercial.com/news/2026/mar/31/uapb-closes-baseball-homestand-against-uca/
+[2026-04-03T13:44:58.841Z]   ↳ Trying one sub-page: https://www.pbcommercial.com/pb/events/
+[2026-04-03T13:45:00.798Z] 
+[4/7] Central Arkansas | Missing: campUrl, dates, cost, email
+[2026-04-03T13:45:00.839Z]   🔍 Search: Central Arkansas Bears baseball camp
+[2026-04-03T13:45:04.741Z]   ★ Consensus match: https://www.ucabearsbaseballcamps.com/
+[2026-04-03T13:45:04.742Z]   ↳ Scraping: https://www.ucabearsbaseballcamps.com/
+[2026-04-03T13:45:06.736Z]   ↳ Trying one sub-page: https://www.ucabearsbaseballcamps.com/#sitePageContent
+[2026-04-03T13:45:08.280Z] 
+[5/7] Arkansas Tech University | Missing: campUrl, dates, cost, email
+[2026-04-03T13:45:08.318Z]   🔍 Search: Arkansas Tech University Wonder Boys baseball camp
+[2026-04-03T13:45:12.086Z]   ★ Consensus match: https://www.atechbaseballcamps.com/
+[2026-04-03T13:45:12.086Z]   ↳ Scraping: https://www.atechbaseballcamps.com/
+[2026-04-03T13:45:14.036Z]   ↳ Trying one sub-page: https://www.atechbaseballcamps.com/#sitePageContent
+[2026-04-03T13:45:15.581Z] 
+[6/7] Southern Arkansas University | Missing: campUrl, dates, cost, email
+[2026-04-03T13:45:15.621Z]   🔍 Search: Southern Arkansas University Muleriders baseball camp
+[2026-04-03T13:45:19.561Z]   ★ Consensus match: https://www.muleridersbaseballcamps.com/
+[2026-04-03T13:45:19.561Z]   ↳ Scraping: https://www.muleridersbaseballcamps.com/
+[2026-04-03T13:45:21.514Z]   ↳ Trying one sub-page: https://www.muleridersbaseballcamps.com/#sitePageContent
+[2026-04-03T13:45:23.063Z] 
+[7/7] University of Arkansas at Monticello | Missing: campUrl, dates, cost, email
+[2026-04-03T13:45:23.100Z]   🔍 Search: University of Arkansas at Monticello Boll Weevils baseball camp
+[2026-04-03T13:45:27.169Z]   ★ Consensus match: https://www.uamsports.com/news/2026/3/25/weevils-baseball-back-home-to-host-harding-friday-and-saturday.aspx
+[2026-04-03T13:45:27.169Z]   ↳ Scraping: https://www.uamsports.com/news/2026/3/25/weevils-baseball-back-home-to-host-harding-friday-and-saturday.aspx
+[2026-04-03T13:45:30.134Z]   ↳ Trying one sub-page: https://fundraise.givesmart.com/form/kS64zA?vid=1k6k6z
+[2026-04-03T13:45:32.737Z]   ✅ cost: $100
+[2026-04-03T13:45:33.022Z] ✅ DONE
+[2026-04-03T13:45:44.688Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T13:45:45.185Z] 
+[1/1] Little Rock | Missing: campUrl, dates, cost, email
+[2026-04-03T13:45:45.234Z]   🔍 Search: Little Rock Trojans baseball camp
+[2026-04-03T13:45:49.596Z]   ★ Consensus match: https://baseballcamp.uark.edu/
+[2026-04-03T13:45:49.596Z]   ↳ Scraping: https://baseballcamp.uark.edu/
+[2026-04-03T13:45:51.805Z] ✅ DONE

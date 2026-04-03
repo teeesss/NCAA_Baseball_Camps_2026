@@ -43,9 +43,9 @@ function isTeamCampOrLegacy(text) {
 
 // ── Extraction ──
 const DATE_PATTERNS = [
-  /\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+\d{1,2}(?:[-–]\d{1,2})?,?\s*2026/gi,
-  /\d{1,2}\/\d{1,2}\/2026/g,
-  /2026[-/]\d{2}[-/]\d{2}/g,
+  /\b(jun|jul|aug)[a-z]*\.?\s+\d{1,2}(?:[-–]\d{1,2})?,?\s*2026/gi,
+  /\b0?[678]\/\d{1,2}\/2026/g,
+  /\b2026[-/]0?[678][-/]\d{2}/g,
 ];
 const COST_PATTERN = /\$\s*(\d[\d,.]*(?:\.\d{2})?)/g;
 const EMAIL_PATTERN = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
