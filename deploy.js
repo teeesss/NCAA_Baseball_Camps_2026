@@ -36,15 +36,11 @@ async function deploy() {
             console.error("CRITICAL: Remote index.html NOT FOUND after upload!");
         }
 
-        console.log("Uploading Verification Files...");
         await client.uploadFrom("verify_human.php", "verify_human.php");
         
-        if (fs.existsSync("human_verifications.json")) {
-            await client.uploadFrom("human_verifications.json", "human_verifications.json");
-        }
-        if (fs.existsSync("human_verifications_ip.json")) {
-            await client.uploadFrom("human_verifications_ip.json", "human_verifications_ip.json");
-        }
+        // [PROTECTED] Do NOT upload human_verifications.json here as it would overwrite the 
+        // production server's live data. We sync DOWN instead.
+
 
         console.log("Uploading NCAA-Baseball-Camps-2026.docx...");
         await client.uploadFrom("NCAA-Baseball-Camps-2026.docx", "NCAA-Baseball-Camps-2026.docx");

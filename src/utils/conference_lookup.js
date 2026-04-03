@@ -144,29 +144,63 @@ const CONFERENCE_LOOKUP = {
   'South Alabama': 'Sun Belt'
 };
 
+const fs = require('fs');
+const path = require('path');
+
+// Cache the maps
+let MASTER_MAP = null;
+
+function loadMaps() {
+    if (MASTER_MAP) return;
+    try {
+        const mapPath = path.join(__dirname, 'master_conference_map.json');
+        if (fs.existsSync(mapPath)) {
+            const raw = JSON.parse(fs.readFileSync(mapPath, 'utf8'));
+            // Flatten: { "University": "Conf" }
+            MASTER_MAP = {};
+            Object.keys(raw).forEach(conf => {
+                raw[conf].forEach(school => {
+                    MASTER_MAP[school.toLowerCase()] = conf;
+                });
+            });
+        }
+    } catch (e) {
+        console.error('Error loading conference maps:', e);
+    }
+}
+
 /**
  * Helper to retrieve conference for a university name.
- * Uses substring matching to handle variations like "University of Alabama" vs "Alabama".
+ * Uses exact match or verified static lookup. STRICT matching.
  */
-function getConference(university) {
+function getConference(university, division = 'DI') {
   if (!university) return 'Other';
-  
-  // Try exact match first
+  loadMaps();
+
+  const uniLower = university.trim().toLowerCase();
+
+  // 1. Check Master Map (D1 Primary Source)
+  if (MASTER_MAP && MASTER_MAP[uniLower]) {
+      return MASTER_MAP[uniLower];
+  }
+
+  // 2. Static Fallback for D2 or niche matches
   if (CONFERENCE_LOOKUP[university]) return CONFERENCE_LOOKUP[university];
 
-  // Try substring match, prefer LONGER keys first to handle overlaps (e.g. "Alabama State" before "Alabama")
-  const uniLower = university.toLowerCase();
-  const sortedKeys = Object.keys(CONFERENCE_LOOKUP).sort((a, b) => b.length - a.length);
-  
-  for (const key of sortedKeys) {
-    const keyLower = key.toLowerCase();
-    // Use word boundaries or just rely on length sorting for sub-matching
-    if (uniLower.includes(keyLower)) {
-      return CONFERENCE_LOOKUP[key];
-    }
+  // 3. Last Resort: Substring check ONLY for very specific matches
+  const criticalSubstrings = {
+      'alabama a&m': 'SWAC',
+      'alabama state': 'SWAC',
+      'arkansas-pine bluff': 'SWAC',
+      'alcorn state': 'SWAC'
+  };
+
+  for (const [sub, conf] of Object.entries(criticalSubstrings)) {
+      if (uniLower === sub) return conf;
   }
 
   return 'Other';
 }
 
 module.exports = { CONFERENCE_LOOKUP, getConference };
+

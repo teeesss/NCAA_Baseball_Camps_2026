@@ -9401,3 +9401,60 @@
 [2026-04-03T14:31:12.025Z]     ⚠️ High price detected ($685) — verify not team/showcase
 [2026-04-03T14:31:12.025Z]   ✅ cost: $685
 [2026-04-03T14:31:12.286Z] ✅ DONE
+[2026-04-03T16:43:35.990Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T16:43:36.439Z] 
+[1/1] Alabama State | Missing: cost, contact, email
+[2026-04-03T16:43:36.492Z]   🔍 Search: Alabama State Hornets baseball camp
+[2026-04-03T16:43:41.828Z]   ★ Consensus match: https://www.twosevenbaseballcamps.com/
+[2026-04-03T16:43:41.828Z]   ↳ Scraping: https://www.twosevenbaseballcamps.com/
+[2026-04-03T16:43:43.993Z]   ✅ cost: $250
+[2026-04-03T16:43:43.993Z]   ✅ email: dclark@alasu.edu
+[2026-04-03T16:43:44.213Z] ✅ DONE
+[2026-04-03T16:44:51.855Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T16:44:52.282Z] 
+[1/1] Adams State University | Missing: contact, email
+[2026-04-03T16:44:52.330Z]   ↳ Scraping: https://www.ncsasports.org/college-search?query=Adams%20State%20University
+[2026-04-03T16:44:54.683Z]   ↳ Trying one sub-page: https://ncsasports.zoom.us/webinar/register/WN_cKxvbWwWTBKqga5K5RSQkw
+[2026-04-03T16:44:57.363Z] ✅ DONE
+[2026-04-03T16:46:27.527Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T16:46:28.005Z] 
+[1/2] Adelphi University | Missing: dates, cost
+[2026-04-03T16:46:28.067Z]   🔍 Search: Adelphi University Panthers baseball camp
+[2026-04-03T16:46:32.975Z]   ★ Engine #1: https://aupanthers.com/sports/baseball
+[2026-04-03T16:46:32.975Z]   ↳ Scraping: https://aupanthers.com/sports/baseball
+[2026-04-03T16:46:35.391Z]   ↳ Trying one sub-page: https://aupanthers.com/subscribe.aspx
+[2026-04-03T16:46:37.716Z] 
+[2/2] Thomas Jefferson University (Formerly Philadelphia University) | Missing: cost, email
+[2026-04-03T16:46:37.764Z]   ↳ Scraping: https://www.ncsasports.org/college-search?query=Thomas%20Jefferson%20University%20(Formerly%20Philadelphia%20University)
+[2026-04-03T16:46:39.786Z]   ↳ Trying one sub-page: https://ncsasports.zoom.us/webinar/register/WN_cKxvbWwWTBKqga5K5RSQkw
+[2026-04-03T16:46:42.241Z] ✅ DONE
+[2026-04-03T16:54:26.316Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T16:54:26.749Z] 
+[1/5] Texas A&M | Missing: cost
+[2026-04-03T16:54:26.788Z]   ↳ Scraping: https://12thman.com/sports/2015/3/23/baseballcamp
+[2026-04-03T16:54:29.895Z]   ↳ Trying one sub-page: https://12thman.com/sports/2015/3/23/baseballcamp#main-content
+[2026-04-03T16:54:31.436Z] 
+[2/5] Texas Tech | Missing: cost, contact
+[2026-04-03T16:54:31.473Z]   ↳ Scraping: https://www.depts.ttu.edu/recreation/specialevents/summercamp.php
+[2026-04-03T16:54:34.044Z]   ✅ cost: $325
+[2026-04-03T16:54:34.044Z]   ✅ email: recreation@ttu.edu
+[2026-04-03T16:54:34.103Z] 
+[3/5] Texas State | Missing: campUrl, dates
+[2026-04-03T16:54:34.152Z]   🔍 Search: Texas State Bobcats baseball camp
+[2026-04-03T16:54:38.693Z]   ★ Consensus match: https://info.collegebaseballcamps.com/steventroutbaseball/
+[2026-04-03T16:54:38.693Z]   ↳ Scraping: https://info.collegebaseballcamps.com/steventroutbaseball/
+[2026-04-03T16:54:41.013Z]   ✅ cost: $185 / $265
+[2026-04-03T16:54:41.013Z]   ✅ dates: 06/03/2026 | 06/22/2026 | 07/01/2026
+[2026-04-03T16:54:41.077Z] 
+[4/5] Texas Southern | Missing: campUrl, contact, email
+[2026-04-03T16:54:41.124Z]   🔍 Search: Texas Southern Tigers baseball camp
+[2026-04-03T16:54:45.635Z]   ★ Consensus match: https://www.texassouthernbaseballcamps.com/index.cfm
+[2026-04-03T16:54:45.635Z]   ↳ Scraping: https://www.texassouthernbaseballcamps.com/index.cfm
+[2026-04-03T16:54:47.830Z]   ↳ Trying one sub-page: https://www.texassouthernbaseballcamps.com/index.cfm#sitePageContent
+[2026-04-03T16:54:49.400Z] 
+[5/5] West Texas A&M University | Missing: campUrl, cost, email
+[2026-04-03T16:54:49.440Z]   🔍 Search: West Texas A&M University Buffaloes baseball camp
+[2026-04-03T16:54:53.722Z]   ★ Consensus match: https://gobuffsgo.com/sports/baseball
+[2026-04-03T16:54:53.722Z]   ↳ Scraping: https://gobuffsgo.com/sports/baseball
+[2026-04-03T16:55:00.990Z]   ↳ Trying one sub-page: https://gobuffsgo.com/sports/2025/9/9/football-event-and-ticket-information.aspx
+[2026-04-03T16:55:03.798Z] ✅ DONE

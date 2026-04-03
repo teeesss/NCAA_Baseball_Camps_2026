@@ -128,12 +128,16 @@ function extractData(text, url) {
         // Reject sections that are clearly about other sports
         const isOtherSport = ['basketball', 'football', 'soccer', 'volleyball', 'softball', 'tennis', 'swimming'].some(s => sectionLower.includes(s)) && !sectionLower.includes('baseball');
         
+        // SKEPTICISM: Reject generic school-wide admin emails (FIX: ISS-015)
+        const GENERIC_ADMIN_EMAILS = ['admissions', 'communications', 'privacy', 'info', 'enroll', 'undergraduate', 'accessibility', 'registrar', 'web-accessibility'];
+        
         if ((hasBaseballContext || hasContactContext) && !isOtherSport) {
             EMAIL_PATTERN.lastIndex = 0;
             let m3;
             while ((m3 = EMAIL_PATTERN.exec(section)) !== null) {
                 let e = m3[0].toLowerCase();
-                if (!BLACKLISTED_DOMAINS.some(b => e.includes(b)) && !e.includes('example') && !e.includes('noreply') && !e.includes('sentry')) {
+                const isGeneric = GENERIC_ADMIN_EMAILS.some(g => e.startsWith(g + '@'));
+                if (!isGeneric && !BLACKLISTED_DOMAINS.some(b => e.includes(b)) && !e.includes('example') && !e.includes('noreply') && !e.includes('sentry')) {
                     emailsList.push(e);
                 }
             }
@@ -152,7 +156,18 @@ function extractData(text, url) {
     }
     const email = emailsList.length ? emailsList[0] : null;
 
-    return { dates, cost: costRaw, costVal: bestCost, email, url };
+    // FIX: Extract Camp POC (Coordinator/Director/Admin)
+    let campPOC = null;
+    const pocMatch = text.match(/(?:Camp|Director|Coordinator|Admin|Contact)\s+(?:of|for|Name)?\s*:\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,2})/i);
+    if (pocMatch) {
+        campPOC = pocMatch[1].trim();
+        // Basic noise filter for POC name
+        if (['Baseball', 'Clinic', 'Registration', 'Staff', 'Athletics'].some(word => campPOC.includes(word))) {
+            campPOC = null;
+        }
+    }
+
+    return { dates, cost: costRaw, costVal: bestCost, email, url, campPOC };
 }
 
 async function searchEngine(page, urlTemplate, engineName) {
@@ -306,11 +321,16 @@ async function run() {
                 }
                 if (meta.missing.includes('email') || !record.contact?.includes('@')) {
                     if (ex.email) {
-                        let base = record.contact ? record.contact.split('|')[0].trim() : '';
-                        record.contact = base ? `${base} | ${ex.email}` : ex.email;
+                        record.email = ex.email; // Store in the dedicated email field
                         log(`  ✅ email: ${ex.email}`);
                     }
                 }
+
+                if (ex.campPOC) {
+                    record.campPOC = ex.campPOC;
+                    log(`  ✅ POC: ${ex.campPOC}`);
+                }
+
                 
                 // Clear old stale if URL fundamentally changed
                 if (record.campUrl && record.campUrl !== ex.url) {

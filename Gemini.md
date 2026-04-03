@@ -24,6 +24,7 @@
 - Most D1/D2 programs have not yet posted their summer/fall 2026 camp dates as of April 2026.
 - Raw data is being compiled from official athletics websites (`[school]athletics.com` or `ryzer.com`).
 - The directory will be hosted at `https://bmwseals.com/Baseball_Camps_2026/`.
+- **UI Architecture**: Features a robust client-side filtering system allowing multifaceted drill-down (Division -> Conference -> Auto/Human Verified -> Estimated Tier Cost -> String Match).
 
 ## Lessons Learned
 - **Deduplication**: When merging data, unique hashing for university names is essential to prevent double-counting.
@@ -56,6 +57,8 @@
 - **Team Camp & Legacy Date Filtering**: High prices (e.g., $1000+) are sometimes legitimate for extensive individual camps. Instead of capping costs, strict exclusion logic now drops the entire page from extraction if the text explicitly states "Team Camp" (without also saying "individual") or heavily references "2025" without containing "2026". This prevents stale legacy pages from feeding false pricing data into the database.
 - **Audit Status Persistence**: Implemented `auditStatus` tracking in the master dataset. Records are now intelligently re-queued if they previously resulted in `URL_MISMATCH`, `NO_DATA`, or contained "Thin Results" (TBA dates/costs). This prevents the "infinite loop" of re-checking successful yet incomplete records without a search fallback.
 - **Automated Deep Search Fallback**: Flagship programs with elusive portals now trigger a Phase 3 "Deep Search" (top 10 results + specific keywords) if standard validation and consensus search fail. This resolved discovery issues for major SEC and Big 12 programs.
+- **DOM Node Validation**: When extracting interactive elements from a `<template>` rendering engine (e.g., pulling a "Verify" button out of a modal template and into the parent card block), ALWAYS verify that all event listeners accessing that node (like an `openDetails` popup modal logic) are explicitly updated with `if(node)` guards. Failure to trace moved DOM elements causes hard Javascript crashes (`TypeError`).
+- **Distributed State Synchronization**: When maintaining dual representations of the same state (e.g., a "verified badge" counting on top of the card AND the number inside the verification "action button"), backend-fetches MUST recursively select and update EVERY instance of the data attribute spanning the DOM. Failure to update all mirrors results in UI "flicker" where user clicks immediately desync local state against server cache.
 
 ## Infrastructure
 - **Search**: The HTML directory must have a real-time reactive search by university, coach, or keyword.

@@ -30,13 +30,14 @@ async function createWordDoc(jsonData, outputPath) {
                                     "Camp URL",
                                     "Dates",
                                     "Cost",
-                                    "Details/Description",
-                                    "Contact"
+                                    "Coach",
+                                    "Camp POC",
+                                    "Email"
                                 ].map(header => new TableCell({
                                     children: [new Paragraph({
                                         children: [new TextRun({ text: header, bold: true })]
                                     })],
-                                    shading: { fill: "E0E0E0" }
+                                    shading: { fill: "F0F0F0" }
                                 })),
                             }),
                             ...jsonData.sort((a,b) => a.university.localeCompare(b.university)).map(item => new TableRow({
@@ -64,8 +65,9 @@ async function createWordDoc(jsonData, outputPath) {
                                     }),
                                     new TableCell({ children: [new Paragraph(item.dates || "TBA")] }),
                                     new TableCell({ children: [new Paragraph(item.cost || "TBA")] }),
-                                    new TableCell({ children: [new Paragraph(item.details || "No 2026 camps posted as of April 2026")] }),
-                                    new TableCell({ children: [new Paragraph(item.contact || "Not Listed")] }),
+                                    new TableCell({ children: [new Paragraph(item.headCoach || (item.contact && !item.contact.includes('@') ? item.contact : "Athletics Staff"))] }),
+                                    new TableCell({ children: [new Paragraph(item.campPOC || "TBA")] }),
+                                    new TableCell({ children: [new Paragraph(item.email || "TBA")] }),
                                 ],
                             })),
                         ],

@@ -13,6 +13,14 @@
 - **DATA CLEANUP**: Wiped stale/source-less costs for Villanova, Seattle, and Seton Hall.
 - **DEPLOYED**: Site rebuilt and pushed.
 
+## [2026-04-03] - CRITICAL: Live Filter Fix (ISS-009)
+- **FIX (CRITICAL)**: Resolved "Broke live site" price filter regression. 
+- **ROOT CAUSE**: Regex backslashes (`\d`) were consumed by template literals in `generate_html.js`, resulting in `match(/d+.../` in the browser which failed to find numbers.
+- **RESOLUTION**: Double-escaped backslashes (`/\\d+/`) in `generate_html.js` to ensure survival after write.
+- **DATA CLEANUP**: Surgically purged 3 corrupted records (LSU, Illinois, West Texas A&M) using `fix_bad_costs.js`.
+- **DEPLOYED**: Site successfully rebuilt and pushed to `bmwseals.com/Baseball_Camps_2026/`.
+
+
 ## [2026-04-03] - Logo UI & 50px Upgrade
 - [x] Update UI to separate D1 and D2 programs (toggle or filter).
 - [x] Complete the dataset for all 300+ D1 programs (total now 559 with D2).
@@ -42,16 +50,17 @@
   - [x] Per-IP rate limiting: 1 vote per IP per school per 24h (privacy-safe IP hashing).
   - [x] Max cap of 100 per school to prevent spam.
   - [x] Supports GET (read counts) and POST (verify/unverify actions).
-- [ ] Deploy `verify_human.php` to live server at `https://bmwseals.com/Baseball_Camps_2026/verify_human.php`.
-- [ ] Deploy empty `human_verifications.json` to live server (writable by PHP).
-- [ ] Deploy empty `human_verifications_ip.json` to live server (writable by PHP).
+- [x] Deploy `verify_human.php` to live server at `https://bmwseals.com/Baseball_Camps_2026/verify_human.php`.
+- [x] Deploy empty `human_verifications.json` to live server (writable by PHP).
+- [x] Deploy empty `human_verifications_ip.json` to live server (writable by PHP).
 - [x] Build `fetch_verifications.js` — syncs `human_verifications.json` from live server to local.
-- [ ] Add **"👤 Human Verified"** button to each school card in UI.
+- [x] Add **"👤 Human Verified"** button to each school card in UI.
   - Shows current count: `👤 3 People Verified This`.
   - On click: POSTs to `verify_human.php`, updates count inline.
   - If rate limited: shows friendly "You already verified — try again in ~Xh" toast message.
   - Stores voted-school list in `localStorage` to grey-out button after voting.
-- [ ] Add `sync-verifications` as first step in `npm run full-update` pipeline.
+- [x] Add `sync-verifications` as first step in `npm run full-update` pipeline.
+
 - [ ] During HTML generation, inject `humanVerificationCount` from `human_verifications.json` as a data attribute on each card so initial counts render without a network call.
 
 ---

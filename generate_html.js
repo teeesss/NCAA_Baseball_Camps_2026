@@ -29,7 +29,10 @@ const html = `
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>NCAA Baseball Camps Directory 2026 | Div 1 & Div 2</title>
     <meta name="description" content="The definitive, searchable guide to 2026 NCAA Div I and Div II baseball camps and prospect clinics.">
     
@@ -84,7 +87,7 @@ const html = `
 
         header {
             text-align: center;
-            padding: 80px 20px 40px;
+            padding: 40px 20px 20px;
             position: relative;
         }
 
@@ -92,11 +95,11 @@ const html = `
             display: inline-block;
             background: rgba(59, 130, 246, 0.1);
             color: var(--accent-color);
-            padding: 8px 20px;
+            padding: 4px 14px;
             border-radius: 100px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 12px;
             border: 1px solid rgba(59, 130, 246, 0.2);
             letter-spacing: 0.05em;
             text-transform: uppercase;
@@ -104,11 +107,11 @@ const html = `
 
         h1 {
             font-family: 'Outfit', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-size: clamp(1.6rem, 6.5vw, 2.8rem);
             font-weight: 800;
             letter-spacing: -0.03em;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 8px;
             background: linear-gradient(135deg, #fff 30%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -116,24 +119,10 @@ const html = `
 
         .subtitle {
             color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-        }
-
-        .last-checked {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .last-checked::before {
-            content: ''; width: 8px; height: 8px; background: var(--success-color); border-radius: 50%; display: inline-block; box-shadow: 0 0 10px var(--success-color);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 15px;
+            line-height: 1.5;
         }
 
         /* Controls Section */
@@ -150,11 +139,15 @@ const html = `
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
             border-radius: 24px;
-            padding: 16px;
+            padding: 16px 12px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             display: flex;
             flex-direction: column;
             gap: 16px;
+        }
+
+        @media (min-width: 1024px) {
+            .filter-container { padding: 24px 20%; }
         }
 
         .top-row {
@@ -209,6 +202,7 @@ const html = `
             border: 1px solid var(--border-color);
             flex-wrap: wrap;
             gap: 6px;
+            width: 100%;
         }
 
         #conf-tabs {
@@ -229,7 +223,7 @@ const html = `
             background: rgba(255, 255, 255, 0.03);
             border-radius: 10px;
             font-size: 0.75rem;
-            padding: 0 16px;
+            padding: 0 12px;
             transition: all 0.2s ease;
             color: var(--text-secondary);
             font-weight: 600;
@@ -252,7 +246,7 @@ const html = `
         }
 
         .filter-btn {
-            padding: 10px 16px;
+            padding: 10px 12px;
             border-radius: 10px;
             border: none;
             background: transparent;
@@ -269,9 +263,25 @@ const html = `
             box-shadow: 0 4px 12px var(--accent-glow);
         }
 
-        .stats-row { display: flex; gap: 10px; padding: 0 4px; flex-wrap: wrap; }
-        .stat-bubble { background: rgba(255, 255, 255, 0.04); padding: 6px 14px; border-radius: 100px; font-size: 0.75rem; color: var(--text-secondary); border: 1px solid var(--border-color); }
+        .stats-row { display: flex; gap: 8px; padding: 0 4px; flex-wrap: wrap; margin-top: 4px; }
+        .stat-bubble { 
+            background: rgba(255, 255, 255, 0.04); padding: 5px 12px; 
+            border-radius: 100px; font-size: 0.7rem; color: var(--text-secondary); 
+            border: 1px solid var(--border-color); white-space: nowrap;
+        }
         .stat-bubble strong { color: #fff; margin-right: 4px; }
+
+        /* Human Badge */
+        .human-badge { 
+            position: absolute; top: 12px; right: 12px; 
+            background: rgba(34, 197, 94, 0.15); color: #4ade80; 
+            padding: 4px 10px; border-radius: 100px; font-size: 0.7rem; 
+            font-weight: 800; border: 1px solid rgba(34, 197, 94, 0.3);
+            display: flex; align-items: center; gap: 4px;
+            backdrop-filter: blur(4px); z-index: 10;
+        }
+        @media (max-width: 768px) { .human-badge { top: 8px; right: 8px; font-size: 0.65rem; padding: 3px 8px; } }
+
 
         /* Grid */
         .camp-grid {
@@ -373,9 +383,20 @@ const html = `
         .tier-cost { color: #10b981; font-weight: 700; white-space: nowrap; }
         .tier-ages { color: #a78bfa; font-size: 0.75rem; }
         .tier-dates { color: var(--text-secondary); font-size: 0.75rem; }
-        .contact-row { display: flex; gap: 6px; align-items: center; margin-bottom: 4px; }
-        .contact-label { font-size: 0.65rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; min-width: 90px; }
-        .contact-value { color: #fff; font-size: 0.85rem; user-select: all; cursor: text; }
+
+        /* Compact Contact Grid */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+        @media (max-width: 480px) { .contact-grid { grid-template-columns: 1fr; } }
+        .contact-card { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); }
+        .contact-label { font-size: 0.65rem; color: var(--accent-color); font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 2px; }
+        .contact-value { color: #fff; font-size: 0.8rem; font-weight: 500; word-break: break-all; }
+
+        .date-list { margin: 0; padding-left: 18px; list-style-type: decimal; }
+        .date-list li { margin-bottom: 4px; color: #fff; font-size: 0.85rem; }
+        .more-dates-btn { background: none; border: none; color: var(--accent-color); font-size: 0.75rem; font-weight: 700; cursor: pointer; padding: 4px 0; display: block; margin-top: 8px; }
+        .more-dates-btn:hover { text-decoration: underline; }
+        .hidden-dates { display: none; }
+        .hidden-dates.show { display: block; }
 
         .actions { display: flex; gap: 10px; padding-top: 15px; border-top: 1px solid var(--border-color); margin-top: auto; }
         .btn { flex: 1; padding: 10px; border-radius: 10px; font-size: 0.8rem; font-weight: 700; text-align: center; cursor: pointer; text-decoration: none; border: none; transition: 0.2s; }
@@ -398,12 +419,93 @@ const html = `
             border: 1px solid var(--border-color);
         }
         #toast.show { opacity: 1; }
+        .desktop-text { display: inline; }
+        .mobile-text { display: none; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 768px) {
-            .top-row { flex-direction: column; align-items: stretch; }
-            .camp-grid { grid-template-columns: 1fr; }
+            .container { padding: 6px 6px; }
+            header { padding: 0px 8px 2px; }
+            h1 { font-size: 1.25rem; margin-bottom: 0; }
+            .hero-badge { font-size: 0.65rem; padding: 2px 8px; margin-bottom: 2px; }
+            .subtitle { font-size: 0.72rem; margin-bottom: 2px; padding: 0 8px; }
+            
+            .desktop-text { display: none; }
+            .mobile-text { display: inline; }
+            
+            /* filter-tabs and conf-tabs: both scroll horizontally, no box */
+            
+            .controls-wrapper { top: 2px; margin-bottom: 6px; }
+            .glass-panel { padding: 8px 8px; border-radius: 12px; gap: 4px; }
+            
+            .top-row { display: flex; flex-direction: row; gap: 6px; align-items: center; }
+            #searchInput { padding: 6px 8px 6px 30px; font-size: 0.68rem; }
+            .search-icon { left: 10px; }
+            .search-icon svg { width: 14px; height: 14px; }
+            .filter-select { min-width: unset; padding: 6px 6px; font-size: 0.65rem; border-radius: 8px; flex-shrink: 0; }
+            
+            .filter-tabs { 
+                display: flex;
+                flex-wrap: nowrap; 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch;
+                padding: 2px;
+                gap: 4px;
+                border: none;
+                background: transparent;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .filter-tabs::-webkit-scrollbar { display: none; }
+            .filter-btn { 
+                white-space: nowrap;
+                flex-shrink: 0;
+                padding: 4px 6px; 
+                font-size: 0.65rem; 
+                background: rgba(255,255,255,0.05); 
+                border: 1px solid var(--border-color); 
+                display: flex; align-items: center; gap: 3px;
+            }
+            .hide-mobile { display: none; }
+            
+            #conf-tabs { 
+                flex-wrap: nowrap; 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                margin-top: 4px;
+                padding: 2px 0 0;
+            }
+            #conf-tabs::-webkit-scrollbar { display: none; }
+            .conf-btn { padding: 0 8px; height: 28px; font-size: 0.7rem; }
+            #moreConfs { height: 28px; font-size: 0.7rem; min-width: 110px !important; }
+            
+            .stats-row { 
+                flex-wrap: nowrap; 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 4px;
+                gap: 6px;
+                margin-top: -2px;
+            }
+            .stats-row::-webkit-scrollbar { display: none; }
+            .stat-bubble { font-size: 0.65rem; padding: 4px 10px; }
+            
+            .camp-grid { grid-template-columns: 1fr; gap: 8px; }
+            .camp-card { padding: 8px 10px; }
+            .actions { gap: 4px; padding-top: 6px; }
+            .btn { padding: 4px 4px; font-size: 0.65rem; }
+
+            /* Fix Modal Overflow on Mobile */
+            .modal-box { 
+                padding: 12px; 
+                width: 95%; 
+                max-height: 92vh; 
+                border-radius: 16px;
+            }
+            .drawer-sec { padding: 10px; margin-bottom: 8px; }
+            .modal-template h2 { font-size: 1.2rem !important; margin-bottom: 12px !important; }
         }
     </style>
 </head>
@@ -411,9 +513,11 @@ const html = `
     <div class="container">
         <header>
             <div class="hero-badge">Verified 2026 Season</div>
-            <h1>NCAA Baseball Camps</h1>
-            <p class="subtitle">The elite directory of 2026 baseball prospect clinics. Search 550+ Div I & Div II programs with verified registration links, direct costs, and camp contact details.</p>
-            <div class="last-checked">Active Data Integrity Audit: 24h Pulse System</div>
+            <h1>NCAA Baseball Camps 2026</h1>
+            <p class="subtitle">
+                <span class="desktop-text">520+ DI & DII programs. Verified registration links, costs, and contact details.</span>
+                <span class="mobile-text">520+ DI & DII Schools. Verified URLs, Costs, & Contact details.</span>
+            </p>
         </header>
 
         <div class="controls-wrapper">
@@ -434,17 +538,17 @@ const html = `
                         <option value="over500">$500 & Over</option>
                         <option value="tba">Price TBA</option>
                     </select>
-                    <div class="filter-tabs">
-                        <button class="filter-btn active" data-div="all">All</button>
-                        <button class="filter-btn" data-div="DI">Div I</button>
-                        <button class="filter-btn" data-div="DII">Div II</button>
-                        <button class="filter-btn" data-div="dates">📅 With Dates</button>
-                        <button class="filter-btn" data-div="auto">🤖 Verified Scans</button>
-                        <button class="filter-btn" data-div="human">👤 Community Verified</button>
-                    </div>
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-div="all">All</button>
+                    <button class="filter-btn" data-div="DI">Div I</button>
+                    <button class="filter-btn" data-div="DII">Div II</button>
+                    <button class="filter-btn" data-div="human">👤 <span class="hide-mobile">Community </span>Verified</button>
+                    <button class="filter-btn" data-div="dates">📅 <span class="hide-mobile">With </span>Dates</button>
+                    <button class="filter-btn" data-div="auto">🤖 <span class="hide-mobile">Verified </span>Scans</button>
                 </div>
                 <div id="conf-tabs">
-                    <button class="conf-btn filter-btn active" data-conf="all">All Conferences</button>
+                    <button class="conf-btn filter-btn active" data-conf="all">All Conf</button>
                     ${priorityConfs.map(c => `<button class="conf-btn filter-btn" data-conf="${c}">${c}</button>`).join('')}
                     
                     <select id="moreConfs" class="filter-select" style="min-width: 140px; height: 38px; padding: 0 12px; font-size: 0.75rem;">
@@ -512,24 +616,31 @@ const html = `
 
                 return `
                 <div class="camp-card" 
-                     onclick="openDetails(event, this)"
-                     style="cursor: pointer;"
                      data-div="${item.division}" 
                      data-conference="${item.conference || 'Independent / Other'}"
                      data-cost="${item.cost || 'TBA'}"
                      data-has-dates="${dateArr.length > 0}"
                      data-verified-manual="${isManualVerif}" 
                      data-verified-auto="${isAutoVerif}" 
-                     data-verified-human="${humanCount > 0}"
-                     data-not-verified="${!isManualVerif && !isAutoVerif && !isPartial}"
-                     data-search="${item.university.toLowerCase()} ${item.contact.toLowerCase()}" 
-                     style="animation-delay: ${index * 0.005}s">
+                      data-verified-human="${humanCount > 0}"
+                      data-university="${item.university}"
+                      data-not-verified="${!isManualVerif && !isAutoVerif && !isPartial}"
+                      data-search="${item.university.toLowerCase()} ${item.contact.toLowerCase()}" 
+                      style="animation-delay: ${index * 0.005}s; position: relative;">
+                    ${humanCount > 0 ? `<div class="human-badge" title="${humanCount} community verifications">👤 ${humanCount}</div>` : ''}
                     
                     <div class="card-header">
                         <div style="display: flex; flex-direction: column; gap: 8px;">
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 ${logoHtml}
-                                <div class="univ-name">${item.university}</div>
+                                <div class="univ-name">${item.university
+                                    .replace(/University/g, 'Univ')
+                                    .replace(/Aeronautical/g, 'Aero')
+                                    .replace(/International/g, 'Intl')
+                                    .replace(/Pennsylvania/g, 'Penn')
+                                    .replace(/Washington/g, 'Wash')
+                                    .replace(/Institute of Technology/gi, 'Tech')
+                                }</div>
                             </div>
                             <div class="badges-row">
                                 ${isManualVerif ? '<span class="badge badge-manual">★ Manually Verified</span>' :
@@ -541,7 +652,7 @@ const html = `
                         ${item.conference && item.conference !== 'Other' ? `<div class="conference-tag">${item.conference}</div>` : ''}
                     </div>
                     
-                    <div class="info-stack">
+                    <div class="info-stack" onclick="openDetails(event, this)" style="cursor: pointer;">
                         <div class="info-item">
                             <div class="icon-box ${accentClass}">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
@@ -568,7 +679,8 @@ const html = `
                             </div>
                             <div class="val-stack">
                                 <span class="label">Camp Contact</span>
-                                <span class="value">${item.contact || 'Athletics Office'}</span>
+                                <span class="value">${item.campPOC || item.headCoach || item.contact || 'Athletics Office'}</span>
+                                ${item.email ? `<span style="font-size: 0.75rem; color: var(--accent-color); font-weight: 600; opacity: 0.9;">${item.email}</span>` : ''}
                             </div>
                         </div>
                     </div>
@@ -577,23 +689,45 @@ const html = `
                         <div style="font-family:'Outfit', sans-serif; font-size:1.6rem; color:#fff; font-weight:700; margin-bottom: 24px; padding-right:30px;">
                             ${item.university} Details
                         </div>
-                        <div class="drawer-sec">
-                            <div class="d-label">Contacts</div>
-                            <div class="d-body">
-                                <div class="contact-row">
-                                    <span class="contact-label">Head Coach:</span>
-                                    <span class="contact-value">${item.contact || 'Athletics Office'}</span>
+                        <div class="drawer-sec" style="padding-bottom: 24px;">
+                            <div class="d-label">Staff & Contact Info</div>
+                            <div class="contact-grid">
+                                <div class="contact-card">
+                                    <span class="contact-label">Head Coach</span>
+                                    <div class="contact-value">${item.headCoach || (item.contact && !item.contact.includes('@') ? item.contact : 'Athletics Staff')}</div>
                                 </div>
-                                ${item.campPOC ? `<div class="contact-row">
-                                    <span class="contact-label">Camp POC:</span>
-                                    <span class="contact-value">${item.campPOC}</span>
-                                </div>` : ''}
-                                ${item.email ? `<div class="contact-row">
-                                    <span class="contact-label">Email:</span>
-                                    <span class="contact-value"><a href="mailto:${item.email}" style="color:#60a5fa;text-decoration:none;">${item.email}</a></span>
-                                </div>` : ''}
+                                <div class="contact-card">
+                                    <span class="contact-label">Camp POC</span>
+                                    <div class="contact-value">${item.campPOC || 'Provided at registration'}</div>
+                                </div>
+                                <div class="contact-card" style="grid-column: span 2;">
+                                    <span class="contact-label">Official Email</span>
+                                    <div class="contact-value">
+                                        ${item.email ? `<a href="mailto:${item.email}" style="color:#60a5fa;text-decoration:none;font-weight:600;">${item.email}</a>` : 'Check site for contact info'}
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        ${dateArr.length > 0 ? `
+                        <div class="drawer-sec">
+                            <div class="d-label">📅 All Available Dates</div>
+                            <div class="d-body">
+                                <ol class="date-list">
+                                    ${dateArr.slice(0, 5).map(d => `<li>${d}</li>`).join('')}
+                                </ol>
+                                ${dateArr.length > 5 ? `
+                                    <div class="hidden-dates">
+                                        <ol class="date-list" start="6">
+                                            ${dateArr.slice(5).map(d => `<li>${d}</li>`).join('')}
+                                        </ol>
+                                    </div>
+                                    <button class="more-dates-btn" data-count="${dateArr.length}" onclick="toggleDates(this)">Show All Dates (${dateArr.length})</button>
+                                ` : ''}
+                            </div>
+                        </div>
+                        ` : ''}
+
                         <div class="drawer-sec">
                             <div class="d-label">Verification Source</div>
                             <div class="d-body" style="display: flex; gap: 8px; margin-top: 8px;">
@@ -602,6 +736,7 @@ const html = `
                                   '<span class="badge badge-not">❓ Not Verified</span>'}
                             </div>
                         </div>
+
                         ${(() => {
                             if (item.campTiers && item.campTiers.length > 0 && !item.campTiers.every(t => t.cost === 'TBA')) {
                                 return '<div class="drawer-sec" style="border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.03);">' +
@@ -633,16 +768,6 @@ const html = `
                             }
                         })()}
 
-                        ${dateArr.length > 0 ? `
-                        <div class="drawer-sec">
-                            <div class="d-label">📅 All Available Dates</div>
-                            <div class="d-body">
-                                <ul style="margin: 0; padding-left: 18px;">
-                                    ${dateArr.map(d => `<li style="margin-bottom:6px; color: #fff;">${d}</li>`).join('')}
-                                </ul>
-                            </div>
-                        </div>
-                        ` : ''}
                         ${item.details ? `
                         <div class="drawer-sec">
                             <div class="d-label">Additional Intel</div>
@@ -736,7 +861,7 @@ const html = `
                 
                 let matchesCost = true;
                 if (costFilter !== 'all') {
-                    const priceMatches = cost.match(/\d+[\d,]*(?:\.\d+)?/g);
+                    const priceMatches = cost.match(/\\d+[\\d,]*(?:\\.\\d+)?/g);
                     const prices = priceMatches ? priceMatches.map(m => parseFloat(m.replace(/,/g, ''))) : [0];
                     const maxPrice = Math.max(...prices);
                     const minPrice = prices.filter(p => p > 0).length > 0 ? Math.min(...prices.filter(p => p > 0)) : 0;
@@ -824,6 +949,20 @@ const html = `
                     btn.classList.add('voted');
                     votedInSession.push(schoolName);
                     localStorage.setItem('votedSchools', JSON.stringify(votedInSession));
+                    
+                    // Update the main card badge + attribute instantly
+                    const card = document.querySelector('.camp-card[data-university="' + schoolName + '"]');
+                    if (card) {
+                        card.setAttribute('data-verified-human', 'true');
+                        let badge = card.querySelector('.human-badge');
+                        if (!badge) {
+                            badge = document.createElement('div');
+                            badge.className = 'human-badge';
+                            card.insertBefore(badge, card.querySelector('.card-header'));
+                        }
+                        badge.innerHTML = '👤 ' + result.count;
+                    }
+                    
                     showToast("Verified! Thank you.");
                 } else {
                     showToast(result.message || "Error verifying.");
@@ -843,23 +982,109 @@ const html = `
             if (e.target === modal) modal.classList.remove('active');
         });
 
+        async function syncVerificationsFromServer() {
+            try {
+                // Fetch fresh counts with cache-buster
+                const res = await fetch('human_verifications.json?v=' + Date.now());
+                if (!res.ok) return;
+                const freshCounts = await res.json();
+                
+                // Update all badges on screen
+                document.querySelectorAll('.camp-card').forEach(card => {
+                    const uniName = card.getAttribute('data-university');
+                    let count = freshCounts[uniName] || 0;
+                    
+                    // Guard: if user already voted this session, never let server revert their count
+                    if (votedInSession.includes(uniName)) {
+                        const badge = card.querySelector('.human-badge');
+                        const currentShown = badge ? parseInt(badge.innerText.replace(/[^\d]/g, ''), 10) || 0 : 0;
+                        count = Math.max(count, currentShown);
+                    }
+                    
+                    // Update main card badge
+                    const badge = card.querySelector('.human-badge');
+                    if (count > 0) {
+                        if (badge) {
+                            badge.innerHTML = '👤 ' + count;
+                        } else {
+                            // Insert new badge if it didn't have one
+                            const header = card.querySelector('.card-header');
+                            const newBadge = document.createElement('div');
+                            newBadge.className = 'human-badge';
+                            newBadge.title = count + ' community verifications';
+                            newBadge.innerHTML = '👤 ' + count;
+                            card.insertBefore(newBadge, header);
+                        }
+                        card.setAttribute('data-verified-human', 'true');
+                    }
+                    
+                    // Update the visible button count so it doesn't mismatch the badge
+                    const cardBtnSpan = card.querySelector('.btn-human-verify span');
+                    if (cardBtnSpan) {
+                        cardBtnSpan.innerText = count > 0 ? count : '';
+                    }
+
+                    // Update the hidden template count (if it existed)
+                    const template = card.querySelector('.modal-template');
+                    if (template) {
+                        const vSpan = template.content ? template.content.querySelector('.btn-human-verify span') : template.querySelector('.btn-human-verify span');
+                        if (vSpan) vSpan.innerText = count > 0 ? count : '';
+                    }
+                });
+                console.log('✅ Synchronized ' + Object.keys(freshCounts).length + ' verification records from server.');
+                if (currentDiv === 'human') filter(); // Re-apply filter if they are currently viewing "Verified"
+            } catch (e) {
+                console.warn("Live sync skipped:", e);
+            }
+        }
+
+        function toggleDates(btn) {
+            const hidden = btn.previousElementSibling;
+            if (hidden.classList.contains('show')) {
+                hidden.classList.remove('show');
+                btn.innerText = 'Show All Dates (' + btn.dataset.count + ')';
+            } else {
+                hidden.classList.add('show');
+                btn.innerText = 'Show Less';
+            }
+        }
+
         function openDetails(event, btn) {
             event.stopPropagation();
             const card = btn.closest('.camp-card');
             const template = card.querySelector('.modal-template');
             modalBody.innerHTML = template.innerHTML;
+            
+            // Re-check voted state in the modal if button exists inside
+            const vBtn = modalBody.querySelector('.btn-human-verify');
+            if (vBtn) {
+                const match = vBtn.getAttribute('onclick').match(/'(.*)'/);
+                if (match && votedInSession.includes(match[1])) vBtn.classList.add('voted');
+            }
+            
             modal.classList.add('active');
         }
 
         // Initialize state
-        window.addEventListener('load', () => {
+        window.addEventListener('load', async () => {
+            // Priority 1: Mark voted buttons
             document.querySelectorAll('.btn-human-verify').forEach(btn => {
                 const text = btn.getAttribute('onclick');
-                const match = text.match(/'(.*)'/);
-                if (match && votedInSession.includes(match[1])) btn.classList.add('voted');
+                if (text) {
+                    const match = text.match(/'(.*)'/);
+                    if (match && votedInSession.includes(match[1])) btn.classList.add('voted');
+                }
             });
+            
+            // Priority 2: Sync fresh counts from server
+            try {
+                await syncVerificationsFromServer();
+            } catch (e) {
+                console.warn("Initial sync failed:", e);
+            }
         });
     </script>
+
 </body>
 </html>
 `;
