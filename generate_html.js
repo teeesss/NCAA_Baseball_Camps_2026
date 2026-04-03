@@ -62,21 +62,35 @@ const html = `
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .camp-card, .btn, .filter-btn, .conf-btn, .info-stack, .conf-btn, .filter-select {
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            padding-bottom: 80px;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
             background-image: 
                 radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
                 radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 40%),
                 linear-gradient(to bottom, #05070a, #0f172a);
-            background-attachment: fixed;
-            min-height: 100vh;
-            padding-bottom: 80px;
-            overflow-x: hidden;
+            background-attachment: scroll;
+            pointer-events: none;
         }
 
         .container {
@@ -139,6 +153,15 @@ const html = `
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
             border-radius: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .glass-panel {
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                background: rgba(15, 23, 42, 0.95);
+            }
+        }
             padding: 16px 12px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             display: flex;
@@ -635,14 +658,14 @@ const html = `
                       data-university="${item.university}"
                       data-not-verified="${!isManualVerif && !isAutoVerif && !isPartial}"
                       data-search="${item.university.toLowerCase()} ${item.contact.toLowerCase()}" 
-                      style="animation-delay: ${index * 0.005}s; position: relative;">
+                      style="${index < 30 ? `animation-delay: ${index * 0.005}s;` : 'animation: none;'} position: relative;">
                     ${humanCount > 0 ? `<div class="human-badge" title="${humanCount} community verifications">👤 ${humanCount}</div>` : ''}
                     
                     <div class="card-header">
                         <div style="display: flex; flex-direction: column; gap: 8px;">
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 ${logoHtml}
-                                <div class="univ-name">${item.university
+                                <div class="univ-name">${esc(item.university)
                                     .replace(/University/g, 'Univ')
                                     .replace(/Aeronautical/g, 'Aero')
                                     .replace(/International/g, 'Intl')
@@ -659,7 +682,7 @@ const html = `
                         </div>
                         <div class="card-right-tags">
                             <div class="division-tag ${tagClass}">${item.division === 'DI' ? 'Div I' : 'Div II'}</div>
-                            ${item.conference && item.conference !== 'Other' ? `<div class="conference-tag">${item.conference}</div>` : ''}
+                            ${item.conference && item.conference !== 'Other' ? `<div class="conference-tag">${esc(item.conference)}</div>` : ''}
                         </div>
                     </div>
                     
@@ -670,7 +693,7 @@ const html = `
                             </div>
                             <div class="val-stack">
                                 <span class="label">Camp Dates</span>
-                                <span class="value ${isTba ? 'tba' : ''}">${displayDates}</span>
+                                <span class="value ${isTba ? 'tba' : ''}">${esc(displayDates)}</span>
                             </div>
                         </div>
 
@@ -680,7 +703,7 @@ const html = `
                             </div>
                             <div class="val-stack">
                                 <span class="label">EST COST</span>
-                                <span class="value ${(!item.cost || item.cost === 'TBA') ? 'tba' : ''}">${item.cost || 'TBA'}</span>
+                                <span class="value ${(!item.cost || item.cost === 'TBA') ? 'tba' : ''}">${esc(item.cost) || 'TBA'}</span>
                             </div>
                         </div>
 
@@ -690,31 +713,31 @@ const html = `
                             </div>
                             <div class="val-stack">
                                 <span class="label">Camp Contact</span>
-                                <span class="value">${item.campPOC || item.headCoach || item.contact || 'Athletics Office'}</span>
-                                ${item.email ? `<span style="font-size: 0.75rem; color: var(--accent-color); font-weight: 600; opacity: 0.9;">${item.email}</span>` : ''}
+                                <span class="value">${esc(item.campPOC || item.headCoach || item.contact || 'Athletics Office')}</span>
+                                ${item.email ? `<span style="font-size: 0.75rem; color: var(--accent-color); font-weight: 600; opacity: 0.9;">${esc(item.email)}</span>` : ''}
                             </div>
                         </div>
                     </div>
 
                     <template class="modal-template">
                         <div style="font-family:'Outfit', sans-serif; font-size:1.6rem; color:#fff; font-weight:700; margin-bottom: 24px; padding-right:30px;">
-                            ${item.university} Details
+                            ${esc(item.university)} Details
                         </div>
                         <div class="drawer-sec" style="padding-bottom: 24px;">
                             <div class="d-label">Staff & Contact Info</div>
                             <div class="contact-grid">
                                 <div class="contact-card">
                                     <span class="contact-label">Head Coach</span>
-                                    <div class="contact-value">${item.headCoach || (item.contact && !item.contact.includes('@') ? item.contact : 'Athletics Staff')}</div>
+                                    <div class="contact-value">${esc(item.headCoach || (item.contact && !item.contact.includes('@') ? item.contact : 'Athletics Staff'))}</div>
                                 </div>
                                 <div class="contact-card">
                                     <span class="contact-label">Camp POC</span>
-                                    <div class="contact-value">${item.campPOC || 'Provided at registration'}</div>
+                                    <div class="contact-value">${esc(item.campPOC || 'Provided at registration')}</div>
                                 </div>
                                 <div class="contact-card" style="grid-column: span 2;">
                                     <span class="contact-label">Official Email</span>
                                     <div class="contact-value">
-                                        ${item.email ? `<a href="mailto:${item.email}" style="color:#60a5fa;text-decoration:none;font-weight:600;">${item.email}</a>` : 'Check site for contact info'}
+                                        ${item.email ? `<a href="mailto:${esc(item.email)}" style="color:#60a5fa;text-decoration:none;font-weight:600;">${esc(item.email)}</a>` : 'Check site for contact info'}
                                     </div>
                                 </div>
                             </div>
@@ -897,7 +920,11 @@ const html = `
             dispCount.innerText = count;
         }
 
-        searchInput.addEventListener('input', filter);
+        let filterTimeout;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(filterTimeout);
+            filterTimeout = setTimeout(filter, 150);
+        });
         document.getElementById('costFilter').addEventListener('change', filter);
         
         document.querySelectorAll('.filter-tabs:not(#conf-tabs) .filter-btn').forEach(btn => {

@@ -17,6 +17,12 @@ function log(msg) {
   logStream.write(line + '\n');
 }
 
+function safeWriteJSON(filepath, data) {
+    const tmp = filepath + '.tmp';
+    fs.writeFileSync(tmp, JSON.stringify(data, null, 2));
+    fs.renameSync(tmp, filepath);
+}
+
 const args = process.argv.slice(2);
 const argMap = {};
 for (const a of args) {
@@ -46,10 +52,11 @@ function isTeamCampOrLegacy(text) {
     return isTeamOnly || isLegacy;
 }
 
+const MONTHS_TEXT = 'jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec';
 const DATE_PATTERNS = [
-  /\b(jun|jul|aug)[a-z]*\.?\s+\d{1,2}(?:[-–]\d{1,2})?,?\s*2026/gi,
-  /\b0?[678]\/\d{1,2}\/2026/g,
-  /\b2026[-/]0?[678][-/]\d{2}/g,
+  new RegExp(`\\b(${MONTHS_TEXT})[a-z]*\\.?\\s+\\d{1,2}(?:[-–]\\d{1,2})?,?\\s*2026`, 'gi'),
+  /\b(0?[1-9]|1[0-2])\/\d{1,2}\/2026/g,
+  /\b2026[-/](0?[1-9]|1[0-2])[-/]\d{1,2}/g,
 ];
 const COST_PATTERN = /\$\s*(\d[\d,.]*(?:\.\d{2})?)/g;
 const EMAIL_PATTERN = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
@@ -90,30 +97,24 @@ function extractData(text, url) {
     let bestCost = null;
     let costRaw = null;
     let costs = [];
-    COST_PATTERN.lastIndex = 0;
-    let m2;
-    while ((m2 = COST_PATTERN.exec(text)) !== null) {
-        let val = parseFloat(m2[1].replace(/,/g, ''));
-        costs.push(val);
-    }
-    if (costs.length) {
-        // Cost filtering ($100-$1500, flag >$500)
-        let validCosts = costs.filter(c => c >= 100 && c <= 1500);
-        if (validCosts.length) {
-            validCosts = [...new Set(validCosts)].sort((a,b) => a-b); // Sort unique values
-            bestCost = validCosts[0];
-            
-            if (validCosts.length > 1) {
-                costRaw = validCosts.slice(0, 3).map(c => `$${c}`).join(' / ');
-                if (validCosts.length > 3) costRaw += ' ...';
-            } else {
-                costRaw = `$${bestCost}`;
-            }
-            
-            if (bestCost > 500) {
-                log(`    ⚠️ High price detected ($${bestCost}) — verify not team/showcase`);
-            }
+    const campKeywords = /camp|clinic|registration|register|fee|tuition|cost|price|per\s+player/gi;
+    
+    let match;
+    while ((match = campKeywords.exec(text)) !== null) {
+        const window = text.substring(Math.max(0, match.index - 150), Math.min(text.length, match.index + 150));
+        COST_PATTERN.lastIndex = 0;
+        let costMatch;
+        while ((costMatch = COST_PATTERN.exec(window)) !== null) {
+            const val = parseFloat(costMatch[1].replace(/,/g, ''));
+            if (val >= 100 && val <= 1500) costs.push(val);
         }
+    }
+    
+    if (costs.length) {
+        let validCosts = [...new Set(costs)].sort((a,b) => a-b);
+        bestCost = validCosts[0];
+        costRaw = validCosts.length > 1 ? validCosts.slice(0, 3).map(c => `$${c}`).join(' / ') : `$${bestCost}`;
+        if (bestCost > 500) log(`    ⚠️ High price detected ($${bestCost})`);
     }
 
     // FIX: llm-issues-prompt #3 — Baseball-context email extraction
@@ -121,14 +122,10 @@ function extractData(text, url) {
     const sections = text.split(/\n\s*\n/);
     for (const section of sections) {
         const sectionLower = section.toLowerCase();
-        // Primary gate: section must mention 'baseball' or 'camp' (not other sports' coaches)
         const hasBaseballContext = sectionLower.includes('baseball') || sectionLower.includes('camp');
-        // Secondary gate: 'coach'/'contact' only valid WITH baseball context
         const hasContactContext = (sectionLower.includes('coach') || sectionLower.includes('contact')) && hasBaseballContext;
-        // Reject sections that are clearly about other sports
         const isOtherSport = ['basketball', 'football', 'soccer', 'volleyball', 'softball', 'tennis', 'swimming'].some(s => sectionLower.includes(s)) && !sectionLower.includes('baseball');
         
-        // SKEPTICISM: Reject generic school-wide admin emails (FIX: ISS-015)
         const GENERIC_ADMIN_EMAILS = ['admissions', 'communications', 'privacy', 'info', 'enroll', 'undergraduate', 'accessibility', 'registrar', 'web-accessibility'];
         
         if ((hasBaseballContext || hasContactContext) && !isOtherSport) {
@@ -143,28 +140,30 @@ function extractData(text, url) {
             }
         }
     }
-    // Fallback: if no context-filtered email, try full page but prefer .edu
-    if (emailsList.length === 0) {
-        EMAIL_PATTERN.lastIndex = 0;
-        let m3;
-        while ((m3 = EMAIL_PATTERN.exec(text)) !== null) {
-            let e = m3[0].toLowerCase();
-            if (!BLACKLISTED_DOMAINS.some(b => e.includes(b)) && !e.includes('example') && !e.includes('noreply') && e.endsWith('.edu')) {
-                emailsList.push(e);
+    
+    let email = emailsList.length ? emailsList[0] : null;
+    if (!email) {
+        const emailMatch = text.match(EMAIL_PATTERN);
+        if (emailMatch) {
+            const VALID_TLDS = ['edu', 'com', 'org', 'net'];
+            for (let e of emailMatch) {
+                e = e.toLowerCase();
+                const parts = e.split('@');
+                if (parts[0].length < 3) continue;
+                const tld = parts[1].split('.').pop();
+                if (VALID_TLDS.includes(tld) && !BLACKLISTED_DOMAINS.some(b => e.includes(b))) {
+                    email = e;
+                    break;
+                }
             }
         }
     }
-    const email = emailsList.length ? emailsList[0] : null;
 
-    // FIX: Extract Camp POC (Coordinator/Director/Admin)
     let campPOC = null;
     const pocMatch = text.match(/(?:Camp|Director|Coordinator|Admin|Contact)\s+(?:of|for|Name)?\s*:\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,2})/i);
     if (pocMatch) {
         campPOC = pocMatch[1].trim();
-        // Basic noise filter for POC name
-        if (['Baseball', 'Clinic', 'Registration', 'Staff', 'Athletics'].some(word => campPOC.includes(word))) {
-            campPOC = null;
-        }
+        if (['Baseball', 'Clinic', 'Registration', 'Staff', 'Athletics'].some(word => campPOC.includes(word))) campPOC = null;
     }
 
     return { dates, cost: costRaw, costVal: bestCost, email, url, campPOC };
@@ -182,25 +181,22 @@ async function searchEngine(page, urlTemplate, engineName) {
                 .filter(h => h.href.startsWith('http') && !h.href.includes('yahoo.com/search') && !h.href.includes('duckduckgo.com/html'));
         }, sel);
         
-        // FIX: llm-issues-prompt #1 — Search Result Validation & Year Prioritization
         const rejectPatterns = ['ticket', 'seatgeek', 'stubhub', 'merchandise', 'shop', 'football', 'basketball', 'soccer', 'tennis', 'swimming', 'news', 'article', 'release', 'giving', 'donate', 'fundraise', 'givesmart'];
         
-        // Score and sort results: prefer 2026, penalize 2025, reject wrong sport/tickets
         const scored = links
             .map(l => {
                 let clean = unwrapUrl(l.href);
                 let url = clean.toLowerCase();
                 let title = l.title;
                 
-                // Immediate rejection
                 if (BLACKLISTED_DOMAINS.some(b => clean.includes(b))) return null;
                 if (rejectPatterns.some(p => url.includes(p) || title.includes(p))) return null;
                 
                 let score = 0;
                 if (url.includes('baseball')) score += 20;
                 if (url.includes('camp') || title.includes('camp')) score += 10;
-                if (url.includes('2026')) score += 50;     // Strong preference for 2026
-                if (url.includes('2025')) score -= 100;    // Heavy penalty for 2025
+                if (url.includes('2026')) score += 50;
+                if (url.includes('2025')) score -= 100;
                 if (url.endsWith('.edu') || url.includes('.edu/')) score += 5;
                 
                 return { url: clean, score };
@@ -225,7 +221,13 @@ function isUrlGeneric(url) {
 }
 
 async function run() {
-    log('🚀 DEAD SIMPLE EXTRACT starting...');
+    log(`🚀 STARTING BATCH`);
+    
+    // Backup before starting
+    const BACKUP = DATA_FILE.replace('.json', `_backup_${Date.now()}.json`);
+    fs.copyFileSync(DATA_FILE, BACKUP);
+    log(`📦 Backup created: ${path.basename(BACKUP)}`);
+
     if (!fs.existsSync(QUEUE_FILE)) return log('❌ queue missing');
 
     const queueData = JSON.parse(fs.readFileSync(QUEUE_FILE, 'utf8'));
@@ -313,15 +315,18 @@ async function run() {
                     }
                 }
 
+                const firstPrice = record.cost ? parseFloat((record.cost.match(/\d[\d,.]*/) || ['0'])[0].replace(/,/g, '')) : 0;
+                let needsRepull = (firstPrice > 0 && firstPrice < 100) || firstPrice > 1500;
+
                 if (needsRepull || meta.missing.includes('cost') || !record.cost || record.cost === 'TBA') {
                     if (ex.cost) { record.cost = ex.cost; log(`  ✅ cost: ${ex.cost}`); }
                 }
                 if (needsRepull || meta.missing.includes('dates') || !record.dates || record.dates === 'TBA') {
                     if (ex.dates) { record.dates = ex.dates; log(`  ✅ dates: ${ex.dates.substring(0,50)}`); }
                 }
-                if (meta.missing.includes('email') || !record.contact?.includes('@')) {
+                if (meta.missing.includes('email') || !record.email) {
                     if (ex.email) {
-                        record.email = ex.email; // Store in the dedicated email field
+                        record.email = ex.email; 
                         log(`  ✅ email: ${ex.email}`);
                     }
                 }
@@ -333,17 +338,20 @@ async function run() {
 
                 
                 // Clear old stale if URL fundamentally changed
-                if (record.campUrl && record.campUrl !== ex.url) {
+                if (ex.url && record.campUrl && record.campUrl !== ex.url) {
                     if (!ex.dates && record.dates) record.dates = 'TBA';
                     if (!ex.cost && record.cost) record.cost = 'TBA';
                 }
-                record.campUrl = ex.url;
+                if (ex.url) record.campUrl = ex.url;
             }
 
             // Mark processed
             record.isChecked = true;
             record.scriptVersion = 14; 
-            fs.writeFileSync(DATA_FILE, JSON.stringify(masterData, null, 2));
+            record.extractionResult = (ex.dates || ex.cost || ex.email) ? 'enriched' : 'no_data';
+            record.lastChecked = new Date().toISOString();
+            
+            safeWriteJSON(DATA_FILE, masterData);
 
         } catch(e) {
             log(`  ❌ Err: ${e.message}`);
