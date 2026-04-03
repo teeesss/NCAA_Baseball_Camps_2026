@@ -4,9 +4,9 @@ const path = require('path');
 const DATA_FILE = path.join(__dirname, '../../camps_data.json');
 const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
 
-const VALID_MONTH_REGEX = /Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December|0[1-9]\/|1[0-2]\//i;
-const SUMMER_MONTH_REGEX = /Jun|Jul|Aug|June|July|August|0[678]\//i;
-const YEAR_REGEX = /2026/i;
+const VALID_MONTH_REGEX = /Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December|0[1-9]\/|1[02]\//i;
+const SUMMER_MONTH_REGEX = /Jun|Jul|Aug|June|July|August|0[678]\/|[678]\//i;
+const YEAR_REGEX = /202[456789]/i;
 
 function reconcile() {
     let modifiedCount = 0;
@@ -22,19 +22,30 @@ function reconcile() {
                     if (!dateInput) return;
                     
                     // Handle arrays, single strings, or comma-separated strings
-                    const dateStrings = Array.isArray(dateInput) ? dateInput : dateInput.split(/[,|]/);
+                    const dateStrings = Array.isArray(dateInput) ? dateInput : String(dateInput).split(/[,|]/);
                     
                     dateStrings.forEach(rawDate => {
                         const dateStr = rawDate.trim();
                         if (!dateStr) return;
                         
+                        // Check if it's a numeric date like 8/20
                         const isSummer = SUMMER_MONTH_REGEX.test(dateStr);
                         const hasYear = YEAR_REGEX.test(dateStr);
                         
                         // We only promote SUMMER 2026 dates to the top level
                         if (isSummer) {
                             let finalDate = dateStr;
-                            if (!hasYear) finalDate += ", 2026";
+                            if (!hasYear) {
+                                // If it's a simple 8/20, we don't want to just append , 2026 if it looks weird
+                                // But for consistency in summary, we'll format it
+                                if (/^\d{1,2}\/\d{1,2}$/.test(dateStr)) {
+                                    const [m, d] = dateStr.split('/');
+                                    const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"];
+                                    finalDate = `${monthNames[parseInt(m)]} ${d}, 2026`;
+                                } else {
+                                    finalDate += ", 2026";
+                                }
+                            }
                             allValidSessions.push(finalDate);
                         }
                     });
