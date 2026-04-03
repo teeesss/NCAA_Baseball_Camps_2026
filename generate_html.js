@@ -275,7 +275,7 @@ const html = `
         .human-badge { 
             position: absolute; top: 12px; right: 12px; 
             background: rgba(34, 197, 94, 0.15); color: #4ade80; 
-            padding: 4px 10px; border-radius: 100px; font-size: 0.7rem; 
+            padding: 4px 7px; border-radius: 100px; font-size: 0.7rem; 
             font-weight: 800; border: 1px solid rgba(34, 197, 94, 0.3);
             display: flex; align-items: center; gap: 4px;
             backdrop-filter: blur(4px); z-index: 10;
@@ -324,8 +324,17 @@ const html = `
             text-transform: uppercase; 
             letter-spacing: 0.5px; 
             border: 1px solid rgba(139, 92, 246, 0.2); 
-            margin-left: 6px; 
             white-space: nowrap;
+        }
+        
+        .card-right-tags {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            margin-right: 48px; /* Give space for absolute human badge */
+        }
+        @media (max-width: 768px) {
+            .card-right-tags { margin-right: 0; }
         }
         
         .info-item { display: flex; align-items: center; gap: 10px; }
@@ -648,8 +657,10 @@ const html = `
                                   '<span class="badge badge-not">❓ Not Verified</span>'}
                             </div>
                         </div>
-                        <div class="division-tag ${tagClass}">${item.division === 'DI' ? 'Div I' : 'Div II'}</div>
-                        ${item.conference && item.conference !== 'Other' ? `<div class="conference-tag">${item.conference}</div>` : ''}
+                        <div class="card-right-tags">
+                            <div class="division-tag ${tagClass}">${item.division === 'DI' ? 'Div I' : 'Div II'}</div>
+                            ${item.conference && item.conference !== 'Other' ? `<div class="conference-tag">${item.conference}</div>` : ''}
+                        </div>
                     </div>
                     
                     <div class="info-stack" onclick="openDetails(event, this)" style="cursor: pointer;">
