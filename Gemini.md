@@ -1,0 +1,74 @@
+# Project Context & Rules - NCAA Division I Baseball Camps 2026
+
+## Global Project Rules
+- **Aesthetics First**: The web application `index.html` must look premium. Use modern typography (Inter, Outfit), vibrant colors, and smooth animations.
+- **Accuracy**: All data must be verified from official athletics sources. If no data exists, clearly state "TBA / No information posted".
+- **URL Completeness**: 100% of programs must have a valid camp registration URL or athletic department baseball URL, even if specific camp dates are noted as TBA.
+- **URL Verification**: Links must be verified to exist and load without errors.
+- **Fidelity to Target**: Support over 300 NCAA Division I baseball programs and all Division II programs.
+- **Microsoft Word Export**: The data must be exportable to a Word document using the standard table format provided in the raw files.
+- **No Placeholders**: Do not use placeholder content. Use real camp information or a clear "TBA" status.
+- **Coach / POC Data**: Each school MUST have both a Head Coach / POC name AND an email address whenever possible. If found separately, they must be merged/concatenated, never overwritten.
+- **Source URL Fidelity**: The "Visit Site" link in the final UI MUST match the exact URL where camp data was extracted. This metadata should be captured during extraction and saved in the JSON database.
+- **Blacklist Management**: Maintain a central `blacklist.json` file containing all junk, third-party, and irrelevant domains. All extraction scripts MUST load this file dynamically to ensure filtering consistency.
+- **Feedback Loop**: The UI must include a "Report Error" contact form that sends feedback to 'rayjonesy@gmail.com'.
+- **Verified Data Preservation**: High-fidelity, manually verified data (such as the Arkansas registration forms) MUST be saved as separate JSON files in the `verified/` directory. The automated extraction script MUST explicitly skip any school that possesses verified flags (`isVerified: true`, `isChecked: true`, `scriptVersion >= 5`), to ensure verified data is never accidentally overridden.
+- **Extraction Protocol (IMMUTABLE)**: The extraction engine MUST follow the **V6 Ultra-Fidelity** standard as defined in [EXTRACTION_ENGINE.md](file:///x:/NCAA-DivisonI-Baseball-Camps-2026/EXTRACTION_ENGINE.md).
+    - **NEVER** simplify the 6-link sub-crawl depth.
+    - **NEVER** change or remove the logging icons (★, ⭐, ↳, ✓, 📋, 🎯).
+    - **ALWAYS** perform a bidirectional contamination check to prevent Regional/Rival school overlap.
+
+## Current Knowledge
+- The initial goal was for DI baseball camp data, but it has been expanded to include all 300+ NCAA DII programs.
+- Total programs in database: 559.
+- Most D1/D2 programs have not yet posted their summer/fall 2026 camp dates as of April 2026.
+- Raw data is being compiled from official athletics websites (`[school]athletics.com` or `ryzer.com`).
+- The directory will be hosted at `https://bmwseals.com/Baseball_Camps_2026/`.
+
+## Lessons Learned
+- **Deduplication**: When merging data, unique hashing for university names is essential to prevent double-counting.
+- **Parsing**: Standardizing Markdown table parsing is key to importing batch-collected data.
+- **Word Formatting**: Consistent Calibri/Arial Size 11 text is expected for the Word document.
+- **UI Scalability**: As the dataset grew (550+ entries), a tabbed/filtered interface became necessary for premium usability.
+- **FTP Path Logic**: Live server paths often diverge from documentation; listing directories with `curl` is the most reliable verification method.
+- **Strict String Matching**: ALWAYS use strict equality (`===`) or exact regex boundaries when mapping data properties like Coach Names based on University string matching. A lazy `.includes('Alabama')` will globally overwrite specific auxiliary branches ('Alabama A&M', 'South Alabama', etc.) resulting in cross-contamination bugs.
+- **Division Overrides**: The user's specific constraints regarding NCAA division taxonomy (e.g. enforcing SWAC schools like Alabama A&M / Alabama State as DII) overwrite technical real-world structural facts. Honor the user's mapping rule directly over Wikipedia classifications.
+- **Broad Regex Scope**: Don't rely exclusively on text-based dates (`(?:Jun|Jul|Aug)`). Schedule tables predominantly use raw numerical structures (`[5-8]/\d{1,2}/\d{2,4}`). Both must be targeted.
+- **Nested Crawler Traversal**: High-tier or granular data (like "Elite Camp" prices vs "Youth" tiers) are almost never on the domain's root html path; they're nested under `/register` or `/details`. Scraping `document.body.innerText` strictly onto the first matched URL skips primary features. A micro-crawler identifying nested href loops vastly improves depth.
+- **Dataset Versioning**: Introduce object tracking tags like `scriptVersion: 2` at the object JSON level to ensure future processing loops can gracefully filter which objects have passed the latest criteria.
+- **Data UI Rendering**: When aggregating massive permutations of data (like multi-week camps), standard card DOM rendering breaks typography bounding boxes. To fix: strictly truncate `>2` array indices visually on the front-face, and push the full list cleanly mapped into an `<ul>` element within the `.drawer` expandable modal.
+- **Preserve Human Contact Logic**: Whenever scripts successfully extract an `email` via regex, NEVER carelessly overwrite the pre-existing `contact` field! Safely concatenate strings (`Coach Name | email@edu`) so the human data is preserved.
+- **Mascot-Based Search Queries**: NEVER use logoDomain fragments (e.g. "uasys", "ua") in search queries — they produce garbage results. Always use proper mascot/nickname via `mascot_lookup.js` (e.g. "Arkansas Razorbacks baseball camp 2026"). 559/559 mascots are mapped.
+- **University Alias System**: To prevent false-rejections, implemented a dynamic alias generator (UTM, Tenn Martin, etc.) that validates candidate pages even if they don't use the full official university name.
+- **Watchdog Stability**: Implemented a 45s inactivity monitor (`watchdog.js`) that auto-restarts the scraper if Puppeteer hangs. Combined with a 90s per-school timeout and internal log "pulses" during long sub-crawls, this ensures continuous 100% processing of the 559-school database.
+- **Resumption Logic**: To prevent redundant processing after a watchdog restart, the scraper MUST mark a school as `isChecked: true` and update `scriptVersion` regardless of the outcome (Success, No Data, Error, or Timeout). This ensures the `toProcess` list strictly shrinks over time.
+- **Substring Contamination Safety**: When checking if a page belongs to the wrong school, ALWAYS use **case-insensitive** bidirectional substring checks. "Arkansas" contains "Kansas" (case-insensitive), so Kansas must be skipped in contamination checks.
+- **Sub-crawl Deduplication**: Optimized recursive crawling to skip any URLs already in search-result queue, preventing loops (-20% processing time).
+- **All-Month Detection**: Restricted date parsing to `Jun|Jul|Aug` was a critical failure. V6 scans all 12 months to capture year-round sessions.
+- **Module Scope Stabilization**: Explicit function exposure is mandatory in complex modular environments to prevent ReferenceErrors during remote imports.
+- **Source-to-JSON Pipeline**: Every piece of data must be associated with the `sourceUrl` it was found on to ensure button fidelity.
+- **Third-Party Showcases (Blacklist)**: Sites like `activekids.com` and `collegescoutingbureau.net` frequently match school name keywords but are not official camps. Implement domain blacklisting and link prioritization (`ryzer.com`, `.edu`) to maintain data integrity.
+- **Conference/Cost Filtering**: Massive datasets (559 schools) require multi-dimensional filtering to be usable. Harvesting unique conferences and implementing numeric cost parsing at the UI layer is essential for premium UX.
+- **DII Scarcity Awareness**: Acknowledge that a subset of NCAA DII programs may not host independent summer camps or may only do so biennially. For these schools, an exhaustive multi-engine search resulting in "No Data" is a valid terminal state.
+- **Strict Contamination (Alabama vs Alabama State)**: Re-enforce strict substring boundaries. "Alabama" must not match "Alabama State" unless explicitly intended. Verified data for one must never leak to the other based on sloppy `.includes()` checks.
+- **Dual Contact Fields**: Ensure the database schema supports both `contact` (Name) and `email`. If only one is found, keep the existing other one. If both found, present both.
+- **Team Camp & Legacy Date Filtering**: High prices (e.g., $1000+) are sometimes legitimate for extensive individual camps. Instead of capping costs, strict exclusion logic now drops the entire page from extraction if the text explicitly states "Team Camp" (without also saying "individual") or heavily references "2025" without containing "2026". This prevents stale legacy pages from feeding false pricing data into the database.
+- **Audit Status Persistence**: Implemented `auditStatus` tracking in the master dataset. Records are now intelligently re-queued if they previously resulted in `URL_MISMATCH`, `NO_DATA`, or contained "Thin Results" (TBA dates/costs). This prevents the "infinite loop" of re-checking successful yet incomplete records without a search fallback.
+- **Automated Deep Search Fallback**: Flagship programs with elusive portals now trigger a Phase 3 "Deep Search" (top 10 results + specific keywords) if standard validation and consensus search fail. This resolved discovery issues for major SEC and Big 12 programs.
+
+## Infrastructure
+- **Search**: The HTML directory must have a real-time reactive search by university, coach, or keyword.
+- **Expandable Cards**: Detailed information (What to bring, address, etc.) should be tucked into expandable UI elements.
+
+## Future Plans
+- Re-check programs in May/June 2026 for updated camp information.
+- Finalize the Word document for the user's offline reference.
+
+## Directory Structure
+To maintain a clean root folder, follow this standard structure for scripts and files:
+- **Root (`/`)**: Core active production files only (`camps_data.json`, `index.html`, `smart_extract.js`, `generate_html.js`, `deploy.js`, `quality_audit.js`, `watchdog.js`).
+- **`src/tests/`**: All debugging, experimental, verification, and module testing scripts (`test_*.js`, `verify_*.js`).
+- **`src/debug/`**: Execution outputs, isolated sandbox scripts (`debug_*.js`), and screenshot dumps from Chromium.
+- **`src/archives/`**: Deprecated scripts (e.g., `watchdog_v8.js`, `extract_camp_details_v7.js`), old iterations of extraction logic, and one-off injection macros (e.g., `inject_arkansas.js`).
+- **`verified/`**: Raw pristine JSON backups of perfectly human-verified subsets.
+- **`assets/`** & **`screenshots/`**: Visual assets, fetched team logos, etc.

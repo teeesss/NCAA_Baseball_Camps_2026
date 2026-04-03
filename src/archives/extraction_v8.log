@@ -1,0 +1,1076 @@
+=== V8 Extraction Started 2026-04-03T00:19:32.382Z ===
+[7:19:32 PM] 
+🚀 V8 Ultra-Fidelity Engine Starting. Target: 245 schools.
+[7:19:32 PM]    Database: 559 total | 282 verified | 156 with data
+[7:19:32 PM]    Filters: SUMMER ONLY (Jun/Jul/Aug) | Relaxed gating (baseball OR camp) | Coach-name queries validated
+[7:19:32 PM] 
+════════════════════════════════════════════════════════════
+[7:19:32 PM] [1/245] Processing: Yale
+[7:19:32 PM]    Coach: Brian Hamm | Contact raw: "Brian Hamm"
+[7:19:32 PM] ════════════════════════════════════════════════════════════
+[7:19:33 PM]    → Priority URL from DB: https://yalebulldogs.com
+[7:19:33 PM]    → [ENGINE] DDG (school slot 1/3)
+[7:19:33 PM]       ↳ [DDG] Yale Bulldogs baseball camps 2026
+[7:19:33 PM]       ✕ [DDG] 0 results for this query
+[7:19:35 PM]       ↳ [DDG] "Yale" baseball camps 2026
+[7:19:36 PM]       ✕ [DDG] 0 results for this query
+[7:19:37 PM]       ↳ [DDG] Brian Hamm baseball camp 2026
+[7:19:38 PM]       ✕ [DDG] 0 results for this query
+[7:19:39 PM]    → 6 candidates. Top 3:
+[7:19:39 PM]       ★ [ 70] https://www.yalebaseballcamps.com
+[7:19:39 PM]       ★ [ 65] https://www.hammbaseballcamp.com
+[7:19:39 PM]       ★ [ 60] https://yalebulldogs.com
+[7:19:39 PM] 
+   → Navigating [70]: https://www.yalebaseballcamps.com
+[7:19:39 PM]    → ✕ Error on https://www.yalebaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.yalebaseballcamps.com
+[7:19:39 PM] 
+   → Navigating [65]: https://www.hammbaseballcamp.com
+[7:19:39 PM]    → ✕ Error on https://www.hammbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.hammbaseballcamp.com
+[7:19:39 PM] 
+   → Navigating [60]: https://yalebulldogs.com
+[7:19:41 PM]    → ✅ VALIDATED for Yale (alias: "yale")
+[7:19:41 PM]    → Sub-crawling 6 pages...
+[7:19:42 PM]       ↳ https://yalebulldogs.com/#main-content
+[7:19:42 PM]       ↳ https://yalebulldogs.com/index.aspx
+[7:19:47 PM]       ↳ https://yalebulldogs.com/sports/baseball
+[7:19:48 PM]       ↳ https://yalebulldogs.com/sports/baseball/archives
+[7:19:48 PM]       ↳ https://yalebulldogs.com/sports/mens-basketball
+[7:19:49 PM]       ↳ https://yalebulldogs.com/sports/mens-basketball/archives
+[7:19:49 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:19:49 PM] 
+   → Navigating [50]: https://www.bulldogsbaseballcamps.com
+[7:19:49 PM]    → ✕ Error on https://www.bulldogsbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.bulldogsbaseballcamps.com
+[7:19:49 PM] 
+   → Navigating [40]: https://www.yalebaseball.com
+[7:19:49 PM]    → ✕ Error on https://www.yalebaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.yalebaseball.com
+[7:19:49 PM] 
+   → Navigating [35]: https://www.hammbaseball.com
+[7:19:49 PM]    → ✕ Error on https://www.hammbaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.hammbaseball.com
+[7:19:49 PM]    → ❌ No 2026 summer camp data found for Yale
+[7:19:49 PM]    → [DB_UPDATED] Saved.
+[7:19:49 PM] 
+════════════════════════════════════════════════════════════
+[7:19:49 PM] [2/245] Processing: Youngstown State
+[7:19:49 PM]    Coach: Trevor Charpie | Contact raw: "Trevor Charpie"
+[7:19:49 PM] ════════════════════════════════════════════════════════════
+[7:19:50 PM]    → Priority URL from DB: https://ysusports.com
+[7:19:50 PM]    → [ENGINE] Bing (school slot 2/3)
+[7:19:50 PM]       ↳ [Bing] Youngstown State Penguins baseball camps 2026
+[7:19:50 PM]       ✓ [Bing] 5 results
+[7:19:52 PM]       ↳ [Bing] "Youngstown State" baseball camps 2026
+[7:19:52 PM]       ✓ [Bing] 5 results
+[7:19:54 PM]       ↳ [Bing] Trevor Charpie baseball camp 2026
+[7:19:54 PM]       ✓ [Bing] 10 results
+[7:19:56 PM]    → 18 candidates. Top 3:
+[7:19:56 PM]       ★ [ 70] https://www.youngstownstatebaseballcamps.com
+[7:19:56 PM]       ★ [ 65] https://www.charpiebaseballcamp.com
+[7:19:56 PM]       ★ [ 50] https://www.penguinsbaseballcamps.com
+[7:19:56 PM] 
+   → Navigating [70]: https://www.youngstownstatebaseballcamps.com
+[7:19:56 PM]    → ✕ Error on https://www.youngstownstatebaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.youngstownstatebaseballcamps.com
+[7:19:56 PM] 
+   → Navigating [65]: https://www.charpiebaseballcamp.com
+[7:19:56 PM]    → ✕ Error on https://www.charpiebaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.charpiebaseballcamp.com
+[7:19:56 PM] 
+   → Navigating [50]: https://www.penguinsbaseballcamps.com
+[7:19:58 PM]    → ✅ VALIDATED for Youngstown State (alias: "youngstown state")
+[7:19:58 PM]    → Sub-crawling 6 pages...
+[7:19:58 PM]       ⭐ https://www.penguinsbaseballcamps.com/#sitePageContent
+[7:19:59 PM]       ⭐ https://www.penguinsbaseballcamps.com/
+[7:19:59 PM]       ⭐ https://www.penguinsbaseballcamps.com/3B7E2654-A7D3-B4D1-32EE-30328AC1
+[7:20:00 PM]       ⭐ https://www.penguinsbaseballcamps.com/winter-prospect-camp.cfm
+[7:20:00 PM]       ⭐ https://www.penguinsbaseballcamps.com/about-us.cfm
+[7:20:00 PM]       ⭐ https://www.penguinsbaseballcamps.com/head-coach.cfm
+[7:20:00 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:20:00 PM] 
+   → Navigating [45]: https://www.youngstownbaseballcamps.com
+[7:20:00 PM]    → ✕ Error on https://www.youngstownbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.youngstownbaseballcamps.com
+[7:20:00 PM] 
+   → Navigating [40]: https://www.youngstownstatebaseball.com
+[7:20:01 PM]    → ✕ Error on https://www.youngstownstatebaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.youngstownstatebaseball.com
+[7:20:01 PM] 
+   → Navigating [35]: https://www.charpiebaseball.com
+[7:20:01 PM]    → ✕ Error on https://www.charpiebaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.charpiebaseball.com
+[7:20:01 PM] 
+   → Navigating [15]: https://www.youngstownbaseball.com
+[7:20:01 PM]    → ✕ Error on https://www.youngstownbaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.youngstownbaseball.com
+[7:20:01 PM] 
+   → Navigating [0]: https://ysusports.com
+[7:20:02 PM]    → ✅ VALIDATED for Youngstown State (alias: "youngstown state")
+[7:20:03 PM]    → Sub-crawling 6 pages...
+[7:20:03 PM]       ↳ https://ysusports.com/#main-content
+[7:20:04 PM]       ↳ https://ysusports.com/calendar
+[7:20:05 PM]       ↳ https://ysusports.com/sports/2022/4/27/ysu-penguins-mobile-app.aspx
+[7:20:06 PM]       ↳ https://ysusports.com/index.aspx
+[7:20:07 PM]       ↳ https://ysusports.com/sports/baseball
+[7:20:07 PM]       ↳ https://ysusports.com/sports/mens-basketball
+[7:20:07 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:20:07 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=1df2fe10a395977a4a5f097af3409b1d8021f4d41772bda0f8577bf1b92b157eJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=2e24bb43-2c61-68ac-28cc-ac732d036926&u=a1aHR0cHM6Ly93d3cucGVuZ3VpbnNiYXNlYmFsbGNhbXBzLmNvbS8&ntb=1
+[7:20:08 PM]    → ✅ VALIDATED for Youngstown State (alias: "youngstown state")
+[7:20:08 PM]    → Sub-crawling 6 pages...
+[7:20:08 PM]       ⭐ https://www.penguinsbaseballcamps.com/#sitePageContent
+[7:20:09 PM]       ⭐ https://www.penguinsbaseballcamps.com/
+[7:20:09 PM]       ⭐ https://www.penguinsbaseballcamps.com/3B7E2654-A7D3-B4D1-32EE-30328AC1
+[7:20:09 PM]       ⭐ https://www.penguinsbaseballcamps.com/winter-prospect-camp.cfm
+[7:20:10 PM]       ⭐ https://www.penguinsbaseballcamps.com/about-us.cfm
+[7:20:10 PM]       ⭐ https://www.penguinsbaseballcamps.com/head-coach.cfm
+[7:20:10 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:20:10 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=c722ee79020b05ef8e5c8967689f657f20283f19107e604a625970e26f42899eJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=2e24bb43-2c61-68ac-28cc-ac732d036926&u=a1aHR0cHM6Ly95c3VzcG9ydHMuY29tL3Nwb3J0cy9iYXNlYmFsbA&ntb=1
+[7:20:11 PM]    → ✅ VALIDATED for Youngstown State (alias: "youngstown state")
+[7:20:12 PM]    → Sub-crawling 6 pages...
+[7:20:12 PM]       ↳ https://www.ticketsmarter.com/youngstown-state-penguins?utm_source=ysu
+[7:20:13 PM]       ↳ https://ysusports.com/common/controls/adhandler.aspx?ad_id=32&target=h
+[7:20:14 PM]       ⭐ https://ysusports.com/sports/2022/4/24/ysu-hazing-prevention-and-educa
+[7:20:15 PM]       ↳ https://ysusports.com/calendar
+[7:20:15 PM]       ⭐ https://www.penguinscamps.com/
+[7:20:16 PM]       ⭐ http://www.penguinsbaseballcamps.com/index.cfm
+[7:20:16 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:20:16 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=35bd9e1bd82dcbcccf14bf55f58f9d5bb645184524af5bb96c7d7defd4f194abJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=2e24bb43-2c61-68ac-28cc-ac732d036926&u=a1aHR0cHM6Ly9yZWdpc3Rlci5yeXplci5jb20vY2FtcC5jZm0_aWQ9MzEwMDk5&ntb=1
+[7:20:17 PM]       ✕ School alias mismatch.
+[7:20:17 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=ee7d8dc06565ee6baa30c3e65e4fad7b01f5a05009b1527797ff9d2676386602JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=2e24bb43-2c61-68ac-28cc-ac732d036926&u=a1aHR0cHM6Ly93d3cucGVuZ3VpbnNjYW1wcy5jb20v&ntb=1
+[7:20:18 PM]       ✕ Contamination (Ohio). Skip.
+[7:20:18 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=a1310b7215bff09c07e7a2685f81db3fa1ac065deb02d8a284b81634112fc488JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=2e24bb43-2c61-68ac-28cc-ac732d036926&u=a1aHR0cHM6Ly95c3VzcG9ydHMuY29tLw&ntb=1
+[7:20:19 PM]    → ✅ VALIDATED for Youngstown State (alias: "youngstown state")
+[7:20:19 PM]    → Sub-crawling 6 pages...
+[7:20:19 PM]       ↳ https://www.ticketsmarter.com/youngstown-state-penguins?utm_source=ysu
+[7:20:20 PM]       ↳ https://ysusports.com/common/controls/adhandler.aspx?ad_id=32&target=h
+[7:20:21 PM]       ⭐ https://ysusports.com/sports/2022/4/24/ysu-hazing-prevention-and-educa
+[7:20:21 PM]       ↳ https://ysusports.com/calendar
+[7:20:21 PM]       ⭐ https://www.penguinscamps.com/
+[7:20:25 PM]       ↳ https://ysusports.com/common/controls/adhandler.aspx?ad_id=8&target=ht
+[7:20:25 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:20:25 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=616db870f775d5b6ba16bf79948ecbcdfddc58c190614267df3bed407a9bbcb6JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=2e24bb43-2c61-68ac-28cc-ac732d036926&u=a1aHR0cHM6Ly93d3cubnNyLWluYy5jb20vc3BvcnQvYmFzZWJhbGwvY29sbGVnZS1iYXNlYmFsbC1jYW1wcy5waHA&ntb=1
+[7:20:26 PM]    → ✅ VALIDATED for Youngstown State (alias: "youngstown state")
+[7:20:27 PM]    → Sub-crawling 6 pages...
+[7:20:27 PM]       ⭐ https://www.nsr-inc.com/sport/baseball/college-baseball-camps.php
+[7:20:28 PM]       ⭐ https://www.nsr-inc.com/how-to-get-recruited?lead_origin=baseball%20Ev
+[7:20:28 PM]       ⭐ https://www.nsr-inc.com/how-to-get-recruited?lead_origin=baseball%20Ca
+[7:20:29 PM]       ⭐ https://www.acubaseballcamps.com/
+[7:20:30 PM]       ⭐ https://www.twosevenbaseballcamps.com/
+[7:20:31 PM]       ⭐ https://www.playnsports.com/event/baseball-summer-prospect-showcase-2/
+[7:20:31 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:20:31 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=3e577cfa822426eccd6931dcd8323d4db3f24108211911fa2c4156f3a8ce0d83JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=2e24bb43-2c61-68ac-28cc-ac732d036926&u=a1aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3lzdWJhc2ViYWxsL3Bvc3RzL29mZmljaWFsbHktdW5kZXJ3YXlzdXBlci1wdW1wZWQtdG8tYmUtaW5zaWRlLXRoZS13YXR0cy1hcy13ZS1iZWdpbi1vdXItMjAyNi1jYW1wLzEzOTk0Njg4NDE5NjcxNTUv&ntb=1
+[7:20:32 PM]    → ✅ VALIDATED for Youngstown State (alias: "youngstown state")
+[7:20:32 PM]    → Sub-crawling 0 pages...
+[7:20:32 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:20:32 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=070b63af4f60ac009d869860b8e56c612034943fba5da51cb30bb0fb2c1163ffJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=2e24bb43-2c61-68ac-28cc-ac732d036926&u=a1aHR0cHM6Ly93d3cucGVuZ3VpbnNiYXNlYmFsbGNhbXBzLmNvbS9oZWFkLWNvYWNoLmNmbQ&ntb=1
+[7:20:33 PM]    → ✅ VALIDATED for Youngstown State (alias: "youngstown state")
+[7:20:33 PM]    → Sub-crawling 6 pages...
+[7:20:33 PM]       ⭐ https://www.penguinsbaseballcamps.com/head-coach.cfm#sitePageContent
+[7:20:34 PM]       ⭐ https://www.penguinsbaseballcamps.com/
+[7:20:34 PM]       ⭐ https://www.penguinsbaseballcamps.com/3B7E2654-A7D3-B4D1-32EE-30328AC1
+[7:20:35 PM]       ⭐ https://www.penguinsbaseballcamps.com/winter-prospect-camp.cfm
+[7:20:35 PM]       ⭐ https://www.penguinsbaseballcamps.com/about-us.cfm
+[7:20:35 PM]       ⭐ https://www.penguinsbaseballcamps.com/head-coach.cfm
+[7:20:35 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:20:35 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=331f1b1b68d545e86a376cb9917f578ff23ccd23d3922a29ebf8e0bc43efa946JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=2e24bb43-2c61-68ac-28cc-ac732d036926&u=a1aHR0cHM6Ly94LmNvbS9UcmV2Y2hhcnA&ntb=1
+[7:20:36 PM]       ✕ School alias mismatch.
+[7:20:36 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=1d7c0ee2700dbab8bb4fb29b27cfb052e86569664c03919ada516c2e1ebb6c0cJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=2e24bb43-2c61-68ac-28cc-ac732d036926&u=a1aHR0cHM6Ly95c3VzcG9ydHMuY29tL3N0YWZmLWRpcmVjdG9yeS90cmV2b3ItY2hhcnBpZS80NzU&ntb=1
+[7:20:37 PM]    → ✅ VALIDATED for Youngstown State (alias: "youngstown state")
+[7:20:37 PM]    → Sub-crawling 5 pages...
+[7:20:37 PM]       ⭐ https://ysusports.com/staff-directory/trevor-charpie/475#events
+[7:20:38 PM]       ↳ https://www.ticketsmarter.com/youngstown-state-penguins?utm_source=ysu
+[7:20:38 PM]       ⭐ https://ysusports.com/sports/2022/4/24/ysu-hazing-prevention-and-educa
+[7:20:39 PM]       ↳ https://ysusports.com/calendar
+[7:20:39 PM]       ⭐ https://www.penguinscamps.com/
+[7:20:39 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:20:39 PM]    → 📧 Saved email (no camp data): tcharpie@ysu.edu
+[7:20:39 PM]    → ❌ No 2026 summer camp data found for Youngstown State
+[7:20:39 PM]    → [DB_UPDATED] Saved.
+[7:20:39 PM] 
+════════════════════════════════════════════════════════════
+[7:20:39 PM] [3/245] Processing: Albany State University
+[7:20:39 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:20:39 PM] ════════════════════════════════════════════════════════════
+[7:20:40 PM]    → Priority URL from DB: https://www.asurams.edu
+[7:20:40 PM]    → [ENGINE] Yahoo (school slot 3/3)
+[7:20:40 PM]       ↳ [Yahoo] Albany State University Golden Rams baseball camps 2026
+[7:20:41 PM]       ✓ [Yahoo] 7 results
+[7:20:43 PM]       ↳ [Yahoo] "Albany State University" baseball camps 2026
+[7:20:43 PM]       ✓ [Yahoo] 7 results
+[7:20:45 PM]       ↳ [Yahoo] Head Coach baseball camp 2026
+[7:20:46 PM]       ✓ [Yahoo] 7 results
+[7:20:47 PM]    → 18 candidates. Top 3:
+[7:20:47 PM]       ★ [165] https://www.active.com/orange-ca/baseball/baseball-camps/west-coast-head-coach-camp-ix-orange-ca-2026
+[7:20:47 PM]       ★ [105] https://showballbaseball.com/head-coach-baseball-showcase-camps-florida/
+[7:20:47 PM]       ★ [105] https://www.headfirstshowcase.com/confirmed-coaches/honor-roll-camp-coaches-baseball/
+[7:20:47 PM] 
+   → Navigating [165]: https://www.active.com/orange-ca/baseball/baseball-camps/west-coast-head-coach-camp-ix-orange-ca-2026
+[7:20:48 PM]       ✕ School alias mismatch.
+[7:20:48 PM] 
+   → Navigating [105]: https://showballbaseball.com/head-coach-baseball-showcase-camps-florida/
+[7:20:51 PM]       ✕ School alias mismatch.
+[7:20:51 PM] 
+   → Navigating [105]: https://www.headfirstshowcase.com/confirmed-coaches/honor-roll-camp-coaches-baseball/
+[7:20:52 PM]       ✕ School alias mismatch.
+[7:20:52 PM] 
+   → Navigating [90]: https://register.ryzer.com/camp.cfm?id=294665
+[7:20:53 PM]    → ✅ VALIDATED for Albany State University (alias: "albany state university")
+[7:20:53 PM]    → Sub-crawling 3 pages...
+[7:20:54 PM]       ⭐ https://www.hemmingsbaseball.com/index.cfm#B437D1BC-FDCF-5F2A-4C04-B18
+[7:20:54 PM]       ⭐ https://register.ryzer.com/terms/
+[7:20:55 PM]       ⭐ https://register.ryzer.com/privacy/
+[7:20:55 PM]        📋 [Tiers] 2 entries. Sample: "Scot Hemmings Baseball Camp" (June 20th) | "View More Events by Scot Hemmings Baseball Camp" (Jun 20)
+[7:20:55 PM]    → 🎯 SUCCESS — 2 tiers. Cost: TBA | Dates: June 20th, Jun 20, 2025 | Jun 20, 2025
+[7:20:55 PM]    → [DB_UPDATED] Saved.
+[7:20:55 PM] 
+════════════════════════════════════════════════════════════
+[7:20:55 PM] [4/245] Processing: American International College
+[7:20:55 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:20:55 PM] ════════════════════════════════════════════════════════════
+[7:20:55 PM]    → Priority URL from DB: https://www.aic.edu
+[7:20:55 PM]    → [ENGINE] DDG (school slot 1/3)
+[7:20:55 PM]       ↳ [DDG] American International College Yellow Jackets baseball camps 2026
+[7:20:56 PM]       ✕ [DDG] 0 results for this query
+[7:20:58 PM]       ↳ [DDG] "American International College" baseball camps 2026
+[7:20:59 PM]       ✕ [DDG] 0 results for this query
+[7:21:00 PM]       ↳ [DDG] Head Coach baseball camp 2026
+[7:21:01 PM]       ✕ [DDG] 0 results for this query
+[7:21:03 PM]    → 6 candidates. Top 3:
+[7:21:03 PM]       ★ [ 70] https://www.americaninternationalcollegebaseballcamps.com
+[7:21:03 PM]       ★ [ 65] https://www.coachbaseballcamp.com
+[7:21:03 PM]       ★ [ 50] https://www.yellowjacketsbaseballcamps.com
+[7:21:03 PM] 
+   → Navigating [70]: https://www.americaninternationalcollegebaseballcamps.com
+[7:21:03 PM]    → ✕ Error on https://www.americaninternationalcollegebaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.americaninternationalcollegebaseballca
+[7:21:03 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:21:03 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:21:03 PM] 
+   → Navigating [50]: https://www.yellowjacketsbaseballcamps.com
+[7:21:03 PM]    → ✕ Error on https://www.yellowjacketsbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.yellowjacketsbaseballcamps.com
+[7:21:03 PM] 
+   → Navigating [40]: https://www.americaninternationalcollegebaseball.com
+[7:21:03 PM]    → ✕ Error on https://www.americaninternationalcollegebaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.americaninternationalcollegebaseball.c
+[7:21:03 PM] 
+   → Navigating [35]: https://www.coachbaseball.com
+[7:21:04 PM]       ✕ School alias mismatch.
+[7:21:04 PM] 
+   → Navigating [10]: https://www.aic.edu
+[7:21:08 PM]    → ✅ VALIDATED for American International College (alias: "american international college")
+[7:21:08 PM]    → Sub-crawling 6 pages...
+[7:21:10 PM]       ⭐ https://www.aic.edu/#
+[7:21:11 PM]       ⭐ https://www.aic.edu/admissions/
+[7:21:13 PM]       ⭐ https://www.aic.edu/student-life/
+[7:21:14 PM]       ⭐ https://www.aic.edu/current-students/
+[7:21:16 PM]       ⭐ https://www.aic.edu/alumni/
+[7:21:17 PM]       ⭐ https://www.aic.edu/parents/
+[7:21:17 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:21:17 PM]    → ❌ No 2026 summer camp data found for American International College
+[7:21:18 PM]    → [DB_UPDATED] Saved.
+[7:21:18 PM] 
+════════════════════════════════════════════════════════════
+[7:21:18 PM] [5/245] Processing: Anderson University – South Carolina
+[7:21:18 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:21:18 PM] ════════════════════════════════════════════════════════════
+[7:21:18 PM]    → [ENGINE] Bing (school slot 2/3)
+[7:21:18 PM]       ↳ [Bing] Anderson University – South Carolina Trojans baseball camps 2026
+[7:21:18 PM]       ✓ [Bing] 10 results
+[7:21:20 PM]       ↳ [Bing] "Anderson University – South Carolina" baseball camps 2026
+[7:21:20 PM]       ✓ [Bing] 10 results
+[7:21:21 PM]       ↳ [Bing] Head Coach baseball camp 2026
+[7:21:22 PM]       ✓ [Bing] 10 results
+[7:21:23 PM]    → 18 candidates. Top 3:
+[7:21:23 PM]       ★ [ 65] https://www.coachbaseballcamp.com
+[7:21:23 PM]       ★ [ 50] https://www.trojansbaseballcamps.com
+[7:21:23 PM]       • [ 35] https://www.coachbaseball.com
+[7:21:23 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:21:24 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:21:24 PM] 
+   → Navigating [50]: https://www.trojansbaseballcamps.com
+[7:21:24 PM]    → ✕ Error on https://www.trojansbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.trojansbaseballcamps.com
+[7:21:24 PM] 
+   → Navigating [35]: https://www.coachbaseball.com
+[7:21:24 PM]       ✕ School alias mismatch.
+[7:21:24 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=bb5c9a121dc2c22cf6f50a16d360b4015b6982cdce4a69a4bb1d78250a33611eJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=2e24bb43-2c61-68ac-28cc-ac732d036926&u=a1aHR0cHM6Ly9hdXRyb2phbnMuY29tLw&ntb=1
+[7:21:26 PM]    → ✅ VALIDATED for Anderson University – South Carolina (alias: "trojans")
+[7:21:26 PM]    → Sub-crawling 5 pages...
+[7:21:29 PM]       ⭐ https://andersonuniversity.edu/auevent/au-vip-golf-tournament-2/
+[7:21:30 PM]       ⭐ https://andersonuniversity.ecampus.com/merch-results?nav=1&cat1=Colleg
+[7:21:30 PM]       ⭐ https://www.aucamps.com/
+[7:21:30 PM]       ⭐ https://autrojans.com/common/controls/adhandler.aspx?ad_id=8&target=ht
+[7:21:31 PM]       ↳ https://autrojans.com/#events
+[7:21:31 PM]        📋 [Tiers] 11 entries. Sample: "Football Camp" (Jul 14–15) | "Soccer Camp" (Jul 14)
+[7:21:31 PM]    → 🎯 SUCCESS — 11 tiers. Cost: TBA | Dates: Jul 14–15, Jul 14, Jul 15, Jul 16 | Jul 14, Jul 15, Jul 16, 
+[7:21:31 PM]    → [DB_UPDATED] Saved.
+[7:21:31 PM] 
+════════════════════════════════════════════════════════════
+[7:21:31 PM] [6/245] Processing: Angelo State University
+[7:21:31 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:21:31 PM] ════════════════════════════════════════════════════════════
+[7:21:31 PM]    → Priority URL from DB: https://www.angelo.edu
+[7:21:31 PM]    → [ENGINE] Yahoo (school slot 3/3)
+[7:21:31 PM]       ↳ [Yahoo] Angelo State University Rams baseball camps 2026
+[7:21:32 PM]       ✓ [Yahoo] 7 results
+[7:21:34 PM]       ↳ [Yahoo] "Angelo State University" baseball camps 2026
+[7:21:34 PM]       ✓ [Yahoo] 7 results
+[7:21:36 PM]       ↳ [Yahoo] Head Coach baseball camp 2026
+[7:21:37 PM]       ✓ [Yahoo] 7 results
+[7:21:39 PM]    → 18 candidates. Top 3:
+[7:21:39 PM]       ★ [165] https://www.active.com/orange-ca/baseball/baseball-camps/west-coast-head-coach-camp-ix-orange-ca-2026
+[7:21:39 PM]       ★ [105] https://showballbaseball.com/head-coach-baseball-showcase-camps-florida/
+[7:21:39 PM]       ★ [105] https://www.headfirstshowcase.com/confirmed-coaches/honor-roll-camp-coaches-baseball/
+[7:21:39 PM] 
+   → Navigating [165]: https://www.active.com/orange-ca/baseball/baseball-camps/west-coast-head-coach-camp-ix-orange-ca-2026
+[7:21:40 PM]    → ✅ VALIDATED for Angelo State University (alias: "rams")
+[7:21:40 PM]    → Sub-crawling 6 pages...
+[7:21:40 PM]       ↳ https://www.active.com/
+[7:21:41 PM]       ↳ https://www.active.com/#
+[7:21:41 PM]       ↳ https://www.active.com/running
+[7:21:42 PM]       ↳ https://www.active.com/running/couch-to-5k
+[7:21:42 PM]       ↳ https://www.active.com/running/5k
+[7:21:43 PM]       ↳ https://www.active.com/running/10k
+[7:21:43 PM]        📋 [Tiers] 3 entries. Sample: "Head Coach Academic Camp" (Jun 16 - 17) | "Head Coach Academic Camp" (Jul 09 - 10)
+[7:21:43 PM]    → 🎯 SUCCESS — 3 tiers. Cost: TBA | Dates: Jun 16 - 17, 2026, Jul 09 - 10, 2026 | Jul 09 - 10, 2026, Au
+[7:21:43 PM]    → [DB_UPDATED] Saved.
+[7:21:43 PM] 
+════════════════════════════════════════════════════════════
+[7:21:43 PM] [7/245] Processing: Arkansas Tech University
+[7:21:43 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:21:43 PM] ════════════════════════════════════════════════════════════
+[7:21:43 PM]    → Priority URL from DB: https://www.atu.edu
+[7:21:43 PM]    → [ENGINE] DDG (school slot 1/3)
+[7:21:43 PM]       ↳ [DDG] Arkansas Tech University Wonder Boys baseball camps 2026
+[7:21:44 PM]       ✕ [DDG] 0 results for this query
+[7:21:45 PM]       ↳ [DDG] "Arkansas Tech University" baseball camps 2026
+[7:21:46 PM]       ✕ [DDG] 0 results for this query
+[7:21:47 PM]       ↳ [DDG] Head Coach baseball camp 2026
+[7:21:48 PM]       ✕ [DDG] 0 results for this query
+[7:21:50 PM]    → 8 candidates. Top 3:
+[7:21:50 PM]       ★ [ 70] https://www.arkansastechuniversitybaseballcamps.com
+[7:21:50 PM]       ★ [ 65] https://www.coachbaseballcamp.com
+[7:21:50 PM]       ★ [ 50] https://www.wonderboysbaseballcamps.com
+[7:21:50 PM] 
+   → Navigating [70]: https://www.arkansastechuniversitybaseballcamps.com
+[7:21:50 PM]    → ✕ Error on https://www.arkansastechuniversitybaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.arkansastechuniversitybaseballcamps.co
+[7:21:50 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:21:50 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:21:50 PM] 
+   → Navigating [50]: https://www.wonderboysbaseballcamps.com
+[7:21:50 PM]    → ✕ Error on https://www.wonderboysbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.wonderboysbaseballcamps.com
+[7:21:50 PM] 
+   → Navigating [45]: https://www.arkansastechbaseballcamps.com
+[7:21:50 PM]    → ✕ Error on https://www.arkansastechbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.arkansastechbaseballcamps.com
+[7:21:50 PM] 
+   → Navigating [40]: https://www.arkansastechuniversitybaseball.com
+[7:21:50 PM]    → ✕ Error on https://www.arkansastechuniversitybaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.arkansastechuniversitybaseball.com
+[7:21:50 PM] 
+   → Navigating [35]: https://www.coachbaseball.com
+[7:21:51 PM]       ✕ School alias mismatch.
+[7:21:51 PM] 
+   → Navigating [15]: https://www.arkansastechbaseball.com
+[7:21:51 PM]    → ✕ Error on https://www.arkansastechbaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.arkansastechbaseball.com
+[7:21:51 PM] 
+   → Navigating [10]: https://www.atu.edu
+[7:21:52 PM]    → ✅ VALIDATED for Arkansas Tech University (alias: "arkansas tech university")
+[7:21:53 PM]    → Sub-crawling 6 pages...
+[7:21:53 PM]       ⭐ https://www.atu.edu/#content
+[7:21:53 PM]       ⭐ https://www.atu.edu/
+[7:21:53 PM]       ⭐ https://www.atu.edu/apply/index.php
+[7:21:56 PM]       ⭐ https://www.arkansastechnews.com/events/
+[7:21:56 PM]       ⭐ https://www.atu.edu/map/index.php
+[7:21:56 PM]       ⭐ https://www.atu.edu/professionalskills/
+[7:21:56 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:21:56 PM]    → 📧 Saved email (no camp data): urelations@atu.edu
+[7:21:56 PM]    → ❌ No 2026 summer camp data found for Arkansas Tech University
+[7:21:56 PM]    → [DB_UPDATED] Saved.
+[7:21:56 PM] 
+════════════════════════════════════════════════════════════
+[7:21:56 PM] [8/245] Processing: Ashland University
+[7:21:56 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:21:56 PM] ════════════════════════════════════════════════════════════
+[7:21:56 PM]    → Priority URL from DB: https://www.ashland.edu
+[7:21:56 PM]    → [ENGINE] Bing (school slot 2/3)
+[7:21:56 PM]       ↳ [Bing] Ashland University Eagles baseball camps 2026
+[7:21:57 PM]       ✓ [Bing] 10 results
+[7:21:58 PM]       ↳ [Bing] "Ashland University" baseball camps 2026
+[7:21:59 PM]       ✓ [Bing] 10 results
+[7:22:01 PM]       ↳ [Bing] Head Coach baseball camp 2026
+[7:22:01 PM]       ✓ [Bing] 10 results
+[7:22:03 PM]    → 18 candidates. Top 3:
+[7:22:03 PM]       ★ [ 70] https://www.ashlanduniversitybaseballcamps.com
+[7:22:03 PM]       ★ [ 65] https://www.coachbaseballcamp.com
+[7:22:03 PM]       ★ [ 50] https://www.eaglesbaseballcamps.com
+[7:22:03 PM] 
+   → Navigating [70]: https://www.ashlanduniversitybaseballcamps.com
+[7:22:03 PM]    → ✕ Error on https://www.ashlanduniversitybaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.ashlanduniversitybaseballcamps.com
+[7:22:03 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:22:03 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:22:03 PM] 
+   → Navigating [50]: https://www.eaglesbaseballcamps.com
+[7:22:03 PM]    → ✕ Error on https://www.eaglesbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.eaglesbaseballcamps.com
+[7:22:03 PM] 
+   → Navigating [45]: https://www.ashlandbaseballcamps.com
+[7:22:03 PM]    → ✕ Error on https://www.ashlandbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.ashlandbaseballcamps.com
+[7:22:03 PM] 
+   → Navigating [40]: https://www.ashlanduniversitybaseball.com
+[7:22:03 PM]    → ✕ Error on https://www.ashlanduniversitybaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.ashlanduniversitybaseball.com
+[7:22:03 PM] 
+   → Navigating [35]: https://www.coachbaseball.com
+[7:22:04 PM]       ✕ School alias mismatch.
+[7:22:04 PM] 
+   → Navigating [25]: https://www.ashland.edu
+[7:22:06 PM]    → ✅ VALIDATED for Ashland University (alias: "ashland university")
+[7:22:06 PM]    → Sub-crawling 6 pages...
+[7:22:06 PM]       ⭐ https://www.ashland.edu/#main-content
+[7:22:06 PM]       ⭐ https://www.ashland.edu/
+[7:22:07 PM]       ⭐ https://www.ashland.edu/community-visitors
+[7:22:07 PM]       ↳ https://www.ashland.edu/give
+[7:22:07 PM]       ⭐ https://www.ashland.edu/apply-ashland-university
+[7:22:08 PM]       ⭐ https://www.ashland.edu/admissions
+[7:22:08 PM]        📋 [Tiers] 4 entries. Sample: "Nursing Summer Camp - Afternoon Session" (July 10) | "Nursing Summer Camp" (July 9)
+[7:22:08 PM]    → 🎯 SUCCESS — 4 tiers. Cost: TBA | Dates: July 10, 2026 | July 9, 2026, July 9, 2026, July 10, 2026, J
+[7:22:08 PM]    → [DB_UPDATED] Saved.
+[7:22:08 PM] 
+════════════════════════════════════════════════════════════
+[7:22:08 PM] [9/245] Processing: Assumption University
+[7:22:08 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:22:08 PM] ════════════════════════════════════════════════════════════
+[7:22:08 PM]    → Priority URL from DB: https://www.assumption.edu
+[7:22:08 PM]    → [ENGINE] Yahoo (school slot 3/3)
+[7:22:08 PM]       ↳ [Yahoo] Assumption University Greyhounds baseball camps 2026
+[7:22:09 PM]       ✓ [Yahoo] 7 results
+[7:22:10 PM]       ↳ [Yahoo] "Assumption University" baseball camps 2026
+[7:22:11 PM]       ✓ [Yahoo] 7 results
+[7:22:12 PM]       ↳ [Yahoo] Head Coach baseball camp 2026
+[7:22:13 PM]       ✓ [Yahoo] 7 results
+[7:22:14 PM]    → 18 candidates. Top 3:
+[7:22:14 PM]       ★ [165] https://www.active.com/orange-ca/baseball/baseball-camps/west-coast-head-coach-camp-ix-orange-ca-2026
+[7:22:14 PM]       ★ [105] https://showballbaseball.com/head-coach-baseball-showcase-camps-florida/
+[7:22:14 PM]       ★ [105] https://www.headfirstshowcase.com/confirmed-coaches/honor-roll-camp-coaches-baseball/
+[7:22:14 PM] 
+   → Navigating [165]: https://www.active.com/orange-ca/baseball/baseball-camps/west-coast-head-coach-camp-ix-orange-ca-2026
+[7:22:16 PM]       ✕ School alias mismatch.
+[7:22:16 PM] 
+   → Navigating [105]: https://showballbaseball.com/head-coach-baseball-showcase-camps-florida/
+[7:22:17 PM]       ✕ School alias mismatch.
+[7:22:17 PM] 
+   → Navigating [105]: https://www.headfirstshowcase.com/confirmed-coaches/honor-roll-camp-coaches-baseball/
+[7:22:25 PM]       ✕ School alias mismatch.
+[7:22:25 PM] 
+   → Navigating [90]: https://assumptiongreyhounds.com/sports/baseball
+[7:22:26 PM]    → ✅ VALIDATED for Assumption University (alias: "assumption university")
+[7:22:26 PM]    → Sub-crawling 6 pages...
+[7:22:27 PM]       ↳ https://assumptiongreyhounds.com/sports/baseball#main-content
+[7:22:27 PM]       ↳ https://assumptiongreyhounds.com/index.aspx
+[7:22:27 PM]       ↳ https://assumptiongreyhounds.com/sports/baseball/archives
+[7:22:28 PM]       ↳ https://assumptiongreyhounds.com/sports/mbball
+[7:22:28 PM]       ↳ https://assumptiongreyhounds.com/sports/mens-basketball/archives
+[7:22:29 PM]       ↳ https://assumptiongreyhounds.com/sports/mens-cross-country
+[7:22:29 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:22:29 PM] 
+   → Navigating [90]: https://assumptiongreyhounds.com/sports/baseball/stats/2026/pdf
+[7:22:31 PM]    → ✅ VALIDATED for Assumption University (alias: "assumption university")
+[7:22:31 PM]    → Sub-crawling 6 pages...
+[7:22:31 PM]       ↳ https://assumptiongreyhounds.com/sports/baseball/stats/2026/pdf#main-c
+[7:22:31 PM]       ↳ https://assumptiongreyhounds.com/index.aspx
+[7:22:32 PM]       ↳ https://assumptiongreyhounds.com/sports/baseball
+[7:22:32 PM]       ↳ https://assumptiongreyhounds.com/sports/baseball/archives
+[7:22:33 PM]       ↳ https://assumptiongreyhounds.com/sports/mbball
+[7:22:33 PM]       ↳ https://assumptiongreyhounds.com/sports/mens-basketball/archives
+[7:22:33 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:22:33 PM] 
+   → Navigating [70]: https://www.nsr-inc.com/sport/baseball/college-baseball-camps.php
+[7:22:35 PM]    → ✅ VALIDATED for Assumption University (alias: "assumption university")
+[7:22:35 PM]    → Sub-crawling 6 pages...
+[7:22:36 PM]       ⭐ https://www.nsr-inc.com/
+[7:22:37 PM]       ⭐ https://www.nsr-inc.com/sport/baseball/#about
+[7:22:38 PM]       ⭐ https://www.nsr-inc.com/sport/baseball/#tesimonials
+[7:22:39 PM]       ⭐ https://www.nsr-inc.com/sport/baseball/#coaches
+[7:22:39 PM]       ⭐ https://www.nsr-inc.com/partnerships.php
+[7:22:40 PM]       ⭐ https://www.nsr-inc.com/how-to-get-recruited?lead_origin=baseball%20Ev
+[7:22:40 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:22:40 PM] 
+   → Navigating [70]: https://www.headfirstshowcase.com/headfirst-showcase-camps/headfirst-baseball-showcase-camps/
+[7:22:41 PM]       ✕ School alias mismatch.
+[7:22:41 PM] 
+   → Navigating [70]: https://www.ncsasports.org/baseball/camps
+[7:22:42 PM]       ✕ School alias mismatch.
+[7:22:42 PM] 
+   → Navigating [70]: https://www.assumptionuniversitybaseballcamps.com
+[7:22:42 PM]    → ✕ Error on https://www.assumptionuniversitybaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.assumptionuniversitybaseballcamps.com
+[7:22:42 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:22:43 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:22:43 PM] 
+   → Navigating [55]: https://assumptiongreyhounds.com/sports/baseball/schedule/2026
+[7:22:43 PM]    → ✅ VALIDATED for Assumption University (alias: "assumption university")
+[7:22:44 PM]    → Sub-crawling 6 pages...
+[7:22:44 PM]       ↳ https://assumptiongreyhounds.com/index.aspx
+[7:22:44 PM]       ↳ https://assumptiongreyhounds.com/sports/baseball
+[7:22:45 PM]       ↳ https://assumptiongreyhounds.com/sports/baseball/archives
+[7:22:45 PM]       ↳ https://assumptiongreyhounds.com/sports/mbball
+[7:22:46 PM]       ↳ https://assumptiongreyhounds.com/sports/mens-basketball/archives
+[7:22:46 PM]       ↳ https://assumptiongreyhounds.com/sports/mens-cross-country
+[7:22:46 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:22:46 PM] 
+   → Navigating [55]: https://assumptiongreyhounds.com/news/2026/2/12/baseball-announces-49-games-for-the-2026-regular-season.aspx
+[7:22:49 PM]    → ✅ VALIDATED for Assumption University (alias: "assumption university")
+[7:22:49 PM]    → Sub-crawling 6 pages...
+[7:22:49 PM]       ↳ https://assumptiongreyhounds.com/index.aspx
+[7:22:50 PM]       ↳ https://assumptiongreyhounds.com/sports/baseball
+[7:22:50 PM]       ↳ https://assumptiongreyhounds.com/sports/baseball/archives
+[7:22:51 PM]       ↳ https://assumptiongreyhounds.com/sports/mbball
+[7:22:51 PM]       ↳ https://assumptiongreyhounds.com/sports/mens-basketball/archives
+[7:22:52 PM]       ↳ https://assumptiongreyhounds.com/sports/mens-cross-country
+[7:22:52 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:22:52 PM] 
+   → Navigating [55]: https://northeast10.org/teamstats.aspx?path=baseball&year=2026&school=assumption
+[7:22:54 PM]    → ✅ VALIDATED for Assumption University (alias: "assumption university")
+[7:22:54 PM]    → Sub-crawling 6 pages...
+[7:22:55 PM]       ⭐ https://northeast10.org/teamstats.aspx?path=baseball&year=2026&school=
+[7:22:55 PM]       ↳ https://northeast10.org/
+[7:22:56 PM]       ↳ https://northeast10.org/index.aspx?path=baseball
+[7:22:56 PM]       ⭐ https://northeast10.org/calendar.aspx?path=baseball
+[7:22:56 PM]       ⭐ https://northeast10.org/standings.aspx?path=baseball
+[7:22:58 PM]       ⭐ https://northeast10.org/stats.aspx?path=baseball&year=2026
+[7:22:58 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:22:58 PM] 
+   → Navigating [50]: https://www.greyhoundsbaseballcamps.com
+[7:22:58 PM]    → ✕ Error on https://www.greyhoundsbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.greyhoundsbaseballcamps.com
+[7:22:58 PM] 
+   → Navigating [45]: https://www.assumptioncamps.com/
+[7:22:59 PM]    → ✅ VALIDATED for Assumption University (alias: "greyhounds")
+[7:22:59 PM]    → Sub-crawling 6 pages...
+[7:22:59 PM]       ⭐ https://www.assumptioncamps.com/#tf-home
+[7:23:00 PM]       ⭐ https://www.assumptioncamps.com/#tf-home
+[7:23:00 PM]       ⭐ https://www.assumptioncamps.com/#tf-registration
+[7:23:00 PM]       ⭐ https://www.assumptioncamps.com/#tf-registration
+[7:23:00 PM]       ⭐ https://www.assumptioncamps.com/#tf-registration
+[7:23:01 PM]       ↳ http://www.totalcamps.com/ASSUMPTIONWOMENSSOCCERCAMPS
+[7:23:01 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:23:01 PM] 
+   → Navigating [45]: https://www.assumptionbaseballcamps.com
+[7:23:01 PM]    → ✕ Error on https://www.assumptionbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.assumptionbaseballcamps.com
+[7:23:01 PM] 
+   → Navigating [40]: https://www.rocsolidbaseball.com/
+[7:23:02 PM]    → ✅ VALIDATED for Assumption University (alias: "assumption university")
+[7:23:02 PM]    → Sub-crawling 5 pages...
+[7:23:02 PM]       ⭐ https://www.rocsolidbaseball.com/#sitePageContent
+[7:23:03 PM]       ⭐ https://www.rocsolidbaseball.com/#
+[7:23:03 PM]       ⭐ https://www.rocsolidbaseball.com/contact-us.cfm
+[7:23:04 PM]       ⭐ https://www.rocsolidbaseball.com/upload-forms.cfm
+[7:23:04 PM]       ⭐ https://www.baseballcampsusa.com/
+[7:23:04 PM]        📋 [Tiers] 7 entries. Sample: "Spring Break Kids Camp" (06/20) | "SMU Elementary School Spring Break Camp" (07/20)
+[7:23:04 PM]    → 🎯 SUCCESS — 7 tiers. Cost: TBA | Dates: 06/20, 07/20, 07/20, 08/20 | 07/20, 08/20, 08/20 | 08/20 | 6
+[7:23:04 PM]    → [DB_UPDATED] Saved.
+[7:23:04 PM] 
+════════════════════════════════════════════════════════════
+[7:23:04 PM] [10/245] Processing: Auburn University – Montgomery
+[7:23:04 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:23:04 PM] ════════════════════════════════════════════════════════════
+[7:23:05 PM]    → [ENGINE] DDG (school slot 1/3)
+[7:23:05 PM]       ↳ [DDG] Auburn University – Montgomery Warhawks baseball camps 2026
+[7:23:05 PM]       ✕ [DDG] 0 results for this query
+[7:23:07 PM]       ↳ [DDG] "Auburn University – Montgomery" baseball camps 2026
+[7:23:08 PM]       ✕ [DDG] 0 results for this query
+[7:23:09 PM]       ↳ [DDG] Head Coach baseball camp 2026
+[7:23:10 PM]       ✕ [DDG] 0 results for this query
+[7:23:12 PM]    → 7 candidates. Top 3:
+[7:23:12 PM]       ★ [ 65] https://www.coachbaseballcamp.com
+[7:23:12 PM]       ★ [ 50] https://www.warhawksbaseballcamps.com
+[7:23:12 PM]       • [ 45] https://www.auburn–montgomerybaseballcamps.com
+[7:23:12 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:23:12 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:23:12 PM] 
+   → Navigating [50]: https://www.warhawksbaseballcamps.com
+[7:23:12 PM]    → ✕ Error on https://www.warhawksbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.warhawksbaseballcamps.com
+[7:23:12 PM] 
+   → Navigating [45]: https://www.auburn–montgomerybaseballcamps.com
+[7:23:12 PM]    → ✕ Error on https://www.auburn–montgomerybaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.auburn–montgomerybaseballcamps.com
+[7:23:12 PM] 
+   → Navigating [35]: https://www.coachbaseball.com
+[7:23:13 PM]       ✕ School alias mismatch.
+[7:23:13 PM] 
+   → Navigating [30]: https://www.auburnuniversitymontgomerybaseballcamps.com
+[7:23:14 PM]    → ✕ Error on https://www.auburnuniversitymontgomerybaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.auburnuniversitymontgomerybaseballcamp
+[7:23:14 PM] 
+   → Navigating [15]: https://www.auburn–montgomerybaseball.com
+[7:23:14 PM]    → ✕ Error on https://www.auburn–montgomerybaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.auburn–montgomerybaseball.com
+[7:23:14 PM] 
+   → Navigating [0]: https://www.auburnuniversitymontgomerybaseball.com
+[7:23:14 PM]    → ✕ Error on https://www.auburnuniversitymontgomerybaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.auburnuniversitymontgomerybaseball.com
+[7:23:14 PM]    → ❌ No 2026 summer camp data found for Auburn University – Montgomery
+[7:23:14 PM]    → [DB_UPDATED] Saved.
+[7:23:14 PM] 
+[SYSTEM] Periodic browser restart at school 10/245...
+[7:23:16 PM] 
+════════════════════════════════════════════════════════════
+[7:23:16 PM] [11/245] Processing: Augusta University
+[7:23:16 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:23:16 PM] ════════════════════════════════════════════════════════════
+[7:23:17 PM]    → Priority URL from DB: https://www.augusta.edu
+[7:23:17 PM]    → [ENGINE] Bing (school slot 2/3)
+[7:23:17 PM]       ↳ [Bing] Augusta University Jaguars baseball camps 2026
+[7:23:17 PM]       ✓ [Bing] 6 results
+[7:23:19 PM]       ↳ [Bing] "Augusta University" baseball camps 2026
+[7:23:19 PM]       ✓ [Bing] 5 results
+[7:23:21 PM]       ↳ [Bing] Head Coach baseball camp 2026
+[7:23:21 PM]       ✓ [Bing] 10 results
+[7:23:23 PM]    → 18 candidates. Top 3:
+[7:23:23 PM]       ★ [ 70] https://www.augustauniversitybaseballcamps.com
+[7:23:23 PM]       ★ [ 65] https://www.coachbaseballcamp.com
+[7:23:23 PM]       ★ [ 50] https://www.jaguarsbaseballcamps.com
+[7:23:23 PM] 
+   → Navigating [70]: https://www.augustauniversitybaseballcamps.com
+[7:23:23 PM]    → ✕ Error on https://www.augustauniversitybaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.augustauniversitybaseballcamps.com
+[7:23:23 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:23:23 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:23:23 PM] 
+   → Navigating [50]: https://www.jaguarsbaseballcamps.com
+[7:23:23 PM]    → ✕ Error on https://www.jaguarsbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.jaguarsbaseballcamps.com
+[7:23:23 PM] 
+   → Navigating [45]: https://www.augustabaseballcamps.com
+[7:23:23 PM]    → ✕ Error on https://www.augustabaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.augustabaseballcamps.com
+[7:23:23 PM] 
+   → Navigating [40]: https://www.augustauniversitybaseball.com
+[7:23:23 PM]    → ✕ Error on https://www.augustauniversitybaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.augustauniversitybaseball.com
+[7:23:23 PM] 
+   → Navigating [35]: https://www.coachbaseball.com
+[7:23:24 PM]       ✕ School alias mismatch.
+[7:23:24 PM] 
+   → Navigating [25]: https://www.augusta.edu
+[7:23:26 PM]    → ✅ VALIDATED for Augusta University (alias: "augusta university")
+[7:23:26 PM]    → Sub-crawling 6 pages...
+[7:23:26 PM]       ⭐ https://www.augusta.edu/#main
+[7:23:27 PM]       ⭐ https://www.augusta.edu/privacy.php
+[7:23:27 PM]       ⭐ https://www.augusta.edu/#top
+[7:23:28 PM]       ⭐ https://www.augusta.edu/admissions/apply.php
+[7:23:28 PM]       ⭐ https://www.augusta.edu/giving/
+[7:23:28 PM]       ⭐ https://www.augusta.edu/currentstudents.php
+[7:23:29 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:23:29 PM] 
+   → Navigating [15]: https://www.augustabaseball.com
+[7:23:29 PM]    → ✕ Error on https://www.augustabaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.augustabaseball.com
+[7:23:29 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=b9328aeae218e71ec79b924047dae0a0deab580095f7ab30b2aa724b67bb910dJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=0e687503-922a-63c0-180a-623393dc6244&u=a1aHR0cHM6Ly9hdWd1c3RhamFncy5jb20vc3BvcnRzL2Jhc2ViYWxs&ntb=1
+[7:23:29 PM]       ✕ School alias mismatch.
+[7:23:29 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=fee5aae56b4d7b53af111040b8929a766a61a7c8ab13a51ddaf8a3b45d87d264JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=0e687503-922a-63c0-180a-623393dc6244&u=a1aHR0cHM6Ly93d3cubmNzYXNwb3J0cy5vcmcvYmFzZWJhbGwvY2FtcHM&ntb=1
+[7:23:30 PM]       ✕ School alias mismatch.
+[7:23:30 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=4e47cb30aeca1cd712ee48f3fd4ef0afc260306cd3f048c8cc54d71203fcbfcfJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=0e687503-922a-63c0-180a-623393dc6244&u=a1aHR0cHM6Ly93d3cuYXVndXN0YWNocm9uaWNsZS5jb20vcGljdHVyZS1nYWxsZXJ5L3Nwb3J0cy95b3V0aC8yMDI1LzA2LzA1L2F1Z3VzdGEtYmFzZWJhbGwtY2FtcC1yZXR1cm5zLXRvLWF1Z3VzdGEtdW5pdmVyaXN0eS84NDA0OTMxMDAwNy8&ntb=1
+[7:23:32 PM]    → ✅ VALIDATED for Augusta University (alias: "augusta")
+[7:23:32 PM]    → Sub-crawling 0 pages...
+[7:23:32 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:23:32 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=ab65cbe30e50d737111e67a50134e21d65e04951eb3a97e072fb0b2ac2b15613JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=0e687503-922a-63c0-180a-623393dc6244&u=a1aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL0dyZWVuSmFja2V0c0Jhc2ViYWxsLw&ntb=1
+[7:23:33 PM]    → ✅ VALIDATED for Augusta University (alias: "augusta")
+[7:23:33 PM]    → Sub-crawling 0 pages...
+[7:23:33 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:23:33 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=dcc0f5f13dca45fccb27466bfa953e5310c09143665bd1e5d706e5de40456de8JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=0e687503-922a-63c0-180a-623393dc6244&u=a1aHR0cHM6Ly9mbG9yaWRhcHJvc3BlY3RiYXNlYmFsbC5jb20v&ntb=1
+[7:23:34 PM]       ✕ School alias mismatch.
+[7:23:34 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=eb0c406316e931adb17da5803baf881a645fce82707a8c4b4fd3c03ce02eab74JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=0e687503-922a-63c0-180a-623393dc6244&u=a1aHR0cHM6Ly93d3cuYXVndXN0YS5lZHUvZWR1Y2F0aW9uL2NvbW11bml0eS1vdXRyZWFjaC9raWRzLXVuaXZlcnNpdHkv&ntb=1
+[7:23:35 PM]    → ✅ VALIDATED for Augusta University (alias: "augusta university")
+[7:23:35 PM]    → Sub-crawling 6 pages...
+[7:23:36 PM]       ⭐ https://www.augusta.edu/education/community-outreach/kids-university/#
+[7:23:36 PM]       ⭐ https://www.augusta.edu/campus-recreation/
+[7:23:36 PM]       ⭐ https://www.augusta.edu/campus-recreation/intramurals/
+[7:23:37 PM]       ↳ https://give.augusta.edu/campaigns/42917/donations/new
+[7:23:37 PM]       ⭐ https://www.augusta.edu/compliance/minorsoncampus/index.php
+[7:23:38 PM]       ⭐ https://www.augusta.edu/maps/
+[7:23:38 PM]        📋 [Tiers] 1 entries. Sample: "Baseball Camp" (June 1)
+[7:23:38 PM]    → 🎯 SUCCESS — 1 tiers. Cost: TBA | Dates: June 1, June 26, 2026, June 1 - 26, 2026
+[7:23:38 PM]    → [DB_UPDATED] Saved.
+[7:23:38 PM] 
+════════════════════════════════════════════════════════════
+[7:23:38 PM] [12/245] Processing: Augustana University – South Dakota
+[7:23:38 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:23:38 PM] ════════════════════════════════════════════════════════════
+[7:23:38 PM]    → [ENGINE] Yahoo (school slot 3/3)
+[7:23:38 PM]       ↳ [Yahoo] Augustana University – South Dakota Vikings baseball camps 2026
+[7:23:39 PM]       ✓ [Yahoo] 7 results
+[7:23:41 PM]       ↳ [Yahoo] "Augustana University – South Dakota" baseball camps 2026
+[7:23:42 PM]       ✓ [Yahoo] 7 results
+[7:23:43 PM]       ↳ [Yahoo] Head Coach baseball camp 2026
+[7:23:44 PM]       ✓ [Yahoo] 7 results
+[7:23:46 PM]    → 18 candidates. Top 3:
+[7:23:46 PM]       ★ [165] https://www.active.com/orange-ca/baseball/baseball-camps/west-coast-head-coach-camp-ix-orange-ca-2026
+[7:23:46 PM]       ★ [130] https://www.augustanabaseballcamps.totalcamps.com/shop
+[7:23:46 PM]       ★ [105] https://showballbaseball.com/head-coach-baseball-showcase-camps-florida/
+[7:23:46 PM] 
+   → Navigating [165]: https://www.active.com/orange-ca/baseball/baseball-camps/west-coast-head-coach-camp-ix-orange-ca-2026
+[7:23:47 PM]       ✕ School alias mismatch.
+[7:23:47 PM] 
+   → Navigating [130]: https://www.augustanabaseballcamps.totalcamps.com/shop
+[7:23:47 PM]    → ✕ Error on https://www.augustanabaseballcamps.totalcamps.com/shop: net::ERR_CERT_COMMON_NAME_INVALID at https://www.augustanabaseballcamps.totalcam
+[7:23:47 PM] 
+   → Navigating [105]: https://showballbaseball.com/head-coach-baseball-showcase-camps-florida/
+[7:23:48 PM]       ✕ School alias mismatch.
+[7:23:48 PM] 
+   → Navigating [105]: https://www.headfirstshowcase.com/confirmed-coaches/honor-roll-camp-coaches-baseball/
+[7:23:49 PM]       ✕ School alias mismatch.
+[7:23:49 PM] 
+   → Navigating [70]: https://www.nsr-inc.com/sport/baseball/college-baseball-camps.php
+[7:23:52 PM]    → ✅ VALIDATED for Augustana University – South Dakota (alias: "augustana university – south dakota")
+[7:23:52 PM]    → Sub-crawling 6 pages...
+[7:23:53 PM]       ⭐ https://www.nsr-inc.com/
+[7:23:54 PM]       ⭐ https://www.nsr-inc.com/sport/baseball/#about
+[7:23:55 PM]       ⭐ https://www.nsr-inc.com/sport/baseball/#tesimonials
+[7:23:56 PM]       ⭐ https://www.nsr-inc.com/sport/baseball/#coaches
+[7:23:56 PM]       ⭐ https://www.nsr-inc.com/partnerships.php
+[7:23:57 PM]       ⭐ https://www.nsr-inc.com/how-to-get-recruited?lead_origin=baseball%20Ev
+[7:23:57 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:23:57 PM] 
+   → Navigating [70]: https://www.headfirstshowcase.com/headfirst-showcase-camps/headfirst-baseball-showcase-camps/
+[7:23:58 PM]       ✕ School alias mismatch.
+[7:23:58 PM] 
+   → Navigating [70]: https://www.ncsasports.org/baseball/camps
+[7:24:00 PM]       ✕ School alias mismatch.
+[7:24:00 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:24:00 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:24:00 PM] 
+   → Navigating [55]: https://goaugie.com/sports/baseball
+[7:24:01 PM]    → ✅ VALIDATED for Augustana University – South Dakota (alias: "vikings")
+[7:24:01 PM]    → Sub-crawling 6 pages...
+[7:24:01 PM]       ↳ https://goaugie.com/sports/baseball#main-content
+[7:24:04 PM]       ↳ https://goaugie.com/boxscore.aspx?id=18884
+[7:24:05 PM]       ↳ https://goaugie.com/boxscore.aspx?id=18885
+[7:24:05 PM]       ↳ https://goaugie.com/boxscore.aspx?id=18886
+[7:24:06 PM]       ↳ https://goaugie.com/boxscore.aspx?id=18887
+[7:24:07 PM]       ↳ https://goaugie.com/boxscore.aspx?id=18888
+[7:24:07 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:24:07 PM] 
+   → Navigating [55]: https://athletics.augustana.edu/sports/baseball
+[7:24:16 PM]    → ✅ VALIDATED for Augustana University – South Dakota (alias: "vikings")
+[7:24:17 PM]    → Sub-crawling 6 pages...
+[7:24:17 PM]       ↳ https://athletics.augustana.edu/sports/baseball#main-content
+[7:24:17 PM]       ↳ https://athletics.augustana.edu/index.aspx
+[7:24:18 PM]       ↳ https://athletics.augustana.edu/sports/baseball#events
+[7:24:18 PM]       ↳ https://athletics.augustana.edu/sports/baseball#results
+[7:24:18 PM]       ↳ https://www.statbroadcast.com/events/statbroadcast.php?gid=elmh
+[7:24:20 PM]       ↳ https://athletics.augustana.edu/sidearmstats/baseball/
+[7:24:20 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:24:20 PM] 
+   → Navigating [50]: https://www.vikingsbaseballcamps.com
+[7:24:20 PM]    → ✕ Error on https://www.vikingsbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.vikingsbaseballcamps.com
+[7:24:20 PM] 
+   → Navigating [40]: https://www.fieldlevel.com/app/events?sportEnum=baseball
+[7:24:21 PM]       ✕ School alias mismatch.
+[7:24:21 PM] 
+   → Navigating [35]: https://www.coachbaseball.com
+[7:24:22 PM]       ✕ School alias mismatch.
+[7:24:22 PM] 
+   → Navigating [30]: https://goaugiecamps.com/
+[7:24:23 PM]    → ✅ VALIDATED for Augustana University – South Dakota (alias: "viking")
+[7:24:23 PM]    → Sub-crawling 6 pages...
+[7:24:24 PM]       ⭐ https://goaugiecamps.com/#home
+[7:24:24 PM]       ⭐ https://goaugiecamps.com/#camps
+[7:24:24 PM]       ⭐ https://goaugiecamps.com/#camps
+[7:24:24 PM]       ⭐ https://goaugiecamps.com/#camps
+[7:24:25 PM]       ↳ https://augustanaacrobaticsandtumblingcamps.totalcamps.com/
+[7:24:25 PM]       ↳ https://augustanabaseballcamps.totalcamps.com/
+[7:24:25 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:24:25 PM] 
+   → Navigating [30]: https://www.augie.edu/resources/camps-lessons
+[7:24:26 PM]    → ✅ VALIDATED for Augustana University – South Dakota (alias: "viking")
+[7:24:26 PM]    → Sub-crawling 6 pages...
+[7:24:26 PM]       ⭐ https://www.augie.edu/resources/camps-lessons#main-content
+[7:24:27 PM]       ⭐ https://www.augie.edu/
+[7:24:28 PM]       ⭐ https://www.augie.edu/apply-now
+[7:24:29 PM]       ⭐ https://www.augie.edu/visit-campus
+[7:24:30 PM]       ⭐ https://www.augie.edu/undergraduate-and-graduate-information-request
+[7:24:30 PM]       ⭐ https://www.augie.edu/resources/office-advancement/giving-augustana
+[7:24:30 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:24:30 PM] 
+   → Navigating [30]: https://www.augie.edu/summercamps
+[7:24:32 PM]    → ✅ VALIDATED for Augustana University – South Dakota (alias: "viking")
+[7:24:32 PM]    → Sub-crawling 6 pages...
+[7:24:32 PM]       ⭐ https://www.augie.edu/summercamps#main-content
+[7:24:32 PM]       ⭐ https://www.augie.edu/
+[7:24:32 PM]       ⭐ https://www.augie.edu/apply-now
+[7:24:33 PM]       ⭐ https://www.augie.edu/visit-campus
+[7:24:33 PM]       ⭐ https://www.augie.edu/undergraduate-and-graduate-information-request
+[7:24:33 PM]       ⭐ https://www.augie.edu/resources/office-advancement/giving-augustana
+[7:24:33 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:24:33 PM] 
+   → Navigating [20]: https://goaugie.com/sports/baseball/schedule/2026
+[7:24:35 PM]    → ✅ VALIDATED for Augustana University – South Dakota (alias: "vikings")
+[7:24:35 PM]    → Sub-crawling 6 pages...
+[7:24:36 PM]       ↳ https://goaugie.com/boxscore.aspx?id=18884
+[7:24:36 PM]       ↳ https://goaugie.com/boxscore.aspx?id=18885
+[7:24:37 PM]       ↳ https://goaugie.com/boxscore.aspx?id=18886
+[7:24:37 PM]       ↳ https://goaugie.com/boxscore.aspx?id=18887
+[7:24:38 PM]       ↳ https://goaugie.com/boxscore.aspx?id=18888
+[7:24:39 PM]       ↳ https://goaugie.com/boxscore.aspx?id=18889
+[7:24:39 PM]        📋 [Tiers] 1 entries. Sample: "Baseball Camp" (Jun 7)
+[7:24:39 PM]    → 🎯 SUCCESS — 1 tiers. Cost: TBA | Dates: Jun 7
+[7:24:39 PM]    → [DB_UPDATED] Saved.
+[7:24:39 PM] 
+════════════════════════════════════════════════════════════
+[7:24:39 PM] [13/245] Processing: Azusa Pacific University
+[7:24:39 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:24:39 PM] ════════════════════════════════════════════════════════════
+[7:24:39 PM]    → Priority URL from DB: https://www.apu.edu
+[7:24:39 PM]    → [ENGINE] DDG (school slot 1/3)
+[7:24:39 PM]       ↳ [DDG] Azusa Pacific University Cougars baseball camps 2026
+[7:24:40 PM]       ✕ [DDG] 0 results for this query
+[7:24:41 PM]       ↳ [DDG] "Azusa Pacific University" baseball camps 2026
+[7:24:42 PM]       ✕ [DDG] 0 results for this query
+[7:24:44 PM]       ↳ [DDG] Head Coach baseball camp 2026
+[7:24:45 PM]       ✕ [DDG] 0 results for this query
+[7:24:46 PM]    → 8 candidates. Top 3:
+[7:24:46 PM]       ★ [ 70] https://www.azusapacificuniversitybaseballcamps.com
+[7:24:46 PM]       ★ [ 65] https://www.coachbaseballcamp.com
+[7:24:46 PM]       ★ [ 50] https://www.cougarsbaseballcamps.com
+[7:24:46 PM] 
+   → Navigating [70]: https://www.azusapacificuniversitybaseballcamps.com
+[7:24:46 PM]    → ✕ Error on https://www.azusapacificuniversitybaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.azusapacificuniversitybaseballcamps.co
+[7:24:47 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:24:47 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:24:47 PM] 
+   → Navigating [50]: https://www.cougarsbaseballcamps.com
+[7:24:47 PM]    → ✕ Error on https://www.cougarsbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.cougarsbaseballcamps.com
+[7:24:47 PM] 
+   → Navigating [45]: https://www.azusapacificbaseballcamps.com
+[7:24:47 PM]    → ✕ Error on https://www.azusapacificbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.azusapacificbaseballcamps.com
+[7:24:47 PM] 
+   → Navigating [40]: https://www.azusapacificuniversitybaseball.com
+[7:24:47 PM]    → ✕ Error on https://www.azusapacificuniversitybaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.azusapacificuniversitybaseball.com
+[7:24:47 PM] 
+   → Navigating [35]: https://www.coachbaseball.com
+[7:24:48 PM]       ✕ School alias mismatch.
+[7:24:48 PM] 
+   → Navigating [15]: https://www.azusapacificbaseball.com
+[7:24:48 PM]    → ✕ Error on https://www.azusapacificbaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.azusapacificbaseball.com
+[7:24:48 PM] 
+   → Navigating [10]: https://www.apu.edu
+[7:24:49 PM]       ✕ Contamination (California). Skip.
+[7:24:49 PM]    → ❌ No 2026 summer camp data found for Azusa Pacific University
+[7:24:49 PM]    → [DB_UPDATED] Saved.
+[7:24:49 PM] 
+════════════════════════════════════════════════════════════
+[7:24:49 PM] [14/245] Processing: Barry University
+[7:24:49 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:24:49 PM] ════════════════════════════════════════════════════════════
+[7:24:49 PM]    → Priority URL from DB: https://www.barry.edu
+[7:24:49 PM]    → [ENGINE] Bing (school slot 2/3)
+[7:24:49 PM]       ↳ [Bing] Barry University Buccaneers baseball camps 2026
+[7:24:50 PM]       ✓ [Bing] 10 results
+[7:24:52 PM]       ↳ [Bing] "Barry University" baseball camps 2026
+[7:24:52 PM]       ✓ [Bing] 10 results
+[7:24:54 PM]       ↳ [Bing] Head Coach baseball camp 2026
+[7:24:54 PM]       ✓ [Bing] 10 results
+[7:24:55 PM]    → 18 candidates. Top 3:
+[7:24:55 PM]       ★ [ 70] https://www.barryuniversitybaseballcamps.com
+[7:24:55 PM]       ★ [ 65] https://www.coachbaseballcamp.com
+[7:24:55 PM]       ★ [ 50] https://www.buccaneersbaseballcamps.com
+[7:24:55 PM] 
+   → Navigating [70]: https://www.barryuniversitybaseballcamps.com
+[7:24:56 PM]    → ✕ Error on https://www.barryuniversitybaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.barryuniversitybaseballcamps.com
+[7:24:56 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:24:56 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:24:56 PM] 
+   → Navigating [50]: https://www.buccaneersbaseballcamps.com
+[7:24:56 PM]    → ✕ Error on https://www.buccaneersbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.buccaneersbaseballcamps.com
+[7:24:56 PM] 
+   → Navigating [45]: https://www.barrybaseballcamps.com
+[7:24:56 PM]    → ✕ Error on https://www.barrybaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.barrybaseballcamps.com
+[7:24:56 PM] 
+   → Navigating [40]: https://www.barryuniversitybaseball.com
+[7:24:56 PM]    → ✕ Error on https://www.barryuniversitybaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.barryuniversitybaseball.com
+[7:24:56 PM] 
+   → Navigating [35]: https://www.coachbaseball.com
+[7:24:57 PM]       ✕ School alias mismatch.
+[7:24:57 PM] 
+   → Navigating [25]: https://www.barry.edu
+[7:24:59 PM]    → ✅ VALIDATED for Barry University (alias: "barry university")
+[7:24:59 PM]    → Sub-crawling 6 pages...
+[7:25:00 PM]       ⭐ https://www.barry.edu/en#main-content
+[7:25:00 PM]       ⭐ https://www.barry.edu/en/
+[7:25:01 PM]       ⭐ https://www.barry.edu/en/about-barry/
+[7:25:02 PM]       ⭐ https://www.barry.edu/en/alumni/
+[7:25:02 PM]       ⭐ https://www.barry.edu/en/giving/
+[7:25:04 PM]       ⭐ https://www.barry.edu/en?apply-now=1
+[7:25:04 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:25:04 PM] 
+   → Navigating [15]: https://www.barrybaseball.com
+[7:25:04 PM]    → ✕ Error on https://www.barrybaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.barrybaseball.com
+[7:25:04 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=c179f61dec8a76b2260abb7aeaf2e31c83ddb12c62433f22e63dbe133ecc4fccJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=0e687503-922a-63c0-180a-623393dc6244&u=a1aHR0cHM6Ly9nb2JhcnJ5YnVjcy5jb20vc3BvcnRzL2Jhc2ViYWxsL3NjaGVkdWxlLzIwMjY&ntb=1
+[7:25:05 PM]    → ✅ VALIDATED for Barry University (alias: "barry university")
+[7:25:06 PM]    → Sub-crawling 3 pages...
+[7:25:06 PM]       ⭐ https://gobarrybucs.com/sports/2014/12/31/recruits_default.aspx
+[7:25:07 PM]       ⭐ https://gobarrybucs.com/sports/2014/12/31/employment-of-prospects-and-
+[7:25:08 PM]       ⭐ https://gobarrybucs.com/sports/2014/12/31/campus-map.aspx
+[7:25:08 PM]        📋 [Tiers] 1 entries. Sample: "Baseball Camp" (June 15)
+[7:25:08 PM]    → 🎯 SUCCESS — 1 tiers. Cost: TBA | Dates: June 15
+[7:25:08 PM]    → [DB_UPDATED] Saved.
+[7:25:08 PM] 
+════════════════════════════════════════════════════════════
+[7:25:08 PM] [15/245] Processing: Barton College
+[7:25:08 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:25:08 PM] ════════════════════════════════════════════════════════════
+[7:25:08 PM]    → Priority URL from DB: https://bartoncollegesports.com
+[7:25:08 PM]    → [ENGINE] Yahoo (school slot 3/3)
+[7:25:08 PM]       ↳ [Yahoo] Barton College Bulldogs baseball camps 2026
+[7:25:09 PM]       ✓ [Yahoo] 7 results
+[7:25:10 PM]       ↳ [Yahoo] "Barton College" baseball camps 2026
+[7:25:11 PM]       ✓ [Yahoo] 7 results
+[7:25:12 PM]       ↳ [Yahoo] Head Coach baseball camp 2026
+[7:25:13 PM]       ✓ [Yahoo] 7 results
+[7:25:15 PM]    → 18 candidates. Top 3:
+[7:25:15 PM]       ★ [165] https://www.active.com/orange-ca/baseball/baseball-camps/west-coast-head-coach-camp-ix-orange-ca-2026
+[7:25:15 PM]       ★ [105] https://showballbaseball.com/head-coach-baseball-showcase-camps-florida/
+[7:25:15 PM]       ★ [105] https://www.headfirstshowcase.com/confirmed-coaches/honor-roll-camp-coaches-baseball/
+[7:25:15 PM] 
+   → Navigating [165]: https://www.active.com/orange-ca/baseball/baseball-camps/west-coast-head-coach-camp-ix-orange-ca-2026
+[7:25:16 PM]       ✕ School alias mismatch.
+[7:25:16 PM] 
+   → Navigating [105]: https://showballbaseball.com/head-coach-baseball-showcase-camps-florida/
+[7:25:17 PM]       ✕ School alias mismatch.
+[7:25:17 PM] 
+   → Navigating [105]: https://www.headfirstshowcase.com/confirmed-coaches/honor-roll-camp-coaches-baseball/
+[7:25:18 PM]       ✕ School alias mismatch.
+[7:25:18 PM] 
+   → Navigating [90]: https://bartonbulldogs.com/sports/baseball
+[7:25:20 PM]    → ✅ VALIDATED for Barton College (alias: "barton college")
+[7:25:20 PM]    → Sub-crawling 6 pages...
+[7:25:20 PM]       ↳ https://bartonbulldogs.com/sports/baseball#main-content
+[7:25:21 PM]       ↳ https://bartonbulldogs.com/sports/baseball#main-content
+[7:25:21 PM]       ↳ https://bartonbulldogs.com/index.aspx
+[7:25:22 PM]       ↳ https://bartonbulldogs.com/sports/baseball/archives
+[7:25:30 PM]       ↳ https://bartonbulldogs.com/sports/mbball
+[7:25:31 PM]       ↳ https://bartonbulldogs.com/sports/mens-basketball/archives
+[7:25:31 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:25:31 PM] 
+   → Navigating [85]: https://biginningbaseballcamps.com/upcoming-camps-barton-college/
+[7:25:33 PM]    → ✅ VALIDATED for Barton College (alias: "barton")
+[7:25:33 PM]    → Sub-crawling 6 pages...
+[7:25:34 PM]       ⭐ https://biginningbaseballcamps.com/
+[7:25:34 PM]       ⭐ https://biginningbaseballcamps.com/
+[7:25:35 PM]       ⭐ https://biginningbaseballcamps.com/videos/
+[7:25:35 PM]       ⭐ https://biginningbaseballcamps.com/
+[7:25:36 PM]       ⭐ https://biginningbaseballcamps.com/youth-summer-baseball-camp-aiken-sc
+[7:25:36 PM]       ⭐ https://biginningbaseballcamps.com/youth-summer-baseball-camp-aiken-sc
+[7:25:36 PM]        📋 [Tiers] 4 entries. Sample: "Upcoming Baseball Prospect Camp" (June 8-11) | "Upcoming Camp" (June 20)
+[7:25:36 PM]    → 🎯 SUCCESS — 4 tiers. Cost: TBA | Dates: June 8-11, 2026 | June 20, June 20, June 4 2019 | June 20
+[7:25:36 PM]    → [DB_UPDATED] Saved.
+[7:25:36 PM] 
+════════════════════════════════════════════════════════════
+[7:25:36 PM] [16/245] Processing: Belmont Abbey College
+[7:25:36 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:25:36 PM] ════════════════════════════════════════════════════════════
+[7:25:36 PM]    → Priority URL from DB: https://www.belmontabbeycollege.edu/athletics
+[7:25:36 PM]    → [ENGINE] DDG (school slot 1/3)
+[7:25:36 PM]       ↳ [DDG] Belmont Abbey College Crusaders baseball camps 2026
+[7:25:37 PM]       ✕ [DDG] 0 results for this query
+[7:25:39 PM]       ↳ [DDG] "Belmont Abbey College" baseball camps 2026
+[7:25:40 PM]       ✕ [DDG] 0 results for this query
+[7:25:41 PM]       ↳ [DDG] Head Coach baseball camp 2026
+[7:25:42 PM]       ✕ [DDG] 0 results for this query
+[7:25:44 PM]    → 8 candidates. Top 3:
+[7:25:44 PM]       ★ [ 70] https://www.belmontabbeycollegebaseballcamps.com
+[7:25:44 PM]       ★ [ 65] https://www.coachbaseballcamp.com
+[7:25:44 PM]       ★ [ 50] https://www.crusadersbaseballcamps.com
+[7:25:44 PM] 
+   → Navigating [70]: https://www.belmontabbeycollegebaseballcamps.com
+[7:25:44 PM]    → ✕ Error on https://www.belmontabbeycollegebaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.belmontabbeycollegebaseballcamps.com
+[7:25:44 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:25:44 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:25:44 PM] 
+   → Navigating [50]: https://www.crusadersbaseballcamps.com
+[7:25:44 PM]    → ✕ Error on https://www.crusadersbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.crusadersbaseballcamps.com
+[7:25:44 PM] 
+   → Navigating [45]: https://www.belmontabbeybaseballcamps.com
+[7:25:44 PM]    → ✕ Error on https://www.belmontabbeybaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.belmontabbeybaseballcamps.com
+[7:25:44 PM] 
+   → Navigating [40]: https://www.belmontabbeycollege.edu/athletics
+[7:25:46 PM]    → ✅ VALIDATED for Belmont Abbey College (alias: "belmont abbey college")
+[7:25:47 PM]    → Sub-crawling 6 pages...
+[7:25:47 PM]       ⭐ https://thehub.bac.edu/directory/
+[7:25:49 PM]       ⭐ https://belmontabbeycollege.edu/campus-safety
+[7:25:49 PM]       ⭐ https://belmontabbeycollege.edu/campus-map
+[7:25:50 PM]       ⭐ https://belmontabbeycollege.edu/campus-life/performing-arts/
+[7:25:51 PM]       ⭐ https://belmontabbeycollege.edu/campus-life/wellness-center/
+[7:25:51 PM]       ⭐ https://dineoncampus.com/belmontabbey
+[7:25:51 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:25:51 PM] 
+   → Navigating [40]: https://www.belmontabbeycollegebaseball.com
+[7:25:51 PM]    → ✕ Error on https://www.belmontabbeycollegebaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.belmontabbeycollegebaseball.com
+[7:25:51 PM] 
+   → Navigating [35]: https://www.coachbaseball.com
+[7:25:52 PM]       ✕ School alias mismatch.
+[7:25:52 PM] 
+   → Navigating [15]: https://www.belmontabbeybaseball.com
+[7:25:52 PM]    → ✕ Error on https://www.belmontabbeybaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.belmontabbeybaseball.com
+[7:25:52 PM]    → 📧 Saved email (no camp data): info@bac.edu
+[7:25:52 PM]    → ❌ No 2026 summer camp data found for Belmont Abbey College
+[7:25:52 PM]    → [DB_UPDATED] Saved.
+[7:25:52 PM] 
+════════════════════════════════════════════════════════════
+[7:25:52 PM] [17/245] Processing: Bemidji State University
+[7:25:52 PM]    Coach: Head Coach | Contact raw: "Head Coach (TBA)"
+[7:25:52 PM] ════════════════════════════════════════════════════════════
+[7:25:52 PM]    → Priority URL from DB: https://www.bemidjistate.edu
+[7:25:52 PM]    → [ENGINE] Bing (school slot 2/3)
+[7:25:52 PM]       ↳ [Bing] Bemidji State University Beavers baseball camps 2026
+[7:25:53 PM]       ✓ [Bing] 10 results
+[7:25:55 PM]       ↳ [Bing] "Bemidji State University" baseball camps 2026
+[7:25:55 PM]       ✓ [Bing] 6 results
+[7:25:56 PM]       ↳ [Bing] Head Coach baseball camp 2026
+[7:25:57 PM]       ✓ [Bing] 10 results
+[7:25:58 PM]    → 18 candidates. Top 3:
+[7:25:58 PM]       ★ [ 70] https://www.bemidjistateuniversitybaseballcamps.com
+[7:25:58 PM]       ★ [ 65] https://www.coachbaseballcamp.com
+[7:25:58 PM]       ★ [ 50] https://www.beaversbaseballcamps.com
+[7:25:58 PM] 
+   → Navigating [70]: https://www.bemidjistateuniversitybaseballcamps.com
+[7:25:58 PM]    → ✕ Error on https://www.bemidjistateuniversitybaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.bemidjistateuniversitybaseballcamps.co
+[7:25:58 PM] 
+   → Navigating [65]: https://www.coachbaseballcamp.com
+[7:25:58 PM]    → ✕ Error on https://www.coachbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.coachbaseballcamp.com
+[7:25:58 PM] 
+   → Navigating [50]: https://www.beaversbaseballcamps.com
+[7:25:58 PM]    → ✕ Error on https://www.beaversbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.beaversbaseballcamps.com
+[7:25:58 PM] 
+   → Navigating [45]: https://www.bemidjibaseballcamps.com
+[7:25:58 PM]    → ✕ Error on https://www.bemidjibaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.bemidjibaseballcamps.com
+[7:25:58 PM] 
+   → Navigating [40]: https://www.bemidjistateuniversitybaseball.com
+[7:25:59 PM]    → ✕ Error on https://www.bemidjistateuniversitybaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.bemidjistateuniversitybaseball.com
+[7:25:59 PM] 
+   → Navigating [35]: https://www.coachbaseball.com
+[7:26:00 PM]       ✕ School alias mismatch.
+[7:26:00 PM] 
+   → Navigating [25]: https://www.bemidjistate.edu
+[7:26:01 PM]    → ✅ VALIDATED for Bemidji State University (alias: "bemidji state university")
+[7:26:01 PM]    → Sub-crawling 6 pages...
+[7:26:01 PM]       ⭐ https://www.bemidjistate.edu/#bsu-page-top
+[7:26:02 PM]       ⭐ https://www.bemidjistate.edu/refer-a-student/
+[7:26:02 PM]       ⭐ https://www.bemidjistate.edu/admissions/apply/
+[7:26:03 PM]       ⭐ https://www.bemidjistate.edu/library/
+[7:26:05 PM]       ⭐ https://www.bemidjistate.edu/directory/
+[7:26:06 PM]       ⭐ https://www.bemidjistate.edu/mybsu/
+[7:26:06 PM]        📋 [Tiers] None found (no summer dates Jun/Jul/Aug).
+[7:26:06 PM] 
+   → Navigating [15]: https://www.bemidjibaseball.com
+[7:26:06 PM]    → ✕ Error on https://www.bemidjibaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.bemidjibaseball.com
+[7:26:06 PM] 
+   → Navigating [0]: https://www.bing.com/ck/a?!&&p=b6cab4791c8c80649244371afaf144830c9b736d6cf8c0d5862610aa73f959ebJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=0e687503-922a-63c0-180a-623393dc6244&u=a1aHR0cHM6Ly9iZW1pZGppY2FtcHMuY29tLw&ntb=1
+[7:26:07 PM]    → ✅ VALIDATED for Bemidji State University (alias: "bemidji state university")
+[7:26:07 PM]    → Sub-crawling 4 pages...
+[7:26:08 PM]       ⭐ https://bemidjicamps.com/#home
+[7:26:09 PM]       ⭐ https://bemidjicamps.com/#camps

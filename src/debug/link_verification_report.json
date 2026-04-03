@@ -1,0 +1,63 @@
+{
+  "totalChecked": 45,
+  "failures": [
+    {
+      "status": "ERROR",
+      "message": "unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca",
+      "url": "https://www.afit.edu"
+    },
+    {
+      "status": 403,
+      "url": "https://info.collegebaseballcamps.com/akronbaseball/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.coastalalabama.edu"
+    },
+    {
+      "status": 403,
+      "url": "https://info.collegebaseballcamps.com/alcornbaseball/"
+    },
+    {
+      "status": "ERROR",
+      "message": "socket hang up",
+      "url": "https://baseballcamp.uark.edu/"
+    },
+    {
+      "status": 503,
+      "url": "https://www.bsu.edu"
+    },
+    {
+      "status": 403,
+      "url": "https://www.bradley.edu/"
+    },
+    {
+      "status": 403,
+      "url": "https://gopoly.com/sports/baseball"
+    },
+    {
+      "status": 403,
+      "url": "https://info.collegebaseballcamps.com/runners/"
+    },
+    {
+      "status": 403,
+      "url": "https://info.collegebaseballcamps.com/csf-baseball/"
+    },
+    {
+      "status": 403,
+      "url": "https://info.collegebaseballcamps.com/northridgebaseball/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.campbell.edu/campbell-athletics/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.cmich.edu"
+    },
+    {
+      "status": 403,
+      "url": "https://www.tigernet.com/"
+    }
+  ]
+}

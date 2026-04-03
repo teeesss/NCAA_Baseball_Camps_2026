@@ -1,0 +1,29 @@
+{
+  "name": "ncaa-baseball-camps-2026",
+  "version": "1.0.0",
+  "description": "NCAA Division I Baseball Camps 2026 Researcher",
+  "main": "index.js",
+  "scripts": {
+    "generate:word": "node generate_word_doc.js",
+    "generate:html": "node generate_html.js",
+    "deploy": "node deploy.js",
+    "audit": "node quality_audit.js",
+    "auto-verify": "node auto_verify.js",
+    "smart-extract": "node smart_extract.js",
+    "sync-verifications": "node fetch_verifications.js",
+    "update": "node auto_verify.js ; node generate_html.js ; node generate_word_doc.js ; node deploy.js",
+    "full-update": "node fetch_verifications.js ; node auto_verify.js ; node quality_audit.js ; node generate_html.js ; node generate_word_doc.js ; node deploy.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "basic-ftp": "^5.2.0",
+    "docx": "^8.5.0",
+    "dotenv": "^17.4.0",
+    "duckduckgo-search": "^1.0.7",
+    "google-it": "^1.6.4",
+    "p-limit": "^7.3.0",
+    "puppeteer": "^24.40.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}

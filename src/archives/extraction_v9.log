@@ -1,0 +1,530 @@
+=== V9 Extraction Started 2026-04-03T00:26:12.939Z ===
+[7:26:12 PM] 
+🚀 V9 Multi-Point Engine Starting. Target: 277 schools.
+[7:26:13 PM] 
+[1/277] Texas Southern (idx: 251)
+[7:26:13 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:26:15 PM]    → ❌ No summer data.
+[7:26:15 PM] 
+[2/277] Texas State (idx: 252)
+[7:26:15 PM]    → [ENGINE] DDG (idx 1/3)
+[7:26:17 PM]    → ❌ No summer data.
+[7:26:17 PM] 
+[3/277] The Citadel (idx: 254)
+[7:26:17 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:26:19 PM]    → ❌ No summer data.
+[7:26:19 PM] 
+[4/277] Toledo (idx: 255)
+[7:26:19 PM]    → [ENGINE] DDG (idx 1/3)
+[7:26:20 PM]    → ❌ No summer data.
+[7:26:20 PM] 
+[5/277] Towson (idx: 256)
+[7:26:20 PM]    → [ENGINE] Bing (idx 2/3)
+[7:26:21 PM]    → ❌ No summer data.
+[7:26:21 PM] 
+[6/277] Troy (idx: 257)
+[7:26:21 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:26:23 PM]    → ❌ No summer data.
+[7:26:23 PM] 
+[7/277] Tulane (idx: 258)
+[7:26:23 PM]    → [ENGINE] DDG (idx 1/3)
+[7:26:25 PM]    → ❌ No summer data.
+[7:26:25 PM] 
+[8/277] UC Davis (idx: 260)
+[7:26:25 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:26:27 PM]    → ❌ No summer data.
+[7:26:27 PM] 
+[9/277] UC Irvine (idx: 261)
+[7:26:27 PM]    → [ENGINE] DDG (idx 1/3)
+[7:26:28 PM]    → ❌ No summer data.
+[7:26:28 PM] 
+[10/277] UC Riverside (idx: 262)
+[7:26:28 PM]    → [ENGINE] Bing (idx 2/3)
+[7:26:29 PM]    → ❌ No summer data.
+[7:26:29 PM] 
+[11/277] UC Santa Barbara (idx: 264)
+[7:26:29 PM]    → [ENGINE] DDG (idx 1/3)
+[7:26:31 PM]    → ❌ No summer data.
+[7:26:31 PM] 
+[12/277] UMass (idx: 269)
+[7:26:31 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:26:33 PM]    → ❌ No summer data.
+[7:26:34 PM] 
+[13/277] UMBC (idx: 271)
+[7:26:34 PM]    → [ENGINE] Bing (idx 2/3)
+[7:26:34 PM]    → ❌ No summer data.
+[7:26:34 PM] 
+[14/277] UNCG (idx: 273)
+[7:26:34 PM]    → [ENGINE] DDG (idx 1/3)
+[7:26:36 PM]    → ❌ No summer data.
+[7:26:36 PM] 
+[15/277] UNCW (idx: 274)
+[7:26:36 PM]    → [ENGINE] Bing (idx 2/3)
+[7:26:36 PM]    → ❌ No summer data.
+[7:26:37 PM] 
+[16/277] UNLV (idx: 275)
+[7:26:37 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:26:38 PM]    → ❌ No summer data.
+[7:26:38 PM] 
+[17/277] UTA (idx: 277)
+[7:26:38 PM]    → [ENGINE] Bing (idx 2/3)
+[7:26:39 PM]    → ❌ No summer data.
+[7:26:39 PM] 
+[18/277] UTRGV (idx: 281)
+[7:26:39 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:26:40 PM]    → ❌ No summer data.
+[7:26:40 PM] 
+[19/277] UTSA (idx: 282)
+[7:26:40 PM]    → [ENGINE] DDG (idx 1/3)
+[7:26:42 PM]    → ❌ No summer data.
+[7:26:42 PM] 
+[20/277] Valparaiso (idx: 283)
+[7:26:42 PM]    → [ENGINE] Bing (idx 2/3)
+[7:26:42 PM]    → ❌ No summer data.
+[7:26:43 PM] 
+[21/277] VCU (idx: 285)
+[7:26:43 PM]    → [ENGINE] DDG (idx 1/3)
+[7:26:45 PM]    → ❌ No summer data.
+[7:26:45 PM] 
+[22/277] Villanova (idx: 286)
+[7:26:45 PM]    → [ENGINE] Bing (idx 2/3)
+[7:26:45 PM]    → ❌ No summer data.
+[7:26:46 PM] 
+[23/277] Virginia (idx: 287)
+[7:26:46 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:26:48 PM]    → ❌ No summer data.
+[7:26:48 PM] 
+[24/277] Wagner (idx: 290)
+[7:26:48 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:26:50 PM]    → ❌ No summer data.
+[7:26:50 PM] 
+[25/277] Washington (idx: 292)
+[7:26:50 PM]    → [ENGINE] Bing (idx 2/3)
+[7:26:50 PM]    → ❌ No summer data.
+[7:26:50 PM] 
+[26/277] Western Carolina (idx: 296)
+[7:26:50 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:26:52 PM]    → ❌ No summer data.
+[7:26:52 PM] 
+[27/277] Wichita State (idx: 300)
+[7:26:52 PM]    → [ENGINE] DDG (idx 1/3)
+[7:26:54 PM]    → ❌ No summer data.
+[7:26:54 PM] 
+[28/277] William & Mary (idx: 301)
+[7:26:54 PM]    → [ENGINE] Bing (idx 2/3)
+[7:26:55 PM]    → ❌ No summer data.
+[7:26:55 PM] 
+[29/277] Winthrop (idx: 302)
+[7:26:55 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:26:57 PM]    → ❌ No summer data.
+[7:26:57 PM] 
+[30/277] Wofford (idx: 303)
+[7:26:57 PM]    → [ENGINE] DDG (idx 1/3)
+[7:26:58 PM]    → ❌ No summer data.
+[7:26:59 PM] 
+[31/277] Wright State (idx: 304)
+[7:26:59 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:00 PM]    → ❌ No summer data.
+[7:27:00 PM] 
+[32/277] Xavier (idx: 305)
+[7:27:00 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:02 PM]    → ❌ No summer data.
+[7:27:02 PM] 
+[33/277] Yale (idx: 306)
+[7:27:02 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:04 PM]    → ❌ No summer data.
+[7:27:04 PM] 
+[34/277] Youngstown State (idx: 307)
+[7:27:04 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:05 PM]    → ❌ No summer data.
+[7:27:05 PM] 
+[35/277] Albany State University (idx: 311)
+[7:27:05 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:06 PM]    → ❌ No summer data.
+[7:27:06 PM] 
+[36/277] American International College (idx: 312)
+[7:27:06 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:08 PM]    → ❌ No summer data.
+[7:27:08 PM] 
+[37/277] Anderson University – South Carolina (idx: 313)
+[7:27:08 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:09 PM]    → ❌ No summer data.
+[7:27:09 PM] 
+[38/277] Angelo State University (idx: 314)
+[7:27:09 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:11 PM]    → ❌ No summer data.
+[7:27:11 PM] 
+[39/277] Arkansas Tech University (idx: 315)
+[7:27:11 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:12 PM]    → ❌ No summer data.
+[7:27:12 PM] 
+[40/277] Ashland University (idx: 316)
+[7:27:12 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:13 PM]    → ❌ No summer data.
+[7:27:14 PM] 
+[41/277] Assumption University (idx: 317)
+[7:27:14 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:16 PM]    → ❌ No summer data.
+[7:27:16 PM] 
+[42/277] Auburn University – Montgomery (idx: 318)
+[7:27:16 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:18 PM]    → ❌ No summer data.
+[7:27:18 PM] 
+[43/277] Augusta University (idx: 319)
+[7:27:18 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:19 PM]    → ❌ No summer data.
+[7:27:19 PM] 
+[44/277] Augustana University – South Dakota (idx: 320)
+[7:27:19 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:20 PM]    → ❌ No summer data.
+[7:27:21 PM] 
+[45/277] Azusa Pacific University (idx: 321)
+[7:27:21 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:22 PM]    → ❌ No summer data.
+[7:27:22 PM] 
+[46/277] Barry University (idx: 322)
+[7:27:22 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:23 PM]    → ❌ No summer data.
+[7:27:23 PM] 
+[47/277] Barton College (idx: 323)
+[7:27:23 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:24 PM]    → ❌ No summer data.
+[7:27:24 PM] 
+[48/277] Belmont Abbey College (idx: 324)
+[7:27:24 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:26 PM]    → ❌ No summer data.
+[7:27:26 PM] 
+[49/277] Bemidji State University (idx: 325)
+[7:27:26 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:26 PM]    → ❌ No summer data.
+[7:27:26 PM] 
+[50/277] Benedict College (idx: 326)
+[7:27:26 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:28 PM]    → ❌ No summer data.
+[7:27:29 PM] 
+[51/277] Bentley University (idx: 327)
+[7:27:29 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:30 PM]    → ❌ No summer data.
+[7:27:30 PM] 
+[52/277] Biola University (idx: 328)
+[7:27:31 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:31 PM]    → ❌ No summer data.
+[7:27:31 PM] 
+[53/277] Bloomfield College (idx: 329)
+[7:27:31 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:33 PM]    → ❌ No summer data.
+[7:27:33 PM] 
+[54/277] Bloomsburg University of Pennsylvania (idx: 330)
+[7:27:33 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:35 PM]    → ❌ No summer data.
+[7:27:35 PM] 
+[55/277] Bluefield State University (idx: 331)
+[7:27:35 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:35 PM]    → ❌ No summer data.
+[7:27:35 PM] 
+[56/277] Caldwell University (idx: 332)
+[7:27:36 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:37 PM]    → ❌ No summer data.
+[7:27:37 PM] 
+[57/277] California State Polytechnic University – Pomona (idx: 333)
+[7:27:37 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:39 PM]    → ❌ No summer data.
+[7:27:39 PM] 
+[58/277] California State University – Chico (idx: 334)
+[7:27:39 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:39 PM]    → ❌ No summer data.
+[7:27:39 PM] 
+[59/277] California State University – Dominguez Hills (idx: 335)
+[7:27:39 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:41 PM]    → ❌ No summer data.
+[7:27:41 PM] 
+[60/277] California State University – East Bay (idx: 336)
+[7:27:41 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:42 PM]    → ❌ No summer data.
+[7:27:43 PM] 
+[61/277] California State University – Los Angeles (idx: 337)
+[7:27:43 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:44 PM]    → ❌ No summer data.
+[7:27:44 PM] 
+[62/277] California State University – Monterey Bay (idx: 338)
+[7:27:44 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:46 PM]    → ❌ No summer data.
+[7:27:46 PM] 
+[63/277] California State University – San Bernardino (idx: 339)
+[7:27:46 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:47 PM]    → ❌ No summer data.
+[7:27:47 PM] 
+[64/277] California State University – San Marcos (idx: 340)
+[7:27:47 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:48 PM]    → ❌ No summer data.
+[7:27:48 PM] 
+[65/277] California State University – Stanislaus (idx: 341)
+[7:27:48 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:49 PM]    → ❌ No summer data.
+[7:27:49 PM] 
+[66/277] California University of Pennsylvania (idx: 342)
+[7:27:49 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:51 PM]    → ❌ No summer data.
+[7:27:51 PM] 
+[67/277] Cameron University (idx: 343)
+[7:27:51 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:52 PM]    → ❌ No summer data.
+[7:27:52 PM] 
+[68/277] Carson-Newman University (idx: 344)
+[7:27:52 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:54 PM]    → ❌ No summer data.
+[7:27:54 PM] 
+[69/277] Catawba College (idx: 345)
+[7:27:54 PM]    → [ENGINE] DDG (idx 1/3)
+[7:27:55 PM]    → ❌ No summer data.
+[7:27:56 PM] 
+[70/277] Cedarville University (idx: 346)
+[7:27:56 PM]    → [ENGINE] Bing (idx 2/3)
+[7:27:56 PM]    → ❌ No summer data.
+[7:27:57 PM] 
+[71/277] Central Washington University (idx: 347)
+[7:27:57 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:27:59 PM]    → ❌ No summer data.
+[7:27:59 PM] 
+[72/277] Chaminade University of Honolulu (idx: 348)
+[7:27:59 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:01 PM]    → ❌ No summer data.
+[7:28:01 PM] 
+[73/277] Chestnut Hill College (idx: 349)
+[7:28:01 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:02 PM]    → ❌ No summer data.
+[7:28:02 PM] 
+[74/277] Chowan University (idx: 350)
+[7:28:02 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:03 PM]    → ❌ No summer data.
+[7:28:03 PM] 
+[75/277] Christian Brothers University (idx: 351)
+[7:28:03 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:05 PM]    → ❌ No summer data.
+[7:28:05 PM] 
+[76/277] Claflin University (idx: 352)
+[7:28:05 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:06 PM]    → ❌ No summer data.
+[7:28:06 PM] 
+[77/277] Clarion University of Pennsylvania (idx: 353)
+[7:28:06 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:07 PM]    → ❌ No summer data.
+[7:28:07 PM] 
+[78/277] Clark Atlanta University (idx: 354)
+[7:28:07 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:09 PM]    → ❌ No summer data.
+[7:28:09 PM] 
+[79/277] Coker University (idx: 355)
+[7:28:09 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:09 PM]    → ❌ No summer data.
+[7:28:10 PM] 
+[80/277] Colorado Christian University (idx: 356)
+[7:28:10 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:11 PM]    → ❌ No summer data.
+[7:28:12 PM] 
+[81/277] Colorado Mesa University (idx: 357)
+[7:28:12 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:15 PM]    → ❌ No summer data.
+[7:28:15 PM] 
+[82/277] Colorado School of Mines (idx: 358)
+[7:28:15 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:15 PM]    → ❌ No summer data.
+[7:28:15 PM] 
+[83/277] Colorado State University – Pueblo (idx: 359)
+[7:28:15 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:17 PM]    → ❌ No summer data.
+[7:28:17 PM] 
+[84/277] Columbus State University (idx: 360)
+[7:28:17 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:19 PM]    → ❌ No summer data.
+[7:28:19 PM] 
+[85/277] Concord University (idx: 361)
+[7:28:19 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:20 PM]    → ❌ No summer data.
+[7:28:20 PM] 
+[86/277] Concordia University – Irvine (idx: 362)
+[7:28:20 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:21 PM]    → ❌ No summer data.
+[7:28:21 PM] 
+[87/277] Concordia University, St. Paul – Minnesota (idx: 363)
+[7:28:21 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:23 PM]    → ❌ No summer data.
+[7:28:23 PM] 
+[88/277] D'Youville University (idx: 364)
+[7:28:23 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:24 PM]    → ❌ No summer data.
+[7:28:24 PM] 
+[89/277] Davenport University (idx: 365)
+[7:28:24 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:25 PM]    → ❌ No summer data.
+[7:28:25 PM] 
+[90/277] Davis & Elkins College (idx: 366)
+[7:28:25 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:27 PM]    → ❌ No summer data.
+[7:28:28 PM] 
+[91/277] Delta State University (idx: 367)
+[7:28:28 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:28 PM]    → ❌ No summer data.
+[7:28:28 PM] 
+[92/277] Dominican University – New York (idx: 368)
+[7:28:28 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:30 PM]    → ❌ No summer data.
+[7:28:30 PM] 
+[93/277] Drury University (idx: 369)
+[7:28:30 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:32 PM]    → ❌ No summer data.
+[7:28:32 PM] 
+[94/277] East Central University (idx: 370)
+[7:28:32 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:33 PM]    → ❌ No summer data.
+[7:28:33 PM] 
+[95/277] East Stroudsburg University of Pennsylvania (idx: 371)
+[7:28:33 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:35 PM]    → ❌ No summer data.
+[7:28:35 PM] 
+[96/277] Eastern New Mexico University (idx: 372)
+[7:28:35 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:37 PM]    → ❌ No summer data.
+[7:28:37 PM] 
+[97/277] Eckerd College (idx: 373)
+[7:28:37 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:37 PM]    → ❌ No summer data.
+[7:28:37 PM] 
+[98/277] Edward Waters University (idx: 374)
+[7:28:37 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:39 PM]    → ❌ No summer data.
+[7:28:39 PM] 
+[99/277] Embry-Riddle Aeronautical University (idx: 375)
+[7:28:39 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:40 PM]    → ❌ No summer data.
+[7:28:41 PM] 
+[100/277] Emmanuel University – Georgia (idx: 376)
+[7:28:41 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:41 PM]    → ❌ No summer data.
+[7:28:41 PM] 
+[101/277] Emory & Henry College (idx: 377)
+[7:28:41 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:44 PM]    → ❌ No summer data.
+[7:28:44 PM] 
+[102/277] Emporia State University (idx: 378)
+[7:28:44 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:46 PM]    → ❌ No summer data.
+[7:28:46 PM] 
+[103/277] Erskine College (idx: 379)
+[7:28:46 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:47 PM]    → ❌ No summer data.
+[7:28:47 PM] 
+[104/277] Fairmont State University (idx: 380)
+[7:28:47 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:48 PM]    → ❌ No summer data.
+[7:28:48 PM] 
+[105/277] Felician University (idx: 381)
+[7:28:48 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:50 PM]    → ❌ No summer data.
+[7:28:50 PM] 
+[106/277] Florida Tech (idx: 384)
+[7:28:50 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:52 PM]    → ❌ No summer data.
+[7:28:52 PM] 
+[107/277] Franklin Pierce University (idx: 387)
+[7:28:52 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:53 PM]    → ❌ No summer data.
+[7:28:53 PM] 
+[108/277] Fresno Pacific University (idx: 388)
+[7:28:53 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:54 PM]    → ❌ No summer data.
+[7:28:54 PM] 
+[109/277] Frostburg State University (idx: 389)
+[7:28:54 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:28:55 PM]    → ❌ No summer data.
+[7:28:55 PM] 
+[110/277] Gannon University (idx: 390)
+[7:28:55 PM]    → [ENGINE] DDG (idx 1/3)
+[7:28:57 PM]    → ❌ No summer data.
+[7:28:58 PM] 
+[111/277] Georgia College & State University (idx: 391)
+[7:28:58 PM]    → [ENGINE] Bing (idx 2/3)
+[7:28:58 PM]    → ❌ No summer data.
+[7:28:58 PM] 
+[112/277] Georgia Southwestern State University (idx: 392)
+[7:28:58 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:29:00 PM]    → ❌ No summer data.
+[7:29:00 PM] 
+[113/277] Glenville State University (idx: 394)
+[7:29:00 PM]    → [ENGINE] Bing (idx 2/3)
+[7:29:01 PM]    → ❌ No summer data.
+[7:29:01 PM] 
+[114/277] Goldey-Beacom College (idx: 395)
+[7:29:01 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:29:02 PM]    → ❌ No summer data.
+[7:29:03 PM] 
+[115/277] Grand Valley State University (idx: 396)
+[7:29:03 PM]    → [ENGINE] DDG (idx 1/3)
+[7:29:04 PM]    → ❌ No summer data.
+[7:29:05 PM] 
+[116/277] Harding University (idx: 397)
+[7:29:05 PM]    → [ENGINE] Bing (idx 2/3)
+[7:29:05 PM]    → ❌ No summer data.
+[7:29:05 PM] 
+[117/277] Hawaii Pacific University (idx: 398)
+[7:29:05 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:29:06 PM]    → ❌ No summer data.
+[7:29:06 PM] 
+[118/277] Henderson State University (idx: 399)
+[7:29:06 PM]    → [ENGINE] DDG (idx 1/3)
+[7:29:08 PM]    → ❌ No summer data.
+[7:29:08 PM] 
+[119/277] Hillsdale College (idx: 400)
+[7:29:08 PM]    → [ENGINE] Bing (idx 2/3)
+[7:29:09 PM]    → ❌ No summer data.
+[7:29:09 PM] 
+[120/277] Holy Family University (idx: 401)
+[7:29:09 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:29:11 PM]    → ❌ No summer data.
+[7:29:13 PM] 
+[121/277] Indiana University of Pennsylvania (idx: 402)
+[7:29:14 PM]    → [ENGINE] DDG (idx 1/3)
+[7:29:17 PM]    → ❌ No summer data.
+[7:29:17 PM] 
+[122/277] Kentucky State University (idx: 403)
+[7:29:17 PM]    → [ENGINE] Bing (idx 2/3)
+[7:29:18 PM]    → ❌ No summer data.
+[7:29:18 PM] 
+[123/277] Kentucky Wesleyan College (idx: 404)
+[7:29:18 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:29:20 PM]    → ❌ No summer data.
+[7:29:20 PM] 
+[124/277] King University – Tennessee (idx: 405)
+[7:29:20 PM]    → [ENGINE] DDG (idx 1/3)
+[7:29:21 PM]    → ❌ No summer data.
+[7:29:22 PM] 
+[125/277] Kutztown University of Pennsylvania (idx: 406)
+[7:29:22 PM]    → [ENGINE] Bing (idx 2/3)
+[7:29:22 PM]    → ❌ No summer data.
+[7:29:22 PM] 
+[126/277] Lake Erie College (idx: 407)
+[7:29:22 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:29:24 PM]    → ❌ No summer data.
+[7:29:24 PM] 
+[127/277] Lander University (idx: 408)
+[7:29:24 PM]    → [ENGINE] DDG (idx 1/3)
+[7:29:25 PM]    → ❌ No summer data.
+[7:29:25 PM] 
+[128/277] Lane College (idx: 409)
+[7:29:25 PM]    → [ENGINE] Bing (idx 2/3)
+[7:29:26 PM]    → ❌ No summer data.
+[7:29:26 PM] 
+[129/277] Lee University (idx: 410)
+[7:29:26 PM]    → [ENGINE] Yahoo (idx 3/3)
+[7:29:27 PM]    → ❌ No summer data.
+[7:29:27 PM] 
+[130/277] LeMoyne-Owen College (idx: 411)
+[7:29:27 PM]    → [ENGINE] DDG (idx 1/3)
+[7:29:29 PM]    → ❌ No summer data.
+[7:29:30 PM] 
+[131/277] Lenoir-Rhyne University (idx: 412)
+[7:29:30 PM]    → [ENGINE] Bing (idx 2/3)
+[7:29:30 PM]    → ❌ No summer data.
+[7:29:30 PM] 
+[132/277] Lewis University (idx: 413)
+[7:29:30 PM]    → [ENGINE] Yahoo (idx 3/3)

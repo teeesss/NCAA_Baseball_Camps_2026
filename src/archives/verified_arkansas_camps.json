@@ -1,0 +1,80 @@
+{
+  "university": "Arkansas",
+  "campUrl": "https://baseballcamp.uark.edu/",
+  "registrationUrl": "https://arkansasbaseballcamps.wufoo.com/forms/ph0rg21peo6r2/",
+  "verifiedDate": "2026-04-02",
+  "verifiedBy": "user-manual",
+  "campTiers": [
+    {
+      "name": "All Skills Camp",
+      "ages": "6-12",
+      "cost": "$295.00",
+      "sessions": [
+        { "label": "#1", "dates": "June 15-17, 2026", "time": "9am-12pm" },
+        { "label": "#2", "dates": "June 22-24, 2026", "time": "9am-12pm" },
+        { "label": "#3", "dates": "July 6-8, 2026", "time": "9am-12pm" },
+        { "label": "#4", "dates": "July 13-15, 2026", "time": "9am-12pm" },
+        { "label": "#5", "dates": "July 20-22, 2026", "time": "9am-12pm" }
+      ]
+    },
+    {
+      "name": "Under The Lights Hitting Camp",
+      "ages": "6-12",
+      "cost": "$130.00",
+      "sessions": [
+        { "label": "#1", "dates": "June 17, 2026", "time": "6:30pm-8:30pm" },
+        { "label": "#2", "dates": "June 24, 2026", "time": "6:30pm-8:30pm" },
+        { "label": "#3", "dates": "July 1, 2026", "time": "6:30pm-8:30pm" },
+        { "label": "#4", "dates": "July 8, 2026", "time": "6:30pm-8:30pm" },
+        { "label": "#5", "dates": "August 5, 2026", "time": "6:30pm-8:30pm" }
+      ]
+    },
+    {
+      "name": "Intense Hitting Camp",
+      "ages": "10+",
+      "cost": "$225.00",
+      "sessions": [
+        { "label": "#1", "dates": "June 15-16, 2026", "time": "1pm-4pm" },
+        { "label": "#2", "dates": "June 23-24, 2026", "time": "1pm-4pm" },
+        { "label": "#3", "dates": "July 6-7, 2026", "time": "1pm-4pm" },
+        { "label": "#4", "dates": "July 13-14, 2026", "time": "1pm-4pm" },
+        { "label": "#5", "dates": "July 20-21, 2026", "time": "1pm-4pm" }
+      ]
+    },
+    {
+      "name": "Infield/Hitting Camp",
+      "ages": "10+",
+      "cost": "$255.00",
+      "sessions": [
+        { "label": "", "dates": "June 29, 2026", "time": "9am-4pm" }
+      ]
+    },
+    {
+      "name": "Pitching/Arm Care",
+      "ages": "8+",
+      "cost": "$155.00",
+      "sessions": [
+        { "label": "#1", "dates": "June 30, 2026", "time": "9am-12pm" },
+        { "label": "#2", "dates": "July 15, 2026", "time": "1pm-4pm" }
+      ]
+    },
+    {
+      "name": "Catching/Hitting",
+      "ages": "10+",
+      "cost": "$255.00",
+      "sessions": [
+        { "label": "", "dates": "June 30, 2026", "time": "9am-4pm" }
+      ]
+    },
+    {
+      "name": "High School Prospect Camp",
+      "ages": "8th-12th Grade & Junior College",
+      "cost": "$225.00",
+      "sessions": [
+        { "label": "#1", "dates": "August 8, 2026", "time": "9am-4pm" },
+        { "label": "#2", "dates": "August 9, 2026", "time": "9am-4pm" },
+        { "label": "#3", "dates": "August 15, 2026", "time": "9am-4pm" }
+      ]
+    }
+  ]
+}

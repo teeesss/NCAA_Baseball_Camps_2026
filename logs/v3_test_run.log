@@ -1,0 +1,237 @@
+Starting V3 extraction. Processing 5 schools.
+
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+[1/5] Processing: Alabama
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+   -> DuckDuckGo query: Alabama Crimson Tide baseball camp 2026
+   -> Candidate URLs queued: 8 (sorted by quality)
+      Γÿà [ 60] https://www.alabamabaseballcamps.com/register-online.cfm
+      Γÿà [ 50] https://www.alabamabaseballcamps.com/
+      Γÿà [ 50] https://www.alabamabaseballcamps.com/youth-camps.cfm
+      Γÿà [ 50] https://www.alabamabaseballcamps.com/contact-us.cfm
+      Γÿà [ 30] https://register.ryzer.com/camp.cfm?id=320378
+      Γÿà [ 30] https://register.ryzer.com/camp.cfm?id=314548
+      Γÿà [ 30] https://register.ryzer.com/camp.cfm?id=320362
+      ΓÇó [  0] https://rolltide.com/
+
+   -> Navigating: https://www.alabamabaseballcamps.com/register-online.cfm
+   -> Γ£à Page VALIDATED for Alabama
+   -> Crawling 6 camp links + 0 same-domain pages...
+      Γ¡É https://www.alabamabaseballcamps.com/
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://www.alabamabaseballcamps.com/register.cfm
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://www.alabamabaseballcamps.com/alabama-baseball-fan-day.cfm
+      Γ¡É https://www.alabamabaseballcamps.com/youth-camps.cfm
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://www.alabamabaseballcamps.com/elite-camp.cfm
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://www.alabamabaseballcamps.com/premier-prospect-camp.cfm
+         Γ£ô Rich camp data found on sub-page
+   -> ≡ƒôï Camp Tiers Found: 29
+      Toggle navigation
+EVENT	DATES	GRADES	COST	REGISTER
+Summer Youth Camp | 06/15/2026 - 06/18/2026, July 12th - 14th	07, 07/14/2026 |  | $262.50
+      REGISTER 
+Elite Camp | July 12th - 14th	07, 07/14/2026, 07/27/2026 - 07/30/2026 |  | $262.50
+      See Prices	REGISTER 
+Summer Youth Camp | 07/27/2026 - 07/30/2026, August 15th - 16th	08, 08/16/2026 |  | $262.50
+      REGISTER 
+Premier Prospect Camp | August 15th - 16th	08, 08/16/2026 |  | $262.50
+      EVENT	DATES	GRADES	COST	REGISTER
+Summer Youth Camp | 06/15/2026 - 06/18/2026, July 12th - 14th	07, 07/14/2026 |  | $262.50
+   -> Extracted Dates: 06/15/2026 - 06/18/2026 | July 12th - 14th	07 | 07/14/2026 | 07/27/2026 - 07/30/2026 | August 15th - 16th	08 | 08/16/2026 | June 15th - 18th | July 27th - 30th | JULY 12TH - 14TH | July 12th | July 14th | July 13th | AUGUST 15TH - 16TH 2026
+   -> Extracted Cost: $10 - $1312.5
+   -> Contact: bamabaseball@ia.ua.edu
+   -> ≡ƒÄ» SUCCESS ΓÇö stopping URL traversal for Alabama
+   -> ≡ƒƒó Confidence Score: 100/100
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+[2/5] Processing: Arkansas
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+   -> DuckDuckGo query: Arkansas Razorbacks baseball camp 2026
+   -> Candidate URLs queued: 8 (sorted by quality)
+      Γÿà [ 50] https://arkansasrazorbacks.com/razorback-baseball-camps/
+      Γÿà [ 40] https://arkansasrazorbacks.com/camps/
+      Γÿà [ 35] https://baseballcamp.uark.edu/
+      Γÿà [ 35] https://baseballcamp.uark.edu/faq/
+      ΓÇó [  0] https://arkansasrazorbacks.com/sport/m-basebl/
+      ΓÇó [  0] https://arkansasrazorbacks.com/
+      ΓÇó [  0] https://arkansasrazorbacks.com/2026-ballpark-promotions/
+      Γùï [ -5] https://www.wholehogsports.com/sports/razorbacks/baseball/schedule/
+
+   -> Navigating: https://arkansasrazorbacks.com/razorback-baseball-camps/
+   -> Γ£à Page VALIDATED for Arkansas
+   -> Crawling 6 camp links + 4 same-domain pages...
+      Γ¡É https://arkansasrazorbacks.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=G&linkID=arkansas&shopperContext=&caller=&appCode=&utm_source=tickets-dropdown&utm_medium=gym-tickets&utm_campaign=AR.com
+      Γ¡É https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fseatgeek.com%2Farkansas-razorbacks-football-tickets%3Faid%3D16078%26pid%3Dintegration%26rid%3D3%26utm_medium%3Dpartnership%26utm_source%3Darkansas_sponsorship%26utm_campaign%3Dintegration&data=05%7C02%7Cjjsan%40uark.edu%7C78809aca07d04a37c83208ddc4814d92%7C79c742c4e61c4fa5be89a3cb566a80d1%7C0%7C0%7C638882781828207743%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=LTfvDcKGhNzpiivUJtD2s7Y8WLTCfwik05LWLPR30oc%3D&reserved=0
+      Γ¡É https://arkansasrazorbacks.com/camps/
+      Γ¡É https://app.arkansasrazorbacks.com/LP=427?utm_medium=email&elq_cid=85131&ehash=3c1d794c45420698a31b8636046526ae498615335d2f2e9b4bd15c98bb70f01e&aid=16078&pid=arkansas_email_eloqua&rid=3730&elqTrackId=6335A42EBFD7473CC3C7FA4BB837E4EB&elq=d1ce9ad762404f0ea0eac791d395fa70&elqaid=3730&elqat=1&elqCampaignId=&elqak=8AF52D73780D588D0C0A9711A2A7AE4939BF5BE614D45FAFB4DAAB98ED055327F3B3
+      Γ¡É https://hogsplus.com/register/
+      Γ¡É http://shop.arkansasrazorbacks.com/?utm_source=main-nav&utm_medium=shop-button&utm_campaign=AR.com
+      Γå│ https://arkansasrazorbacks.com/
+      Γå│ https://arkansasrazorbacks.com/sport/m-basebl/
+      Γå│ https://arkansasrazorbacks.com/sport/m-basebl/schedule/
+      Γå│ https://arkansasrazorbacks.com/sport/m-basebl/roster/
+   -> ≡ƒôï Camp Tiers Found: 1
+      Skip To Main Content
+Razorback Baseball Camp | August 20 |  | 
+   -> Extracted Dates: August 20 2026
+   -> Extracted Cost: TBA
+   -> Contact: TBA
+   -> ≡ƒÄ» SUCCESS ΓÇö stopping URL traversal for Arkansas
+   -> ≡ƒƒí Confidence Score: 60/100
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+[3/5] Processing: Army
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+   -> DuckDuckGo query: Army Black Knights baseball camp 2026
+   -> Candidate URLs queued: 8 (sorted by quality)
+      Γÿà [ 50] https://goarmywestpoint.com/sports/baseball
+      Γÿà [ 40] https://armysportscamps.com/
+      ΓÇó [ 10] https://happeningnext.com/event/army-black-knights-at-vcu-rams-baseball-eid1invsnlkmoj
+      Γùï [ -5] https://www.thebaseballcube.com/content/stats_college/2026~21097/
+      Γùï [ -5] https://x.com/WPBaseballCamps
+      Γùï [-10] https://navysports.com/news/2026/3/26/baseball-treks-to-west-point-for-2026-star-series.aspx
+      Γùï [-10] https://www.westpointaog.org/news/army-baseball-captures-star-with-win-over-navy/
+      Γùï [-20] https://www.warrennolan.com/baseball/2026/schedule/Army
+
+   -> Navigating: https://goarmywestpoint.com/sports/baseball
+   -> Γ£à Page VALIDATED for Army
+   -> Crawling 4 camp links + 4 same-domain pages...
+      Γ¡É https://seatgeek.com/army-black-knights-football-tickets?aid=16011&pid=integration&rid=3&utm_medium=partnership&utm_source=army_sponsorship&utm_campaign=integration
+      Γ¡É https://armysportscamps.com/
+      Γ¡É https://armybaseball.totalcamps.com/About%20Us
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://goarmywestpoint.com/api/v2/promotions/535/click?redirect=https%3a%2f%2farmysportscamps.com%2f
+      Γå│ https://goarmywestpoint.com/
+      Γå│ https://goarmywestpoint.com/api/v2/promotions/526/click?redirect=https%3a%2f%2fgoarmywestpoint.evenue.net%2fcgi-bin%2fncommerce3%2fSEGetGroupList%3fgroupCode%3dARMY%26linkID%3darmy%26shopperContext%3d%26caller%3d%26appCode%3d
+      Γå│ https://goarmywestpoint.com/api/v2/promotions/527/click?redirect=https%3a%2f%2fgoarmywestpoint.evenue.net%2fwww%2fev_army%2fss%2fev%2fDonationEntry%3fdonationCd%3dACLUB%26siteId%3dev_army%26locale%3den_US%26linkID%3darmy
+      Γå│ https://goarmywestpoint.com/search?q=
+   -> Extracted Dates: TBA
+   -> Extracted Cost: TBA
+   -> Contact: odiaarmysportscamps@westpoint.edu
+
+   -> Navigating: https://armysportscamps.com/
+   -> Γ£à Page VALIDATED for Army
+   -> Crawling 6 camp links + 0 same-domain pages...
+      Γ¡É https://armybaseball.totalcamps.com/
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://armymensbasketball.totalcamps.com/
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://armywomensbasketball.totalcamps.com/
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://armycoedcheer.totalcamps.com/
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://armyfootball.totalcamps.com/
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://armygymnastics.totalcamps.com/
+         Γ£ô Rich camp data found on sub-page
+   -> ≡ƒôï Camp Tiers Found: 4
+      Army West Point Gymnastics High Performance Camp | June 25, June 28 |  | 
+      Army West Point Gymnastics High Performance Camp | June 25, June 28 |  | 
+      ODIAArmyGymnasticsCamp | June 25, June 28 |  | 
+      ODIAArmyGymnasticsCamp | June 25, June 28 |  | 
+   -> Extracted Dates: June 25 | June 28 2026
+   -> Extracted Cost: TBA
+   -> Contact: odiaarmysportscamps@westpoint.edu
+   -> ≡ƒÄ» SUCCESS ΓÇö stopping URL traversal for Army
+   -> ≡ƒƒí Confidence Score: 55/100
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+[4/5] Processing: Baylor
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+   -> DuckDuckGo query: Baylor Bears baseball camp 2026
+   -> Candidate URLs queued: 8 (sorted by quality)
+      Γÿà [ 55] https://baylorbears.com/sports/2018/5/16/camps-bay-camps-html
+      Γÿà [ 50] https://baylorbaseballcamps.org/
+      Γÿà [ 50] https://baylorbaseballcamps.org/our-camps/
+      Γÿà [ 50] https://baylorbears.com/sports/baseball
+      Γÿà [ 50] https://baylorbaseballcamps.org/our-missions/
+      Γÿà [ 40] https://www.baylorschool.org/summer/sports-camps
+      Γÿà [ 35] https://baylorbears.com/sports/baseball/schedule/2026
+      Γÿà [ 30] https://baylorbears.com/news/2025/10/15/baseball-bsb-unveils-2026-schedule
+
+   -> Navigating: https://baylorbears.com/sports/2018/5/16/camps-bay-camps-html
+   -> Γ£à Page VALIDATED for Baylor
+   -> Crawling 6 camp links + 4 same-domain pages...
+      Γ¡É https://baylorbears.com/sports/2018/5/16/ot-bay-trads-campus-html
+      Γ¡É https://campscui.active.com/orgs/ThompsonBaseballAcademy?orglink=camps-registration&e4q=710ac779-540b-42ef-bb6a-34f8586b9325&e4p=4ce91319-9190-4fb4-8936-ea915d968825&e4ts=1754070736&e4c=active&e4e=snlvcmpscui00001load&e4rt=Safetynet&e4h=4e62949c5e51f441cf8a7c28f2224fde
+      Γ¡É https://baylorbears.com/feature/footballcamps
+      Γ¡É https://nickicollenbasketball.totalcamps.com/About%20Us
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://www.feemulkeyacrotumb.com/overnight-camp
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://baylorbears.com/sports/2019/3/1/eq-elite-clinics.aspx
+      Γå│ https://baylorbears.com/
+      Γå│ https://baylorbears.com/api/v2/promotions/114/click?redirect=https%3a%2f%2fbaylorplus.com%2f
+      Γå│ https://baylorbears.com/api/v2/promotions/123/click?redirect=https%3a%2f%2fbaylorbears.evenue.net%2fwww%2fev_baylor%2fss%2fev%2fDonate%3fsiteId%3dev_baylor%26linkID%3dbaylor
+      Γå│ https://baylorbears.com/api/v2/promotions/124/click?redirect=https%3a%2f%2fwww.bkstr.com%2fbaylorstore%2fbaylor-bears%3fcm_mmc%3dShopBaylorBears-_-Shop-_-Referral-_-0461
+   -> ≡ƒôï Camp Tiers Found: 11
+      Camp | July 24-26th, July 31st - Aug 2nd | Ages 8-18 | 
+      Camp | July 24-26th, July 31st - Aug 2nd | Ages 8-18 | 
+      Camp | July 24-26th, July 31st - Aug 2nd | Ages 8-18 | 
+      Camp | 7/10/25 |  | $100
+      Camp | 7/11/26, 7/11, July 11-23rd, 7/24/26 |  | 
+   -> Extracted Dates: July 24-26th | July 31st - Aug 2nd | 7/10/25 | 7/11/26 | 7/11 | July 11-23rd | 7/24/26 | July 11-30th | 7/31/26 | Aug 22 | Aug 20 2026
+   -> Extracted Cost: $100
+   -> Contact: Mitch Thompson | feemulkeyacrotumbcamps@gmail.com
+   -> ≡ƒÄ» SUCCESS ΓÇö stopping URL traversal for Baylor
+   -> ≡ƒƒó Confidence Score: 100/100
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+[5/5] Processing: Central Arkansas
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+   -> DuckDuckGo query: Central Arkansas Bears baseball camp 2026
+   -> Candidate URLs queued: 8 (sorted by quality)
+      Γÿà [ 35] https://uca.edu/camps/
+      Γÿà [ 30] https://register.ryzer.com/camp.cfm?id=318922
+      ΓÇó [ 25] https://www.ucabearsbaseballcamps.com/
+      ΓÇó [ 25] https://www.ucabearsbaseballcamps.com/bear-stadium.cfm
+      ΓÇó [ 15] https://www.baseballcampsusa.com/
+      ΓÇó [ 10] https://ucasports.com/sports/baseball
+      Γùï [ -5] https://ucasports.com/sports/baseball/schedule/2026
+      Γùï [ -5] https://www.warrennolan.com/baseball/2026/team-clubhouse?team=Central-Arkansas
+
+   -> Navigating: https://uca.edu/camps/
+   -> Γ£à Page VALIDATED for Central Arkansas
+   -> Crawling 6 camp links + 3 same-domain pages...
+      Γ¡É http://uca.edu/camps/
+      Γ¡É https://uca.edu/camps/camp-listing/
+      Γ¡É https://uca.edu/camps/elementary-camps/
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://uca.edu/camps/middle-school-camps/
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://uca.edu/camps/high-school-camps/
+         Γ£ô Rich camp data found on sub-page
+      Γ¡É https://uca.edu/camps/athletic-camps/
+      Γå│ http://uca.edu/go/avid/
+      Γå│ http://uca.edu/accreditation/
+      Γå│ https://uca.edu/privacy/
+   -> ≡ƒôï Camp Tiers Found: 35
+      Summer Camp | June 8 ΓÇô 11, June 15 ΓÇô 18, June 22 ΓÇô 25, July 13 ΓÇô 17, July 13 ΓÇô 17 | Ages 4-18 | 
+      Renaissance Camp | June 8 ΓÇô 11, June 15 ΓÇô 18, June 22 ΓÇô 25, July 13 ΓÇô 17, July 13 ΓÇô 17 | Ages 4-18 | 
+      Renaissance Camp | July 13 ΓÇô 17, July 13 ΓÇô 17, July 20 ΓÇô 24 | Ages 4-18 | 
+      Piano Camp | July 13 ΓÇô 17, July 20 ΓÇô 24 | Ages 4-18 | 
+      Global Rhythms Bear Camp | July 20 ΓÇô 24, July 27 ΓÇô 31 |  | 
+   -> Extracted Dates: June 8 ΓÇô 11 | June 15 ΓÇô 18 | June 22 ΓÇô 25 | July 13 ΓÇô 17 | July 20 ΓÇô 24 | July 27 ΓÇô 31 | June 6 ΓÇô 10 | June 8 ΓÇô 13 | June 22 ΓÇô 26 | June 2 ΓÇô 5 | June 14 ΓÇô 20 | July 12 ΓÇô 17 | July 12-17 | June 12 2026
+   -> Extracted Cost: TBA
+   -> Contact: Nick Harlan | lbrown@cacmustangs.org
+   -> ≡ƒÄ» SUCCESS ΓÇö stopping URL traversal for Central Arkansas
+   -> ≡ƒƒó Confidence Score: 75/100
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+VERIFICATION LOG SAVED ΓåÆ verification_log.json
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+
+SUMMARY:
+--------------------------------------------------------------------------------
+≡ƒƒó Alabama                   | Score: 100/100 | Dates: 06/15/2026 - 06/18/2026 | July 12th - 14...
+≡ƒƒí Arkansas                  | Score:  60/100 | Dates: August 20 2026...
+≡ƒƒí Army                      | Score:  55/100 | Dates: June 25 | June 28 2026...
+≡ƒƒó Baylor                    | Score: 100/100 | Dates: July 24-26th | July 31st - Aug 2nd | 7/1...
+≡ƒƒó Central Arkansas          | Score:  75/100 | Dates: June 8 ΓÇô 11 | June 15 ΓÇô 18 | June 22 ΓÇô 2...
+--------------------------------------------------------------------------------
+
+All V3 extractions completed.

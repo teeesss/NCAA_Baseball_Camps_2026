@@ -1,0 +1,42 @@
+[5:44:48 PM] [TEST MODE] Target: Alabama. Logic: V5 Ultra-Fidelity (No DDG).
+[5:44:48 PM] 
+Processing: Alabama
+[5:44:48 PM]       ↳ [Bing] searching: Alabama baseball camp 2026
+[5:44:52 PM]    -> Candidate URLs: 8
+[5:44:52 PM]       [45] https://www.alabamabaseballcamps.com
+[5:44:52 PM]       [0] https://www.bing.com/ck/a?!&&p=09a43304205a362b41054db20a1d5aa44278d14bf7f76442948c6130ce4e2167JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=04c2fc41-186e-6724-018d-eb6e198666bc&u=a1aHR0cHM6Ly93d3cuYWxhYmFtYWJhc2ViYWxsY2FtcHMuY29tLw&ntb=1
+[5:44:52 PM]       [0] https://www.bing.com/ck/a?!&&p=c1b9b92c2971a48725688c02fdab9499f90dda2164a53a9947f7a07d4a22c8d3JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=04c2fc41-186e-6724-018d-eb6e198666bc&u=a1aHR0cHM6Ly93d3cuYmFzZWJhbGxjYW1wc3VzYS5jb20v&ntb=1
+[5:44:52 PM]       [0] https://www.bing.com/ck/a?!&&p=91b17ba94a0ef12ab0d88a18a9ea07737552004df2aa918481ee7a0905a1804aJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=04c2fc41-186e-6724-018d-eb6e198666bc&u=a1aHR0cHM6Ly93d3cuYWxhYmFtYWJhc2ViYWxsY2FtcHMuY29tL3lvdXRoLWNhbXBzLmNmbQ&ntb=1
+[5:44:52 PM]       [0] https://www.bing.com/ck/a?!&&p=42dc5dd1e5e70a56cf0c1bc1cb7ba41288f04e2b9d1d50d3292fe3a3e07ad9e6JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=04c2fc41-186e-6724-018d-eb6e198666bc&u=a1aHR0cHM6Ly93d3cuYWxhYmFtYWJhc2ViYWxsY2FtcHMuY29tL3JlZ2lzdGVyLmNmbQ&ntb=1
+[5:44:52 PM]       [0] https://www.bing.com/ck/a?!&&p=ef68567a18677f0d8f543b0c508cc28f8454a8e9605e454a2446a0d6d1c1a752JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=04c2fc41-186e-6724-018d-eb6e198666bc&u=a1aHR0cHM6Ly93d3cuZHVubmJhc2ViYWxsYWNhZGVteS5jb20v&ntb=1
+[5:44:52 PM]       [0] https://www.bing.com/ck/a?!&&p=d00d06c764ded536c9b4ffb44658d968ea7b1145c362249de9aa361d627e028dJmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=04c2fc41-186e-6724-018d-eb6e198666bc&u=a1aHR0cHM6Ly9yb2xsdGlkZS5jb20vc3BvcnRzL2Jhc2ViYWxsL3NjaGVkdWxlLzIwMjY&ntb=1
+[5:44:52 PM]       [0] https://www.bing.com/ck/a?!&&p=de1dbe1ac89cffa958b9dc7442631f810f3c65304ccda6c91c5e96aa2e9e7466JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=04c2fc41-186e-6724-018d-eb6e198666bc&u=a1aHR0cHM6Ly93d3cudXNzcG9ydHNjYW1wcy5jb20vYmFzZWJhbGwvYWxhYmFtYQ&ntb=1
+[5:44:52 PM] 
+   -> Trying: https://www.alabamabaseballcamps.com
+[5:44:53 PM]    -> ✅ Validated. Extracting...
+[5:44:54 PM]    -> Crawling 8 sub-links...
+[5:44:54 PM]       ⭐ https://www.alabamabaseballcamps.com/#sitePageContent... [✓]
+[5:44:54 PM]       ⭐ https://www.alabamabaseballcamps.com/... [✓]
+[5:44:55 PM]       ⭐ https://www.alabamabaseballcamps.com/register.cfm... [✓]
+[5:44:55 PM]       ⭐ https://www.alabamabaseballcamps.com/alabama-baseball-f... [✓]
+[5:44:55 PM]       ⭐ https://www.alabamabaseballcamps.com/youth-camps.cfm... [✓]
+[5:44:55 PM]       ⭐ https://www.alabamabaseballcamps.com/elite-camp.cfm... [✓]
+[5:44:56 PM]       ⭐ https://www.alabamabaseballcamps.com/premier-prospect-c... [✓]
+[5:44:56 PM]       ⭐ https://www.alabamabaseballcamps.com/facilities.cfm... [✓]
+[5:44:56 PM]    -> 🎯 SUCCESS! Extracted data payload:
+[5:44:56 PM]       [Contact]: bamabaseball@ia.ua.edu
+[5:44:56 PM]       [Final Dates]: 06/15, 06/18, July 12 | July 12, 07/12, 07/14 | 07/27, 07/30, August 15 | June 15 | July 27 | JULY 12, July 12, July 14 | July 13 | AUGUST 15 2026
+[5:44:56 PM]       [URL]: https://www.alabamabaseballcamps.com
+[5:44:56 PM]       [Details]: Multiple camps available: Summer Youth Camps (.50), Elite Camp in July, and Prem...
+[5:44:56 PM] 
+      [Extracted Tiers]:
+[5:44:56 PM]         ✓ Summer Youth Camp | Dates: 06/15, 06/18, July 12 | Cost: $262
+[5:44:56 PM]         ✓ Elite Camp | Dates: July 12, 07/12, 07/14 | Cost: $262
+[5:44:56 PM]         ✓ Summer Youth Camp | Dates: 07/27, 07/30, August 15 | Cost: $262
+[5:44:56 PM]         ✓ Upcoming Camp | Dates: June 15 | Cost: $262
+[5:44:56 PM]         ✓ Upcoming Camp | Dates: July 27 | Cost: $10
+[5:44:56 PM]         ✓ Upcoming Camp | Dates: JULY 12, July 12, July 14 | Cost: $1312
+[5:44:56 PM]         ✓ Just Camp | Dates: July 13 | Cost: $62
+[5:44:56 PM]         ✓ Upcoming Camp | Dates: AUGUST 15 | Cost: $419
+[5:44:56 PM] 
+Test Done.

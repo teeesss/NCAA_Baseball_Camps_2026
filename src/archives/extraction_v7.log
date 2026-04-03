@@ -1,0 +1,837 @@
+[6:34:43 PM] 
+🚀 V7 Ultra-Fidelity Engine Starting. Target: 277 schools.
+[6:34:43 PM]    Database: 559 total | 282 verified | 146 with data
+[6:34:43 PM] 
+════════════════════════════════════════════════════════════
+[6:34:43 PM] [1/277] Processing: Texas Southern
+[6:34:43 PM] ════════════════════════════════════════════════════════════
+[6:34:43 PM]    → Priority URL from DB: https://www.texassouthernbaseballcamps.com
+[6:34:43 PM]       ↳ [DDG] Texas Southern Tigers baseball camp 2026
+[6:34:45 PM]       ↳ [Bing] Texas Southern Tigers baseball camp 2026
+[6:34:46 PM]       ↳ [Yahoo] Texas Southern Tigers baseball camp 2026
+[6:34:48 PM]       ↳ [DDG] Texas Southern baseball camp 2026
+[6:34:49 PM]       ↳ [DDG] Michael Robertson baseball camp 2026
+[6:34:49 PM]    → 18 candidates. Top 3:
+[6:34:49 PM]       ★ [105] https://www.texassouthernbaseballcamps.com
+[6:34:49 PM]       ★ [105] https://www.texassouthernbaseballcamps.com/index.cfm
+[6:34:49 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.texassouthernbaseballcamps.com%2F&rut=3ec95bd2546830f1cabff19b3088fbd9fa14b02ea8d157bc1a3d686e5dc11ec0
+[6:34:49 PM] 
+   → Navigating [105]: https://www.texassouthernbaseballcamps.com
+[6:34:50 PM]    → ✅ VALIDATED for Texas Southern (alias: "texas southern")
+[6:34:51 PM]    → Sub-crawling 6 pages...
+[6:34:51 PM]       ⭐ https://www.texassouthernbaseballcamps.com/#sitePageContent
+[6:34:51 PM]       ⭐ https://www.texassouthernbaseballcamps.com/
+[6:34:52 PM]       ⭐ https://www.texassouthernbaseballcamps.com/
+[6:34:52 PM]       ⭐ https://www.texassouthernbaseballcamps.com/register.cfm
+[6:34:52 PM]       ⭐ https://www.texassouthernbaseballcamps.com/high-school-showc
+[6:34:52 PM]       ⭐ https://www.texassouthernbaseballcamps.com/coaches-and-staff
+[6:34:52 PM]        📋 [Tiers] None found on this page.
+[6:34:52 PM] 
+   → Navigating [105]: https://www.texassouthernbaseballcamps.com/index.cfm
+[6:34:53 PM]    → ✅ VALIDATED for Texas Southern (alias: "texas southern")
+[6:34:53 PM]    → Sub-crawling 6 pages...
+[6:34:54 PM]       ⭐ https://www.texassouthernbaseballcamps.com/index.cfm#sitePag
+[6:34:54 PM]       ⭐ https://www.texassouthernbaseballcamps.com/
+[6:34:54 PM]       ⭐ https://www.texassouthernbaseballcamps.com/
+[6:34:55 PM]       ⭐ https://www.texassouthernbaseballcamps.com/register.cfm
+[6:34:55 PM]       ⭐ https://www.texassouthernbaseballcamps.com/high-school-showc
+[6:34:55 PM]       ⭐ https://www.texassouthernbaseballcamps.com/coaches-and-staff
+[6:34:55 PM]        📋 [Tiers] None found on this page.
+[6:34:55 PM] 
+   → Navigating [105]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.texassouthernbaseballcamps.com%2F&rut=3ec95bd2546830f1cabff19b3088fbd9fa14b02ea8d157bc1a3d686e5dc11ec0
+[6:34:56 PM]    → ✅ VALIDATED for Texas Southern (alias: "texas southern")
+[6:34:56 PM]    → Sub-crawling 6 pages...
+[6:34:57 PM]       ⭐ https://www.texassouthernbaseballcamps.com/#sitePageContent
+[6:34:57 PM]       ⭐ https://www.texassouthernbaseballcamps.com/
+[6:34:57 PM]       ⭐ https://www.texassouthernbaseballcamps.com/
+[6:34:58 PM]       ⭐ https://www.texassouthernbaseballcamps.com/register.cfm
+[6:34:58 PM]       ⭐ https://www.texassouthernbaseballcamps.com/high-school-showc
+[6:34:58 PM]       ⭐ https://www.texassouthernbaseballcamps.com/coaches-and-staff
+[6:34:58 PM]        📋 [Tiers] None found on this page.
+[6:34:58 PM] 
+   → Navigating [75]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Ffloridagators.com%2Fsports%2Fbaseball%2Froster%2Fmichael%2Drobertson%2F16375&rut=fa9d90267cadac222ad83c30b9c8976bd033f43b567a091fdbcd3dc58404b56d
+[6:35:01 PM]       ✕ School alias mismatch.
+[6:35:01 PM] 
+   → Navigating [75]: https://duckduckgo.com/l/?uddg=https%3A%2F%2F247sports.com%2Fcollege%2Fflorida%2Farticle%2Fflorida%2Dgators%2Dbaseball%2Droster%2Dmichael%2Drobertson%2Dncaa%2Dtransfer%2Dportal%2Dnews%2Dupdates%2D233216247%2F&rut=7b220618d30700ee0402910c3735998839b7f1751acda3abf2d13a59ce64a481
+[6:35:02 PM]       ✕ School alias mismatch.
+[6:35:02 PM] 
+   → Navigating [75]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.gainesville.com%2Fstory%2Fsports%2Fcollege%2Fbaseball%2F2024%2F06%2F25%2Fflorida%2Dbaseball%2Dcenter%2Dfielder%2Dmichael%2Drobertson%2Dentering%2Dtransfer%2Dportal%2F74165999007%2F&rut=003466931c44e31a2614927c07eb5808398305515d32861baa9ab4662bb9d4ad
+[6:35:04 PM]       ✕ School alias mismatch.
+[6:35:04 PM] 
+   → Navigating [75]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.gatorcountry.com%2Fflorida%2Dgators%2Dbaseball%2Fflorida%2Doutfielder%2Dmichael%2Drobertson%2Denters%2Dtransfer%2Dportal%2F&rut=2ba9d61c8cb120e531eabe145d463a43d7a486d8174af2544aed30ba1a5176e1
+[6:35:06 PM]       ✕ School alias mismatch.
+[6:35:06 PM] 
+   → Navigating [75]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fhailfloridahail.com%2Fposts%2Fafter%2Dlegendary%2Dmoments%2Dwith%2Dflorida%2Dbaseball%2Dmichael%2Drobertson%2Dhits%2Dtransfer%2Dportal%2D01j188b1rymv&rut=3df13bdd6b744e295eaf17aee47b740949fce270e170756a90b8cb5bd07d947b
+[6:35:08 PM]       ✕ School alias mismatch.
+[6:35:08 PM] 
+   → Navigating [75]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fgatorswire.usatoday.com%2Fstory%2Fsports%2Fcollege%2Fgators%2Fbaseball%2F2024%2F06%2F25%2Fflorida%2Dbaseball%2Dtransfer%2Dportal%2Dmichael%2Drobertson%2F74210522007%2F&rut=eb022a985bd466a7d96101be77d014b52b84e591b7360f84d191ba97ac7b21e7
+[6:35:09 PM]       ✕ School alias mismatch.
+[6:35:09 PM] 
+   → Navigating [65]: https://www.ncsasports.org/baseball/camps
+[6:35:11 PM]       ✕ School alias mismatch.
+[6:35:11 PM] 
+   → Navigating [65]: https://www.baseballcampsusa.com/
+[6:35:12 PM]       ✕ School alias mismatch.
+[6:35:12 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.ncsasports.org%2Fbaseball%2Fcamps&rut=e2cc9e314916a7f343770a66a1085e7daeca2e53bbbdc0955812317131c59f32
+[6:35:13 PM]       ✕ School alias mismatch.
+[6:35:13 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.baseballcampsusa.com%2F&rut=1fbe18341ae4e9106fdb45c57f477b070a4bd067a8fba579e9e83595c6c31940
+[6:35:14 PM]       ✕ School alias mismatch.
+[6:35:14 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Frecruitingmasterlist.com%2Fall%2Dtexas%2Dcollege%2Dbaseball%2Dcamps%2F&rut=ee84d29ad4b88662f42cfbf8ee5c91637aacb8e5abb5619e46f38d4ec4b9a529
+[6:35:18 PM]    → ✅ VALIDATED for Texas Southern (alias: "texas southern")
+[6:35:18 PM]    → Sub-crawling 6 pages...
+[6:35:19 PM]       ⭐ https://recruitingmasterlist.com/all-texas-college-baseball-
+[6:35:21 PM]       ⭐ https://recruitingmasterlist.com/all-texas-college-summer-ca
+[6:35:23 PM]       ⭐ https://recruitingmasterlist.com/all-california-football-cam
+[6:35:25 PM]       ⭐ https://recruitingmasterlist.com/all-florida-college-footbal
+[6:35:25 PM]       ⭐ https://recruitingmasterlist.com/all-texas-college-baseball-
+[6:35:26 PM]       ⭐ https://recruitingmasterlist.com/all-texas-college-baseball-
+[6:35:26 PM]        📋 [Tiers] 137 entries. Sample: "Youth Summer Camp" (08/01/2026) | "In-Season Hitting Camp" (March 25th)
+[6:35:26 PM]    → 🎯 SUCCESS — 137 tiers. Cost: $0 - $500
+[6:35:26 PM]    → [DB_UPDATED] Saved.
+[6:35:26 PM] 
+════════════════════════════════════════════════════════════
+[6:35:26 PM] [2/277] Processing: Texas State
+[6:35:26 PM] ════════════════════════════════════════════════════════════
+[6:35:26 PM]    → Priority URL from DB: https://txst.com
+[6:35:26 PM]       ↳ [DDG] Texas State Bobcats baseball camp 2026
+[6:35:27 PM]       ↳ [DDG] Texas State baseball camp 2026
+[6:35:28 PM]    → 18 candidates. Top 3:
+[6:35:28 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Finfo.collegebaseballcamps.com%2Fsteventroutbaseball%2F&rut=28d442eaff02f46ef5d0587e770408c78520f4af99253b4437aed160332e855b
+[6:35:28 PM]       ★ [ 65] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.ncsasports.org%2Fbaseball%2Fcamps&rut=e2cc9e314916a7f343770a66a1085e7daeca2e53bbbdc0955812317131c59f32
+[6:35:28 PM]       ★ [ 65] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.nsr%2Dinc.com%2Fsport%2Fbaseball%2Fcollege%2Dbaseball%2Dcamps.php&rut=b6f1d10813c9601e9c5a80fb9e6a3b018a077cba77c188ce5773f1bff9cbdaae
+[6:35:28 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Finfo.collegebaseballcamps.com%2Fsteventroutbaseball%2F&rut=28d442eaff02f46ef5d0587e770408c78520f4af99253b4437aed160332e855b
+[6:35:29 PM]    → ✅ VALIDATED for Texas State (alias: "texas state")
+[6:35:29 PM]    → Sub-crawling 6 pages...
+[6:35:30 PM]       ⭐ https://info.collegebaseballcamps.com/steventroutbaseball/#h
+[6:35:30 PM]       ⭐ https://info.collegebaseballcamps.com/steventroutbaseball/#a
+[6:35:30 PM]       ⭐ https://info.collegebaseballcamps.com/steventroutbaseball/#E
+[6:35:31 PM]       ⭐ https://info.collegebaseballcamps.com/steventroutbaseball/#C
+[6:35:31 PM]       ⭐ https://info.collegebaseballcamps.com/steventroutbaseball/#C
+[6:35:31 PM]       ⭐ https://info.collegebaseballcamps.com/steventroutbaseball/#E
+[6:35:31 PM]        📋 [Tiers] None found on this page.
+[6:35:31 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.ncsasports.org%2Fbaseball%2Fcamps&rut=e2cc9e314916a7f343770a66a1085e7daeca2e53bbbdc0955812317131c59f32
+[6:35:32 PM]       ✕ School alias mismatch.
+[6:35:32 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.nsr%2Dinc.com%2Fsport%2Fbaseball%2Fcollege%2Dbaseball%2Dcamps.php&rut=b6f1d10813c9601e9c5a80fb9e6a3b018a077cba77c188ce5773f1bff9cbdaae
+[6:35:35 PM]    → ✅ VALIDATED for Texas State (alias: "texas state")
+[6:35:35 PM]    → Sub-crawling 6 pages...
+[6:35:36 PM]       ⭐ https://www.nsr-inc.com/sport/baseball/college-baseball-camp
+[6:35:37 PM]       ⭐ https://www.nsr-inc.com/how-to-get-recruited?lead_origin=bas
+[6:35:37 PM]       ⭐ https://www.nsr-inc.com/how-to-get-recruited?lead_origin=bas
+[6:35:38 PM]       ⭐ https://www.acubaseballcamps.com/
+[6:35:39 PM]       ⭐ https://www.twosevenbaseballcamps.com/
+[6:35:41 PM]       ⭐ https://www.playnsports.com/event/baseball-summer-prospect-s
+[6:35:41 PM]        📋 [Tiers] 1 entries. Sample: "Spring Training Showcase" (February 1st)
+[6:35:41 PM]    → 🎯 SUCCESS — 1 tiers. Cost: $250
+[6:35:41 PM]    → [DB_UPDATED] Saved.
+[6:35:41 PM] 
+════════════════════════════════════════════════════════════
+[6:35:41 PM] [3/277] Processing: The Citadel
+[6:35:41 PM] ════════════════════════════════════════════════════════════
+[6:35:41 PM]    → Priority URL from DB: https://citadelsports.com
+[6:35:41 PM]       ↳ [DDG] The Citadel Bulldogs baseball camp 2026
+[6:35:42 PM]       ↳ [DDG] The Citadel baseball camp 2026
+[6:35:43 PM]    → 18 candidates. Top 3:
+[6:35:43 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.russelltriplettbaseballcamps.com%2F&rut=e74738da1ecacd0414483d49fc50a7bb02fa2d78be0735da9c4f5c4d9a753208
+[6:35:43 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fregister.ryzer.com%2Fcamp.cfm%3Fid%3D323895&rut=40916eb7c41c7facef50c2a5ef72eb629bcb16a2682f3d6ec1f45de1730203b8
+[6:35:43 PM]       ★ [ 75] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fcitadelsports.com%2Fnews%2F2025%2F12%2F17%2Ftriplett%2Dannounces%2D2026%2Dthe%2Dcitadel%2Dbaseball%2Dslate.aspx&rut=78684f8ef80a595d0cc126d313df9a5b92a1bc555e379cd08d996ed5c693c421
+[6:35:43 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.russelltriplettbaseballcamps.com%2F&rut=e74738da1ecacd0414483d49fc50a7bb02fa2d78be0735da9c4f5c4d9a753208
+[6:35:44 PM]    → ✅ VALIDATED for The Citadel (alias: "the citadel")
+[6:35:44 PM]    → Sub-crawling 6 pages...
+[6:35:45 PM]       ⭐ https://www.russelltriplettbaseballcamps.com/#sitePageConten
+[6:35:45 PM]       ⭐ https://www.russelltriplettbaseballcamps.com/
+[6:35:45 PM]       ⭐ https://www.russelltriplettbaseballcamps.com/register.cfm
+[6:35:46 PM]       ⭐ https://www.russelltriplettbaseballcamps.com/youth-camps.cfm
+[6:35:46 PM]       ⭐ https://www.russelltriplettbaseballcamps.com/fatherson-camp.
+[6:35:46 PM]       ⭐ https://www.russelltriplettbaseballcamps.com/hs-prospect-cam
+[6:35:46 PM]        📋 [Tiers] 2 entries. Sample: "Youth Day Camp" (06/08/2026) | "All-Camp" (June 8th - 11th)
+[6:35:46 PM]    → 🎯 SUCCESS — 2 tiers. Cost: $245
+[6:35:46 PM]    → [DB_UPDATED] Saved.
+[6:35:46 PM] 
+════════════════════════════════════════════════════════════
+[6:35:46 PM] [4/277] Processing: Toledo
+[6:35:46 PM] ════════════════════════════════════════════════════════════
+[6:35:46 PM]    → Priority URL from DB: https://utrockets.com
+[6:35:46 PM]       ↳ [DDG] Toledo Rockets baseball camp 2026
+[6:35:47 PM]       ↳ [DDG] Toledo baseball camp 2026
+[6:35:48 PM]    → 18 candidates. Top 3:
+[6:35:48 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseball.toledocamps.com%2F&rut=caef40cdaec327c786cb9e9d92ca7201efef5488b9499b6f7c10e2346b2c9150
+[6:35:48 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.summercamp.com%2Fcamp%2F16993%2FUniversity%2Dof%2DToledo%2DBaseball%2DCamp%2DSummer%2DCamp&rut=8aca6e02bf78e3ebe014578401d86960d6849adeaef81a02a2cc5a17840bbcc6
+[6:35:48 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fusbaseballacademy.com%2Fsummer%2Dbaseball%2Dcamp%2Din%2Dtoledo%2F&rut=6f3613d2236ff9c053fe810056b9e527ae134ee51b8dc9bb4d610eab560dea26
+[6:35:48 PM] 
+   → Navigating [105]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseball.toledocamps.com%2F&rut=caef40cdaec327c786cb9e9d92ca7201efef5488b9499b6f7c10e2346b2c9150
+[6:35:49 PM]    → ✅ VALIDATED for Toledo (alias: "toledo")
+[6:35:49 PM]    → Sub-crawling 6 pages...
+[6:35:50 PM]       ⭐ https://baseball.toledocamps.com/#sitePageContent
+[6:35:50 PM]       ⭐ https://baseball.toledocamps.com/
+[6:35:50 PM]       ⭐ https://baseball.toledocamps.com/
+[6:35:51 PM]       ⭐ https://baseball.toledocamps.com/events.cfm
+[6:35:51 PM]       ⭐ https://baseball.toledocamps.com/about-us.cfm
+[6:35:51 PM]       ⭐ https://baseball.toledocamps.com/head-coach-rob-reinstetle.c
+[6:35:51 PM]        📋 [Tiers] None found on this page.
+[6:35:51 PM] 
+   → Navigating [105]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.summercamp.com%2Fcamp%2F16993%2FUniversity%2Dof%2DToledo%2DBaseball%2DCamp%2DSummer%2DCamp&rut=8aca6e02bf78e3ebe014578401d86960d6849adeaef81a02a2cc5a17840bbcc6
+[6:35:53 PM]    → ✅ VALIDATED for Toledo (alias: "toledo")
+[6:35:53 PM]    → Sub-crawling 6 pages...
+[6:35:53 PM]       ⭐ https://www.summercamp.com/index.php
+[6:35:53 PM]       ⭐ https://www.summercamp.com/search.php
+[6:35:53 PM]       ⭐ https://www.summercamp.com/index.php
+[6:35:53 PM]       ⭐ https://www.summercamp.com/search.php
+[6:35:54 PM]       ⭐ https://www.summercamp.com/add_camp.php
+[6:35:54 PM]       ⭐ https://blog.summercamp.com/
+[6:35:54 PM]        📋 [Tiers] 6 entries. Sample: "UT Baseball Camp" (6/14) | "Rockets Comprehensive Camp" (6/14)
+[6:35:54 PM]    → 🎯 SUCCESS — 6 tiers. Cost: TBA
+[6:35:54 PM]    → [DB_UPDATED] Saved.
+[6:35:55 PM] 
+════════════════════════════════════════════════════════════
+[6:35:55 PM] [5/277] Processing: Towson
+[6:35:55 PM] ════════════════════════════════════════════════════════════
+[6:35:55 PM]    → Priority URL from DB: https://images.search.yahoo.com/search/images;_ylt=AwrFNJVP.M5pLwIAPstXNyoA;_ylu=Y29sbwNiZjEEcG9zAzMEdnRpZAMEc2VjA3Ny?p=Towson+Baseball+Camps+-+Register+Today+-+Play%27n+Sports&imgurl=https%3A%2F%2Fwww.bing.com%2Fimages%2Fsearch%3Fview%3DdetailV2%26ccid%3DExMht%2FTz%26id%3D6D566605B94B4632240F720DFB0C5CFB273E2586%26thid%3DOIP.ExMht_Tz5xCoYjya_IdqBgHaDM%26mediaurl%3Dhttps%3A%2F%2Fd2t3z6uf36951x.cloudfront.net%2F2023%2F01%2F1-2040x880.jpg%26exph%3D880%26expw%3D2040%26q%3DTowson%2520Tigers%2520baseball%2520camp%25202026%26ck%3D7E8178D577654F31D1CB1E590309D946%26idpp%3Drc%26idpview%3Dsingleimage%26form%3Drc2idp&name=Towson+Tigers+baseball+camp+20261&turl=https%3A%2F%2Fsp.yimg.com%2Fib%2Fth%2Fid%2FOIP.ExMht_Tz5xCoYjya_IdqBgHaDM%3Fpid%3DApi%26w%3D148%26h%3D148%26c%3D7%26rs%3D1&tt=Towson+Tigers+baseball+camp+20261&sigit=Y3brKLs.Bp9M&sigi=Ed50U1bzBGkn&sign=dr1O3jAUQtPV&sigt=dr1O3jAUQtPV
+[6:35:55 PM]       ↳ [DDG] Towson Tigers baseball camp 2026
+[6:35:56 PM]       ↳ [DDG] Towson baseball camp 2026
+[6:35:57 PM]    → 17 candidates. Top 3:
+[6:35:57 PM]       ★ [135] https://duckduckgo.com/l/?uddg=https%3A%2F%2Ftowsontigers.com%2Fnews%2F2026%2F1%2F14%2Ftyner%2Dreleases%2D2026%2Dbaseball%2Dschedule.aspx&rut=7a6a00a11be4967b29c39e542ed6f59440548d2d580dc8ff97ba6fc0ee03cfa8
+[6:35:57 PM]       ★ [125] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Ftowson%2Duniversity%2Dtigers%2Dbaseball%2Dhigh%2Dschool%2Dprospect%2Dcamp%2F&rut=21fe1f00e85b7ac6a5fb7f5d8547c8d2308f4ca722888e3b04733b8cccfc4db3
+[6:35:57 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fapp.usbaseballacademy.com%2Fcamps%2Fsummer%2Dcamp%2Dtowson&rut=85ea18b1f9de1a57a0e3bd3f26c852d3fcac78b589a98bd3acf987040d3bc349
+[6:35:57 PM] 
+   → Navigating [135]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Ftowsontigers.com%2Fnews%2F2026%2F1%2F14%2Ftyner%2Dreleases%2D2026%2Dbaseball%2Dschedule.aspx&rut=7a6a00a11be4967b29c39e542ed6f59440548d2d580dc8ff97ba6fc0ee03cfa8
+[6:35:59 PM]    → ✅ VALIDATED for Towson (alias: "towson")
+[6:35:59 PM]    → Sub-crawling 6 pages...
+[6:36:01 PM]       ⭐ https://towsontigers.com/news/2026/3/20/baseball-drops-serie
+[6:36:02 PM]       ⭐ https://towsontigers.com/boxscore.aspx?id=29510
+[6:36:05 PM]       ⭐ https://towsontigers.com/news/2026/3/21/campbell-tops-towson
+[6:36:06 PM]       ⭐ https://towsontigers.com/boxscore.aspx?id=29511
+[6:36:08 PM]       ⭐ https://towsontigers.com/news/2026/3/22/campbell-completes-c
+[6:36:09 PM]       ⭐ https://towsontigers.com/boxscore.aspx?id=29512
+[6:36:09 PM]        📋 [Tiers] 11 entries. Sample: "Baseball Camp" (2/13) | "Baseball Camp" (3/11)
+[6:36:09 PM]    → 🎯 SUCCESS — 11 tiers. Cost: TBA
+[6:36:09 PM]    → [DB_UPDATED] Saved.
+[6:36:09 PM] 
+════════════════════════════════════════════════════════════
+[6:36:09 PM] [6/277] Processing: Troy
+[6:36:09 PM] ════════════════════════════════════════════════════════════
+[6:36:09 PM]    → Priority URL from DB: https://www.bing.com/ck/a?!&&p=4007be382912452fd98371287e003001ebbcb590cdf4e42202a5313de5c2d5d3JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=0caa1ca1-2855-60e3-051e-0b8e29f3613d&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVHJveV8oZmlsbSk&ntb=1
+[6:36:09 PM]       ↳ [DDG] Troy Trojans baseball camp 2026
+[6:36:10 PM]       ↳ [DDG] Troy baseball camp 2026
+[6:36:11 PM]    → 18 candidates. Top 3:
+[6:36:11 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.troybaseballcamps.com%2Fregister.cfm&rut=eb17a4f2771436a5e01e57e729d39c64a3c0178dae2e9f7909a0f67945fa3833
+[6:36:11 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.troybaseballcamps.com%2F&rut=619f42cf510f6bf001a4f9287a9b8f2b5b5ce75947e395163b1af6ee12676897
+[6:36:11 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Ftroytrojans.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=91d2a509493b5906f6f80ee6c0bd9b99c0ec221331db6761cc470f78fbd9c210
+[6:36:11 PM] 
+   → Navigating [105]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.troybaseballcamps.com%2Fregister.cfm&rut=eb17a4f2771436a5e01e57e729d39c64a3c0178dae2e9f7909a0f67945fa3833
+[6:36:12 PM]       ✕ Contamination (Alabama). Skip.
+[6:36:12 PM] 
+   → Navigating [105]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.troybaseballcamps.com%2F&rut=619f42cf510f6bf001a4f9287a9b8f2b5b5ce75947e395163b1af6ee12676897
+[6:36:13 PM]       ✕ Contamination (Alabama). Skip.
+[6:36:13 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Ftroytrojans.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=91d2a509493b5906f6f80ee6c0bd9b99c0ec221331db6761cc470f78fbd9c210
+[6:36:15 PM]    → ✅ VALIDATED for Troy (alias: "troy")
+[6:36:15 PM]    → Sub-crawling 6 pages...
+[6:36:16 PM]       ↳ https://troytrojans.com/api/v2/promotions/1560/click?redirec
+[6:36:17 PM]       ⭐ https://troytrojans.com/sb_output.aspx?form=3
+[6:36:17 PM]       ⭐ https://play.google.com/store/apps/details?id=com.fnoex.fan.
+[6:36:18 PM]       ↳ https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/t
+[6:36:18 PM]       ↳ http://www.statbroadcast.com/events/statbroadcast.php?gid=tr
+[6:36:19 PM]       ⭐ https://troytrojans.com/sb_output.aspx?form=3
+[6:36:19 PM]        📋 [Tiers] 1 entries. Sample: "Baseball Camp" (April 3)
+[6:36:19 PM]    → 🎯 SUCCESS — 1 tiers. Cost: TBA
+[6:36:19 PM]    → [DB_UPDATED] Saved.
+[6:36:19 PM] 
+════════════════════════════════════════════════════════════
+[6:36:19 PM] [7/277] Processing: Tulane
+[6:36:19 PM] ════════════════════════════════════════════════════════════
+[6:36:19 PM]    → Priority URL from DB: https://www.bing.com/ck/a?!&&p=6565a53bbf4649f442a6112f1aa5b9be2bac2e09fb4df65fca3676614cf45746JmltdHM9MTc3NTA4ODAwMA&ptn=3&ver=2&hsh=4&fclid=0caa1ca1-2855-60e3-051e-0b8e29f3613d&u=a1aHR0cHM6Ly93d3cuZHJ1Z3MuY29tL25ld3Mvbm92by1ub3JkaXNrLXJvbGxzLW91dC1sb3dlci1wcmljZXMtb3plbXBpYy13ZWdvdnktMTI3NjE4Lmh0bWw&ntb=1
+[6:36:19 PM]       ↳ [DDG] Tulane Green Wave baseball camp 2026
+[6:36:20 PM]       ↳ [DDG] Tulane baseball camp 2026
+[6:36:20 PM]    → 18 candidates. Top 3:
+[6:36:20 PM]       ★ [115] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.si.com%2Fcollege%2Ftulane%2Fnews%2Ftulane%2Dbaseball%2Dopens%2Dspring%2Dpractice%2Djay%2Duhlman%2Dlooks%2Dat%2Dhis%2D2026%2Dteam%2D01kf3y665twe&rut=bce16fb0cba4e095917573fe91ce3b6e1bc9809466b3b09ee1d1a07387ea17e1
+[6:36:20 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.playnsports.com%2Forganization%2Ftulane%2Duniversity%2Dbaseball%2Dcamps%2F&rut=ca357bd6da7656c18f72994102d968953fbd98115bf34a5a52498193ba88ac43
+[6:36:20 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Ftulanegreenwave.com%2Fnews%2F2025%2F3%2F17%2Ftulane%2Dbaseball%2Dsummer%2Dyouth%2Dcamp%2Dschedule%2Dreleased&rut=f5e6aff3638b32d54b00f4b6c03d658021411473591a3209ab972ab9dc2e4d69
+[6:36:20 PM] 
+   → Navigating [115]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.si.com%2Fcollege%2Ftulane%2Fnews%2Ftulane%2Dbaseball%2Dopens%2Dspring%2Dpractice%2Djay%2Duhlman%2Dlooks%2Dat%2Dhis%2D2026%2Dteam%2D01kf3y665twe&rut=bce16fb0cba4e095917573fe91ce3b6e1bc9809466b3b09ee1d1a07387ea17e1
+[6:36:22 PM]    → ✅ VALIDATED for Tulane (alias: "tulane")
+[6:36:22 PM]    → Sub-crawling 0 pages...
+[6:36:22 PM]        📋 [Tiers] 1 entries. Sample: "Baseball Camp" (Jan 17)
+[6:36:22 PM]    → 🎯 SUCCESS — 1 tiers. Cost: TBA
+[6:36:22 PM]    → [DB_UPDATED] Saved.
+[6:36:22 PM] 
+════════════════════════════════════════════════════════════
+[6:36:22 PM] [8/277] Processing: UC Davis
+[6:36:22 PM] ════════════════════════════════════════════════════════════
+[6:36:22 PM]    → Priority URL from DB: https://ucdavisaggies.com
+[6:36:22 PM]       ↳ [DDG] UC Davis Aggies baseball camp 2026
+[6:36:23 PM]       ↳ [DDG] UC Davis baseball camp 2026
+[6:36:24 PM]    → 18 candidates. Top 3:
+[6:36:24 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fucdavisaggies.com%2Fsports%2Fbaseball&rut=c24cc609542fbd1c100ae8af271b8ad189bd373ef4b2fd2c6375bded06a7bf11
+[6:36:24 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fucdavisaggies.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=69512265191691a4d9ef1b40308d40ce86343707df2b37c412a51d614b037962
+[6:36:24 PM]       ★ [ 85] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Funiversity%2Dof%2Dcalifornia%2Ddavis%2Daggies%2Dbaseball%2Dprospect%2Dcamp%2F&rut=9ff838667e46d7ee9c40cd5d1850c27a4c65ce139eeeaa57321571c4ac6f4c4d
+[6:36:24 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fucdavisaggies.com%2Fsports%2Fbaseball&rut=c24cc609542fbd1c100ae8af271b8ad189bd373ef4b2fd2c6375bded06a7bf11
+[6:36:26 PM]    → ✅ VALIDATED for UC Davis (alias: "uc davis")
+[6:36:26 PM]    → Sub-crawling 6 pages...
+[6:36:26 PM]       ↳ https://ucdavisaggies.evenue.net/cgi-bin/ncommerce3/SEGetEve
+[6:36:27 PM]       ⭐ https://www.ucdavisathleticcamps.com/
+[6:36:28 PM]       ⭐ https://ucdavisaggies.com/sports/2022/11/18/campus-resources
+[6:36:28 PM]       ⭐ https://www.ucdavisathleticcamps.com/
+[6:36:29 PM]       ↳ http://www.totalcamps.com/UCDAVISBASEBALLCAMPS
+[6:36:29 PM]        📋 [Tiers] None found on this page.
+[6:36:29 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fucdavisaggies.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=69512265191691a4d9ef1b40308d40ce86343707df2b37c412a51d614b037962
+[6:36:30 PM]    → ✅ VALIDATED for UC Davis (alias: "uc davis")
+[6:36:30 PM]    → Sub-crawling 6 pages...
+[6:36:31 PM]       ↳ https://ucdavisaggies.evenue.net/cgi-bin/ncommerce3/SEGetEve
+[6:36:31 PM]       ⭐ https://www.ucdavisathleticcamps.com/
+[6:36:31 PM]       ⭐ https://ucdavisaggies.com/sports/2022/11/18/campus-resources
+[6:36:32 PM]       ⭐ https://www.ucdavisathleticcamps.com/
+[6:36:32 PM]       ↳ http://www.totalcamps.com/UCDAVISBASEBALLCAMPS
+[6:36:32 PM]        📋 [Tiers] 4 entries. Sample: "Baseball Camp" (May 20) | "Baseball Camp" (May 21)
+[6:36:32 PM]    → 🎯 SUCCESS — 4 tiers. Cost: TBA
+[6:36:32 PM]    → [DB_UPDATED] Saved.
+[6:36:32 PM] 
+════════════════════════════════════════════════════════════
+[6:36:32 PM] [9/277] Processing: UC Irvine
+[6:36:32 PM] ════════════════════════════════════════════════════════════
+[6:36:32 PM]    → Priority URL from DB: https://ucirvinesports.com
+[6:36:32 PM]       ↳ [DDG] UC Irvine Anteaters baseball camp 2026
+[6:36:33 PM]       ↳ [DDG] UC Irvine baseball camp 2026
+[6:36:34 PM]    → 15 candidates. Top 3:
+[6:36:34 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fucirvinesports.com%2Fnews%2F2025%2F10%2F28%2Fanteater%2Dbaseball%2Drolls%2Dout%2D2026%2Dschedule.aspx&rut=8885109a9bae466a66850c4c86848461d14e60588382d56b970fd8b6e288af60
+[6:36:34 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fd1baseball.com%2Fteam%2Fucirvine%2F&rut=fb7ef0a83a5af0fc10cbd75f2332b2e6ca069c85cd7042639525d6d495a0b12d
+[6:36:34 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fucirvinesports.com%2Fsports%2Fbaseball&rut=d6c67e15806b2a780ec0b018ba480a98bb51605f878e5624a4cbdf620dd0e23e
+[6:36:34 PM] 
+   → Navigating [80]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fucirvinesports.com%2Fnews%2F2025%2F10%2F28%2Fanteater%2Dbaseball%2Drolls%2Dout%2D2026%2Dschedule.aspx&rut=8885109a9bae466a66850c4c86848461d14e60588382d56b970fd8b6e288af60
+[6:36:36 PM]    → ✅ VALIDATED for UC Irvine (alias: "uc irvine")
+[6:36:37 PM]    → Sub-crawling 6 pages...
+[6:36:37 PM]       ⭐ https://ucirvinesports.com/news/2026/4/2/general-parking-adv
+[6:36:38 PM]        📋 [Tiers] 3 entries. Sample: "Baseball Camp" (April 3-4) | "Baseball Camp" (October 28)
+[6:36:38 PM]    → 🎯 SUCCESS — 3 tiers. Cost: TBA
+[6:36:38 PM]    → [DB_UPDATED] Saved.
+[6:36:38 PM] 
+════════════════════════════════════════════════════════════
+[6:36:38 PM] [10/277] Processing: UC Riverside
+[6:36:38 PM] ════════════════════════════════════════════════════════════
+[6:36:38 PM]    → Priority URL from DB: https://gohighlanders.com
+[6:36:38 PM]       ↳ [DDG] UC Riverside Highlanders baseball camp 2026
+[6:36:39 PM]       ↳ [DDG] UC Riverside baseball camp 2026
+[6:36:40 PM]    → 18 candidates. Top 3:
+[6:36:40 PM]       ★ [ 85] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Funiversity%2Dof%2Dcalifornia%2Driverside%2Dhighlanders%2Dbaseball%2Dprospect%2Dcamp%2F&rut=52d2ba86ddb667ffa4af1c47e0da7abdfecba5e9fc212ff79598d781df8b2f74
+[6:36:40 PM]       ★ [ 65] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.summercamp.com%2Fcamp%2F16855%2FUC%2DRiverside%2DBaseball%2DCamps%2DSummer%2DCamp&rut=4029ce66d2ad685dde92c6b0d35f01020368495e9b4f530f6912c3708b4c8055
+[6:36:40 PM]       ★ [ 65] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fucirvinesports.com%2Fsports%2F2017%2F5%2F26%2Fcamps%2Dbaseball%2Dindex.aspx&rut=5434fb6bf756e54532b988834932373028a51cbf9ffb62122c1b97abdb3ff0c7
+[6:36:40 PM] 
+   → Navigating [85]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Funiversity%2Dof%2Dcalifornia%2Driverside%2Dhighlanders%2Dbaseball%2Dprospect%2Dcamp%2F&rut=52d2ba86ddb667ffa4af1c47e0da7abdfecba5e9fc212ff79598d781df8b2f74
+[6:36:52 PM]       ✕ Contamination (California). Skip.
+[6:36:52 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.summercamp.com%2Fcamp%2F16855%2FUC%2DRiverside%2DBaseball%2DCamps%2DSummer%2DCamp&rut=4029ce66d2ad685dde92c6b0d35f01020368495e9b4f530f6912c3708b4c8055
+[6:36:53 PM]    → ✅ VALIDATED for UC Riverside (alias: "uc riverside")
+[6:36:53 PM]    → Sub-crawling 6 pages...
+[6:36:53 PM]       ⭐ https://www.summercamp.com/index.php
+[6:36:54 PM]       ⭐ https://www.summercamp.com/search.php
+[6:36:54 PM]       ⭐ https://www.summercamp.com/index.php
+[6:36:54 PM]       ⭐ https://www.summercamp.com/search.php
+[6:36:54 PM]       ⭐ https://www.summercamp.com/add_camp.php
+[6:36:55 PM]       ⭐ https://blog.summercamp.com/
+[6:36:55 PM]        📋 [Tiers] 5 entries. Sample: "UC Riverside Baseball Camp" (7/12) | "Posted in Summer Sports Camp" (June 14th)
+[6:36:55 PM]    → 🎯 SUCCESS — 5 tiers. Cost: TBA
+[6:36:55 PM]    → [DB_UPDATED] Saved.
+[6:36:55 PM] 
+[SYSTEM] Periodic browser restart at school 10...
+[6:36:57 PM] 
+════════════════════════════════════════════════════════════
+[6:36:57 PM] [11/277] Processing: UC Santa Barbara
+[6:36:57 PM] ════════════════════════════════════════════════════════════
+[6:36:58 PM]    → Priority URL from DB: https://ucsbgauchos.com
+[6:36:58 PM]       ↳ [DDG] UC Santa Barbara Gauchos baseball camp 2026
+[6:36:59 PM]       ↳ [DDG] UC Santa Barbara baseball camp 2026
+[6:36:59 PM]    → 16 candidates. Top 3:
+[6:36:59 PM]       ★ [ 65] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.summercamp.com%2Fcamp%2F16929%2FGaucho%2DBaseball%2DCamps%2Dat%2DUCSB%2DSummer%2DCamp&rut=6ffdac746dbb0fa6010f0aa8b3bedf24facef8c0c4db8a1c32f6454940828243
+[6:36:59 PM]       ★ [ 65] https://www.ucsantabarbarabaseballcamps.com
+[6:36:59 PM]       ★ [ 60] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fucsbgauchos.com%2Fsports%2Fbaseball&rut=a18f164093e896f44f6ad61829cffcb497d4d5364a469e65a9fd969c85918965
+[6:36:59 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.summercamp.com%2Fcamp%2F16929%2FGaucho%2DBaseball%2DCamps%2Dat%2DUCSB%2DSummer%2DCamp&rut=6ffdac746dbb0fa6010f0aa8b3bedf24facef8c0c4db8a1c32f6454940828243
+[6:37:01 PM]    → ✅ VALIDATED for UC Santa Barbara (alias: "uc santa barbara")
+[6:37:01 PM]    → Sub-crawling 6 pages...
+[6:37:01 PM]       ⭐ https://www.summercamp.com/index.php
+[6:37:01 PM]       ⭐ https://www.summercamp.com/search.php
+[6:37:01 PM]       ⭐ https://www.summercamp.com/index.php
+[6:37:02 PM]       ⭐ https://www.summercamp.com/search.php
+[6:37:02 PM]       ⭐ https://www.summercamp.com/add_camp.php
+[6:37:02 PM]       ⭐ https://blog.summercamp.com/
+[6:37:02 PM]        📋 [Tiers] 4 entries. Sample: "Posted in Summer Sports Camp" (June 14th) | "Finding the Perfect Summer Camp" (June 7th)
+[6:37:02 PM]    → 🎯 SUCCESS — 4 tiers. Cost: TBA
+[6:37:02 PM]    → [DB_UPDATED] Saved.
+[6:37:02 PM] 
+════════════════════════════════════════════════════════════
+[6:37:02 PM] [12/277] Processing: UMass
+[6:37:02 PM] ════════════════════════════════════════════════════════════
+[6:37:02 PM]    → Priority URL from DB: https://goriverhawks.com
+[6:37:02 PM]       ↳ [DDG] UMass Minutemen baseball camp 2026
+[6:37:03 PM]       ↳ [DDG] UMass baseball camp 2026
+[6:37:04 PM]    → 18 candidates. Top 3:
+[6:37:04 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fumassathletics.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=cf22966d4c1b74c7b4a7169f14a165d2235996b8850431e33382b934c55801ac
+[6:37:04 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fumassathletics.com%2Fsports%2Fbaseball&rut=0a6e67e139b880dd56e3d8c9d30472efb7a841117567c2609d9b7e13e3a3f496
+[6:37:04 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fumassathletics.com%2Fnews%2F2026%2F1%2F9%2Fmassachusetts%2Dbaseball%2Dunveils%2D2026%2Dschedule&rut=cfaa06ec390d693da6123ed544a5a1a12a4a453ff76356c8aede93a4721998d5
+[6:37:04 PM] 
+   → Navigating [80]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fumassathletics.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=cf22966d4c1b74c7b4a7169f14a165d2235996b8850431e33382b934c55801ac
+[6:37:06 PM]    → ✅ VALIDATED for UMass (alias: "umass")
+[6:37:06 PM]    → Sub-crawling 6 pages...
+[6:37:07 PM]       ⭐ https://umassathletics.com/sports/2016/7/1/ot-umas-camps-htm
+[6:37:10 PM]       ↳ https://www.umassstore.com/?utm_source=Athletics-Department&
+[6:37:10 PM]       ↳ https://seatgeek.com/umass-minutemen-hockey-tickets?aid=1609
+[6:37:10 PM]       ↳ https://www.umassstore.com/?utm_source=Athletics-Department&
+[6:37:11 PM]       ↳ https://questionnaires.armssoftware.com/f58a1d8ad5b5
+[6:37:12 PM]       ⭐ https://info.collegebaseballcamps.com/minuteman/
+[6:37:12 PM]        📋 [Tiers] 5 entries. Sample: "Baseball Camp" (Apr 4) | "Baseball Camp" (Apr 7)
+[6:37:12 PM]    → 🎯 SUCCESS — 5 tiers. Cost: TBA
+[6:37:12 PM]    → [DB_UPDATED] Saved.
+[6:37:12 PM] 
+════════════════════════════════════════════════════════════
+[6:37:12 PM] [13/277] Processing: UMBC
+[6:37:12 PM] ════════════════════════════════════════════════════════════
+[6:37:12 PM]    → Priority URL from DB: https://images.search.yahoo.com/search/images;_ylt=AwrhbkJs.c5pTgIAg.pXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Nj?p=UMBC+Retrievers+baseball+camp+2026
+[6:37:12 PM]       ↳ [DDG] UMBC Retrievers baseball camp 2026
+[6:37:13 PM]       ↳ [DDG] UMBC baseball camp 2026
+[6:37:14 PM]    → 18 candidates. Top 3:
+[6:37:14 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fumbcretrievers.com%2Fsports%2Fbaseball%2F&rut=47e96540cfb8c378c12514a7f89f5f19293e8d68d55ba523a72e33d472588a4e
+[6:37:14 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fumbcretrievers.com%2Fnews%2F2026%2F1%2F5%2Fumbc%2Dbaseball%2Dreleases%2D2026%2Dschedule.aspx%3Fprint%3Dtrue&rut=121babe9cc11b696b28b0ac50b64cc2d50d5671a718430caef48d06f7c0403fd
+[6:37:14 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fumbcretrievers.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=cb668ab5dfea2b0411297ffa6e366f636b16b1f777ad67e81cfdc10dbc3e8072
+[6:37:14 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fumbcretrievers.com%2Fsports%2Fbaseball%2F&rut=47e96540cfb8c378c12514a7f89f5f19293e8d68d55ba523a72e33d472588a4e
+[6:37:15 PM]       ✕ Contamination (Maryland). Skip.
+[6:37:15 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fumbcretrievers.com%2Fnews%2F2026%2F1%2F5%2Fumbc%2Dbaseball%2Dreleases%2D2026%2Dschedule.aspx%3Fprint%3Dtrue&rut=121babe9cc11b696b28b0ac50b64cc2d50d5671a718430caef48d06f7c0403fd
+[6:37:17 PM]       ✕ Contamination (Maryland). Skip.
+[6:37:17 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fumbcretrievers.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=cb668ab5dfea2b0411297ffa6e366f636b16b1f777ad67e81cfdc10dbc3e8072
+[6:37:18 PM]       ✕ Contamination (Maryland). Skip.
+[6:37:18 PM] 
+   → Navigating [85]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Funiversity%2Dof%2Dmaryland%2Dbaltimore%2Dcounty%2Dretrievers%2Dbaseball%2Dday%2Dcamp%2F&rut=ee768ba671cc7281c7a0e1f1a5ee8db5ac8a98afccf6e6d66e819a5d4d7244f1
+[6:37:33 PM]       ✕ Contamination (Maryland). Skip.
+[6:37:33 PM] 
+   → Navigating [85]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fumbcretrievers.com%2Fsports%2F2025%2F6%2F16%2Fcamps.aspx&rut=bfb4889dbf5f7b358f7c128bff9ddf3941c213266bea7f5eaa597581f120fd3a
+[6:37:34 PM]       ✕ Contamination (Maryland). Skip.
+[6:37:34 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.retrieverbaseballcamps.com%2F&rut=ddaa21ca1ddbf052b0554c1ee28d2362afdec0ecdd5fc59ac40a04641ac54d65
+[6:37:36 PM]    → ✅ VALIDATED for UMBC (alias: "umbc")
+[6:37:36 PM]    → Sub-crawling 6 pages...
+[6:37:36 PM]       ⭐ https://www.retrieverbaseballcamps.com/#sitePageContent
+[6:37:36 PM]       ⭐ https://www.retrieverbaseballcamps.com/
+[6:37:37 PM]       ⭐ https://www.retrieverbaseballcamps.com/
+[6:37:37 PM]       ⭐ https://www.retrieverbaseballcamps.com/camps.cfm
+[6:37:37 PM]       ⭐ https://www.retrieverbaseballcamps.com/summer-youth-camp.cfm
+[6:37:38 PM]       ⭐ https://www.retrieverbaseballcamps.com/about.cfm
+[6:37:38 PM]        📋 [Tiers] 1 entries. Sample: "Additional Camp" (June 15th - 18th)
+[6:37:38 PM]    → 🎯 SUCCESS — 1 tiers. Cost: $240
+[6:37:38 PM]    → [DB_UPDATED] Saved.
+[6:37:38 PM] 
+════════════════════════════════════════════════════════════
+[6:37:38 PM] [14/277] Processing: UNCG
+[6:37:38 PM] ════════════════════════════════════════════════════════════
+[6:37:38 PM]    → Priority URL from DB: https://images.search.yahoo.com/search/images;_ylt=AwrE_9J4.c5pKwIAuRNXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Nj?p=UNCG+Spartans+baseball+camp+2026
+[6:37:38 PM]       ↳ [DDG] UNCG Spartans baseball camp 2026
+[6:37:39 PM]       ↳ [DDG] UNCG baseball camp 2026
+[6:37:40 PM]    → 18 candidates. Top 3:
+[6:37:40 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Funcgspartans.com%2Fsports%2Fbaseball&rut=526bbc730724719bffe3c6f3b3116939f0180e5bbeeb51ec67b1a9f6c3360248
+[6:37:40 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Funcgspartans.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=aef413702c3e08cce452fbca4803c2c77c2eab799c555a87d7996674d6daa1bb
+[6:37:40 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.playnsports.com%2Forganization%2Funcg%2Dbaseball%2F&rut=1da43a88b4615e9e1c5ad8195c7ad10d19471d41b673796d95a4915aba39838c
+[6:37:40 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Funcgspartans.com%2Fsports%2Fbaseball&rut=526bbc730724719bffe3c6f3b3116939f0180e5bbeeb51ec67b1a9f6c3360248
+[6:37:41 PM]    → ✅ VALIDATED for UNCG (alias: "uncg")
+[6:37:41 PM]    → Sub-crawling 6 pages...
+[6:37:42 PM]       ⭐ https://uncgspartans.com/sports/2014/6/13/209521571.aspx
+[6:37:43 PM]       ⭐ https://uncgspartans.com/sports/2013/11/19/209316490.aspx
+[6:37:53 PM]       ↳ https://uncg.spirit.bncollege.com/?utm_campaign=TopTab&utm_s
+[6:38:03 PM]       ↳ https://uncgspartans.com/common/controls/adhandler.aspx?ad_i
+[6:38:13 PM]       ↳ https://uncg.spirit.bncollege.com/?utm_campaign=TopTab&utm_s
+[6:38:13 PM]        📋 [Tiers] None found on this page.
+[6:38:13 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Funcgspartans.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=aef413702c3e08cce452fbca4803c2c77c2eab799c555a87d7996674d6daa1bb
+[6:38:14 PM]    → ✅ VALIDATED for UNCG (alias: "uncg")
+[6:38:14 PM]    → Sub-crawling 6 pages...
+[6:38:15 PM]       ⭐ https://uncgspartans.com/sports/2014/6/13/209521571.aspx
+[6:38:15 PM]       ⭐ https://uncgspartans.com/sports/2013/11/19/209316490.aspx
+[6:38:26 PM]       ↳ https://uncg.spirit.bncollege.com/?utm_campaign=TopTab&utm_s
+[6:38:35 PM]       ↳ https://uncgspartans.com/common/controls/adhandler.aspx?ad_i
+[6:38:36 PM]       ⭐ http://www.gocamels.com/
+[6:38:36 PM]        📋 [Tiers] 15 entries. Sample: "Baseball Camp" (July 20) | "Watch Live Stats Game Program" (Apr 3)
+[6:38:36 PM]    → 🎯 SUCCESS — 15 tiers. Cost: TBA
+[6:38:36 PM]    → [DB_UPDATED] Saved.
+[6:38:36 PM] 
+════════════════════════════════════════════════════════════
+[6:38:36 PM] [15/277] Processing: UNCW
+[6:38:36 PM] ════════════════════════════════════════════════════════════
+[6:38:36 PM]    → Priority URL from DB: https://images.search.yahoo.com/search/images;_ylt=AwrFNJWC.c5pQAIArOJXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Ny?p=Seahawk+Baseball+Camps+-+Seahawk+Baseball+Academy&imgurl=https%3A%2F%2Fwww.bing.com%2Fimages%2Fsearch%3Fview%3DdetailV2%26ccid%3DbZemhCc1%26id%3D487B53C43CED64DE98A4DFF69AC3B8730A8288DA%26thid%3DOIP.bZemhCc1Csy4XwUty09U6wHaHa%26mediaurl%3Dhttps%3A%2F%2Fseahawkbaseballcamps.com%2Fwp-content%2Fuploads%2F2025%2F01%2FUntitled-design-3-1.png%26exph%3D1000%26expw%3D1000%26q%3DUNCW%2520Seahawks%2520baseball%2520camp%25202026%26ck%3D4270EE85E74C86A152CC9B0281D3F7FC%26idpp%3Drc%26idpview%3Dsingleimage%26form%3Drc2idp&name=UNCW+Seahawks+baseball+camp+20261&turl=https%3A%2F%2Fsp.yimg.com%2Fib%2Fth%2Fid%2FOIP.bZemhCc1Csy4XwUty09U6wHaHa%3Fpid%3DApi%26w%3D148%26h%3D148%26c%3D7%26rs%3D1&tt=UNCW+Seahawks+baseball+camp+20261&sigit=eaC.GerdHZfw&sigi=ICNwbxazBuI1&sign=JphHE70Cv373&sigt=JphHE70Cv373
+[6:38:36 PM]       ↳ [DDG] UNCW Seahawks baseball camp 2026
+[6:38:37 PM]       ↳ [DDG] UNCW baseball camp 2026
+[6:38:38 PM]    → 15 candidates. Top 3:
+[6:38:38 PM]       ★ [ 85] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fseahawkbaseballcamps.com%2Fseahawks%2F&rut=649b300c2ad75d452d2d88a76584ffe68746184a119993794c51ea4cc24a62ba
+[6:38:38 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Funcwsports.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=82d86b66d3fa4899f621257c5c0e88bff90cc2193312e130c9271e144d1b39f3
+[6:38:38 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Funcwsports.com%2Fdocuments%2F2025%2F10%2F29%2F2026_Baseball_Schedule.pdf&rut=a5ad28d7df05e1e49ac767ad089be0133af14a71d80eb34bf737f0fc4b218f81
+[6:38:38 PM] 
+   → Navigating [85]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fseahawkbaseballcamps.com%2Fseahawks%2F&rut=649b300c2ad75d452d2d88a76584ffe68746184a119993794c51ea4cc24a62ba
+[6:38:41 PM]    → ✅ VALIDATED for UNCW (alias: "uncw")
+[6:38:41 PM]    → Sub-crawling 6 pages...
+[6:38:41 PM]       ⭐ https://seahawkbaseballcamps.com/seahawks/#content
+[6:38:43 PM]       ⭐ https://seahawkbaseballcamps.com/
+[6:38:43 PM]       ⭐ https://seahawkbaseballcamps.com/seahawks/#
+[6:38:44 PM]       ⭐ https://seahawkbaseballcamps.com/seahawks/
+[6:38:45 PM]       ⭐ https://seahawkbaseballcamps.com/dirt-bro-baseball-camps/
+[6:38:47 PM]       ⭐ https://seahawkbaseballcamps.com/seahawks/#
+[6:38:47 PM]        📋 [Tiers] 12 entries. Sample: "This does not include the Dirt Bro Youth Camp" (JUNE 15-18) | "Baseball Camp" (JULY 13-16)
+[6:38:47 PM]    → 🎯 SUCCESS — 12 tiers. Cost: $50
+[6:38:47 PM]    → [DB_UPDATED] Saved.
+[6:38:47 PM] 
+════════════════════════════════════════════════════════════
+[6:38:47 PM] [16/277] Processing: UNLV
+[6:38:47 PM] ════════════════════════════════════════════════════════════
+[6:38:47 PM]    → Priority URL from DB: https://images.search.yahoo.com/search/images;_ylt=AwrFObmM.c5pGgIAVEpXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Nj?p=UNLV+Rebels+baseball+camp+2026
+[6:38:47 PM]       ↳ [DDG] UNLV Rebels baseball camp 2026
+[6:38:48 PM]       ↳ [DDG] UNLV baseball camp 2026
+[6:38:49 PM]    → 17 candidates. Top 3:
+[6:38:49 PM]       ★ [120] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.active.com%2Flas%2Dvegas%2Dnv%2Fbaseball%2Fbaseball%2Dcamps%2Fposition%2Dplayer%2Dpackage%2D2026&rut=2813f91de483744ac8440fb041d7de8e0010f9ec0bb6dbd9e4b670d4e7271a88
+[6:38:49 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.vegasvalleybaseball.com%2Fcamps%2Funlv%2Dhs%2Dteam%2Dcamp&rut=2cb4cc826f2116985d73d01bf9c7e60eb2065fe408de627d9119c137212498f2
+[6:38:49 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fkingstonyouthlacrosse.org%2Fabout%2Dall%2Funlv%2Dsports%2Dcamps%2Duniversity%2Dof%2Dnevada%2Drebel%2Dbaseball%2Dcamps.html&rut=2202d21e82c87c46abf15b72b1300d0ba64214a9a7cc92ada8eac35245436e60
+[6:38:49 PM] 
+   → Navigating [120]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.active.com%2Flas%2Dvegas%2Dnv%2Fbaseball%2Fbaseball%2Dcamps%2Fposition%2Dplayer%2Dpackage%2D2026&rut=2813f91de483744ac8440fb041d7de8e0010f9ec0bb6dbd9e4b670d4e7271a88
+[6:38:51 PM]    → ✅ VALIDATED for UNLV (alias: "unlv")
+[6:38:51 PM]    → Sub-crawling 6 pages...
+[6:38:51 PM]       ↳ https://www.active.com/#
+[6:38:52 PM]       ⭐ https://www.active.com/outdoors/camping
+[6:38:52 PM]       ⭐ https://www.active.com/camps
+[6:38:53 PM]       ⭐ https://www.active.com/browse
+[6:38:53 PM]       ⭐ https://www.active.com/outdoors/camping
+[6:38:54 PM]       ↳ https://www.reserveamerica.com/
+[6:38:54 PM]        📋 [Tiers] 13 entries. Sample: "Baseball Camp" (Aug 04 - 05) | "Baseball Camp" (Jun 09 - 10)
+[6:38:54 PM]    → 🎯 SUCCESS — 13 tiers. Cost: $10
+[6:38:54 PM]    → [DB_UPDATED] Saved.
+[6:38:54 PM] 
+════════════════════════════════════════════════════════════
+[6:38:54 PM] [17/277] Processing: UTA
+[6:38:54 PM] ════════════════════════════════════════════════════════════
+[6:38:54 PM]    → Priority URL from DB: https://images.search.yahoo.com/search/images;_ylt=AwrilvCW.c5pFwMAhm1XNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Nj?p=UTA+Mavericks+baseball+camp+2026
+[6:38:54 PM]       ↳ [DDG] UTA Mavericks baseball camp 2026
+[6:38:55 PM]       ↳ [DDG] UTA baseball camp 2026
+[6:38:56 PM]    → 18 candidates. Top 3:
+[6:38:56 PM]       ★ [ 90] https://duckduckgo.com/l/?uddg=https%3A%2F%2Futamavs.com%2Ffeature%2Fbaseballcamps&rut=59e7731fd5b69dd742563e2d6a517d9a7ef4d0a48696689982d6a6ea314ce001
+[6:38:56 PM]       ★ [ 65] https://duckduckgo.com/l/?uddg=https%3A%2F%2Futamavs.com%2Fsports%2Fbaseball&rut=c7066f3a58806543f051709551efeb8b6694b758f5c7a498b07b7e90f43d4170
+[6:38:56 PM]       ★ [ 65] https://duckduckgo.com/l/?uddg=https%3A%2F%2Futamavs.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=e10f614e9983e7e28fd31191a40a7d7452e06724de2184931dc1f824af4beb46
+[6:38:56 PM] 
+   → Navigating [90]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Futamavs.com%2Ffeature%2Fbaseballcamps&rut=59e7731fd5b69dd742563e2d6a517d9a7ef4d0a48696689982d6a6ea314ce001
+[6:38:57 PM]       ✕ Contamination (Texas). Skip.
+[6:38:57 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Futamavs.com%2Fsports%2Fbaseball&rut=c7066f3a58806543f051709551efeb8b6694b758f5c7a498b07b7e90f43d4170
+[6:38:59 PM]       ✕ Contamination (Texas). Skip.
+[6:38:59 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Futamavs.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=e10f614e9983e7e28fd31191a40a7d7452e06724de2184931dc1f824af4beb46
+[6:39:00 PM]       ✕ Contamination (Texas). Skip.
+[6:39:00 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Futamavs.com%2Fnews%2F2026%2F4%2F1%2Fbaseball%2Duta%2Dhosts%2Dtarleton%2Dto%2Dbegin%2Dwac%2Dslate.aspx&rut=02775f9a602c31725c4eef4f9070190a370d0a5b7bf567fbef14ae75e33e7ee0
+[6:39:01 PM]       ✕ Contamination (Texas). Skip.
+[6:39:01 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.nsr%2Dinc.com%2Fsport%2Fbaseball%2Fcollege%2Dbaseball%2Dcamps.php&rut=b6f1d10813c9601e9c5a80fb9e6a3b018a077cba77c188ce5773f1bff9cbdaae
+[6:39:03 PM]    → ✅ VALIDATED for UTA (alias: "uta")
+[6:39:04 PM]    → Sub-crawling 6 pages...
+[6:39:04 PM]       ⭐ https://www.nsr-inc.com/sport/baseball/college-baseball-camp
+[6:39:05 PM]       ⭐ https://www.nsr-inc.com/how-to-get-recruited?lead_origin=bas
+[6:39:06 PM]       ⭐ https://www.nsr-inc.com/how-to-get-recruited?lead_origin=bas
+[6:39:06 PM]       ⭐ https://www.acubaseballcamps.com/
+[6:39:07 PM]       ⭐ https://www.twosevenbaseballcamps.com/
+[6:39:08 PM]       ⭐ https://www.playnsports.com/event/baseball-summer-prospect-s
+[6:39:08 PM]        📋 [Tiers] 1 entries. Sample: "Spring Training Showcase" (February 1st)
+[6:39:08 PM]    → 🎯 SUCCESS — 1 tiers. Cost: $250
+[6:39:08 PM]    → [DB_UPDATED] Saved.
+[6:39:08 PM] 
+════════════════════════════════════════════════════════════
+[6:39:08 PM] [18/277] Processing: UTRGV
+[6:39:08 PM] ════════════════════════════════════════════════════════════
+[6:39:08 PM]    → Priority URL from DB: https://images.search.yahoo.com/search/images;_ylt=Awrhelyi.c5pPAIARKBXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Nj?p=UTRGV+Vaqueros+baseball+camp+2026
+[6:39:08 PM]       ↳ [DDG] UTRGV Vaqueros baseball camp 2026
+[6:39:09 PM]       ↳ [DDG] UTRGV baseball camp 2026
+[6:39:10 PM]    → 18 candidates. Top 3:
+[6:39:10 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fgoutrgv.com%2Fsports%2F2024%2F4%2F5%2Fbaseball%2Dcamps.aspx&rut=df81e9b57a13011ca86045035817504477c61dd7149f5c8e3aef82e791e96427
+[6:39:10 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.krgv.com%2Fnews%2Futrgv%2Dbaseball%2Dannounces%2D2026%2Dschedule%2Dwill%2Dhost%2Dkansas%2Dand%2Dtexas%2Dtech&rut=7fd398722f9c8318e50c8d57e18b0f2f7cf132a3bab3e3cd07d11ec8e2e35770
+[6:39:10 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2F247sports.com%2Fcollege%2Futrgv%2FSeason%2F2026%2DBaseball%2FRoster%2F&rut=2ac60ca01d2841e7c687117e6175f0b53f51ec5d35b310678b3b5a513a6f93a5
+[6:39:10 PM] 
+   → Navigating [105]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fgoutrgv.com%2Fsports%2F2024%2F4%2F5%2Fbaseball%2Dcamps.aspx&rut=df81e9b57a13011ca86045035817504477c61dd7149f5c8e3aef82e791e96427
+[6:39:12 PM]    → ✅ VALIDATED for UTRGV (alias: "utrgv")
+[6:39:12 PM]    → Sub-crawling 6 pages...
+[6:39:13 PM]       ⭐ https://goutrgv.com/sports/2024/4/5/baseball-camps.aspx#main
+[6:39:14 PM]       ↳ https://ope.ed.gov/athletics/#/institution/details
+[6:39:15 PM]       ⭐ http://www.utrgv.edu/en-us/about-utrgv/careers?path=general
+[6:39:16 PM]       ⭐ https://goutrgv.com/sports/2024/4/3/camps.aspx
+[6:39:18 PM]       ↳ https://utrgv.campuslabs.com/engage/organization/theherd
+[6:39:19 PM]       ⭐ https://goutrgv.com/sports/2024/4/5/baseball-camps.aspx?path
+[6:39:19 PM]        📋 [Tiers] 16 entries. Sample: "Baseball Evaluation Camp" (AUG 16) | "Baseball Evaluation Camp" (SEP 1)
+[6:39:19 PM]    → 🎯 SUCCESS — 16 tiers. Cost: $85
+[6:39:19 PM]    → [DB_UPDATED] Saved.
+[6:39:19 PM] 
+════════════════════════════════════════════════════════════
+[6:39:19 PM] [19/277] Processing: UTSA
+[6:39:19 PM] ════════════════════════════════════════════════════════════
+[6:39:19 PM]    → Priority URL from DB: https://images.search.yahoo.com/search/images;_ylt=Awril_Ks.c5pNQIAQYlXNyoA;_ylu=Y29sbwNiZjEEcG9zAzIEdnRpZAMEc2VjA3Nj?p=UTSA+Roadrunners+baseball+camp+2026
+[6:39:19 PM]       ↳ [DDG] UTSA Roadrunners baseball camp 2026
+[6:39:20 PM]       ↳ [DDG] UTSA baseball camp 2026
+[6:39:21 PM]    → 18 candidates. Top 3:
+[6:39:21 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.utsabaseballcamps.com%2F&rut=c171d45cfe81e78d4573b7a3eae7a5e673aaf20035eb2d3b0f677534b21bc4f9
+[6:39:21 PM]       ★ [ 85] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fgoutsa.com%2Fnews%2F2025%2F11%2F24%2Froadrunners%2Dannounce%2D2026%2Dcampaign&rut=cd89a581d7af705bb5c7039fef016507f5ba7305dd16adc767a734e649ace9a3
+[6:39:21 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fgoutsa.com%2Fnews%2F2026%2F02%2F12%2Futsa%2Dbaseball%2Dannounces%2D2026%2Dpromotional%2Dschedule&rut=69874790c84a00292424a1ae85dd02360366bf5559781ca3f6cf03312ed196e1
+[6:39:21 PM] 
+   → Navigating [105]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.utsabaseballcamps.com%2F&rut=c171d45cfe81e78d4573b7a3eae7a5e673aaf20035eb2d3b0f677534b21bc4f9
+[6:39:22 PM]       ✕ Contamination (Texas). Skip.
+[6:39:23 PM] 
+   → Navigating [85]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fgoutsa.com%2Fnews%2F2025%2F11%2F24%2Froadrunners%2Dannounce%2D2026%2Dcampaign&rut=cd89a581d7af705bb5c7039fef016507f5ba7305dd16adc767a734e649ace9a3
+[6:39:27 PM]    → ✅ VALIDATED for UTSA (alias: "utsa")
+[6:39:27 PM]    → Sub-crawling 6 pages...
+[6:39:28 PM]       ⭐ https://goutsa.com/news/2025/11/24/roadrunners-announce-2026
+[6:39:29 PM]       ⭐ https://goutsa.com/utsa-camp-information
+[6:39:30 PM]       ↳ https://goutsa.com/convos-with-campos
+[6:39:31 PM]       ⭐ https://goutsa.com/walk-on-tryout-information
+[6:39:32 PM]       ⭐ https://goutsa.com/utsa-athletics-compliance-office-prospect
+[6:39:34 PM]       ⭐ https://goutsa.com/prospective-student-athletes-questionnair
+[6:39:34 PM]        📋 [Tiers] 15 entries. Sample: "Baseball Camp" (MAR 8) | "Baseball Camp" (MAR 10)
+[6:39:34 PM]    → 🎯 SUCCESS — 15 tiers. Cost: TBA
+[6:39:34 PM]    → [DB_UPDATED] Saved.
+[6:39:34 PM] 
+════════════════════════════════════════════════════════════
+[6:39:34 PM] [20/277] Processing: Valparaiso
+[6:39:34 PM] ════════════════════════════════════════════════════════════
+[6:39:34 PM]    → Priority URL from DB: https://images.search.yahoo.com/search/images;_ylt=Awrip_i2.c5pQAIA2l1XNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Nj?p=Valparaiso+Beacons+baseball+camp+2026
+[6:39:34 PM]       ↳ [DDG] Valparaiso Beacons baseball camp 2026
+[6:39:35 PM]       ↳ [DDG] Valparaiso baseball camp 2026
+[6:39:35 PM]    → 18 candidates. Top 3:
+[6:39:35 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fusbaseballacademy.com%2Fvalparaiso%2Dbaseball%2Dcamp%2F&rut=960989981aa3a0d4147be00c1afd05348f190902aa054dec48b2e20126d41f64
+[6:39:35 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.sofascore.com%2Fbaseball%2Fteam%2Fvalparaiso%2Dbeacons%2F462524&rut=a87aa24f270c8568ce11d8bb003e9cf2d5693cc351f1a11f307ec61d67c206bb
+[6:39:35 PM]       ★ [ 80] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fregister.ryzer.com%2Fcamp.cfm%3Fid%3D312801&rut=f08119e2e7470261b442f3cbfbfde43f9a32acc7f2215c97de25de351c710be2
+[6:39:35 PM] 
+   → Navigating [105]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fusbaseballacademy.com%2Fvalparaiso%2Dbaseball%2Dcamp%2F&rut=960989981aa3a0d4147be00c1afd05348f190902aa054dec48b2e20126d41f64
+[6:39:38 PM]       ✕ Contamination (Indiana). Skip.
+[6:39:38 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.sofascore.com%2Fbaseball%2Fteam%2Fvalparaiso%2Dbeacons%2F462524&rut=a87aa24f270c8568ce11d8bb003e9cf2d5693cc351f1a11f307ec61d67c206bb
+[6:39:40 PM]    → ✅ VALIDATED for Valparaiso (alias: "valparaiso")
+[6:39:40 PM]    → Sub-crawling 1 pages...
+[6:39:40 PM]       ⭐ https://www.sofascore.com/baseball/team/valparaiso-beacons/4
+[6:39:40 PM]        📋 [Tiers] None found on this page.
+[6:39:40 PM] 
+   → Navigating [80]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fregister.ryzer.com%2Fcamp.cfm%3Fid%3D312801&rut=f08119e2e7470261b442f3cbfbfde43f9a32acc7f2215c97de25de351c710be2
+[6:39:42 PM]    → ✅ VALIDATED for Valparaiso (alias: "valparaiso")
+[6:39:42 PM]    → Sub-crawling 3 pages...
+[6:39:42 PM]       ⭐ https://www.valpobaseballcamps.com/index.cfm#C0673AD8-7D36-4
+[6:39:43 PM]       ⭐ https://register.ryzer.com/terms/
+[6:39:45 PM]       ⭐ https://register.ryzer.com/privacy/
+[6:39:45 PM]        📋 [Tiers] 1 entries. Sample: "Baseball Camp" (Oct 19)
+[6:39:45 PM]    → 🎯 SUCCESS — 1 tiers. Cost: TBA
+[6:39:45 PM]    → [DB_UPDATED] Saved.
+[6:39:45 PM] 
+[SYSTEM] Periodic browser restart at school 20...
+[6:39:48 PM] 
+════════════════════════════════════════════════════════════
+[6:39:48 PM] [21/277] Processing: VCU
+[6:39:48 PM] ════════════════════════════════════════════════════════════
+[6:39:48 PM]    → Priority URL from DB: https://www.playnsports.com/organization/vcu-rams-baseball-camps-llc/
+[6:39:48 PM]       ↳ [DDG] VCU Rams baseball camp 2026
+[6:39:49 PM]       ↳ [DDG] VCU baseball camp 2026
+[6:39:50 PM]       ↳ [DDG] Sean Thompson baseball camp 2026
+[6:39:51 PM]    → 18 candidates. Top 3:
+[6:39:51 PM]       ★ [110] https://www.playnsports.com/organization/vcu-rams-baseball-camps-llc/
+[6:39:51 PM]       ★ [110] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.playnsports.com%2Forganization%2Fvcu%2Drams%2Dbaseball%2Dcamps%2Dllc%2F&rut=ebdda9c9a9be622377642357817da1c29aba261cc4af721006244dd4fd97a067
+[6:39:51 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballcamps.monmouthhawks.com%2Fsean%2Dthompson.cfm&rut=42a07fb5d9828d461d89559d6c860d211981e8528cfcede23f2f2cfc8ce10199
+[6:39:51 PM] 
+   → Navigating [110]: https://www.playnsports.com/organization/vcu-rams-baseball-camps-llc/
+[6:39:52 PM]    → ✅ VALIDATED for VCU (alias: "vcu")
+[6:39:53 PM]    → Sub-crawling 6 pages...
+[6:39:54 PM]       ⭐ https://www.playnsports.com/
+[6:39:55 PM]       ↳ https://radiateprints.com/playnsports/
+[6:40:00 PM]       ⭐ https://www.playnsports.com/find-camps-clinics/
+[6:40:01 PM]       ⭐ https://www.playnsports.com/for-coaches/
+[6:40:02 PM]       ⭐ https://www.playnsports.com/sign-up/
+[6:40:03 PM]       ↳ https://www.playnsports.com/sign-in/
+[6:40:03 PM]        📋 [Tiers] None found on this page.
+[6:40:03 PM] 
+   → Navigating [110]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.playnsports.com%2Forganization%2Fvcu%2Drams%2Dbaseball%2Dcamps%2Dllc%2F&rut=ebdda9c9a9be622377642357817da1c29aba261cc4af721006244dd4fd97a067
+[6:40:05 PM]    → ✅ VALIDATED for VCU (alias: "vcu")
+[6:40:05 PM]    → Sub-crawling 6 pages...
+[6:40:05 PM]       ↳ https://radiateprints.com/playnsports/
+[6:40:10 PM]       ⭐ https://www.playnsports.com/find-camps-clinics/
+[6:40:11 PM]       ⭐ https://www.playnsports.com/organization/vcu-rams-baseball-c
+[6:40:16 PM]       ⭐ https://www.playnsports.com/find-camps-clinics/
+[6:40:17 PM]       ⭐ https://www.playnsports.com/organization/vcu-rams-baseball-c
+[6:40:17 PM]       ⭐ https://www.playnsports.com/organization/vcu-rams-baseball-c
+[6:40:17 PM]        📋 [Tiers] None found on this page.
+[6:40:17 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballcamps.monmouthhawks.com%2Fsean%2Dthompson.cfm&rut=42a07fb5d9828d461d89559d6c860d211981e8528cfcede23f2f2cfc8ce10199
+[6:40:19 PM]       ✕ Contamination (Monmouth). Skip.
+[6:40:19 PM] 
+   → Navigating [100]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fvcuathletics.com%2Fsports%2Fbaseball%2Froster%2Fcoaches%2Fsean%2Dthompson%2F876&rut=21c0051f734effb3e9e8f811e2f63076a3d600cf294c06ba1c193202747d8843
+[6:40:21 PM]       ✕ Contamination (Virginia). Skip.
+[6:40:21 PM] 
+   → Navigating [90]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fplay.virginiabaseballtourneys.com%2Fevents%2Fvcu%2Dcamp%2Dcombine%2Dshowcase%2Dat%2Dthe%2Ddiamond%2Drichmond%2Dva%2D09%2D25%2D2026&rut=5992fad06b5024cce0d5dd279f03fb99a1e74977d92b16ad2d88cf97ac390fe5
+[6:40:23 PM]       ✕ Contamination (Virginia). Skip.
+[6:40:23 PM] 
+   → Navigating [90]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Frichmondfamilymagazine.com%2Fcamp%2Fvcu%2Dbaseball%2Dcamp%2F&rut=1fdfa422b54994505da07886499fb14091a413543f42fb93d888bddc72b1bdd6
+[6:40:27 PM]       ✕ Contamination (Richmond). Skip.
+[6:40:27 PM] 
+   → Navigating [85]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fvcuathletics.com%2Fnews%2F2025%2F11%2F10%2Fbaseball%2Drams%2Dbaseball%2Dreleases%2D2026%2Dschedule.aspx&rut=6e32baebfbea62b7bac1ac370eae8b7c0306cc152ecd6f6e3d96d0362fb719dc
+[6:40:29 PM]       ✕ Contamination (Virginia). Skip.
+[6:40:29 PM] 
+   → Navigating [75]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fmonmouthhawks.com%2Fsports%2Fbaseball%2Froster%2Fcoaches%2Fsean%2Dthompson%2F3386&rut=4148e4b75ce52d1c7610b42237050bb35773cc516b4c8da0d0783340112227fd
+[6:40:32 PM]       ✕ Contamination (Monmouth). Skip.
+[6:40:32 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fvcuathletics.com%2Fsports%2Fbaseball&rut=d603c156e1b2ba79e94bdc5b3604d8b6d129fb02ac44b0e906ef882b957a5449
+[6:40:37 PM]       ✕ Contamination (Virginia). Skip.
+[6:40:37 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fvcuathletics.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=5a7ff8d2aef20b7b6df37146699ec43e4d3791dbbdefd35b1359440c7a4bd67f
+[6:40:39 PM]       ✕ Contamination (Virginia). Skip.
+[6:40:39 PM] 
+   → Navigating [65]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.ncsasports.org%2Fbaseball%2Fcamps&rut=e2cc9e314916a7f343770a66a1085e7daeca2e53bbbdc0955812317131c59f32
+[6:40:40 PM]    → ✅ VALIDATED for VCU (alias: "rams")
+[6:40:40 PM]    → Sub-crawling 6 pages...
+[6:40:40 PM]       ⭐ https://www.ncsasports.org/baseball/camps#wp--skip-link--tar
+[6:40:41 PM]       ↳ https://ncsasports.zoom.us/webinar/register/WN_AqCZgh76Q7GKM
+[6:40:42 PM]       ↳ https://ncsasports.zoom.us/webinar/register/WN_cKxvbWwWTBKqg
+[6:40:42 PM]       ↳ https://ncsasports.zoom.us/webinar/register/WN_1It0A4H1TPadt
+[6:40:43 PM]       ↳ https://ncsasports.zoom.us/webinar/register/WN_JL3CkyI7Sj6EE
+[6:40:43 PM]       ↳ https://ncsasports.zoom.us/webinar/register/WN_gPPZWOTiS0Ce5
+[6:40:43 PM]        📋 [Tiers] 4 entries. Sample: "IMG Academy Baseball Camp" (Jan 1) | "Wartburg College - Baseball Camp" (Mar 23)
+[6:40:43 PM]    → 🎯 SUCCESS — 4 tiers. Cost: TBA
+[6:40:43 PM]    → [DB_UPDATED] Saved.
+[6:40:44 PM] 
+════════════════════════════════════════════════════════════
+[6:40:44 PM] [22/277] Processing: Villanova
+[6:40:44 PM] ════════════════════════════════════════════════════════════
+[6:40:44 PM]    → Priority URL from DB: https://images.search.yahoo.com/search/images;_ylt=AwrFNpvg.c5pPQIAhaRXNyoA;_ylu=Y29sbwNiZjEEcG9zAzIEdnRpZAMEc2VjA3Nj?p=Villanova+Wildcats+baseball+camp+2026
+[6:40:44 PM]       ↳ [DDG] Villanova Wildcats baseball camp 2026
+[6:40:44 PM]       ↳ [DDG] Villanova baseball camp 2026
+[6:40:45 PM]    → 17 candidates. Top 3:
+[6:40:45 PM]       ★ [125] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Fvillanova%2Duniversity%2Dwildcats%2Dbaseball%2Dsummer%2Dprospect%2Dcamp%2F&rut=4b408f179b028f26ee5a6827210f9b00ece85c44b886f5eb4a6fad7257b62d39
+[6:40:45 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.summercamps.com%2Fcamp%2Fnike%2Dbaseball%2Dcamp%2Dvillanova%2Duniversity%2F&rut=8dd7f37813ea1867699431ec038f7c440fcca164cf8645e136ea1202280b2f37
+[6:40:45 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fthegpsguide.com%2Fcamping%2Fvillanova%2Dbaseball%2Dcamps%2F&rut=946aec04041cfc6d341e8553edb228b5c2a29c7b9b494c47d0f9c4cd68a1bb20
+[6:40:45 PM] 
+   → Navigating [125]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Fvillanova%2Duniversity%2Dwildcats%2Dbaseball%2Dsummer%2Dprospect%2Dcamp%2F&rut=4b408f179b028f26ee5a6827210f9b00ece85c44b886f5eb4a6fad7257b62d39
+[6:41:00 PM]    → ✅ VALIDATED for Villanova (alias: "villanova")
+[6:41:00 PM]    → Sub-crawling 6 pages...
+[6:41:00 PM]       ⭐ https://www.surveygizmo.com/s3/3378290/Athlete-Contact-on-Ca
+[6:41:12 PM]       ⭐ https://baseballrecruitcamps.com/camps/villanova-university-
+[6:41:59 PM]    ⏰ School timeout hit for Villanova. Closing page.
+[6:42:00 PM]        📋 [Tiers] 1 entries. Sample: "Request Camp" (August 5)
+[6:42:00 PM]    → 🎯 SUCCESS — 1 tiers. Cost: $450 - $450
+[6:42:00 PM]    → [DB_UPDATED] Saved.
+[6:42:00 PM] 
+════════════════════════════════════════════════════════════
+[6:42:00 PM] [23/277] Processing: Virginia
+[6:42:00 PM] ════════════════════════════════════════════════════════════
+[6:42:00 PM]    → Priority URL from DB: https://virginiasports.com
+[6:42:00 PM]       ↳ [DDG] Virginia Cavaliers baseball camp 2026
+[6:42:01 PM]       ↳ [DDG] Virginia baseball camp 2026
+[6:42:02 PM]    → 18 candidates. Top 3:
+[6:42:02 PM]       ★ [125] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Funiversity%2Dof%2Dvirginia%2Dcavaliers%2Dhigh%2Dschool%2Dprospect%2Dbaseball%2Dcamp%2F&rut=bca2a6413e2351827003133aaa1c21bfff83b295ec22445bfcb42b552d7a57cc
+[6:42:02 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fplay.virginiabaseballtourneys.com%2Fevents%2Fuva%2Dcamp%2Dcombine%2Dshowcase%2Dcharlottesville%2Dva%2D07%2D31%2D2026&rut=d9defee6ff0a601657828e35111273630d73042992a84ad8d431d75ce4085f12
+[6:42:02 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fkidvoyage.com%2Fcamps%2Fusa%2Fvirginia%2Fbaseball&rut=4f9a2cd91c0a25930f6d4781aac4e5c1e0c3e199c45ef8bf5354125b49d8fc72
+[6:42:02 PM] 
+   → Navigating [125]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Funiversity%2Dof%2Dvirginia%2Dcavaliers%2Dhigh%2Dschool%2Dprospect%2Dbaseball%2Dcamp%2F&rut=bca2a6413e2351827003133aaa1c21bfff83b295ec22445bfcb42b552d7a57cc
+[6:42:17 PM]    → ✕ Error on https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Funiversity%2Dof%2Dvirginia%2Dcavaliers%2Dhigh%2Dschool%2Dprospect%2Dbaseball%2Dcamp%2F&rut=bca2a6413e2351827003133aaa1c21bfff83b295ec22445bfcb42b552d7a57cc: Navigation timeout of 15000 ms exceeded
+[6:42:17 PM] 
+   → Navigating [105]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fplay.virginiabaseballtourneys.com%2Fevents%2Fuva%2Dcamp%2Dcombine%2Dshowcase%2Dcharlottesville%2Dva%2D07%2D31%2D2026&rut=d9defee6ff0a601657828e35111273630d73042992a84ad8d431d75ce4085f12
+[6:42:19 PM]    → ✅ VALIDATED for Virginia (alias: "virginia")
+[6:42:19 PM]    → Sub-crawling 6 pages...
+[6:42:21 PM]       ⭐ https://play.virginiabaseballtourneys.com/past-events
+[6:42:23 PM]       ⭐ https://play.virginiabaseballtourneys.com/past-events
+[6:42:24 PM]       ⭐ https://play.virginiabaseballtourneys.com/events/uva-camp-co
+[6:42:26 PM]       ⭐ https://play.virginiabaseballtourneys.com/
+[6:42:28 PM]       ⭐ https://play.virginiabaseballtourneys.com/events/uva-camp-co
+[6:42:29 PM]       ⭐ https://play.virginiabaseballtourneys.com/events/uva-camp-co
+[6:42:29 PM]        📋 [Tiers] 2 entries. Sample: "UVA Camp-Combine-Showcase" (08/28/2026) | "Virginia Baseball Tournament" (08/28/2026)
+[6:42:29 PM]    → 🎯 SUCCESS — 2 tiers. Cost: $375
+[6:42:29 PM]    → [DB_UPDATED] Saved.
+[6:42:29 PM] 
+════════════════════════════════════════════════════════════
+[6:42:29 PM] [24/277] Processing: Wagner
+[6:42:29 PM] ════════════════════════════════════════════════════════════
+[6:42:29 PM]    → Priority URL from DB: https://www.playnsports.com/organization/wagner-college-baseball-camps/
+[6:42:29 PM]       ↳ [DDG] Wagner Seahawks baseball camp 2026
+[6:42:30 PM]       ↳ [DDG] Wagner baseball camp 2026
+[6:42:30 PM]    → 16 candidates. Top 3:
+[6:42:30 PM]       ★ [105] https://www.playnsports.com/organization/wagner-college-baseball-camps/
+[6:42:30 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Finfo.collegebaseballcamps.com%2Fwagner%2F&rut=3573de121e125a0e9648c06dd24c65a6642304768121e59298c508c4d1db011e
+[6:42:30 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.playnsports.com%2Forganization%2Fwagner%2Dcollege%2Dbaseball%2Dcamps%2F&rut=0809f555125b9c5f9bf4f9964d9df2f711aeb0824a7a38f4dbf4b05e3398b60f
+[6:42:30 PM] 
+   → Navigating [105]: https://www.playnsports.com/organization/wagner-college-baseball-camps/
+[6:42:39 PM]    → ✅ VALIDATED for Wagner (alias: "wagner")
+[6:42:39 PM]    → Sub-crawling 6 pages...
+[6:42:40 PM]       ⭐ https://www.playnsports.com/
+[6:42:40 PM]       ↳ https://radiateprints.com/playnsports/
+[6:42:45 PM]       ⭐ https://www.playnsports.com/find-camps-clinics/
+[6:42:46 PM]       ⭐ https://www.playnsports.com/for-coaches/
+[6:42:47 PM]       ⭐ https://www.playnsports.com/sign-up/
+[6:42:47 PM]       ↳ https://www.playnsports.com/sign-in/
+[6:42:48 PM]        📋 [Tiers] None found on this page.
+[6:42:48 PM] 
+   → Navigating [105]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Finfo.collegebaseballcamps.com%2Fwagner%2F&rut=3573de121e125a0e9648c06dd24c65a6642304768121e59298c508c4d1db011e
+[6:42:49 PM]    → ✅ VALIDATED for Wagner (alias: "wagner")
+[6:42:49 PM]    → Sub-crawling 6 pages...
+[6:42:49 PM]       ⭐ https://info.collegebaseballcamps.com/wagner/#home
+[6:42:50 PM]       ⭐ https://info.collegebaseballcamps.com/wagner/#about
+[6:42:50 PM]       ⭐ https://info.collegebaseballcamps.com/wagner/#Events-New
+[6:42:50 PM]       ⭐ https://info.collegebaseballcamps.com/wagner/#Coaches
+[6:42:50 PM]       ⭐ https://info.collegebaseballcamps.com/wagner/#FAQs
+[6:42:51 PM]       ⭐ https://info.collegebaseballcamps.com/wagner/#Contact
+[6:42:51 PM]        📋 [Tiers] None found on this page.
+[6:42:51 PM] 
+   → Navigating [105]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.playnsports.com%2Forganization%2Fwagner%2Dcollege%2Dbaseball%2Dcamps%2F&rut=0809f555125b9c5f9bf4f9964d9df2f711aeb0824a7a38f4dbf4b05e3398b60f
+[6:42:52 PM]    → ✅ VALIDATED for Wagner (alias: "wagner")
+[6:42:52 PM]    → Sub-crawling 6 pages...
+[6:42:53 PM]       ↳ https://radiateprints.com/playnsports/
+[6:42:58 PM]       ⭐ https://www.playnsports.com/find-camps-clinics/
+[6:42:59 PM]       ⭐ https://www.playnsports.com/organization/wagner-college-base
+[6:43:03 PM]       ⭐ https://www.playnsports.com/find-camps-clinics/
+[6:43:04 PM]       ⭐ https://www.playnsports.com/organization/wagner-college-base
+[6:43:05 PM]       ⭐ https://www.playnsports.com/organization/wagner-college-base
+[6:43:05 PM]        📋 [Tiers] None found on this page.
+[6:43:05 PM] 
+   → Navigating [80]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwagnerathletics.com%2Fsports%2Fbaseball%2Fschedule%2F2026&rut=fc31554a082aa24942cc72ccc5c582fb88d429c90ca86644488954086a4971c2
+[6:43:07 PM]    → ✅ VALIDATED for Wagner (alias: "wagner")
+[6:43:07 PM]    → Sub-crawling 4 pages...
+[6:43:09 PM]       ⭐ https://wagnerathletics.com/sports/2022/11/17/marketing-yout
+[6:43:10 PM]       ↳ https://map.wagner.edu/?id=1868#!ct/?s/
+[6:43:11 PM]       ↳ https://www.ticketsmarter.com/wagner-seahawks?utm_source=wag
+[6:43:12 PM]       ⭐ http://collegebaseballcamps.com/wagner/
+[6:43:12 PM]        📋 [Tiers] 7 entries. Sample: "Baseball Camp" (April 3) | "Baseball Camp" (May 8)
+[6:43:12 PM]    → 🎯 SUCCESS — 7 tiers. Cost: TBA
+[6:43:12 PM]    → [DB_UPDATED] Saved.
+[6:43:12 PM] 
+════════════════════════════════════════════════════════════
+[6:43:12 PM] [25/277] Processing: Washington
+[6:43:12 PM] ════════════════════════════════════════════════════════════
+[6:43:12 PM]    → Priority URL from DB: https://gohuskies.com/sports/baseball
+[6:43:12 PM]       ↳ [DDG] Washington Huskies baseball camp 2026
+[6:43:13 PM]       ↳ [DDG] Washington baseball camp 2026
+[6:43:14 PM]    → 18 candidates. Top 3:
+[6:43:14 PM]       ★ [125] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Funiversity%2Dof%2Dwashington%2Dhuskies%2Dbaseball%2Dsummer%2Dprospect%2Dcamp%2F&rut=f361a581f16f44157c19bf36949cd4d4260dc646414e3c02e50ebb3ff139a96a
+[6:43:14 PM]       ★ [105] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.summercamps.com%2Fcamp%2Fcategory%2Fbaseball%2Funited%2Dstates%2Fwashington%2F&rut=4de2e986dce67b9c0823fc18d7a787c93f68a5acd50c05f7c17c9aa46d90a903
+[6:43:14 PM]       ★ [100] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.justbaseball.com%2Fcollege%2Dbaseball%2Fwashington%2Dhuskies%2Didentity%2Dculture%2Dprogram%2Doutlook%2F&rut=0a2a1a084f11f1915b90f933ae42163f74cee9e2d695f14eb876be9c0a6704ea
+[6:43:14 PM] 
+   → Navigating [125]: https://duckduckgo.com/l/?uddg=https%3A%2F%2Fbaseballrecruitcamps.com%2Fcamps%2Funiversity%2Dof%2Dwashington%2Dhuskies%2Dbaseball%2Dsummer%2Dprospect%2Dcamp%2F&rut=f361a581f16f44157c19bf36949cd4d4260dc646414e3c02e50ebb3ff139a96a
+[6:43:25 PM]    → ✅ VALIDATED for Washington (alias: "washington")
+[6:43:25 PM]    → Sub-crawling 6 pages...
+[6:43:25 PM]       ⭐ https://www.surveygizmo.com/s3/3378290/Athlete-Contact-on-Ca
+[6:43:34 PM]       ⭐ https://baseballrecruitcamps.com/camps/university-of-washing
+[6:44:23 PM]        📋 [Tiers] 2 entries. Sample: "Baseball Camp" (August 3 - 5) | "Request Camp" (August 3 - 5)
+[6:44:23 PM]    → 🎯 SUCCESS — 2 tiers. Cost: TBA
+[6:44:23 PM]    → [DB_UPDATED] Saved.
+[6:44:23 PM] 
+════════════════════════════════════════════════════════════
+[6:44:23 PM] [26/277] Processing: Western Carolina
+[6:44:23 PM] ════════════════════════════════════════════════════════════
+[6:44:23 PM]    → Priority URL from DB: https://www.playnsports.com/organization/catamount-baseball-camps/
+[6:44:23 PM]       ↳ [DDG] Western Carolina Catamounts baseball camp 2026
+[6:44:24 PM]       ↳ [DDG] Western Carolina baseball camp 2026
+[6:44:24 PM]    → 18 candidates. Top 3:
+[6:44:24 PM]       ★ [ 65] https://www.playnsports.com/organization/catamount-baseball-camps/
+[6:44:24 PM]       ★ [ 65] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.playnsports.com%2Forganization%2Fcatamount%2Dbaseball%2Dcamps%2F&rut=2736ee4b8d3b1dc1f2d4e1c897a2a66de1014c8b554eee89d038569486d01222
+[6:44:24 PM]       ★ [ 65] https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.ncsasports.org%2Fbaseball%2Fcamps&rut=e2cc9e314916a7f343770a66a1085e7daeca2e53bbbdc0955812317131c59f32
+[6:44:24 PM] 
+   → Navigating [65]: https://www.playnsports.com/organization/catamount-baseball-camps/

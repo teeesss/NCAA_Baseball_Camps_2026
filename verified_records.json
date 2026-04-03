@@ -1,0 +1,332 @@
+[
+  {
+    "university": "Alabama",
+    "url": "https://www.alabamabaseballcamps.com/",
+    "coach": "Rob Vaughn (Head Coach)",
+    "verifiedAt": "2026-04-02T16:56:39.630Z"
+  },
+  {
+    "university": "Arkansas",
+    "url": "https://arkansassports.com",
+    "coach": "Dave Van Horn",
+    "verifiedAt": "2026-04-02T16:56:42.363Z"
+  },
+  {
+    "university": "California",
+    "url": "https://usctrojans.com",
+    "coach": "Mike Neu",
+    "verifiedAt": "2026-04-02T16:56:42.942Z"
+  },
+  {
+    "university": "Central Arkansas",
+    "url": "https://www.ucabearsbaseballcamps.com/",
+    "coach": "Nick Harlan",
+    "verifiedAt": "2026-04-02T16:56:43.104Z"
+  },
+  {
+    "university": "Clemson",
+    "url": "https://clemsonbaseballcamps.com",
+    "coach": "[camps@clemson.edu](mailto:camps@clemson.edu)",
+    "verifiedAt": "2026-04-02T16:56:43.435Z"
+  },
+  {
+    "university": "Fairfield",
+    "url": "https://fairfieldstags.com",
+    "coach": "Bill Schools",
+    "verifiedAt": "2026-04-02T16:56:43.949Z"
+  },
+  {
+    "university": "FIU",
+    "url": "https://fiusports.com",
+    "coach": "Rich Witten",
+    "verifiedAt": "2026-04-02T16:56:44.376Z"
+  },
+  {
+    "university": "Florida",
+    "url": "https://floridagators.com/sports/2026/2/18/baseball-summer-showcase-camp",
+    "coach": "Kevin O'Sullivan (Head Coach)",
+    "verifiedAt": "2026-04-02T16:56:45.084Z"
+  },
+  {
+    "university": "Florida A&M",
+    "url": "https://floridagators.com/sports/2026/2/18/baseball-summer-showcase-camp",
+    "coach": "Jamey Shouppe",
+    "verifiedAt": "2026-04-02T16:56:45.594Z"
+  },
+  {
+    "university": "Florida State",
+    "url": "https://floridagators.com/sports/2026/2/18/baseball-summer-showcase-camp",
+    "coach": "Link Jarrett",
+    "verifiedAt": "2026-04-02T16:56:45.935Z"
+  },
+  {
+    "university": "Georgetown",
+    "url": "https://guhoyas.com",
+    "coach": "Edwin Thompson",
+    "verifiedAt": "2026-04-02T16:56:46.372Z"
+  },
+  {
+    "university": "Georgia",
+    "url": "https://georgiadogs.com",
+    "coach": "Wes Johnson",
+    "verifiedAt": "2026-04-02T16:56:46.741Z"
+  },
+  {
+    "university": "Georgia Tech",
+    "url": "https://ramblinwreck.com",
+    "coach": "James Ramsey",
+    "verifiedAt": "2026-04-02T16:56:46.908Z"
+  },
+  {
+    "university": "Grand Canyon",
+    "url": "https://gculopes.com",
+    "coach": "Nathan Bannister",
+    "verifiedAt": "2026-04-02T16:56:47.443Z"
+  },
+  {
+    "university": "Harvard",
+    "url": "https://gocrimson.com",
+    "coach": "Bill Decker",
+    "verifiedAt": "2026-04-02T16:56:47.887Z"
+  },
+  {
+    "university": "Houston",
+    "url": "https://uhcougars.com",
+    "coach": "Todd Whitting",
+    "verifiedAt": "2026-04-02T16:56:48.305Z"
+  },
+  {
+    "university": "Indiana",
+    "url": "https://iuhoosiers.com",
+    "coach": "Jeff Mercer",
+    "verifiedAt": "2026-04-02T16:56:48.821Z"
+  },
+  {
+    "university": "Iona",
+    "url": "https://fiusports.com",
+    "coach": "Conor Burke",
+    "verifiedAt": "2026-04-02T16:56:49.098Z"
+  },
+  {
+    "university": "Iowa",
+    "url": "https://hawkeyesports.com",
+    "coach": "Rick Heller",
+    "verifiedAt": "2026-04-02T16:56:49.575Z"
+  },
+  {
+    "university": "Liberty",
+    "url": "https://libertyflames.com",
+    "coach": "Bradley LeCroy",
+    "verifiedAt": "2026-04-02T16:56:52.930Z"
+  },
+  {
+    "university": "Long Beach State",
+    "url": "https://longbeachstate.com",
+    "coach": "T. J. Bruce",
+    "verifiedAt": "2026-04-02T16:56:53.416Z"
+  },
+  {
+    "university": "Louisiana",
+    "url": "https://ragincajuns.com",
+    "coach": "Matt Deggs",
+    "verifiedAt": "2026-04-02T16:56:53.869Z"
+  },
+  {
+    "university": "Louisville",
+    "url": "https://gocards.com",
+    "coach": "Dan McDonnell",
+    "verifiedAt": "2026-04-02T16:56:54.195Z"
+  },
+  {
+    "university": "LSU",
+    "url": "https://lsusports.net",
+    "coach": "[lsucamps@lsu.edu](mailto:lsucamps@lsu.edu)",
+    "verifiedAt": "2026-04-02T16:56:54.361Z"
+  },
+  {
+    "university": "Maryland",
+    "url": "https://umterps.com",
+    "coach": "Matt Swope",
+    "verifiedAt": "2026-04-02T16:56:54.969Z"
+  },
+  {
+    "university": "Mississippi State",
+    "url": "https://hailstate.com",
+    "coach": "Brian O'Connor",
+    "verifiedAt": "2026-04-02T16:56:56.926Z"
+  },
+  {
+    "university": "Navy",
+    "url": "https://navysports.com",
+    "coach": "Chuck Ristano",
+    "verifiedAt": "2026-04-02T16:56:57.517Z"
+  },
+  {
+    "university": "Nebraska",
+    "url": "https://huskers.com",
+    "coach": "Will Bolt",
+    "verifiedAt": "2026-04-02T16:56:57.741Z"
+  },
+  {
+    "university": "North Alabama",
+    "url": "https://www.alabamabaseballcamps.com/",
+    "coach": "Jad Prachniak",
+    "verifiedAt": "2026-04-02T16:56:57.967Z"
+  },
+  {
+    "university": "North Carolina",
+    "url": "https://goheels.com",
+    "coach": "Scott Forbes",
+    "verifiedAt": "2026-04-02T16:56:58.330Z"
+  },
+  {
+    "university": "North Carolina State",
+    "url": "https://gopack.com",
+    "coach": "Not Listed",
+    "verifiedAt": "2026-04-02T16:56:58.850Z"
+  },
+  {
+    "university": "North Florida",
+    "url": "https://floridagators.com/sports/2026/2/18/baseball-summer-showcase-camp",
+    "coach": "Joe Mercadante",
+    "verifiedAt": "2026-04-02T16:56:59.188Z"
+  },
+  {
+    "university": "Ohio State",
+    "url": "https://ohiostatebuckeyes.com",
+    "coach": "Justin Haire",
+    "verifiedAt": "2026-04-02T16:57:00.268Z"
+  },
+  {
+    "university": "Oklahoma",
+    "url": "https://soonersports.com",
+    "coach": "Skip Johnson",
+    "verifiedAt": "2026-04-02T16:57:00.771Z"
+  },
+  {
+    "university": "Oklahoma State",
+    "url": "https://okstate.com",
+    "coach": "Josh Holliday",
+    "verifiedAt": "2026-04-02T16:57:01.338Z"
+  },
+  {
+    "university": "Ole Miss",
+    "url": "https://baseball.olemisssportscamps.com/",
+    "coach": "Mike Bianco (Head Coach)",
+    "verifiedAt": "2026-04-02T16:57:02.262Z"
+  },
+  {
+    "university": "Oregon",
+    "url": "https://goducks.com",
+    "coach": "Mark Wasikowski",
+    "verifiedAt": "2026-04-02T16:57:02.884Z"
+  },
+  {
+    "university": "Oregon State",
+    "url": "https://osubeavers.com",
+    "coach": "Mitch Canham",
+    "verifiedAt": "2026-04-02T16:57:03.227Z"
+  },
+  {
+    "university": "Penn State",
+    "url": "https://gopsusports.com",
+    "coach": "Mike Gambino",
+    "verifiedAt": "2026-04-02T16:57:03.837Z"
+  },
+  {
+    "university": "Purdue",
+    "url": "https://purduesports.com",
+    "coach": "Greg Goff",
+    "verifiedAt": "2026-04-02T16:57:04.031Z"
+  },
+  {
+    "university": "Rice",
+    "url": "https://riceowls.com",
+    "coach": "David Pierce",
+    "verifiedAt": "2026-04-02T16:57:04.943Z"
+  },
+  {
+    "university": "South Alabama",
+    "url": "https://www.alabamabaseballcamps.com/",
+    "coach": "Mark Calvi",
+    "verifiedAt": "2026-04-02T16:57:05.198Z"
+  },
+  {
+    "university": "South Carolina",
+    "url": "https://gamecocksonline.com",
+    "coach": "Monte Lee",
+    "verifiedAt": "2026-04-02T16:57:05.394Z"
+  },
+  {
+    "university": "South Florida",
+    "url": "https://floridagators.com/sports/2026/2/18/baseball-summer-showcase-camp",
+    "coach": "Mitch Freeman",
+    "verifiedAt": "2026-04-02T16:57:05.764Z"
+  },
+  {
+    "university": "Stanford",
+    "url": "https://gostanford.com",
+    "coach": "David Esquer",
+    "verifiedAt": "2026-04-02T16:57:06.485Z"
+  },
+  {
+    "university": "TCU",
+    "url": "https://gofrogs.com",
+    "coach": "Kirk Saarloos",
+    "verifiedAt": "2026-04-02T16:57:07.229Z"
+  },
+  {
+    "university": "Texas",
+    "url": "https://gofrogs.com",
+    "coach": "Not Listed",
+    "verifiedAt": "2026-04-02T16:57:07.547Z"
+  },
+  {
+    "university": "Texas A&M",
+    "url": "https://12thman.com",
+    "coach": "Not Listed",
+    "verifiedAt": "2026-04-02T16:57:08.108Z"
+  },
+  {
+    "university": "Texas Tech",
+    "url": "https://texastech.com",
+    "coach": "Tim Tadlock",
+    "verifiedAt": "2026-04-02T16:57:08.814Z"
+  },
+  {
+    "university": "UCLA",
+    "url": "https://uclabruins.com",
+    "coach": "John Savage",
+    "verifiedAt": "2026-04-02T16:57:09.302Z"
+  },
+  {
+    "university": "USC",
+    "url": "https://usctrojans.com",
+    "coach": "Andy Stankiewicz",
+    "verifiedAt": "2026-04-02T16:57:09.715Z"
+  },
+  {
+    "university": "Vanderbilt",
+    "url": "https://vucommodores.com",
+    "coach": "Tim Corbin",
+    "verifiedAt": "2026-04-02T16:57:09.880Z"
+  },
+  {
+    "university": "Virginia Tech",
+    "url": "https://hokiesports.com",
+    "coach": "John Szefc",
+    "verifiedAt": "2026-04-02T16:57:10.581Z"
+  },
+  {
+    "university": "Wake Forest",
+    "url": "https://godeacs.com",
+    "coach": "Tom Walter",
+    "verifiedAt": "2026-04-02T16:57:11.420Z"
+  },
+  {
+    "university": "Kansas State",
+    "url": "https://kstatesports.com",
+    "coach": "Pete Hughes",
+    "verifiedAt": "2026-04-02T16:59:32.999Z"
+  }
+]

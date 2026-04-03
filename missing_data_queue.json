@@ -1,0 +1,22 @@
+{
+  "queue": [
+    {
+      "university": "Florida",
+      "missing": [
+        "campUrl",
+        "dates",
+        "cost",
+        "email"
+      ]
+    },
+    {
+      "university": "Gonzaga",
+      "missing": [
+        "campUrl",
+        "dates",
+        "cost",
+        "email"
+      ]
+    }
+  ]
+}
