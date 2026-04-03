@@ -82,20 +82,27 @@ function reconcile() {
         }
 
         // 3. Synchronize Cost
-        if (item.cost === 'TBA' && item.campTiers && item.campTiers.length > 0) {
-            const costs = item.campTiers
-                .map(t => t.cost)
-                .filter(c => c && c !== 'TBA' && c.includes('$'))
-                .map(c => {
-                    const m = c.match(/\$(\d+)/);
-                    return m ? parseInt(m[1]) : null;
-                })
-                .filter(n => n !== null);
+        const tierCosts = (item.campTiers || [])
+            .map(t => t.cost)
+            .filter(c => c && c !== 'TBA' && c.includes('$'))
+            .map(c => {
+                // Normalize: Remove commas and treat as basic number
+                // For $1,00 (scraped typo), convert to 100
+                // For $1.00 (scraped trash), convert to 1
+                const cleanValue = c.replace(/,/g, '').match(/\$(\d+(?:\.\d{2})?)/);
+                return cleanValue ? parseFloat(cleanValue[1]) : null;
+            })
+            .filter(n => n !== null && n >= 50 && n <= 1500); // Only promote realistic camp costs ($50-$1500)
+        
+        if (tierCosts.length > 0) {
+            const minCost = Math.min(...tierCosts);
+            const newCostString = `$${minCost}.00+`;
             
-            if (costs.length > 0) {
-                const minCost = Math.min(...costs);
-                const newCostString = `$${minCost}.00+`;
-                console.log(`[${item.university}] Updating cost: TBA -> ${newCostString}`);
+            // Reconcile if TBA OR if current cost is suspiciously low/mismatched
+            const currentPrice = item.cost ? parseFloat((item.cost.match(/\d[\d,.]*/) || ['0'])[0].replace(/,/g, '')) : 0;
+            
+            if (item.cost === 'TBA' || currentPrice < 50 || item.cost !== newCostString) {
+                console.log(`[${item.university}] Updating cost: ${item.cost} -> ${newCostString}`);
                 item.cost = newCostString;
                 needsUpdate = true;
             }
