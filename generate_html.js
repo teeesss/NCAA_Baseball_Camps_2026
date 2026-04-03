@@ -334,7 +334,7 @@ const html = `
             margin-right: 48px; /* Give space for absolute human badge */
         }
         @media (max-width: 768px) {
-            .card-right-tags { margin-right: 0; }
+            .card-right-tags { margin-right: 44px; }
         }
         
         .info-item { display: flex; align-items: center; gap: 10px; }
