@@ -4,7 +4,8 @@ const path = require('path');
 const DATA_FILE = path.join(__dirname, '../../camps_data.json');
 const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
 
-const VALID_MONTH_REGEX = /Jun|Jul|Aug|June|July|August|0[678]\//i;
+const VALID_MONTH_REGEX = /Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December|0[1-9]\/|1[0-2]\//i;
+const SUMMER_MONTH_REGEX = /Jun|Jul|Aug|June|July|August|0[678]\//i;
 const YEAR_REGEX = /2026/i;
 
 function reconcile() {
@@ -17,17 +18,26 @@ function reconcile() {
         // 1. Gather all sessions from campTiers
         if (item.campTiers && Array.isArray(item.campTiers)) {
             item.campTiers.forEach(tier => {
-                const processDates = (dateStr) => {
-                    if (!dateStr) return;
-                    const hasValidMonth = VALID_MONTH_REGEX.test(dateStr);
-                    const hasYear = YEAR_REGEX.test(dateStr);
+                const processDates = (dateInput) => {
+                    if (!dateInput) return;
                     
-                    // If it has a valid summer month, we accept it (assume 2026 if year missing)
-                    if (hasValidMonth) {
-                        let finalDate = dateStr.trim();
-                        if (!hasYear) finalDate += ", 2026";
-                        allValidSessions.push(finalDate);
-                    }
+                    // Handle arrays, single strings, or comma-separated strings
+                    const dateStrings = Array.isArray(dateInput) ? dateInput : dateInput.split(/[,|]/);
+                    
+                    dateStrings.forEach(rawDate => {
+                        const dateStr = rawDate.trim();
+                        if (!dateStr) return;
+                        
+                        const isSummer = SUMMER_MONTH_REGEX.test(dateStr);
+                        const hasYear = YEAR_REGEX.test(dateStr);
+                        
+                        // We only promote SUMMER 2026 dates to the top level
+                        if (isSummer) {
+                            let finalDate = dateStr;
+                            if (!hasYear) finalDate += ", 2026";
+                            allValidSessions.push(finalDate);
+                        }
+                    });
                 };
 
                 if (tier.sessions && Array.isArray(tier.sessions)) {
@@ -45,15 +55,15 @@ function reconcile() {
             const newDatesString = uniqueDates.slice(0, 3).join(' | ') + (uniqueDates.length > 3 ? '...' : '');
             
             if (item.dates === 'TBA' || item.dates !== newDatesString) {
-                // Check if current dates are invalid (e.g. November)
-                const isCurrentDateInvalid = item.dates !== 'TBA' && !VALID_MONTH_REGEX.test(item.dates);
-                if (item.dates === 'TBA' || isCurrentDateInvalid || (item.dates.length < newDatesString.length && item.dates.includes('...'))) {
+                // Check if current dates are invalid (e.g. November or old string)
+                const isCurrentDateInvalid = item.dates !== 'TBA' && !SUMMER_MONTH_REGEX.test(item.dates);
+                if (item.dates === 'TBA' || isCurrentDateInvalid || item.dates !== newDatesString) {
                     console.log(`[${item.university}] Updating dates: ${item.dates} -> ${newDatesString}`);
                     item.dates = newDatesString;
                     needsUpdate = true;
                 }
             }
-        } else if (item.dates !== 'TBA' && !VALID_MONTH_REGEX.test(item.dates)) {
+        } else if (item.dates !== 'TBA' && !SUMMER_MONTH_REGEX.test(item.dates)) {
             // No valid sessions in tiers, and top-level date is invalid (e.g. November)
             console.log(`[${item.university}] Resetting invalid top-level dates: ${item.dates} -> TBA`);
             item.dates = 'TBA';
