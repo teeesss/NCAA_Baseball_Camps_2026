@@ -481,7 +481,29 @@ const html = `
 
                 const tagClass = item.division === 'DI' ? 'tag-di' : 'tag-dii';
                 const accentClass = item.division === 'DI' ? '' : 'dii';
-                const logoHtml = item.logoFile ? `<img src="${item.logoFile}" alt="Logo" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;" onerror="this.style.display='none'" />` : '';
+                
+                // Generate Initials Fallback
+                const nameWords = item.university.replace(/University|College|State|Univ/gi, '').trim().split(' ').filter(p=>p);
+                const initials = (nameWords.length >= 2 ? (nameWords[0][0] + nameWords[1][0]) : (item.university[0] + (item.university[1]||''))).toUpperCase();
+                const rColors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#14b8a6'];
+                const bgColor = rColors[item.university.charCodeAt(0) % rColors.length];
+
+                let primaryLogo = item.logoFile ? item.logoFile : (item.logoDomain ? `https://logo.clearbit.com/${item.logoDomain}` : '');
+                
+                let logoHtml;
+                if (primaryLogo) {
+                    logoHtml = `<div style="width: 50px; height: 50px; border-radius: 50%; position: relative; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background-color: ${bgColor}; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: 800; font-size: 1.2rem; z-index: 1;">${initials}</div>
+                        <div id="img-wrap-${index}" style="position: absolute; top:0; left:0; width:100%; height:100%; background-color: #ffffff; border-radius: 50%; padding: 7px; display: flex; justify-content: center; align-items: center; z-index: 2;">
+                            <img src="${primaryLogo}" alt="Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;" 
+                                 onload="if(this.src.includes('google.com') && this.naturalWidth <= 64) { document.getElementById('img-wrap-${index}').style.display='none'; }"
+                                 onerror="document.getElementById('img-wrap-${index}').style.display='none';" />
+                        </div>
+                    </div>`;
+                } else {
+                    logoHtml = `<div style="width: 50px; height: 50px; background-color: ${bgColor}; border-radius: 50%; display: flex; justify-content: center; align-items: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); color: white; font-weight: 800; font-size: 1.2rem;">${initials}</div>`;
+                }
+
                 
                 const isManualVerif = !!item.isVerified;
                 const isAutoVerif   = !!item.autoVerified;
@@ -581,8 +603,7 @@ const html = `
                             </div>
                         </div>
                         ${(() => {
-                            // Pricing / Camp Tiers section
-                            if (item.campTiers && item.campTiers.length > 0) {
+                            if (item.campTiers && item.campTiers.length > 0 && !item.campTiers.every(t => t.cost === 'TBA')) {
                                 return '<div class="drawer-sec" style="border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.03);">' +
                                     '<div class="d-label" style="color:#10b981;">💰 Camp Pricing & Tiers</div>' +
                                     '<div class="d-body">' +
@@ -590,7 +611,7 @@ const html = `
                                     '<thead><tr><th>Camp</th><th>Ages</th><th>Cost</th><th>Dates</th></tr></thead>' +
                                     '<tbody>' +
                                     item.campTiers.map(t => {
-                                        const tierDates = t.sessions ? t.sessions.map(s => (s.dates || '') + (s.time ? ' ' + s.time : '')).join('<br>') : '';
+                                        const tierDates = t.sessions ? t.sessions.map(s => (s.dates || '') + (s.time ? ' ' + s.time : '')).join('<br>') : (t.dates || '');
                                         return '<tr>' +
                                             '<td style="font-weight:600;color:#fff;">' + (t.name || 'Camp') + '</td>' +
                                             '<td class="tier-ages">' + (t.ages || '-') + '</td>' +
@@ -599,7 +620,7 @@ const html = `
                                             '</tr>';
                                     }).join('') +
                                     '</tbody></table></div></div>';
-                            } else if (item.cost && item.cost !== 'TBA' && item.cost !== 'Contact for pricing') {
+                            } else if (item.cost && item.cost !== 'TBA' && item.cost !== 'Contact for pricing' && item.cost !== 'Not Listed') {
                                 return '<div class="drawer-sec" style="border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.03);">' +
                                     '<div class="d-label" style="color:#10b981;">💰 Estimated Cost</div>' +
                                     '<div class="d-body" style="font-size:1.1rem;color:#10b981;font-weight:700;">' + item.cost + '</div>' +
@@ -611,6 +632,7 @@ const html = `
                                     '</div>';
                             }
                         })()}
+
                         ${dateArr.length > 0 ? `
                         <div class="drawer-sec">
                             <div class="d-label">📅 All Available Dates</div>
@@ -694,10 +716,10 @@ const html = `
             let count = 0;
             
             campCards.forEach(card => {
-                const searchTxt = card.getAttribute('data-search');
-                const div = card.getAttribute('data-div');
-                const conf = card.getAttribute('data-conference');
-                const cost = card.getAttribute('data-cost');
+                const searchTxt = (card.getAttribute('data-search') || '').toLowerCase();
+                const div = card.getAttribute('data-div') || '';
+                const conf = card.getAttribute('data-conference') || '';
+                const cost = card.getAttribute('data-cost') || '';
                 
                 const isAuto    = card.getAttribute('data-verified-auto') === 'true';
                 const isHuman   = card.getAttribute('data-verified-human') === 'true';
@@ -714,17 +736,19 @@ const html = `
                 
                 let matchesCost = true;
                 if (costFilter !== 'all') {
-                    const priceString = cost.replace(/[^0-9]/g, "");
-                    const price = priceString ? parseInt(priceString) : 0;
+                    const priceMatches = cost.match(/\d+[\d,]*(?:\.\d+)?/g);
+                    const prices = priceMatches ? priceMatches.map(m => parseFloat(m.replace(/,/g, ''))) : [0];
+                    const maxPrice = Math.max(...prices);
+                    const minPrice = prices.filter(p => p > 0).length > 0 ? Math.min(...prices.filter(p => p > 0)) : 0;
                     
-                    if (costFilter === 'under150') matchesCost = (price > 0 && price < 150);
-                    else if (costFilter === 'under200') matchesCost = (price > 0 && price < 200);
-                    else if (costFilter === 'under250') matchesCost = (price > 0 && price < 250);
-                    else if (costFilter === 'under300') matchesCost = (price > 0 && price < 300);
-                    else if (costFilter === 'under350') matchesCost = (price > 0 && price < 350);
-                    else if (costFilter === 'under500') matchesCost = (price > 0 && price < 500);
-                    else if (costFilter === 'over500') matchesCost = (price >= 500);
-                    else if (costFilter === 'tba') matchesCost = (price === 0 || cost.toLowerCase().includes('tba') || cost.toLowerCase().includes('contact'));
+                    if (costFilter === 'under150') matchesCost = (minPrice > 0 && minPrice < 150);
+                    else if (costFilter === 'under200') matchesCost = (minPrice > 0 && minPrice < 200);
+                    else if (costFilter === 'under250') matchesCost = (minPrice > 0 && minPrice < 250);
+                    else if (costFilter === 'under300') matchesCost = (minPrice > 0 && minPrice < 300);
+                    else if (costFilter === 'under350') matchesCost = (minPrice > 0 && minPrice < 350);
+                    else if (costFilter === 'under500') matchesCost = (minPrice > 0 && minPrice < 500);
+                    else if (costFilter === 'over500') matchesCost = (maxPrice >= 500);
+                    else if (costFilter === 'tba') matchesCost = (maxPrice === 0 || cost.toLowerCase().includes('tba') || cost.toLowerCase().includes('contact'));
                 }
                 
                 if (matchesSearch && matchesFilter && matchesConf && matchesCost) {

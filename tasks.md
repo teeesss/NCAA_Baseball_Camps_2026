@@ -6,6 +6,14 @@
 - [x] Create JSON database (`camps_data.json`).
 - [x] Generate premium HTML directory (`index.html`).
 - [x] Incorporate Division II programs into the dataset (~250+ more).
+
+## [2026-04-03] - UI Price Filter & Data Fidelity Fix
+- **FIX**: Resolved "100% broke" price filter. Problem was `null` cost attributes crashing the loop and integer collisions for decimals (like $262.50).
+- **ENHANCEMENT**: Implemented `src/tests/test_ui_filter.js` regression suite.
+- **DATA CLEANUP**: Wiped stale/source-less costs for Villanova, Seattle, and Seton Hall.
+- **DEPLOYED**: Site rebuilt and pushed.
+
+## [2026-04-03] - Logo UI & 50px Upgrade
 - [x] Update UI to separate D1 and D2 programs (toggle or filter).
 - [x] Complete the dataset for all 300+ D1 programs (total now 559 with D2).
 - [ ] Ensure 100% of programs have a valid camp URL, even if dates are TBA.

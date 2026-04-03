@@ -38,6 +38,9 @@ function isWrongSport(text) {
 // ── Team Camp / Legacy Detection (FIX: llm-issues-prompt #3, ISS-006) ──
 function isTeamCampOrLegacy(text) {
     const lower = text.toLowerCase();
+    // FIX: If 2026 is present, it's a valid current page regardless of "team camp" mentions
+    if (lower.includes('2026')) return false;
+    
     const isTeamOnly = lower.includes('team camp') && !lower.includes('individual');
     const isLegacy   = lower.includes('2025') && !lower.includes('2026');
     return isTeamOnly || isLegacy;
@@ -94,12 +97,19 @@ function extractData(text, url) {
         costs.push(val);
     }
     if (costs.length) {
-        // FIX: llm-issues-prompt #3 — Cost filtering ($100-$1500, flag >$500)
+        // Cost filtering ($100-$1500, flag >$500)
         let validCosts = costs.filter(c => c >= 100 && c <= 1500);
         if (validCosts.length) {
-            validCosts.sort((a,b) => a-b); // Prefer lowest individual price
+            validCosts = [...new Set(validCosts)].sort((a,b) => a-b); // Sort unique values
             bestCost = validCosts[0];
-            costRaw = `$${bestCost}`;
+            
+            if (validCosts.length > 1) {
+                costRaw = validCosts.slice(0, 3).map(c => `$${c}`).join(' / ');
+                if (validCosts.length > 3) costRaw += ' ...';
+            } else {
+                costRaw = `$${bestCost}`;
+            }
+            
             if (bestCost > 500) {
                 log(`    ⚠️ High price detected ($${bestCost}) — verify not team/showcase`);
             }
@@ -158,7 +168,7 @@ async function searchEngine(page, urlTemplate, engineName) {
         }, sel);
         
         // FIX: llm-issues-prompt #1 — Search Result Validation & Year Prioritization
-        const rejectPatterns = ['ticket', 'seatgeek', 'stubhub', 'merchandise', 'shop', 'football', 'basketball', 'soccer', 'tennis', 'swimming'];
+        const rejectPatterns = ['ticket', 'seatgeek', 'stubhub', 'merchandise', 'shop', 'football', 'basketball', 'soccer', 'tennis', 'swimming', 'news', 'article', 'release', 'giving', 'donate', 'fundraise', 'givesmart'];
         
         // Score and sort results: prefer 2026, penalize 2025, reject wrong sport/tickets
         const scored = links

@@ -8719,3 +8719,685 @@
 [2026-04-03T13:45:49.596Z]   ★ Consensus match: https://baseballcamp.uark.edu/
 [2026-04-03T13:45:49.596Z]   ↳ Scraping: https://baseballcamp.uark.edu/
 [2026-04-03T13:45:51.805Z] ✅ DONE
+[2026-04-03T13:46:29.369Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T13:46:29.813Z] 
+[1/30] Alabama | Missing: campUrl, dates, cost, email
+[2026-04-03T13:46:29.883Z]   🔍 Search: Alabama Crimson Tide baseball camp
+[2026-04-03T13:46:34.607Z]   ★ Consensus match: https://www.alabamabaseballcamps.com/
+[2026-04-03T13:46:34.607Z]   ↳ Scraping: https://www.alabamabaseballcamps.com/
+[2026-04-03T13:46:36.684Z]   ✅ cost: $262.5
+[2026-04-03T13:46:36.684Z]   ✅ dates: 06/15/2026 | 06/18/2026 | 07/12/2026
+[2026-04-03T13:46:36.742Z] 
+[2/30] Arkansas | Missing: campUrl, dates, cost, email
+[2026-04-03T13:46:36.778Z]   🔍 Search: Arkansas Razorbacks baseball camp
+[2026-04-03T13:46:40.839Z]   ★ Consensus match: https://baseballcamp.uark.edu/
+[2026-04-03T13:46:40.839Z]   ↳ Scraping: https://baseballcamp.uark.edu/
+[2026-04-03T13:46:42.838Z] 
+[3/30] Auburn | Missing: campUrl, dates, cost, email
+[2026-04-03T13:46:42.878Z]   🔍 Search: Auburn Tigers baseball camp
+[2026-04-03T13:46:46.909Z]   ★ Consensus match: https://www.butchthompsonbaseballcamps.com/
+[2026-04-03T13:46:46.909Z]   ↳ Scraping: https://www.butchthompsonbaseballcamps.com/
+[2026-04-03T13:46:48.997Z]   ↳ Trying one sub-page: https://www.butchthompsonbaseballcamps.com/#sitePageContent
+[2026-04-03T13:46:50.577Z] 
+[4/30] Central Arkansas | Missing: campUrl, dates, cost, email
+[2026-04-03T13:46:50.619Z]   🔍 Search: Central Arkansas Bears baseball camp
+[2026-04-03T13:46:55.001Z]   ★ Consensus match: https://www.ucabearsbaseballcamps.com/
+[2026-04-03T13:46:55.002Z]   ↳ Scraping: https://www.ucabearsbaseballcamps.com/
+[2026-04-03T13:46:56.873Z]   ↳ Trying one sub-page: https://www.ucabearsbaseballcamps.com/#sitePageContent
+[2026-04-03T13:46:58.451Z] 
+[5/30] East Tennessee State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:46:58.490Z]   🔍 Search: East Tennessee State Buccaneers baseball camp
+[2026-04-03T13:47:03.281Z]   ★ Engine #1: https://vmikeydets.com/news/2026/3/29/baseball-keydets-rally-past-buccaneers-for-first-socon-win.aspx
+[2026-04-03T13:47:03.281Z]   ↳ Scraping: https://vmikeydets.com/news/2026/3/29/baseball-keydets-rally-past-buccaneers-for-first-socon-win.aspx
+[2026-04-03T13:47:06.042Z]   ↳ Trying one sub-page: https://vmi.spirit.bncollege.com/en/?utm_campaign=bm-site_topnav&utm_medium=referral&utm_source=bned
+[2026-04-03T13:47:08.697Z] 
+[6/30] Florida | Missing: campUrl, dates, cost, email
+[2026-04-03T13:47:08.746Z]   🔍 Search: Florida Gators baseball camp
+[2026-04-03T13:47:12.763Z]   ★ Engine #1: https://floridagators.com/sports/2026/2/18/baseball-experience-camp-high-school
+[2026-04-03T13:47:12.764Z]   ↳ Scraping: https://floridagators.com/sports/2026/2/18/baseball-experience-camp-high-school
+[2026-04-03T13:47:15.352Z]   ✅ cost: $350
+[2026-04-03T13:47:15.352Z]   ✅ dates: July 28-31, 2026 | July 28, 2026 | June 2, 2026
+[2026-04-03T13:47:15.352Z]   ✅ email: gatorsbaseballcamps@ufl.edu
+[2026-04-03T13:47:15.410Z] 
+[7/30] Florida A&M | Missing: campUrl, dates, cost, email
+[2026-04-03T13:47:15.452Z]   🔍 Search: Florida A&M Rattlers baseball camp
+[2026-04-03T13:47:19.683Z]   ★ Consensus match: https://www.tallahassee.com/story/sports/college/famu/2026/02/03/famu-rattlers-baseball-adjustments-2026-season-preview/88395369007/
+[2026-04-03T13:47:19.683Z]   ↳ Scraping: https://www.tallahassee.com/story/sports/college/famu/2026/02/03/famu-rattlers-baseball-adjustments-2026-season-preview/88395369007/
+[2026-04-03T13:47:21.554Z]   ↳ Trying one sub-page: https://subscribe.tallahassee.com/rr/nanobar?gps-source=CPTILELEFT&itm_campaign=2026ENTMARACTA&itm_medium=ONSITE&success-url=https%3A%2F%2Fwww.tallahassee.com%2Fstory%2Fsports%2Fcollege%2Ffamu%2F2026%2F02%2F03%2Ffamu-rattlers-baseball-adjustments-2026-season-preview%2F88395369007%2F
+[2026-04-03T13:47:24.930Z] 
+[8/30] Georgia | Missing: campUrl, dates, cost, email
+[2026-04-03T13:47:24.968Z]   🔍 Search: Georgia Bulldogs baseball camp
+[2026-04-03T13:47:29.049Z]   ★ Consensus match: https://wesjohnsonbaseballcamps.com/
+[2026-04-03T13:47:29.049Z]   ↳ Scraping: https://wesjohnsonbaseballcamps.com/
+[2026-04-03T13:47:32.156Z]   ↳ Trying one sub-page: https://wesjohnsonbaseballcamps.com/#content
+[2026-04-03T13:47:33.722Z] 
+[9/30] Georgia Southern | Missing: campUrl, dates, cost, email
+[2026-04-03T13:47:33.768Z]   🔍 Search: Georgia Southern Eagles baseball camp
+[2026-04-03T13:47:38.053Z]   ★ Consensus match: https://www.playnsports.com/organization/eagles-baseball-camps-at-georgia-southern/
+[2026-04-03T13:47:38.053Z]   ↳ Scraping: https://www.playnsports.com/organization/eagles-baseball-camps-at-georgia-southern/
+[2026-04-03T13:47:40.816Z]   ✅ cost: $145
+[2026-04-03T13:47:40.890Z] 
+[10/30] Georgia State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:47:40.932Z]   🔍 Search: Georgia State Panthers baseball camp
+[2026-04-03T13:47:45.258Z]   ★ Consensus match: https://www.playnsports.com/organization/brad-stromdahl-baseball-camps/
+[2026-04-03T13:47:45.258Z]   ↳ Scraping: https://www.playnsports.com/organization/brad-stromdahl-baseball-camps/
+[2026-04-03T13:47:49.026Z]   ↳ Trying one sub-page: https://radiateprints.com/playnsports/
+[2026-04-03T13:47:52.134Z] 
+[11/30] Kentucky | Missing: campUrl, dates, cost, email
+[2026-04-03T13:47:52.209Z]   🔍 Search: Kentucky Wildcats baseball camp
+[2026-04-03T13:47:56.285Z]   ★ Engine #1: https://uknow.uky.edu/uk-athletics/men/baseball/kentucky-baseball-winter-baseball-camps
+[2026-04-03T13:47:56.286Z]   ↳ Scraping: https://uknow.uky.edu/uk-athletics/men/baseball/kentucky-baseball-winter-baseball-camps
+[2026-04-03T13:47:58.708Z]   ✅ cost: $135
+[2026-04-03T13:47:58.743Z] 
+[12/30] LSU | Missing: campUrl, dates, cost, email
+[2026-04-03T13:47:58.784Z]   🔍 Search: LSU Tigers baseball camp
+[2026-04-03T13:48:02.987Z]   ★ Consensus match: https://www.lsubaseballcamps.com/
+[2026-04-03T13:48:02.987Z]   ↳ Scraping: https://www.lsubaseballcamps.com/
+[2026-04-03T13:48:05.386Z] 
+[13/30] Mississippi State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:48:05.428Z]   🔍 Search: Mississippi State Bulldogs baseball camp
+[2026-04-03T13:48:10.209Z]   ★ Consensus match: https://www.hailstatecamps.com/baseball/
+[2026-04-03T13:48:10.209Z]   ↳ Scraping: https://www.hailstatecamps.com/baseball/
+[2026-04-03T13:48:12.191Z]   ↳ Trying one sub-page: https://www.hailstatecamps.com/baseball/#sitePageContent
+[2026-04-03T13:48:13.784Z] 
+[14/30] Missouri | Missing: campUrl, dates, cost, email
+[2026-04-03T13:48:13.816Z]   🔍 Search: Missouri Tigers baseball camp
+[2026-04-03T13:48:17.931Z]   ★ Engine #1: https://app.pathley.ai/state-camps/2026-baseball-camps-in-missouri
+[2026-04-03T13:48:17.931Z]   ↳ Scraping: https://app.pathley.ai/state-camps/2026-baseball-camps-in-missouri
+[2026-04-03T13:48:21.064Z]   ✅ cost: $100
+[2026-04-03T13:48:21.130Z] 
+[15/30] Northern Kentucky | Missing: campUrl, dates, cost, email
+[2026-04-03T13:48:21.176Z]   🔍 Search: Northern Kentucky Norse baseball camp
+[2026-04-03T13:48:25.099Z]   ★ Engine #1: https://www.playnsports.com/event/nku-baseball-youth-camp/
+[2026-04-03T13:48:25.099Z]   ↳ Scraping: https://www.playnsports.com/event/nku-baseball-youth-camp/
+[2026-04-03T13:48:29.329Z]   ✅ cost: $100
+[2026-04-03T13:48:29.405Z] 
+[16/30] Oklahoma | Missing: campUrl, dates, cost, email
+[2026-04-03T13:48:29.458Z]   🔍 Search: Oklahoma Sooners baseball camp
+[2026-04-03T13:48:33.462Z]   ★ Consensus match: https://skipjohnsonbaseballcamps.com/camp2.html
+[2026-04-03T13:48:33.462Z]   ↳ Scraping: https://skipjohnsonbaseballcamps.com/camp2.html
+[2026-04-03T13:48:35.287Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:48:35.288Z]   ↳ Trying one sub-page: https://skipjohnsonbaseballcamps.com/
+[2026-04-03T13:48:37.108Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:48:37.163Z] 
+[17/30] Ole Miss | Missing: campUrl, dates, cost, email
+[2026-04-03T13:48:37.202Z]   🔍 Search: Ole Miss Rebels baseball camp
+[2026-04-03T13:48:41.374Z]   ★ Engine #1: https://baseball.olemisssportscamps.com/index.cfm
+[2026-04-03T13:48:41.374Z]   ↳ Scraping: https://baseball.olemisssportscamps.com/index.cfm
+[2026-04-03T13:48:44.068Z]   ✅ dates: 06/22/2026 | 06/25/2026 | 07/13/2026
+[2026-04-03T13:48:44.068Z]   ✅ email: olemissbaseballcamps@gmail.com
+[2026-04-03T13:48:44.138Z] 
+[18/30] South Alabama | Missing: campUrl, dates, cost, email
+[2026-04-03T13:48:44.169Z]   🔍 Search: South Alabama Jaguars baseball camp
+[2026-04-03T13:48:48.568Z]   ★ Consensus match: https://www.jagbaseballcamps.com/
+[2026-04-03T13:48:48.568Z]   ↳ Scraping: https://www.jagbaseballcamps.com/
+[2026-04-03T13:48:50.810Z]   ✅ dates: 06/01/2026 | 06/05/2026 | 06/15/2026
+[2026-04-03T13:48:50.879Z] 
+[19/30] South Carolina | Missing: campUrl, dates, cost, email
+[2026-04-03T13:48:50.918Z]   🔍 Search: South Carolina Gamecocks baseball camp
+[2026-04-03T13:48:55.175Z]   ★ Engine #1: https://arkansasrazorbacks.com/pdf/baseball/2026/GameNotes/SouthCarolinaNotes.pdf
+[2026-04-03T13:48:55.175Z]   ↳ Scraping: https://arkansasrazorbacks.com/pdf/baseball/2026/GameNotes/SouthCarolinaNotes.pdf
+[2026-04-03T13:48:57.009Z] 
+[20/30] South Carolina Upstate | Missing: campUrl, dates, cost, email
+[2026-04-03T13:48:57.048Z]   🔍 Search: South Carolina Upstate Spartans baseball camp
+[2026-04-03T13:49:01.159Z]   ★ Consensus match: https://www.playnsports.com/organization/usc-upstate-baseball-camps/
+[2026-04-03T13:49:01.159Z]   ↳ Scraping: https://www.playnsports.com/organization/usc-upstate-baseball-camps/
+[2026-04-03T13:49:04.814Z]   ↳ Trying one sub-page: https://radiateprints.com/playnsports/
+[2026-04-03T13:49:07.140Z] 
+[21/30] Tennessee | Missing: campUrl, dates, cost, email
+[2026-04-03T13:49:07.187Z]   🔍 Search: Tennessee Volunteers baseball camp
+[2026-04-03T13:49:11.321Z]   ★ Consensus match: https://www.tennesseebaseballcamp.com/
+[2026-04-03T13:49:11.321Z]   ↳ Scraping: https://www.tennesseebaseballcamp.com/
+[2026-04-03T13:49:13.436Z]   ✅ cost: $420
+[2026-04-03T13:49:13.437Z]   ✅ dates: 06/10/2026 | 06/17/2026 | 06/22/2026
+[2026-04-03T13:49:13.482Z] 
+[22/30] Tennessee-Martin | Missing: campUrl, dates, cost, email
+[2026-04-03T13:49:13.515Z]   🔍 Search: Tennessee-Martin Skyhawks baseball camp
+[2026-04-03T13:49:17.423Z]   ★ Consensus match: https://news.utm.edu/2026/04/02/registration-for-ut-martin-summer-camps-is-open/
+[2026-04-03T13:49:17.423Z]   ↳ Scraping: https://news.utm.edu/2026/04/02/registration-for-ut-martin-summer-camps-is-open/
+[2026-04-03T13:49:19.524Z]   ✅ cost: $150
+[2026-04-03T13:49:19.524Z]   ✅ email: nondegree@utm.edu
+[2026-04-03T13:49:19.557Z] 
+[23/30] Texas | Missing: campUrl, dates, cost, email
+[2026-04-03T13:49:19.599Z]   🔍 Search: Texas Longhorns baseball camp
+[2026-04-03T13:49:23.518Z]   ★ Consensus match: https://texaslonghorns.com/sports/2023/3/22/baseball-camp
+[2026-04-03T13:49:23.518Z]   ↳ Scraping: https://texaslonghorns.com/sports/2023/3/22/baseball-camp
+[2026-04-03T13:49:26.061Z]   ✅ cost: $100
+[2026-04-03T13:49:26.062Z]   ✅ dates: July 2, 2026 | June 30, 2026 | July 1, 2026
+[2026-04-03T13:49:26.062Z]   ✅ email: drew.bishop@athletics.utexas.edu
+[2026-04-03T13:49:26.117Z] 
+[24/30] Texas A&M | Missing: campUrl, dates, cost, email
+[2026-04-03T13:49:26.165Z]   🔍 Search: Texas A&M Aggies baseball camp
+[2026-04-03T13:49:30.300Z]   ★ Engine #1: https://calendar.tamu.edu/event/319050-texas-aampm-baseball-future-three-day-camp
+[2026-04-03T13:49:30.300Z]   ↳ Scraping: https://calendar.tamu.edu/event/319050-texas-aampm-baseball-future-three-day-camp
+[2026-04-03T13:49:32.921Z]   ↳ Trying one sub-page: https://calendar.tamu.edu/event/319050-texas-aampm-baseball-future-three-day-camp#navbar
+[2026-04-03T13:49:34.434Z]   ✅ email: jhutchins@athletics.tamu.edu
+[2026-04-03T13:49:34.562Z] 
+[25/30] Texas State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:49:34.599Z]   🔍 Search: Texas State Bobcats baseball camp
+[2026-04-03T13:49:39.594Z]   ★ Consensus match: https://larkguide.com/camp/steven-trout-baseball-camp/
+[2026-04-03T13:49:39.594Z]   ↳ Scraping: https://larkguide.com/camp/steven-trout-baseball-camp/
+[2026-04-03T13:49:42.217Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:49:42.217Z]   ↳ Trying one sub-page: https://larkguide.com/camp/steven-trout-baseball-camp/#
+[2026-04-03T13:49:43.731Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:49:43.769Z] 
+[26/30] Vanderbilt | Missing: campUrl, dates, cost, email
+[2026-04-03T13:49:43.805Z]   🔍 Search: Vanderbilt Commodores baseball camp
+[2026-04-03T13:50:30.510Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T13:50:30.980Z] 
+[1/30] Alabama | Missing: campUrl, dates, cost, email
+[2026-04-03T13:50:31.062Z]   🔍 Search: Alabama Crimson Tide baseball camp
+[2026-04-03T13:50:35.728Z]   ★ Consensus match: https://www.alabamabaseballcamps.com/
+[2026-04-03T13:50:35.729Z]   ↳ Scraping: https://www.alabamabaseballcamps.com/
+[2026-04-03T13:50:37.801Z]   ✅ cost: $262.5
+[2026-04-03T13:50:37.801Z]   ✅ dates: 06/15/2026 | 06/18/2026 | 07/12/2026
+[2026-04-03T13:50:37.857Z] 
+[2/30] Arkansas | Missing: campUrl, dates, cost, email
+[2026-04-03T13:50:37.897Z]   🔍 Search: Arkansas Razorbacks baseball camp
+[2026-04-03T13:50:42.046Z]   ★ Consensus match: https://baseballcamp.uark.edu/
+[2026-04-03T13:50:42.046Z]   ↳ Scraping: https://baseballcamp.uark.edu/
+[2026-04-03T13:50:44.098Z] 
+[3/30] Auburn | Missing: campUrl, dates, cost, email
+[2026-04-03T13:50:44.139Z]   🔍 Search: Auburn Tigers baseball camp
+[2026-04-03T13:50:48.029Z]   ★ Consensus match: https://www.butchthompsonbaseballcamps.com/
+[2026-04-03T13:50:48.029Z]   ↳ Scraping: https://www.butchthompsonbaseballcamps.com/
+[2026-04-03T13:50:50.022Z]   ↳ Trying one sub-page: https://www.butchthompsonbaseballcamps.com/#sitePageContent
+[2026-04-03T13:50:51.585Z] 
+[4/30] Central Arkansas | Missing: campUrl, dates, cost, email
+[2026-04-03T13:50:51.626Z]   🔍 Search: Central Arkansas Bears baseball camp
+[2026-04-03T13:50:55.666Z]   ★ Consensus match: https://www.ucabearsbaseballcamps.com/
+[2026-04-03T13:50:55.666Z]   ↳ Scraping: https://www.ucabearsbaseballcamps.com/
+[2026-04-03T13:50:57.596Z]   ↳ Trying one sub-page: https://www.ucabearsbaseballcamps.com/#sitePageContent
+[2026-04-03T13:50:59.173Z] 
+[5/30] East Tennessee State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:50:59.209Z]   🔍 Search: East Tennessee State Buccaneers baseball camp
+[2026-04-03T13:51:03.541Z]   ★ Consensus match: https://etsubucs.com/sports/baseball
+[2026-04-03T13:51:03.541Z]   ↳ Scraping: https://etsubucs.com/sports/baseball
+[2026-04-03T13:51:05.610Z]   ↳ Trying one sub-page: https://etsubucs.com/sports/2023/7/24/_133347007970534047.aspx
+[2026-04-03T13:51:07.635Z] 
+[6/30] Florida | Missing: campUrl, dates, cost, email
+[2026-04-03T13:51:07.685Z]   🔍 Search: Florida Gators baseball camp
+[2026-04-03T13:51:11.624Z]   ★ Engine #1: https://fun4gatorkids.com/Camps/Baseball-and-Softball-Camps/UF-Gator-Baseball-Summer-Camps/View-details
+[2026-04-03T13:51:11.624Z]   ↳ Scraping: https://fun4gatorkids.com/Camps/Baseball-and-Softball-Camps/UF-Gator-Baseball-Summer-Camps/View-details
+[2026-04-03T13:51:14.081Z]   ✅ dates: July 7-10, 2026 | July 14-16, 2026 | July 21-23, 2
+[2026-04-03T13:51:14.081Z]   ✅ email: gatorsbaseballcamps@gators.ufl.edu
+[2026-04-03T13:51:14.150Z] 
+[7/30] Florida A&M | Missing: campUrl, dates, cost, email
+[2026-04-03T13:51:14.183Z]   🔍 Search: Florida A&M Rattlers baseball camp
+[2026-04-03T13:51:17.999Z]   ★ Consensus match: https://www.tallahassee.com/story/sports/college/famu/2026/02/03/famu-rattlers-baseball-adjustments-2026-season-preview/88395369007/
+[2026-04-03T13:51:17.999Z]   ↳ Scraping: https://www.tallahassee.com/story/sports/college/famu/2026/02/03/famu-rattlers-baseball-adjustments-2026-season-preview/88395369007/
+[2026-04-03T13:51:19.699Z]   ↳ Trying one sub-page: https://subscribe.tallahassee.com/rr/nanobar?gps-source=CPTILELEFT&itm_campaign=2026ENTMARACTA&itm_medium=ONSITE&success-url=https%3A%2F%2Fwww.tallahassee.com%2Fstory%2Fsports%2Fcollege%2Ffamu%2F2026%2F02%2F03%2Ffamu-rattlers-baseball-adjustments-2026-season-preview%2F88395369007%2F
+[2026-04-03T13:51:22.578Z] 
+[8/30] Georgia | Missing: campUrl, dates, cost, email
+[2026-04-03T13:51:22.614Z]   🔍 Search: Georgia Bulldogs baseball camp
+[2026-04-03T13:51:26.687Z]   ★ Consensus match: https://wesjohnsonbaseballcamps.com/
+[2026-04-03T13:51:26.687Z]   ↳ Scraping: https://wesjohnsonbaseballcamps.com/
+[2026-04-03T13:51:29.650Z]   ↳ Trying one sub-page: https://wesjohnsonbaseballcamps.com/#content
+[2026-04-03T13:51:31.222Z] 
+[9/30] Georgia Southern | Missing: campUrl, dates, cost, email
+[2026-04-03T13:51:31.272Z]   🔍 Search: Georgia Southern Eagles baseball camp
+[2026-04-03T13:51:35.066Z]   ★ Consensus match: https://www.playnsports.com/organization/eagles-baseball-camps-at-georgia-southern/
+[2026-04-03T13:51:35.066Z]   ↳ Scraping: https://www.playnsports.com/organization/eagles-baseball-camps-at-georgia-southern/
+[2026-04-03T13:51:39.181Z]   ✅ cost: $145
+[2026-04-03T13:51:39.268Z] 
+[10/30] Georgia State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:51:39.315Z]   🔍 Search: Georgia State Panthers baseball camp
+[2026-04-03T13:51:43.424Z]   ★ Consensus match: https://www.playnsports.com/organization/brad-stromdahl-baseball-camps/
+[2026-04-03T13:51:43.424Z]   ↳ Scraping: https://www.playnsports.com/organization/brad-stromdahl-baseball-camps/
+[2026-04-03T13:51:47.125Z]   ↳ Trying one sub-page: https://radiateprints.com/playnsports/
+[2026-04-03T13:51:49.774Z] 
+[11/30] Kentucky | Missing: campUrl, dates, cost, email
+[2026-04-03T13:51:49.821Z]   🔍 Search: Kentucky Wildcats baseball camp
+[2026-04-03T13:51:53.866Z]   ★ Engine #1: https://uknow.uky.edu/uk-athletics/men/baseball/kentucky-baseball-winter-baseball-camps
+[2026-04-03T13:51:53.866Z]   ↳ Scraping: https://uknow.uky.edu/uk-athletics/men/baseball/kentucky-baseball-winter-baseball-camps
+[2026-04-03T13:51:55.797Z]   ✅ cost: $135
+[2026-04-03T13:51:55.850Z] 
+[12/30] LSU | Missing: campUrl, dates, cost, email
+[2026-04-03T13:51:55.885Z]   🔍 Search: LSU Tigers baseball camp
+[2026-04-03T13:51:59.807Z]   ★ Consensus match: https://www.lsubaseballcamps.com/
+[2026-04-03T13:51:59.808Z]   ↳ Scraping: https://www.lsubaseballcamps.com/
+[2026-04-03T13:52:01.862Z] 
+[13/30] Mississippi State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:52:01.903Z]   🔍 Search: Mississippi State Bulldogs baseball camp
+[2026-04-03T13:52:06.205Z]   ★ Consensus match: https://www.hailstatecamps.com/baseball/
+[2026-04-03T13:52:06.206Z]   ↳ Scraping: https://www.hailstatecamps.com/baseball/
+[2026-04-03T13:52:08.157Z]   ↳ Trying one sub-page: https://www.hailstatecamps.com/baseball/#sitePageContent
+[2026-04-03T13:52:09.739Z] 
+[14/30] Missouri | Missing: campUrl, dates, cost, email
+[2026-04-03T13:52:09.779Z]   🔍 Search: Missouri Tigers baseball camp
+[2026-04-03T13:52:13.789Z]   ★ Engine #1: https://app.pathley.ai/state-camps/2026-baseball-camps-in-missouri
+[2026-04-03T13:52:13.789Z]   ↳ Scraping: https://app.pathley.ai/state-camps/2026-baseball-camps-in-missouri
+[2026-04-03T13:52:16.626Z]   ✅ cost: $100
+[2026-04-03T13:52:16.670Z] 
+[15/30] Northern Kentucky | Missing: campUrl, dates, cost, email
+[2026-04-03T13:52:16.709Z]   🔍 Search: Northern Kentucky Norse baseball camp
+[2026-04-03T13:52:20.500Z]   ★ Consensus match: https://www.playnsports.com/event/northern-kentucky-university-baseball-prospect-camp-1/
+[2026-04-03T13:52:20.500Z]   ↳ Scraping: https://www.playnsports.com/event/northern-kentucky-university-baseball-prospect-camp-1/
+[2026-04-03T13:52:24.486Z]   ↳ Trying one sub-page: https://radiateprints.com/playnsports/
+[2026-04-03T13:52:26.756Z] 
+[16/30] Oklahoma | Missing: campUrl, dates, cost, email
+[2026-04-03T13:52:26.804Z]   🔍 Search: Oklahoma Sooners baseball camp
+[2026-04-03T13:52:30.859Z]   ★ Consensus match: https://skipjohnsonbaseballcamps.com/camp2.html
+[2026-04-03T13:52:30.859Z]   ↳ Scraping: https://skipjohnsonbaseballcamps.com/camp2.html
+[2026-04-03T13:52:32.608Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:52:32.609Z]   ↳ Trying one sub-page: https://skipjohnsonbaseballcamps.com/
+[2026-04-03T13:52:34.482Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:52:34.517Z] 
+[17/30] Ole Miss | Missing: campUrl, dates, cost, email
+[2026-04-03T13:52:34.556Z]   🔍 Search: Ole Miss Rebels baseball camp
+[2026-04-03T13:52:38.546Z]   ★ Consensus match: https://baseball.olemisssportscamps.com/
+[2026-04-03T13:52:38.546Z]   ↳ Scraping: https://baseball.olemisssportscamps.com/
+[2026-04-03T13:52:41.202Z]   ✅ dates: 06/22/2026 | 06/25/2026 | 07/13/2026
+[2026-04-03T13:52:41.203Z]   ✅ email: olemissbaseballcamps@gmail.com
+[2026-04-03T13:52:41.287Z] 
+[18/30] South Alabama | Missing: campUrl, dates, cost, email
+[2026-04-03T13:52:41.326Z]   🔍 Search: South Alabama Jaguars baseball camp
+[2026-04-03T13:52:45.191Z]   ★ Consensus match: https://www.jagbaseballcamps.com/
+[2026-04-03T13:52:45.191Z]   ↳ Scraping: https://www.jagbaseballcamps.com/
+[2026-04-03T13:52:47.206Z]   ✅ dates: 06/01/2026 | 06/05/2026 | 06/15/2026
+[2026-04-03T13:52:47.262Z] 
+[19/30] South Carolina | Missing: campUrl, dates, cost, email
+[2026-04-03T13:52:47.303Z]   🔍 Search: South Carolina Gamecocks baseball camp
+[2026-04-03T13:52:51.369Z]   ★ Consensus match: https://southcarolinabaseballcamps.com/
+[2026-04-03T13:52:51.369Z]   ↳ Scraping: https://southcarolinabaseballcamps.com/
+[2026-04-03T13:52:53.277Z]   ↳ Trying one sub-page: https://southcarolinabaseballcamps.com/index.html
+[2026-04-03T13:52:54.904Z] 
+[20/30] South Carolina Upstate | Missing: campUrl, dates, cost, email
+[2026-04-03T13:52:54.942Z]   🔍 Search: South Carolina Upstate Spartans baseball camp
+[2026-04-03T13:52:58.773Z]   ★ Consensus match: https://www.playnsports.com/organization/usc-upstate-baseball-camps/
+[2026-04-03T13:52:58.774Z]   ↳ Scraping: https://www.playnsports.com/organization/usc-upstate-baseball-camps/
+[2026-04-03T13:53:02.547Z]   ↳ Trying one sub-page: https://radiateprints.com/playnsports/
+[2026-04-03T13:53:04.578Z] 
+[21/30] Tennessee | Missing: campUrl, dates, cost, email
+[2026-04-03T13:53:04.621Z]   🔍 Search: Tennessee Volunteers baseball camp
+[2026-04-03T13:53:08.685Z]   ★ Consensus match: https://www.tennesseebaseballcamp.com/
+[2026-04-03T13:53:08.686Z]   ↳ Scraping: https://www.tennesseebaseballcamp.com/
+[2026-04-03T13:53:10.761Z]   ✅ cost: $420
+[2026-04-03T13:53:10.761Z]   ✅ dates: 06/10/2026 | 06/17/2026 | 06/22/2026
+[2026-04-03T13:53:10.807Z] 
+[22/30] Tennessee-Martin | Missing: campUrl, dates, cost, email
+[2026-04-03T13:53:10.842Z]   🔍 Search: Tennessee-Martin Skyhawks baseball camp
+[2026-04-03T13:53:14.601Z]   ★ Engine #1: https://www.radionwtn.com/2026/04/02/ut-martin-summer-camps-registration-open/
+[2026-04-03T13:53:14.601Z]   ↳ Scraping: https://www.radionwtn.com/2026/04/02/ut-martin-summer-camps-registration-open/
+[2026-04-03T13:53:17.753Z]   ✅ cost: $150
+[2026-04-03T13:53:17.753Z]   ✅ email: nondegree@utm.edu
+[2026-04-03T13:53:17.810Z] 
+[23/30] Texas | Missing: campUrl, dates, cost, email
+[2026-04-03T13:53:17.852Z]   🔍 Search: Texas Longhorns baseball camp
+[2026-04-03T13:53:21.811Z]   ★ Consensus match: https://texaslonghorns.com/sports/2023/3/22/baseball-camp
+[2026-04-03T13:53:21.811Z]   ↳ Scraping: https://texaslonghorns.com/sports/2023/3/22/baseball-camp
+[2026-04-03T13:53:24.148Z]   ✅ cost: $100
+[2026-04-03T13:53:24.148Z]   ✅ dates: July 2, 2026 | June 30, 2026 | July 1, 2026
+[2026-04-03T13:53:24.148Z]   ✅ email: drew.bishop@athletics.utexas.edu
+[2026-04-03T13:53:24.195Z] 
+[24/30] Texas A&M | Missing: campUrl, dates, cost, email
+[2026-04-03T13:53:24.239Z]   🔍 Search: Texas A&M Aggies baseball camp
+[2026-04-03T13:53:28.247Z]   ★ Consensus match: https://calendar.tamu.edu/event/319050-texas-aampm-baseball-future-three-day-camp
+[2026-04-03T13:53:28.247Z]   ↳ Scraping: https://calendar.tamu.edu/event/319050-texas-aampm-baseball-future-three-day-camp
+[2026-04-03T13:53:30.275Z]   ↳ Trying one sub-page: https://calendar.tamu.edu/event/319050-texas-aampm-baseball-future-three-day-camp#navbar
+[2026-04-03T13:53:31.789Z]   ✅ email: jhutchins@athletics.tamu.edu
+[2026-04-03T13:53:31.839Z] 
+[25/30] Texas State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:53:31.871Z]   🔍 Search: Texas State Bobcats baseball camp
+[2026-04-03T13:53:36.007Z]   ★ Consensus match: https://larkguide.com/camp/steven-trout-baseball-camp/
+[2026-04-03T13:53:36.007Z]   ↳ Scraping: https://larkguide.com/camp/steven-trout-baseball-camp/
+[2026-04-03T13:53:38.389Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:53:38.390Z]   ↳ Trying one sub-page: https://larkguide.com/camp/steven-trout-baseball-camp/#
+[2026-04-03T13:53:39.910Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:53:39.984Z] 
+[26/30] Vanderbilt | Missing: campUrl, dates, cost, email
+[2026-04-03T13:53:40.024Z]   🔍 Search: Vanderbilt Commodores baseball camp
+[2026-04-03T13:53:43.870Z]   ★ Consensus match: https://vucommodores.com/baseballcamps/
+[2026-04-03T13:53:43.870Z]   ↳ Scraping: https://vucommodores.com/baseballcamps/
+[2026-04-03T13:53:45.987Z]     ⚠️ High price detected ($685) — verify not team/showcase
+[2026-04-03T13:53:45.988Z]   ✅ cost: $685
+[2026-04-03T13:53:45.988Z]   ✅ email: baseball@vanderbilt.edu
+[2026-04-03T13:53:46.044Z] 
+[27/30] West Georgia | Missing: campUrl, dates, cost, email
+[2026-04-03T13:53:46.087Z]   🔍 Search: West Georgia Wolves baseball camp
+[2026-04-03T13:53:50.523Z]   ★ Engine #1: https://wesjohnsonbaseballcamps.com/
+[2026-04-03T13:53:50.524Z]   ↳ Scraping: https://wesjohnsonbaseballcamps.com/
+[2026-04-03T13:53:53.478Z]   ↳ Trying one sub-page: https://wesjohnsonbaseballcamps.com/#content
+[2026-04-03T13:53:55.040Z] 
+[28/30] Georgia College & State University | Missing: campUrl, dates, cost, email
+[2026-04-03T13:53:55.082Z]   🔍 Search: Georgia College & State University Bobcats baseball camp
+[2026-04-03T13:53:59.500Z]   ★ Consensus match: https://www.lakesinclairlife.com/summer-camps/gcsu-baseball
+[2026-04-03T13:53:59.500Z]   ↳ Scraping: https://www.lakesinclairlife.com/summer-camps/gcsu-baseball
+[2026-04-03T13:54:01.926Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:54:01.927Z]   ↳ Trying one sub-page: https://www.lakesinclairlife.com/shop
+[2026-04-03T13:54:04.013Z] 
+[29/30] Southern Arkansas University | Missing: campUrl, dates, cost, email
+[2026-04-03T13:54:04.058Z]   🔍 Search: Southern Arkansas University Muleriders baseball camp
+[2026-04-03T13:54:08.127Z]   ★ Consensus match: https://www.muleridersbaseballcamps.com/
+[2026-04-03T13:54:08.127Z]   ↳ Scraping: https://www.muleridersbaseballcamps.com/
+[2026-04-03T13:54:10.748Z]   ↳ Trying one sub-page: https://www.muleridersbaseballcamps.com/#sitePageContent
+[2026-04-03T13:54:12.294Z] 
+[30/30] University of Arkansas at Monticello | Missing: campUrl, dates, cost, email
+[2026-04-03T13:54:12.334Z]   🔍 Search: University of Arkansas at Monticello Boll Weevils baseball camp
+[2026-04-03T13:54:16.393Z]   ★ Engine #1: https://bvmsports.com/2026/03/31/weevils-leave-midweek-game-with-win-over-muleriders/
+[2026-04-03T13:54:16.394Z]   ↳ Scraping: https://bvmsports.com/2026/03/31/weevils-leave-midweek-game-with-win-over-muleriders/
+[2026-04-03T13:54:19.081Z] ✅ DONE
+[2026-04-03T13:57:16.079Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T13:57:16.495Z] 
+[1/22] Eastern Illinois | Missing: campUrl, dates, cost, email
+[2026-04-03T13:57:16.542Z]   🔍 Search: Eastern Illinois Panthers baseball camp
+[2026-04-03T13:57:20.939Z]   ★ Engine #1: https://apptegy-alerts-attachments-production.s3.amazonaws.com/a521ce85-391b-41d7-8a68-0fad23c56a35/EIU%20Kids%20Baseball%20Camp.pdf
+[2026-04-03T13:57:20.939Z]   ↳ Scraping: https://apptegy-alerts-attachments-production.s3.amazonaws.com/a521ce85-391b-41d7-8a68-0fad23c56a35/EIU%20Kids%20Baseball%20Camp.pdf
+[2026-04-03T13:57:22.864Z] 
+[2/22] Illinois | Missing: campUrl, dates, cost, email
+[2026-04-03T13:57:22.904Z]   🔍 Search: Illinois Fighting Illini baseball camp
+[2026-04-03T13:57:26.913Z]   ★ Consensus match: https://fightingillini.com/sports/2015/3/24/baseball_camps.aspx
+[2026-04-03T13:57:26.913Z]   ↳ Scraping: https://fightingillini.com/sports/2015/3/24/baseball_camps.aspx
+[2026-04-03T13:57:30.254Z]   ↳ Trying one sub-page: https://fightingillini.com/sports/2015/3/24/baseball_camps.aspx#main-content
+[2026-04-03T13:57:31.856Z] 
+[3/22] Indiana | Missing: campUrl, dates, cost, email
+[2026-04-03T13:57:31.893Z]   🔍 Search: Indiana Hoosiers baseball camp
+[2026-04-03T13:57:35.940Z]   ★ Engine #1: https://www.jeffmercerbaseballcamps.com/
+[2026-04-03T13:57:35.940Z]   ↳ Scraping: https://www.jeffmercerbaseballcamps.com/
+[2026-04-03T13:57:38.033Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:57:38.034Z]   ↳ Trying one sub-page: https://www.jeffmercerbaseballcamps.com/#sitePageContent
+[2026-04-03T13:57:39.549Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:57:39.582Z] 
+[4/22] Indiana State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:57:39.623Z]   🔍 Search: Indiana State Sycamores baseball camp
+[2026-04-03T13:57:43.538Z]   ★ Engine #1: https://indianastate.edu/about/engagement/hulmancenter/athletics/baseball
+[2026-04-03T13:57:43.538Z]   ↳ Scraping: https://indianastate.edu/about/engagement/hulmancenter/athletics/baseball
+[2026-04-03T13:57:47.187Z]   ↳ Trying one sub-page: https://indianastate.edu/venues/student-recreation-center
+[2026-04-03T13:57:50.937Z]   ✅ email: isu-hulmancenter@indstate.edu
+[2026-04-03T13:57:51.004Z] 
+[5/22] Iowa | Missing: campUrl, dates, cost, email
+[2026-04-03T13:57:51.046Z]   🔍 Search: Iowa Hawkeyes baseball camp
+[2026-04-03T13:57:55.133Z]   ★ Consensus match: https://iowabaseballcamps.org/
+[2026-04-03T13:57:55.134Z]   ↳ Scraping: https://iowabaseballcamps.org/
+[2026-04-03T13:58:00.175Z]   ↳ Trying one sub-page: https://iowabaseballcamps.org/#fl-main-content
+[2026-04-03T13:58:01.740Z] 
+[6/22] Maryland | Missing: campUrl, dates, cost, email
+[2026-04-03T13:58:01.779Z]   🔍 Search: Maryland Terrapins baseball camp
+[2026-04-03T13:58:05.901Z]   ★ Engine #1: https://www.playnsports.com/organization/maryland-baseball/
+[2026-04-03T13:58:05.901Z]   ↳ Scraping: https://www.playnsports.com/organization/maryland-baseball/
+[2026-04-03T13:58:11.467Z]   ↳ Trying one sub-page: https://radiateprints.com/playnsports/
+[2026-04-03T13:58:14.107Z] 
+[7/22] Maryland Eastern Shore | Missing: campUrl, dates, cost, email
+[2026-04-03T13:58:14.157Z]   🔍 Search: Maryland Eastern Shore Hawks baseball camp
+[2026-04-03T13:58:18.212Z]   ★ Consensus match: https://hbcufan.com/hawk-baseball-announces-three-fall-elite-prospect-camps/
+[2026-04-03T13:58:18.212Z]   ↳ Scraping: https://hbcufan.com/hawk-baseball-announces-three-fall-elite-prospect-camps/
+[2026-04-03T13:58:21.923Z]   ↳ Trying one sub-page: https://hbcufan.com/hawk-baseball-announces-three-fall-elite-prospect-camps/#main
+[2026-04-03T13:58:23.485Z] 
+[8/22] Michigan | Missing: campUrl, dates, cost, email
+[2026-04-03T13:58:23.525Z]   🔍 Search: Michigan Wolverines baseball camp
+[2026-04-03T13:58:27.665Z]   ★ Engine #1: https://camps.mgoblue.com/baseball/
+[2026-04-03T13:58:27.665Z]   ↳ Scraping: https://camps.mgoblue.com/baseball/
+[2026-04-03T13:58:29.793Z]   ✅ cost: $424
+[2026-04-03T13:58:29.793Z]   ✅ dates: 06/15/2026 | 07/20/2026 | 07/22/2026
+[2026-04-03T13:58:29.837Z] 
+[9/22] Michigan State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:58:29.867Z]   🔍 Search: Michigan State Spartans baseball camp
+[2026-04-03T13:58:33.957Z]   ★ Consensus match: https://www.lansing.org/event/2026-msu-sports-camps/59357/
+[2026-04-03T13:58:33.957Z]   ↳ Scraping: https://www.lansing.org/event/2026-msu-sports-camps/59357/
+[2026-04-03T13:58:37.219Z]   ↳ Trying one sub-page: https://www.lansing.org/event/2026-msu-sports-camps/59357/#main-content
+[2026-04-03T13:58:38.783Z] 
+[10/22] Minnesota | Missing: campUrl, dates, cost, email
+[2026-04-03T13:58:38.820Z]   🔍 Search: Minnesota Golden Gophers baseball camp
+[2026-04-03T13:58:43.132Z]   ★ Engine #1: https://www.gopherbaseballcamps.com/
+[2026-04-03T13:58:43.132Z]   ↳ Scraping: https://www.gopherbaseballcamps.com/
+[2026-04-03T13:58:45.132Z]   ↳ Trying one sub-page: https://www.gopherbaseballcamps.com/#main-content
+[2026-04-03T13:58:46.765Z] 
+[11/22] Nebraska | Missing: campUrl, dates, cost, email
+[2026-04-03T13:58:46.808Z]   🔍 Search: Nebraska Cornhuskers baseball camp
+[2026-04-03T13:58:50.716Z]   ★ Engine #1: https://thegpsguide.com/camping/nebraska-baseball-camp/
+[2026-04-03T13:58:50.716Z]   ↳ Scraping: https://thegpsguide.com/camping/nebraska-baseball-camp/
+[2026-04-03T13:58:52.728Z] 
+[12/22] Northwestern | Missing: campUrl, dates, cost, email
+[2026-04-03T13:58:52.764Z]   🔍 Search: Northwestern Wildcats baseball camp
+[2026-04-03T13:58:56.949Z]   ★ Engine #1: https://www.northwesternbaseballcamps.com/2026-summer-prospect-camps.cfm
+[2026-04-03T13:58:56.949Z]   ↳ Scraping: https://www.northwesternbaseballcamps.com/2026-summer-prospect-camps.cfm
+[2026-04-03T13:58:59.072Z]   ✅ cost: $200
+[2026-04-03T13:58:59.072Z]   ✅ email: baseball@northwestern.edu
+[2026-04-03T13:58:59.108Z] 
+[13/22] Ohio State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:58:59.147Z]   🔍 Search: Ohio State Buckeyes baseball camp
+[2026-04-03T13:59:03.110Z]   ★ Consensus match: https://kidvoyage.com/camps/usa/ohio-state-university-baseball-summer-camp
+[2026-04-03T13:59:03.110Z]   ↳ Scraping: https://kidvoyage.com/camps/usa/ohio-state-university-baseball-summer-camp
+[2026-04-03T13:59:05.112Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:59:05.114Z]   ↳ Trying one sub-page: https://kidvoyage.com/add-camp
+[2026-04-03T13:59:06.920Z] 
+[14/22] Oregon | Missing: campUrl, dates, cost, email
+[2026-04-03T13:59:06.980Z]   🔍 Search: Oregon Ducks baseball camp
+[2026-04-03T13:59:11.121Z]   ★ Consensus match: https://www.duckbaseballcamps.com/
+[2026-04-03T13:59:11.121Z]   ↳ Scraping: https://www.duckbaseballcamps.com/
+[2026-04-03T13:59:13.266Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:59:13.267Z]   ↳ Trying one sub-page: https://www.duckbaseballcamps.com/#sitePageContent
+[2026-04-03T13:59:14.785Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:59:14.848Z] 
+[15/22] Penn State | Missing: campUrl, dates, cost, email
+[2026-04-03T13:59:14.895Z]   🔍 Search: Penn State Nittany Lions baseball camp
+[2026-04-03T13:59:19.453Z]   ★ Engine #1: https://beaver.psu.edu/ce/youth/sportscamps/baseball-camp
+[2026-04-03T13:59:19.453Z]   ↳ Scraping: https://beaver.psu.edu/ce/youth/sportscamps/baseball-camp
+[2026-04-03T13:59:21.775Z]   ✅ cost: $199
+[2026-04-03T13:59:21.775Z]   ✅ dates: June 22, 2026 | June 25, 2026
+[2026-04-03T13:59:21.775Z]   ✅ email: beaverce@psu.edu
+[2026-04-03T13:59:21.839Z] 
+[16/22] Purdue | Missing: campUrl, dates, cost, email
+[2026-04-03T13:59:21.881Z]   🔍 Search: Purdue Boilermakers baseball camp
+[2026-04-03T13:59:26.100Z]   ★ Consensus match: https://www.purduebaseballcamps.com/
+[2026-04-03T13:59:26.100Z]   ↳ Scraping: https://www.purduebaseballcamps.com/
+[2026-04-03T13:59:28.127Z]   ↳ Trying one sub-page: https://www.purduebaseballcamps.com/#sitePageContent
+[2026-04-03T13:59:29.838Z] 
+[17/22] Rutgers | Missing: campUrl, dates, cost, email
+[2026-04-03T13:59:29.881Z]   🔍 Search: Rutgers Scarlet Knights baseball camp
+[2026-04-03T13:59:34.001Z]   ★ Consensus match: https://scarletknights.com/documents/download/2026/1/4/Scarlet_Knights_Program_Clinic_Flyer_2026.pdf
+[2026-04-03T13:59:34.001Z]   ↳ Scraping: https://scarletknights.com/documents/download/2026/1/4/Scarlet_Knights_Program_Clinic_Flyer_2026.pdf
+[2026-04-03T13:59:34.663Z]   ❌ Err: net::ERR_ABORTED at https://scarletknights.com/documents/download/2026/1/4/Scarlet_Knights_Program_Clinic_Flyer_2026.pdf
+[2026-04-03T13:59:34.686Z] 
+[18/22] Southern Indiana | Missing: campUrl, dates, cost, email
+[2026-04-03T13:59:34.730Z]   🔍 Search: Southern Indiana Screaming Eagles baseball camp
+[2026-04-03T13:59:38.709Z]   ★ Consensus match: https://coachrambaseball.com/
+[2026-04-03T13:59:38.710Z]   ↳ Scraping: https://coachrambaseball.com/
+[2026-04-03T13:59:41.486Z]     ⚠️ REJECTED: Team camp only or legacy 2025 page
+[2026-04-03T13:59:41.487Z]   ↳ Trying one sub-page: https://www.playnsports.com/event/usi-baseball-january-youth-camp/
+[2026-04-03T13:59:45.619Z]   ✅ cost: $100
+[2026-04-03T13:59:45.684Z] 
+[19/22] UCLA | Missing: campUrl, dates, cost, email
+[2026-04-03T13:59:45.748Z]   🔍 Search: UCLA Bruins baseball camp
+[2026-04-03T13:59:49.996Z]   ★ Engine #1: https://recreation.ucla.edu/summercamps
+[2026-04-03T13:59:49.996Z]   ↳ Scraping: https://recreation.ucla.edu/summercamps
+[2026-04-03T13:59:51.847Z]   ✅ dates: August 21, 2026
+[2026-04-03T13:59:51.847Z]   ✅ email: info@recreation.ucla.edu
+[2026-04-03T13:59:51.920Z] 
+[20/22] USC | Missing: campUrl, dates, cost, email
+[2026-04-03T13:59:51.957Z]   🔍 Search: USC Trojans baseball camp
+[2026-04-03T13:59:56.051Z]   ★ Engine #1: https://www.activityhero.com/biz/usc-baseball-camps
+[2026-04-03T13:59:56.051Z]   ↳ Scraping: https://www.activityhero.com/biz/usc-baseball-camps
+[2026-04-03T13:59:58.854Z]   ↳ Trying one sub-page: https://www.activityhero.com/search?activity_types=camp
+[2026-04-03T14:00:00.897Z]     ⚠️ REJECTED: Page is not about baseball
+[2026-04-03T14:00:00.952Z] 
+[21/22] Washington | Missing: campUrl, dates, cost, email
+[2026-04-03T14:00:00.997Z]   🔍 Search: Washington Huskies baseball camp
+[2026-04-03T14:00:05.196Z]   ★ Consensus match: https://enrichment.kids/wa/seattle/husky-baseball-camps
+[2026-04-03T14:00:05.196Z]   ↳ Scraping: https://enrichment.kids/wa/seattle/husky-baseball-camps
+[2026-04-03T14:00:07.688Z]   ✅ cost: $249
+[2026-04-03T14:00:07.773Z] 
+[22/22] Tusculum University | Missing: campUrl, dates, cost, email
+[2026-04-03T14:00:07.820Z]   🔍 Search: Tusculum University Pioneers baseball camp
+[2026-04-03T14:00:12.235Z]   ★ Engine #1: https://www.playnsports.com/organization/tusculum-university-baseball-showcase/
+[2026-04-03T14:00:12.235Z]   ↳ Scraping: https://www.playnsports.com/organization/tusculum-university-baseball-showcase/
+[2026-04-03T14:00:16.357Z]   ↳ Trying one sub-page: https://radiateprints.com/playnsports/
+[2026-04-03T14:00:18.830Z] ✅ DONE
+[2026-04-03T14:12:05.689Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T14:12:06.499Z] ✅ DONE
+[2026-04-03T14:13:46.491Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T14:13:46.959Z] 
+[1/18] Arizona | Missing: campUrl, dates, cost, email
+[2026-04-03T14:13:47.023Z]   🔍 Search: Arizona Wildcats baseball camp
+[2026-04-03T14:13:51.800Z]   ★ Consensus match: https://rec.arizona.edu/sports/club-sports/baseball
+[2026-04-03T14:13:51.800Z]   ↳ Scraping: https://rec.arizona.edu/sports/club-sports/baseball
+[2026-04-03T14:13:54.109Z]   ↳ Trying one sub-page: https://rec.arizona.edu/calendar
+[2026-04-03T14:13:55.780Z]   ✅ email: uazclubbaseball@gmail.com
+[2026-04-03T14:13:55.842Z] 
+[2/18] Arizona State | Missing: campUrl, dates, cost, email
+[2026-04-03T14:13:55.880Z]   🔍 Search: Arizona State Sun Devils baseball camp
+[2026-04-03T14:14:00.110Z]   ★ Consensus match: https://sundevilsbaseballcamps.com/
+[2026-04-03T14:14:00.110Z]   ↳ Scraping: https://sundevilsbaseballcamps.com/
+[2026-04-03T14:14:02.265Z]   ✅ cost: $200
+[2026-04-03T14:14:02.265Z]   ✅ email: asuadmin@sundevilsbaseballcamps.com
+[2026-04-03T14:14:02.314Z] 
+[3/18] Clemson | Missing: campUrl, dates, cost, email
+[2026-04-03T14:14:02.358Z]   🔍 Search: Clemson Tigers baseball camp
+[2026-04-03T14:14:06.345Z]   ★ Consensus match: https://www.tigerbaseballcamp.com/camps/
+[2026-04-03T14:14:06.345Z]   ↳ Scraping: https://www.tigerbaseballcamp.com/camps/
+[2026-04-03T14:14:08.202Z]   ↳ Trying one sub-page: https://www.tigerbaseballcamp.com/camps/#genesis-content
+[2026-04-03T14:14:09.761Z] 
+[4/18] Davidson | Missing: campUrl, dates, cost, email
+[2026-04-03T14:14:09.797Z]   🔍 Search: Davidson Wildcats baseball camp
+[2026-04-03T14:14:13.990Z]   ★ Consensus match: https://info.collegebaseballcamps.com/dc/
+[2026-04-03T14:14:13.990Z]   ↳ Scraping: https://info.collegebaseballcamps.com/dc/
+[2026-04-03T14:14:16.449Z]   ↳ Trying one sub-page: https://info.collegebaseballcamps.com/dc/#about
+[2026-04-03T14:14:17.967Z]   ✅ email: bebreazeale@davidson.edu
+[2026-04-03T14:14:18.018Z] 
+[5/18] Duke | Missing: campUrl, dates, cost, email
+[2026-04-03T14:14:18.060Z]   🔍 Search: Duke Blue Devils baseball camp
+[2026-04-03T14:14:22.383Z]   ★ Consensus match: https://coachmoosebaseball.com/
+[2026-04-03T14:14:22.383Z]   ↳ Scraping: https://coachmoosebaseball.com/
+[2026-04-03T14:14:25.689Z]   ↳ Trying one sub-page: https://coachmoosebaseball.com/camps/
+[2026-04-03T14:14:28.446Z] 
+[6/18] Florida State | Missing: campUrl, dates, cost, email
+[2026-04-03T14:14:28.491Z]   🔍 Search: Florida State Seminoles baseball camp
+[2026-04-03T14:14:32.570Z]   ★ Engine #1: https://www.linkjarrettbaseball.org/
+[2026-04-03T14:14:32.570Z]   ↳ Scraping: https://www.linkjarrettbaseball.org/
+[2026-04-03T14:14:34.795Z]   ↳ Trying one sub-page: https://www.linkjarrettbaseball.org/summer-campsshowcases.html
+[2026-04-03T14:14:36.967Z]   ✅ cost: $250
+[2026-04-03T14:14:36.967Z]   ✅ dates: June 23, 2026 | July 7, 2026 | July 29, 2026
+[2026-04-03T14:14:36.967Z]   ✅ email: ath-baseball@fsu.edu
+[2026-04-03T14:14:37.020Z] 
+[7/18] Georgia | Missing: campUrl, dates, cost, email
+[2026-04-03T14:14:37.062Z]   🔍 Search: Georgia Bulldogs baseball camp
+[2026-04-03T14:14:41.139Z]   ★ Consensus match: https://wesjohnsonbaseballcamps.com/
+[2026-04-03T14:14:41.139Z]   ↳ Scraping: https://wesjohnsonbaseballcamps.com/
+[2026-04-03T14:14:44.086Z]   ↳ Trying one sub-page: https://wesjohnsonbaseballcamps.com/#content
+[2026-04-03T14:14:45.650Z] 
+[8/18] Houston | Missing: campUrl, dates, cost, email
+[2026-04-03T14:14:45.698Z]   🔍 Search: Houston Cougars baseball camp
+[2026-04-03T14:14:49.771Z]   ★ Consensus match: https://info.collegebaseballcamps.com/uh/
+[2026-04-03T14:14:49.771Z]   ↳ Scraping: https://info.collegebaseballcamps.com/uh/
+[2026-04-03T14:14:51.705Z]   ✅ cost: $150
+[2026-04-03T14:14:51.705Z]   ✅ dates: 06/01/2026 | 06/08/2026 | 06/15/2026
+[2026-04-03T14:14:51.705Z]   ✅ email: mdlucas@central.uh.edu
+[2026-04-03T14:14:51.739Z] 
+[9/18] Indiana | Missing: campUrl, dates, cost, email
+[2026-04-03T14:14:51.784Z]   🔍 Search: Indiana Hoosiers baseball camp
+[2026-04-03T14:14:55.557Z]   ★ Consensus match: https://www.jeffmercerbaseballcamps.com/
+[2026-04-03T14:14:55.557Z]   ↳ Scraping: https://www.jeffmercerbaseballcamps.com/
+[2026-04-03T14:14:57.489Z]   ✅ dates: 06/20/2026 | 06/22/2026 | 06/25/2026
+[2026-04-03T14:14:57.540Z] 
+[10/18] New Mexico | Missing: campUrl, dates, cost, email
+[2026-04-03T14:14:57.580Z]   🔍 Search: New Mexico Lobos baseball camp
+[2026-04-03T14:15:01.725Z]   ★ Engine #1: https://www.summercampsnavigator.com/summer-camp/new_mexico_baseball_camps_13370.html
+[2026-04-03T14:15:01.725Z]   ↳ Scraping: https://www.summercampsnavigator.com/summer-camp/new_mexico_baseball_camps_13370.html
+[2026-04-03T14:15:02.571Z]   ❌ Err: net::ERR_CERT_COMMON_NAME_INVALID at https://www.summercampsnavigator.com/summer-camp/new_mexico_baseball_camps_13370.html
+[2026-04-03T14:15:02.590Z] 
+[11/18] North Carolina | Missing: campUrl, dates, cost, email
+[2026-04-03T14:15:02.633Z]   🔍 Search: North Carolina Tar Heels baseball camp
+[2026-04-03T14:15:06.809Z]   ★ Consensus match: https://www.carolinabaseballcamps.com/
+[2026-04-03T14:15:06.810Z]   ↳ Scraping: https://www.carolinabaseballcamps.com/
+[2026-04-03T14:15:08.936Z]   ✅ cost: $100
+[2026-04-03T14:15:08.968Z] 
+[12/18] Ole Miss | Missing: campUrl, dates, cost, email
+[2026-04-03T14:15:09.008Z]   🔍 Search: Ole Miss Rebels baseball camp
+[2026-04-03T14:15:13.086Z]   ★ Engine #1: https://baseball.olemisssportscamps.com/index.cfm
+[2026-04-03T14:15:13.086Z]   ↳ Scraping: https://baseball.olemisssportscamps.com/index.cfm
+[2026-04-03T14:15:15.692Z]   ✅ dates: 06/22/2026 | 06/25/2026 | 07/13/2026
+[2026-04-03T14:15:15.692Z]   ✅ email: olemissbaseballcamps@gmail.com
+[2026-04-03T14:15:15.750Z] 
+[13/18] Rice | Missing: campUrl, dates, cost, email
+[2026-04-03T14:15:15.792Z]   🔍 Search: Rice Owls baseball camp
+[2026-04-03T14:15:19.695Z]   ★ Consensus match: https://www.playnsports.com/organization/rice-baseball-camps/
+[2026-04-03T14:15:19.695Z]   ↳ Scraping: https://www.playnsports.com/organization/rice-baseball-camps/
+[2026-04-03T14:15:24.449Z]   ✅ cost: $325
+[2026-04-03T14:15:24.485Z] 
+[14/18] San Diego State | Missing: campUrl, dates, cost, email
+[2026-04-03T14:15:24.536Z]   🔍 Search: San Diego State Aztecs baseball camp
+[2026-04-03T14:15:29.141Z]   ★ Consensus match: https://www.sandiegohawks.com/baseballcamps.html
+[2026-04-03T14:15:29.141Z]   ↳ Scraping: https://www.sandiegohawks.com/baseballcamps.html
+[2026-04-03T14:15:31.259Z] 
+[15/18] Southern Indiana | Missing: campUrl, dates, cost, email
+[2026-04-03T14:15:31.294Z]   🔍 Search: Southern Indiana Screaming Eagles baseball camp
+[2026-04-03T14:15:35.226Z]   ★ Consensus match: https://coachrambaseball.com/
+[2026-04-03T14:15:35.227Z]   ↳ Scraping: https://coachrambaseball.com/
+[2026-04-03T14:15:37.858Z]   ↳ Trying one sub-page: https://www.playnsports.com/event/usi-baseball-january-youth-camp/
+[2026-04-03T14:15:40.471Z]   ✅ cost: $100
+[2026-04-03T14:15:40.514Z] 
+[16/18] TCU | Missing: campUrl, dates, cost, email
+[2026-04-03T14:15:40.565Z]   🔍 Search: TCU Horned Frogs baseball camp
+[2026-04-03T14:15:44.688Z]   ★ Consensus match: https://info.collegebaseballcamps.com/tcu/
+[2026-04-03T14:15:44.688Z]   ↳ Scraping: https://info.collegebaseballcamps.com/tcu/
+[2026-04-03T14:15:46.487Z]   ✅ cost: $300
+[2026-04-03T14:15:46.487Z]   ✅ dates: 06/02/2026 | 06/09/2026 | 06/15/2026
+[2026-04-03T14:15:46.487Z]   ✅ email: m.m.montgomery@tcu.edu
+[2026-04-03T14:15:46.535Z] 
+[17/18] USC | Missing: campUrl, dates, cost, email
+[2026-04-03T14:15:46.574Z]   🔍 Search: USC Trojans baseball camp
+[2026-04-03T14:15:51.201Z]   ★ Consensus match: https://info.collegebaseballcamps.com/trojans/
+[2026-04-03T14:15:51.201Z]   ↳ Scraping: https://info.collegebaseballcamps.com/trojans/
+[2026-04-03T14:15:53.122Z]   ↳ Trying one sub-page: https://info.collegebaseballcamps.com/trojans/#home
+[2026-04-03T14:15:54.635Z]   ✅ email: sergio.brown@usc.edu
+[2026-04-03T14:15:54.684Z] 
+[18/18] Washington | Missing: campUrl, dates, cost, email
+[2026-04-03T14:15:54.727Z]   🔍 Search: Washington Huskies baseball camp
+[2026-04-03T14:15:58.707Z]   ★ Consensus match: https://info.collegebaseballcamps.com/huskybaseball/
+[2026-04-03T14:15:58.707Z]   ↳ Scraping: https://info.collegebaseballcamps.com/huskybaseball/
+[2026-04-03T14:16:00.550Z]   ✅ cost: $219
+[2026-04-03T14:16:00.550Z]   ✅ dates: 07/13/2026 | 07/20/2026 | 07/21/2026
+[2026-04-03T14:16:00.550Z]   ✅ email: uwbaseballcamps@gmail.com
+[2026-04-03T14:16:00.828Z] ✅ DONE
+[2026-04-03T14:30:17.775Z] 🚀 DEAD SIMPLE EXTRACT starting...
+[2026-04-03T14:30:18.255Z] 
+[1/9] Auburn | Missing: cost, dates
+[2026-04-03T14:30:18.300Z]   ↳ Scraping: https://auburntigers.com/camps
+[2026-04-03T14:30:25.504Z]   ↳ Trying one sub-page: https://auburntigers.com/camps#main-content
+[2026-04-03T14:30:27.052Z] 
+[2/9] Bellarmine | Missing: cost, dates
+[2026-04-03T14:30:27.088Z]   🔍 Search: Bellarmine Knights baseball camp
+[2026-04-03T14:30:31.534Z]   ★ Consensus match: https://www.bellarmineprep.org/about/community/summer-programs/boys-baseball-camp
+[2026-04-03T14:30:31.535Z]   ↳ Scraping: https://www.bellarmineprep.org/about/community/summer-programs/boys-baseball-camp
+[2026-04-03T14:30:33.833Z]   ✅ cost: $225
+[2026-04-03T14:30:33.833Z]   ✅ dates: July 13-16, 2026
+[2026-04-03T14:30:33.867Z] 
+[3/9] Florida | Missing: cost, dates
+[2026-04-03T14:30:33.904Z]   ↳ Scraping: https://floridagators.com/sports/2026/2/18/baseball-experience-camp-high-school
+[2026-04-03T14:30:36.534Z]   ✅ cost: $350 / $625 / $1000 ...
+[2026-04-03T14:30:36.535Z]   ✅ dates: July 28-31, 2026 | July 28, 2026 | June 2, 2026
+[2026-04-03T14:30:36.563Z] 
+[4/9] James Madison | Missing: cost, dates
+[2026-04-03T14:30:36.602Z]   🔍 Search: James Madison Dukes baseball camp
+[2026-04-03T14:30:40.576Z]   ★ Consensus match: https://jmusports.com/sports/baseball
+[2026-04-03T14:30:40.576Z]   ↳ Scraping: https://jmusports.com/sports/baseball
+[2026-04-03T14:30:43.058Z]   ↳ Trying one sub-page: https://jmusports.com/calendar
+[2026-04-03T14:30:45.082Z] 
+[5/9] Maine | Missing: cost, dates
+[2026-04-03T14:30:45.121Z]   ↳ Scraping: https://goblackbears.com/sports/2020/2/24/baseball-camps.aspx
+[2026-04-03T14:30:47.912Z]   ✅ cost: $150 / $175 / $280 ...
+[2026-04-03T14:30:47.912Z]   ✅ dates: August 26, 2026 | June 22-26, 2026 | July 26-30, 2
+[2026-04-03T14:30:47.943Z] 
+[6/9] North Carolina | Missing: cost, dates
+[2026-04-03T14:30:47.982Z]   🔍 Search: North Carolina Tar Heels baseball camp
+[2026-04-03T14:30:51.958Z]   ★ Consensus match: https://www.carolinabaseballcamps.com/
+[2026-04-03T14:30:51.959Z]   ↳ Scraping: https://www.carolinabaseballcamps.com/
+[2026-04-03T14:30:54.053Z]   ✅ cost: $100 / $200 / $300 ...
+[2026-04-03T14:30:54.087Z] 
+[7/9] San Francisco | Missing: cost, dates
+[2026-04-03T14:30:54.123Z]   🔍 Search: San Francisco Dons baseball camp
+[2026-04-03T14:30:58.276Z]   ★ Consensus match: https://info.collegebaseballcamps.com/dons/
+[2026-04-03T14:30:58.276Z]   ↳ Scraping: https://info.collegebaseballcamps.com/dons/
+[2026-04-03T14:31:00.227Z]   ↳ Trying one sub-page: https://info.collegebaseballcamps.com/dons/#Events-New
+[2026-04-03T14:31:01.934Z] 
+[8/9] Troy | Missing: cost, dates
+[2026-04-03T14:31:01.973Z]   🔍 Search: Troy Trojans baseball camp
+[2026-04-03T14:31:06.062Z]   ★ Consensus match: https://www.troybaseballcamps.com/
+[2026-04-03T14:31:06.062Z]   ↳ Scraping: https://www.troybaseballcamps.com/
+[2026-04-03T14:31:08.135Z]   ↳ Trying one sub-page: https://www.troybaseballcamps.com/#sitePageContent
+[2026-04-03T14:31:09.855Z] 
+[9/9] Vanderbilt | Missing: cost, dates
+[2026-04-03T14:31:09.892Z]   ↳ Scraping: https://vucommodores.com/baseballcamps/
+[2026-04-03T14:31:12.025Z]     ⚠️ High price detected ($685) — verify not team/showcase
+[2026-04-03T14:31:12.025Z]   ✅ cost: $685
+[2026-04-03T14:31:12.286Z] ✅ DONE
