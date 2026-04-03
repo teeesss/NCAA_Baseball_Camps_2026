@@ -17,14 +17,23 @@ function reconcile() {
         // 1. Gather all sessions from campTiers
         if (item.campTiers && Array.isArray(item.campTiers)) {
             item.campTiers.forEach(tier => {
+                const processDates = (dateStr) => {
+                    if (!dateStr) return;
+                    const hasValidMonth = VALID_MONTH_REGEX.test(dateStr);
+                    const hasYear = YEAR_REGEX.test(dateStr);
+                    
+                    // If it has a valid summer month, we accept it (assume 2026 if year missing)
+                    if (hasValidMonth) {
+                        let finalDate = dateStr.trim();
+                        if (!hasYear) finalDate += ", 2026";
+                        allValidSessions.push(finalDate);
+                    }
+                };
+
                 if (tier.sessions && Array.isArray(tier.sessions)) {
-                    tier.sessions.forEach(session => {
-                        if (session.dates && VALID_MONTH_REGEX.test(session.dates) && YEAR_REGEX.test(session.dates)) {
-                            allValidSessions.push(session.dates);
-                        }
-                    });
-                } else if (tier.dates && VALID_MONTH_REGEX.test(tier.dates) && YEAR_REGEX.test(tier.dates)) {
-                    allValidSessions.push(tier.dates);
+                    tier.sessions.forEach(session => processDates(session.dates));
+                } else {
+                    processDates(tier.dates);
                 }
             });
         }

@@ -343,7 +343,7 @@ const html = `
         .val-stack { display: flex; flex-direction: column; pointer-events: none; }
         .label { font-size: 0.6rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 600; pointer-events: none; }
         .value { font-size: 0.9rem; color: #fff; font-weight: 500; pointer-events: none; }
-        .value.tba { color: var(--text-secondary); font-style: italic; pointer-events: none; }
+        .value.tba { color: #fff !important; font-style: italic; pointer-events: none; opacity: 0.8; }
 
         .info-stack { cursor: pointer; border-radius: 12px; transition: background 0.2s; padding: 4px; margin: -4px; flex-grow: 1; }
         .info-stack:hover { background: rgba(255,255,255,0.05); }
@@ -679,8 +679,8 @@ const html = `
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
                             </div>
                             <div class="val-stack">
-                                <span class="label">Est. Cost</span>
-                                <span class="value">${item.cost || 'Contact for pricing'}</span>
+                                <span class="label">EST COST</span>
+                                <span class="value ${(!item.cost || item.cost === 'TBA') ? 'tba' : ''}">${item.cost || 'TBA'}</span>
                             </div>
                         </div>
 
