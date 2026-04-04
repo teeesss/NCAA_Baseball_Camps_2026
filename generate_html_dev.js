@@ -9,10 +9,6 @@ const diiCount = data.filter(d => d.division === 'DII').length;
 const confCount = new Set(data.map(c => c.conference || 'Other')).size;
 const autoVerifiedCount = data.filter(d => d.autoVerified).length;
 
-const humanVerifications = fs.existsSync('human_verifications.json')
-    ? JSON.parse(fs.readFileSync('human_verifications.json', 'utf8'))
-    : {};
-
 // Generate conference HTML at build time from current data
 const conferences = [...new Set(data.map(c => c.conference || 'Other'))].sort();
 const priorityConfs = ["SEC", "ACC", "Big Ten", "Big 12", "Sun Belt", "Big West", "ASUN", "Ivy League"];
@@ -438,9 +434,8 @@ const html = `
 
     <script>
     // ── Human verifications seeded at build time ──
-    const HUMAN_VERIFICATIONS = ${JSON.stringify(humanVerifications)};
-
     // ── Globals ──
+    let HUMAN_VERIFICATIONS = {};
     let allData = [];
     let currentDiv = 'all';
     let currentConf = 'all';
@@ -744,7 +739,7 @@ const html = `
         if (!confirm('Are you verifying that ' + schoolName + ' camp data is accurate?')) return;
 
         try {
-            const response = await fetch('verify_human.php', {
+            const response = await fetch('../Baseball_Camps_2026/verify_human.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ schoolName, action: 'verify' })
@@ -780,7 +775,7 @@ const html = `
     // ── Sync verifications from server ──
     async function syncVerificationsFromServer() {
         try {
-            const res = await fetch('human_verifications.json?v=' + Date.now());
+            const res = await fetch('../Baseball_Camps_2026/human_verifications.json?v=' + Date.now());
             if (!res.ok) return;
             const freshCounts = await res.json();
             document.querySelectorAll('.camp-card').forEach(card => {
@@ -911,8 +906,24 @@ const html = `
         }
     });
 
+    async function fetchHumanVerifications() {
+        try {
+            const res = await fetch('../Baseball_Camps_2026/human_verifications.json?t=' + Date.now());
+            if (res.ok) {
+                HUMAN_VERIFICATIONS = await res.json();
+                console.log('Loaded human verifications:', Object.keys(HUMAN_VERIFICATIONS).length, 'schools (from production)');
+            }
+        } catch (e) {
+            console.warn("Could not fetch human verifications:", e.message);
+        }
+    }
+
     // ── Boot ──
     async function init() {
+        // Step 1: Fetch human verifications first so cards render with correct verified state
+        await fetchHumanVerifications();
+
+        // Step 2: Fetch camps data
         try {
             const res = await fetch('camps_data.json');
             if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -949,7 +960,7 @@ const html = `
             if (school && votedInSession.includes(school)) btn.classList.add('voted');
         });
 
-        // Sync from server
+        // Step 3: Sync fresh counts from server (may update badges after render)
         try {
             await syncVerificationsFromServer();
         } catch (e) {
@@ -958,8 +969,6 @@ const html = `
 
         // Hide loading
         document.getElementById('loading-overlay').style.display = 'none';
-
-        // Wire up delegated onclick for toggleDates (since toggleDates is global, btn onclick works)
     }
 
     init();
