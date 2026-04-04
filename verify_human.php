@@ -37,6 +37,24 @@ foreach ([$countFile, $ipLogFile] as $f) {
 $counts = json_decode(file_get_contents($countFile), true) ?: [];
 $ipLog  = json_decode(file_get_contents($ipLogFile), true)  ?: [];
 
+// ── Cleanup: Prune IP entries older than 48h (Tech Debt Fix #8) ──
+$now = time();
+$purgeThreshold = 86400 * 2; // 48 Hours
+$pruned = false;
+foreach ($ipLog as $ipKey => $schools) {
+    foreach ($schools as $sName => $ts) {
+        if (($now - $ts) > $purgeThreshold) {
+            unset($ipLog[$ipKey][$sName]);
+            $pruned = true;
+        }
+    }
+    if (empty($ipLog[$ipKey])) {
+        unset($ipLog[$ipKey]);
+        $pruned = true;
+    }
+}
+if ($pruned) file_put_contents($ipLogFile, json_encode($ipLog, JSON_PRETTY_PRINT));
+
 // ── Helper: get client IP ─────────────────────────────────────
 function getClientIp(): string {
     return $_SERVER['HTTP_X_FORWARDED_FOR']

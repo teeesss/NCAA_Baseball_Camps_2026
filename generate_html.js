@@ -556,8 +556,8 @@ const html = `
             <div class="hero-badge">Verified 2026 Season</div>
             <h1>NCAA Baseball Camps 2026</h1>
             <p class="subtitle">
-                <span class="desktop-text">520+ DI & DII programs. Verified registration links, costs, and contact details.</span>
-                <span class="mobile-text">520+ DI & DII Schools. Verified URLs, Costs, & Contact details.</span>
+                <span class="desktop-text">${data.length} DI & DII Programs | ${data.filter(s => s.isVerified).length} Professionally Verified.</span>
+                <span class="mobile-text">${data.length} Schools | ${data.filter(s => s.isVerified).length} Verified for 2026.</span>
             </p>
         </header>
 
