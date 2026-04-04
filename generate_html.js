@@ -584,8 +584,8 @@ const html = `
                     <button class="filter-btn active" data-div="all">All</button>
                     <button class="filter-btn" data-div="DI">Div I</button>
                     <button class="filter-btn" data-div="DII">Div II</button>
+                    <button class="filter-btn" data-div="newdates">📅 Latest Camp Dates</button>
                     <button class="filter-btn" data-div="updates">✨ Latest Updates</button>
-                    <button class="filter-btn" data-div="newdates">📅 New Dates</button>
                     <button class="filter-btn" data-div="human">👤 <span class="hide-mobile">Community </span>Verified</button>
                 </div>
                 <div id="conf-tabs">
@@ -665,9 +665,9 @@ const html = `
                      data-verified-auto="${isAutoVerif}" 
                       data-verified-human="${humanCount > 0}"
                       data-last-update="${item.lastUpdateDate || ''}"
+                      data-dates-update="${item.datesUpdateDate || ''}"
                       data-university="${item.university}"
                       data-not-verified="${!isManualVerif && !isAutoVerif && !isPartial}"
-                      data-last-update="${item.lastUpdateDate || ''}"
                       data-search="${item.university.toLowerCase()} ${item.contact.toLowerCase()}" 
                       style="${index < 30 ? `animation-delay: ${index * 0.005}s;` : 'animation: none;'} position: relative;">
                     ${humanCount > 0 ? `<div class="human-badge" title="${humanCount} community verifications">👤 ${humanCount}</div>` : ''}
@@ -910,7 +910,7 @@ const html = `
                 if (currentDiv === 'DI' || currentDiv === 'DII') matchesFilter = div === currentDiv;
                 else if (currentDiv === 'human') matchesFilter = isHuman;
                 else if (currentDiv === 'updates') matchesFilter = !!card.getAttribute('data-last-update');
-                else if (currentDiv === 'newdates') matchesFilter = !!card.getAttribute('data-last-update') && card.getAttribute('data-has-dates') === 'true';
+                else if (currentDiv === 'newdates') matchesFilter = !!card.getAttribute('data-dates-update');
 
                 const matchesConf = (confFilter === 'all' || conf === confFilter);
                 
@@ -940,10 +940,11 @@ const html = `
             });
             
             if ((currentDiv === 'updates' || currentDiv === 'newdates') && term === '' && costFilter === 'all' && confFilter === 'all') {
+                const sortAttr = currentDiv === 'newdates' ? 'data-dates-update' : 'data-last-update';
                 const visibleCards = Array.from(campCards).filter(c => c.style.display !== 'none');
                 visibleCards.sort((a, b) => {
-                    const da = a.getAttribute('data-last-update') || '';
-                    const db = b.getAttribute('data-last-update') || '';
+                    const da = a.getAttribute(sortAttr) || '';
+                    const db = b.getAttribute(sortAttr) || '';
                     return db.localeCompare(da);
                 });
                 visibleCards.forEach(c => campsContainer.appendChild(c));
