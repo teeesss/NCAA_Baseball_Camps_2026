@@ -584,6 +584,7 @@ const html = `
                     <button class="filter-btn active" data-div="all">All</button>
                     <button class="filter-btn" data-div="DI">Div I</button>
                     <button class="filter-btn" data-div="DII">Div II</button>
+                    <button class="filter-btn" data-div="updates">✨ Latest Updates</button>
                     <button class="filter-btn" data-div="human">👤 <span class="hide-mobile">Community </span>Verified</button>
                     <button class="filter-btn" data-div="dates">📅 <span class="hide-mobile">With </span>Dates</button>
                     <button class="filter-btn" data-div="auto">🤖 <span class="hide-mobile">Verified </span>Scans</button>
@@ -664,8 +665,10 @@ const html = `
                      data-verified-manual="${isManualVerif}" 
                      data-verified-auto="${isAutoVerif}" 
                       data-verified-human="${humanCount > 0}"
+                      data-last-update="${item.lastUpdateDate || ''}"
                       data-university="${item.university}"
                       data-not-verified="${!isManualVerif && !isAutoVerif && !isPartial}"
+                      data-last-update="${item.lastUpdateDate || ''}"
                       data-search="${item.university.toLowerCase()} ${item.contact.toLowerCase()}" 
                       style="${index < 30 ? `animation-delay: ${index * 0.005}s;` : 'animation: none;'} position: relative;">
                     ${humanCount > 0 ? `<div class="human-badge" title="${humanCount} community verifications">👤 ${humanCount}</div>` : ''}
@@ -722,8 +725,8 @@ const html = `
                             </div>
                             <div class="val-stack">
                                 <span class="label">Camp Contact</span>
-                                <span class="value">${esc(item.campPOC || item.headCoach || item.contact || 'Athletics Office')}</span>
-                                ${item.email ? `<span style="font-size: 0.75rem; color: var(--accent-color); font-weight: 600; opacity: 0.9;">${esc(item.email)}</span>` : ''}
+                                <span class="value">${item.campPOC && item.campPOC !== 'N/A' ? esc(item.campPOC) : (item.headCoach && item.headCoach !== 'N/A' ? esc(item.headCoach) : 'Athletics Office')}</span>
+                                ${item.email && item.email !== 'N/A' ? `<span style="font-size: 0.75rem; color: var(--accent-color); font-weight: 600; opacity: 0.9;">${esc(item.email)}</span>` : ''}
                             </div>
                         </div>
                     </div>
@@ -814,7 +817,17 @@ const html = `
                         ${item.details ? `
                         <div class="drawer-sec">
                             <div class="d-label">Additional Intel</div>
-                            <div class="d-body">${item.details}</div>
+                            <div class="d-body">${esc(item.details)}</div>
+                        </div>` : ''}
+
+                        ${item.updateLog && item.updateLog.length > 0 ? `
+                        <div class="drawer-sec" style="border-left: 2px solid var(--accent-color); background: rgba(59,130,246,0.02);">
+                            <div class="d-label">Verification Roadmap & Updates</div>
+                            <div class="d-body" style="font-size: 0.75rem;">
+                                <ul style="margin: 0; padding-left: 15px; list-style-type: none;">
+                                    ${item.updateLog.slice(0, 5).map(log => `<li style="margin-bottom: 6px; position: relative;"><span style="position: absolute; left: -15px; color: var(--accent-color);">•</span>${esc(log)}</li>`).join('')}
+                                </ul>
+                            </div>
                         </div>` : ''}
                         <div class="drawer-sec" style="border-color: rgba(59, 130, 246, 0.2); background: rgba(59, 130, 246, 0.05);">
                             <div class="d-label">🔗 Camp Hub</div>
@@ -899,6 +912,10 @@ const html = `
                 else if (currentDiv === 'auto') matchesFilter = isAuto;
                 else if (currentDiv === 'human') matchesFilter = isHuman;
                 else if (currentDiv === 'dates') matchesFilter = card.getAttribute('data-has-dates') === 'true';
+                else if (currentDiv === 'updates') {
+                    const lastUpd = card.getAttribute('data-last-update');
+                    matchesFilter = !!lastUpd && (new Date() - new Date(lastUpd) < 86400000 * 14); // Extended to 14 days for visibility
+                }
 
                 const matchesConf = (confFilter === 'all' || conf === confFilter);
                 
