@@ -27,6 +27,9 @@ async function deploy() {
         console.log(`Uploading index.html (${localSize} bytes)...`);
         await client.uploadFrom("index.html", "index.html");
         
+        console.log("Uploading camps_data.json...");
+        await client.uploadFrom("camps_data.json", "camps_data.json");
+        
         // Final Verification
         const remoteList = await client.list(".");
         const remoteIndex = remoteList.find(f => f.name === 'index.html');

@@ -640,12 +640,23 @@ const htmlSkeleton = `
 
         async function init() {
             try {
-                const [campsRes, humanRes] = await Promise.all([
+                const [campsRes, humanRes] = await Promise.allSettled([
                     fetch('camps_data.json?v='+Date.now()),
                     fetch('human_verifications.json?v='+Date.now())
                 ]);
-                campData = await campsRes.json();
-                humanVerifications = await humanRes.json();
+                
+                if (campsRes.status === 'fulfilled' && campsRes.value.ok) {
+                    campData = await campsRes.value.json();
+                } else {
+                    throw new Error("Failed to load camps_data.json");
+                }
+
+                if (humanRes.status === 'fulfilled' && humanRes.value.ok) {
+                    humanVerifications = await humanRes.value.json();
+                } else {
+                    console.warn("human_verifications.json not found or invalid; using empty set.");
+                    humanVerifications = {};
+                }
                 
                 // Initial Sort
                 campData.sort((a,b) => a.university.localeCompare(b.university));
