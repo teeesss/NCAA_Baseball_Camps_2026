@@ -584,9 +584,9 @@ const html = `
                     <button class="filter-btn active" data-div="all">All</button>
                     <button class="filter-btn" data-div="DI">Div I</button>
                     <button class="filter-btn" data-div="DII">Div II</button>
-                    <button class="filter-btn" data-div="updates">✨ New Camp Dates</button>
+                    <button class="filter-btn" data-div="updates">✨ Latest Updates</button>
+                    <button class="filter-btn" data-div="newdates">📅 New Dates</button>
                     <button class="filter-btn" data-div="human">👤 <span class="hide-mobile">Community </span>Verified</button>
-                    <button class="filter-btn" data-div="dates">📅 <span class="hide-mobile">With </span>Dates</button>
                 </div>
                 <div id="conf-tabs">
                     <button class="conf-btn filter-btn active" data-conf="all">All Conf</button>
@@ -909,11 +909,8 @@ const html = `
 
                 if (currentDiv === 'DI' || currentDiv === 'DII') matchesFilter = div === currentDiv;
                 else if (currentDiv === 'human') matchesFilter = isHuman;
-                else if (currentDiv === 'dates') matchesFilter = card.getAttribute('data-has-dates') === 'true';
-                else if (currentDiv === 'updates') {
-                    const lastUpd = card.getAttribute('data-last-update');
-                    matchesFilter = !!lastUpd && (new Date() - new Date(lastUpd) < 86400000 * 3); // 72h window
-                }
+                else if (currentDiv === 'updates') matchesFilter = !!card.getAttribute('data-last-update');
+                else if (currentDiv === 'newdates') matchesFilter = !!card.getAttribute('data-last-update') && card.getAttribute('data-has-dates') === 'true';
 
                 const matchesConf = (confFilter === 'all' || conf === confFilter);
                 
@@ -942,7 +939,7 @@ const html = `
                 }
             });
             
-            if (currentDiv === 'updates' && term === '' && costFilter === 'all' && confFilter === 'all') {
+            if ((currentDiv === 'updates' || currentDiv === 'newdates') && term === '' && costFilter === 'all' && confFilter === 'all') {
                 const visibleCards = Array.from(campCards).filter(c => c.style.display !== 'none');
                 visibleCards.sort((a, b) => {
                     const da = a.getAttribute('data-last-update') || '';
