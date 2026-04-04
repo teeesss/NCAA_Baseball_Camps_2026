@@ -1,5 +1,7 @@
 node_modules/
+.claude/
 .env
 smart_extract.log
 .DS_Store
 .credentials
+
