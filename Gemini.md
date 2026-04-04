@@ -14,9 +14,11 @@
 - **Feedback Loop**: The UI must include a "Report Error" contact form that sends feedback to 'rayjonesy@gmail.com'.
 - **Verified Data Preservation**: High-fidelity, manually verified data (such as the Arkansas registration forms) MUST be saved as separate JSON files in the `verified/` directory. The automated extraction script MUST explicitly skip any school that possesses verified flags (`isVerified: true`, `isChecked: true`, `scriptVersion >= 5`), to ensure verified data is never accidentally overridden.
 - **Extraction Protocol (IMMUTABLE)**: The extraction engine MUST follow the **V6 Ultra-Fidelity** standard as defined in [EXTRACTION_ENGINE.md](file:///x:/NCAA-DivisonI-Baseball-Camps-2026/EXTRACTION_ENGINE.md).
-    - **NEVER** simplify the 6-link sub-crawl depth.
-    - **NEVER** change or remove the logging icons (★, ⭐, ↳, ✓, 📋, 🎯).
-    - **ALWAYS** perform a bidirectional contamination check to prevent Regional/Rival school overlap.
+    - **Security First (MANDATORY)**: NEVER commit credentials, API keys, or private configuration folders to the git repository. 
+    - The `.credentials/` directory and `.claude/` directory MUST remain in `.gitignore`.
+    - ALL shared configuration (blacklists, regex, platform lists) must be centralized in `src/utils/config.js` to avoid drift.
+    - AUTOMATED GUARD: Always verify that `node src/tests/test_config_consistency.js` passes before any deployment or push.
+
 
 ## Current Knowledge
 - The initial goal was for DI baseball camp data, but it has been expanded to include all 300+ NCAA DII programs.
