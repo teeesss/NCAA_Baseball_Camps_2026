@@ -15,8 +15,8 @@ async function deploy() {
             secure: creds.secure
         });
 
-        // The user specified url: https://bmwseals.com/Baseball_Camps_2026/
-        const targetDir = "/bmwseals.com/Baseball_Camps_2026";
+        // The target directory path is now pulled from the .credentials JSON configuration file
+        const targetDir = creds.remotePath || "/bmwseals.com/Baseball_Camps_2026";
         
         console.log(`Ensuring remote directory exists: ${targetDir}`);
         await client.ensureDir(targetDir);

@@ -3,5 +3,5 @@ node_modules/
 .env
 smart_extract.log
 .DS_Store
-.credentials
+.credentials/
 
