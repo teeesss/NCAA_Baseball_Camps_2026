@@ -6,7 +6,9 @@
   "scripts": {
     "generate:word": "node src/utils/generate_word_doc.js",
     "generate:html": "node generate_html.js",
+    "generate:dev": "node generate_html_dev.js",
     "deploy": "node deploy.js",
+    "deploy:dev": "node deploy_dev.js",
     "audit": "node quality_audit.js",
     "auto-verify": "node auto_verify.js",
     "smart-extract": "node smart_extract.js",

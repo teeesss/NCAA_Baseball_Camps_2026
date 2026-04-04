@@ -71,6 +71,31 @@
 - Re-check programs in May/June 2026 for updated camp information.
 - Finalize the Word document for the user's offline reference.
 
+## Architecture & Data Flow
+
+The pipeline has four stages that feed into each other:
+
+1. **Extraction** → `smart_extract.js` (orchestrator) calls `src/utils/extract_camp_details.js` (V6 Puppeteer engine). It processes schools from `camps_data.json` with resumption logic — only schools missing `isChecked: true` or flagged for re-queue are processed. Results flow through mascot-based search → page validation → sub-crawl → date/price/contact extraction → JSON merge.
+
+2. **Verification** → `auto_verify.js` validates extracted URLs via HTTP HEAD. `verify_human.php` provides a manual verification endpoint (stored in `human_verifications.json`). `src/tests/verify_*.js` scripts run spot-check audits.
+
+3. **Generation** → `generate_html.js` reads `camps_data.json` and produces `index.html` (5.5MB, client-side rendered, no build step). `generate_html_dev.js` produces `index_dev.html` (~55KB shell that fetches JSON at runtime). `src/utils/generate_word_doc.js` produces the Word export.
+
+4. **Deploy** → `deploy.js` uploads `index.html` and assets via FTP to `/Baseball_Camps_2026/`. `deploy_dev.js` uploads dev version to `/Baseball_Camps_2026_dev/`. Credentials live in `.credentials/` (gitignored).
+
+### Dynamic Rendering Test (2026-04-04)
+A parallel path exists for testing a lightweight dynamic rendering approach:
+- `generate_html_dev.js` → Generates ~55KB HTML shell that fetches `camps_data.json` at runtime and renders cards client-side
+- `deploy_dev.js` → Deploys to `/Baseball_Camps_2026_dev/` (isolated test directory on the same server)
+- Total payload: ~855KB vs 5.4MB production — 6x reduction
+- Modal content stored as `encodeURIComponent()` on each card, decoded on click
+- Verify buttons use `data-verify-school` attributes + event delegation (no inline onclick with quote escaping)
+- `npm run generate:dev` + `npm run deploy:dev` for test deployments
+
+**Key data shapes:**
+- `camps_data.json`: Array of school objects with fields: `university`, `division`, `conference`, `divisionLevel`, `contact`, `email`, `campDates`, `prices`, `url`, `sourceUrl`, `isVerified`, `isChecked`, `scriptVersion`, `auditStatus`, `lastUpdateDate`, and granular timestamps (`datesUpdateDate`, `contactUpdateDate`, `priceUpdateDate`, `urlUpdateDate`).
+- `blacklist.json`: Array of third-party/junk domains to exclude during extraction.
+
 ## Directory Structure
 To maintain a clean root folder, follow this standard structure for scripts and files:
 - **Root (`/`)**: Core active production files only (`camps_data.json`, `index.html`, `smart_extract.js`, `generate_html.js`, `deploy.js`, `quality_audit.js`, `watchdog.js`).
@@ -79,3 +104,44 @@ To maintain a clean root folder, follow this standard structure for scripts and 
 - **`src/archives/`**: Deprecated scripts (e.g., `watchdog_v8.js`, `extract_camp_details_v7.js`), old iterations of extraction logic, and one-off injection macros (e.g., `inject_arkansas.js`).
 - **`verified/`**: Raw pristine JSON backups of perfectly human-verified subsets.
 - **`assets/`** & **`screenshots/`**: Visual assets, fetched team logos, etc.
+- **`src/utils/`**: Shared modules including `config.js` (centralized config), `extract_camp_details.js` (V6 engine), `mascot_lookup.js` (559 mascot mappings), conference utilities, and data merge/finalize scripts.
+
+## Common Commands
+
+```bash
+# Install dependencies
+npm install
+
+# Run config consistency test (must pass before deploy/push)
+node src/tests/test_config_consistency.js
+
+# Run UI filter test
+node src/tests/test_ui_filter.js
+
+# Regenerate HTML from camps_data.json
+npm run generate:html          # node generate_html.js  (production, 5.4MB)
+npm run generate:dev           # node generate_html_dev.js (dev, ~55KB shell)
+
+# Generate Word document export
+npm run generate:word          # node src/utils/generate_word_doc.js
+
+# Run quality audit
+npm run audit                  # node quality_audit.js
+
+# Deploy to servers
+npm run deploy                 # node deploy.js  (production → /Baseball_Camps_2026/)
+npm run deploy:dev             # node deploy_dev.js (staging → /Baseball_Camps_2026_dev/)
+
+# Full update pipeline (fetch verifications → extract → audit → generate → deploy)
+npm run full-update
+
+# Finalize/process extracted data into final JSON format
+node src/utils/finalize_database.js
+```
+
+## Notes
+- `index.html` is generated, not hand-edited. All UI changes must be made in `generate_html.js`.
+- `generate_html.js` embeds all CSS/JS inline — there is no separate build step or bundler.
+- The frontend uses a `<template>` rendering engine for camp cards. When moving DOM elements between the template and parent, always update ALL event listeners with `if(node)` guards.
+- No linter or formatter is configured in the project.
+- Node.js 18+ required.

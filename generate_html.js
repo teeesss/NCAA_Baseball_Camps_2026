@@ -1,15 +1,40 @@
 const fs = require('fs');
 const path = require('path');
 
-// Metadata extraction for filters
+function esc(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// Load Data
 const data = JSON.parse(fs.readFileSync('camps_data.json', 'utf8'));
+const lastChecked = "April 2, 2026";
+
+// Unique Conferences
 const conferences = [...new Set(data.map(c => c.conference || 'Other'))].sort();
+
+// Load Human Verifications
+let humanVerifications = {};
+if (fs.existsSync('human_verifications.json')) {
+    try {
+        humanVerifications = JSON.parse(fs.readFileSync('human_verifications.json', 'utf8'));
+    } catch (e) {
+        console.error('Error reading human_verifications.json:', e);
+    }
+}
+
 const diCount = data.filter(d => d.division === 'DI').length;
 const diiCount = data.filter(d => d.division === 'DII').length;
+
 const priorityConfs = ["SEC", "ACC", "Big Ten", "Big 12", "Sun Belt", "Big West", "ASUN", "Ivy League"];
 const otherConfs = conferences.filter(c => !priorityConfs.includes(c) && c !== 'Other');
 
-const htmlSkeleton = `
+const html = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +45,7 @@ const htmlSkeleton = `
     <meta http-equiv="Expires" content="0" />
     <title>NCAA Baseball Camps Directory 2026 | Div 1 & Div 2</title>
     <meta name="description" content="The definitive, searchable guide to 2026 NCAA Div I and Div II baseball camps and prospect clinics.">
+    <link rel="icon" type="image/png" href="favicon.png">
     
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +75,7 @@ const htmlSkeleton = `
             padding: 0;
         }
 
-        .camp-card, .btn, .filter-btn, .conf-btn, .info-stack, .filter-select {
+        .camp-card, .btn, .filter-btn, .conf-btn, .info-stack, .conf-btn, .filter-select {
             transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
         }
 
@@ -151,6 +177,10 @@ const htmlSkeleton = `
                 -webkit-backdrop-filter: blur(8px);
                 background: rgba(15, 23, 42, 0.95);
             }
+        }
+
+        @media (min-width: 1024px) {
+            .filter-container { padding: 24px 20%; }
         }
 
         .top-row {
@@ -274,25 +304,19 @@ const htmlSkeleton = `
         }
         .stat-bubble strong { color: #fff; margin-right: 4px; }
 
-        /* Loader Overlay */
-        #loaderOverlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--bg-color);
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            z-index: 10001; transition: opacity 0.5s ease, pointer-events 0.5s ease;
+        /* Human Badge */
+        .human-badge { 
+            position: absolute; top: 12px; right: 12px; 
+            background: rgba(34, 197, 94, 0.15); color: #4ade80; 
+            padding: 4px 7px; border-radius: 100px; font-size: 0.7rem; 
+            font-weight: 800; border: 1px solid rgba(34, 197, 94, 0.3);
+            display: flex; align-items: center; gap: 4px;
+            backdrop-filter: blur(4px); z-index: 10;
         }
-        .spinner {
-            width: 50px; height: 50px;
-            border: 3px solid rgba(59, 130, 246, 0.2);
-            border-top: 3px solid var(--accent-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @media (max-width: 768px) { .human-badge { top: 8px; right: 8px; font-size: 0.65rem; padding: 3px 8px; } }
 
-        /* Card Elements (re-instated from dynamic renderer) */
+
+        /* Grid */
         .camp-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -336,15 +360,23 @@ const htmlSkeleton = `
             white-space: nowrap;
         }
         
-        .card-header-tags { display: flex; gap: 6px; align-items: flex-start; }
-
+        .card-right-tags {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            margin-right: 48px; /* Give space for absolute human badge */
+        }
+        @media (max-width: 768px) {
+            .card-right-tags { margin-right: 44px; }
+        }
+        
         .info-item { display: flex; align-items: center; gap: 10px; }
         .icon-box { width: 28px; height: 28px; background: rgba(255,255,255,0.05); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--accent-color); flex-shrink: 0; }
         .icon-box.dii { color: #a855f7; }
-        .val-stack { display: flex; flex-direction: column; overflow: hidden; }
-        .label { font-size: 0.6rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 600; }
-        .value { font-size: 0.9rem; color: #fff; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .value.tba { color: #fff !important; font-style: italic; opacity: 0.8; }
+        .val-stack { display: flex; flex-direction: column; pointer-events: none; }
+        .label { font-size: 0.6rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 600; pointer-events: none; }
+        .value { font-size: 0.9rem; color: #fff; font-weight: 500; pointer-events: none; }
+        .value.tba { color: #fff !important; font-style: italic; pointer-events: none; opacity: 0.8; }
 
         .info-stack { cursor: pointer; border-radius: 12px; transition: background 0.2s; padding: 4px; margin: -4px; flex-grow: 1; }
         .info-stack:hover { background: rgba(255,255,255,0.05); }
@@ -354,18 +386,11 @@ const htmlSkeleton = `
         .badge { font-size: 0.65rem; font-weight: 700; padding: 4px 8px; border-radius: 6px; display: flex; align-items: center; gap: 4px; border: 1px solid transparent; }
         .badge-manual { background: rgba(34, 197, 94, 0.15); color: #4ade80; border-color: rgba(34, 197, 94, 0.3); }
         .badge-auto { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border-color: rgba(59, 130, 246, 0.3); }
+        .badge-partial { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3); }
+        .badge-human { background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.3); }
         .badge-not { background: rgba(255, 255, 255, 0.05); color: var(--text-secondary); border-color: var(--border-color); }
-        
-        .human-badge { 
-             position: absolute; top: 12px; right: 12px; 
-             background: rgba(34, 197, 94, 0.15); color: #4ade80; 
-             padding: 4px 7px; border-radius: 100px; font-size: 0.7rem; 
-             font-weight: 800; border: 1px solid rgba(34, 197, 94, 0.3);
-             display: flex; align-items: center; gap: 4px;
-             backdrop-filter: blur(4px); z-index: 10;
-        }
 
-        /* Modal Overlay & Box */
+        /* Detail Modal */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
@@ -395,12 +420,26 @@ const htmlSkeleton = `
         .tier-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.8rem; }
         .tier-table th { text-align: left; padding: 8px 10px; background: rgba(59,130,246,0.1); color: #60a5fa; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .tier-table td { padding: 8px 10px; color: #e2e8f0; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+        .tier-table tr:last-child td { border-bottom: none; }
         .tier-table tr:hover td { background: rgba(255,255,255,0.03); }
         .tier-cost { color: #10b981; font-weight: 700; white-space: nowrap; }
         .tier-ages { color: #a78bfa; font-size: 0.75rem; }
         .tier-dates { color: var(--text-secondary); font-size: 0.75rem; }
 
-        /* Actions */
+        /* Compact Contact Grid */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+        @media (max-width: 480px) { .contact-grid { grid-template-columns: 1fr; } }
+        .contact-card { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); }
+        .contact-label { font-size: 0.65rem; color: var(--accent-color); font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 2px; }
+        .contact-value { color: #fff; font-size: 0.8rem; font-weight: 500; word-break: break-all; }
+
+        .date-list { margin: 0; padding-left: 18px; list-style-type: decimal; }
+        .date-list li { margin-bottom: 4px; color: #fff; font-size: 0.85rem; }
+        .more-dates-btn { background: none; border: none; color: var(--accent-color); font-size: 0.75rem; font-weight: 700; cursor: pointer; padding: 4px 0; display: block; margin-top: 8px; }
+        .more-dates-btn:hover { text-decoration: underline; }
+        .hidden-dates { display: none; }
+        .hidden-dates.show { display: block; }
+
         .actions { display: flex; gap: 10px; padding-top: 15px; border-top: 1px solid var(--border-color); margin-top: auto; }
         .btn { flex: 1; padding: 10px; border-radius: 10px; font-size: 0.8rem; font-weight: 700; text-align: center; cursor: pointer; text-decoration: none; border: none; transition: 0.2s; }
         .btn-visit { background: var(--accent-color); color: white; }
@@ -422,22 +461,10 @@ const htmlSkeleton = `
             border: 1px solid var(--border-color);
         }
         #toast.show { opacity: 1; }
+        .desktop-text { display: inline; }
+        .mobile-text { display: none; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Contact Grid in Modal */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
-        @media (max-width: 480px) { .contact-grid { grid-template-columns: 1fr; } }
-        .contact-card { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); }
-        .contact-label { font-size: 0.65rem; color: var(--accent-color); font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 2px; }
-        .contact-value { color: #fff; font-size: 0.8rem; font-weight: 500; word-break: break-all; }
-
-        .date-list { margin: 0; padding-left: 18px; list-style-type: decimal; }
-        .date-list li { margin-bottom: 4px; color: #fff; font-size: 0.85rem; }
-        .more-dates-btn { background: none; border: none; color: var(--accent-color); font-size: 0.75rem; font-weight: 700; cursor: pointer; padding: 4px 0; display: block; margin-top: 8px; }
-        .more-dates-btn:hover { text-decoration: underline; }
-        .hidden-dates { display: none; }
-        .hidden-dates.show { display: block; }
 
         @media (max-width: 768px) {
             .container { padding: 6px 6px; }
@@ -445,42 +472,93 @@ const htmlSkeleton = `
             h1 { font-size: 1.25rem; margin-bottom: 0; }
             .hero-badge { font-size: 0.65rem; padding: 2px 8px; margin-bottom: 2px; }
             .subtitle { font-size: 0.72rem; margin-bottom: 2px; padding: 0 8px; }
+            
+            .desktop-text { display: none; }
+            .mobile-text { display: inline; }
+            
+            /* filter-tabs and conf-tabs: both scroll horizontally, no box */
+            
             .controls-wrapper { top: 2px; margin-bottom: 6px; }
             .glass-panel { padding: 8px 8px; border-radius: 12px; gap: 4px; }
+            
             .top-row { display: flex; flex-direction: row; gap: 6px; align-items: center; }
             #searchInput { padding: 6px 8px 6px 30px; font-size: 0.68rem; }
             .search-icon { left: 10px; }
             .search-icon svg { width: 14px; height: 14px; }
             .filter-select { min-width: unset; padding: 4px 6px; font-size: 0.65rem; border-radius: 8px; flex-shrink: 0; }
+            
             .filter-tabs { 
-                flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; 
-                padding: 1px; gap: 2px; border: none; background: transparent;
+                display: flex;
+                flex-wrap: nowrap; 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch;
+                padding: 1px;
+                gap: 2px;
+                border: none;
+                background: transparent;
+                width: 100%;
+                box-sizing: border-box;
             }
             .filter-tabs::-webkit-scrollbar { display: none; }
-            .filter-btn { white-space: nowrap; flex-shrink: 0; padding: 4px 4px; font-size: 0.6rem; }
-            #conf-tabs { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 4px; padding: 2px 0 0; }
+            .filter-btn { 
+                white-space: nowrap;
+                flex-shrink: 0;
+                padding: 4px 4px; 
+                font-size: 0.6rem; 
+                background: rgba(255,255,255,0.05); 
+                border: 1px solid var(--border-color); 
+                display: flex; align-items: center; gap: 3px;
+            }
+            .hide-mobile { display: none; }
+            
+            #conf-tabs { 
+                flex-wrap: nowrap; 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                margin-top: 4px;
+                padding: 2px 0 0;
+            }
             #conf-tabs::-webkit-scrollbar { display: none; }
             .conf-btn { padding: 0 8px; height: 28px; font-size: 0.7rem; }
-            .stats-row { flex-wrap: nowrap; overflow-x: auto; }
+            #moreConfs { height: 28px; font-size: 0.7rem; min-width: 110px !important; }
+            
+            .stats-row { 
+                flex-wrap: nowrap; 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 4px;
+                gap: 6px;
+                margin-top: -2px;
+            }
+            .stats-row::-webkit-scrollbar { display: none; }
             .stat-bubble { font-size: 0.65rem; padding: 4px 10px; }
+            
             .camp-grid { grid-template-columns: 1fr; gap: 8px; }
             .camp-card { padding: 8px 10px; }
-            .modal-box { padding: 12px; width: 95%; max-height: 92vh; border-radius: 16px; }
+            .actions { gap: 4px; padding-top: 6px; }
+            .btn { padding: 4px 4px; font-size: 0.65rem; }
+
+            /* Fix Modal Overflow on Mobile */
+            .modal-box { 
+                padding: 12px; 
+                width: 95%; 
+                max-height: 92vh; 
+                border-radius: 16px;
+            }
+            .drawer-sec { padding: 10px; margin-bottom: 8px; }
+            .modal-template h2 { font-size: 1.2rem !important; margin-bottom: 12px !important; }
         }
     </style>
 </head>
 <body>
-    <div id="loaderOverlay">
-        <div class="spinner"></div>
-        <p style="font-weight: 600; letter-spacing: 0.05em; color: var(--accent-color);">INITIALIZING DIRECTORY...</p>
-    </div>
-
     <div class="container">
         <header>
             <div class="hero-badge">Verified 2026 Season</div>
             <h1>NCAA Baseball Camps 2026</h1>
-            <p class="subtitle" id="topSubtitle">
-                Fast Loading Directory System
+            <p class="subtitle">
+                <span class="desktop-text">${data.length} DI & DII Programs | ${data.filter(d => d.autoVerified).length} Verified Sessions.</span>
+                <span class="mobile-text">${data.length} Schools | ${data.filter(d => d.autoVerified).length} Verified for 2026.</span>
             </p>
         </header>
 
@@ -488,7 +566,7 @@ const htmlSkeleton = `
             <div class="glass-panel">
                 <div class="top-row">
                     <div class="search-inner">
-                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <svg class="search-icon icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                         <input type="text" id="searchInput" placeholder="Search by University, Coach, or Keyword...">
                     </div>
                     <select id="costFilter" class="filter-select">
@@ -509,7 +587,7 @@ const htmlSkeleton = `
                     <button class="filter-btn" data-div="DII">Div II</button>
                     <button class="filter-btn" data-div="newdates">📅 Latest Camp Dates</button>
                     <button class="filter-btn" data-div="updates">✨ Latest Updates</button>
-                    <button class="filter-btn" data-div="human">👤 Community Verified</button>
+                    <button class="filter-btn" data-div="human">👤 <span class="hide-mobile">Community </span>Verified</button>
                 </div>
                 <div id="conf-tabs">
                     <button class="conf-btn filter-btn active" data-conf="all">All Conf</button>
@@ -518,18 +596,270 @@ const htmlSkeleton = `
                     <select id="moreConfs" class="filter-select" style="min-width: 140px; height: 38px; padding: 0 12px; font-size: 0.75rem;">
                         <option value="none">More Conferences...</option>
                         ${otherConfs.map(c => `<option value="${c}">${c}</option>`).join('')}
+                        <option value="Other">Other / Independent</option>
                     </select>
                 </div>
-                <div class="stats-row" id="statsRow">
-                    <div class="stat-bubble"><strong id="dispCount">-</strong> Results</div>
+                <div class="stats-row">
+                    <div class="stat-bubble"><strong id="dispCount">${data.length}</strong> Results</div>
                     <div class="stat-bubble"><strong>${diCount}</strong> Div I</div>
                     <div class="stat-bubble"><strong>${diiCount}</strong> Div II</div>
+                    <div class="stat-bubble"><strong>${data.filter(d => d.autoVerified).length}</strong> Verified Sessions</div>
                 </div>
             </div>
         </div>
 
         <div class="camp-grid" id="campGrid">
-            <!-- Cards Rendered via JS -->
+            ${data.sort((a,b) => a.university.localeCompare(b.university)).map((item, index) => {
+                const isTba = !item.dates || item.dates === 'TBA';
+                let dateArr = isTba ? [] : item.dates.split(' | ');
+                
+                // Deduplicate and filter 2026
+                dateArr = [...new Set(dateArr)].filter(d => /2026/i.test(d) || !/\d{4}/.test(d));
+
+                let displayDatesHtml;
+                if (dateArr.length === 0) {
+                    displayDatesHtml = 'TBA';
+                } else if (dateArr.length > 2) {
+                    displayDatesHtml = esc(dateArr.slice(0, 2).join(' | ')) + ` <span style="color:var(--text-secondary);font-size:0.8em">... (+${dateArr.length - 2})</span>`;
+                } else {
+                    displayDatesHtml = esc(dateArr.join(' | '));
+                }
+
+                const tagClass = item.division === 'DI' ? 'tag-di' : 'tag-dii';
+                const accentClass = item.division === 'DI' ? '' : 'dii';
+                
+                // Generate Initials Fallback
+                const nameWords = item.university.replace(/University|College|State|Univ/gi, '').trim().split(' ').filter(p=>p);
+                const initials = (nameWords.length >= 2 ? (nameWords[0][0] + nameWords[1][0]) : (item.university[0] + (item.university[1]||''))).toUpperCase();
+                const rColors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#14b8a6'];
+                const bgColor = rColors[item.university.charCodeAt(0) % rColors.length];
+
+                let primaryLogo = item.logoFile ? item.logoFile : (item.logoDomain ? `https://logo.clearbit.com/${item.logoDomain}` : '');
+                
+                let logoHtml;
+                if (primaryLogo) {
+                    logoHtml = `<div style="width: 50px; height: 50px; border-radius: 50%; position: relative; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background-color: ${bgColor}; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: 800; font-size: 1.2rem; z-index: 1;">${initials}</div>
+                        <div id="img-wrap-${index}" style="position: absolute; top:0; left:0; width:100%; height:100%; background-color: #ffffff; border-radius: 50%; padding: 7px; display: flex; justify-content: center; align-items: center; z-index: 2;">
+                            <img src="${primaryLogo}" alt="Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;" 
+                                 onload="if(this.src.includes('google.com') && this.naturalWidth <= 64) { document.getElementById('img-wrap-${index}').style.display='none'; }"
+                                 onerror="document.getElementById('img-wrap-${index}').style.display='none';" />
+                        </div>
+                    </div>`;
+                } else {
+                    logoHtml = `<div style="width: 50px; height: 50px; background-color: ${bgColor}; border-radius: 50%; display: flex; justify-content: center; align-items: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); color: white; font-weight: 800; font-size: 1.2rem;">${initials}</div>`;
+                }
+
+                
+                const isManualVerif = !!item.isVerified;
+                const isAutoVerif   = !!item.autoVerified;
+                const isPartial     = !!item.autoVerifiedPartial;
+                const humanCount    = humanVerifications[item.university] || 0;
+
+                return `
+                <div class="camp-card" 
+                     data-div="${item.division}" 
+                     data-conference="${item.conference || 'Independent / Other'}"
+                     data-cost="${item.cost || 'TBA'}"
+                     data-has-dates="${dateArr.length > 0}"
+                     data-verified-manual="${isManualVerif}" 
+                     data-verified-auto="${isAutoVerif}" 
+                      data-verified-human="${humanCount > 0}"
+                      data-last-update="${item.lastUpdateDate || ''}"
+                      data-dates-update="${item.datesUpdateDate || ''}"
+                      data-university="${item.university}"
+                      data-not-verified="${!isManualVerif && !isAutoVerif && !isPartial}"
+                      data-search="${item.university.toLowerCase()} ${item.contact.toLowerCase()}" 
+                      style="${index < 30 ? `animation-delay: ${index * 0.005}s;` : 'animation: none;'} position: relative;">
+                    ${humanCount > 0 ? `<div class="human-badge" title="${humanCount} community verifications">👤 ${humanCount}</div>` : ''}
+                    
+                    <div class="card-header">
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                ${logoHtml}
+                                <div class="univ-name">${esc(item.university)
+                                    .replace(/University/g, 'Univ')
+                                    .replace(/Aeronautical/g, 'Aero')
+                                    .replace(/International/g, 'Intl')
+                                    .replace(/Pennsylvania/g, 'Penn')
+                                    .replace(/Washington/g, 'Wash')
+                                    .replace(/Institute of Technology/gi, 'Tech')
+                                }</div>
+                            </div>
+                            <div class="badges-row">
+                                ${isManualVerif ? '<span class="badge badge-manual">★ Manually Verified</span>' :
+                                  isAutoVerif || isPartial ? '<span class="badge badge-auto">🤖 Automated Scan</span>' :
+                                  '<span class="badge badge-not">❓ Not Verified</span>'}
+                            </div>
+                        </div>
+                        <div class="card-right-tags">
+                            <div class="division-tag ${tagClass}">${item.division === 'DI' ? 'Div I' : 'Div II'}</div>
+                            ${item.conference && item.conference !== 'Other' ? `<div class="conference-tag">${esc(item.conference)}</div>` : ''}
+                        </div>
+                    </div>
+                    
+                    <div class="info-stack" onclick="openDetails(event, this)" style="cursor: pointer;">
+                        <div class="info-item">
+                            <div class="icon-box ${accentClass}">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            </div>
+                            <div class="val-stack">
+                                <span class="label">Camp Dates</span>
+                                <span class="value ${isTba ? 'tba' : ''}">${displayDatesHtml}</span>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-box ${accentClass}">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            </div>
+                            <div class="val-stack">
+                                <span class="label">EST COST</span>
+                                <span class="value ${(!item.cost || item.cost === 'TBA') ? 'tba' : ''}">${esc(item.cost) || 'TBA'}</span>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-box ${accentClass}">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </div>
+                            <div class="val-stack">
+                                <span class="label">Camp Contact</span>
+                                <span class="value">${item.campPOC && item.campPOC !== 'N/A' ? esc(item.campPOC) : (item.headCoach && item.headCoach !== 'N/A' ? esc(item.headCoach) : 'Athletics Office')}</span>
+                                ${item.email && item.email !== 'N/A' ? `<span style="font-size: 0.75rem; color: var(--accent-color); font-weight: 600; opacity: 0.9;">${esc(item.email)}</span>` : ''}
+                            </div>
+                        </div>
+                    </div>
+
+                    <template class="modal-template">
+                        <div style="font-family:'Outfit', sans-serif; font-size:1.6rem; color:#fff; font-weight:700; margin-bottom: 24px; padding-right:30px;">
+                            ${esc(item.university)} Details
+                        </div>
+                        <div class="drawer-sec" style="padding-bottom: 24px;">
+                            <div class="d-label">Staff & Contact Info</div>
+                            <div class="contact-grid">
+                                <div class="contact-card">
+                                    <span class="contact-label">Head Coach</span>
+                                    <div class="contact-value">${esc(item.headCoach || (item.contact && !item.contact.includes('@') ? item.contact : 'Athletics Staff'))}</div>
+                                </div>
+                                <div class="contact-card">
+                                    <span class="contact-label">Camp POC</span>
+                                    <div class="contact-value">${esc(item.campPOC || 'Provided at registration')}</div>
+                                </div>
+                                <div class="contact-card" style="grid-column: span 2;">
+                                    <span class="contact-label">Official Email</span>
+                                    <div class="contact-value">
+                                        ${item.email ? `<a href="mailto:${esc(item.email)}" style="color:#60a5fa;text-decoration:none;font-weight:600;">${esc(item.email)}</a>` : 'Check site for contact info'}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        ${dateArr.length > 0 ? `
+                        <div class="drawer-sec">
+                            <div class="d-label">📅 All Available Dates</div>
+                            <div class="d-body">
+                                <ol class="date-list">
+                                    ${dateArr.slice(0, 5).map(d => `<li>${d}</li>`).join('')}
+                                </ol>
+                                ${dateArr.length > 5 ? `
+                                    <div class="hidden-dates">
+                                        <ol class="date-list" start="6">
+                                            ${dateArr.slice(5).map(d => `<li>${d}</li>`).join('')}
+                                        </ol>
+                                    </div>
+                                    <button class="more-dates-btn" data-count="${dateArr.length}" onclick="toggleDates(this)">Show All Dates (${dateArr.length})</button>
+                                ` : ''}
+                            </div>
+                        </div>
+                        ` : ''}
+
+                        <div class="drawer-sec">
+                            <div class="d-label">Verification Source</div>
+                            <div class="d-body" style="display: flex; gap: 8px; margin-top: 8px;">
+                                ${isManualVerif ? '<span class="badge badge-manual">★ Manually Verified</span>' :
+                                  isAutoVerif || isPartial ? '<span class="badge badge-auto">🤖 Automated Scan</span>' :
+                                  '<span class="badge badge-not">❓ Not Verified</span>'}
+                            </div>
+                        </div>
+
+                        ${(() => {
+                            if (item.campTiers && item.campTiers.length > 0 && !item.campTiers.every(t => t.cost === 'TBA')) {
+                                return '<div class="drawer-sec" style="border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.03);">' +
+                                    '<div class="d-label" style="color:#10b981;">💰 Camp Pricing & Tiers</div>' +
+                                    '<div class="d-body">' +
+                                    '<table class="tier-table">' +
+                                    '<thead><tr><th>Camp</th><th>Ages</th><th>Cost</th><th>Dates</th></tr></thead>' +
+                                    '<tbody>' +
+                                    item.campTiers.map(t => {
+                                        const tierDates = t.sessions ? t.sessions.map(s => (s.dates || '') + (s.time ? ' ' + s.time : '')).join('<br>') : (t.dates || '');
+                                        return '<tr>' +
+                                            '<td style="font-weight:600;color:#fff;">' + (t.name || 'Camp') + '</td>' +
+                                            '<td class="tier-ages">' + (t.ages || '-') + '</td>' +
+                                            '<td class="tier-cost">' + (t.cost || 'TBA') + '</td>' +
+                                            '<td class="tier-dates">' + (tierDates || 'TBA') + '</td>' +
+                                            '</tr>';
+                                    }).join('') +
+                                    '</tbody></table></div></div>';
+                            } else if (item.cost && item.cost !== 'TBA' && item.cost !== 'Contact for pricing' && item.cost !== 'Not Listed') {
+                                return '<div class="drawer-sec" style="border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.03);">' +
+                                    '<div class="d-label" style="color:#10b981;">💰 Estimated Cost</div>' +
+                                    '<div class="d-body" style="font-size:1.1rem;color:#10b981;font-weight:700;">' + item.cost + '</div>' +
+                                    '</div>';
+                            } else {
+                                return '<div class="drawer-sec">' +
+                                    '<div class="d-label">💰 Pricing</div>' +
+                                    '<div class="d-body" style="color:var(--text-secondary);font-style:italic;">Cost: TBA — Check camp site for pricing details</div>' +
+                                    '</div>';
+                            }
+                        })()}
+
+                        ${item.details ? `
+                        <div class="drawer-sec">
+                            <div class="d-label">Additional Intel</div>
+                            <div class="d-body">${esc(item.details)}</div>
+                        </div>` : ''}
+
+                        ${item.updateLog && item.updateLog.length > 0 ? `
+                        <div class="drawer-sec" style="border-left: 2px solid var(--accent-color); background: rgba(59,130,246,0.02);">
+                            <div class="d-label">Verification Roadmap & Updates</div>
+                            <div class="d-body" style="font-size: 0.75rem;">
+                                <ul style="margin: 0; padding-left: 15px; list-style-type: none;">
+                                    ${item.updateLog.slice(0, 5).map(log => `<li style="margin-bottom: 6px; position: relative;"><span style="position: absolute; left: -15px; color: var(--accent-color);">•</span>${esc(log)}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>` : ''}
+                        <div class="drawer-sec" style="border-color: rgba(59, 130, 246, 0.2); background: rgba(59, 130, 246, 0.05);">
+                            <div class="d-label">🔗 Camp Hub</div>
+                            <div class="d-body">
+                                ${item.campUrl ? `<a href="${item.campUrl}" target="_blank" style="color: var(--accent-color); font-weight:700; word-break: break-all;">${item.campUrl}</a>` : '<span style="color:var(--text-secondary);font-style:italic;">No camp URL available</span>'}
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px; font-size: 0.8rem; text-align: center;">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rayjonesy@gmail.com&su=Camp%20Data%20Fix:%20${encodeURIComponent(item.university)}&body=Please%20describe%20the%20missing%20or%20incorrect%20data%20for%20${encodeURIComponent(item.university)}:"
+                               target="_blank" 
+                               style="color: var(--danger-color); font-weight: 600; text-decoration: none; border-bottom: 1px dotted var(--danger-color);">
+                                ⚠️ Report Missing or Incorrect Data
+                            </a>
+                        </div>
+                    </template>
+
+                    <div class="actions">
+                        <a href="${item.campUrl || '#'}" 
+                           class="btn btn-visit ${item.division === 'DII' ? 'btn-dii' : ''}" 
+                           target="_blank" 
+                           onclick="event.stopPropagation()"
+                           ${!item.campUrl || item.campUrl.includes('google.com/search') ? 'style="opacity: 0.3; cursor: not-allowed;" onclick="return false"' : ''}>
+                           Visit Site
+                        </a>
+                        <button class="btn btn-human-verify" onclick="communityVerify(event, this, '${item.university.replace(/'/g, "\\'")}')">
+                            👤 <span>${humanCount > 0 ? humanCount : ''}</span> Verify
+                        </button>
+                        <button class="btn btn-details" onclick="openDetails(event, this)">Details</button>
+                    </div>
+                </div>
+                `;
+            }).join('')}
         </div>
     </div>
 
@@ -543,179 +873,65 @@ const htmlSkeleton = `
     <div id="toast"></div>
 
     <script>
-        let campData = [];
-        let humanVerifications = {};
+        const searchInput = document.getElementById('searchInput');
+        const campCards   = document.querySelectorAll('.camp-card');
+        const dispCount   = document.getElementById('dispCount');
+        const filterBtns  = document.querySelectorAll('.filter-btn');
+        const toast       = document.getElementById('toast');
+        
         let currentDiv = 'all';
         let currentConf = 'all';
-        const votedInSession = JSON.parse(localStorage.getItem('votedSchools') || '[]');
-
-        const searchInput = document.getElementById('searchInput');
-        const campGrid    = document.getElementById('campGrid');
-        const dispCount   = document.getElementById('dispCount');
-        const toast       = document.getElementById('toast');
-        const loader      = document.getElementById('loaderOverlay');
-
-        function esc(str) {
-            if (!str) return '';
-            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-        }
 
         function showToast(msg) {
-            toast.innerText = msg; toast.classList.add('show');
+            toast.innerText = msg;
+            toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        function getCardHtml(item, index) {
-            const isTba = !item.dates || item.dates === 'TBA';
-            let dateArr = isTba ? [] : item.dates.split(' | ');
-            dateArr = [...new Set(dateArr)].filter(d => /2026/i.test(d) || !/\\d{4}/.test(d));
-
-            let displayDatesHtml = 'TBA';
-            if (dateArr.length > 2) displayDatesHtml = esc(dateArr.slice(0, 2).join(' | ')) + ' <small>(+'+(dateArr.length-2)+')</small>';
-            else if (dateArr.length > 0) displayDatesHtml = esc(dateArr.join(' | '));
-
-            const tagClass = item.division === 'DI' ? 'tag-di' : 'tag-dii';
-            const accentClass = item.division === 'DI' ? '' : 'dii';
-            const nameWords = item.university.replace(/University|College|State|Univ/gi, '').trim().split(' ').filter(p=>p);
-            const initials = (nameWords.length >= 2 ? (nameWords[0][0] + nameWords[1][0]) : (item.university[0] + (item.university[1]||''))).toUpperCase();
-            const rColors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#14b8a6'];
-            const bgColor = rColors[item.university.charCodeAt(0) % rColors.length];
-            const primaryLogo = item.logoFile || (item.logoDomain ? 'https://logo.clearbit.com/' + item.logoDomain : '');
-            
-            const humanCount = humanVerifications[item.university] || 0;
-
-            const logoHtml = primaryLogo 
-                ? '<div style="width: 44px; height: 44px; border-radius: 50%; position: relative; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); background: #fff; display: flex; align-items:center; justify-content:center; padding: 4px;"><img src="'+primaryLogo+'" style="max-width: 100%; max-height: 100%; object-fit: contain;" onerror="this.parentElement.style.background=\\''+bgColor+'\\'; this.style.display=\\'none\\'; this.parentElement.innerHTML=\\''+initials+'\\'; this.parentElement.style.color=\\'white\\'; this.parentElement.style.fontWeight=\\'800\\';"></div>'
-                : '<div style="width: 44px; height: 44px; background-color: '+bgColor+'; border-radius: 50%; display: flex; justify-content: center; align-items: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); color: white; font-weight: 800; font-size: 1.1rem;">'+initials+'</div>';
-
-            const shortUniv = esc(item.university).replace(/University/g, 'Univ').replace(/Institute of Technology/gi, 'Tech');
-
-            return \`
-                <div class="camp-card" 
-                     data-idx="\${index}"
-                     data-div="\${item.division}" 
-                     data-conference="\${item.conference || 'Other'}"
-                     data-cost="\${item.cost || 'TBA'}"
-                     data-human="\${humanCount}"
-                     data-last-update="\${item.lastUpdateDate || ''}"
-                     data-dates-update="\${item.datesUpdateDate || ''}"
-                     data-search="\${item.university.toLowerCase()} \${(item.contact||'').toLowerCase()}"
-                     style="animation-delay: \${index < 20 ? index * 0.05 : 0}s">
-                    
-                    \${humanCount > 0 ? '<div class="human-badge">👤 '+humanCount+'</div>' : ''}
-                    
-                    <div class="card-header">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            \${logoHtml}
-                            <div class="univ-name">\${shortUniv}</div>
-                        </div>
-                        <div class="card-header-tags">
-                            <div class="division-tag \${tagClass}">\${item.division}</div>
-                        </div>
-                    </div>
-
-                    <div class="badges-row">
-                        \${item.isVerified ? '<span class="badge badge-manual">★ Verified</span>' : (item.autoVerified ? '<span class="badge badge-auto">🤖 Auto</span>' : '<span class="badge badge-not">❓ TBA</span>')}
-                        \${item.conference && item.conference !== 'Other' ? '<span class="conference-tag">'+esc(item.conference)+'</span>' : ''}
-                    </div>
-                    
-                    <div class="info-stack" onclick="openDetails(event, \${index})">
-                        <div class="info-item">
-                            <div class="icon-box \${accentClass}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
-                            <div class="val-stack"><span class="label">Dates</span><span class="value \${!dateArr.length?'tba':''}">\${displayDatesHtml}</span></div>
-                        </div>
-                        <div class="info-item">
-                            <div class="icon-box \${accentClass}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
-                            <div class="val-stack"><span class="label">Cost</span><span class="value \${(!item.cost || item.cost==='TBA')?'tba':''}">\${esc(item.cost)||"TBA"}</span></div>
-                        </div>
-                    </div>
-
-                    <div class="actions">
-                        <a href="\${item.campUrl || '#'}" class="btn btn-visit \${item.division==='DII'?'btn-dii':''}" target="_blank" onclick="event.stopPropagation()">Visit Site</a>
-                        <button class="btn btn-human-verify \${votedInSession.includes(item.university)?'voted':''}" onclick="communityVerify(event, \${index})">👤 <span>\${humanCount||''}</span> Verify</button>
-                        <button class="btn btn-details" onclick="openDetails(event, \${index})">Details</button>
-                    </div>
-                </div>\`;
-        }
-
-        async function init() {
-            try {
-                const [campsRes, humanRes] = await Promise.allSettled([
-                    fetch('camps_data.json?v='+Date.now()),
-                    fetch('human_verifications.json?v='+Date.now())
-                ]);
-                
-                if (campsRes.status === 'fulfilled' && campsRes.value.ok) {
-                    campData = await campsRes.value.json();
-                } else {
-                    throw new Error("Failed to load camps_data.json");
-                }
-
-                if (humanRes.status === 'fulfilled' && humanRes.value.ok) {
-                    humanVerifications = await humanRes.value.json();
-                } else {
-                    console.warn("human_verifications.json not found or invalid; using empty set.");
-                    humanVerifications = {};
-                }
-                
-                // Initial Sort
-                campData.sort((a,b) => a.university.localeCompare(b.university));
-
-                renderGrid(campData);
-                loader.style.opacity = '0';
-                setTimeout(() => loader.style.display = 'none', 500);
-
-                document.getElementById('topSubtitle').innerHTML = '<strong>' + campData.length + '</strong> Programs | <strong>' + campData.filter(d=>d.autoVerified).length + '</strong> Verified for 2026';
-            } catch (err) {
-                console.error("Init Error:", err);
-                alert("Failed to load directory data. Please refresh.");
-            }
-        }
-
-        function renderGrid(items) {
-            campGrid.innerHTML = items.map((item, i) => getCardHtml(item, i)).join('');
-            dispCount.innerText = items.length;
-        }
+        const votedInSession = JSON.parse(localStorage.getItem('votedSchools') || '[]');
 
         function filter() {
             const term = searchInput.value.toLowerCase();
-            const costMode = document.getElementById('costFilter').value;
-            const cards = document.querySelectorAll('.camp-card');
+            const costFilter = document.getElementById('costFilter').value;
+            const confFilter = currentConf;
             let count = 0;
+            
+            campCards.forEach(card => {
+                const searchTxt = (card.getAttribute('data-search') || '').toLowerCase();
+                const div = card.getAttribute('data-div') || '';
+                const conf = card.getAttribute('data-conference') || '';
+                const cost = card.getAttribute('data-cost') || '';
+                
+                const isAuto    = card.getAttribute('data-verified-auto') === 'true';
+                const isHuman   = card.getAttribute('data-verified-human') === 'true';
+                
+                const matchesSearch = searchTxt.includes(term);
+                let matchesFilter = true;
 
-            cards.forEach(card => {
-                const item = campData[card.dataset.idx];
-                const searchTxt = card.dataset.search;
-                const div = card.dataset.div;
-                const conf = card.dataset.conference;
-                const cost = card.dataset.cost;
-                const hCount = parseInt(card.dataset.human);
+                if (currentDiv === 'DI' || currentDiv === 'DII') matchesFilter = div === currentDiv;
+                else if (currentDiv === 'human') matchesFilter = isHuman;
+                else if (currentDiv === 'updates') matchesFilter = !!card.getAttribute('data-last-update');
+                else if (currentDiv === 'newdates') matchesFilter = !!card.getAttribute('data-dates-update');
 
-                let matchesSearch = searchTxt.includes(term);
-                let matchesFilter = (currentDiv === 'all' || div === currentDiv);
-                if (currentDiv === 'human') matchesFilter = hCount > 0;
-                else if (currentDiv === 'updates') matchesFilter = !!card.dataset.lastUpdate;
-                else if (currentDiv === 'newdates') matchesFilter = !!card.dataset.datesUpdate;
-
-                let matchesConf = (currentConf === 'all' || conf === currentConf);
+                const matchesConf = (confFilter === 'all' || conf === confFilter);
                 
                 let matchesCost = true;
-                if (costMode !== 'all') {
+                if (costFilter !== 'all') {
                     const priceMatches = cost.match(/\\d+[\\d,]*(?:\\.\\d+)?/g);
                     const prices = priceMatches ? priceMatches.map(m => parseFloat(m.replace(/,/g, ''))) : [0];
-                    const minPrice = prices.filter(p => p > 0).length > 0 ? Math.min(...prices.filter(p => p > 0)) : 0;
                     const maxPrice = Math.max(...prices);
-
-                    if (costMode === 'under150') matchesCost = (minPrice > 0 && minPrice < 150);
-                    else if (costMode === 'under200') matchesCost = (minPrice > 0 && minPrice < 200);
-                    else if (costMode === 'under250') matchesCost = (minPrice > 0 && minPrice < 250);
-                    else if (costMode === 'under300') matchesCost = (minPrice > 0 && minPrice < 300);
-                    else if (costMode === 'under350') matchesCost = (minPrice > 0 && minPrice < 350);
-                    else if (costMode === 'under500') matchesCost = (minPrice > 0 && minPrice < 500);
-                    else if (costMode === 'over500') matchesCost = (maxPrice >= 500);
-                    else if (costMode === 'tba') matchesCost = (maxPrice === 0 || cost.toLowerCase().includes('tba'));
+                    const minPrice = prices.filter(p => p > 0).length > 0 ? Math.min(...prices.filter(p => p > 0)) : 0;
+                    
+                    if (costFilter === 'under150') matchesCost = (minPrice > 0 && minPrice < 150);
+                    else if (costFilter === 'under200') matchesCost = (minPrice > 0 && minPrice < 200);
+                    else if (costFilter === 'under250') matchesCost = (minPrice > 0 && minPrice < 250);
+                    else if (costFilter === 'under300') matchesCost = (minPrice > 0 && minPrice < 300);
+                    else if (costFilter === 'under350') matchesCost = (minPrice > 0 && minPrice < 350);
+                    else if (costFilter === 'under500') matchesCost = (minPrice > 0 && minPrice < 500);
+                    else if (costFilter === 'over500') matchesCost = (maxPrice >= 500);
+                    else if (costFilter === 'tba') matchesCost = (maxPrice === 0 || cost.toLowerCase().includes('tba') || cost.toLowerCase().includes('contact'));
                 }
-
+                
                 if (matchesSearch && matchesFilter && matchesConf && matchesCost) {
                     card.style.display = 'flex';
                     count++;
@@ -723,142 +939,227 @@ const htmlSkeleton = `
                     card.style.display = 'none';
                 }
             });
-
-            // Handle Sorting for specific update filters
-            if ((currentDiv === 'updates' || currentDiv === 'newdates') && term === '' && costMode === 'all' && currentConf === 'all') {
+            
+            if ((currentDiv === 'updates' || currentDiv === 'newdates') && term === '' && costFilter === 'all' && confFilter === 'all') {
                 const sortAttr = currentDiv === 'newdates' ? 'data-dates-update' : 'data-last-update';
-                const visible = Array.from(cards).filter(c => c.style.display !== 'none');
-                visible.sort((a,b) => (b.getAttribute(sortAttr)||'').localeCompare(a.getAttribute(sortAttr)||''));
-                visible.forEach(c => campGrid.appendChild(c));
+                const visibleCards = Array.from(campCards).filter(c => c.style.display !== 'none');
+                visibleCards.sort((a, b) => {
+                    const da = a.getAttribute(sortAttr) || '';
+                    const db = b.getAttribute(sortAttr) || '';
+                    return db.localeCompare(da);
+                });
+                visibleCards.forEach(c => campsContainer.appendChild(c));
             }
 
             dispCount.innerText = count;
         }
 
-        searchInput.addEventListener('input', filter);
+        let filterTimeout;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(filterTimeout);
+            filterTimeout = setTimeout(filter, 150);
+        });
         document.getElementById('costFilter').addEventListener('change', filter);
-
-        document.querySelectorAll('.filter-tabs .filter-btn').forEach(btn => {
+        
+        document.querySelectorAll('.filter-tabs:not(#conf-tabs) .filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                if (btn.dataset.conf) return; // ignore conf clicks here
-                document.querySelectorAll('.filter-tabs .filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.filter-tabs:not(#conf-tabs) .filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                currentDiv = btn.dataset.div;
+                currentDiv = btn.getAttribute('data-div');
                 filter();
             });
         });
+
+        const moreConfsSelect = document.getElementById('moreConfs');
 
         document.querySelectorAll('#conf-tabs .conf-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('#conf-tabs .conf-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                currentConf = btn.dataset.conf;
-                document.getElementById('moreConfs').value = "none";
+                currentConf = btn.getAttribute('data-conf');
+                moreConfsSelect.value = "none"; // Reset dropdown
                 filter();
             });
         });
 
-        document.getElementById('moreConfs').addEventListener('change', (e) => {
-            if (e.target.value !== 'none') {
+        moreConfsSelect.addEventListener('change', () => {
+            if (moreConfsSelect.value !== "none") {
+                // Reset all priority buttons
                 document.querySelectorAll('#conf-tabs .conf-btn').forEach(b => b.classList.remove('active'));
-                currentConf = e.target.value;
+                currentConf = moreConfsSelect.value;
                 filter();
+            } else {
+                // If they pick the "More..." placeholder, we could revert to All or just do nothing
+                // Let's just leave it for now.
             }
         });
 
-        async function communityVerify(event, idx) {
+        // Community Verify Logic
+        async function communityVerify(event, btn, schoolName) {
             event.stopPropagation();
-            const item = campData[idx];
-            if (votedInSession.includes(item.university)) return;
-            if (!confirm('Verify accuracy for ' + item.university + '?')) return;
+            if (btn.classList.contains('voted')) return;
+
+            if (votedInSession.includes(schoolName)) {
+                btn.classList.add('voted');
+                showToast("You've already verified this school.");
+                return;
+            }
+
+            if (!confirm('Are you verifying that ' + schoolName + ' camp data is accurate?')) return;
 
             try {
-                const res = await fetch('verify_human.php', {
+                const response = await fetch('verify_human.php', {
                     method: 'POST',
-                    headers: {'Content-Type':'application/json'},
-                    body: JSON.stringify({schoolName: item.university, action:'verify'})
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ schoolName, action: 'verify' })
                 });
-                const result = await res.json();
+                const result = await response.json();
+
                 if (result.success) {
-                    votedInSession.push(item.university);
+                    const span = btn.querySelector('span');
+                    span.innerText = result.count;
+                    btn.classList.add('voted');
+                    votedInSession.push(schoolName);
                     localStorage.setItem('votedSchools', JSON.stringify(votedInSession));
-                    humanVerifications[item.university] = result.count;
                     
-                    const card = document.querySelector(\`.camp-card[data-idx="\${idx}"]\`);
-                    card.dataset.human = result.count;
-                    card.querySelector('.btn-human-verify').classList.add('voted');
-                    card.querySelector('.btn-human-verify span').innerText = result.count;
-                    
-                    if (!card.querySelector('.human-badge')) {
-                        const hBad = document.createElement('div');
-                        hBad.className='human-badge';
-                        card.appendChild(hBad);
+                    // Update the main card badge + attribute instantly
+                    const card = document.querySelector('.camp-card[data-university="' + schoolName + '"]');
+                    if (card) {
+                        card.setAttribute('data-verified-human', 'true');
+                        let badge = card.querySelector('.human-badge');
+                        if (!badge) {
+                            badge = document.createElement('div');
+                            badge.className = 'human-badge';
+                            card.insertBefore(badge, card.querySelector('.card-header'));
+                        }
+                        badge.innerHTML = '👤 ' + result.count;
                     }
-                    card.querySelector('.human-badge').innerHTML = '👤 ' + result.count;
-                    showToast("Verified Successfully!");
+                    
+                    showToast("Verified! Thank you.");
+                } else {
+                    showToast(result.message || "Error verifying.");
                 }
-            } catch(e) { showToast("Error connecting to server."); }
+            } catch (err) {
+                showToast("Server error.");
+            }
         }
 
+        // Modal Logic
         const modal = document.getElementById('globalModal');
         const modalBody = document.getElementById('modalBody');
-        document.getElementById('closeModal').onclick = () => modal.classList.remove('active');
+        const closeModal = document.getElementById('closeModal');
+        
+        closeModal.addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('active');
+        });
 
-        function openDetails(event, idx) {
+        async function syncVerificationsFromServer() {
+            try {
+                // Fetch fresh counts with cache-buster
+                const res = await fetch('human_verifications.json?v=' + Date.now());
+                if (!res.ok) return;
+                const freshCounts = await res.json();
+                
+                // Update all badges on screen
+                document.querySelectorAll('.camp-card').forEach(card => {
+                    const uniName = card.getAttribute('data-university');
+                    let count = freshCounts[uniName] || 0;
+                    
+                    // Guard: if user already voted this session, never let server revert their count
+                    if (votedInSession.includes(uniName)) {
+                        const badge = card.querySelector('.human-badge');
+                        const currentShown = badge ? parseInt(badge.innerText.replace(/[^\d]/g, ''), 10) || 0 : 0;
+                        count = Math.max(count, currentShown);
+                    }
+                    
+                    // Update main card badge
+                    const badge = card.querySelector('.human-badge');
+                    if (count > 0) {
+                        if (badge) {
+                            badge.innerHTML = '👤 ' + count;
+                        } else {
+                            // Insert new badge if it didn't have one
+                            const header = card.querySelector('.card-header');
+                            const newBadge = document.createElement('div');
+                            newBadge.className = 'human-badge';
+                            newBadge.title = count + ' community verifications';
+                            newBadge.innerHTML = '👤 ' + count;
+                            card.insertBefore(newBadge, header);
+                        }
+                        card.setAttribute('data-verified-human', 'true');
+                    }
+                    
+                    // Update the visible button count so it doesn't mismatch the badge
+                    const cardBtnSpan = card.querySelector('.btn-human-verify span');
+                    if (cardBtnSpan) {
+                        cardBtnSpan.innerText = count > 0 ? count : '';
+                    }
+
+                    // Update the hidden template count (if it existed)
+                    const template = card.querySelector('.modal-template');
+                    if (template) {
+                        const vSpan = template.content ? template.content.querySelector('.btn-human-verify span') : template.querySelector('.btn-human-verify span');
+                        if (vSpan) vSpan.innerText = count > 0 ? count : '';
+                    }
+                });
+                console.log('✅ Synchronized ' + Object.keys(freshCounts).length + ' verification records from server.');
+                if (currentDiv === 'human') filter(); // Re-apply filter if they are currently viewing "Verified"
+            } catch (e) {
+                console.warn("Live sync skipped:", e);
+            }
+        }
+
+        function toggleDates(btn) {
+            const hidden = btn.previousElementSibling;
+            if (hidden.classList.contains('show')) {
+                hidden.classList.remove('show');
+                btn.innerText = 'Show All Dates (' + btn.dataset.count + ')';
+            } else {
+                hidden.classList.add('show');
+                btn.innerText = 'Show Less';
+            }
+        }
+
+        function openDetails(event, btn) {
             event.stopPropagation();
-            const item = campData[idx];
-            const dates = item.dates ? item.dates.split(' | ') : [];
-            const voted = votedInSession.includes(item.university) ? 'voted' : '';
-            const humanCount = humanVerifications[item.university] || '';
-
-            modalBody.innerHTML = \`
-                <h2 style="font-family:'Outfit';color:#fff;margin-bottom:20px;">\${esc(item.university)} Details</h2>
-                
-                <div class="drawer-sec">
-                    <div class="d-label">Contact Staff</div>
-                    <div class="contact-grid">
-                        <div class="contact-card"><span class="contact-label">Head Coach</span><div class="contact-value">\${esc(item.headCoach||'N/A')}</div></div>
-                        <div class="contact-card"><span class="contact-label">Camp POC</span><div class="contact-value">\${esc(item.campPOC||'N/A')}</div></div>
-                        <div class="contact-card" style="grid-column:span 2;"><span class="contact-label">Registration Email</span><div class="contact-value">\${item.email ? '<a href="mailto:'+item.email+'" style="color:#60a5fa">'+esc(item.email)+'</a>' : 'Check Site'}</div></div>
-                    </div>
-                </div>
-
-                \${dates.length ? \`
-                <div class="drawer-sec">
-                    <div class="d-label">📅 Camp Schedule</div>
-                    <ul class="date-list">\${dates.map(d=>'<li>'+esc(d)+'</li>').join('')}</ul>
-                </div>\` : ''}
-
-                \${item.campTiers && item.campTiers.length > 0 ? \`
-                <div class="drawer-sec" style="background:rgba(16,185,129,0.05)">
-                    <div class="d-label" style="color:#10b981">💰 Pricing Tiers</div>
-                    <table class="tier-table">
-                        <thead><tr><th>Session</th><th>Cost</th><th>Ages</th></tr></thead>
-                        <tbody>\${item.campTiers.map(t=>'<tr><td>'+esc(t.name)+'</td><td class="tier-cost">'+esc(t.cost)+'</td><td class="tier-ages">'+esc(t.ages)+'</td></tr>').join('')}</tbody>
-                    </table>
-                </div>\` : \`
-                <div class="drawer-sec"><div class="d-label">💰 Estimated Cost</div><div class="d-body">\${esc(item.cost)||"TBA"}</div></div>
-                \`}
-
-                \${item.details ? '<div class="drawer-sec"><div class="d-label">Additional Intel</div><div class="d-body">'+esc(item.details)+'</div></div>' : ''}
-                
-                <div class="drawer-sec">
-                    <div class="d-label">🔗 Official Camp Link</div>
-                    <div class="d-body"><a href="\${item.campUrl}" target="_blank" style="color:var(--accent-color);word-break:break-all">\${esc(item.campUrl||'No link available')}</a></div>
-                </div>
-                
-                <div style="text-align:center;margin-top:20px;">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rayjonesy@gmail.com&su=Fix%20Data:%20\${encodeURIComponent(item.university)}" target="_blank" style="color:var(--danger-color);font-size:0.8rem;font-weight:600;text-decoration:none">⚠️ Report Data Issue</a>
-                </div>
-            \`;
+            const card = btn.closest('.camp-card');
+            const template = card.querySelector('.modal-template');
+            modalBody.innerHTML = template.innerHTML;
+            
+            // Re-check voted state in the modal if button exists inside
+            const vBtn = modalBody.querySelector('.btn-human-verify');
+            if (vBtn) {
+                const match = vBtn.getAttribute('onclick').match(/'(.*)'/);
+                if (match && votedInSession.includes(match[1])) vBtn.classList.add('voted');
+            }
+            
             modal.classList.add('active');
         }
 
-        init();
+        // Initialize state
+        window.addEventListener('load', async () => {
+            // Priority 1: Mark voted buttons
+            document.querySelectorAll('.btn-human-verify').forEach(btn => {
+                const text = btn.getAttribute('onclick');
+                if (text) {
+                    const match = text.match(/'(.*)'/);
+                    if (match && votedInSession.includes(match[1])) btn.classList.add('voted');
+                }
+            });
+            
+            // Priority 2: Sync fresh counts from server
+            try {
+                await syncVerificationsFromServer();
+            } catch (e) {
+                console.warn("Initial sync failed:", e);
+            }
+        });
     </script>
+
 </body>
 </html>
 `;
 
-fs.writeFileSync('index.html', htmlSkeleton);
-console.log('Regenerated dynamic skeleton index.html (Approx 35KB). Data will load at runtime.');
+fs.writeFileSync('index.html', html);
+console.log('Regenerated searchable index.html with Auto & Human Verification systems.');

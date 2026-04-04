@@ -1,5 +1,19 @@
 # Project Tasks: NCAA Division I Baseball Camps 2026 Compilation
 
+## 🚀 Active Optimization & Stability Phase (2026-04-04)
+- [ ] Implement isolated dynamic rendering testing in `/Baseball_Camps_2026_dev/`.
+- [ ] Stabilize `camps_data.json` runtime fetch for dynamic architecture.
+- [ ] Re-verify UI filter performance on the 35KB skeleton.
+- [ ] **Infrastructure**: Finalize `deploy_dev.js` for safe staging environment.
+- [x] **New Favicon**: Created premium "26 Baseball" favicon and linked in index.html (eliminating default look).
+- [ ] **Icon Stabilization**: Suppress remaining console 404s for external favicons.
+- [ ] **Mobile Premium Experience**: Optimize filter button touch targets for one-handed use.
+- [ ] **Contact Info Consolidation**: Eliminate duplicate POC/Email entries (ensure "First Last | email@edu" format).
+- [ ] **Data Audit - DI Programs**: SEC, Big 12 - Verify 2026 dates vs 2025 carryover.
+- [ ] **Data Audit - DII Programs**: GAC, CCAA - Confirm missing 404 domains.
+- [ ] **Word Export**: Regenerate Word Document (`NCAA-Baseball-Camps-2026.docx`) for offline reference.
+- [ ] **URL Maintenance**: Implement a 30-day "Refresher" bot to re-verify existing 200 OK URLs.
+
 ## Current Status
 - [x] Create skeletal list of 308 NCAA Division I baseball programs.
 - [x] Gather initial camp data for 264 programs (many listed as TBA).

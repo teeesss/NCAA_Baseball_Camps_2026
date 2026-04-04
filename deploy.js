@@ -30,6 +30,9 @@ async function deploy() {
         console.log("Uploading camps_data.json...");
         await client.uploadFrom("camps_data.json", "camps_data.json");
         
+        console.log("Uploading favicon.png...");
+        await client.uploadFrom("favicon.png", "favicon.png");
+        
         // Final Verification
         const remoteList = await client.list(".");
         const remoteIndex = remoteList.find(f => f.name === 'index.html');

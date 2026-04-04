@@ -4,4 +4,5 @@ node_modules/
 smart_extract.log
 .DS_Store
 .credentials/
+index_dev.html
 
