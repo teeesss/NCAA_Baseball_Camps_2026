@@ -158,3 +158,14 @@
 
 ### Conference Mapping
 - **Note**: Notre Dame is ACC for baseball (2026). Stanford/Cal/SMU are also ACC. Always check the `CONFERENCE_LOOKUP` in `src/utils/` before doing batch updates.
+
+---
+
+## [2026-04-04] - Granular Timestamp Tracking & Dual-Filters (V8/V9)
+- [x] Implement section-specific timestamps: datesUpdateDate, contactUpdateDate, costUpdateDate, detailsUpdateDate.
+- [x] Build src/utils/scrub_data.js V2 to intelligently manage and sync these granular timestamps based on data region refinement.
+- [x] Update generate_html.js to map these timestamps to card attributes (data-dates-update and data-last-update).
+- [x] Add dual-tracking navigation buttons: Latest Camp Dates and Latest Updates.
+- [x] Implement dynamic DESC sorting: float the freshest data (based on the active filter's timestamp) to the top of the list.
+- [x] Create and run src/tests/test_granular_tracking.js unit and integration suite (100% pass).
+- [x] Re-deploy stabilized directory to bmwseals.com.

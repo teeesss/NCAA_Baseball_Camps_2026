@@ -1,14 +1,15 @@
 # Project Status: NCAA Baseball Camps 2026 Directory
 
-# Current State: Active Data Gathering & Premium UI Polish (V7 Stabilized)
+# Current State: Active Data Gathering & Premium UI Polish (V8/V9 Granular Tracking Stabilized)
 
-The project has achieved V7 stabilization, resolving critical UI logic errors matching the dual-verification engine (Local State vs Server Sync), neutralizing regex escaping issues for filter searches, and resolving mobile viewport clipping. The backend extraction engine is successfully hardened.
+The project has achieved V8/V9 stabilization, integrating a multi-dimensional granular timestamp tracking engine. This system provides surgical visibility into when specific sections of a program's record—Dates, Contacts, Costs, or Details—were last updated. The UI now features a dual-tracking ecosystem for "Latest Camp Dates" and "Latest Updates," both dynamically sorted to float the freshest content to the top.
 
 ## Key Milestones Completed:
+- **Granular Timestamp Engine**: Independent tracking for `dates`, `contact`, `cost`, and `details` updates within the authoritative `camps_data.json`.
+- **Dual-Tracking UI Filters**: Added specialized "Latest Camp Dates" and "Latest Updates" filters with dynamic DESC sorting by recency.
+- **Data Integrity Scrubber V2**: Refactored the core synchronization utility to intelligently manage section-specific timestamps and de-duplicate POC/Email fields across all 521+ program records.
 - **UI / UX Stabilization**: Prevented modal crash loops, stabilized verification text nodes across DOM re-renders, and tightly packed horizontal padding to fit Division and Verification filters on small phone screens.
 - **Verification Sync Engine**: Client correctly pulls crowd-sourced verifications, maintains a local vote cache to prevent visual reversion/flickering, and displays both verified badges dynamically.
-- **V6 Ultra-Fidelity Engine Deployment**: Improved URL guessing, legacy dropping, and team-camp exclusions.
-- **Watchdog Stability**: 100s inactivity monitoring with auto-recovery logic.
 
 ## Active Status:
 | Metric | Status |
