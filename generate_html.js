@@ -615,13 +615,13 @@ const html = `
                 // Deduplicate and filter 2026
                 dateArr = [...new Set(dateArr)].filter(d => /2026/i.test(d) || !/\d{4}/.test(d));
 
-                let displayDates;
+                let displayDatesHtml;
                 if (dateArr.length === 0) {
-                    displayDates = 'TBA';
+                    displayDatesHtml = 'TBA';
                 } else if (dateArr.length > 2) {
-                    displayDates = dateArr.slice(0, 2).join(' | ') + ` <span style="color:var(--text-secondary);font-size:0.8em">... (+${dateArr.length - 2})</span>`;
+                    displayDatesHtml = esc(dateArr.slice(0, 2).join(' | ')) + ` <span style="color:var(--text-secondary);font-size:0.8em">... (+${dateArr.length - 2})</span>`;
                 } else {
-                    displayDates = dateArr.join(' | ');
+                    displayDatesHtml = esc(dateArr.join(' | '));
                 }
 
                 const tagClass = item.division === 'DI' ? 'tag-di' : 'tag-dii';
@@ -702,7 +702,7 @@ const html = `
                             </div>
                             <div class="val-stack">
                                 <span class="label">Camp Dates</span>
-                                <span class="value ${isTba ? 'tba' : ''}">${esc(displayDates)}</span>
+                                <span class="value ${isTba ? 'tba' : ''}">${displayDatesHtml}</span>
                             </div>
                         </div>
 
