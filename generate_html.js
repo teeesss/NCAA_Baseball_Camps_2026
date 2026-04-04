@@ -278,12 +278,12 @@ const html = `
         }
 
         .filter-btn {
-            padding: 10px 12px;
-            border-radius: 10px;
+            padding: 8px 10px;
+            border-radius: 8px;
             border: none;
             background: transparent;
             color: var(--text-secondary);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -484,15 +484,15 @@ const html = `
             #searchInput { padding: 6px 8px 6px 30px; font-size: 0.68rem; }
             .search-icon { left: 10px; }
             .search-icon svg { width: 14px; height: 14px; }
-            .filter-select { min-width: unset; padding: 6px 6px; font-size: 0.65rem; border-radius: 8px; flex-shrink: 0; }
+            .filter-select { min-width: unset; padding: 4px 6px; font-size: 0.65rem; border-radius: 8px; flex-shrink: 0; }
             
             .filter-tabs { 
                 display: flex;
                 flex-wrap: nowrap; 
                 overflow-x: auto; 
                 -webkit-overflow-scrolling: touch;
-                padding: 2px;
-                gap: 4px;
+                padding: 1px;
+                gap: 2px;
                 border: none;
                 background: transparent;
                 width: 100%;
@@ -502,8 +502,8 @@ const html = `
             .filter-btn { 
                 white-space: nowrap;
                 flex-shrink: 0;
-                padding: 4px 6px; 
-                font-size: 0.65rem; 
+                padding: 4px 4px; 
+                font-size: 0.6rem; 
                 background: rgba(255,255,255,0.05); 
                 border: 1px solid var(--border-color); 
                 display: flex; align-items: center; gap: 3px;
@@ -556,8 +556,8 @@ const html = `
             <div class="hero-badge">Verified 2026 Season</div>
             <h1>NCAA Baseball Camps 2026</h1>
             <p class="subtitle">
-                <span class="desktop-text">${data.length} DI & DII Programs | ${data.filter(s => s.isVerified).length} Professionally Verified.</span>
-                <span class="mobile-text">${data.length} Schools | ${data.filter(s => s.isVerified).length} Verified for 2026.</span>
+                <span class="desktop-text">${data.length} DI & DII Programs | ${data.filter(d => d.autoVerified).length} Verified Sessions.</span>
+                <span class="mobile-text">${data.length} Schools | ${data.filter(d => d.autoVerified).length} Verified for 2026.</span>
             </p>
         </header>
 
@@ -584,10 +584,9 @@ const html = `
                     <button class="filter-btn active" data-div="all">All</button>
                     <button class="filter-btn" data-div="DI">Div I</button>
                     <button class="filter-btn" data-div="DII">Div II</button>
-                    <button class="filter-btn" data-div="updates">✨ Latest Updates</button>
+                    <button class="filter-btn" data-div="updates">✨ New Camp Dates</button>
                     <button class="filter-btn" data-div="human">👤 <span class="hide-mobile">Community </span>Verified</button>
                     <button class="filter-btn" data-div="dates">📅 <span class="hide-mobile">With </span>Dates</button>
-                    <button class="filter-btn" data-div="auto">🤖 <span class="hide-mobile">Verified </span>Scans</button>
                 </div>
                 <div id="conf-tabs">
                     <button class="conf-btn filter-btn active" data-conf="all">All Conf</button>
@@ -909,12 +908,11 @@ const html = `
                 let matchesFilter = true;
 
                 if (currentDiv === 'DI' || currentDiv === 'DII') matchesFilter = div === currentDiv;
-                else if (currentDiv === 'auto') matchesFilter = isAuto;
                 else if (currentDiv === 'human') matchesFilter = isHuman;
                 else if (currentDiv === 'dates') matchesFilter = card.getAttribute('data-has-dates') === 'true';
                 else if (currentDiv === 'updates') {
                     const lastUpd = card.getAttribute('data-last-update');
-                    matchesFilter = !!lastUpd && (new Date() - new Date(lastUpd) < 86400000 * 14); // Extended to 14 days for visibility
+                    matchesFilter = !!lastUpd && (new Date() - new Date(lastUpd) < 86400000 * 3); // 72h window
                 }
 
                 const matchesConf = (confFilter === 'all' || conf === confFilter);
@@ -943,6 +941,17 @@ const html = `
                     card.style.display = 'none';
                 }
             });
+            
+            if (currentDiv === 'updates' && term === '' && costFilter === 'all' && confFilter === 'all') {
+                const visibleCards = Array.from(campCards).filter(c => c.style.display !== 'none');
+                visibleCards.sort((a, b) => {
+                    const da = a.getAttribute('data-last-update') || '';
+                    const db = b.getAttribute('data-last-update') || '';
+                    return db.localeCompare(da);
+                });
+                visibleCards.forEach(c => campsContainer.appendChild(c));
+            }
+
             dispCount.innerText = count;
         }
 
