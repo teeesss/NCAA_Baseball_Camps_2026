@@ -4,15 +4,9 @@ const path = require('path');
 const DATA_FILE = path.join(__dirname, '../../camps_data.json');
 const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
 
-// Junk domains to scrub
-const badDomains = [
-  'activekids.com', 
-  'fieldlevel.com', 
-  'lschs.org', 
-  'berecruited.com', 
-  'perfectgame.org',
-  'maxpreps.com'
-];
+// ── Load config (single source of truth) ────────────────────────────
+const { BLACKLISTED_DOMAINS } = require('../utils/config');
+const badDomains = BLACKLISTED_DOMAINS;
 
 // Placeholder dates to scrub (e.g. 06/20/2026 often from common scrapers)
 const placeholderPatterns = [

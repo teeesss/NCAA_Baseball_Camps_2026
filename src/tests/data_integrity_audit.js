@@ -7,7 +7,7 @@ const DATA_FILE = path.join(__dirname, '../../camps_data.json');
 const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
 
 const SUSPICIOUS_THRESHOLDS = {
-  MIN_COST: 75,
+  MIN_COST: COST_RANGE.SUSPICIOUS_MIN,
   PLACEHOLDER_PATTERN: /06\/20|07\/20|08\/20|20th/,
   MAX_DATES_LOGICAL: 12
 };

@@ -15,15 +15,9 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 function extractDataFromText(fullText) {
     const campTiers = [];
     const lines = fullText.split('\n').map(l => l.trim()).filter(l => l.length > 4);
-    const MONTH_NAMES = 'Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?';
-    const DATE_PATTERN = new RegExp(
-        `(?:(?:${MONTH_NAMES})\\s+\\d{1,2}(?:st|nd|rd|th)?(?:\\s*[-–]\\s*\\d{1,2}(?:st|nd|rd|th)?)?(?:,?\\s*20\\d{2})?)|` +
-        `(?:\\b(?:0?[1-9]|1[0-2])\\/(?:0?[1-9]|[12]\\d|3[01])(?:\\/(?:20)?2[5-9])?)`,
-    'gi');
-    const CAMP_NAME_PATTERN = /([A-Z][A-Za-z0-9\s\/&\-]+(?:Camp|Clinic|Prospect|Showcase|Elite|Year-Round|Program|Academy|Session|Tournament|Tryout))/;
-    const COST_PATTERN = /(?:\$[\d,]+(?:\.\d{2})?(?:\s*[-–]\s*\$[\d,]+(?:\.\d{2})?)?|FREE|Complimentary|No cost)/i;
-    const SKIP_KEYWORDS = [' vs ', ' vs. ', ' @ ', ' at ', 'tournament standings', 'box score'];
-    const SPORT_CONTAMINATION = ['basketball', 'soccer', 'volleyball', 'swimming', 'wrestling', 'tennis', 'lacrosse'];
+    const { DATE_PATTERNS, COST_PATTERN, REJECT_SPORTS } = require('../utils/config');
+    const SPORT_CONTAMINATION = REJECT_SPORTS;
+    const DATE_PATTERN = DATE_PATTERNS[0]; // Use first pattern for standard test
     const STALE_YEARS = ['2024', '2023', '2022'];
 
     for (let j = 0; j < lines.length; j++) {

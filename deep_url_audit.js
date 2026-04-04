@@ -29,12 +29,13 @@ const { isContaminated, isStrictBoundaryMatch } = require('./src/utils/contamina
 
 // ── Files ────────────────────────────────────────────────────
 const DATA_FILE      = path.join(__dirname, 'camps_data.json');
-const BLACKLIST_FILE = path.join(__dirname, 'blacklist.json');
-const REPORT_FILE    = path.join(__dirname, 'url_audit_results.json');
-const LOG_FILE       = path.join(__dirname, 'deep_url_audit.log');
-
-// ── Blacklist Initialization ────────────────────────────────
-const BLACKLISTED_DOMAINS = JSON.parse(fs.readFileSync(BLACKLIST_FILE, 'utf8')).domains;
+const {
+    BLACKLISTED_DOMAINS,
+    OFFICIAL_PLATFORMS,
+    DATE_PATTERNS,
+    COST_PATTERN,
+    EMAIL_PATTERN
+} = require('./src/utils/config');
 
 // ── CLI Args ─────────────────────────────────────────────────
 const args = process.argv.slice(2);
@@ -73,13 +74,8 @@ function log(msg) {
   logStream.write(line + '\n');
 }
 
-// ── Constants ────────────────────────────────────────────────
-const OFFICIAL_PLATFORMS = [
-  'ryzer.com', 'thegoodgame.com', 'totalcamps.com', 'eventlink.com',
-  'campsnetwork.com',
-  'abcsportscamps.com',
-  'playnsports.com', 'reflow.com'
-];
+// OFFICIAL_PLATFORMS removed - using central config.js
+
 
 const SEARCH_ENGINES = [
   {
@@ -104,22 +100,7 @@ const SEARCH_ENGINES = [
 
 // Google has been completely removed due to aggressive CAPTCHA blocking.
 
-const DATE_PATTERNS = [
-  /\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+\d{1,2}(?:[-–]\d{1,2})?,?\s*202[5-7]\b/gi,
-  /\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+\d{1,2}(?:[-–]\d{1,2})?\b/gi,
-  /\d{1,2}\/\d{1,2}\/202[5-7]/g,
-  /\d{1,2}[/-]\d{1,2}\s*[–-]\s*\d{1,2}[/-]\d{1,2}\s*202[5-7]/g,
-  /202[5-7][-/\.]\d{2}[-/\.]\d{2}/g,
-];
-const COST_PATTERN  = /\$\s*(\d[\d,]*(?:\.\d{2})?)/g;
-
-const SUBDOMAIN_BLACKLIST = [
-  'maps.', 'events.', 'library.', 'catalog.', 'admissions.', 'giving.',
-  'alumni.', 'bookstore.', 'archives.', 'calendar.',
-  'directory.', 'login.', 'portal.', 'email.', 'mail.', 'sso.', 'cas.',
-  'blackboard.', 'canvas.', 'moodle.'
-];
-const EMAIL_PATTERN = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+// Regex constants and subdomain lists removed - imported from config.js
 
 // ── Stealth Browser Config ───────────────────────────────────
 const BROWSER_ARGS = [

@@ -31,34 +31,19 @@ for (const a of args) {
 }
 const SCHOOL_FILTER = argMap.school || null;
 
-const BLACKLISTED_DOMAINS = JSON.parse(fs.readFileSync(BLACKLIST_FILE, 'utf8')).domains;
-
-// ── Sport Exclusivity: Reject non-baseball pages (FIX: llm-issues-prompt #2) ──
-const REJECT_SPORTS = ['football', 'basketball', 'soccer', 'tennis', 'swimming', 'golf', 'volleyball', 'wrestling', 'lacrosse', 'softball', 'hockey', 'track and field'];
-function isWrongSport(text) {
-    const lower = text.toLowerCase();
-    if (lower.includes('baseball')) return false; // Baseball content present = OK
-    return REJECT_SPORTS.some(sport => lower.includes(sport + ' camp') || lower.includes(sport + ' clinic'));
-}
-
-// ── Team Camp / Legacy Detection (FIX: llm-issues-prompt #3, ISS-006) ──
-function isTeamCampOrLegacy(text) {
-    const lower = text.toLowerCase();
-    // FIX: If 2026 is present, it's a valid current page regardless of "team camp" mentions
-    if (lower.includes('2026')) return false;
-    
-    const isTeamOnly = lower.includes('team camp') && !lower.includes('individual');
-    const isLegacy   = lower.includes('2025') && !lower.includes('2026');
-    return isTeamOnly || isLegacy;
-}
-
-const DATE_PATTERNS = [
-  /\b(jun|jul|aug)[a-z]*\.?\s+\d{1,2}(?:[-–]\d{1,2})?,?\\s*2026/gi,
-  /\b0?[678]\/\d{1,2}\/2026/g,
-  /\b2026[-/]0?[678][-/]\d{1,2}/g,
-];
-const COST_PATTERN = /\$\s*(\d[\d,.]*(?:\.\d{2})?)/g;
-const EMAIL_PATTERN = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+// ── Load config (single source of truth) ────────────────────────────
+const {
+    BLACKLISTED_DOMAINS,
+    isBlacklistedUrl,
+    REJECT_SPORTS,
+    isWrongSport,
+    DATE_PATTERNS,
+    COST_PATTERN,
+    EMAIL_PATTERN,
+    COST_RANGE,
+    GENERIC_EMAIL_PREFIXES,
+    CURRENT_SCRIPT_VERSION
+} = require('./src/utils/config');
 
 function unwrapUrl(url) {
     try {
@@ -105,7 +90,7 @@ function extractData(text, url) {
         let costMatch;
         while ((costMatch = COST_PATTERN.exec(window)) !== null) {
             const val = parseFloat(costMatch[1].replace(/,/g, ''));
-            if (val >= 100 && val <= 1500) costs.push(val);
+            if (val >= COST_RANGE.MIN && val <= COST_RANGE.MAX) costs.push(val);
         }
     }
     
@@ -132,7 +117,7 @@ function extractData(text, url) {
             let m3;
             while ((m3 = EMAIL_PATTERN.exec(section)) !== null) {
                 let e = m3[0].toLowerCase();
-                const isGeneric = GENERIC_ADMIN_EMAILS.some(g => e.startsWith(g + '@'));
+                const isGeneric = GENERIC_EMAIL_PREFIXES.some(g => e.startsWith(g + '@'));
                 if (!isGeneric && !BLACKLISTED_DOMAINS.some(b => e.includes(b)) && !e.includes('example') && !e.includes('noreply') && !e.includes('sentry')) {
                     emailsList.push(e);
                 }

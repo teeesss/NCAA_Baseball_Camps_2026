@@ -22,33 +22,15 @@ const fs = require('fs');
 // We load smart_extract.js's module-level functions by re-implementing
 // them identically here for pure unit testing (no Puppeteer dependency).
 
-const BLACKLIST_FILE = path.join(__dirname, '../../blacklist.json');
-const BLACKLISTED_DOMAINS = JSON.parse(fs.readFileSync(BLACKLIST_FILE, 'utf8')).domains;
-
-// ── Sport Exclusivity (from smart_extract.js) ──
-const REJECT_SPORTS = ['football', 'basketball', 'soccer', 'tennis', 'swimming', 'golf', 'volleyball', 'wrestling', 'lacrosse', 'softball', 'hockey', 'track and field'];
-function isWrongSport(text) {
-    const lower = text.toLowerCase();
-    if (lower.includes('baseball')) return false;
-    return REJECT_SPORTS.some(sport => lower.includes(sport + ' camp') || lower.includes(sport + ' clinic'));
-}
-
-// ── Team Camp / Legacy ──
-function isTeamCampOrLegacy(text) {
-    const lower = text.toLowerCase();
-    const isTeamOnly = lower.includes('team camp') && !lower.includes('individual');
-    const isLegacy   = lower.includes('2025') && !lower.includes('2026');
-    return isTeamOnly || isLegacy;
-}
-
-// ── Extraction ──
-const DATE_PATTERNS = [
-  /\b(jun|jul|aug)[a-z]*\.?\s+\d{1,2}(?:[-–]\d{1,2})?,?\s*2026/gi,
-  /\b0?[678]\/\d{1,2}\/2026/g,
-  /\b2026[-/]0?[678][-/]\d{2}/g,
-];
-const COST_PATTERN = /\$\s*(\d[\d,.]*(?:\.\d{2})?)/g;
-const EMAIL_PATTERN = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+const {
+    BLACKLISTED_DOMAINS,
+    REJECT_SPORTS,
+    isWrongSport,
+    DATE_PATTERNS,
+    COST_PATTERN,
+    EMAIL_PATTERN,
+    COST_RANGE
+} = require('../utils/config');
 
 function extractData(text, url) {
     if (isWrongSport(text)) {
@@ -78,7 +60,7 @@ function extractData(text, url) {
         costs.push(val);
     }
     if (costs.length) {
-        let validCosts = costs.filter(c => c >= 100 && c <= 1500);
+        let validCosts = costs.filter(c => c >= COST_RANGE.MIN && c <= COST_RANGE.MAX);
         if (validCosts.length) {
             validCosts.sort((a,b) => a-b);
             bestCost = validCosts[0];
