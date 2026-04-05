@@ -1,18 +1,31 @@
-const fs = require('fs');
+const fs = require("fs");
 
 // We still load the data at build time to compute header info and conference list,
 // but the actual cards are NOT baked into the HTML.
-const data = JSON.parse(fs.readFileSync('camps_data.json', 'utf8'));
+const data = JSON.parse(fs.readFileSync("camps_data.json", "utf8"));
 
-const diCount = data.filter(d => d.division === 'DI').length;
-const diiCount = data.filter(d => d.division === 'DII').length;
-const confCount = new Set(data.map(c => c.conference || 'Other')).size;
-const autoVerifiedCount = data.filter(d => d.autoVerified).length;
+const diCount = data.filter((d) => d.division === "DI").length;
+const diiCount = data.filter((d) => d.division === "DII").length;
+const confCount = new Set(data.map((c) => c.conference || "Other")).size;
+const autoVerifiedCount = data.filter((d) => d.autoVerified).length;
 
 // Generate conference HTML at build time from current data
-const conferences = [...new Set(data.map(c => c.conference || 'Other'))].sort();
-const priorityConfs = ["SEC", "ACC", "Big Ten", "Big 12", "Sun Belt", "Big West", "ASUN", "Ivy League"];
-const otherConfs = conferences.filter(c => !priorityConfs.includes(c) && c !== 'Other');
+const conferences = [
+  ...new Set(data.map((c) => c.conference || "Other")),
+].sort();
+const priorityConfs = [
+  "SEC",
+  "ACC",
+  "Big Ten",
+  "Big 12",
+  "Sun Belt",
+  "Big West",
+  "ASUN",
+  "Ivy League",
+];
+const otherConfs = conferences.filter(
+  (c) => !priorityConfs.includes(c) && c !== "Other",
+);
 
 const html = `
 <!DOCTYPE html>
@@ -404,10 +417,10 @@ const html = `
                 </div>
                 <div id="conf-tabs">
                     <button class="conf-btn filter-btn active" data-conf="all">All Conf</button>
-                    ${priorityConfs.map(c => `<button class="conf-btn filter-btn" data-conf="${c}">${c}</button>`).join('')}
+                    ${priorityConfs.map((c) => `<button class="conf-btn filter-btn" data-conf="${c}">${c}</button>`).join("")}
                     <select id="moreConfs" class="filter-select" style="min-width: 140px; height: 38px; padding: 0 12px; font-size: 0.75rem;">
                         <option value="none">More Conferences...</option>
-                        ${otherConfs.map(c => `<option value="${c}">${c}</option>`).join('')}
+                        ${otherConfs.map((c) => `<option value="${c}">${c}</option>`).join("")}
                         <option value="Other">Other / Independent</option>
                     </select>
                 </div>
@@ -978,6 +991,10 @@ const html = `
 </html>
 `;
 
-fs.writeFileSync('index_dev.html', html);
-console.log('[DEV] Generated index_dev.html — dynamic rendering, fetch-based card rendering.');
-console.log('[DEV] Deploy to /Baseball_Camps_2026_dev/ to test without affecting production.');
+fs.writeFileSync("index_dev.html", html);
+console.log(
+  "[DEV] Generated index_dev.html — dynamic rendering, fetch-based card rendering.",
+);
+console.log(
+  "[DEV] Deploy to /Baseball_Camps_2026_dev/ to test without affecting production.",
+);
