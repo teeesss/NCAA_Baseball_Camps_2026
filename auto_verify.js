@@ -16,15 +16,19 @@
  * ============================================================
  */
 
-'use strict';
+"use strict";
 
-const fs   = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const DATA_FILE = path.join(__dirname, 'camps_data.json');
+const DATA_FILE = path.join(__dirname, "camps_data.json");
 
 const GENERIC_PATTERNS = [
-  'google.com', 'bing.com', 'duckduckgo.com', 'wikipedia.org', 'ncaa.org'
+  "google.com",
+  "bing.com",
+  "duckduckgo.com",
+  "wikipedia.org",
+  "ncaa.org",
 ];
 
 const DATE_REGEX = [
@@ -34,24 +38,24 @@ const DATE_REGEX = [
 ];
 
 function isGenericUrl(url) {
-  if (!url || !url.startsWith('http')) return true;
-  return GENERIC_PATTERNS.some(p => url.includes(p));
+  if (!url || !url.startsWith("http")) return true;
+  return GENERIC_PATTERNS.some((p) => url.includes(p));
 }
 
 function hasRealDate(record) {
   const text = [
-    record.dates || '',
-    ...(record.campTiers || []).map(t => t.dates || ''),
-  ].join(' ');
-  return DATE_REGEX.some(r => r.test(text));
+    record.dates || "",
+    ...(record.campTiers || []).map((t) => t.dates || ""),
+  ].join(" ");
+  return DATE_REGEX.some((r) => r.test(text));
 }
 
 function hasRealCost(record) {
   const text = [
-    record.cost || '',
-    ...(record.campTiers || []).map(t => t.cost || ''),
-  ].join(' ');
-  
+    record.cost || "",
+    ...(record.campTiers || []).map((t) => t.cost || ""),
+  ].join(" ");
+
   const match = text.match(/\$\s*(\d{2,})/);
   if (match) {
     const val = parseInt(match[1], 10);
@@ -61,31 +65,35 @@ function hasRealCost(record) {
 }
 
 function run() {
-  console.log('\n🏷️  AUTO-VERIFY STAMP');
-  console.log('=====================================\n');
+  console.log("\n🏷️  AUTO-VERIFY STAMP");
+  console.log("=====================================\n");
 
-  const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+  const data = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
 
-  let autoVerifiedCount        = 0;
+  let autoVerifiedCount = 0;
   let autoVerifiedPartialCount = 0;
-  let changedCount             = 0;
+  let changedCount = 0;
 
   for (const record of data) {
-    const hasUrl   = !isGenericUrl(record.campUrl);
+    const hasUrl = !isGenericUrl(record.campUrl);
     const hasDates = hasRealDate(record);
-    const hasCost  = hasRealCost(record);
+    const hasCost = hasRealCost(record);
 
-    const newAutoVerified        = hasUrl && hasDates && hasCost;
-    const newAutoVerifiedPartial = hasUrl && (hasDates || hasCost) && !(hasDates && hasCost);
+    const newAutoVerified = hasUrl && hasDates && hasCost;
+    const newAutoVerifiedPartial =
+      hasUrl && (hasDates || hasCost) && !(hasDates && hasCost);
 
-    if (record.autoVerified !== newAutoVerified || record.autoVerifiedPartial !== newAutoVerifiedPartial) {
+    if (
+      record.autoVerified !== newAutoVerified ||
+      record.autoVerifiedPartial !== newAutoVerifiedPartial
+    ) {
       changedCount++;
     }
 
-    record.autoVerified        = newAutoVerified;
+    record.autoVerified = newAutoVerified;
     record.autoVerifiedPartial = newAutoVerifiedPartial;
 
-    if (newAutoVerified)        autoVerifiedCount++;
+    if (newAutoVerified) autoVerifiedCount++;
     if (newAutoVerifiedPartial) autoVerifiedPartialCount++;
   }
 
@@ -93,7 +101,9 @@ function run() {
 
   console.log(`✅ Auto-Verified (full):    ${autoVerifiedCount}`);
   console.log(`🔶 Auto-Verified (partial): ${autoVerifiedPartialCount}`);
-  console.log(`❌ Not verified:            ${data.length - autoVerifiedCount - autoVerifiedPartialCount}`);
+  console.log(
+    `❌ Not verified:            ${data.length - autoVerifiedCount - autoVerifiedPartialCount}`,
+  );
   console.log(`\n💾 Updated ${changedCount} records in camps_data.json\n`);
 }
 

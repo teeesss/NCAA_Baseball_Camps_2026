@@ -500,7 +500,7 @@
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/9.png",
     "isVerified": false,
     "isChecked": true,
-    "scriptVersion": 4,
+    "scriptVersion": 14,
     "campTiers": [],
     "confidenceScore": 100,
     "autoVerified": false,
@@ -517,13 +517,14 @@
     "auditStatus": "FOUND",
     "lastAuditAttempt": "2026-04-03T07:14:20.755Z",
     "headCoach": "N/A",
-    "lastChecked": "2026-04-04T19:04:26.176Z",
+    "lastChecked": "2026-04-05T01:00:06.505Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "",
     "contactUpdateDate": "",
     "costUpdateDate": "",
-    "detailsUpdateDate": ""
+    "detailsUpdateDate": "",
+    "extractionResult": "enriched"
   },
   {
     "university": "Arkansas",
@@ -934,13 +935,14 @@
     "email": "tickets@auburn.edu",
     "campPOC": "N/A",
     "headCoach": "N/A",
-    "lastChecked": "2026-04-04T19:04:26.176Z",
+    "lastChecked": "2026-04-05T01:01:06.111Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "2026-04-04T19:04:26.176Z",
     "contactUpdateDate": "",
     "costUpdateDate": "",
-    "detailsUpdateDate": ""
+    "detailsUpdateDate": "",
+    "extractionResult": "no_data"
   },
   {
     "university": "Austin Peay",
@@ -2275,8 +2277,8 @@
   {
     "university": "Clemson",
     "campUrl": "https://www.tigerbaseballcamp.com/camps/",
-    "dates": "TBA",
-    "cost": "TBA",
+    "dates": "JUN\n29\n2026 | JUL\n12\n2026 | JUL\n19\n2026",
+    "cost": "$425",
     "details": "",
     "contact": "[camps@clemson.edu](mailto:camps@clemson.edu)",
     "division": "DI",
@@ -2286,7 +2288,7 @@
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
     "isVerified": false,
     "isChecked": true,
-    "scriptVersion": 17,
+    "scriptVersion": 14,
     "autoVerified": false,
     "autoVerifiedPartial": false,
     "conference": "ACC",
@@ -2298,13 +2300,14 @@
     "headCoach": "N/A",
     "campPOC": "N/A",
     "email": "clemsonbaseball@clemson.edu",
-    "lastChecked": "2026-04-04T19:04:26.176Z",
+    "lastChecked": "2026-04-05T00:58:11.681Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "",
     "contactUpdateDate": "",
     "costUpdateDate": "",
-    "detailsUpdateDate": ""
+    "detailsUpdateDate": "",
+    "extractionResult": "enriched"
   },
   {
     "university": "Coastal Carolina",
@@ -3633,8 +3636,8 @@
   {
     "university": "Georgia Tech",
     "campUrl": "https://ramblinwreck.com/sports/m-basebl/",
-    "dates": "TBA",
-    "cost": "TBA",
+    "dates": "06/29/2026 | 07/02/2026 | 07/06/2026",
+    "cost": "$184 / $227 / $422",
     "details": "",
     "contact": "",
     "division": "DI",
@@ -3642,7 +3645,7 @@
     "whatToBring": "Glove, bat, helmet, cleats, baseball pants, water bottle, sunscreen.",
     "isVerified": false,
     "isChecked": true,
-    "scriptVersion": 9,
+    "scriptVersion": 14,
     "autoVerified": false,
     "autoVerifiedPartial": true,
     "logoDomain": "ramblinwreck.com",
@@ -3655,13 +3658,14 @@
     "auditConfidence": 50,
     "headCoach": "N/A",
     "campPOC": "N/A",
-    "lastChecked": "2026-04-04T19:04:26.177Z",
+    "lastChecked": "2026-04-05T00:57:21.201Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "",
     "contactUpdateDate": "",
     "costUpdateDate": "",
-    "detailsUpdateDate": ""
+    "detailsUpdateDate": "",
+    "extractionResult": "enriched"
   },
   {
     "university": "Gonzaga",
@@ -6506,7 +6510,7 @@
     "university": "Minnesota",
     "campUrl": "https://www.gopherbaseballcamps.com/",
     "dates": "TBA",
-    "cost": "TBA",
+    "cost": "$102 / $250 / $350",
     "details": "",
     "contact": "gopherbaseballcamps@gmail.com",
     "division": "DI",
@@ -6515,8 +6519,8 @@
     "logoDomain": "msbcollege.edu",
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/135.png",
     "isVerified": false,
-    "isChecked": false,
-    "scriptVersion": 9,
+    "isChecked": true,
+    "scriptVersion": 14,
     "autoVerified": false,
     "autoVerifiedPartial": false,
     "email": "gopherbaseballcamps@gmail.com",
@@ -6527,7 +6531,7 @@
     "auditConfidence": 65,
     "headCoach": "N/A",
     "campPOC": "N/A",
-    "lastChecked": "2026-04-04T19:04:26.178Z",
+    "lastChecked": "2026-04-05T00:55:11.216Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "",
@@ -6536,7 +6540,8 @@
     "detailsUpdateDate": "",
     "url": "https://www.gopherbaseballcamps.com",
     "auditStatus": "URL_UNREACHABLE",
-    "sourceUrl": "https://baseballcampsusa.com"
+    "sourceUrl": "https://baseballcampsusa.com",
+    "extractionResult": "enriched"
   },
   {
     "university": "Mississippi State",
@@ -9747,7 +9752,7 @@
     "scriptVersion": 14,
     "autoVerified": false,
     "autoVerifiedPartial": true,
-    "email": "N/A",
+    "email": "zfascia@purdue.edu",
     "lastSmartCheck": "2026-04-03T02:41:37.072Z",
     "conference": "Big Ten",
     "isUrlAudited": true,
@@ -9755,7 +9760,7 @@
     "auditConfidence": 50,
     "headCoach": "N/A",
     "campPOC": "N/A",
-    "lastChecked": "2026-04-04T19:04:26.179Z",
+    "lastChecked": "2026-04-05T00:52:37.941Z",
     "updateLog": [],
     "lastUpdateDate": 1775347757701,
     "datesUpdateDate": "2026-04-04T19:04:26.179Z",
@@ -9764,7 +9769,8 @@
     "detailsUpdateDate": "",
     "url": "https://www.purduebaseballcamps.com",
     "auditStatus": "EXTRACTED_NO_DATA",
-    "sourceUrl": "https://baseballcampsusa.com"
+    "sourceUrl": "https://baseballcampsusa.com",
+    "extractionResult": "enriched"
   },
   {
     "university": "Queens",
@@ -11248,9 +11254,9 @@
   },
   {
     "university": "Stanford",
-    "campUrl": "https://stanfordathleticscamps.com/",
+    "campUrl": "https://stanfordbaseballcamps.com/",
     "dates": "TBA",
-    "cost": "TBA",
+    "cost": "$675 / $725",
     "details": "Updated April 3, 2026. Official 2026 dates not yet posted.",
     "contact": "David Esquer | stanfordathleticscamps@stanford.edu",
     "division": "DI",
@@ -11273,13 +11279,14 @@
     "headCoach": "David Esquer",
     "campPOC": "N/A",
     "email": "stanfordathleticscamps@stanford.edu",
-    "lastChecked": "2026-04-04T19:04:26.179Z",
+    "lastChecked": "2026-04-05T00:59:06.407Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "",
     "contactUpdateDate": "",
     "costUpdateDate": "",
-    "detailsUpdateDate": ""
+    "detailsUpdateDate": "",
+    "extractionResult": "enriched"
   },
   {
     "university": "Stephen F. Austin",
@@ -15973,9 +15980,7 @@
         "name": "Keiser Team Camp",
         "dates": "6/11/2026, 6/13/2026, 8/20",
         "cost": "$54",
-        "emails": [
-          "cortiztorres@keiseruniversity.edu"
-        ]
+        "emails": ["cortiztorres@keiseruniversity.edu"]
       },
       {
         "name": "Warner University Football Camp",
@@ -16029,9 +16034,7 @@
         "name": "Spring Training Showcase",
         "dates": "February 1st",
         "cost": "$250.00",
-        "emails": [
-          "dclark@alasu.edu"
-        ]
+        "emails": ["dclark@alasu.edu"]
       }
     ],
     "autoVerified": false,
@@ -16588,7 +16591,7 @@
     "campTiers": [],
     "confidenceScore": 100,
     "isChecked": true,
-    "scriptVersion": 9,
+    "scriptVersion": 14,
     "autoVerified": false,
     "autoVerifiedPartial": false,
     "lastSmartCheck": "2026-04-03T02:41:59.444Z",
@@ -16603,13 +16606,14 @@
     "auditStatus": "FOUND",
     "lastAuditAttempt": "2026-04-03T06:46:07.882Z",
     "headCoach": "John Savage",
-    "lastChecked": "2026-04-04T19:04:26.180Z",
+    "lastChecked": "2026-04-05T00:59:36.348Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "",
     "contactUpdateDate": "",
     "costUpdateDate": "",
-    "detailsUpdateDate": ""
+    "detailsUpdateDate": "",
+    "extractionResult": "enriched"
   },
   {
     "university": "UIC",
@@ -16905,8 +16909,8 @@
   },
   {
     "university": "UNLV",
-    "campUrl": "https://Baseball.olemisssportscamps.com/",
-    "dates": "February 28, 2026 | March 8, 2026 | February 28 | June 12-14 | June 8-11 | July 13-16 | March 8",
+    "campUrl": "https://info.collegebaseballcamps.com/rebels/",
+    "dates": "TBA",
     "cost": "TBA",
     "details": "",
     "contact": "",
@@ -16923,7 +16927,7 @@
     "logoDomain": "unlvrebels.com",
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/2439.png",
     "lastSmartCheck": "2026-04-03T01:45:46.922Z",
-    "email": "N/A | olemissbaseballcamps@gmail.com",
+    "email": "nicholas.rush@unlv.edu",
     "conference": "Mountain West",
     "auditStatus": "NEW_SOURCE_DETECTED",
     "isUrlAudited": true,
@@ -16932,7 +16936,7 @@
     "sourceUrl": "https://baseballcampsusa.com",
     "lastAuditDate": "2026-04-03T07:01:46.737Z",
     "headCoach": "N/A",
-    "lastChecked": "2026-04-04T19:04:26.180Z",
+    "lastChecked": "2026-04-05T00:54:21.390Z",
     "updateLog": [
       "April 4: Contact Standardization - Removed redundant POC string"
     ],
@@ -16942,7 +16946,8 @@
     "costUpdateDate": "",
     "detailsUpdateDate": "",
     "url": "https://Baseball.olemisssportscamps.com",
-    "campDates": "06/22/2026 | 06/25/2026 | 07/13/2026 | 07/16/2026 | 07/20/2026"
+    "campDates": "06/22/2026 | 06/25/2026 | 07/13/2026 | 07/16/2026 | 07/20/2026",
+    "extractionResult": "enriched"
   },
   {
     "university": "USC",
@@ -22143,9 +22148,7 @@
         "name": "Upcoming Baseball Prospect Camp",
         "dates": "June 8-11, 2026",
         "cost": "TBA",
-        "emails": [
-          "gormanbaseballcamps@gmail.com"
-        ]
+        "emails": ["gormanbaseballcamps@gmail.com"]
       },
       {
         "name": "Upcoming Camp",
@@ -27181,8 +27184,8 @@
   },
   {
     "university": "Southwest Minnesota State University",
-    "campUrl": "https://www.SMSUbaseballcamps.com/",
-    "dates": "TBA",
+    "campUrl": "https://www.smsubaseballcamps.com/",
+    "dates": "08/02/2026",
     "cost": "TBA",
     "details": "Updated April 3, 2026. Official 2026 dates not yet posted.",
     "contact": "Head Coach (TBA)",
@@ -27199,7 +27202,7 @@
     "conference": "NSIC",
     "headCoach": "Head Coach (TBA)",
     "campPOC": "N/A",
-    "lastChecked": "2026-04-04T19:04:26.181Z",
+    "lastChecked": "2026-04-05T00:55:19.298Z",
     "updateLog": [],
     "lastUpdateDate": 1775347911658,
     "datesUpdateDate": 1775347911658,
@@ -27210,7 +27213,8 @@
     "url": "https://www.SMSUbaseballcamps.com",
     "auditStatus": "NEW_SOURCE_DETECTED",
     "sourceUrl": "https://baseballcampsusa.com",
-    "campDates": "08/02/2026"
+    "campDates": "08/02/2026",
+    "extractionResult": "enriched"
   },
   {
     "university": "Southwestern Oklahoma State University",

@@ -9458,3 +9458,178 @@
 [2026-04-03T16:54:53.722Z]   ↳ Scraping: https://gobuffsgo.com/sports/baseball
 [2026-04-03T16:55:00.990Z]   ↳ Trying one sub-page: https://gobuffsgo.com/sports/2025/9/9/football-event-and-ticket-information.aspx
 [2026-04-03T16:55:03.798Z] ✅ DONE
+[2026-04-04T22:43:14.879Z] 🚀 STARTING BATCH
+[2026-04-04T22:43:14.935Z] 📦 Backup created: camps_data_backup_1775342594881.json
+[2026-04-04T22:43:15.839Z] 
+[1/468] Auburn | Missing: dates, cost
+[2026-04-04T22:43:15.889Z]   ↳ Scraping: https://auburntigers.com/camps
+[2026-04-04T22:43:19.944Z]   ↳ Trying one sub-page: https://auburntigers.com/camps#main-content
+[2026-04-04T22:43:21.452Z]   ❌ Err: ex is not defined
+[2026-04-05T00:49:40.378Z] 🚀 STARTING BATCH
+[2026-04-05T00:49:40.421Z] 📦 Backup created: camps_data_backup_1775350180379.json
+[2026-04-05T00:49:40.993Z] 
+[1/1] Purdue | Missing: campUrl, cost, contact, email
+[2026-04-05T00:49:41.052Z]   🔍 Search: Purdue Boilermakers baseball camp
+[2026-04-05T00:49:46.634Z]   ★ Consensus match: https://www.purduebaseballcamps.com/
+[2026-04-05T00:49:46.634Z]   ↳ Scraping: https://www.purduebaseballcamps.com/
+[2026-04-05T00:49:50.436Z]   ↳ Crawling 8 sub-links...
+[2026-04-05T00:49:51.948Z]   ↳ Sub: https://www.purduebaseballcamps.com/#sitePageContent... found baseball content
+[2026-04-05T00:49:58.280Z]   ↳ Sub: https://twitter.com/PurdueBaseball?ref_src=twsrc%5Egoogle%7C... found baseball content
+[2026-04-05T00:50:00.987Z]   ↳ Sub: https://www.purduebaseballcamps.com/register.cfm... found baseball content
+[2026-04-05T00:50:03.683Z]   ↳ Sub: https://www.purduebaseballcamps.com/hump-day-hitting-camp.cf... found baseball content
+[2026-04-05T00:50:06.361Z]   ↳ Sub: https://www.purduebaseballcamps.com/coaching-staff.cfm... found baseball content
+[2026-04-05T00:50:09.351Z]   ↳ Sub: https://www.purduebaseballcamps.com/facilites.cfm... found baseball content
+[2026-04-05T00:50:12.064Z]   ↳ Sub: https://www.purduebaseballcamps.com/register.cfm... found baseball content
+[2026-04-05T00:50:17.033Z]   ↳ Sub: https://twitter.com/PurdueBaseball?ref_src=twsrc%5Egoogle%7C... found baseball content
+[2026-04-05T00:50:18.236Z]   ✅ email: zfascia@purdue.edu
+[2026-04-05T00:50:18.237Z]   ❌ Err: ex is not defined
+[2026-04-05T00:50:18.504Z] ✅ DONE
+[2026-04-05T00:51:59.433Z] 🚀 STARTING BATCH
+[2026-04-05T00:51:59.472Z] 📦 Backup created: camps_data_backup_1775350319435.json
+[2026-04-05T00:52:00.136Z] 
+[1/1] Purdue | Missing: campUrl, cost, contact, email
+[2026-04-05T00:52:00.205Z]   🔍 Search: Purdue Boilermakers baseball camp
+[2026-04-05T00:52:04.772Z]   ★ Consensus match: https://www.purduebaseballcamps.com/
+[2026-04-05T00:52:04.772Z]   ↳ Scraping: https://www.purduebaseballcamps.com/
+[2026-04-05T00:52:08.575Z]   ↳ Crawling 8 sub-links...
+[2026-04-05T00:52:10.099Z]   ↳ Sub: https://www.purduebaseballcamps.com/#sitePageContent... found baseball content
+[2026-04-05T00:52:17.330Z]   ↳ Sub: https://twitter.com/PurdueBaseball?ref_src=twsrc%5Egoogle%7C... found baseball content
+[2026-04-05T00:52:20.046Z]   ↳ Sub: https://www.purduebaseballcamps.com/register.cfm... found baseball content
+[2026-04-05T00:52:22.785Z]   ↳ Sub: https://www.purduebaseballcamps.com/hump-day-hitting-camp.cf... found baseball content
+[2026-04-05T00:52:25.423Z]   ↳ Sub: https://www.purduebaseballcamps.com/coaching-staff.cfm... found baseball content
+[2026-04-05T00:52:28.294Z]   ↳ Sub: https://www.purduebaseballcamps.com/facilites.cfm... found baseball content
+[2026-04-05T00:52:30.998Z]   ↳ Sub: https://www.purduebaseballcamps.com/register.cfm... found baseball content
+[2026-04-05T00:52:36.721Z]   ↳ Sub: https://twitter.com/PurdueBaseball?ref_src=twsrc%5Egoogle%7C... found baseball content
+[2026-04-05T00:52:37.940Z]   ✅ email: zfascia@purdue.edu
+[2026-04-05T00:52:38.262Z] ✅ DONE
+[2026-04-05T00:53:56.453Z] 🚀 STARTING BATCH
+[2026-04-05T00:53:56.495Z] 📦 Backup created: camps_data_backup_1775350436455.json
+[2026-04-05T00:53:57.030Z] 
+[1/1] UNLV | Missing: cost, contact, email
+[2026-04-05T00:53:57.080Z]   🔍 Search: UNLV Rebels baseball camp
+[2026-04-05T00:54:01.953Z]   ★ Consensus match: https://info.collegebaseballcamps.com/rebels/
+[2026-04-05T00:54:01.953Z]   ↳ Scraping: https://info.collegebaseballcamps.com/rebels/
+[2026-04-05T00:54:08.270Z]   ↳ Crawling 8 sub-links...
+[2026-04-05T00:54:09.793Z]   ↳ Sub: https://info.collegebaseballcamps.com/rebels/#about... found baseball content
+[2026-04-05T00:54:11.306Z]   ↳ Sub: https://info.collegebaseballcamps.com/rebels/#Events-New... found baseball content
+[2026-04-05T00:54:12.828Z]   ↳ Sub: https://info.collegebaseballcamps.com/rebels/#Facilities... found baseball content
+[2026-04-05T00:54:14.347Z]   ↳ Sub: https://info.collegebaseballcamps.com/rebels/#Contact... found baseball content
+[2026-04-05T00:54:15.863Z]   ↳ Sub: https://info.collegebaseballcamps.com/rebels/#Events-New... found baseball content
+[2026-04-05T00:54:17.376Z]   ↳ Sub: https://info.collegebaseballcamps.com/rebels/#Contact... found baseball content
+[2026-04-05T00:54:18.892Z]   ↳ Sub: https://info.collegebaseballcamps.com/rebels/#Events-New... found baseball content
+[2026-04-05T00:54:20.403Z]   ↳ Sub: https://info.collegebaseballcamps.com/rebels/#Events-New... found baseball content
+[2026-04-05T00:54:21.390Z]   ✅ email: nicholas.rush@unlv.edu
+[2026-04-05T00:54:21.687Z] ✅ DONE
+[2026-04-05T00:54:39.161Z] 🚀 STARTING BATCH
+[2026-04-05T00:54:39.217Z] 📦 Backup created: camps_data_backup_1775350479163.json
+[2026-04-05T00:54:39.743Z] 
+[1/2] Minnesota | Missing: dates, cost
+[2026-04-05T00:54:39.793Z]   🔍 Search: Minnesota Golden Gophers baseball camp
+[2026-04-05T00:54:44.630Z]   ★ Consensus match: https://www.gopherbaseballcamps.com/
+[2026-04-05T00:54:44.631Z]   ↳ Scraping: https://www.gopherbaseballcamps.com/
+[2026-04-05T00:54:48.724Z]   ↳ Crawling 8 sub-links...
+[2026-04-05T00:54:51.357Z]   ↳ Sub: https://www.gopherbaseballcamps.com/#main-content... found baseball content
+[2026-04-05T00:54:53.985Z]   ↳ Sub: https://www.gopherbaseballcamps.com/shop... found baseball content
+[2026-04-05T00:54:56.555Z]   ↳ Sub: https://www.gopherbaseballcamps.com/Orders... found baseball content
+[2026-04-05T00:54:59.178Z]   ↳ Sub: https://www.gopherbaseballcamps.com/About%20Us... found baseball content
+[2026-04-05T00:55:01.768Z]   ↳ Sub: https://www.gopherbaseballcamps.com/shop... found baseball content
+[2026-04-05T00:55:04.390Z]   ↳ Sub: https://www.gopherbaseballcamps.com/Staff... found baseball content
+[2026-04-05T00:55:07.030Z]   ↳ Sub: https://www.gopherbaseballcamps.com/FAQs... found baseball content
+[2026-04-05T00:55:10.074Z]   ↳ Sub: https://minnesotabaseballinstructionalschool.totalcamps.com/... found baseball content
+[2026-04-05T00:55:11.215Z]   ✅ cost: $102 / $250 / $350
+[2026-04-05T00:55:11.304Z] 
+[2/2] Southwest Minnesota State University | Missing: dates, cost, email
+[2026-04-05T00:55:11.352Z]   🔍 Search: Southwest Minnesota State University Mustangs baseball camp
+[2026-04-05T00:55:15.535Z]   ★ Consensus match: https://www.smsubaseballcamps.com/
+[2026-04-05T00:55:15.535Z]   ↳ Scraping: https://www.smsubaseballcamps.com/
+[2026-04-05T00:55:19.298Z]   ✅ dates: 08/02/2026
+[2026-04-05T00:55:19.579Z] ✅ DONE
+[2026-04-05T00:55:41.658Z] 🚀 STARTING BATCH
+[2026-04-05T00:55:41.717Z] 📦 Backup created: camps_data_backup_1775350541660.json
+[2026-04-05T00:55:42.574Z] ✅ DONE
+[2026-04-05T00:57:01.010Z] 🚀 STARTING BATCH
+[2026-04-05T00:57:01.050Z] 📦 Backup created: camps_data_backup_1775350621011.json
+[2026-04-05T00:57:01.551Z] 
+[1/1] Georgia Tech | Missing: cost, contact, email
+[2026-04-05T00:57:01.601Z]   ↳ Scraping: https://ramblinwreck.com/sports/m-basebl/
+[2026-04-05T00:57:06.464Z]   ↳ Crawling 3 sub-links...
+[2026-04-05T00:57:14.006Z]   ↳ Sub: https://urldefense.com/v3/__https:/seatgeek.com/georgia-tech... found baseball content
+[2026-04-05T00:57:16.877Z]   ↳ Sub: https://ramblinwreck.com/camps/... found baseball content
+[2026-04-05T00:57:19.813Z]   ↳ Sub: https://www.jamesramseybaseballcamps.com/... found baseball content
+[2026-04-05T00:57:21.201Z]   ✅ cost: $184 / $227 / $422
+[2026-04-05T00:57:21.201Z]   ✅ dates: 06/29/2026 | 07/02/2026 | 07/06/2026
+[2026-04-05T00:57:21.522Z] ✅ DONE
+[2026-04-05T00:57:45.231Z] 🚀 STARTING BATCH
+[2026-04-05T00:57:45.296Z] 📦 Backup created: camps_data_backup_1775350665232.json
+[2026-04-05T00:57:45.786Z] 
+[1/1] Clemson | Missing: dates, cost
+[2026-04-05T00:57:45.835Z]   ↳ Scraping: https://www.tigerbaseballcamp.com/camps/
+[2026-04-05T00:57:49.544Z]   ↳ Crawling 8 sub-links...
+[2026-04-05T00:57:57.255Z]   ↳ Sub: https://www.tigerbaseballcamp.com/... found baseball content
+[2026-04-05T00:57:59.881Z]   ↳ Sub: https://www.tigerbaseballcamp.com/about-us/... found baseball content
+[2026-04-05T00:58:02.774Z]   ↳ Sub: https://www.tigerbaseballcamp.com/coaches/... found baseball content
+[2026-04-05T00:58:11.067Z]   ↳ Sub: https://www.tigerbaseballcamp.com/event/future-tiger-camp-1/... found baseball content
+[2026-04-05T00:58:11.681Z]   ✅ cost: $425
+[2026-04-05T00:58:11.681Z]   ✅ dates: JUN
+29
+2026 | JUL
+12
+2026 | JUL
+19
+2026
+[2026-04-05T00:58:11.963Z] ✅ DONE
+[2026-04-05T00:58:23.548Z] 🚀 STARTING BATCH
+[2026-04-05T00:58:23.592Z] 📦 Backup created: camps_data_backup_1775350703549.json
+[2026-04-05T00:58:24.141Z] 
+[1/1] Stanford | Missing: dates, cost
+[2026-04-05T00:58:24.194Z]   🔍 Search: Stanford Cardinal baseball camp
+[2026-04-05T00:58:28.584Z]   ★ Consensus match: https://stanfordbaseballcamps.com/
+[2026-04-05T00:58:28.584Z]   ↳ Scraping: https://stanfordbaseballcamps.com/
+[2026-04-05T00:58:33.591Z]   ↳ Crawling 8 sub-links...
+[2026-04-05T00:58:35.115Z]   ↳ Sub: https://stanfordbaseballcamps.com/#content... found baseball content
+[2026-04-05T00:58:38.274Z]   ↳ Sub: https://stanfordbaseballcamps.com/camp-schedule/... found baseball content
+[2026-04-05T00:58:40.728Z]   ↳ Sub: https://stanfordbaseballcamps.com/camp-schedule/... found baseball content
+[2026-04-05T00:58:43.666Z]   ↳ Sub: https://stanfordyouthbaseballcamps.totalcamps.com/shop/EVENT... found baseball content
+[2026-04-05T00:58:46.817Z]   ↳ Sub: https://stanfordbaseballcamps.com/#... found baseball content
+[2026-04-05T00:58:49.736Z]   ↳ Sub: https://stanfordbaseballcamps.com/coaches-evaluation/... found baseball content
+[2026-04-05T00:59:04.835Z]   ↳ Sub: https://stanfordbaseballcamps.com/technology/... found baseball content
+[2026-04-05T00:59:06.403Z]     ⚠️ High price detected ($675)
+[2026-04-05T00:59:06.407Z]   ✅ cost: $675 / $725
+[2026-04-05T00:59:06.797Z] ✅ DONE
+[2026-04-05T00:59:14.357Z] 🚀 STARTING BATCH
+[2026-04-05T00:59:14.403Z] 📦 Backup created: camps_data_backup_1775350754359.json
+[2026-04-05T00:59:14.961Z] 
+[1/1] UCLA | Missing: dates, cost
+[2026-04-05T00:59:15.009Z]   ↳ Scraping: https://recreation.ucla.edu/rec-programs/youth-programs
+[2026-04-05T00:59:18.519Z]   ↳ Crawling 5 sub-links...
+[2026-04-05T00:59:36.582Z] ✅ DONE
+[2026-04-05T00:59:55.073Z] 🚀 STARTING BATCH
+[2026-04-05T00:59:55.115Z] 📦 Backup created: camps_data_backup_1775350795075.json
+[2026-04-05T00:59:55.610Z] 
+[1/1] Arizona State | Missing: dates
+[2026-04-05T00:59:55.661Z]   🔍 Search: Arizona State Sun Devils baseball camp
+[2026-04-05T01:00:00.154Z]   ★ Consensus match: https://sundevilsbaseballcamps.com/
+[2026-04-05T01:00:00.154Z]   ↳ Scraping: https://sundevilsbaseballcamps.com/
+[2026-04-05T01:00:06.769Z] ✅ DONE
+[2026-04-05T01:00:37.862Z] 🚀 STARTING BATCH
+[2026-04-05T01:00:37.916Z] 📦 Backup created: camps_data_backup_1775350837864.json
+[2026-04-05T01:00:38.419Z] 
+[1/1] Auburn | Missing: dates, cost
+[2026-04-05T01:00:38.477Z]   ↳ Scraping: https://auburntigers.com/camps
+[2026-04-05T01:00:43.628Z]   ↳ Crawling 8 sub-links...
+[2026-04-05T01:00:45.146Z]   ↳ Sub: https://auburntigers.com/camps#main-content... found baseball content
+[2026-04-05T01:01:06.391Z] ✅ DONE
+[2026-04-05T01:09:31.030Z] 🚀 STARTING BATCH
+[2026-04-05T01:09:31.090Z] 📦 Backup created: camps_data_backup_1775351371032.json
+[2026-04-05T01:09:31.596Z] 
+[1/468] Auburn | Missing: dates, cost
+[2026-04-05T01:09:31.650Z]   ↳ Scraping: https://auburntigers.com/camps
+[2026-04-05T01:09:38.063Z]   ↳ Crawling 8 sub-links...
+[2026-04-05T01:09:39.586Z]   ↳ Sub: https://auburntigers.com/camps#main-content... found baseball content
+[2026-04-05T01:17:23.770Z] 🚀 STARTING BATCH
+[2026-04-05T01:17:23.813Z] 📦 Backup created: camps_data_backup_1775351843771.json
+[2026-04-05T01:17:24.347Z] 
+[1/468] Auburn | Missing: dates, cost
+[2026-04-05T01:17:24.399Z]   ↳ Scraping: https://auburntigers.com/camps
+[2026-04-05T01:17:30.067Z]   ↳ Crawling 8 sub-links...
+[2026-04-05T01:17:31.589Z]   ↳ Sub: https://auburntigers.com/camps#main-content... found baseball content

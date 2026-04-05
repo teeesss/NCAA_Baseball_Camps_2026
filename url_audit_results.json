@@ -43,15 +43,9 @@
         "https://kuathletics.com/sports/baseball/schedule",
         "https://kuathletics.com/sports/baseball/roster"
       ],
-      "costs": [
-        "$99.99",
-        "$129.99",
-        "$99.99"
-      ]
+      "costs": ["$99.99", "$129.99", "$99.99"]
     },
-    "notes": [
-      "Price mismatch: DB=$299.00 vs Page=$99.99"
-    ],
+    "notes": ["Price mismatch: DB=$299.00 vs Page=$99.99"],
     "timestamp": "2026-04-03T04:14:04.491Z"
   },
   {
@@ -166,18 +160,10 @@
         "https://sundevilsbaseballcamps.com/camps/",
         "https://sundevilsbaseballcamps.com/coaches/"
       ],
-      "costs": [
-        "$75",
-        "$200",
-        "$200",
-        "$200",
-        "$200"
-      ],
+      "costs": ["$75", "$200", "$200", "$200", "$200"],
       "primaryCost": "$75"
     },
-    "notes": [
-      "Price mismatch: DB=$200 vs Page=$75"
-    ],
+    "notes": ["Price mismatch: DB=$200 vs Page=$75"],
     "timestamp": "2026-04-03T04:17:57.639Z"
   },
   {
@@ -200,15 +186,10 @@
         "https://www.mikesilvabaseballcamps.com/camps.cfm",
         "https://www.mikesilvabaseballcamps.com/mike-silva-kids-camp.cfm"
       ],
-      "costs": [
-        "$244.00",
-        "$244.00"
-      ],
+      "costs": ["$244.00", "$244.00"],
       "primaryCost": "$244.00"
     },
-    "notes": [
-      "Price mismatch: DB=$244 vs Page=$244.00"
-    ],
+    "notes": ["Price mismatch: DB=$244 vs Page=$244.00"],
     "timestamp": "2026-04-03T04:18:09.381Z"
   },
   {
@@ -254,12 +235,7 @@
         "https://rolandfanningbaseballcamps.com/Events.Page4.html",
         "https://rolandfanningbaseballcamps.com/Coaches.Page1.html"
       ],
-      "costs": [
-        "$1200",
-        "$1200",
-        "$1200",
-        "$1200"
-      ]
+      "costs": ["$1200", "$1200", "$1200", "$1200"]
     },
     "notes": [],
     "timestamp": "2026-04-03T04:18:25.418Z"
@@ -310,9 +286,7 @@
         "https://www.bellarmineprep.org/about/our-campus",
         "https://www.bellarmineprep.org/about/community/summer-programs/boys-basketball-camp"
       ],
-      "costs": [
-        "$225"
-      ],
+      "costs": ["$225"],
       "primaryCost": "$225"
     },
     "notes": [],
@@ -362,18 +336,10 @@
         "https://www.playnsports.com/find-camps-clinics/",
         "https://www.playnsports.com/sign-up/"
       ],
-      "costs": [
-        "$350",
-        "$200",
-        "$200",
-        "$200",
-        "$200"
-      ],
+      "costs": ["$350", "$200", "$200", "$200", "$200"],
       "primaryCost": "$350"
     },
-    "notes": [
-      "Price mismatch: DB=$200 - $350 vs Page=$350"
-    ],
+    "notes": ["Price mismatch: DB=$200 - $350 vs Page=$350"],
     "timestamp": "2026-04-03T04:27:17.227Z"
   },
   {
@@ -445,9 +411,7 @@
         "https://www.surveygizmo.com/s3/3378290/Athlete-Contact-on-Camp-Directory-Site",
         "https://baseballrecruitcamps.com/camps/canisius-college-golden-griffins-summer-baseball-camp/#"
       ],
-      "costs": [
-        "$175"
-      ],
+      "costs": ["$175"],
       "primaryCost": "$175"
     },
     "notes": [],
@@ -523,10 +487,7 @@
         "https://www.charlestonsouthern.edu/admissions/campus-visit/",
         "https://apply.charlestonsouthern.edu/register/?id=c8ce2eef-c948-4ceb-9ba5-1f5549cbda84&landing-page=ContactUs&"
       ],
-      "costs": [
-        "$1,000",
-        "$1,000"
-      ]
+      "costs": ["$1,000", "$1,000"]
     },
     "notes": [
       "Blacklisted domain: https://www.ussportscamps.com/baseball/nike/nike-baseball-camp-charleston-southern-university"
@@ -911,11 +872,7 @@
         "https://www.playnsports.com/find-camps-clinics/",
         "https://www.playnsports.com/sign-up/"
       ],
-      "costs": [
-        "$295",
-        "$295",
-        "$295"
-      ],
+      "costs": ["$295", "$295", "$295"],
       "primaryCost": "$295"
     },
     "notes": [],
@@ -941,19 +898,10 @@
         "https://www.playnsports.com/find-camps-clinics/",
         "https://www.playnsports.com/sign-up/"
       ],
-      "costs": [
-        "$250.00",
-        "$250",
-        "$450",
-        "$450",
-        "$450",
-        "$250"
-      ],
+      "costs": ["$250.00", "$250", "$450", "$450", "$450", "$250"],
       "primaryCost": "$250.00"
     },
-    "notes": [
-      "Price mismatch: DB=$250 - $450 vs Page=$250.00"
-    ],
+    "notes": ["Price mismatch: DB=$250 - $450 vs Page=$250.00"],
     "timestamp": "2026-04-03T04:30:38.151Z"
   },
   {
@@ -976,15 +924,10 @@
         "https://register.ryzer.com/terms/",
         "https://register.ryzer.com/privacy/"
       ],
-      "costs": [
-        "$138",
-        "$125"
-      ],
+      "costs": ["$138", "$125"],
       "primaryCost": "$138"
     },
-    "notes": [
-      "Price mismatch: DB=$125 - $138 vs Page=$138"
-    ],
+    "notes": ["Price mismatch: DB=$125 - $138 vs Page=$138"],
     "timestamp": "2026-04-03T04:30:49.072Z"
   },
   {
@@ -1033,13 +976,7 @@
         "https://give.fairfield.edu/campaigns/38466/donations/new?a=7033348&amt=100.00",
         "https://www.fairfield.edu/student-life/dining/index.html"
       ],
-      "costs": [
-        "$50",
-        "$100",
-        "$250",
-        "$500",
-        "$1,000"
-      ]
+      "costs": ["$50", "$100", "$250", "$500", "$1,000"]
     },
     "notes": [
       "Blacklisted domain: https://www.ussportscamps.com/baseball/nike/fairfield-university1"
@@ -1066,17 +1003,10 @@
         "https://www.playnsports.com/find-camps-clinics/",
         "https://www.playnsports.com/sign-up/"
       ],
-      "costs": [
-        "$1,000",
-        "$750",
-        "$500",
-        "$800"
-      ],
+      "costs": ["$1,000", "$750", "$500", "$800"],
       "primaryCost": "$1,000"
     },
-    "notes": [
-      "Price mismatch: DB=$500 - $800 vs Page=$1,000"
-    ],
+    "notes": ["Price mismatch: DB=$500 - $800 vs Page=$1,000"],
     "timestamp": "2026-04-03T04:31:40.628Z"
   },
   {
@@ -1202,9 +1132,7 @@
         "https://www.playnsports.com/find-camps-clinics/",
         "https://www.playnsports.com/sign-up/"
       ],
-      "costs": [
-        "$275"
-      ],
+      "costs": ["$275"],
       "primaryCost": "$275"
     },
     "notes": [],
@@ -1328,14 +1256,7 @@
         "https://www.playnsports.com/find-camps-clinics/",
         "https://www.playnsports.com/sign-up/"
       ],
-      "costs": [
-        "$175",
-        "$50",
-        "$145",
-        "$50",
-        "$145",
-        "$175"
-      ],
+      "costs": ["$175", "$50", "$145", "$50", "$145", "$175"],
       "primaryCost": "$175"
     },
     "notes": [],
@@ -1385,11 +1306,7 @@
         "https://www.jamesramseybaseballcamps.com/register.cfm",
         "https://www.jamesramseybaseballcamps.com/pre-spring-prospect-camp.cfm"
       ],
-      "costs": [
-        "$422.00",
-        "$422.00",
-        "$422.00"
-      ],
+      "costs": ["$422.00", "$422.00", "$422.00"],
       "primaryCost": "$422.00"
     },
     "notes": [],
@@ -1439,9 +1356,7 @@
         "https://www.hofstra.edu/academics/ce/summer-camp/index.html",
         "https://www.hofstra.edu/academics/ce/summer-camp/index.html"
       ],
-      "costs": [
-        "$780"
-      ],
+      "costs": ["$780"],
       "primaryCost": "$780"
     },
     "notes": [],
@@ -1506,19 +1421,10 @@
         "https://register.ryzer.com/terms/",
         "https://register.ryzer.com/privacy/"
       ],
-      "costs": [
-        "$242.50",
-        "$225.00",
-        "$242.50",
-        "$225.00",
-        "$242.50",
-        "$225"
-      ],
+      "costs": ["$242.50", "$225.00", "$242.50", "$225.00", "$242.50", "$225"],
       "primaryCost": "$242.50"
     },
-    "notes": [
-      "Price mismatch: DB=$225 - $242.5 vs Page=$242.50"
-    ],
+    "notes": ["Price mismatch: DB=$225 - $242.5 vs Page=$242.50"],
     "timestamp": "2026-04-03T04:38:15.032Z"
   },
   {
@@ -1755,13 +1661,7 @@
         "https://offcampushousing.bellarmine.edu/",
         "https://www.bellarmine.edu/campus-ministry/index.php"
       ],
-      "costs": [
-        "$1,367",
-        "$685",
-        "$1,199",
-        "$1,370",
-        "$1,099"
-      ]
+      "costs": ["$1,367", "$685", "$1,199", "$1,370", "$1,099"]
     },
     "notes": [],
     "timestamp": "2026-04-03T04:42:03.113Z"
@@ -1882,9 +1782,7 @@
         "https://gogriffs.com/news/2024/3/14/dates-announced-for-summer-baseball-camp.aspx#main-content",
         "https://gogriffs.com/sports/baseball"
       ],
-      "costs": [
-        "$225"
-      ],
+      "costs": ["$225"],
       "primaryCost": "$225"
     },
     "notes": [],
@@ -1934,11 +1832,7 @@
         "https://www.cofcbaseballcamps.com/#",
         "https://www.cofcbaseballcamps.com/elite-prospect-camps.cfm"
       ],
-      "costs": [
-        "$138.75",
-        "$125",
-        "$100"
-      ]
+      "costs": ["$138.75", "$125", "$100"]
     },
     "notes": [],
     "timestamp": "2026-04-03T04:44:11.940Z"
@@ -1963,14 +1857,9 @@
         "https://www.charlestonsouthern.edu/admissions/campus-visit/",
         "https://apply.charlestonsouthern.edu/register/?id=c8ce2eef-c948-4ceb-9ba5-1f5549cbda84&landing-page=ContactUs&"
       ],
-      "costs": [
-        "$1,000",
-        "$1,000"
-      ]
+      "costs": ["$1,000", "$1,000"]
     },
-    "notes": [
-      "Price mismatch: DB=$100 - $365 vs Page=$1,000"
-    ],
+    "notes": ["Price mismatch: DB=$100 - $365 vs Page=$1,000"],
     "timestamp": "2026-04-03T04:44:31.316Z"
   },
   {
@@ -1993,9 +1882,7 @@
         "https://subscribe.cincinnati.com/rr/masthead?gps-source=CPMASTHEAD&itm_campaign=2026ENTMARACTA&itm_medium=ONSITE&success-url=https%3A%2F%2Fwww.cincinnati.com%2F",
         "https://advertising.usatoday.com/advertise-with-us/?cid=Web_LiQ_Network_AdvertiseWithUs_AdvertiseInquiry&publication=cincinnaticom_the_enquirer&utm_source=local_publication&utm_medium=menu&utm_campaign=advertise_with_us"
       ],
-      "costs": [
-        "$149"
-      ]
+      "costs": ["$149"]
     },
     "notes": [],
     "timestamp": "2026-04-03T04:44:48.200Z"
@@ -2063,9 +1950,7 @@
       "campPOC": null,
       "campTiers": [],
       "address": null,
-      "subLinks": [
-        "https://www.zhihu.com/org/signup"
-      ]
+      "subLinks": ["https://www.zhihu.com/org/signup"]
     },
     "notes": [],
     "timestamp": "2026-04-03T04:45:44.072Z"
@@ -2129,17 +2014,9 @@
         "https://give.fairfield.edu/campaigns/38466/donations/new?a=7033348&amt=100.00",
         "https://www.fairfield.edu/student-life/dining/index.html"
       ],
-      "costs": [
-        "$50",
-        "$100",
-        "$250",
-        "$500",
-        "$1,000"
-      ]
+      "costs": ["$50", "$100", "$250", "$500", "$1,000"]
     },
-    "notes": [
-      "Price mismatch: DB=$369 vs Page=$50"
-    ],
+    "notes": ["Price mismatch: DB=$369 vs Page=$50"],
     "timestamp": "2026-04-03T04:46:36.978Z"
   },
   {
@@ -2210,9 +2087,7 @@
         "https://www.playnsports.com/find-camps-clinics/",
         "https://www.playnsports.com/sign-up/"
       ],
-      "costs": [
-        "$275"
-      ],
+      "costs": ["$275"],
       "primaryCost": "$275"
     },
     "notes": [],
@@ -2334,14 +2209,7 @@
         "https://www.playnsports.com/find-camps-clinics/",
         "https://www.playnsports.com/sign-up/"
       ],
-      "costs": [
-        "$175",
-        "$50",
-        "$145",
-        "$50",
-        "$145",
-        "$175"
-      ],
+      "costs": ["$175", "$50", "$145", "$50", "$145", "$175"],
       "primaryCost": "$175"
     },
     "notes": [],
@@ -2438,9 +2306,7 @@
         "https://www.hofstra.edu/academics/ce/summer-camp/index.html",
         "https://www.hofstra.edu/academics/ce/summer-camp/index.html"
       ],
-      "costs": [
-        "$780"
-      ],
+      "costs": ["$780"],
       "primaryCost": "$780"
     },
     "notes": [],
@@ -2490,10 +2356,7 @@
         "https://fightingillini.com/sports/baseball",
         "https://fightingillini.com/sports/baseball/schedule"
       ],
-      "costs": [
-        "$59.99",
-        "$109.99"
-      ]
+      "costs": ["$59.99", "$109.99"]
     },
     "notes": [],
     "timestamp": "2026-04-03T04:51:42.205Z"
@@ -2518,15 +2381,10 @@
         "https://gosycamores.com/sports/baseball",
         "https://gosycamores.com/sports/baseball/schedule"
       ],
-      "costs": [
-        "$150",
-        "$100"
-      ],
+      "costs": ["$150", "$100"],
       "primaryCost": "$150"
     },
-    "notes": [
-      "Price mismatch: DB=$100 - $150 vs Page=$150"
-    ],
+    "notes": ["Price mismatch: DB=$100 - $150 vs Page=$150"],
     "timestamp": "2026-04-03T04:52:21.604Z"
   },
   {
@@ -2597,9 +2455,7 @@
         "https://subscribe.jacksonville.com/rr/masthead?gps-source=CPMASTHEAD&itm_campaign=2026ENTMARACTA&itm_medium=ONSITE&success-url=https%3A%2F%2Fwww.jacksonville.com%2F",
         "https://advertising.usatoday.com/advertise-with-us/?cid=Web_LiQ_Network_AdvertiseWithUs_AdvertiseInquiry&publication=the_florida_times_union&utm_source=local_publication&utm_medium=menu&utm_campaign=advertise_with_us"
       ],
-      "costs": [
-        "$149"
-      ]
+      "costs": ["$149"]
     },
     "notes": [],
     "timestamp": "2026-04-03T04:53:34.022Z"
@@ -2918,10 +2774,7 @@
         "https://camps.mgoblue.com/baseball",
         "https://camps.mgoblue.com/baseball"
       ],
-      "costs": [
-        "$424.00",
-        "$424.00"
-      ],
+      "costs": ["$424.00", "$424.00"],
       "primaryCost": "$424.00"
     },
     "notes": [],
@@ -3091,10 +2944,7 @@
         "https://www.danskirkabaseballcamps.com/camps.cfm",
         "https://www.danskirkabaseballcamps.com/3-day-youth-camp.cfm"
       ],
-      "costs": [
-        "$111.00",
-        "$111.00"
-      ],
+      "costs": ["$111.00", "$111.00"],
       "primaryCost": "$111.00"
     },
     "notes": [],
@@ -3304,9 +3154,7 @@
         "https://nuhuskies.com/sports/baseball/schedule",
         "https://nuhuskies.com/sports/baseball/roster"
       ],
-      "costs": [
-        "$100"
-      ],
+      "costs": ["$100"],
       "primaryCost": "$100"
     },
     "notes": [],
@@ -3428,9 +3276,7 @@
         "https://www.surveygizmo.com/s3/3378290/Athlete-Contact-on-Camp-Directory-Site",
         "https://baseballrecruitcamps.com/camps/university-at-albany-great-danes-summer-baseball-prospect-camp/#"
       ],
-      "costs": [
-        "$165"
-      ],
+      "costs": ["$165"],
       "primaryCost": "$165"
     },
     "notes": [],
@@ -3494,9 +3340,7 @@
         "https://www.surveygizmo.com/s3/3378290/Athlete-Contact-on-Camp-Directory-Site",
         "https://baseballrecruitcamps.com/camps/army-west-point-black-knights-baseball-prospect-clinic/#"
       ],
-      "costs": [
-        "$150"
-      ],
+      "costs": ["$150"],
       "primaryCost": "$150"
     },
     "notes": [
@@ -3611,11 +3455,7 @@
         "https://www.bgsubaseballcamp.com/register.cfm",
         "https://www.bgsubaseballcamp.com/falcon-prospect-camps.cfm"
       ],
-      "costs": [
-        "$130",
-        "$150",
-        "$175"
-      ]
+      "costs": ["$130", "$150", "$175"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:20:49.337Z"
@@ -3639,11 +3479,7 @@
         "https://sites.google.com/brown.edu/bearsbaseballcamps-401baseball/home#h.7h41b1so0ful",
         "https://sites.google.com/brown.edu/bearsbaseballcamps-401baseball/home#h.kydji5f7p4qm"
       ],
-      "costs": [
-        "$325",
-        "$325",
-        "$400"
-      ],
+      "costs": ["$325", "$325", "$400"],
       "primaryCost": "$325"
     },
     "notes": [],
@@ -3722,10 +3558,7 @@
         "https://www.surveygizmo.com/s3/3378290/Athlete-Contact-on-Camp-Directory-Site",
         "https://baseballrecruitcamps.com/camps/brigham-young-university-cougars-high-school-baseball-camp/#"
       ],
-      "costs": [
-        "$469",
-        "$359"
-      ],
+      "costs": ["$469", "$359"],
       "primaryCost": "$469"
     },
     "notes": [],
@@ -3775,13 +3608,7 @@
         "https://info.collegebaseballcamps.com/csf-baseball/#about",
         "https://info.collegebaseballcamps.com/csf-baseball/#Events-New"
       ],
-      "costs": [
-        "$375.00",
-        "$375.00",
-        "$375.00",
-        "$375.00",
-        "$375.00"
-      ],
+      "costs": ["$375.00", "$375.00", "$375.00", "$375.00", "$375.00"],
       "primaryCost": "$375.00"
     },
     "notes": [],
@@ -3927,10 +3754,7 @@
         "https://www.queens.edu/campus-directory/",
         "https://www.queens.edu/living/living-on-campus/"
       ],
-      "costs": [
-        "$100",
-        "$500"
-      ]
+      "costs": ["$100", "$500"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:26:00.960Z"
@@ -3970,12 +3794,7 @@
         "https://www.brettborettibaseballcamp.com/register.cfm",
         "https://www.brettborettibaseballcamp.com/brett-boretti-prospect-camp.cfm"
       ],
-      "costs": [
-        "$404.00",
-        "$404.00",
-        "$404.00",
-        "$404.00"
-      ],
+      "costs": ["$404.00", "$404.00", "$404.00", "$404.00"],
       "primaryCost": "$404.00"
     },
     "notes": [],
@@ -4047,9 +3866,7 @@
         "https://www.surveygizmo.com/s3/3378290/Athlete-Contact-on-Camp-Directory-Site",
         "https://baseballrecruitcamps.com/camps/cornell-university-big-red-summer-baseball-prospect-camp/#"
       ],
-      "costs": [
-        "$430"
-      ],
+      "costs": ["$430"],
       "primaryCost": "$430"
     },
     "notes": [],
@@ -4099,9 +3916,7 @@
         "https://www.umassd.edu/undergraduate/oncampus/",
         "https://www.umassd.edu/housing/living-on-campus/firstyear/"
       ],
-      "costs": [
-        "$134"
-      ]
+      "costs": ["$134"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:30:33.612Z"
@@ -4174,11 +3989,7 @@
         "https://info.collegebaseballcamps.com/bluehens/#Events-New",
         "https://info.collegebaseballcamps.com/bluehens/#Coaches"
       ],
-      "costs": [
-        "$275.00",
-        "$325.00",
-        "$325.00"
-      ],
+      "costs": ["$275.00", "$325.00", "$325.00"],
       "primaryCost": "$275.00"
     },
     "notes": [],
@@ -4228,9 +4039,7 @@
         "https://ecupirates.com/sports/baseball#",
         "https://ecupirates.com/sports/baseball#"
       ],
-      "costs": [
-        "$129.99"
-      ],
+      "costs": ["$129.99"],
       "primaryCost": "$129.99"
     },
     "notes": [],
@@ -4685,9 +4494,7 @@
       "campPOC": null,
       "campTiers": [],
       "address": null,
-      "subLinks": [
-        "https://www.fordhambaseballcamps.com/#sitePageContent"
-      ]
+      "subLinks": ["https://www.fordhambaseballcamps.com/#sitePageContent"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:35:50.596Z"
@@ -5111,9 +4918,7 @@
         "https://www.hcubaseballcamps.com/register.cfm",
         "https://www.hcubaseballcamps.com/summer-youth-camp-grades-1_-8.cfm"
       ],
-      "costs": [
-        "$164.00"
-      ],
+      "costs": ["$164.00"],
       "primaryCost": "$164.00"
     },
     "notes": [],
@@ -5178,11 +4983,7 @@
         "https://www.jeffmercerbaseballcamps.com/",
         "https://www.jeffmercerbaseballcamps.com/events.cfm"
       ],
-      "costs": [
-        "$169",
-        "$149",
-        "$129"
-      ],
+      "costs": ["$169", "$149", "$129"],
       "primaryCost": "$169"
     },
     "notes": [],
@@ -5208,9 +5009,7 @@
         "https://ionagaels.com/news/2024/10/14/iona-baseball-announces-2024-camps.aspx#main-content",
         "https://ionagaels.com/schedule.aspx?path=baseball"
       ],
-      "costs": [
-        "$300"
-      ],
+      "costs": ["$300"],
       "primaryCost": "$300"
     },
     "notes": [],
@@ -5236,12 +5035,7 @@
         "https://www.jmu.edu/events/index.shtml",
         "https://www.jmu.edu/healthcenter/index.shtml"
       ],
-      "costs": [
-        "$1,000",
-        "$500",
-        "$250",
-        "$100"
-      ]
+      "costs": ["$1,000", "$500", "$250", "$100"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:40:21.881Z"
@@ -5290,9 +5084,7 @@
         "https://www.kent.edu/university-advising/advising-collegescampuses",
         "https://www.kent.edu/admissions?au=ashtabula"
       ],
-      "costs": [
-        "$375"
-      ]
+      "costs": ["$375"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:41:01.453Z"
@@ -5600,9 +5392,7 @@
         "https://www.oasyssports.com/RiverdaleBaseballCamps/global-login.cfm",
         "https://www.oasyssports.com/RiverdaleBaseballCamps/global-login.cfm"
       ],
-      "costs": [
-        "$125"
-      ],
+      "costs": ["$125"],
       "primaryCost": "$125"
     },
     "notes": [],
@@ -5724,11 +5514,7 @@
         "http://www.craiggibsonbaseball.com/directions.html",
         "https://campscui.active.com/orgs/MercerBaseballCamps?orglink=camps-registration"
       ],
-      "costs": [
-        "$190",
-        "$190",
-        "$245"
-      ],
+      "costs": ["$190", "$190", "$245"],
       "primaryCost": "$190"
     },
     "notes": [],
@@ -5826,14 +5612,7 @@
         "https://baseball.sportscampsatuwm.com/camps.cfm",
         "https://baseball.sportscampsatuwm.com/fall-prospect-camp.cfm"
       ],
-      "costs": [
-        "$160",
-        "$150",
-        "$185",
-        "$175",
-        "$212",
-        "$200"
-      ]
+      "costs": ["$160", "$150", "$185", "$175", "$212", "$200"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:49:31.795Z"
@@ -5906,9 +5685,7 @@
         "https://baseballcamps.monmouthhawks.com/register.cfm",
         "https://baseballcamps.monmouthhawks.com/winter-baseball-clinics.cfm"
       ],
-      "costs": [
-        "$135"
-      ]
+      "costs": ["$135"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:50:24.636Z"
@@ -5957,9 +5734,7 @@
         "https://www.wolfpackbaseballcamps.com/camps.cfm",
         "https://www.wolfpackbaseballcamps.com/offseason-winter-throwing-clinics.cfm"
       ],
-      "costs": [
-        "$500"
-      ]
+      "costs": ["$500"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:51:21.974Z"
@@ -5999,10 +5774,7 @@
         "https://www.jakeangierbaseballcamps.com/homepage_-events.cfm",
         "https://www.jakeangierbaseballcamps.com/january-prospect-camp.cfm"
       ],
-      "costs": [
-        "$199.50",
-        "$188"
-      ]
+      "costs": ["$199.50", "$188"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:51:57.479Z"
@@ -6075,14 +5847,7 @@
         "https://www.nsubaseballcamps.com/our-camps.cfm",
         "https://www.nsubaseballcamps.com/fall-showcase.cfm"
       ],
-      "costs": [
-        "$160",
-        "$150",
-        "$212",
-        "$200",
-        "$240",
-        "$225"
-      ]
+      "costs": ["$160", "$150", "$212", "$200", "$240", "$225"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:53:11.944Z"
@@ -6438,9 +6203,7 @@
         "https://www.bearsbaseballcamps.com/camps.cfm",
         "https://www.bearsbaseballcamps.com/youth-team-workout.cfm"
       ],
-      "costs": [
-        "$110"
-      ]
+      "costs": ["$110"]
     },
     "notes": [],
     "timestamp": "2026-04-03T05:55:01.845Z"
@@ -6513,18 +6276,9 @@
         "https://www.northwesternbaseballcamps.com/our-camps.cfm",
         "https://www.northwesternbaseballcamps.com/2026-winter-prospect-camps.cfm"
       ],
-      "costs": [
-        "$211",
-        "$200",
-        "$237.50",
-        "$225",
-        "$316.50",
-        "$300"
-      ]
+      "costs": ["$211", "$200", "$237.50", "$225", "$316.50", "$300"]
     },
-    "notes": [
-      "Price mismatch: DB=$427 - $427 vs Page=$211"
-    ],
+    "notes": ["Price mismatch: DB=$427 - $427 vs Page=$211"],
     "timestamp": "2026-04-03T05:55:53.606Z"
   },
   {
@@ -6596,9 +6350,7 @@
       ],
       "primaryCost": "$200"
     },
-    "notes": [
-      "Price mismatch: DB=$200 - $335 vs Page=$200"
-    ],
+    "notes": ["Price mismatch: DB=$200 - $335 vs Page=$200"],
     "timestamp": "2026-04-03T05:56:52.073Z"
   },
   {
@@ -6660,9 +6412,7 @@
         "https://ohiostatebuckeyes.com/sports/baseball",
         "https://ohiostatebuckeyes.com/sports/baseball/schedule"
       ],
-      "costs": [
-        "$145"
-      ]
+      "costs": ["$145"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:00:20.368Z"
@@ -6687,14 +6437,7 @@
         "https://skipjohnsonbaseballcamps.com/camp1.html",
         "https://skipjohnsonbaseballcamps.com/info1.html"
       ],
-      "costs": [
-        "$135",
-        "$250",
-        "$325",
-        "$135",
-        "$250",
-        "$325"
-      ]
+      "costs": ["$135", "$250", "$325", "$135", "$250", "$325"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:00:40.170Z"
@@ -6791,10 +6534,7 @@
         "https://www.omahabaseballcamps.com/pitching-prospect-camp.cfm",
         "https://www.omahabaseballcamps.com/youth-hitting-clinic.cfm"
       ],
-      "costs": [
-        "$105.50",
-        "$100"
-      ]
+      "costs": ["$105.50", "$100"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:01:51.980Z"
@@ -6843,10 +6583,7 @@
         "https://www.duckbaseballcamps.com/register.cfm",
         "https://www.duckbaseballcamps.com/pre-season-skills-clinic.cfm"
       ],
-      "costs": [
-        "$105",
-        "$100"
-      ]
+      "costs": ["$105", "$100"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:02:35.252Z"
@@ -6885,9 +6622,7 @@
       ],
       "primaryCost": "$475"
     },
-    "notes": [
-      "Price mismatch: DB=$140 - $475 vs Page=$475"
-    ],
+    "notes": ["Price mismatch: DB=$140 - $475 vs Page=$475"],
     "timestamp": "2026-04-03T06:02:53.412Z"
   },
   {
@@ -6949,15 +6684,10 @@
         "http://live.halfmiletiming.com/meets/913/events",
         "https://gopsusports.com/sports/baseball"
       ],
-      "costs": [
-        "$499",
-        "$175"
-      ],
+      "costs": ["$499", "$175"],
       "primaryCost": "$499"
     },
-    "notes": [
-      "Price mismatch: DB=$175 - $499 vs Page=$499"
-    ],
+    "notes": ["Price mismatch: DB=$175 - $499 vs Page=$499"],
     "timestamp": "2026-04-03T06:04:11.475Z"
   },
   {
@@ -6980,13 +6710,7 @@
         "https://www.malibubaseballcamps.com/register.cfm",
         "https://www.malibubaseballcamps.com/youth-camp.cfm"
       ],
-      "costs": [
-        "$479.00",
-        "$479.00",
-        "$479.00",
-        "$479.00",
-        "$479.00"
-      ],
+      "costs": ["$479.00", "$479.00", "$479.00", "$479.00", "$479.00"],
       "primaryCost": "$479.00"
     },
     "notes": [],
@@ -7012,12 +6736,7 @@
         "https://www.pittbaseballcamp.com/camps.cfm",
         "https://www.pittbaseballcamp.com/prospect-camps.cfm"
       ],
-      "costs": [
-        "$480.00",
-        "$480.00",
-        "$480.00",
-        "$480.00"
-      ],
+      "costs": ["$480.00", "$480.00", "$480.00", "$480.00"],
       "primaryCost": "$480.00"
     },
     "notes": [],
@@ -7359,12 +7078,7 @@
         "https://www.princetonsportscamps.com/Home_Page.htm",
         "https://www.princetonsportscamps.com/faq.htm"
       ],
-      "costs": [
-        "$825.00",
-        "$850.00",
-        "$825.00",
-        "$850.00"
-      ],
+      "costs": ["$825.00", "$850.00", "$825.00", "$850.00"],
       "primaryCost": "$825.00"
     },
     "notes": [],
@@ -8080,9 +7794,7 @@
         "https://www.rutgersbaseballcamps.com/camps.cfm",
         "https://www.rutgersbaseballcamps.com/2026-team-camp-payment-link.cfm"
       ],
-      "costs": [
-        "$424.00"
-      ],
+      "costs": ["$424.00"],
       "primaryCost": "$424.00"
     },
     "notes": [],
@@ -8222,9 +7934,7 @@
         "https://www.saintmarys.edu/admission-aid/visit-campus",
         "https://www.saintmarys.edu/housing/living-campus"
       ],
-      "costs": [
-        "$1,000"
-      ]
+      "costs": ["$1,000"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:10:09.114Z"
@@ -8301,11 +8011,7 @@
         "https://www.subaseballcamps.com/2025-one-day-team-camps.cfm",
         "https://www.subaseballcamps.com/youth-summer-baseball-camps.cfm"
       ],
-      "costs": [
-        "$200.00",
-        "$243.50",
-        "$225"
-      ]
+      "costs": ["$200.00", "$243.50", "$225"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:18:34.445Z"
@@ -8448,10 +8154,7 @@
         "https://sienacamps.com/#camps",
         "https://sienagirlsbasketballcamps.totalcamps.com/shop/product/587656"
       ],
-      "costs": [
-        "$305",
-        "$305.00"
-      ]
+      "costs": ["$305", "$305.00"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:19:13.716Z"
@@ -8490,12 +8193,7 @@
         "https://www.jagbaseballcamps.com/prospect-camp.cfm",
         "https://www.jagbaseballcamps.com/mark-calvi-baseball-camp.cfm"
       ],
-      "costs": [
-        "$240",
-        "$225",
-        "$212",
-        "$200"
-      ]
+      "costs": ["$240", "$225", "$212", "$200"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:19:22.289Z"
@@ -8520,11 +8218,7 @@
         "https://www.cofcbaseballcamps.com/#",
         "https://www.cofcbaseballcamps.com/elite-prospect-camps.cfm"
       ],
-      "costs": [
-        "$138.75",
-        "$125",
-        "$100"
-      ]
+      "costs": ["$138.75", "$125", "$100"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:19:30.030Z"
@@ -8625,11 +8319,7 @@
         "https://www.cofcbaseballcamps.com/#",
         "https://www.cofcbaseballcamps.com/elite-prospect-camps.cfm"
       ],
-      "costs": [
-        "$138.75",
-        "$125",
-        "$100"
-      ]
+      "costs": ["$138.75", "$125", "$100"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:25:18.556Z"
@@ -8946,12 +8636,7 @@
         "https://www.valpo.edu/student-life/recreation/",
         "https://www.valpo.edu/about/campus/"
       ],
-      "costs": [
-        "$100",
-        "$250",
-        "$500",
-        "$1,000"
-      ]
+      "costs": ["$100", "$250", "$500", "$1,000"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:26:31.987Z"
@@ -8976,9 +8661,7 @@
         "https://vucommodores.com/sports/baseball/",
         "https://vucommodores.com/sports/baseball/"
       ],
-      "costs": [
-        "$685"
-      ],
+      "costs": ["$685"],
       "primaryCost": "$685"
     },
     "notes": [],
@@ -9640,10 +9323,7 @@
         "https://rt.trackscoreboard.com/meets/4326/events",
         "https://gohuskies.com/sports/baseball"
       ],
-      "costs": [
-        "$500.00",
-        "$200.00"
-      ],
+      "costs": ["$500.00", "$200.00"],
       "primaryCost": "$500.00"
     },
     "notes": [],
@@ -9693,9 +9373,7 @@
         "https://www.westgatech.edu/dental-hygiene-clinic-services-and-fees/",
         "https://www.westgatech.edu/program-explorer/available-programs-by-campus/"
       ],
-      "costs": [
-        "$107"
-      ],
+      "costs": ["$107"],
       "primaryCost": "$107"
     },
     "notes": [],
@@ -9759,12 +9437,7 @@
         "https://register.ryzer.com/terms/",
         "https://register.ryzer.com/privacy/"
       ],
-      "costs": [
-        "$132.50",
-        "$125",
-        "$106",
-        "$100"
-      ],
+      "costs": ["$132.50", "$125", "$106", "$100"],
       "primaryCost": "$132.50"
     },
     "notes": [],
@@ -9862,10 +9535,7 @@
         "https://www.summercamp.com/search.php",
         "https://www.summercamp.com/index.php"
       ],
-      "costs": [
-        "$100",
-        "$500"
-      ],
+      "costs": ["$100", "$500"],
       "primaryCost": "$100"
     },
     "notes": [],
@@ -9968,9 +9638,7 @@
         "https://www.southernjaguarsbaseballcamps.com/camps.cfm",
         "https://www.southernjaguarsbaseballcamps.com/prospect-camp1.cfm"
       ],
-      "costs": [
-        "$105.00"
-      ],
+      "costs": ["$105.00"],
       "primaryCost": "$105.00"
     },
     "notes": [
@@ -10290,10 +9958,7 @@
         "https://www.southernmissbaseballcamps.com/summer-kids-camps.cfm",
         "https://www.southernmissbaseballcamps.com/prospect-id-camps.cfm"
       ],
-      "costs": [
-        "$269.00",
-        "$269.00"
-      ],
+      "costs": ["$269.00", "$269.00"],
       "primaryCost": "$269.00"
     },
     "notes": [],
@@ -10675,10 +10340,7 @@
         "https://www.texanbaseballcamps.com/prospect-camps.cfm",
         "https://www.texanbaseballcamps.com/kids-camp.cfm"
       ],
-      "costs": [
-        "$164.00",
-        "$164.00"
-      ],
+      "costs": ["$164.00", "$164.00"],
       "primaryCost": "$164.00"
     },
     "notes": [],
@@ -10728,13 +10390,7 @@
         "https://www.tennesseebaseballcamp.com/camps.cfm",
         "https://www.tennesseebaseballcamp.com/ut-baseball-prospect-camp.cfm"
       ],
-      "costs": [
-        "$420.00",
-        "$420.00",
-        "$420.00",
-        "$420.00",
-        "$420.00"
-      ],
+      "costs": ["$420.00", "$420.00", "$420.00", "$420.00", "$420.00"],
       "primaryCost": "$420.00"
     },
     "notes": [],
@@ -10981,10 +10637,7 @@
         "https://texastech.com/sports/2024/8/26/texas-tech-sports-camps#",
         "https://viewer.mapme.com/texastechcampustour"
       ],
-      "costs": [
-        "$135",
-        "$242"
-      ]
+      "costs": ["$135", "$242"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:40:37.683Z"
@@ -11035,9 +10688,7 @@
         "https://www.summercamp.com/search.php",
         "https://www.summercamp.com/index.php"
       ],
-      "costs": [
-        "$150"
-      ],
+      "costs": ["$150"],
       "primaryCost": "$150"
     },
     "notes": [
@@ -11335,9 +10986,7 @@
         "https://www.troy.edu/student-life-resources/index.html#campus-media",
         "https://www.troy.edu/student-life-resources/campus-recreation/index.html"
       ],
-      "costs": [
-        "$1,250"
-      ],
+      "costs": ["$1,250"],
       "primaryCost": "$1,250"
     },
     "notes": [],
@@ -11633,12 +11282,7 @@
         "https://www.dunnbaseballacademy.com/head-coach.cfm",
         "https://register.ryzer.com/terms/"
       ],
-      "costs": [
-        "$212.00",
-        "$200.00",
-        "$212",
-        "$200"
-      ],
+      "costs": ["$212.00", "$200.00", "$212", "$200"],
       "primaryCost": "$212.00"
     },
     "notes": [],
@@ -12008,10 +11652,7 @@
         "https://www.summercamp.com/search.php",
         "https://www.summercamp.com/index.php"
       ],
-      "costs": [
-        "$150",
-        "$700"
-      ],
+      "costs": ["$150", "$700"],
       "primaryCost": "$150"
     },
     "notes": [
@@ -12039,13 +11680,7 @@
         "https://www.playnsports.com/find-camps-clinics/",
         "https://www.playnsports.com/sign-up/"
       ],
-      "costs": [
-        "$299",
-        "$299",
-        "$299",
-        "$299",
-        "$299"
-      ],
+      "costs": ["$299", "$299", "$299", "$299", "$299"],
       "primaryCost": "$299"
     },
     "notes": [
@@ -12665,13 +12300,7 @@
         "https://goriverhawks.com/sports/baseball#main-content",
         "https://goriverhawks.com/common/controls/adhandler.aspx?ad_id=20&target=https://www.givecampus.com/wnzuw9"
       ],
-      "costs": [
-        "$840",
-        "$1,000",
-        "$635",
-        "$110",
-        "$100"
-      ]
+      "costs": ["$840", "$1,000", "$635", "$110", "$100"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:47:13.345Z"
@@ -12696,10 +12325,7 @@
         "https://www.retrieverbaseballcamps.com/camps.cfm",
         "https://www.retrieverbaseballcamps.com/summer-youth-camp.cfm"
       ],
-      "costs": [
-        "$240",
-        "$225"
-      ]
+      "costs": ["$240", "$225"]
     },
     "notes": [
       "Valid school domain but data is thin (missing cost/email); triggering search fallback"
@@ -12767,9 +12393,7 @@
     "newUrl": null,
     "pricingMatch": null,
     "extractedData": {},
-    "notes": [
-      "Cannot access 'initialUrlValidated' before initialization"
-    ],
+    "notes": ["Cannot access 'initialUrlValidated' before initialization"],
     "timestamp": "2026-04-03T06:48:42.102Z"
   },
   {
@@ -12781,9 +12405,7 @@
     "newUrl": null,
     "pricingMatch": null,
     "extractedData": {},
-    "notes": [
-      "Cannot access 'initialUrlValidated' before initialization"
-    ],
+    "notes": ["Cannot access 'initialUrlValidated' before initialization"],
     "timestamp": "2026-04-03T06:48:42.193Z"
   },
   {
@@ -12795,9 +12417,7 @@
     "newUrl": null,
     "pricingMatch": null,
     "extractedData": {},
-    "notes": [
-      "Cannot access 'initialUrlValidated' before initialization"
-    ],
+    "notes": ["Cannot access 'initialUrlValidated' before initialization"],
     "timestamp": "2026-04-03T06:48:42.286Z"
   },
   {
@@ -12865,9 +12485,7 @@
     "newUrl": null,
     "pricingMatch": null,
     "extractedData": {},
-    "notes": [
-      "Cannot access 'initialUrlValidated' before initialization"
-    ],
+    "notes": ["Cannot access 'initialUrlValidated' before initialization"],
     "timestamp": "2026-04-03T06:49:31.548Z"
   },
   {
@@ -12879,9 +12497,7 @@
     "newUrl": null,
     "pricingMatch": null,
     "extractedData": {},
-    "notes": [
-      "Cannot access 'initialUrlValidated' before initialization"
-    ],
+    "notes": ["Cannot access 'initialUrlValidated' before initialization"],
     "timestamp": "2026-04-03T06:49:31.628Z"
   },
   {
@@ -12972,12 +12588,7 @@
         "https://www.givecampus.com/campaigns/78420/donations/new",
         "https://www.givecampus.com/campaigns/78420/donations/new"
       ],
-      "costs": [
-        "$100",
-        "$250",
-        "$500",
-        "$1,000"
-      ]
+      "costs": ["$100", "$250", "$500", "$1,000"]
     },
     "notes": [],
     "timestamp": "2026-04-03T06:50:27.873Z"
@@ -13344,11 +12955,7 @@
         "https://www.playnsports.com/find-camps-clinics/",
         "https://www.playnsports.com/sign-up/"
       ],
-      "costs": [
-        "$150",
-        "$100",
-        "$175"
-      ],
+      "costs": ["$150", "$100", "$175"],
       "primaryCost": "$150"
     },
     "notes": [
@@ -13639,12 +13246,7 @@
         "https://goutrgv.com/sports/baseball",
         "https://goutrgv.com/sports/baseball/schedule"
       ],
-      "costs": [
-        "$125",
-        "$125,",
-        "$150,",
-        "$175"
-      ],
+      "costs": ["$125", "$125,", "$150,", "$175"],
       "primaryCost": "$125"
     },
     "notes": [],
@@ -13670,13 +13272,7 @@
         "https://www.utsabaseballcamps.com/index.cfm",
         "https://www.utsabaseballcamps.com/youth-camps.cfm"
       ],
-      "costs": [
-        "$245.00",
-        "$245.00",
-        "$245.00",
-        "$245.00",
-        "$245.00"
-      ],
+      "costs": ["$245.00", "$245.00", "$245.00", "$245.00", "$245.00"],
       "primaryCost": "$245.00"
     },
     "notes": [],
@@ -13792,12 +13388,7 @@
         "https://goairforcefalcons.com/sports/2018/6/21/camps-baseball-html#",
         "https://goairforcefalcons.com/sports/baseball"
       ],
-      "costs": [
-        "$1,150",
-        "$850",
-        "$1,000",
-        "$700"
-      ],
+      "costs": ["$1,150", "$850", "$1,000", "$700"],
       "primaryCost": "$1,150"
     },
     "notes": [
@@ -14095,10 +13686,7 @@
         "https://www.alabamabaseballcamps.com/register.cfm",
         "https://www.alabamabaseballcamps.com/alabama-baseball-fan-day.cfm"
       ],
-      "costs": [
-        "$262.50",
-        "$262.50"
-      ],
+      "costs": ["$262.50", "$262.50"],
       "primaryCost": "$262.50"
     },
     "notes": [
@@ -14474,9 +14062,7 @@
         "https://www.appstate.edu/openhouse/",
         "https://newriverconservancy.org/event/new-river-symposium-2026"
       ],
-      "costs": [
-        "$100"
-      ]
+      "costs": ["$100"]
     },
     "notes": [],
     "timestamp": "2026-04-03T07:13:26.504Z"
@@ -14525,12 +14111,7 @@
         "https://sundevilsbaseballcamps.com/camps/",
         "https://sundevilsbaseballcamps.com/coaches/"
       ],
-      "costs": [
-        "$200",
-        "$200",
-        "$200",
-        "$200"
-      ],
+      "costs": ["$200", "$200", "$200", "$200"],
       "primaryCost": "$200"
     },
     "notes": [

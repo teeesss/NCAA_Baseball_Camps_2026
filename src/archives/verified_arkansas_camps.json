@@ -45,9 +45,7 @@
       "name": "Infield/Hitting Camp",
       "ages": "10+",
       "cost": "$255.00",
-      "sessions": [
-        { "label": "", "dates": "June 29, 2026", "time": "9am-4pm" }
-      ]
+      "sessions": [{ "label": "", "dates": "June 29, 2026", "time": "9am-4pm" }]
     },
     {
       "name": "Pitching/Arm Care",
@@ -62,9 +60,7 @@
       "name": "Catching/Hitting",
       "ages": "10+",
       "cost": "$255.00",
-      "sessions": [
-        { "label": "", "dates": "June 30, 2026", "time": "9am-4pm" }
-      ]
+      "sessions": [{ "label": "", "dates": "June 30, 2026", "time": "9am-4pm" }]
     },
     {
       "name": "High School Prospect Camp",

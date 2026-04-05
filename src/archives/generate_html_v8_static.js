@@ -1,38 +1,53 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 function esc(str) {
-    if (!str) return '';
-    return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 // Load Data
-const data = JSON.parse(fs.readFileSync('camps_data.json', 'utf8'));
+const data = JSON.parse(fs.readFileSync("camps_data.json", "utf8"));
 const lastChecked = "April 2, 2026";
 
 // Unique Conferences
-const conferences = [...new Set(data.map(c => c.conference || 'Other'))].sort();
+const conferences = [
+  ...new Set(data.map((c) => c.conference || "Other")),
+].sort();
 
 // Load Human Verifications
 let humanVerifications = {};
-if (fs.existsSync('human_verifications.json')) {
-    try {
-        humanVerifications = JSON.parse(fs.readFileSync('human_verifications.json', 'utf8'));
-    } catch (e) {
-        console.error('Error reading human_verifications.json:', e);
-    }
+if (fs.existsSync("human_verifications.json")) {
+  try {
+    humanVerifications = JSON.parse(
+      fs.readFileSync("human_verifications.json", "utf8"),
+    );
+  } catch (e) {
+    console.error("Error reading human_verifications.json:", e);
+  }
 }
 
-const diCount = data.filter(d => d.division === 'DI').length;
-const diiCount = data.filter(d => d.division === 'DII').length;
+const diCount = data.filter((d) => d.division === "DI").length;
+const diiCount = data.filter((d) => d.division === "DII").length;
 
-const priorityConfs = ["SEC", "ACC", "Big Ten", "Big 12", "Sun Belt", "Big West", "ASUN", "Ivy League"];
-const otherConfs = conferences.filter(c => !priorityConfs.includes(c) && c !== 'Other');
+const priorityConfs = [
+  "SEC",
+  "ACC",
+  "Big Ten",
+  "Big 12",
+  "Sun Belt",
+  "Big West",
+  "ASUN",
+  "Ivy League",
+];
+const otherConfs = conferences.filter(
+  (c) => !priorityConfs.includes(c) && c !== "Other",
+);
 
 const html = `
 <!DOCTYPE html>
@@ -556,8 +571,8 @@ const html = `
             <div class="hero-badge">Verified 2026 Season</div>
             <h1>NCAA Baseball Camps 2026</h1>
             <p class="subtitle">
-                <span class="desktop-text">${data.length} DI & DII Programs | ${data.filter(d => d.autoVerified).length} Verified Sessions.</span>
-                <span class="mobile-text">${data.length} Schools | ${data.filter(d => d.autoVerified).length} Verified for 2026.</span>
+                <span class="desktop-text">${data.length} DI & DII Programs | ${data.filter((d) => d.autoVerified).length} Verified Sessions.</span>
+                <span class="mobile-text">${data.length} Schools | ${data.filter((d) => d.autoVerified).length} Verified for 2026.</span>
             </p>
         </header>
 
@@ -590,11 +605,11 @@ const html = `
                 </div>
                 <div id="conf-tabs">
                     <button class="conf-btn filter-btn active" data-conf="all">All Conf</button>
-                    ${priorityConfs.map(c => `<button class="conf-btn filter-btn" data-conf="${c}">${c}</button>`).join('')}
+                    ${priorityConfs.map((c) => `<button class="conf-btn filter-btn" data-conf="${c}">${c}</button>`).join("")}
                     
                     <select id="moreConfs" class="filter-select" style="min-width: 140px; height: 38px; padding: 0 12px; font-size: 0.75rem;">
                         <option value="none">More Conferences...</option>
-                        ${otherConfs.map(c => `<option value="${c}">${c}</option>`).join('')}
+                        ${otherConfs.map((c) => `<option value="${c}">${c}</option>`).join("")}
                         <option value="Other">Other / Independent</option>
                     </select>
                 </div>
@@ -602,42 +617,69 @@ const html = `
                     <div class="stat-bubble"><strong id="dispCount">${data.length}</strong> Results</div>
                     <div class="stat-bubble"><strong>${diCount}</strong> Div I</div>
                     <div class="stat-bubble"><strong>${diiCount}</strong> Div II</div>
-                    <div class="stat-bubble"><strong>${data.filter(d => d.autoVerified).length}</strong> Verified Sessions</div>
+                    <div class="stat-bubble"><strong>${data.filter((d) => d.autoVerified).length}</strong> Verified Sessions</div>
                 </div>
             </div>
         </div>
 
         <div class="camp-grid" id="campGrid">
-            ${data.sort((a,b) => a.university.localeCompare(b.university)).map((item, index) => {
-                const isTba = !item.dates || item.dates === 'TBA';
-                let dateArr = isTba ? [] : item.dates.split(' | ');
-                
+            ${data
+              .sort((a, b) => a.university.localeCompare(b.university))
+              .map((item, index) => {
+                const isTba = !item.dates || item.dates === "TBA";
+                let dateArr = isTba ? [] : item.dates.split(" | ");
+
                 // Deduplicate and filter 2026
-                dateArr = [...new Set(dateArr)].filter(d => /2026/i.test(d) || !/\d{4}/.test(d));
+                dateArr = [...new Set(dateArr)].filter(
+                  (d) => /2026/i.test(d) || !/\d{4}/.test(d),
+                );
 
                 let displayDatesHtml;
                 if (dateArr.length === 0) {
-                    displayDatesHtml = 'TBA';
+                  displayDatesHtml = "TBA";
                 } else if (dateArr.length > 2) {
-                    displayDatesHtml = esc(dateArr.slice(0, 2).join(' | ')) + ` <span style="color:var(--text-secondary);font-size:0.8em">... (+${dateArr.length - 2})</span>`;
+                  displayDatesHtml =
+                    esc(dateArr.slice(0, 2).join(" | ")) +
+                    ` <span style="color:var(--text-secondary);font-size:0.8em">... (+${dateArr.length - 2})</span>`;
                 } else {
-                    displayDatesHtml = esc(dateArr.join(' | '));
+                  displayDatesHtml = esc(dateArr.join(" | "));
                 }
 
-                const tagClass = item.division === 'DI' ? 'tag-di' : 'tag-dii';
-                const accentClass = item.division === 'DI' ? '' : 'dii';
-                
-                // Generate Initials Fallback
-                const nameWords = item.university.replace(/University|College|State|Univ/gi, '').trim().split(' ').filter(p=>p);
-                const initials = (nameWords.length >= 2 ? (nameWords[0][0] + nameWords[1][0]) : (item.university[0] + (item.university[1]||''))).toUpperCase();
-                const rColors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#14b8a6'];
-                const bgColor = rColors[item.university.charCodeAt(0) % rColors.length];
+                const tagClass = item.division === "DI" ? "tag-di" : "tag-dii";
+                const accentClass = item.division === "DI" ? "" : "dii";
 
-                let primaryLogo = item.logoFile ? item.logoFile : (item.logoDomain ? `https://logo.clearbit.com/${item.logoDomain}` : '');
-                
+                // Generate Initials Fallback
+                const nameWords = item.university
+                  .replace(/University|College|State|Univ/gi, "")
+                  .trim()
+                  .split(" ")
+                  .filter((p) => p);
+                const initials = (
+                  nameWords.length >= 2
+                    ? nameWords[0][0] + nameWords[1][0]
+                    : item.university[0] + (item.university[1] || "")
+                ).toUpperCase();
+                const rColors = [
+                  "#ef4444",
+                  "#3b82f6",
+                  "#10b981",
+                  "#f59e0b",
+                  "#8b5cf6",
+                  "#ec4899",
+                  "#14b8a6",
+                ];
+                const bgColor =
+                  rColors[item.university.charCodeAt(0) % rColors.length];
+
+                let primaryLogo = item.logoFile
+                  ? item.logoFile
+                  : item.logoDomain
+                    ? `https://logo.clearbit.com/${item.logoDomain}`
+                    : "";
+
                 let logoHtml;
                 if (primaryLogo) {
-                    logoHtml = `<div style="width: 50px; height: 50px; border-radius: 50%; position: relative; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                  logoHtml = `<div style="width: 50px; height: 50px; border-radius: 50%; position: relative; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
                         <div style="position: absolute; top:0; left:0; width:100%; height:100%; background-color: ${bgColor}; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: 800; font-size: 1.2rem; z-index: 1;">${initials}</div>
                         <div id="img-wrap-${index}" style="position: absolute; top:0; left:0; width:100%; height:100%; background-color: #ffffff; border-radius: 50%; padding: 7px; display: flex; justify-content: center; align-items: center; z-index: 2;">
                             <img src="${primaryLogo}" alt="Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;" 
@@ -646,54 +688,59 @@ const html = `
                         </div>
                     </div>`;
                 } else {
-                    logoHtml = `<div style="width: 50px; height: 50px; background-color: ${bgColor}; border-radius: 50%; display: flex; justify-content: center; align-items: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); color: white; font-weight: 800; font-size: 1.2rem;">${initials}</div>`;
+                  logoHtml = `<div style="width: 50px; height: 50px; background-color: ${bgColor}; border-radius: 50%; display: flex; justify-content: center; align-items: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); color: white; font-weight: 800; font-size: 1.2rem;">${initials}</div>`;
                 }
 
-                
                 const isManualVerif = !!item.isVerified;
-                const isAutoVerif   = !!item.autoVerified;
-                const isPartial     = !!item.autoVerifiedPartial;
-                const humanCount    = humanVerifications[item.university] || 0;
+                const isAutoVerif = !!item.autoVerified;
+                const isPartial = !!item.autoVerifiedPartial;
+                const humanCount = humanVerifications[item.university] || 0;
 
                 return `
                 <div class="camp-card" 
                      data-div="${item.division}" 
-                     data-conference="${item.conference || 'Independent / Other'}"
-                     data-cost="${item.cost || 'TBA'}"
+                     data-conference="${item.conference || "Independent / Other"}"
+                     data-cost="${item.cost || "TBA"}"
                      data-has-dates="${dateArr.length > 0}"
                      data-verified-manual="${isManualVerif}" 
                      data-verified-auto="${isAutoVerif}" 
                       data-verified-human="${humanCount > 0}"
-                      data-last-update="${item.lastUpdateDate || ''}"
-                      data-dates-update="${item.datesUpdateDate || ''}"
+                      data-last-update="${item.lastUpdateDate || ""}"
+                      data-dates-update="${item.datesUpdateDate || ""}"
                       data-university="${item.university}"
                       data-not-verified="${!isManualVerif && !isAutoVerif && !isPartial}"
                       data-search="${item.university.toLowerCase()} ${item.contact.toLowerCase()}" 
-                      style="${index < 30 ? `animation-delay: ${index * 0.005}s;` : 'animation: none;'} position: relative;">
-                    ${humanCount > 0 ? `<div class="human-badge" title="${humanCount} community verifications">👤 ${humanCount}</div>` : ''}
+                      style="${index < 30 ? `animation-delay: ${index * 0.005}s;` : "animation: none;"} position: relative;">
+                    ${humanCount > 0 ? `<div class="human-badge" title="${humanCount} community verifications">👤 ${humanCount}</div>` : ""}
                     
                     <div class="card-header">
                         <div style="display: flex; flex-direction: column; gap: 8px;">
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 ${logoHtml}
                                 <div class="univ-name">${esc(item.university)
-                                    .replace(/University/g, 'Univ')
-                                    .replace(/Aeronautical/g, 'Aero')
-                                    .replace(/International/g, 'Intl')
-                                    .replace(/Pennsylvania/g, 'Penn')
-                                    .replace(/Washington/g, 'Wash')
-                                    .replace(/Institute of Technology/gi, 'Tech')
-                                }</div>
+                                  .replace(/University/g, "Univ")
+                                  .replace(/Aeronautical/g, "Aero")
+                                  .replace(/International/g, "Intl")
+                                  .replace(/Pennsylvania/g, "Penn")
+                                  .replace(/Washington/g, "Wash")
+                                  .replace(
+                                    /Institute of Technology/gi,
+                                    "Tech",
+                                  )}</div>
                             </div>
                             <div class="badges-row">
-                                ${isManualVerif ? '<span class="badge badge-manual">★ Manually Verified</span>' :
-                                  isAutoVerif || isPartial ? '<span class="badge badge-auto">🤖 Automated Scan</span>' :
-                                  '<span class="badge badge-not">❓ Not Verified</span>'}
+                                ${
+                                  isManualVerif
+                                    ? '<span class="badge badge-manual">★ Manually Verified</span>'
+                                    : isAutoVerif || isPartial
+                                      ? '<span class="badge badge-auto">🤖 Automated Scan</span>'
+                                      : '<span class="badge badge-not">❓ Not Verified</span>'
+                                }
                             </div>
                         </div>
                         <div class="card-right-tags">
-                            <div class="division-tag ${tagClass}">${item.division === 'DI' ? 'Div I' : 'Div II'}</div>
-                            ${item.conference && item.conference !== 'Other' ? `<div class="conference-tag">${esc(item.conference)}</div>` : ''}
+                            <div class="division-tag ${tagClass}">${item.division === "DI" ? "Div I" : "Div II"}</div>
+                            ${item.conference && item.conference !== "Other" ? `<div class="conference-tag">${esc(item.conference)}</div>` : ""}
                         </div>
                     </div>
                     
@@ -704,7 +751,7 @@ const html = `
                             </div>
                             <div class="val-stack">
                                 <span class="label">Camp Dates</span>
-                                <span class="value ${isTba ? 'tba' : ''}">${displayDatesHtml}</span>
+                                <span class="value ${isTba ? "tba" : ""}">${displayDatesHtml}</span>
                             </div>
                         </div>
 
@@ -714,7 +761,7 @@ const html = `
                             </div>
                             <div class="val-stack">
                                 <span class="label">EST COST</span>
-                                <span class="value ${(!item.cost || item.cost === 'TBA') ? 'tba' : ''}">${esc(item.cost) || 'TBA'}</span>
+                                <span class="value ${!item.cost || item.cost === "TBA" ? "tba" : ""}">${esc(item.cost) || "TBA"}</span>
                             </div>
                         </div>
 
@@ -724,8 +771,8 @@ const html = `
                             </div>
                             <div class="val-stack">
                                 <span class="label">Camp Contact</span>
-                                <span class="value">${item.campPOC && item.campPOC !== 'N/A' ? esc(item.campPOC) : (item.headCoach && item.headCoach !== 'N/A' ? esc(item.headCoach) : 'Athletics Office')}</span>
-                                ${item.email && item.email !== 'N/A' ? `<span style="font-size: 0.75rem; color: var(--accent-color); font-weight: 600; opacity: 0.9;">${esc(item.email)}</span>` : ''}
+                                <span class="value">${item.campPOC && item.campPOC !== "N/A" ? esc(item.campPOC) : item.headCoach && item.headCoach !== "N/A" ? esc(item.headCoach) : "Athletics Office"}</span>
+                                ${item.email && item.email !== "N/A" ? `<span style="font-size: 0.75rem; color: var(--accent-color); font-weight: 600; opacity: 0.9;">${esc(item.email)}</span>` : ""}
                             </div>
                         </div>
                     </div>
@@ -739,95 +786,164 @@ const html = `
                             <div class="contact-grid">
                                 <div class="contact-card">
                                     <span class="contact-label">Head Coach</span>
-                                    <div class="contact-value">${esc(item.headCoach || (item.contact && !item.contact.includes('@') ? item.contact : 'Athletics Staff'))}</div>
+                                    <div class="contact-value">${esc(item.headCoach || (item.contact && !item.contact.includes("@") ? item.contact : "Athletics Staff"))}</div>
                                 </div>
                                 <div class="contact-card">
                                     <span class="contact-label">Camp POC</span>
-                                    <div class="contact-value">${esc(item.campPOC || 'Provided at registration')}</div>
+                                    <div class="contact-value">${esc(item.campPOC || "Provided at registration")}</div>
                                 </div>
                                 <div class="contact-card" style="grid-column: span 2;">
                                     <span class="contact-label">Official Email</span>
                                     <div class="contact-value">
-                                        ${item.email ? `<a href="mailto:${esc(item.email)}" style="color:#60a5fa;text-decoration:none;font-weight:600;">${esc(item.email)}</a>` : 'Check site for contact info'}
+                                        ${item.email ? `<a href="mailto:${esc(item.email)}" style="color:#60a5fa;text-decoration:none;font-weight:600;">${esc(item.email)}</a>` : "Check site for contact info"}
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        ${dateArr.length > 0 ? `
+                        ${
+                          dateArr.length > 0
+                            ? `
                         <div class="drawer-sec">
                             <div class="d-label">📅 All Available Dates</div>
                             <div class="d-body">
                                 <ol class="date-list">
-                                    ${dateArr.slice(0, 5).map(d => `<li>${d}</li>`).join('')}
+                                    ${dateArr
+                                      .slice(0, 5)
+                                      .map((d) => `<li>${d}</li>`)
+                                      .join("")}
                                 </ol>
-                                ${dateArr.length > 5 ? `
+                                ${
+                                  dateArr.length > 5
+                                    ? `
                                     <div class="hidden-dates">
                                         <ol class="date-list" start="6">
-                                            ${dateArr.slice(5).map(d => `<li>${d}</li>`).join('')}
+                                            ${dateArr
+                                              .slice(5)
+                                              .map((d) => `<li>${d}</li>`)
+                                              .join("")}
                                         </ol>
                                     </div>
                                     <button class="more-dates-btn" data-count="${dateArr.length}" onclick="toggleDates(this)">Show All Dates (${dateArr.length})</button>
-                                ` : ''}
+                                `
+                                    : ""
+                                }
                             </div>
                         </div>
-                        ` : ''}
+                        `
+                            : ""
+                        }
 
                         <div class="drawer-sec">
                             <div class="d-label">Verification Source</div>
                             <div class="d-body" style="display: flex; gap: 8px; margin-top: 8px;">
-                                ${isManualVerif ? '<span class="badge badge-manual">★ Manually Verified</span>' :
-                                  isAutoVerif || isPartial ? '<span class="badge badge-auto">🤖 Automated Scan</span>' :
-                                  '<span class="badge badge-not">❓ Not Verified</span>'}
+                                ${
+                                  isManualVerif
+                                    ? '<span class="badge badge-manual">★ Manually Verified</span>'
+                                    : isAutoVerif || isPartial
+                                      ? '<span class="badge badge-auto">🤖 Automated Scan</span>'
+                                      : '<span class="badge badge-not">❓ Not Verified</span>'
+                                }
                             </div>
                         </div>
 
                         ${(() => {
-                            if (item.campTiers && item.campTiers.length > 0 && !item.campTiers.every(t => t.cost === 'TBA')) {
-                                return '<div class="drawer-sec" style="border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.03);">' +
-                                    '<div class="d-label" style="color:#10b981;">💰 Camp Pricing & Tiers</div>' +
-                                    '<div class="d-body">' +
-                                    '<table class="tier-table">' +
-                                    '<thead><tr><th>Camp</th><th>Ages</th><th>Cost</th><th>Dates</th></tr></thead>' +
-                                    '<tbody>' +
-                                    item.campTiers.map(t => {
-                                        const tierDates = t.sessions ? t.sessions.map(s => (s.dates || '') + (s.time ? ' ' + s.time : '')).join('<br>') : (t.dates || '');
-                                        return '<tr>' +
-                                            '<td style="font-weight:600;color:#fff;">' + (t.name || 'Camp') + '</td>' +
-                                            '<td class="tier-ages">' + (t.ages || '-') + '</td>' +
-                                            '<td class="tier-cost">' + (t.cost || 'TBA') + '</td>' +
-                                            '<td class="tier-dates">' + (tierDates || 'TBA') + '</td>' +
-                                            '</tr>';
-                                    }).join('') +
-                                    '</tbody></table></div></div>';
-                            } else if (item.cost && item.cost !== 'TBA' && item.cost !== 'Contact for pricing' && item.cost !== 'Not Listed') {
-                                return '<div class="drawer-sec" style="border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.03);">' +
-                                    '<div class="d-label" style="color:#10b981;">💰 Estimated Cost</div>' +
-                                    '<div class="d-body" style="font-size:1.1rem;color:#10b981;font-weight:700;">' + item.cost + '</div>' +
-                                    '</div>';
-                            } else {
-                                return '<div class="drawer-sec">' +
-                                    '<div class="d-label">💰 Pricing</div>' +
-                                    '<div class="d-body" style="color:var(--text-secondary);font-style:italic;">Cost: TBA — Check camp site for pricing details</div>' +
-                                    '</div>';
-                            }
+                          if (
+                            item.campTiers &&
+                            item.campTiers.length > 0 &&
+                            !item.campTiers.every((t) => t.cost === "TBA")
+                          ) {
+                            return (
+                              '<div class="drawer-sec" style="border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.03);">' +
+                              '<div class="d-label" style="color:#10b981;">💰 Camp Pricing & Tiers</div>' +
+                              '<div class="d-body">' +
+                              '<table class="tier-table">' +
+                              "<thead><tr><th>Camp</th><th>Ages</th><th>Cost</th><th>Dates</th></tr></thead>" +
+                              "<tbody>" +
+                              item.campTiers
+                                .map((t) => {
+                                  const tierDates = t.sessions
+                                    ? t.sessions
+                                        .map(
+                                          (s) =>
+                                            (s.dates || "") +
+                                            (s.time ? " " + s.time : ""),
+                                        )
+                                        .join("<br>")
+                                    : t.dates || "";
+                                  return (
+                                    "<tr>" +
+                                    '<td style="font-weight:600;color:#fff;">' +
+                                    (t.name || "Camp") +
+                                    "</td>" +
+                                    '<td class="tier-ages">' +
+                                    (t.ages || "-") +
+                                    "</td>" +
+                                    '<td class="tier-cost">' +
+                                    (t.cost || "TBA") +
+                                    "</td>" +
+                                    '<td class="tier-dates">' +
+                                    (tierDates || "TBA") +
+                                    "</td>" +
+                                    "</tr>"
+                                  );
+                                })
+                                .join("") +
+                              "</tbody></table></div></div>"
+                            );
+                          } else if (
+                            item.cost &&
+                            item.cost !== "TBA" &&
+                            item.cost !== "Contact for pricing" &&
+                            item.cost !== "Not Listed"
+                          ) {
+                            return (
+                              '<div class="drawer-sec" style="border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.03);">' +
+                              '<div class="d-label" style="color:#10b981;">💰 Estimated Cost</div>' +
+                              '<div class="d-body" style="font-size:1.1rem;color:#10b981;font-weight:700;">' +
+                              item.cost +
+                              "</div>" +
+                              "</div>"
+                            );
+                          } else {
+                            return (
+                              '<div class="drawer-sec">' +
+                              '<div class="d-label">💰 Pricing</div>' +
+                              '<div class="d-body" style="color:var(--text-secondary);font-style:italic;">Cost: TBA — Check camp site for pricing details</div>' +
+                              "</div>"
+                            );
+                          }
                         })()}
 
-                        ${item.details ? `
+                        ${
+                          item.details
+                            ? `
                         <div class="drawer-sec">
                             <div class="d-label">Additional Intel</div>
                             <div class="d-body">${esc(item.details)}</div>
-                        </div>` : ''}
+                        </div>`
+                            : ""
+                        }
 
-                        ${item.updateLog && item.updateLog.length > 0 ? `
+                        ${
+                          item.updateLog && item.updateLog.length > 0
+                            ? `
                         <div class="drawer-sec" style="border-left: 2px solid var(--accent-color); background: rgba(59,130,246,0.02);">
                             <div class="d-label">Verification Roadmap & Updates</div>
                             <div class="d-body" style="font-size: 0.75rem;">
                                 <ul style="margin: 0; padding-left: 15px; list-style-type: none;">
-                                    ${item.updateLog.slice(0, 5).map(log => `<li style="margin-bottom: 6px; position: relative;"><span style="position: absolute; left: -15px; color: var(--accent-color);">•</span>${esc(log)}</li>`).join('')}
+                                    ${item.updateLog
+                                      .slice(0, 5)
+                                      .map(
+                                        (log) =>
+                                          `<li style="margin-bottom: 6px; position: relative;"><span style="position: absolute; left: -15px; color: var(--accent-color);">•</span>${esc(log)}</li>`,
+                                      )
+                                      .join("")}
                                 </ul>
                             </div>
-                        </div>` : ''}
+                        </div>`
+                            : ""
+                        }
                         <div class="drawer-sec" style="border-color: rgba(59, 130, 246, 0.2); background: rgba(59, 130, 246, 0.05);">
                             <div class="d-label">🔗 Camp Hub</div>
                             <div class="d-body">
@@ -844,21 +960,22 @@ const html = `
                     </template>
 
                     <div class="actions">
-                        <a href="${item.campUrl || '#'}" 
-                           class="btn btn-visit ${item.division === 'DII' ? 'btn-dii' : ''}" 
+                        <a href="${item.campUrl || "#"}" 
+                           class="btn btn-visit ${item.division === "DII" ? "btn-dii" : ""}" 
                            target="_blank" 
                            onclick="event.stopPropagation()"
-                           ${!item.campUrl || item.campUrl.includes('google.com/search') ? 'style="opacity: 0.3; cursor: not-allowed;" onclick="return false"' : ''}>
+                           ${!item.campUrl || item.campUrl.includes("google.com/search") ? 'style="opacity: 0.3; cursor: not-allowed;" onclick="return false"' : ""}>
                            Visit Site
                         </a>
                         <button class="btn btn-human-verify" onclick="communityVerify(event, this, '${item.university.replace(/'/g, "\\'")}')">
-                            👤 <span>${humanCount > 0 ? humanCount : ''}</span> Verify
+                            👤 <span>${humanCount > 0 ? humanCount : ""}</span> Verify
                         </button>
                         <button class="btn btn-details" onclick="openDetails(event, this)">Details</button>
                     </div>
                 </div>
                 `;
-            }).join('')}
+              })
+              .join("")}
         </div>
     </div>
 
@@ -1160,5 +1277,7 @@ const html = `
 </html>
 `;
 
-fs.writeFileSync('index.html', html);
-console.log('Regenerated searchable index.html with Auto & Human Verification systems.');
+fs.writeFileSync("index.html", html);
+console.log(
+  "Regenerated searchable index.html with Auto & Human Verification systems.",
+);

@@ -2,11 +2,11 @@
  * Utility script to apply conference mapping to the database.
  */
 
-const fs = require('fs');
-const path = require('path');
-const { getConference } = require('./conference_lookup');
+const fs = require("fs");
+const path = require("path");
+const { getConference } = require("./conference_lookup");
 
-const DATA_FILE = path.join(__dirname, 'camps_data.json');
+const DATA_FILE = path.join(__dirname, "camps_data.json");
 
 function applyConferences() {
   if (!fs.existsSync(DATA_FILE)) {
@@ -14,11 +14,11 @@ function applyConferences() {
     return;
   }
 
-  const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+  const data = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
   console.log(`Processing ${data.length} schools...`);
 
   let updatedCount = 0;
-  data.forEach(school => {
+  data.forEach((school) => {
     const conf = getConference(school.university);
     if (!school.conference || school.conference !== conf) {
       school.conference = conf;

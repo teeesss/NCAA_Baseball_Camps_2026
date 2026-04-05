@@ -1,349 +1,633 @@
-'use strict';
+"use strict";
 
-const fs = require('fs');
-const path = require('path');
-const puppeteer = require('puppeteer');
-const { MASCOT_LOOKUP } = require('./src/utils/mascot_lookup.js');
+const fs = require("fs");
+const path = require("path");
+const puppeteer = require("puppeteer");
+const { MASCOT_LOOKUP } = require("./src/utils/mascot_lookup.js");
 
-const QUEUE_FILE = path.join(__dirname, 'missing_data_queue.json');
-const DATA_FILE = path.join(__dirname, 'camps_data.json');
-const BLACKLIST_FILE = path.join(__dirname, 'blacklist.json');
-const LOG_FILE = path.join(__dirname, 'smart_extract.log');
+const QUEUE_FILE = path.join(__dirname, "missing_data_queue.json");
+const DATA_FILE = path.join(__dirname, "camps_data.json");
+const BLACKLIST_FILE = path.join(__dirname, "blacklist.json");
+const LOG_FILE = path.join(__dirname, "smart_extract.log");
 
-const logStream = fs.createWriteStream(LOG_FILE, { flags: 'a' });
+const logStream = fs.createWriteStream(LOG_FILE, { flags: "a" });
 function log(msg) {
   const line = `[${new Date().toISOString()}] ${msg}`;
   console.log(line);
-  logStream.write(line + '\n');
+  logStream.write(line + "\n");
 }
 
 function safeWriteJSON(filepath, data) {
-    const tmp = filepath + '.tmp';
-    fs.writeFileSync(tmp, JSON.stringify(data, null, 2));
-    fs.renameSync(tmp, filepath);
+  const tmp = filepath + ".tmp";
+  fs.writeFileSync(tmp, JSON.stringify(data, null, 2));
+  fs.renameSync(tmp, filepath);
 }
 
 const args = process.argv.slice(2);
 const argMap = {};
 for (const a of args) {
-  const [k, v] = a.replace(/^--/, '').split('=');
+  const [k, v] = a.replace(/^--/, "").split("=");
   argMap[k] = v || true;
 }
 const SCHOOL_FILTER = argMap.school || null;
 
 // ── Load config (single source of truth) ────────────────────────────
 const {
-    BLACKLISTED_DOMAINS,
-    isBlacklistedUrl,
-    REJECT_SPORTS,
-    isWrongSport,
-    DATE_PATTERNS,
-    COST_PATTERN,
-    EMAIL_PATTERN,
-    COST_RANGE,
-    GENERIC_EMAIL_PREFIXES,
-    CURRENT_SCRIPT_VERSION
-} = require('./src/utils/config');
+  BLACKLISTED_DOMAINS,
+  isBlacklistedUrl,
+  REJECT_SPORTS,
+  isWrongSport,
+  isTeamCampOrLegacy,
+  DATE_PATTERNS,
+  COST_PATTERN,
+  EMAIL_PATTERN,
+  COST_RANGE,
+  GENERIC_EMAIL_PREFIXES,
+  CURRENT_SCRIPT_VERSION,
+} = require("./src/utils/config");
 
 function unwrapUrl(url) {
-    try {
-        let u = new URL(url);
-        // DDG uses uddg=, Yahoo uses RU=
-        let real = u.searchParams.get('uddg') || u.searchParams.get('RU');
-        if (real) return real;
-    } catch(e) {}
-    return url;
+  try {
+    let u = new URL(url);
+    // DDG uses uddg=, Yahoo uses RU=
+    let real = u.searchParams.get("uddg") || u.searchParams.get("RU");
+    if (real) return real;
+  } catch (e) {}
+  return url;
 }
 
-function extractData(text, url) {
-    // FIX: llm-issues-prompt #2 — Sport Exclusivity
-    if (isWrongSport(text)) {
-        log(`    ⚠️ REJECTED: Page is not about baseball`);
-        return { dates: null, cost: null, costVal: null, email: null, url };
-    }
+function extractData(text, url, schoolName) {
+  // FIX: llm-issues-prompt #2 — Sport Exclusivity
+  if (isWrongSport(text)) {
+    log(`    ⚠️ REJECTED: Page is not about baseball`);
+    return { dates: null, cost: null, costVal: null, email: null, url };
+  }
 
-    // FIX: llm-issues-prompt — Team Camp / Legacy filtering
-    if (isTeamCampOrLegacy(text)) {
-        log(`    ⚠️ REJECTED: Team camp only or legacy 2025 page`);
-        return { dates: null, cost: null, costVal: null, email: null, url };
-    }
+  // REMOVED: isTeamCampOrLegacy rejection — official school camps (including
+  // "team camps") are valid data sources. Dates are filtered per-school during URL selection.
 
-    let datesList = [];
-    for (const pat of DATE_PATTERNS) {
-        pat.lastIndex = 0;
-        let m;
-        while ((m = pat.exec(text)) !== null) {
-            datesList.push(m[0].trim());
+  let datesList = [];
+  for (const pat of DATE_PATTERNS) {
+    pat.lastIndex = 0;
+    let m;
+    while ((m = pat.exec(text)) !== null) {
+      datesList.push(m[0].trim());
+    }
+  }
+  const dates = datesList.length
+    ? [...new Set(datesList)].slice(0, 3).join(" | ")
+    : null;
+
+  let bestCost = null;
+  let costRaw = null;
+  let costs = [];
+  const campKeywords =
+    /camp|clinic|registration|register|fee|tuition|cost|price|per\s+player/gi;
+
+  let match;
+  while ((match = campKeywords.exec(text)) !== null) {
+    const window = text.substring(
+      Math.max(0, match.index - 150),
+      Math.min(text.length, match.index + 150),
+    );
+    COST_PATTERN.lastIndex = 0;
+    let costMatch;
+    while ((costMatch = COST_PATTERN.exec(window)) !== null) {
+      const val = parseFloat(costMatch[1].replace(/,/g, ""));
+      if (val >= COST_RANGE.MIN && val <= COST_RANGE.MAX) costs.push(val);
+    }
+  }
+
+  if (costs.length) {
+    let validCosts = [...new Set(costs)].sort((a, b) => a - b);
+    bestCost = validCosts[0];
+    costRaw =
+      validCosts.length > 1
+        ? validCosts
+            .slice(0, 3)
+            .map((c) => `$${c}`)
+            .join(" / ")
+        : `$${bestCost}`;
+    if (bestCost > 500) log(`    ⚠️ High price detected ($${bestCost})`);
+  }
+
+  // FIX: llm-issues-prompt #3 — Baseball-context email extraction
+  let emailsList = [];
+  const sections = text.split(/\n\s*\n/);
+  for (const section of sections) {
+    const sectionLower = section.toLowerCase();
+    const hasBaseballContext =
+      sectionLower.includes("baseball") || sectionLower.includes("camp");
+    const hasContactContext =
+      (sectionLower.includes("coach") || sectionLower.includes("contact")) &&
+      hasBaseballContext;
+    const isOtherSport =
+      [
+        "basketball",
+        "football",
+        "soccer",
+        "volleyball",
+        "softball",
+        "tennis",
+        "swimming",
+      ].some((s) => sectionLower.includes(s)) &&
+      !sectionLower.includes("baseball");
+
+    const GENERIC_ADMIN_EMAILS = [
+      "admissions",
+      "communications",
+      "privacy",
+      "info",
+      "enroll",
+      "undergraduate",
+      "accessibility",
+      "registrar",
+      "web-accessibility",
+    ];
+
+    if ((hasBaseballContext || hasContactContext) && !isOtherSport) {
+      EMAIL_PATTERN.lastIndex = 0;
+      let m3;
+      while ((m3 = EMAIL_PATTERN.exec(section)) !== null) {
+        let e = m3[0].toLowerCase();
+        const isGeneric = GENERIC_EMAIL_PREFIXES.some((g) =>
+          e.startsWith(g + "@"),
+        );
+        if (
+          !isGeneric &&
+          !BLACKLISTED_DOMAINS.some((b) => e.includes(b)) &&
+          !e.includes("example") &&
+          !e.includes("noreply") &&
+          !e.includes("sentry")
+        ) {
+          emailsList.push(e);
         }
+      }
     }
-    const dates = datesList.length ? [...new Set(datesList)].slice(0, 3).join(' | ') : null;
+  }
 
-    let bestCost = null;
-    let costRaw = null;
-    let costs = [];
-    const campKeywords = /camp|clinic|registration|register|fee|tuition|cost|price|per\s+player/gi;
-    
-    let match;
-    while ((match = campKeywords.exec(text)) !== null) {
-        const window = text.substring(Math.max(0, match.index - 150), Math.min(text.length, match.index + 150));
-        COST_PATTERN.lastIndex = 0;
-        let costMatch;
-        while ((costMatch = COST_PATTERN.exec(window)) !== null) {
-            const val = parseFloat(costMatch[1].replace(/,/g, ''));
-            if (val >= COST_RANGE.MIN && val <= COST_RANGE.MAX) costs.push(val);
+  let email = emailsList.length ? emailsList[0] : null;
+  if (!email) {
+    const emailMatch = text.match(EMAIL_PATTERN);
+    if (emailMatch) {
+      const VALID_TLDS = ["edu", "com", "org", "net"];
+      for (let e of emailMatch) {
+        e = e.toLowerCase();
+        const parts = e.split("@");
+        if (parts[0].length < 3) continue;
+        const tld = parts[1].split(".").pop();
+        if (
+          VALID_TLDS.includes(tld) &&
+          !BLACKLISTED_DOMAINS.some((b) => e.includes(b))
+        ) {
+          email = e;
+          break;
         }
+      }
     }
-    
-    if (costs.length) {
-        let validCosts = [...new Set(costs)].sort((a,b) => a-b);
-        bestCost = validCosts[0];
-        costRaw = validCosts.length > 1 ? validCosts.slice(0, 3).map(c => `$${c}`).join(' / ') : `$${bestCost}`;
-        if (bestCost > 500) log(`    ⚠️ High price detected ($${bestCost})`);
-    }
+  }
 
-    // FIX: llm-issues-prompt #3 — Baseball-context email extraction
-    let emailsList = [];
-    const sections = text.split(/\n\s*\n/);
-    for (const section of sections) {
-        const sectionLower = section.toLowerCase();
-        const hasBaseballContext = sectionLower.includes('baseball') || sectionLower.includes('camp');
-        const hasContactContext = (sectionLower.includes('coach') || sectionLower.includes('contact')) && hasBaseballContext;
-        const isOtherSport = ['basketball', 'football', 'soccer', 'volleyball', 'softball', 'tennis', 'swimming'].some(s => sectionLower.includes(s)) && !sectionLower.includes('baseball');
-        
-        const GENERIC_ADMIN_EMAILS = ['admissions', 'communications', 'privacy', 'info', 'enroll', 'undergraduate', 'accessibility', 'registrar', 'web-accessibility'];
-        
-        if ((hasBaseballContext || hasContactContext) && !isOtherSport) {
-            EMAIL_PATTERN.lastIndex = 0;
-            let m3;
-            while ((m3 = EMAIL_PATTERN.exec(section)) !== null) {
-                let e = m3[0].toLowerCase();
-                const isGeneric = GENERIC_EMAIL_PREFIXES.some(g => e.startsWith(g + '@'));
-                if (!isGeneric && !BLACKLISTED_DOMAINS.some(b => e.includes(b)) && !e.includes('example') && !e.includes('noreply') && !e.includes('sentry')) {
-                    emailsList.push(e);
-                }
-            }
-        }
-    }
-    
-    let email = emailsList.length ? emailsList[0] : null;
-    if (!email) {
-        const emailMatch = text.match(EMAIL_PATTERN);
-        if (emailMatch) {
-            const VALID_TLDS = ['edu', 'com', 'org', 'net'];
-            for (let e of emailMatch) {
-                e = e.toLowerCase();
-                const parts = e.split('@');
-                if (parts[0].length < 3) continue;
-                const tld = parts[1].split('.').pop();
-                if (VALID_TLDS.includes(tld) && !BLACKLISTED_DOMAINS.some(b => e.includes(b))) {
-                    email = e;
-                    break;
-                }
-            }
-        }
-    }
+  let campPOC = null;
+  const pocMatch = text.match(
+    /(?:Camp|Director|Coordinator|Admin|Contact)\s+(?:of|for|Name)?\s*:\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,2})/i,
+  );
+  if (pocMatch) {
+    campPOC = pocMatch[1].trim();
+    if (
+      ["Baseball", "Clinic", "Registration", "Staff", "Athletics"].some(
+        (word) => campPOC.includes(word),
+      )
+    )
+      campPOC = null;
+  }
 
-    let campPOC = null;
-    const pocMatch = text.match(/(?:Camp|Director|Coordinator|Admin|Contact)\s+(?:of|for|Name)?\s*:\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,2})/i);
-    if (pocMatch) {
-        campPOC = pocMatch[1].trim();
-        if (['Baseball', 'Clinic', 'Registration', 'Staff', 'Athletics'].some(word => campPOC.includes(word))) campPOC = null;
+  // Cross-school email contamination check
+  // e.g. UNLV page should not return olemissbaseball@gmail.com
+  if (email && schoolName) {
+    const emailLower = email.toLowerCase();
+    const schoolLower = schoolName.toLowerCase();
+    const schoolMascot = (MASCOT_LOOKUP[schoolName] || "").toLowerCase();
+    for (const [uni, mascot] of Object.entries(MASCOT_LOOKUP)) {
+      if (uni.toLowerCase() === schoolLower) continue;
+      const otherShort = uni.toLowerCase().replace(/\s+/g, "");
+      const otherMascot = mascot.toLowerCase();
+      // Check if email local part or domain clearly references another school
+      const emailLocal = emailLower.split("@")[0];
+      const emailDomain = (emailLower.split("@")[1] || "").replace(/\./g, "");
+      const emailNoAt = emailLocal + emailDomain;
+      if (
+        otherShort.length > 3 &&
+        emailNoAt.includes(otherShort) &&
+        !text.toLowerCase().includes(schoolLower)
+      ) {
+        log(
+          `    ⚠️ Cross-school email skipped: ${email} → likely belongs to "${uni}"`,
+        );
+        email = null;
+        break;
+      }
+      if (
+        otherMascot.length > 3 &&
+        emailNoAt.includes(otherMascot.replace(/\s+/g, "")) &&
+        !schoolMascot.includes(otherMascot.replace(/\s+/g, ""))
+      ) {
+        log(
+          `    ⚠️ Cross-school email skipped: ${email} → likely belongs to "${uni}"`,
+        );
+        email = null;
+        break;
+      }
     }
+  }
 
-    return { dates, cost: costRaw, costVal: bestCost, email, url, campPOC };
+  return { dates, cost: costRaw, costVal: bestCost, email, url, campPOC };
 }
 
 async function searchEngine(page, urlTemplate, engineName) {
-    try {
-        await page.goto(urlTemplate, { waitUntil: 'domcontentloaded', timeout: 15000 });
-        await new Promise(r => setTimeout(r, 1200));
-        
-        let sel = engineName === 'DDG' ? '.result__a' : 'h3.title a, div.algo h3 a, .compTitle a';
-        const links = await page.evaluate((selector) => {
-            return Array.from(document.querySelectorAll(selector))
-                .map(a => ({ href: a.href, title: (a.textContent || '').toLowerCase() }))
-                .filter(h => h.href.startsWith('http') && !h.href.includes('yahoo.com/search') && !h.href.includes('duckduckgo.com/html'));
-        }, sel);
-        
-        const rejectPatterns = ['ticket', 'seatgeek', 'stubhub', 'merchandise', 'shop', 'football', 'basketball', 'soccer', 'tennis', 'swimming', 'news', 'article', 'release', 'giving', 'donate', 'fundraise', 'givesmart'];
-        
-        const scored = links
-            .map(l => {
-                let clean = unwrapUrl(l.href);
-                let url = clean.toLowerCase();
-                let title = l.title;
-                
-                if (BLACKLISTED_DOMAINS.some(b => clean.includes(b))) return null;
-                if (rejectPatterns.some(p => url.includes(p) || title.includes(p))) return null;
-                
-                let score = 0;
-                if (url.includes('baseball')) score += 20;
-                if (url.includes('camp') || title.includes('camp')) score += 10;
-                if (url.includes('2026')) score += 50;
-                if (url.includes('2025')) score -= 100;
-                if (url.endsWith('.edu') || url.includes('.edu/')) score += 5;
-                
-                return { url: clean, score };
-            })
-            .filter(Boolean)
-            .sort((a, b) => b.score - a.score);
-        
-        return scored.length > 0 ? scored[0].url : null;
-    } catch(e) {
-        log(`    ✕ [${engineName}] Error: ${e.message.substring(0,40)}`);
-    }
-    return null;
+  try {
+    await page.goto(urlTemplate, {
+      waitUntil: "domcontentloaded",
+      timeout: 15000,
+    });
+    await new Promise((r) => setTimeout(r, 1200));
+
+    let sel =
+      engineName === "DDG"
+        ? ".result__a"
+        : "h3.title a, div.algo h3 a, .compTitle a";
+    const links = await page.evaluate((selector) => {
+      return Array.from(document.querySelectorAll(selector))
+        .map((a) => ({
+          href: a.href,
+          title: (a.textContent || "").toLowerCase(),
+        }))
+        .filter(
+          (h) =>
+            h.href.startsWith("http") &&
+            !h.href.includes("yahoo.com/search") &&
+            !h.href.includes("duckduckgo.com/html"),
+        );
+    }, sel);
+
+    const rejectPatterns = [
+      "ticket",
+      "seatgeek",
+      "stubhub",
+      "merchandise",
+      "shop",
+      "football",
+      "basketball",
+      "soccer",
+      "tennis",
+      "swimming",
+      "news",
+      "article",
+      "release",
+      "giving",
+      "donate",
+      "fundraise",
+      "givesmart",
+    ];
+
+    const scored = links
+      .map((l) => {
+        let clean = unwrapUrl(l.href);
+        let url = clean.toLowerCase();
+        let title = l.title;
+
+        if (BLACKLISTED_DOMAINS.some((b) => clean.includes(b))) return null;
+        if (rejectPatterns.some((p) => url.includes(p) || title.includes(p)))
+          return null;
+
+        let score = 0;
+        if (url.includes("baseball")) score += 20;
+        if (url.includes("camp") || title.includes("camp")) score += 10;
+        if (url.includes("2026")) score += 50;
+        if (url.includes("2025")) score -= 100;
+        if (url.endsWith(".edu") || url.includes(".edu/")) score += 5;
+
+        return { url: clean, score };
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.score - a.score);
+
+    return scored.length > 0 ? scored[0].url : null;
+  } catch (e) {
+    log(`    ✕ [${engineName}] Error: ${e.message.substring(0, 40)}`);
+  }
+  return null;
 }
 
 function isUrlGeneric(url) {
-    if (!url) return true;
-    try {
-        let u = new URL(url);
-        let p = u.pathname.replace(/\/$/, '').toLowerCase();
-        return p === '' || p === '/' || p === '/athletics' || p === '/sports' || p === '/baseball';
-    } catch(e) { return true; }
+  if (!url) return true;
+  try {
+    let u = new URL(url);
+    let p = u.pathname.replace(/\/$/, "").toLowerCase();
+    return (
+      p === "" ||
+      p === "/" ||
+      p === "/athletics" ||
+      p === "/sports" ||
+      p === "/baseball"
+    );
+  } catch (e) {
+    return true;
+  }
 }
 
 async function run() {
-    log(`🚀 STARTING BATCH`);
-    
-    // Backup before starting
-    const BACKUP = DATA_FILE.replace('.json', `_backup_${Date.now()}.json`);
-    fs.copyFileSync(DATA_FILE, BACKUP);
-    log(`📦 Backup created: ${path.basename(BACKUP)}`);
+  log(`🚀 STARTING BATCH`);
 
-    if (!fs.existsSync(QUEUE_FILE)) return log('❌ queue missing');
+  // Backup before starting
+  const BACKUP = DATA_FILE.replace(".json", `_backup_${Date.now()}.json`);
+  fs.copyFileSync(DATA_FILE, BACKUP);
+  log(`📦 Backup created: ${path.basename(BACKUP)}`);
 
-    const queueData = JSON.parse(fs.readFileSync(QUEUE_FILE, 'utf8'));
-    let queue = queueData.queue;
-    if (SCHOOL_FILTER) queue = queue.filter(s => s.university.toLowerCase().includes(SCHOOL_FILTER.toLowerCase()));
+  if (!fs.existsSync(QUEUE_FILE)) return log("❌ queue missing");
 
-    const masterData = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-    const masterMap = {};
-    for (const r of masterData) masterMap[r.university] = r;
+  const queueData = JSON.parse(fs.readFileSync(QUEUE_FILE, "utf8"));
+  let queue = queueData.queue;
+  if (SCHOOL_FILTER)
+    queue = queue.filter((s) =>
+      s.university.toLowerCase().includes(SCHOOL_FILTER.toLowerCase()),
+    );
 
-    let browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+  const masterData = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
+  const masterMap = {};
+  for (const r of masterData) masterMap[r.university] = r;
+
+  let browser = await puppeteer.launch({
+    headless: "new",
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--window-size=1920,1080",
+      "--disable-blink-features=AutomationControlled",
+    ],
+    ignoreDefaultArgs: ["--enable-automation"],
+  });
+
+  // Stealth: inject webdriver spoof on every new page
+  await browser.on("targetchanged", async (target) => {
+    try {
+      const page = await target.page();
+      if (page) {
+        await page.evaluateOnNewDocument(() => {
+          Object.defineProperty(navigator, "webdriver", { get: () => false });
+          Object.defineProperty(navigator, "deviceMemory", { get: () => 8 });
+          Object.defineProperty(navigator, "hardwareConcurrency", {
+            get: () => 16,
+          });
+        });
+      }
+    } catch (e) {}
+  });
+
+  const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+
+  let processed = 0;
+  for (const meta of queue) {
+    const record = masterMap[meta.university];
+    if (!record) continue;
+
+    // Skip verified ones unless forced or missing everything
+    if (
+      record.isVerified &&
+      meta.missing.length <= 1 &&
+      meta.missing[0] !== "campUrl"
+    ) {
+      log(`⏭️ SKIP ${record.university} - verified`);
+      continue;
+    }
+
+    log(
+      `\n[${++processed}/${queue.length}] ${record.university} | Missing: ${meta.missing.join(", ")}`,
+    );
+    const page = await browser.newPage();
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
+    );
+
+    // Randomize viewport (makes us look like different devices)
+    await page.setViewport({
+      width: 1920 + Math.floor(Math.random() * 100),
+      height: 1080 + Math.floor(Math.random() * 100),
     });
 
-    let processed=0;
-    for (const meta of queue) {
-        const record = masterMap[meta.university];
-        if (!record) continue;
+    // Human-like mouse movement before interacting
+    const humanMove = async (pg) => {
+      const target = {
+        x: 300 + Math.random() * 800,
+        y: 300 + Math.random() * 600,
+      };
+      const steps = 30 + Math.floor(Math.random() * 10);
+      for (let j = 1; j <= steps; j++) {
+        await pg.mouse.move(target.x * (j / steps), target.y * (j / steps), {
+          steps: 5,
+        });
+      }
+      await delay(400 + Math.random() * 600);
+    };
 
-        // Skip verified ones unless forced or missing everything
-        if (record.isVerified && meta.missing.length <= 1 && meta.missing[0] !== 'campUrl') {
-            log(`⏭️ SKIP ${record.university} - verified`);
-            continue;
+    try {
+      let ex = {
+        dates: null,
+        cost: null,
+        costVal: null,
+        email: null,
+        url: null,
+        campPOC: null,
+      };
+      let targetUrl = record.campUrl;
+      let costVal = record.cost
+        ? parseFloat(record.cost.replace(/[^0-9.]/g, ""))
+        : 0;
+      // Overwrite if < $100 or > $1500 (team camps), or flagged team pricing
+      let needsRepull = (costVal > 0 && costVal < 100) || costVal > 1500;
+
+      if (
+        !targetUrl ||
+        meta.missing.includes("campUrl") ||
+        needsRepull ||
+        isUrlGeneric(targetUrl)
+      ) {
+        let mascot = MASCOT_LOOKUP[record.university] || "";
+        let q = `${record.university} ${mascot} baseball camp`.trim();
+        log(`  🔍 Search: ${q}`);
+
+        let ddgUrl = `https://duckduckgo.com/html/?q=${encodeURIComponent(q)}&ia=web`;
+        let yahooUrl = `https://search.yahoo.com/search?p=${encodeURIComponent(q)}`;
+
+        let ddg1 = await searchEngine(page, ddgUrl, "DDG");
+        let yahoo1 = await searchEngine(page, yahooUrl, "Yahoo");
+
+        targetUrl = ddg1 || yahoo1;
+
+        let cleanDdg = ddg1 ? ddg1.split("?")[0].replace(/\/$/, "") : null;
+        let cleanYahoo = yahoo1
+          ? yahoo1.split("?")[0].replace(/\/$/, "")
+          : null;
+
+        if (cleanDdg && cleanYahoo && cleanDdg === cleanYahoo) {
+          log(`  ★ Consensus match: ${targetUrl}`);
+        } else if (targetUrl) {
+          log(`  ★ Engine #1: ${targetUrl}`);
+        }
+      }
+
+      if (!targetUrl) {
+        log(`  ❌ No URL found.`);
+      } else {
+        log(`  ↳ Scraping: ${targetUrl}`);
+        // JS rendering wait for React/Angular sites (Ryzer, TotalCamps, custom portals)
+        await page.goto(targetUrl, {
+          waitUntil: "networkidle0",
+          timeout: 25000,
+        });
+        // Wait for dynamic content to render
+        await page.evaluate(() => new Promise((r) => setTimeout(r, 2500)));
+        let text = await page.evaluate(() => document.body?.innerText || "");
+
+        // Initial extraction to see if main page has data
+        ex = extractData(text, targetUrl, record.university);
+
+        // Deep sub-crawl (V6: top 8 links matching camp/register/detail/showcase)
+        let fullText = text;
+        if (!ex.dates && !ex.cost) {
+          const subLinks = await page.evaluate((currentUrl) => {
+            const keywords =
+              /camp|register|detail|showcase|elite|clinics|pricing/i;
+            const links = Array.from(document.querySelectorAll("a[href]"));
+            return links
+              .filter((a) => {
+                if (!a.href || !a.href.startsWith("http")) return false;
+                if (a.href === currentUrl) return false;
+                // Skip social media, video, and ticket sites
+                const skipBad = [
+                  "twitter.com",
+                  "x.com",
+                  "facebook.com",
+                  "instagram.com",
+                  "tiktok.com",
+                  "youtube.com",
+                  "vimeo.com",
+                  "tiktok.com",
+                  "ticketmaster.com",
+                  "stubhub.com",
+                ];
+                if (skipBad.some((b) => a.href.includes(b))) return false;
+                const sameOrigin =
+                  new URL(currentUrl).hostname === new URL(a.href).hostname;
+                if (!sameOrigin) {
+                  // Only follow external links if they match camp keywords
+                  return keywords.test(a.href);
+                }
+                return (
+                  keywords.test(a.href) || keywords.test(a.textContent || "")
+                );
+              })
+              .map((a) => ({ href: a.href, text: a.textContent || "" }))
+              .slice(0, 8);
+          }, targetUrl);
+
+          log(`  ↳ Crawling ${subLinks.length} sub-links...`);
+          for (const sl of subLinks) {
+            try {
+              await page.goto(sl.href, {
+                waitUntil: "networkidle0",
+                timeout: 12000,
+              });
+              await page.evaluate(
+                () => new Promise((r) => setTimeout(r, 1500)),
+              );
+              let subText = await page.evaluate(
+                () => document.body?.innerText || "",
+              );
+              if (subText && subText.toLowerCase().includes("baseball")) {
+                fullText += "\n" + subText;
+                log(
+                  `  ↳ Sub: ${sl.href.substring(0, 60)}... found baseball content`,
+                );
+              }
+            } catch (e) {
+              /* ignore sub-page fail */
+            }
+          }
+          await page
+            .goto(targetUrl, {
+              waitUntil: "networkidle0",
+              timeout: 20000,
+            })
+            .catch(() => {});
         }
 
-        log(`\n[${++processed}/${queue.length}] ${record.university} | Missing: ${meta.missing.join(', ')}`);
-        const page = await browser.newPage();
-        await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36');
-        
-        try {
-            let targetUrl = record.campUrl;
-            let costVal = record.cost ? parseFloat(record.cost.replace(/[^0-9.]/g, '')) : 0;
-            // Overwrite if < $100 or > $1500 (team camps), or flagged team pricing
-            let needsRepull = (costVal > 0 && costVal < 100) || costVal > 1500;
+        ex = extractData(fullText, targetUrl, record.university);
 
-            if (!targetUrl || meta.missing.includes('campUrl') || needsRepull || isUrlGeneric(targetUrl)) {
-                let mascot = MASCOT_LOOKUP[record.university] || '';
-                let q = `${record.university} ${mascot} baseball camp`.trim();
-                log(`  🔍 Search: ${q}`);
-                
-                let ddgUrl = `https://duckduckgo.com/html/?q=${encodeURIComponent(q)}&ia=web`;
-                let yahooUrl = `https://search.yahoo.com/search?p=${encodeURIComponent(q)}`;
+        const firstPrice = record.cost
+          ? parseFloat(
+              (record.cost.match(/\d[\d,.]*/) || ["0"])[0].replace(/,/g, ""),
+            )
+          : 0;
+        let needsRepull =
+          (firstPrice > 0 && firstPrice < 100) || firstPrice > 1500;
 
-                let ddg1 = await searchEngine(page, ddgUrl, 'DDG');
-                let yahoo1 = await searchEngine(page, yahooUrl, 'Yahoo');
-
-                targetUrl = ddg1 || yahoo1;
-                
-                let cleanDdg = ddg1 ? ddg1.split('?')[0].replace(/\/$/, '') : null;
-                let cleanYahoo = yahoo1 ? yahoo1.split('?')[0].replace(/\/$/, '') : null;
-                
-                if (cleanDdg && cleanYahoo && cleanDdg === cleanYahoo) {
-                    log(`  ★ Consensus match: ${targetUrl}`);
-                } else if (targetUrl) {
-                    log(`  ★ Engine #1: ${targetUrl}`);
-                }
-            }
-
-            if (!targetUrl) {
-                log(`  ❌ No URL found.`);
-            } else {
-                log(`  ↳ Scraping: ${targetUrl}`);
-                await page.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 20000 });
-                await new Promise(r => setTimeout(r, 1500));
-                let text = await page.evaluate(() => document.body?.innerText || '');
-                let ex = extractData(text, targetUrl);
-
-                // ONE sub-link check if we missed data
-                if (!ex.dates && !ex.cost) {
-                    const portal = await page.evaluate(() => {
-                        let links = Array.from(document.querySelectorAll('a[href]'));
-                        let match = links.find(a => /camp|register|shop|event/i.test(a.textContent) || /camp|register|shop|event/i.test(a.href));
-                        return match ? match.href : null;
-                    });
-                    if (portal && portal.startsWith('http') && portal !== targetUrl) {
-                        log(`  ↳ Trying one sub-page: ${portal}`);
-                        try {
-                            await page.goto(portal, { waitUntil: 'domcontentloaded', timeout: 15000 });
-                            await new Promise(r => setTimeout(r, 1500));
-                            let text2 = await page.evaluate(() => document.body?.innerText || '');
-                            let ex2 = extractData(text2, portal);
-                            if (ex2.dates || ex2.cost) ex = ex2;
-                        } catch(e) { /* ignore subpage fail */ }
-                    }
-                }
-
-                const firstPrice = record.cost ? parseFloat((record.cost.match(/\d[\d,.]*/) || ['0'])[0].replace(/,/g, '')) : 0;
-                let needsRepull = (firstPrice > 0 && firstPrice < 100) || firstPrice > 1500;
-
-                if (needsRepull || meta.missing.includes('cost') || !record.cost || record.cost === 'TBA') {
-                    if (ex.cost) { record.cost = ex.cost; log(`  ✅ cost: ${ex.cost}`); }
-                }
-                if (needsRepull || meta.missing.includes('dates') || !record.dates || record.dates === 'TBA') {
-                    if (ex.dates) { record.dates = ex.dates; log(`  ✅ dates: ${ex.dates.substring(0,50)}`); }
-                }
-                if (meta.missing.includes('email') || !record.email) {
-                    if (ex.email) {
-                        record.email = ex.email; 
-                        log(`  ✅ email: ${ex.email}`);
-                    }
-                }
-
-                if (ex.campPOC) {
-                    record.campPOC = ex.campPOC;
-                    log(`  ✅ POC: ${ex.campPOC}`);
-                }
-
-                
-                // Clear old stale if URL fundamentally changed
-                if (ex.url && record.campUrl && record.campUrl !== ex.url) {
-                    if (!ex.dates && record.dates) record.dates = 'TBA';
-                    if (!ex.cost && record.cost) record.cost = 'TBA';
-                }
-                if (ex.url) record.campUrl = ex.url;
-            }
-
-            // Mark processed
-            record.isChecked = true;
-            record.scriptVersion = 14; 
-            record.extractionResult = (ex.dates || ex.cost || ex.email) ? 'enriched' : 'no_data';
-            record.lastChecked = new Date().toISOString();
-            
-            safeWriteJSON(DATA_FILE, masterData);
-
-        } catch(e) {
-            log(`  ❌ Err: ${e.message}`);
+        if (
+          needsRepull ||
+          meta.missing.includes("cost") ||
+          !record.cost ||
+          record.cost === "TBA"
+        ) {
+          if (ex.cost) {
+            record.cost = ex.cost;
+            log(`  ✅ cost: ${ex.cost}`);
+          }
         }
-        await page.close();
+        if (
+          needsRepull ||
+          meta.missing.includes("dates") ||
+          !record.dates ||
+          record.dates === "TBA"
+        ) {
+          if (ex.dates) {
+            record.dates = ex.dates;
+            log(`  ✅ dates: ${ex.dates.substring(0, 50)}`);
+          }
+        }
+        if (meta.missing.includes("email") || !record.email) {
+          if (ex.email) {
+            record.email = ex.email;
+            log(`  ✅ email: ${ex.email}`);
+          }
+        }
+
+        if (ex.campPOC) {
+          record.campPOC = ex.campPOC;
+          log(`  ✅ POC: ${ex.campPOC}`);
+        }
+
+        // Clear old stale if URL fundamentally changed
+        if (ex.url && record.campUrl && record.campUrl !== ex.url) {
+          if (!ex.dates && record.dates) record.dates = "TBA";
+          if (!ex.cost && record.cost) record.cost = "TBA";
+        }
+        if (ex.url) record.campUrl = ex.url;
+      }
+
+      // Mark processed
+      record.isChecked = true;
+      record.scriptVersion = 14;
+      record.extractionResult =
+        ex.dates || ex.cost || ex.email ? "enriched" : "no_data";
+      record.lastChecked = new Date().toISOString();
+
+      safeWriteJSON(DATA_FILE, masterData);
+    } catch (e) {
+      log(`  ❌ Err: ${e.message}`);
     }
-    await browser.close();
-    log(`✅ DONE`);
+    await page.close();
+  }
+  await browser.close();
+  log(`✅ DONE`);
 }
 
 run();
