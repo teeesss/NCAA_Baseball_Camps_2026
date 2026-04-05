@@ -86,29 +86,29 @@ if (firstResult.score > threshold) useFirstResult();
 functionvalidateSearchResult(result, school) {
 const url = result.url.toLowerCase();
 const title = result.title.toLowerCase();
-  
+
 // Immediate rejections
 const rejectPatterns = [
 'ticket', 'seatgeek', 'stubhub', 'merchandise', 'shop',
 'football', 'basketball', 'soccer', 'tennis', 'swimming'
   ];
-  
+
 for (const pattern of rejectPatterns) {
 if (url.includes(pattern) || title.includes(pattern)) {
 returnfalse;
     }
   }
-  
+
 // Must contain baseball
 if (!url.includes('baseball') && !title.includes('baseball')) {
 returnfalse;
   }
-  
+
 // Prefer 2026 over 2025
 if (url.includes('2025') && hasAlternative2026(result.alternatives)) {
 returnfalse; // Use 2026 alternative instead
   }
-  
+
 returntrue;
 }
 ```
@@ -125,27 +125,27 @@ const dates = extractDates(pageText);
 functionextractValidDates(pageText) {
 const allDates = extractAllDates(pageText);
 const validDates = [];
-  
+
 for (const date of allDates) {
 // Must be 2026
 if (!date.includes('2026') && !date.includes('/26')) {
 continue;
     }
-  
+
 // Must be June, July, or August
 const month = date.toLowerCase();
-const isSummerMonth = month.includes('june') || month.includes('jun') || 
+const isSummerMonth = month.includes('june') || month.includes('jun') ||
                          month.includes('july') || month.includes('jul') ||
                          month.includes('august') || month.includes('aug') ||
-                         month.includes('06') || month.includes('07') || 
-                         month.includes('08') || month.includes('6/') || 
+                         month.includes('06') || month.includes('07') ||
+                         month.includes('08') || month.includes('6/') ||
                          month.includes('7/') || month.includes('8/');
-  
+
 if (isSummerMonth) {
       validDates.push(date);
     }
   }
-  
+
 return validDates;
 }
 ```
@@ -162,28 +162,28 @@ const email = extractEmail(pageText);
 functionextractBaseballContact(pageText) {
 // Split page into sections
 const sections = pageText.split(/\n\s*\n/);
-  
+
 for (const section of sections) {
 const sectionLower = section.toLowerCase();
-  
+
 // Only look in baseball-related sections
-if (sectionLower.includes('baseball') && 
+if (sectionLower.includes('baseball') &&
         sectionLower.includes('camp')) {
-    
+
 const email = extractEmailFromSection(section);
 if (email && !isBasketballEmail(email)) {
 return email;
       }
     }
   }
-  
+
 returnnull;
 }
 
 functionisBasketballEmail(email) {
 // Check if email mentions basketball
 const emailBody = getEmailContext(email);
-return emailBody.includes('basketball') && 
+return emailBody.includes('basketball') &&
          !emailBody.includes('baseball');
 }
 ```
@@ -195,45 +195,45 @@ javascript
 ```javascript
 asyncfunctionselectBestUrl(searchResults, school) {
 const scoredResults = [];
-  
+
 for (const result of searchResults) {
 let score = 0;
-  
+
 // Base score for relevance
     score += result.relevanceScore;
-  
+
 // Bonus for exact matches
 if (result.url.includes(`${school.name.toLowerCase()}-baseball-camp`)) {
       score += 100;
     }
-  
+
 if (result.url.includes('2026')) {
       score += 50;
     }
-  
+
 if (result.url.includes('summer')) {
       score += 30;
     }
-  
+
 // Penalties
 if (result.url.includes('2025')) {
       score -= 100; // Heavy penalty for wrong year
     }
-  
+
 if (containsOtherSports(result)) {
       score -= 200; // Very heavy penalty for wrong sport
     }
-  
+
 if (result.url.includes('ticket')) {
       score = -1000; // Complete rejection
     }
-  
+
     scoredResults.push({...result, score});
   }
-  
+
 // Sort by score descending
   scoredResults.sort((a, b) => b.score - a.score);
-  
+
 // Return top result if score > 0
 return scoredResults[0]?.score > 0 ? scoredResults[0] : null;
 }
@@ -251,10 +251,10 @@ return scoredResults[0]?.score > 0 ? scoredResults[0] : null;
 
 1. **Update Extraction Engine** :
 
-* Add strict year filtering (2026 only)
-* Add sport validation (baseball only)
-* Add price validation (< $500)
-* Add URL priority system
+- Add strict year filtering (2026 only)
+- Add sport validation (baseball only)
+- Add price validation (< $500)
+- Add URL priority system
 
 1. **Add Validation Layer** :
    javascript
@@ -275,11 +275,11 @@ return scoredResults[0]?.score > 0 ? scoredResults[0] : null;
    javascript
 
 ```javascript
-   // Instead of generic search
-   const query = `${school.name} baseball camp`;
+// Instead of generic search
+const query = `${school.name} baseball camp`;
 
-   // Use specific search
-   const query = `"${school.name}" baseball summer camp 2026 dates cost`;
+// Use specific search
+const query = `"${school.name}" baseball summer camp 2026 dates cost`;
 ```
 
 The core issue is your scraper isn't being strict enough about validation. You need to reject pages EARLIER in the process rather than trying to extract data and then realizing it's wrong.

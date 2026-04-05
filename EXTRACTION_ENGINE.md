@@ -1,45 +1,52 @@
 # NCAA Baseball Scraper: Extraction Engine V6 (Ultra-Fidelity)
 
 ## 1. MANDATORY LOGGING PROTOCOL
+
 Any modification to the logging output MUST preserve the following iconography and structure. This provides essential visual feedback for data validation.
 
-| Icon | Meaning | Context |
-| :--- | :--- | :--- |
-| **★** | **High Confidence URL** | Score >= 40 (Keyword match + Base Domain) |
-| **•** | **Medium Confidence URL** | Score >= 20 |
-| **○** | **Guessed/Fallback URL** | Guessed pattern or score < 20 |
-| **✅** | **Page Validated** | Confirmed school match via aliases & contamination check |
-| **⭐** | **Rich Sub-page Found** | Sub-page contains "baseball" + "camp" keywords |
-| **↳** | **Sub-page Scanned** | Sub-page visited but no significant data found |
-| **✓** | **Data Extracted** | Successfully parsed tier/dates from sub-page |
-| **📋** | **Tiers Mapped** | List of distinct camps identified |
-| **🎯** | **Final Success** | Valid camp data saved to database |
+| Icon   | Meaning                   | Context                                                  |
+| :----- | :------------------------ | :------------------------------------------------------- |
+| **★**  | **High Confidence URL**   | Score >= 40 (Keyword match + Base Domain)                |
+| **•**  | **Medium Confidence URL** | Score >= 20                                              |
+| **○**  | **Guessed/Fallback URL**  | Guessed pattern or score < 20                            |
+| **✅** | **Page Validated**        | Confirmed school match via aliases & contamination check |
+| **⭐** | **Rich Sub-page Found**   | Sub-page contains "baseball" + "camp" keywords           |
+| **↳**  | **Sub-page Scanned**      | Sub-page visited but no significant data found           |
+| **✓**  | **Data Extracted**        | Successfully parsed tier/dates from sub-page             |
+| **📋** | **Tiers Mapped**          | List of distinct camps identified                        |
+| **🎯** | **Final Success**         | Valid camp data saved to database                        |
 
 ## 2. CORE EXTRACTION LOGIC (THE "VMI" STANDARD)
+
 The extraction engine MUST follow these three phases to be considered "High Fidelity":
 
 ### Phase A: URL Queuing & Scoring
+
 1.  **Prioritize Known URLs**: If `camp.campUrl` exists and is valid, use it as the first candidate.
 2.  **Smarter URL Guessing**: Try both the official school name and "clean" versions (e.g., `trumanbaseballcamps.com` for "Truman State University").
 3.  **Multi-Engine Search**: Fallback to Bing/Yahoo/Brave specifically using Mascot-based queries.
 4.  **Scoring Function**: `scoreUrl(url, school)` evaluates the URL string for "baseball", "camps", and the school's mascot/abbreviation.
 
 ### Phase B: Validation & Sub-Crawling
+
 1.  **Alias Matching**: Use `getUniversityAliases` to check if the page body mentions the school (e.g., "UAPB" for "Arkansas-Pine Bluff").
 2.  **Contamination Check**: Identify and skip pages belonging to "Rival" or "Regional" schools (e.g., skip "Arkansas" if looking for "Arkansas State").
 3.  **Deep Traversal**: Recursively visit the top 8 links on the validated page that match keywords like `register`, `showcase`, `camp`, or `detail`. Capture and append their text to the `fullText`.
 
 ### Phase C: Tier Mapping (The "Matching Engine")
+
 1.  **Regex Identification**: Identify dates using strict numerical (`1/22/26`) and text-based (`January 22nd`) patterns **across all 12 months of 2026**.
 2.  **Anchor Blocks**: Every date match triggers an extraction of the surrounding ±3 lines to identify the "Camp Name" and "Cost" ($).
 3.  **Deduplication**: Merge identical dates/tiers into a unique mapping in the `campTiers` array.
 
 ## 3. STATE PERSISTENCE & SELF-HEALING
+
 - **Watchdog Integration**: Every run MUST be wrapped in `watchdog.js` to kill hanging processes (100s inactivity limit).
 - **Immediate Checkpointing**: `isChecked: true` and `scriptVersion: 6` must be saved to the JSON **before** the long-running navigation cycle begins.
 - **Fail-Safe Timeout**: Each school has a hard 60-90 second timeout to prevent infinite loops on heavy JS portals.
 
 ## 4. VERSION CONTROL RULES
+
 - **No Simplification**: Do NOT truncate the sub-crawl depth (8 links) for "speed".
 - **No Logo Domain Usage**: Never use `logoDomain` for search queries; always use Mascot-based lookup.
 - **Verification Priority**: Schools marked `isVerified: true` MUST BE SKIPPED by the automated logic to preserve manual human input.

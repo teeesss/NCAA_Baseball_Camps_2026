@@ -1,6 +1,7 @@
 # Project Context & Rules - NCAA Division I Baseball Camps 2026
 
 ## Global Project Rules
+
 - **Aesthetics First**: The web application `index.html` must look premium. Use modern typography (Inter, Outfit), vibrant colors, and smooth animations.
 - **Accuracy**: All data must be verified from official athletics sources. If no data exists, clearly state "TBA / No information posted".
 - **URL Completeness**: 100% of programs must have a valid camp registration URL or athletic department baseball URL, even if specific camp dates are noted as TBA.
@@ -14,13 +15,13 @@
 - **Feedback Loop**: The UI must include a "Report Error" contact form that sends feedback to 'rayjonesy@gmail.com'.
 - **Verified Data Preservation**: High-fidelity, manually verified data (such as the Arkansas registration forms) MUST be saved as separate JSON files in the `verified/` directory. The automated extraction script MUST explicitly skip any school that possesses verified flags (`isVerified: true`, `isChecked: true`, `scriptVersion >= 5`), to ensure verified data is never accidentally overridden.
 - **Extraction Protocol (IMMUTABLE)**: The extraction engine MUST follow the **V6 Ultra-Fidelity** standard as defined in [EXTRACTION_ENGINE.md](file:///x:/NCAA-DivisonI-Baseball-Camps-2026/EXTRACTION_ENGINE.md).
-    - **Security First (MANDATORY)**: NEVER commit credentials, API keys, or private configuration folders to the git repository. 
-    - The `.credentials/` directory and `.claude/` directory MUST remain in `.gitignore`.
-    - ALL shared configuration (blacklists, regex, platform lists) must be centralized in `src/utils/config.js` to avoid drift.
-    - AUTOMATED GUARD: Always verify that `node src/tests/test_config_consistency.js` passes before any deployment or push.
-
+  - **Security First (MANDATORY)**: NEVER commit credentials, API keys, or private configuration folders to the git repository.
+  - The `.credentials/` directory and `.claude/` directory MUST remain in `.gitignore`.
+  - ALL shared configuration (blacklists, regex, platform lists) must be centralized in `src/utils/config.js` to avoid drift.
+  - AUTOMATED GUARD: Always verify that `node src/tests/test_config_consistency.js` passes before any deployment or push.
 
 ## Current Knowledge
+
 - The initial goal was for DI baseball camp data, but it has been expanded to include all 300+ NCAA DII programs.
 - Total programs in database: 559.
 - Most D1/D2 programs have not yet posted their summer/fall 2026 camp dates as of April 2026.
@@ -29,6 +30,7 @@
 - **UI Architecture**: Features a robust client-side filtering system allowing multifaceted drill-down (Division -> Conference -> Auto/Human Verified -> Estimated Tier Cost -> String Match).
 
 ## Lessons Learned
+
 - **Deduplication**: When merging data, unique hashing for university names is essential to prevent double-counting.
 - **Parsing**: Standardizing Markdown table parsing is key to importing batch-collected data.
 - **Word Formatting**: Consistent Calibri/Arial Size 11 text is expected for the Word document.
@@ -64,10 +66,12 @@
 - **Granular Timestamp Tracking**: To support specialized UI search/filtering (e.g., "New Dates" vs "Any Update"), the master schema must maintain section-specific timestamps (`datesUpdateDate`, `contactUpdateDate`, etc.) instead of a single binary `lastUpdateDate`. This maintains high discoverability for specific data refreshes while allowing global DESC sorting for overall freshness.
 
 ## Infrastructure
+
 - **Search**: The HTML directory must have a real-time reactive search by university, coach, or keyword.
 - **Expandable Cards**: Detailed information (What to bring, address, etc.) should be tucked into expandable UI elements.
 
 ## Future Plans
+
 - Re-check programs in May/June 2026 for updated camp information.
 - Finalize the Word document for the user's offline reference.
 
@@ -84,7 +88,9 @@ The pipeline has four stages that feed into each other:
 4. **Deploy** → `deploy.js` uploads `index.html` and assets via FTP to `/Baseball_Camps_2026/`. `deploy_dev.js` uploads dev version to `/Baseball_Camps_2026_dev/`. Credentials live in `.credentials/` (gitignored).
 
 ### Dynamic Rendering Test (2026-04-04)
+
 A parallel path exists for testing a lightweight dynamic rendering approach:
+
 - `generate_html_dev.js` → Generates ~55KB HTML shell that fetches `camps_data.json` at runtime and renders cards client-side
 - `deploy_dev.js` → Deploys to `/Baseball_Camps_2026_dev/` (isolated test directory on the same server)
 - Total payload: ~855KB vs 5.4MB production — 6x reduction
@@ -93,11 +99,14 @@ A parallel path exists for testing a lightweight dynamic rendering approach:
 - `npm run generate:dev` + `npm run deploy:dev` for test deployments
 
 **Key data shapes:**
+
 - `camps_data.json`: Array of school objects with fields: `university`, `division`, `conference`, `divisionLevel`, `contact`, `email`, `campDates`, `prices`, `url`, `sourceUrl`, `isVerified`, `isChecked`, `scriptVersion`, `auditStatus`, `lastUpdateDate`, and granular timestamps (`datesUpdateDate`, `contactUpdateDate`, `priceUpdateDate`, `urlUpdateDate`).
 - `blacklist.json`: Array of third-party/junk domains to exclude during extraction.
 
 ## Directory Structure
+
 To maintain a clean root folder, follow this standard structure for scripts and files:
+
 - **Root (`/`)**: Core active production files only (`camps_data.json`, `index.html`, `smart_extract.js`, `generate_html.js`, `deploy.js`, `quality_audit.js`, `watchdog.js`).
 - **`src/tests/`**: All debugging, experimental, verification, and module testing scripts (`test_*.js`, `verify_*.js`).
 - **`src/debug/`**: Execution outputs, isolated sandbox scripts (`debug_*.js`), and screenshot dumps from Chromium.
@@ -140,6 +149,7 @@ node src/utils/finalize_database.js
 ```
 
 ## Notes
+
 - `index.html` is generated, not hand-edited. All UI changes must be made in `generate_html.js`.
 - `generate_html.js` embeds all CSS/JS inline — there is no separate build step or bundler.
 - The frontend uses a `<template>` rendering engine for camp cards. When moving DOM elements between the template and parent, always update ALL event listeners with `if(node)` guards.

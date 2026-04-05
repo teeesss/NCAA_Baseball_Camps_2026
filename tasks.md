@@ -1,6 +1,7 @@
 # Project Tasks: NCAA Division I Baseball Camps 2026 Compilation
 
 ## 🚀 Active Optimization & Stability Phase (2026-04-04)
+
 - [ ] Implement isolated dynamic rendering testing in `/Baseball_Camps_2026_dev/`.
 - [ ] Stabilize `camps_data.json` runtime fetch for dynamic architecture.
 - [ ] Re-verify UI filter performance on the 35KB skeleton.
@@ -15,6 +16,7 @@
 - [ ] **URL Maintenance**: Implement a 30-day "Refresher" bot to re-verify existing 200 OK URLs.
 
 ## Current Status
+
 - [x] Create skeletal list of 308 NCAA Division I baseball programs.
 - [x] Gather initial camp data for 264 programs (many listed as TBA).
 - [x] Create JSON database (`camps_data.json`).
@@ -22,20 +24,22 @@
 - [x] Incorporate Division II programs into the dataset (~250+ more).
 
 ## [2026-04-03] - UI Price Filter & Data Fidelity Fix
+
 - **FIX**: Resolved "100% broke" price filter. Problem was `null` cost attributes crashing the loop and integer collisions for decimals (like $262.50).
 - **ENHANCEMENT**: Implemented `src/tests/test_ui_filter.js` regression suite.
 - **DATA CLEANUP**: Wiped stale/source-less costs for Villanova, Seattle, and Seton Hall.
 - **DEPLOYED**: Site rebuilt and pushed.
 
 ## [2026-04-03] - CRITICAL: Live Filter Fix (ISS-009)
-- **FIX (CRITICAL)**: Resolved "Broke live site" price filter regression. 
+
+- **FIX (CRITICAL)**: Resolved "Broke live site" price filter regression.
 - **ROOT CAUSE**: Regex backslashes (`\d`) were consumed by template literals in `generate_html.js`, resulting in `match(/d+.../` in the browser which failed to find numbers.
 - **RESOLUTION**: Double-escaped backslashes (`/\\d+/`) in `generate_html.js` to ensure survival after write.
 - **DATA CLEANUP**: Surgically purged 3 corrupted records (LSU, Illinois, West Texas A&M) using `fix_bad_costs.js`.
 - **DEPLOYED**: Site successfully rebuilt and pushed to `bmwseals.com/Baseball_Camps_2026/`.
 
-
 ## [2026-04-03] - Logo UI & 50px Upgrade
+
 - [x] Update UI to separate D1 and D2 programs (toggle or filter).
 - [x] Complete the dataset for all 300+ D1 programs (total now 559 with D2).
 - [ ] Ensure 100% of programs have a valid camp URL, even if dates are TBA.
@@ -49,6 +53,7 @@
 ## Verification System Tasks
 
 ### ✅ Auto-Verified (Script-Detected)
+
 - [x] Define `autoVerified` schema field: campUrl + real 2026 dates + cost ($XX) found by scraper.
 - [x] Define `autoVerifiedPartial` schema field: URL found + (dates OR cost) but not both.
 - [x] Build `auto_verify.js` — stamps `autoVerified`/`autoVerifiedPartial` flags on all records in `camps_data.json`.
@@ -59,6 +64,7 @@
 - [x] Add filter buttons to UI: `All | ✅ Auto Verified | 🔶 Partial | ❓ Unverified | 👤 Human Verified`.
 
 ### 👤 Human Verified (Community Crowd-sourced)
+
 - [x] Build `verify_human.php` — server-side PHP endpoint that inc/dec verification count per school.
   - [x] Stores counts in `human_verifications.json` on live server.
   - [x] Per-IP rate limiting: 1 vote per IP per school per 24h (privacy-safe IP hashing).
@@ -82,6 +88,7 @@
 ## Smart Targeted Extraction (Missing Data)
 
 ### Quality Audit Engine
+
 - [x] Build `quality_audit.js` — scans all 559 records and assigns quality tiers:
   - `COMPLETE (100)`: campUrl + dates + cost + contact + email
   - `GOOD (75)`: campUrl + dates + cost (missing contact/email)
@@ -93,6 +100,7 @@
 - [x] Stamps `autoVerified`/`autoVerifiedPartial` on all records as part of audit run.
 
 ### Smart Extract Engine
+
 - [x] Build `smart_extract.js` — reads `missing_data_queue.json` and processes ONLY incomplete schools.
   - CLI args: `--tier=EMPTY`, `--tier=LOW`, `--tier=PARTIAL`, `--limit=N`, `--school="Name"`.
   - Crawls existing `campUrl` for missing dates/cost/email before doing a new search.
@@ -112,6 +120,7 @@
 ## Advanced Features & Filtering
 
 ### 📂 Conference & Membership
+
 - [x] Add `conference` field to all 559 records in `camps_data.json`.
 - [x] Create `conference_lookup.js` or integrate into `mascot_lookup.js` for mapping.
 - [x] Add **Conference Filter** to the UI (dropdown or tags).
@@ -119,11 +128,13 @@
 - [x] Renamed 'Independent / Other' to 'Other' for cleaner UI.
 
 ### 💰 Cost Range Filtering
+
 - [x] Implement cost range detection logic in the UI based on numeric parsing of existing strings.
 - [x] Add **Cost Filter** to the UI (Presets: `All | Under $100 | Under $250 | $250+`).
 - [ ] Map cost tiers (Youth vs Prospect) into the `.drawer` expandable modal (Partially implemented via .details).
 
 ### 📅 Improved Date Extraction & Search
+
 - [x] Expand **Search Engine Logic** in `smart_extract.js`:
   - [x] Query 1: `[School] baseball summer camp 2026 schedule`
   - [x] Query 2: `"[School]" baseball camp "2026 dates"`
@@ -135,16 +146,19 @@
 ## Immediate Queue / Action Plan (Prioritized)
 
 ### P0 (Critical / Data Integrity)
+
 - [x] Verify "Alabama vs Alabama State" and other substring-related contact data isolation (prevent cross-contamination).
 - [ ] Implement robust link verification (batch HTTP GET) to ensure all existing `campUrl` records are alive (200 OK).
 
 ### P1 (Active Epic / Core Features)
+
 - [x] Deploy `verify_human.php` and its empty JSON db files (`human_verifications.json`, `human_verifications_ip.json`) to the live server.
 - [x] Add the "👤 Human Verified" button interface and POST network logic to `index.html` card UI.
 - [x] Download and integrate team logos for all 559 programs (improving premium UI aesthetics).
 - [x] Update `index.html` to inject the small team logos visually into the top-right of each card.
 
 ### P2 (Enhancements & Polish)
+
 - [x] Implement strict "low cost" flagging to automatically disqualify prices under $100 (e.g., catching high school discounts instead of real college camps).
 - [x] Refine Cost aggregator logic in scraper/parser to span arrays of prices rather than defaulting purely to first-found strings.
 - [x] Sync verifications from the server to local (update `sync-verifications` script logic).
@@ -153,6 +167,7 @@
 - [x] Re-deploy the finalized files (logos + PHP files + updated HTML) to the live FTP server.
 
 ### P3 (Housekeeping & Arch Improvements)
+
 - [x] [AUTO-DISCOVERED] Add isolated unit tests inside `src/tests/` to guarantee that contact mapping regex does not falsely append data between identically-prefixed schools.
 - [ ] Monitor 'Report Error' feedback at rayjonesy@gmail.com post-launch.
 
@@ -161,21 +176,25 @@
 ## 📜 Lessons Learned / Context Preservation
 
 ### Data Integrity Failures (April 2026)
+
 - **Problem**: Manually verified schools (SEC) were reverted by automated script runs.
 - **Root Cause**: Missing check for `isVerified` status in early iterations of `smart_extract.js` and inconsistent `scriptVersion` logic.
 - **Fix**: Implemented `restore_data_integrity.js` to patch SEC programs back to "Verified" and "SEC".
 - **Prevention**: Scripts MUST now check `if (school.isVerified) continue;` or equivalent before mutation.
 
 ### UI Filtering & Performance
+
 - **Problem**: Dropdown filters for conferences were non-intuitive.
 - **Resolution**: Switched to a standard flex-wrap row of buttons. Performance remains high with 560 cards because of the optimized text-based filtering in the browser.
 
 ### Conference Mapping
+
 - **Note**: Notre Dame is ACC for baseball (2026). Stanford/Cal/SMU are also ACC. Always check the `CONFERENCE_LOOKUP` in `src/utils/` before doing batch updates.
 
 ---
 
 ## [2026-04-04] - Granular Timestamp Tracking & Dual-Filters (V8/V9)
+
 - [x] Implement section-specific timestamps: datesUpdateDate, contactUpdateDate, costUpdateDate, detailsUpdateDate.
 - [x] Build src/utils/scrub_data.js V2 to intelligently manage and sync these granular timestamps based on data region refinement.
 - [x] Update generate_html.js to map these timestamps to card attributes (data-dates-update and data-last-update).
