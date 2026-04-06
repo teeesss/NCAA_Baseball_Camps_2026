@@ -2,8 +2,12 @@
 
 const fs = require("fs");
 const path = require("path");
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-extra");
+const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+puppeteer.use(StealthPlugin());
 const { MASCOT_LOOKUP } = require("./src/utils/mascot_lookup.js");
+const { isContaminated } = require("./src/utils/contamination_check.js");
+const ALL_SCHOOLS = Object.keys(MASCOT_LOOKUP);
 
 const QUEUE_FILE = path.join(__dirname, "missing_data_queue.json");
 const DATA_FILE = path.join(__dirname, "camps_data.json");
@@ -30,6 +34,7 @@ for (const a of args) {
   argMap[k] = v || true;
 }
 const SCHOOL_FILTER = argMap.school || null;
+const SCHOOL_LIMIT = argMap.limit ? parseInt(argMap.limit, 10) : null;
 
 // ── Load config (single source of truth) ────────────────────────────
 const {
@@ -287,6 +292,14 @@ async function searchEngine(page, urlTemplate, engineName) {
       "donate",
       "fundraise",
       "givesmart",
+      // Ad/promo redirects — these are API redirect links, not actual camp pages
+      "/api/",
+      "/promotions/",
+      "/adserver",
+      "/track?",
+      "/click?",
+      "/redirect?",
+      "bkstr.com",
     ];
 
     const scored = links
@@ -316,6 +329,167 @@ async function searchEngine(page, urlTemplate, engineName) {
     log(`    ✕ [${engineName}] Error: ${e.message.substring(0, 40)}`);
   }
   return null;
+}
+
+function checkSubPageContamination(text, targetSchool) {
+  const targetLower = targetSchool.toLowerCase().replace(/\s+/g, "");
+  const targetMascot = (MASCOT_LOOKUP[targetSchool] || "").toLowerCase();
+  const textLower = text.toLowerCase().replace(/\s+/g, "");
+
+  // Conference opponent whitelist — big programs naturally appear on
+  // schedule, roster, facility, and news pages within the same conference.
+  // Not contamination if the target school shares a conference page
+  // with these programs.
+  const CONFERENCE_OPPONENTS = new Set([
+    "alabama",
+    "arizona",
+    "arizonastate",
+    "auburn",
+    "baylor",
+    "clemson",
+    "duke",
+    "florida",
+    "floridastate",
+    "georgia",
+    "georgiatech",
+    "kentucky",
+    "louisiana",
+    "louisianatech",
+    "louisville",
+    "lsu",
+    "maryland",
+    "miami",
+    "miamioh",
+    "michigan",
+    "michiganstate",
+    "mississippi",
+    "mississippistate",
+    "northcarolina",
+    "northcarolinastate",
+    "northwestern",
+    "notredame",
+    "ohiostate",
+    "oklahoma",
+    "oklahomastate",
+    "olemiss",
+    "oregon",
+    "oregonstate",
+    "pennstate",
+    "southcarolina",
+    "stanford",
+    "texas",
+    "texasa&m",
+    "texaschristian",
+    "texastech",
+    "tennessee",
+    "ucla",
+    "usc",
+    "utah",
+    "vanderbilt",
+    "virginia",
+    "virginiatech",
+    "washington",
+    "washingtonstate",
+    "wakeforest",
+    "westvirginia",
+    "iowa",
+    "iowastate",
+    "indiana",
+    "illinois",
+    "kansas",
+    "kansasstate",
+    "nebraska",
+    "arkansas",
+    "arkansasstate",
+    "cincinnati",
+    "colorado",
+    "bostoncollege",
+    "louisianastate",
+    "california",
+    "smu",
+  ]);
+
+  for (const [uni, mascot] of Object.entries(MASCOT_LOOKUP)) {
+    if (uni.toLowerCase() === targetSchool.toLowerCase()) continue;
+    const uniLower = uni.toLowerCase().replace(/\s+/g, "");
+    const mascotNorm = mascot.toLowerCase().replace(/[^a-z]/g, "");
+
+    // Skip conference opponents — normal on schedule/conference pages
+    if (CONFERENCE_OPPONENTS.has(uniLower)) continue;
+
+    // Word-boundary check for unis (min 7 chars) prevents false positives
+    if (uniLower.length > 6) {
+      const re = new RegExp(uniLower.replace(/[^a-z0-9]/g, ""), "i");
+      if (re.test(textLower)) {
+        if (
+          !uniLower.includes(targetLower) &&
+          !targetLower.includes(uniLower)
+        ) {
+          log(
+            '    \u26a0\ufe0f Sub-page contaminated with "' +
+              uni +
+              '" - skipping',
+          );
+          return true;
+        }
+      }
+    }
+
+    // Skip common mascot words that appear in non-school contexts
+    const GENERIC_MASCOT_WORDS = new Set([
+      "eagles",
+      "falcons",
+      "hawks",
+      "knights",
+      "lions",
+      "tigers",
+      "bears",
+      "bulls",
+      "wolves",
+      "panthers",
+      "warriors",
+      "pioneers",
+      "scouts",
+      "pride",
+    ]);
+    if (GENERIC_MASCOT_WORDS.has(mascotNorm)) continue;
+
+    // Mascot: require word-boundary match (min 5 chars)
+    if (mascotNorm.length > 4) {
+      const mascotWord = new RegExp("\\b" + mascotNorm + "\\b", "i");
+      if (mascotWord.test(text)) {
+        const targetNorm = targetMascot.replace(/[^a-z]/g, "");
+        if (
+          !targetNorm.includes(mascotNorm) &&
+          !mascotNorm.includes(targetNorm)
+        ) {
+          log(
+            '    \u26a0\ufe0f Sub-page contaminated with "' +
+              mascot +
+              '" - skipping',
+          );
+          return true;
+        }
+      }
+    }
+  }
+
+  return false;
+}
+function isAdRedirectUrl(url) {
+  if (!url) return false;
+  const u = url.toLowerCase();
+  return (
+    u.includes("/api/") ||
+    u.includes("/promotions/") ||
+    u.includes("/adserver") ||
+    u.includes("/click?") ||
+    u.includes("/redirect?") ||
+    u.includes("/track?") ||
+    u.includes("bkstr.com") ||
+    u.includes("seatgeek.com") ||
+    u.includes("stubhub.com")
+  );
 }
 
 function isUrlGeneric(url) {
@@ -362,25 +536,7 @@ async function run() {
       "--no-sandbox",
       "--disable-setuid-sandbox",
       "--window-size=1920,1080",
-      "--disable-blink-features=AutomationControlled",
     ],
-    ignoreDefaultArgs: ["--enable-automation"],
-  });
-
-  // Stealth: inject webdriver spoof on every new page
-  await browser.on("targetchanged", async (target) => {
-    try {
-      const page = await target.page();
-      if (page) {
-        await page.evaluateOnNewDocument(() => {
-          Object.defineProperty(navigator, "webdriver", { get: () => false });
-          Object.defineProperty(navigator, "deviceMemory", { get: () => 8 });
-          Object.defineProperty(navigator, "hardwareConcurrency", {
-            get: () => 16,
-          });
-        });
-      }
-    } catch (e) {}
   });
 
   const delay = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -403,6 +559,10 @@ async function run() {
     log(
       `\n[${++processed}/${queue.length}] ${record.university} | Missing: ${meta.missing.join(", ")}`,
     );
+    if (SCHOOL_LIMIT && processed > SCHOOL_LIMIT) {
+      log(`\n⏹️  LIMIT REACHED (${SCHOOL_LIMIT} schools). Exiting.`);
+      break;
+    }
     const page = await browser.newPage();
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
@@ -449,7 +609,8 @@ async function run() {
         !targetUrl ||
         meta.missing.includes("campUrl") ||
         needsRepull ||
-        isUrlGeneric(targetUrl)
+        isUrlGeneric(targetUrl) ||
+        isAdRedirectUrl(targetUrl)
       ) {
         let mascot = MASCOT_LOOKUP[record.university] || "";
         let q = `${record.university} ${mascot} baseball camp`.trim();
@@ -479,13 +640,14 @@ async function run() {
         log(`  ❌ No URL found.`);
       } else {
         log(`  ↳ Scraping: ${targetUrl}`);
-        // JS rendering wait for React/Angular sites (Ryzer, TotalCamps, custom portals)
+        // domcontentloaded + manual wait avoids endless networkidle timeouts on .edu SPAs
         await page.goto(targetUrl, {
-          waitUntil: "networkidle0",
-          timeout: 25000,
+          waitUntil: "domcontentloaded",
+          timeout: 45000,
         });
+        await page.waitForSelector("body", { timeout: 5000 }).catch(() => {});
         // Wait for dynamic content to render
-        await page.evaluate(() => new Promise((r) => setTimeout(r, 2500)));
+        await new Promise((r) => setTimeout(r, 3000));
         let text = await page.evaluate(() => document.body?.innerText || "");
 
         // Initial extraction to see if main page has data
@@ -502,7 +664,7 @@ async function run() {
               .filter((a) => {
                 if (!a.href || !a.href.startsWith("http")) return false;
                 if (a.href === currentUrl) return false;
-                // Skip social media, video, and ticket sites
+                // Skip social media, video, ticket sites, and PDFs
                 const skipBad = [
                   "twitter.com",
                   "x.com",
@@ -511,11 +673,12 @@ async function run() {
                   "tiktok.com",
                   "youtube.com",
                   "vimeo.com",
-                  "tiktok.com",
                   "ticketmaster.com",
                   "stubhub.com",
                 ];
                 if (skipBad.some((b) => a.href.includes(b))) return false;
+                // PDFs trigger net::ERR_ABORTED (Chrome treats as download)
+                if (a.href.toLowerCase().includes(".pdf")) return false;
                 const sameOrigin =
                   new URL(currentUrl).hostname === new URL(a.href).hostname;
                 if (!sameOrigin) {
@@ -534,8 +697,8 @@ async function run() {
           for (const sl of subLinks) {
             try {
               await page.goto(sl.href, {
-                waitUntil: "networkidle0",
-                timeout: 12000,
+                waitUntil: "domcontentloaded",
+                timeout: 30000,
               });
               await page.evaluate(
                 () => new Promise((r) => setTimeout(r, 1500)),
@@ -544,6 +707,48 @@ async function run() {
                 () => document.body?.innerText || "",
               );
               if (subText && subText.toLowerCase().includes("baseball")) {
+                // ── Multi-level contamination guards ──
+                // Only check external sub-links for contamination
+                // Same-origin links are already verified as belonging to this school
+                try {
+                  const currentHost = new URL(targetUrl).hostname.toLowerCase();
+                  const subHost = new URL(sl.href).hostname.toLowerCase();
+                  if (currentHost !== subHost) {
+                    // External link: full contamination check
+                    if (checkSubPageContamination(subText, record.university)) {
+                      continue;
+                    }
+                  }
+                } catch (e) {}
+
+                // Always check emails for cross-school contamination
+                const emailMatches =
+                  subText.match(
+                    /[a-zA-Z._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g,
+                  ) || [];
+                let emailSkipped = false;
+                for (const emailRaw of emailMatches) {
+                  const e = emailRaw.toLowerCase();
+                  const eLocal = e.split("@")[0];
+                  if (eLocal.length < 3) continue;
+                  for (const [uni] of Object.entries(MASCOT_LOOKUP)) {
+                    if (uni.toLowerCase() === record.university.toLowerCase())
+                      continue;
+                    const otherNorm = uni.toLowerCase().replace(/[^a-z]/g, "");
+                    const emailNoAt =
+                      eLocal + (e.split("@")[1] || "").replace(/\./g, "");
+                    if (otherNorm.length > 3 && emailNoAt.includes(otherNorm)) {
+                      log(
+                        `    ⚠️ Sub-page email (${emailRaw}) belongs to "${uni}" - skipping sub-page`,
+                      );
+                      emailSkipped = true;
+                      break;
+                    }
+                  }
+                  if (emailSkipped) break;
+                }
+                if (emailSkipped) continue;
+
                 fullText += "\n" + subText;
                 log(
                   `  ↳ Sub: ${sl.href.substring(0, 60)}... found baseball content`,
@@ -555,7 +760,7 @@ async function run() {
           }
           await page
             .goto(targetUrl, {
-              waitUntil: "networkidle0",
+              waitUntil: "domcontentloaded",
               timeout: 20000,
             })
             .catch(() => {});
