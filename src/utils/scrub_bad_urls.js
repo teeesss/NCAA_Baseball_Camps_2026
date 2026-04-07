@@ -11,14 +11,18 @@ data.forEach((s) => {
   if (!s.campUrl) return;
   const result = validateUrl(s.campUrl, s.university);
   if (!result.passed) {
-    console.log(`[${fixes + 1}] Scrubbing ${s.university}: ${s.campUrl} (Reason: ${result.reason})`);
+    console.log(
+      `[${fixes + 1}] Scrubbing ${s.university}: ${s.campUrl} (Reason: ${result.reason})`,
+    );
     s.campUrl = "";
     s.auditStatus = "URL_MISMATCH"; // Signal for re-extraction
     s.isChecked = false;
     s.isVerified = false;
     fixes++;
   } else if (result.url && result.url !== s.campUrl) {
-    console.log(`[${fixes + 1}] Unwrapping ${s.university}: ${s.campUrl} -> ${result.url}`);
+    console.log(
+      `[${fixes + 1}] Unwrapping ${s.university}: ${s.campUrl} -> ${result.url}`,
+    );
     s.campUrl = result.url;
     fixes++;
   }

@@ -1,185 +1,113 @@
-[2026-04-06T17:48:23.960Z] 
-[6/235] Arizona | Missing: campUrl
-[2026-04-06T17:48:24.029Z]   🔍 Search: Arizona Wildcats baseball camp
-[2026-04-06T17:48:26.221Z] 🚀 STARTING BATCH
-[2026-04-06T17:48:26.283Z] 📦 Backup created: camps_data_backup_1775497706224.json
-[2026-04-06T17:48:28.284Z] 
-[1/235] Akron | Missing: campUrl
-[2026-04-06T17:48:28.370Z]   ★ Consensus match: https://rec.arizona.edu/sports/club-sports/baseball
-[2026-04-06T17:48:28.370Z]   ⚠️ URL rejected as generic/non-camp: https://rec.arizona.edu/sports/club-sports/baseball
-[2026-04-06T17:48:28.370Z]   ❌ No URL found.
-[2026-04-06T17:48:28.440Z] 
-[7/235] Arkansas-Pine Bluff | Missing: campUrl
-[2026-04-06T17:48:28.491Z]   🔍 Search: Akron Zips baseball camp
-[2026-04-06T17:48:28.562Z]   🔍 Search: Arkansas-Pine Bluff Golden Lions baseball camp
-[2026-04-06T17:48:32.908Z]   ★ Engine #1: https://uapblionsroar.com/sports/baseball/schedule/2026
-[2026-04-06T17:48:32.908Z]   ⚠️ URL rejected as generic/non-camp: https://uapblionsroar.com/sports/baseball/schedule/2026
-[2026-04-06T17:48:32.908Z]   ❌ No URL found.
-[2026-04-06T17:48:32.962Z] 
-[8/235] Army | Missing: campUrl
-[2026-04-06T17:48:33.023Z]   🔍 Search: Army Black Knights baseball camp
-[2026-04-06T17:48:33.201Z]   ★ Consensus match: https://www.playnsports.com/organization/zipsbaseball/
-[2026-04-06T17:48:33.202Z]   ⚠️ URL rejected as generic/non-camp: https://www.playnsports.com/organization/zipsbaseball/
-[2026-04-06T17:48:33.204Z]   ❌ No URL found.
-[2026-04-06T17:48:33.279Z] 
-[2/235] Alabama A&M | Missing: campUrl
-[2026-04-06T17:48:33.347Z]   🔍 Search: Alabama A&M Bulldogs baseball camp
-[2026-04-06T17:48:37.132Z]   ★ Consensus match: https://goarmywestpoint.com/sports/baseball
-[2026-04-06T17:48:37.132Z]   ⚠️ URL rejected as generic/non-camp: https://goarmywestpoint.com/sports/baseball
-[2026-04-06T17:48:37.132Z]   ❌ No URL found.
-[2026-04-06T17:48:37.185Z] 
-[9/235] Austin Peay | Missing: campUrl
-[2026-04-06T17:48:37.254Z]   🔍 Search: Austin Peay Governors baseball camp
-[2026-04-06T17:48:37.739Z]   ★ Engine #1: https://www.playnsports.com/organization/alabama-am-baseball-camps/
-[2026-04-06T17:48:37.741Z]   ↳ Scraping: https://www.playnsports.com/organization/alabama-am-baseball-camps/
-[2026-04-06T17:48:41.589Z]   ★ Engine #1: https://rolandfanningbaseballcamps.com/
-[2026-04-06T17:48:41.589Z]   ↳ Scraping: https://rolandfanningbaseballcamps.com/
-[2026-04-06T17:48:41.995Z]   ↳ Crawling 5 sub-links...
-[2026-04-06T17:48:45.017Z]   ↳ Crawling 7 sub-links...
-[2026-04-06T17:48:47.576Z]   ↳ Sub: https://www.playnsports.com/find-camps-clinics/... found baseball content
-[2026-04-06T17:48:49.647Z]   ↳ Sub: https://www.playnsports.com/organization/alabama-am-baseball... found baseball content
-[2026-04-06T17:48:49.849Z]   ↳ Sub: https://rolandfanningbaseballcamps.com/Coaches.Page1.html... found baseball content
-[2026-04-06T17:48:51.433Z]   ↳ Sub: https://rolandfanningbaseballcamps.com/General.Page1.html... found baseball content
-[2026-04-06T17:48:54.585Z]   ↳ Sub: https://rolandfanningbaseballcamps.com/Contact.Page1.html... found baseball content
-[2026-04-06T17:48:56.293Z] 
-[10/235] Ball State | Missing: campUrl
-[2026-04-06T17:48:56.363Z]   🔍 Search: Ball State Cardinals baseball camp
-[2026-04-06T17:48:56.995Z]   ↳ Sub: https://www.playnsports.com/find-camps-clinics/... found baseball content
-[2026-04-06T17:48:59.965Z]   ↳ Sub: https://www.playnsports.com/organization/alabama-am-baseball... found baseball content
-[2026-04-06T17:49:00.769Z]   ★ Consensus match: https://ballstatesports.com/sports/baseball
-[2026-04-06T17:49:00.769Z]   ⚠️ URL rejected as generic/non-camp: https://ballstatesports.com/sports/baseball
-[2026-04-06T17:49:00.769Z]   ❌ No URL found.
-[2026-04-06T17:49:00.819Z] 
-[11/235] Binghamton | Missing: campUrl
-[2026-04-06T17:49:00.819Z] 
-⏹️  LIMIT REACHED (10 schools). Exiting.
-[2026-04-06T17:49:01.158Z] ✅ DONE
-[2026-04-06T17:49:01.498Z]   ↳ Sub: https://www.playnsports.com/organization/alabama-am-baseball... found baseball content
-[2026-04-06T17:49:02.002Z] 
-[3/235] Albany | Missing: campUrl
-[2026-04-06T17:49:02.113Z]   🔍 Search: Albany Great Danes baseball camp
-[2026-04-06T17:49:05.944Z]   ★ Engine #1: https://ualbanysports.com/sports/baseball
-[2026-04-06T17:49:05.946Z]   ⚠️ URL rejected as generic/non-camp: https://ualbanysports.com/sports/baseball
-[2026-04-06T17:49:05.947Z]   ❌ No URL found.
-[2026-04-06T17:49:05.999Z] 
-[4/235] Alcorn State | Missing: campUrl
-[2026-04-06T17:49:06.066Z]   🔍 Search: Alcorn State Braves baseball camp
-[2026-04-06T17:49:10.014Z]   ★ Consensus match: https://info.collegebaseballcamps.com/alcornbaseball/
-[2026-04-06T17:49:10.015Z]   ↳ Scraping: https://info.collegebaseballcamps.com/alcornbaseball/
-[2026-04-06T17:49:13.754Z]   ↳ Crawling 8 sub-links...
-[2026-04-06T17:49:15.271Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#home... found baseball content
-[2026-04-06T17:49:16.798Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#about... found baseball content
-[2026-04-06T17:49:18.310Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Events... found baseball content
-[2026-04-06T17:49:19.824Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Coache... found baseball content
-[2026-04-06T17:49:21.349Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Contac... found baseball content
-[2026-04-06T17:49:22.877Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Events... found baseball content
-[2026-04-06T17:49:24.402Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Contac... found baseball content
-[2026-04-06T17:49:25.929Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Events... found baseball content
-[2026-04-06T17:49:26.495Z] 
-[5/235] Appalachian State | Missing: campUrl
-[2026-04-06T17:49:26.563Z]   🔍 Search: Appalachian State Mountaineers baseball camp
-[2026-04-06T17:49:30.771Z]   ★ Consensus match: https://www.kermitsmithbaseballcamps.com/
-[2026-04-06T17:49:30.773Z]   ↳ Scraping: https://www.kermitsmithbaseballcamps.com/
-[2026-04-06T17:49:34.464Z] 
-[6/235] Arizona | Missing: campUrl
-[2026-04-06T17:49:34.534Z]   🔍 Search: Arizona Wildcats baseball camp
-[2026-04-06T17:49:38.491Z]   ★ Consensus match: https://rec.arizona.edu/sports/club-sports/baseball
-[2026-04-06T17:49:38.492Z]   ⚠️ URL rejected as generic/non-camp: https://rec.arizona.edu/sports/club-sports/baseball
-[2026-04-06T17:49:38.493Z]   ❌ No URL found.
-[2026-04-06T17:49:38.570Z] 
-[7/235] Arkansas-Pine Bluff | Missing: campUrl
-[2026-04-06T17:49:38.637Z]   🔍 Search: Arkansas-Pine Bluff Golden Lions baseball camp
-[2026-04-06T17:49:42.688Z]   ★ Consensus match: https://uapblionsroar.com/sb_output.aspx?form=25&path=baseball
-[2026-04-06T17:49:42.689Z]   ⚠️ URL rejected as generic/non-camp: https://uapblionsroar.com/sb_output.aspx?form=25&path=baseba
-[2026-04-06T17:49:42.690Z]   ❌ No URL found.
-[2026-04-06T17:49:42.777Z] 
-[8/235] Army | Missing: campUrl
-[2026-04-06T17:49:42.842Z]   🔍 Search: Army Black Knights baseball camp
-[2026-04-06T17:49:46.852Z]   ★ Consensus match: https://goarmywestpoint.com/sports/baseball
-[2026-04-06T17:49:46.853Z]   ⚠️ URL rejected as generic/non-camp: https://goarmywestpoint.com/sports/baseball
-[2026-04-06T17:49:46.854Z]   ❌ No URL found.
-[2026-04-06T17:49:46.929Z] 
-[9/235] Austin Peay | Missing: campUrl
-[2026-04-06T17:49:47.012Z]   🔍 Search: Austin Peay Governors baseball camp
-[2026-04-06T17:49:51.533Z]   ★ Engine #1: https://rolandfanningbaseballcamps.com/
-[2026-04-06T17:49:51.534Z]   ↳ Scraping: https://rolandfanningbaseballcamps.com/
-[2026-04-06T17:49:54.882Z]   ↳ Crawling 7 sub-links...
-[2026-04-06T17:49:59.691Z]   ↳ Sub: https://rolandfanningbaseballcamps.com/Coaches.Page1.html... found baseball content
-[2026-04-06T17:50:01.274Z]   ↳ Sub: https://rolandfanningbaseballcamps.com/General.Page1.html... found baseball content
-[2026-04-06T17:50:04.431Z]   ↳ Sub: https://rolandfanningbaseballcamps.com/Contact.Page1.html... found baseball content
-[2026-04-06T17:50:06.170Z] 
-[10/235] Ball State | Missing: campUrl
-[2026-04-06T17:50:06.258Z]   🔍 Search: Ball State Cardinals baseball camp
-[2026-04-06T17:50:10.350Z]   ★ Consensus match: https://ballstatesports.com/sports/baseball
-[2026-04-06T17:50:10.351Z]   ⚠️ URL rejected as generic/non-camp: https://ballstatesports.com/sports/baseball
-[2026-04-06T17:50:10.352Z]   ❌ No URL found.
-[2026-04-06T17:50:10.424Z] 
-[11/235] Binghamton | Missing: campUrl
-[2026-04-06T17:50:10.425Z] 
-⏹️  LIMIT REACHED (10 schools). Exiting.
-[2026-04-06T17:50:10.708Z] ✅ DONE
-[2026-04-07T05:09:43.605Z] 🚀 STARTING BATCH
-[2026-04-07T05:09:43.635Z] 📦 Backup created: camps_data_backup_1775538583607.json
-[2026-04-07T05:09:45.417Z] 
-[1/1] Ball State | Missing: cost, contact, email
-[2026-04-07T05:09:45.488Z]   🔍 Search: Ball State Cardinals baseball camp
-[2026-04-07T05:09:50.418Z]   ★ Consensus match: https://ballstatesports.com/sports/baseball
-[2026-04-07T05:09:50.418Z]   ↳ Scraping: https://ballstatesports.com/sports/baseball
-[2026-04-07T05:09:54.733Z]   ↳ Crawling 8 sub-links...
-[2026-04-07T05:09:56.640Z]   ↳ Sub: https://ballstatesportscamps.com/... found baseball content
-[2026-04-07T05:09:58.191Z]   ↳ Sub: https://ballstatesportscamps.com/... found baseball content
-[2026-04-07T05:10:09.349Z]   ↳ Sub: https://shop.ballstatesports.com/collections/headwear?utm_so... found baseball content
-[2026-04-07T05:10:11.894Z]   ✅ cost: $28 / $29.99 / $31.99
-[2026-04-07T05:10:11.895Z]   ✅ email: athcomply@bsu.edu
-[2026-04-07T05:10:12.235Z] ✅ DONE
-[2026-04-07T05:10:15.839Z] 🚀 STARTING BATCH
-[2026-04-07T05:10:15.901Z] 📦 Backup created: camps_data_backup_1775538615841.json
-[2026-04-07T05:10:17.740Z] 
-[1/1] NJIT | Missing: cost, contact, email
-[2026-04-07T05:10:17.856Z]   🔍 Search: NJIT Highlanders baseball camp
-[2026-04-07T05:10:22.185Z]   ★ Engine #1: https://njithighlanders.com/sports/baseball/schedule/2026
-[2026-04-07T05:10:22.186Z]   ↳ Scraping: https://njithighlanders.com/sports/baseball/schedule/2026
-[2026-04-07T05:10:26.278Z]   ✅ cost: $5 / $7 / $10
-[2026-04-07T05:10:26.278Z]   ✅ email: tickets@njit.edu
-[2026-04-07T05:10:26.578Z] ✅ DONE
-[2026-04-07T05:10:29.919Z] 🚀 STARTING BATCH
-[2026-04-07T05:10:29.969Z] 📦 Backup created: camps_data_backup_1775538629921.json
-[2026-04-07T05:10:31.773Z] 
-[1/1] Texas Southern | Missing: cost, contact, email
-[2026-04-07T05:10:31.888Z]   ↳ Scraping: https://www.texassouthernbaseballcamps.com/index.cfm
-[2026-04-07T05:10:35.585Z]   ↳ Crawling 8 sub-links...
-[2026-04-07T05:10:37.099Z]   ↳ Sub: https://www.texassouthernbaseballcamps.com/index.cfm#sitePag... found baseball content
-[2026-04-07T05:10:38.884Z]   ↳ Sub: https://www.texassouthernbaseballcamps.com/... found baseball content
-[2026-04-07T05:10:40.622Z]   ↳ Sub: https://www.texassouthernbaseballcamps.com/... found baseball content
-[2026-04-07T05:10:42.374Z]   ↳ Sub: https://www.texassouthernbaseballcamps.com/register.cfm... found baseball content
-[2026-04-07T05:10:44.042Z]   ↳ Sub: https://www.texassouthernbaseballcamps.com/high-school-showc... found baseball content
-[2026-04-07T05:10:45.791Z]   ↳ Sub: https://www.texassouthernbaseballcamps.com/coaches-and-staff... found baseball content
-[2026-04-07T05:10:47.471Z]   ↳ Sub: https://www.texassouthernbaseballcamps.com/head-coach.cfm... found baseball content
-[2026-04-07T05:10:49.140Z]   ↳ Sub: https://www.texassouthernbaseballcamps.com/coaching-staff.cf... found baseball content
-[2026-04-07T05:10:49.356Z]   ✅ cost: $6 / $6.5 / $10
-[2026-04-07T05:10:49.551Z] ✅ DONE
-[2026-04-07T05:10:52.897Z] 🚀 STARTING BATCH
-[2026-04-07T05:10:52.938Z] 📦 Backup created: camps_data_backup_1775538652898.json
-[2026-04-07T05:10:54.745Z] 
-[1/1] Seton Hill University | Missing: cost, email
-[2026-04-07T05:10:54.860Z]   ↳ Scraping: https://www.shubaseballcamps.com/
-[2026-04-07T05:10:58.445Z]   ✅ cost: $140 / $1400
-[2026-04-07T05:10:58.631Z] ✅ DONE
-[2026-04-07T05:11:00.983Z] 🚀 STARTING BATCH
-[2026-04-07T05:11:01.023Z] 📦 Backup created: camps_data_backup_1775538660986.json
-[2026-04-07T05:11:02.450Z] 
-[1/1] Slippery Rock University | Missing: cost, email
-[2026-04-07T05:11:02.557Z]   ↳ Scraping: https://register.ryzer.com/camp.cfm?id=326042
-[2026-04-07T05:11:06.608Z]   ✅ cost: $15 / $19 / $20
-[2026-04-07T05:11:06.798Z] ✅ DONE
-[2026-04-07T05:11:09.322Z] 🚀 STARTING BATCH
-[2026-04-07T05:11:09.351Z] 📦 Backup created: camps_data_backup_1775538669323.json
-[2026-04-07T05:11:10.915Z] 
-[1/1] Southern New Hampshire University | Missing: cost, contact, email
-[2026-04-07T05:11:11.023Z]   🔍 Search: Southern New Hampshire University Penmen baseball camp
-[2026-04-07T05:11:15.281Z]   ★ Consensus match: https://www.summercamps.com/camp/nike-baseball-camp-at-southern-new-hampshire-university/
-[2026-04-07T05:11:15.282Z]   ↳ Scraping: https://www.summercamps.com/camp/nike-baseball-camp-at-southern-new-hampshire-university/
-[2026-04-07T05:11:19.028Z]   ↳ Crawling 8 sub-links...
-[2026-04-07T05:11:24.520Z]   ↳ Sub: https://www.summercamps.com/... found baseball content
-[2026-04-07T05:11:34.973Z]   ✅ email: info@summercamps.com
-[2026-04-07T05:11:35.209Z] ✅ DONE
+[2026-04-07T06:29:15.436Z] 
+🚀 V10 Unified Engine Starting. Target: 7 schools.
+[2026-04-07T06:29:15.437Z]    Database: 521 total | 16 verified
+[2026-04-07T06:29:15.462Z] 📦 Backup: camps_data_backup_1775543355437.json
+[2026-04-07T06:29:17.139Z] 
+════════════════════════════════════════════════════════════
+[2026-04-07T06:29:17.140Z] [1/7] Processing: Texas A&M
+[2026-04-07T06:29:17.140Z]    Coach: Not Listed | Version: 14
+[2026-04-07T06:29:17.140Z] ════════════════════════════════════════════════════════════
+[2026-04-07T06:29:17.354Z]    → Priority DB URL: https://12thman.com/sports/2015/3/23/baseballcamp
+[2026-04-07T06:29:17.355Z]    → [ENGINE] DDG (rotation slot 1/3)
+[2026-04-07T06:29:17.355Z]       ↳ [DDG] Texas A&M Aggies baseball camps 2026
+[2026-04-07T06:29:18.225Z]       ✓ [DDG] 10 results
+[2026-04-07T06:29:18.227Z]    → 8 candidates. Top 3:
+[2026-04-07T06:29:18.227Z]       ★ [ 95] https://12thman.com/sports/2015/3/23/baseballcamp
+[2026-04-07T06:29:18.227Z]       ★ [ 95] https://www.texasa&mbaseballcamps.com
+[2026-04-07T06:29:18.227Z]       ★ [ 90] https://www.listedbaseballcamp.com
+[2026-04-07T06:29:18.228Z] 
+   → Navigating [95]: https://12thman.com/sports/2015/3/23/baseballcamp
+[2026-04-07T06:29:19.977Z]    → ✅ VALIDATED for Texas A&M (alias: "texas a&m")
+[2026-04-07T06:29:20.113Z]    → Sub-crawling 8 pages...
+[2026-04-07T06:29:20.419Z]       ⭐ https://12thman.com/sports/2015/3/23/baseballcamp#main-content
+[2026-04-07T06:29:20.788Z]       ⭐ https://12thman.com/sports/2015/3/23/baseballcamp#
+[2026-04-07T06:29:21.472Z]       ⭐ https://12thman.com/
+[2026-04-07T06:29:22.405Z]       ⭐ https://12thman.com/sports/baseball
+[2026-04-07T06:29:23.117Z]       ⭐ https://12thman.com/sports/baseball/archives
+[2026-04-07T06:29:23.796Z]       ⭐ https://12thman.com/sports/mens-basketball
+[2026-04-07T06:29:24.504Z]       ⭐ https://12thman.com/sports/mens-basketball/archives
+[2026-04-07T06:29:25.246Z]       ⭐ https://12thman.com/sports/womens-basketball
+[2026-04-07T06:29:25.349Z]        📋 [Tiers] None found on this page.
+[2026-04-07T06:29:25.349Z] 
+   → Navigating [95]: https://www.texasa&mbaseballcamps.com
+[2026-04-07T06:29:25.367Z]    → ✕ Error on https://www.texasa&mbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.texasa&mbaseballcamps.com
+[2026-04-07T06:29:25.367Z] 
+   → Navigating [90]: https://www.listedbaseballcamp.com
+[2026-04-07T06:29:25.423Z]    → ✕ Error on https://www.listedbaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.listedbaseballcamp.com
+[2026-04-07T06:29:25.424Z] 
+   → Navigating [75]: https://www.aggiesbaseballcamps.com
+[2026-04-07T06:29:25.463Z]    → ✕ Error on https://www.aggiesbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.aggiesbaseballcamps.com
+[2026-04-07T06:29:25.463Z] 
+   → Navigating [55]: https://www.texasambaseballcamps.com
+[2026-04-07T06:29:25.536Z]    → ✕ Error on https://www.texasambaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.texasambaseballcamps.com
+[2026-04-07T06:29:25.536Z] 
+   → Navigating [40]: https://www.texasa&mbaseball.com
+[2026-04-07T06:29:25.550Z]    → ✕ Error on https://www.texasa&mbaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.texasa&mbaseball.com
+[2026-04-07T06:29:25.550Z] 
+   → Navigating [35]: https://www.listedbaseball.com
+[2026-04-07T06:29:25.615Z]    → ✕ Error on https://www.listedbaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.listedbaseball.com
+[2026-04-07T06:29:25.615Z] 
+   → Navigating [0]: https://www.texasambaseball.com
+[2026-04-07T06:29:25.657Z]    → ✕ Error on https://www.texasambaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.texasambaseball.com
+[2026-04-07T06:29:25.657Z]    → ❌ No 2026 summer camp data found for Texas A&M
+[2026-04-07T06:29:25.685Z]    → [DB_UPDATED] Saved.
+[2026-04-07T06:29:25.708Z] 
+════════════════════════════════════════════════════════════
+[2026-04-07T06:29:25.708Z] [2/7] Processing: Texas A&M-Corpus Christi
+[2026-04-07T06:29:25.708Z]    Coach: Scott Malone | Version: 3
+[2026-04-07T06:29:25.708Z] ════════════════════════════════════════════════════════════
+[2026-04-07T06:29:25.782Z]    → Priority DB URL: https://goislanders.com/sports/2025/5/21/baseball-camps.aspx
+[2026-04-07T06:29:25.782Z]    → [ENGINE] Bing (rotation slot 2/3)
+[2026-04-07T06:29:25.782Z]       ↳ [Bing] Texas A&M-Corpus Christi Islanders baseball camps 2026
+[2026-04-07T06:29:26.197Z]       ✓ [Bing] 10 results
+[2026-04-07T06:29:26.197Z]    → 6 candidates. Top 3:
+[2026-04-07T06:29:26.197Z]       ★ [ 90] https://www.malonebaseballcamp.com
+[2026-04-07T06:29:26.197Z]       ★ [ 75] https://www.islandersbaseballcamps.com
+[2026-04-07T06:29:26.197Z]       ★ [ 55] https://www.texasamcorpuschristibaseballcamps.com
+[2026-04-07T06:29:26.198Z] 
+   → Navigating [90]: https://www.malonebaseballcamp.com
+[2026-04-07T06:29:26.276Z]    → ✕ Error on https://www.malonebaseballcamp.com: net::ERR_NAME_NOT_RESOLVED at https://www.malonebaseballcamp.com
+[2026-04-07T06:29:26.276Z] 
+   → Navigating [75]: https://www.islandersbaseballcamps.com
+[2026-04-07T06:29:26.387Z]    → ✕ Error on https://www.islandersbaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.islandersbaseballcamps.com
+[2026-04-07T06:29:26.387Z] 
+   → Navigating [55]: https://www.texasamcorpuschristibaseballcamps.com
+[2026-04-07T06:29:26.469Z]    → ✕ Error on https://www.texasamcorpuschristibaseballcamps.com: net::ERR_NAME_NOT_RESOLVED at https://www.texasamcorpuschristibaseballcamps.com
+[2026-04-07T06:29:26.469Z] 
+   → Navigating [35]: https://www.malonebaseball.com
+[2026-04-07T06:29:26.534Z]    → ✕ Error on https://www.malonebaseball.com: net::ERR_NAME_NOT_RESOLVED at https://www.malonebaseball.com
+[2026-04-07T06:29:26.534Z] 
+   → Navigating [15]: https://goislanders.com/sports/2025/5/21/baseball-camps.aspx
+[2026-04-07T06:29:28.472Z]    → ✅ VALIDATED for Texas A&M-Corpus Christi (alias: "texas a&m-corpus christi")
+[2026-04-07T06:29:28.578Z]    → Sub-crawling 8 pages...
+[2026-04-07T06:29:29.162Z]       ⭐ https://goislanders.com/sports/2025/5/21/baseball-camps.aspx#main-cont
+[2026-04-07T06:29:29.738Z]       ⭐ https://goislanders.com/sports/2025/5/21/baseball-camps.aspx#main-cont
+[2026-04-07T06:29:31.136Z]       ↳ https://goislanders.com/boxscore.aspx?id=8327
+[2026-04-07T06:29:32.284Z]       ↳ https://goislanders.com/boxscore.aspx?id=8328
+[2026-04-07T06:29:33.377Z]       ↳ https://goislanders.com/boxscore.aspx?id=8329
+[2026-04-07T06:29:34.647Z]       ⭐ https://goislanders.com/boxscore.aspx?id=8330
+[2026-04-07T06:29:35.756Z]       ⭐ https://goislanders.com/boxscore.aspx?id=8331
+[2026-04-07T06:29:36.892Z]       ⭐ https://goislanders.com/boxscore.aspx?id=8332
+[2026-04-07T06:29:36.923Z]        📋 [Tiers] 2 found. Sample: "Youth Skills Camp" | "Prospect Camp"
+[2026-04-07T06:29:36.924Z]    → 🎯 SUCCESS — 2 tiers | Cost: $150
+[2026-04-07T06:29:36.953Z]    → [DB_UPDATED] Saved.
+[2026-04-07T06:29:36.979Z] 
+════════════════════════════════════════════════════════════
+[2026-04-07T06:29:36.979Z] [3/7] Processing: Texas Southern
+[2026-04-07T06:29:36.979Z]    Coach: (none/TBA) | Version: 0
+[2026-04-07T06:29:36.979Z] ════════════════════════════════════════════════════════════
+[2026-04-07T06:29:37.069Z]    → [ENGINE] Yahoo (rotation slot 3/3)
+[2026-04-07T06:29:37.069Z]       ↳ [Yahoo] Texas Southern Tigers baseball camps 2026
+[2026-04-07T06:29:38.471Z]       ✓ [Yahoo] 8 results
+[2026-04-07T06:29:38.472Z]    → 8 candidates. Top 3:
+[2026-04-07T06:29:38.472Z]       ★ [135] https://www.texassouthernbaseballcamps.com/
+[2026-04-07T06:29:38.472Z]       ★ [ 95] https://www.texassouthernbaseballcamps.com
+[2026-04-07T06:29:38.472Z]       ★ [ 80] https://tsusports.com/sports/baseball
+[2026-04-07T06:29:38.472Z] 
+   → Navigating [135]: https://www.texassouthernbaseballcamps.com/
+[2026-04-07T06:29:39.935Z]       ⚠️ Official portal says no upcoming events. Marking TBA.
+[2026-04-07T06:29:39.961Z] 
+   → Navigating [95]: https://www.texassouthernbaseballcamps.com
+[2026-04-07T06:29:40.853Z]       ↷ Lower-ranked page has no events — skipping, trying next.
+[2026-04-07T06:29:40.853Z] 
+   → Navigating [80]: https://tsusports.com/sports/baseball

@@ -1,0 +1,92 @@
+CAA Baseball Camp Extractor — Engine Audit & Consolidation Plan
+Generated: 2026-04-07
+Completed: 2026-04-07
+
+════════════════════════════════════════════════════════════
+STATUS: ✅ ALL ACTIONS COMPLETE
+════════════════════════════════════════════════════════════
+
+TL;DR — Root Problem (RESOLVED)
+There were 4 versions of the extraction engine spread across 2 directories. smart_extract.js
+had its own internal extractData() function that did NOT call src/utils/extract_camp_details.js.
+Both existed in the codebase with different rules. This caused ghost data like Southern Arkansas.
+
+RESOLUTION: V10 unified engine created. smart_extract.js is now a thin shell. All logic
+lives in src/utils/extraction_engine.js. All constants live in src/utils/config.js.
+
+════════════════════════════════════════════════════════════
+ACTION ITEMS — FINAL STATUS
+════════════════════════════════════════════════════════════
+
+#  Priority   Action                                                             Status
+─────────────────────────────────────────────────────────────────────────────────────────
+1  🔴 CRITICAL  Add NO_EVENTS_PHRASES, CAMP_NAME_PATTERN, STALE_YEARS,           ✅ DONE
+               SEARCH_PROVIDERS, timeout/restart constants to config.js
+
+2  🔴 CRITICAL  Create src/utils/extraction_engine.js — merged best-of-breed V10  ✅ DONE
+               710 lines, all 22 best-of-breed features synthesized
+
+3  🔴 CRITICAL  Refactor smart_extract.js → thin shell calling extraction_engine  ✅ DONE
+               54-line shell — zero extraction logic
+
+4  🟠 HIGH      Upgrade url_validator.js scoreUrl with V9 Alabama state-aware      ✅ DONE
+               URL penalty (was already present)
+
+5  🟠 HIGH      Update test_config_consistency.js to validate all new config keys  ✅ DONE
+               Expanded from 9 to 16 enforced tokens
+               Also caught and fixed config drift in extract_camp_details.js
+               and extract_verify.js (SCHOOL_TIMEOUT_MS was hardcoded)
+
+6  🟡 MEDIUM    Move V7/V8/V9 archives to src/archives/deprecated_engines/         ✅ DONE
+               Moved: extract_camp_details_v7/v8/v9.js + watchdog_v7/v8/v9.js
+
+7  🟢 LOW       Migrate contact field → email + pointOfContact split (V9 schema)   ✅ DONE (new extractions)
+               Decision: New extractions only. Existing data untouched.
+
+════════════════════════════════════════════════════════════
+BONUS ACTIONS (discovered during audit execution)
+════════════════════════════════════════════════════════════
+
+B1  Data: Purged Southeastern Oklahoma State University
+    URL was savagestormfootballcamps.com — wrong sport (football)
+    Status: isChecked=false, re-queued for extraction
+
+B2  Data: Purged NJIT
+    URL was /sports/baseball/schedule/2026 — ticket prices ($6/$7/$10), not camp fees
+    Status: isChecked=false, re-queued
+
+B3  Data: Purged St. Cloud State University
+    URL was hcubaseballcamps.com — third-party Hutchinson area aggregator, not SCSU
+    Status: isChecked=false, re-queued
+
+B4  Data: Purged Ball State
+    Top-level cost $28/$29.99/$31.99 from schedule page (ticket tiers, not camp fees)
+    Status: cost reset to TBA, re-queued
+
+Price violations: 29 → 13 (remaining 13 are legitimate edge cases — VERIFY_MANUALLY threshold)
+
+════════════════════════════════════════════════════════════
+CURRENT ARCHITECTURE
+════════════════════════════════════════════════════════════
+
+smart_extract.js (54 lines)                ← Thin shell: arg parse + call engine
+  └── src/utils/extraction_engine.js       ← V10: single authoritative engine (710 lines)
+        ├── src/utils/config.js             ← ALL 16 constants (zero hardcoding elsewhere)
+        ├── src/utils/url_validator.js      ← URL scoring + validation
+        ├── src/utils/mascot_lookup.js      ← Mascot + alias lookups
+        └── blacklist.json                  ← Loaded via config.js
+
+src/tests/test_config_consistency.js       ← Validates 16 config tokens project-wide
+src/archives/deprecated_engines/           ← V7/V8/V9 engines (reference only, never run)
+
+════════════════════════════════════════════════════════════
+FUTURE RE-CHECK (May/June 2026)
+════════════════════════════════════════════════════════════
+
+Schools re-queued for extraction (isChecked=false, scriptVersion=0):
+- Southeastern Oklahoma State University (football domain contamination)
+- NJIT (schedule page contamination)
+- St. Cloud State University (wrong aggregator)
+- Ball State (ticket prices)
+
+Run: node smart_extract.js --school="Southeastern Oklahoma" --force

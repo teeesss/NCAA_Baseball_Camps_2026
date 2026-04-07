@@ -666,12 +666,13 @@ const html = `
             '</div>'+
             '<div class="modal-data" style="display:none;">'+encodeURIComponent(modalHtml)+'</div>'+
             '<div class="actions">'+
-                '<a href="'+(item.campUrl||'#')+'" class="btn btn-visit'+(item.division==='DII'?' btn-dii':'')+'"'+
-                ' target="_blank" onclick="event.stopPropagation()">'+
+                // DO NOT BREAK: build the entire <a> tag in each branch so attributes
+                // are never injected as text content after the tag is already closed.
                 (!item.campUrl || (item.campUrl||'').includes('google.com/search')
-                    ? ' style="opacity:0.3;cursor:not-allowed;" onclick="return false">Visit Site'
-                    : '>Visit Site')+
-                '</a>'+
+                    ? '<a href="#" class="btn btn-visit'+(item.division==='DII'?' btn-dii':'')+'"
+                          style="opacity:0.3;cursor:not-allowed;" onclick="return false;event.stopPropagation();">Visit Site</a>'
+                    : '<a href="'+item.campUrl+'" class="btn btn-visit'+(item.division==='DII'?' btn-dii':'')+'"
+                          target="_blank" onclick="event.stopPropagation()">Visit Site</a>')+
                 '<button class="btn btn-human-verify'+(humanVerifyDisabled?' voted':'')+
                     '" data-verify-school="'+item.university+'"'+
                     ' '+(humanVerifyDisabled ? 'disabled' : '')+'>'+

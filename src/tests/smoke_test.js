@@ -121,7 +121,7 @@ test("HTML loads data dynamically or has camp data (prod loads from server)", ()
 
 // -- Static Backup HTML Tests (index_1.html) --
 const backupHtml = fs.readFileSync(
-  path.join(__dirname, "../../index_1.html"),
+  path.join(__dirname, "../archives/index_1.html"),
   "utf8",
 );
 

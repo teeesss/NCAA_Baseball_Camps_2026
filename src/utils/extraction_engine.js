@@ -36,7 +36,7 @@ const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 puppeteer.use(StealthPlugin());
 
-const fs   = require("fs");
+const fs = require("fs");
 const path = require("path");
 
 const {
@@ -73,7 +73,7 @@ const {
 } = require("./config");
 
 const DATA_FILE = path.join(__dirname, "../../camps_data.json");
-const LOG_FILE  = path.join(__dirname, "../../smart_extract.log");
+const LOG_FILE = path.join(__dirname, "../../smart_extract.log");
 
 const logStream = fs.createWriteStream(LOG_FILE, { flags: "a" });
 function log(msg) {
@@ -93,10 +93,15 @@ const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 function getCoachName(camp) {
   const input = camp.pointOfContact || camp.contact || "";
   if (!input) return "";
-  let raw = input.split("|")[0].trim().replace(/\(.*?\)/g, "").trim();
+  let raw = input
+    .split("|")[0]
+    .trim()
+    .replace(/\(.*?\)/g, "")
+    .trim();
   if (!raw || raw.toLowerCase().includes("tba")) return "";
   if (raw.includes("@") || raw.length < 4) return "";
-  if (!/^[A-Za-z][A-Za-z'\-.]+(?:\s+[A-Za-z][A-Za-z'\-.]+)+$/.test(raw)) return "";
+  if (!/^[A-Za-z][A-Za-z'\-.]+(?:\s+[A-Za-z][A-Za-z'\-.]+)+$/.test(raw))
+    return "";
   return raw;
 }
 
@@ -107,12 +112,18 @@ function getCoachName(camp) {
 function buildGuessedUrls(camp) {
   const guessed = [];
   const cleanUni = camp.university
-    .replace(/The /gi, "").replace(/\s+/g, "").replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+    .replace(/The /gi, "")
+    .replace(/\s+/g, "")
+    .replace(/[^a-zA-Z0-9]/g, "")
+    .toLowerCase();
   const shortName = camp.university
-    .replace(/University|State|College| of/gi, "").trim()
-    .replace(/\s+/g, "").toLowerCase();
+    .replace(/University|State|College| of/gi, "")
+    .trim()
+    .replace(/\s+/g, "")
+    .toLowerCase();
   const mascot = (camp.mascot || getMascot(camp.university) || "")
-    .toLowerCase().replace(/\s+/g, "");
+    .toLowerCase()
+    .replace(/\s+/g, "");
   const coach = getCoachName(camp).toLowerCase();
 
   if (cleanUni.length < 30) {
@@ -153,16 +164,82 @@ function harvestEmails(text) {
   const matches = text.match(EMAIL_PATTERN) || [];
   const cleaned = matches.filter((e) => {
     const lower = e.toLowerCase();
-    if (GENERIC_EMAIL_PREFIXES.some((g) => lower.startsWith(g + "@"))) return false;
-    if (/bootstrap|example|domain|noreply|sentry|webmaster/i.test(lower)) return false;
+    if (GENERIC_EMAIL_PREFIXES.some((g) => lower.startsWith(g + "@")))
+      return false;
+    if (/bootstrap|example|domain|noreply|sentry|webmaster/i.test(lower))
+      return false;
     if (BLACKLISTED_DOMAINS.some((b) => lower.includes(b))) return false;
     return true;
   });
-  return [...new Set(cleaned)].sort((a, b) => {
-    const aScore = (a.includes(".edu") ? 10 : 0) + (a.toLowerCase().includes("baseball") ? 5 : 0);
-    const bScore = (b.includes(".edu") ? 10 : 0) + (b.toLowerCase().includes("baseball") ? 5 : 0);
-    return bScore - aScore;
-  }).slice(0, 3);
+  return [...new Set(cleaned)]
+    .sort((a, b) => {
+      const aScore =
+        (a.includes(".edu") ? 10 : 0) +
+        (a.toLowerCase().includes("baseball") ? 5 : 0);
+      const bScore =
+        (b.includes(".edu") ? 10 : 0) +
+        (b.toLowerCase().includes("baseball") ? 5 : 0);
+      return bScore - aScore;
+    })
+    .slice(0, 3);
+}
+
+/**
+ * Extract a person's name that appears near/before an email address in text.
+ * Handles patterns like:
+ *   "Drew Bishop at Drew.Bishop@..."
+ *   "contact John Smith: jsmith@..."
+ *   "email Jane Doe at jane@"
+ *   "Jane Doe — jane@"
+ * Returns the cleaned name string or "".
+ */
+function extractNameNearEmail(text) {
+  // Match: capitalized name (First Last, optionally with middle initial) near/at email
+  // Look for common patterns:
+  //   "... emailing Drew Bishop at Drew.Bishop@ ..."
+  //   "... contact: John Smith | jsmith@ ..."
+  //   "... Jane Doe - jane@"
+  //   "... Jane Doe jane@"
+  const patterns = [
+    /\b(?:emailing|contact|reach|asking for|questions to|directed to)\s+([A-Z][a-zA-Z']+(?:\s+[A-Z][a-zA-Z']+){1,2})\s+(?:at|:)\s+/i,
+    /\b([A-Z][a-zA-Z']+(?:\s+[A-Z][a-zA-Z']+){1,2})\s+(?:at|:)\s+[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}/,
+    /\b([A-Z][a-zA-Z']+(?:\s+[A-Z][a-zA-Z']+){1,2})\s+[-–—]\s+[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}/,
+    /\b([A-Z][a-zA-Z']+(?:\s+[A-Z][a-zA-Z']+){1,2})\s+[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}/,
+  ];
+
+  for (const pat of patterns) {
+    const m = text.match(pat);
+    if (m) {
+      const name = m[1].trim();
+      // Validate: skip generic words that might false-match
+      const skipWords = [
+        "contact",
+        "email",
+        "reach",
+        "send",
+        "ask",
+        "questions",
+        "registration",
+        "info",
+        "for",
+        "more",
+        "details",
+        "click",
+        "here",
+        "visit",
+        "website",
+      ];
+      if (
+        !skipWords.includes(name.toLowerCase()) &&
+        name.length >= 4 &&
+        name.length <= 40
+      ) {
+        // Must be mostly alphabetic (allow apostrophe/hyphen)
+        if (/^[A-Za-z'\- ]+$/.test(name)) return name;
+      }
+    }
+  }
+  return "";
 }
 
 /**
@@ -182,8 +259,12 @@ function checkContamination(title, targetUni, allSchoolNames) {
     // State-aware pair check (Alabama vs Alabama State)
     const otherIsState = oLower.includes(" state");
     if (targetIsState !== otherIsState) {
-      const targetBase = targetLower.replace(/ state| university| college/g, "").trim();
-      const otherBase  = oLower.replace(/ state| university| college/g, "").trim();
+      const targetBase = targetLower
+        .replace(/ state| university| college/g, "")
+        .trim();
+      const otherBase = oLower
+        .replace(/ state| university| college/g, "")
+        .trim();
       if (targetBase === otherBase) {
         const titleHasState = titleLower.includes(" state");
         if (titleHasState !== targetIsState) return other;
@@ -230,31 +311,57 @@ function extractDataFromText(fullText) {
   // Build a combined date regex for testing each line
   const DATE_TEST = new RegExp(
     DATE_PATTERNS.map((p) => p.source).join("|"),
-    "gi"
+    "gi",
   );
 
-  const SKIP_KEYWORDS = [" vs ", " vs. ", " @ ", " at ", "tournament standings", "box score", "game recap"];
-  const SPORT_CONTAMINATION = ["basketball", "soccer", "volleyball", "swimming", "wrestling", "tennis", "lacrosse", "gymnastics"];
+  const SKIP_KEYWORDS = [
+    " vs ",
+    " vs. ",
+    " @ ",
+    " at ",
+    "tournament standings",
+    "box score",
+    "game recap",
+  ];
+  const SPORT_CONTAMINATION = [
+    "basketball",
+    "soccer",
+    "volleyball",
+    "swimming",
+    "wrestling",
+    "tennis",
+    "lacrosse",
+    "gymnastics",
+  ];
 
   for (let j = 0; j < lines.length; j++) {
     const line = lines[j];
     DATE_TEST.lastIndex = 0;
     if (!DATE_TEST.test(line)) continue;
 
-    const block = lines.slice(Math.max(0, j - 3), Math.min(lines.length, j + 7)).join(" | ");
-    const low   = block.toLowerCase();
+    const block = lines
+      .slice(Math.max(0, j - 3), Math.min(lines.length, j + 7))
+      .join(" | ");
+    const low = block.toLowerCase();
 
     // Skip game schedules
     if (SKIP_KEYWORDS.some((k) => low.includes(k))) continue;
     if (/\d{1,2}:\d{2}\s*(?:am|pm)/i.test(block)) continue;
 
     // Skip stale years
-    if (STALE_YEARS.some((y) => low.includes(y) && !low.includes("2026"))) continue;
+    if (STALE_YEARS.some((y) => low.includes(y) && !low.includes("2026")))
+      continue;
 
     // Sport contamination: skip if non-baseball sport detected without baseball keyword
-    const hasCampKeyword    = /camp|clinic|prospect|showcase|register|enroll|sign.?up|instruction|lesson/i.test(block);
-    const hasBaseballKeyword = /baseball|pitcher|batter|hitting|infield|outfield|pitching|catching/i.test(block);
-    const hasBadSport       = SPORT_CONTAMINATION.some((s) => low.includes(s));
+    const hasCampKeyword =
+      /camp|clinic|prospect|showcase|register|enroll|sign.?up|instruction|lesson/i.test(
+        block,
+      );
+    const hasBaseballKeyword =
+      /baseball|pitcher|batter|hitting|infield|outfield|pitching|catching/i.test(
+        block,
+      );
+    const hasBadSport = SPORT_CONTAMINATION.some((s) => low.includes(s));
     if (hasBadSport && !hasBaseballKeyword) continue;
     if (!hasCampKeyword && !hasBaseballKeyword) continue;
 
@@ -282,7 +389,9 @@ function extractDataFromText(fullText) {
         if (!isNaN(val) && val >= PRICE_THRESHOLDS.CRITICAL_ANOMALY) {
           cost = rawCost;
         } else {
-          log(`       ⚠️ [Price] Rejected suspicious price "${rawCost}" (val: ${val}). Setting TBA.`);
+          log(
+            `       ⚠️ [Price] Rejected suspicious price "${rawCost}" (val: ${val}). Setting TBA.`,
+          );
         }
       } else {
         // FREE, Complimentary, etc. — keep as-is
@@ -301,7 +410,10 @@ function extractDataFromText(fullText) {
   // Deduplicate: normalize dates (strip ordinals) for comparison key
   const seen = new Set();
   const filtered = campTiers.filter((t) => {
-    const firstDate = (t.dates.split(",")[0] || "").trim().toLowerCase().replace(/st|nd|rd|th/g, "");
+    const firstDate = (t.dates.split(",")[0] || "")
+      .trim()
+      .toLowerCase()
+      .replace(/st|nd|rd|th/g, "");
     const key = t.name.toLowerCase().substring(0, 30) + "::" + firstDate;
     if (seen.has(key)) return false;
     seen.add(key);
@@ -309,7 +421,12 @@ function extractDataFromText(fullText) {
   });
 
   if (filtered.length > 0) {
-    log(`       📋 [Tiers] ${filtered.length} found. Sample: ${filtered.slice(0, 2).map((t) => `"${t.name}"`).join(" | ")}`);
+    log(
+      `       📋 [Tiers] ${filtered.length} found. Sample: ${filtered
+        .slice(0, 2)
+        .map((t) => `"${t.name}"`)
+        .join(" | ")}`,
+    );
   } else {
     log("       📋 [Tiers] None found on this page.");
   }
@@ -323,17 +440,21 @@ function extractDataFromText(fullText) {
  * Uses SEARCH_PROVIDERS from config.js — no hardcoding.
  */
 async function runSearchQueries(page, camp, dbIndex) {
-  const engine  = SEARCH_PROVIDERS[dbIndex % SEARCH_PROVIDERS.length];
-  const mascot  = getMascot(camp.university) || "";
-  const coach   = getCoachName(camp);
+  const engine = SEARCH_PROVIDERS[dbIndex % SEARCH_PROVIDERS.length];
+  const mascot = getMascot(camp.university) || "";
+  const coach = getCoachName(camp);
 
-  log(`   → [ENGINE] ${engine.name} (rotation slot ${(dbIndex % SEARCH_PROVIDERS.length) + 1}/${SEARCH_PROVIDERS.length})`);
+  log(
+    `   → [ENGINE] ${engine.name} (rotation slot ${(dbIndex % SEARCH_PROVIDERS.length) + 1}/${SEARCH_PROVIDERS.length})`,
+  );
 
   const queries = [];
   if (mascot) queries.push(`${camp.university} ${mascot} baseball camps 2026`);
   queries.push(`"${camp.university}" baseball camps 2026`);
   if (coach) queries.push(`${coach} baseball camp 2026`);
-  const cleanName = camp.university.replace(/University|State|College| of/gi, "").trim();
+  const cleanName = camp.university
+    .replace(/University|State|College| of/gi, "")
+    .trim();
   if (cleanName !== camp.university && cleanName.length > 3)
     queries.push(`${cleanName} baseball camps 2026`);
 
@@ -341,12 +462,16 @@ async function runSearchQueries(page, camp, dbIndex) {
   for (const q of queries.slice(0, 3)) {
     try {
       log(`      ↳ [${engine.name}] ${q.substring(0, 70)}`);
-      await page.goto(engine.url(q), { waitUntil: "domcontentloaded", timeout: 20000 });
-      const found = await page.evaluate((sel) =>
-        Array.from(document.querySelectorAll(sel))
-          .map((a) => a.href)
-          .filter((h) => h && h.startsWith("http")),
-        engine.selector
+      await page.goto(engine.url(q), {
+        waitUntil: "domcontentloaded",
+        timeout: 20000,
+      });
+      const found = await page.evaluate(
+        (sel) =>
+          Array.from(document.querySelectorAll(sel))
+            .map((a) => a.href)
+            .filter((h) => h && h.startsWith("http")),
+        engine.selector,
       );
       if (found && found.length > 0) {
         links.push(...found);
@@ -363,10 +488,16 @@ async function runSearchQueries(page, camp, dbIndex) {
   if (links.length < 5 && coach) {
     const q2 = `${coach} baseball camp 2026`;
     try {
-      await page.goto(engine.url(q2), { waitUntil: "domcontentloaded", timeout: 20000 });
-      const found2 = await page.evaluate((sel) =>
-        Array.from(document.querySelectorAll(sel)).map((a) => a.href).filter((h) => h && h.startsWith("http")),
-        engine.selector
+      await page.goto(engine.url(q2), {
+        waitUntil: "domcontentloaded",
+        timeout: 20000,
+      });
+      const found2 = await page.evaluate(
+        (sel) =>
+          Array.from(document.querySelectorAll(sel))
+            .map((a) => a.href)
+            .filter((h) => h && h.startsWith("http")),
+        engine.selector,
       );
       if (found2) links.push(...found2);
     } catch (e) {}
@@ -384,27 +515,43 @@ async function runSearchQueries(page, camp, dbIndex) {
  * @param {number|null}  opts.limit         - max schools to process
  * @param {boolean}      opts.forceRequeue  - process even if isChecked=true
  */
-async function runExtraction({ schoolFilter = null, limit = null, forceRequeue = false } = {}) {
+async function runExtraction({
+  schoolFilter = null,
+  limit = null,
+  forceRequeue = false,
+} = {}) {
   let data = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
   const allSchoolNames = data.map((d) => d.university);
 
   // Queue: schools that need processing
   let toProcess = data.filter((d) => {
     if (d.isVerified) return false; // Never touch manually verified
-    if (!forceRequeue && d.isChecked && (d.scriptVersion || 0) >= CURRENT_SCRIPT_VERSION) return false;
+    if (
+      !forceRequeue &&
+      d.isChecked &&
+      (d.scriptVersion || 0) >= CURRENT_SCRIPT_VERSION
+    )
+      return false;
     return true;
   });
 
   if (schoolFilter) {
-    const filters = schoolFilter.toLowerCase().split(",").map((s) => s.trim());
+    const filters = schoolFilter
+      .toLowerCase()
+      .split(",")
+      .map((s) => s.trim());
     toProcess = toProcess.filter((d) =>
-      filters.some((f) => d.university.toLowerCase().includes(f))
+      filters.some((f) => d.university.toLowerCase().includes(f)),
     );
   }
   if (limit) toProcess = toProcess.slice(0, limit);
 
-  log(`\n🚀 V${CURRENT_SCRIPT_VERSION} Unified Engine Starting. Target: ${toProcess.length} schools.`);
-  log(`   Database: ${data.length} total | ${data.filter((d) => d.isVerified).length} verified`);
+  log(
+    `\n🚀 V${CURRENT_SCRIPT_VERSION} Unified Engine Starting. Target: ${toProcess.length} schools.`,
+  );
+  log(
+    `   Database: ${data.length} total | ${data.filter((d) => d.isVerified).length} verified`,
+  );
 
   // Backup before run
   const backup = DATA_FILE.replace(".json", `_backup_${Date.now()}.json`);
@@ -426,12 +573,18 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
   for (let i = 0; i < toProcess.length; i++) {
     // Periodic browser restart to prevent memory leaks
     if (i > 0 && i % BROWSER_RESTART_EVERY === 0) {
-      log(`\n[SYSTEM] Restarting browser at school ${i}/${toProcess.length}...`);
+      log(
+        `\n[SYSTEM] Restarting browser at school ${i}/${toProcess.length}...`,
+      );
       await browser.close().catch(() => {});
       await delay(2000);
       browser = await puppeteer.launch({
         headless: "new",
-        args: ["--no-sandbox", "--disable-setuid-sandbox", "--window-size=1920,1080"],
+        args: [
+          "--no-sandbox",
+          "--disable-setuid-sandbox",
+          "--window-size=1920,1080",
+        ],
         ignoreDefaultArgs: ["--enable-automation"],
       });
     }
@@ -441,29 +594,40 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
 
     log(`\n${"═".repeat(60)}`);
     log(`[${i + 1}/${toProcess.length}] Processing: ${camp.university}`);
-    log(`   Coach: ${getCoachName(camp) || "(none/TBA)"} | Version: ${camp.scriptVersion || 0}`);
+    log(
+      `   Coach: ${getCoachName(camp) || "(none/TBA)"} | Version: ${camp.scriptVersion || 0}`,
+    );
     log("═".repeat(60));
 
     const p = await browser.newPage();
 
     // Stealth settings
-    await p.setViewport({ width: 1920 + Math.floor(Math.random() * 80), height: 1080 + Math.floor(Math.random() * 80) });
-    await p.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
+    await p.setViewport({
+      width: 1920 + Math.floor(Math.random() * 80),
+      height: 1080 + Math.floor(Math.random() * 80),
+    });
+    await p.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+    );
     await p.evaluateOnNewDocument(() => {
       Object.defineProperty(navigator, "webdriver", { get: () => false });
       Object.defineProperty(navigator, "deviceMemory", { get: () => 8 });
-      Object.defineProperty(navigator, "hardwareConcurrency", { get: () => 16 });
+      Object.defineProperty(navigator, "hardwareConcurrency", {
+        get: () => 16,
+      });
       window.chrome = { runtime: {} };
     });
 
     // CHECKPOINT: mark school before processing so watchdog/restart can skip it safely
-    camp.isChecked    = true;
+    camp.isChecked = true;
     camp.scriptVersion = CURRENT_SCRIPT_VERSION;
     fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
 
     // Per-school timeout guard
     const schoolTimeout = setTimeout(() => {
-      log(`   ⏰ Timeout (${SCHOOL_TIMEOUT_MS / 1000}s) for ${camp.university}. Closing page.`);
+      log(
+        `   ⏰ Timeout (${SCHOOL_TIMEOUT_MS / 1000}s) for ${camp.university}. Closing page.`,
+      );
       p.close().catch(() => {});
     }, SCHOOL_TIMEOUT_MS);
 
@@ -472,7 +636,11 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
       let searchLinks = [];
 
       // V7/V8 priority: always try existing campUrl from DB first
-      if (camp.campUrl && camp.campUrl.startsWith("http") && !isBlacklistedUrl(camp.campUrl)) {
+      if (
+        camp.campUrl &&
+        camp.campUrl.startsWith("http") &&
+        !isBlacklistedUrl(camp.campUrl)
+      ) {
         log(`   → Priority DB URL: ${camp.campUrl}`);
         searchLinks.push(camp.campUrl);
       }
@@ -486,30 +654,47 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
 
       // Score, dedupe, drop clearly bad URLs, take top 18
       const scored = [
-        ...searchLinks.map((u) => ({ url: u, score: scoreUrl(u, camp, false), isGuessed: false })),
-        ...guessed.map((u) => ({ url: u, score: scoreUrl(u, camp, true), isGuessed: true })),
+        ...searchLinks.map((u) => ({
+          url: u,
+          score: scoreUrl(u, camp, false),
+          isGuessed: false,
+        })),
+        ...guessed.map((u) => ({
+          url: u,
+          score: scoreUrl(u, camp, true),
+          isGuessed: true,
+        })),
       ]
         .sort((a, b) => b.score - a.score)
-        .filter((x, idx, self) => self.findIndex((y) => y.url === x.url) === idx)
+        .filter(
+          (x, idx, self) => self.findIndex((y) => y.url === x.url) === idx,
+        )
         .filter((x) => x.score > -50)
         .slice(0, 18);
 
       log(`   → ${scored.length} candidates. Top 3:`);
-      scored.slice(0, 3).forEach((s) =>
-        log(`      ${s.score >= 50 ? "★" : s.score >= 20 ? "•" : "○"} [${String(s.score).padStart(3)}] ${s.url}`)
-      );
+      scored
+        .slice(0, 3)
+        .forEach((s) =>
+          log(
+            `      ${s.score >= 50 ? "★" : s.score >= 20 ? "•" : "○"} [${String(s.score).padStart(3)}] ${s.url}`,
+          ),
+        );
 
       // ── Phase B: Validate & Sub-Crawl ─────────────────────────────────────
-      const aliases  = getUniversityAliases(camp.university);
-      let success    = false;
+      const aliases = getUniversityAliases(camp.university);
+      let success = false;
       let bestEmails = [];
-      let isTopUrl   = true; // First in scored list = highest priority
+      let isTopUrl = true; // First in scored list = highest priority
 
       for (const item of scored) {
         const candidate = item.url;
         try {
           log(`\n   → Navigating [${item.score}]: ${candidate}`);
-          const resp = await p.goto(candidate, { waitUntil: "domcontentloaded", timeout: 15000 });
+          const resp = await p.goto(candidate, {
+            waitUntil: "domcontentloaded",
+            timeout: 15000,
+          });
           if (!resp || resp.status() >= 400) {
             log(`      ✕ HTTP ${resp?.status() || "error"}`);
             isTopUrl = false;
@@ -517,23 +702,28 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
           }
 
           await delay(600 + Math.random() * 400);
-          const text  = await p.evaluate(() => document.body?.innerText || "");
+          const text = await p.evaluate(() => document.body?.innerText || "");
           const title = (await p.title()) || "";
 
           // ── "No Upcoming Events" — smart hybrid (Decision 2C) ──
           if (pageHasNoEvents(text)) {
             if (isTopUrl && item.score >= 50) {
               // Top/official portal says no events → mark TBA authoritatively
-              log(`      ⚠️ Official portal says no upcoming events. Marking TBA.`);
-              camp.cost      = "TBA";
-              camp.dates     = "TBA";
+              log(
+                `      ⚠️ Official portal says no upcoming events. Marking TBA.`,
+              );
+              camp.cost = "TBA";
+              camp.dates = "TBA";
               camp.campTiers = [];
-              camp.details   = "Official portal confirms no 2026 camps posted yet.";
+              camp.details =
+                "Official portal confirms no 2026 camps posted yet.";
               camp.auditStatus = "NO_EVENTS_CONFIRMED";
               camp.lastUpdateDate = Date.now();
               fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
             } else {
-              log(`      ↷ Lower-ranked page has no events — skipping, trying next.`);
+              log(
+                `      ↷ Lower-ranked page has no events — skipping, trying next.`,
+              );
             }
             isTopUrl = false;
             continue;
@@ -544,7 +734,7 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
             (a) =>
               text.toLowerCase().includes(a) ||
               title.toLowerCase().includes(a) ||
-              candidate.toLowerCase().includes(a.replace(/\s+/g, ""))
+              candidate.toLowerCase().includes(a.replace(/\s+/g, "")),
           );
           if (!matchedAlias) {
             log("      ✕ School alias mismatch.");
@@ -553,14 +743,20 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
           }
 
           // V9 contamination check (state-aware)
-          const culprit = checkContamination(title, camp.university, allSchoolNames);
+          const culprit = checkContamination(
+            title,
+            camp.university,
+            allSchoolNames,
+          );
           if (culprit) {
             log(`      ✕ Contamination (${culprit}). Skip.`);
             isTopUrl = false;
             continue;
           }
 
-          log(`   → ✅ VALIDATED for ${camp.university} (alias: "${matchedAlias}")`);
+          log(
+            `   → ✅ VALIDATED for ${camp.university} (alias: "${matchedAlias}")`,
+          );
 
           const pageEmails = harvestEmails(text);
           if (pageEmails.length > 0) bestEmails.push(...pageEmails);
@@ -569,7 +765,10 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
 
           // ── Phase B.2: Deep Sub-Crawl ───────────────────────────────────
           const subLinks = await p.$$eval("a", (els) =>
-            els.map((a) => ({ href: a.href || "", text: (a.innerText || "").toLowerCase().trim() }))
+            els.map((a) => ({
+              href: a.href || "",
+              text: (a.innerText || "").toLowerCase().trim(),
+            })),
           );
 
           const alreadyQueued = new Set([candidate]);
@@ -581,12 +780,20 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
               const hl = l.href.toLowerCase();
               if (isBlacklistedUrl(l.href)) return false;
               if (isSearchEngineUrl(l.href)) return false;
-              if (hl.includes("/schedule") || hl.includes("/roster") || hl.includes("/news/") || hl.includes("/article/")) return false;
-              const hasCampKw = SUB_CRAWL_KEYWORDS.some((k) => hl.includes(k) || l.text.includes(k));
+              if (
+                hl.includes("/schedule") ||
+                hl.includes("/roster") ||
+                hl.includes("/news/") ||
+                hl.includes("/article/")
+              )
+                return false;
+              const hasCampKw = SUB_CRAWL_KEYWORDS.some(
+                (k) => hl.includes(k) || l.text.includes(k),
+              );
               if (hasCampKw) return true;
               try {
                 const mainHost = new URL(candidate).hostname;
-                const subHost  = new URL(l.href).hostname;
+                const subHost = new URL(l.href).hostname;
                 if (mainHost === subHost) return true;
               } catch (e) {}
               return false;
@@ -598,8 +805,13 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
             alreadyQueued.add(sl.href);
             try {
               const sp = await browser.newPage();
-              await sp.goto(sl.href, { waitUntil: "domcontentloaded", timeout: 12000 });
-              const st = await sp.evaluate(() => document.body?.innerText || "");
+              await sp.goto(sl.href, {
+                waitUntil: "domcontentloaded",
+                timeout: 12000,
+              });
+              const st = await sp.evaluate(
+                () => document.body?.innerText || "",
+              );
 
               if (pageHasNoEvents(st)) {
                 log(`      ↷ Sub-page has no events — skipping.`);
@@ -608,7 +820,7 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
               }
 
               const hasBaseball = st.toLowerCase().includes("baseball");
-              const hasCamp     = /camp|clinic|register|prospect|summer/i.test(st);
+              const hasCamp = /camp|clinic|register|prospect|summer/i.test(st);
               if (hasBaseball || hasCamp) {
                 log(`      ⭐ ${sl.href.substring(0, 70)}`);
                 fullText += "\n" + st;
@@ -618,31 +830,46 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
                 log(`      ↳ ${sl.href.substring(0, 70)}`);
               }
               await sp.close();
-            } catch (e) { /* ignore sub-page errors */ }
+            } catch (e) {
+              /* ignore sub-page errors */
+            }
           }
 
           // ── Phase C: Extract ────────────────────────────────────────────
           const campTiers = extractDataFromText(fullText);
 
           if (campTiers.length > 0) {
-            camp.campTiers  = campTiers;
-            camp.dates      = [...new Set(campTiers.map((t) => t.dates))].join(" | ");
-            camp.campUrl    = candidate;
-            camp.sourceUrl  = candidate; // V9: separate field for UI fidelity
+            camp.campTiers = campTiers;
+            camp.dates = [...new Set(campTiers.map((t) => t.dates))].join(
+              " | ",
+            );
+            camp.campUrl = candidate;
+            camp.sourceUrl = candidate; // V9: separate field for UI fidelity
 
             // Synthesise cost range from tiers
-            const costs = campTiers.map((t) => t.cost).filter((c) => c !== "TBA" && c !== "FREE");
+            const costs = campTiers
+              .map((t) => t.cost)
+              .filter((c) => c !== "TBA" && c !== "FREE");
             if (costs.length > 0) {
               COST_NUMERIC_PATTERN.lastIndex = 0;
-              const amounts = costs.flatMap((c) =>
-                [...c.matchAll(/\$[\d,]+/g)].map((m) => parseInt(m[0].replace(/[$,]/g, ""), 10))
-              ).filter((n) => !isNaN(n) && n >= PRICE_THRESHOLDS.CRITICAL_ANOMALY);
+              const amounts = costs
+                .flatMap((c) =>
+                  [...c.matchAll(/\$[\d,]+/g)].map((m) =>
+                    parseInt(m[0].replace(/[$,]/g, ""), 10),
+                  ),
+                )
+                .filter(
+                  (n) => !isNaN(n) && n >= PRICE_THRESHOLDS.CRITICAL_ANOMALY,
+                );
               if (amounts.length > 0) {
                 const minC = Math.min(...amounts);
                 const maxC = Math.max(...amounts);
                 camp.cost = minC === maxC ? `$${minC}` : `$${minC} - $${maxC}`;
               }
-            } else if (costs.length === 0 && campTiers.some((t) => t.cost === "FREE")) {
+            } else if (
+              costs.length === 0 &&
+              campTiers.some((t) => t.cost === "FREE")
+            ) {
               camp.cost = "FREE";
             }
 
@@ -651,22 +878,38 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
             if (uniqueEmails.length > 0) {
               camp.email = uniqueEmails[0]; // Authoritative email field
               const nameOnly = getCoachName(camp);
-              if (nameOnly && !camp.pointOfContact) camp.pointOfContact = nameOnly;
+              if (nameOnly && !camp.pointOfContact)
+                camp.pointOfContact = nameOnly;
+              // Try to extract name near email from page text (e.g. "Email Drew Bishop at...")
+              if (!camp.pointOfContact || camp.pointOfContact === "N/A") {
+                const pageName = extractNameNearEmail(fullText);
+                if (pageName) camp.pointOfContact = pageName;
+              }
               // Preserve legacy contact field for HTML rendering (append if no email yet)
               if (camp.contact && !camp.contact.includes("@")) {
                 camp.contact = `${camp.contact} | ${uniqueEmails[0]}`;
+              } else if (camp.contact && camp.contact.includes("@")) {
+                // Existing contact is email-only — prepend extracted name if available
+                const nameForDisplay =
+                  camp.pointOfContact && camp.pointOfContact !== "N/A"
+                    ? camp.pointOfContact
+                    : extractNameNearEmail(fullText);
+                if (nameForDisplay) {
+                  camp.contact = `${nameForDisplay} | ${uniqueEmails[0]}`;
+                }
               }
             }
 
-            camp.auditStatus    = "EXTRACTED";
+            camp.auditStatus = "EXTRACTED";
             camp.lastUpdateDate = Date.now();
             camp.datesUpdateDate = new Date().toISOString();
 
             success = true;
-            log(`   → 🎯 SUCCESS — ${campTiers.length} tiers | Cost: ${camp.cost || "TBA"}`);
+            log(
+              `   → 🎯 SUCCESS — ${campTiers.length} tiers | Cost: ${camp.cost || "TBA"}`,
+            );
             break;
           }
-
         } catch (e) {
           log(`   → ✕ Error on ${candidate}: ${e.message.substring(0, 80)}`);
         }
@@ -692,7 +935,6 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
       camp.lastChecked = new Date().toISOString();
       fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
       log(`   → [DB_UPDATED] Saved.`);
-
     } catch (err) {
       log(`   → ERROR: ${err.message}`);
     } finally {
@@ -703,7 +945,15 @@ async function runExtraction({ schoolFilter = null, limit = null, forceRequeue =
 
   await browser.close();
   log(`\n🏁 V${CURRENT_SCRIPT_VERSION} Extraction Complete.`);
-  log(`   Final: ${data.filter((d) => d.campTiers && d.campTiers.length > 0).length} schools with data out of ${data.length}`);
+  log(
+    `   Final: ${data.filter((d) => d.campTiers && d.campTiers.length > 0).length} schools with data out of ${data.length}`,
+  );
 }
 
-module.exports = { runExtraction, extractDataFromText, harvestEmails, pageHasNoEvents };
+module.exports = {
+  runExtraction,
+  extractDataFromText,
+  harvestEmails,
+  extractNameNearEmail,
+  pageHasNoEvents,
+};

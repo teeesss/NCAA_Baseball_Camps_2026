@@ -8,7 +8,7 @@
  */
 "use strict";
 
-const fs   = require("fs");
+const fs = require("fs");
 const path = require("path");
 
 const DATA_FILE = path.join(__dirname, "../../camps_data.json");
@@ -41,20 +41,26 @@ const CONTAMINATION_RULES = [
   {
     school: "St. Cloud State University",
     badDomains: ["hcubaseballcamps.com"],
-    reason: "Third-party aggregator for Hutchinson area camps, not SCSU official",
+    reason:
+      "Third-party aggregator for Hutchinson area camps, not SCSU official",
   },
 ];
 
 for (const rule of CONTAMINATION_RULES) {
   const record = data.find(
-    (d) => d.university.toLowerCase() === rule.school.toLowerCase()
+    (d) => d.university.toLowerCase() === rule.school.toLowerCase(),
   );
   if (!record) {
     console.log(`⚠️  Not found in DB: ${rule.school}`);
     continue;
   }
 
-  const url = (record.campUrl || record.sourceUrl || record.url || "").toLowerCase();
+  const url = (
+    record.campUrl ||
+    record.sourceUrl ||
+    record.url ||
+    ""
+  ).toLowerCase();
   const isBad = rule.badDomains.some((d) => url.includes(d));
 
   if (isBad) {
@@ -63,13 +69,13 @@ for (const rule of CONTAMINATION_RULES) {
     console.log(`   Reason: ${rule.reason}`);
 
     // Clear the corrupted camp data
-    record.campTiers    = [];
-    record.dates        = "TBA";
-    record.cost         = "TBA";
-    record.campUrl      = null;
-    record.sourceUrl    = null;
-    record.auditStatus  = `PURGED_${new Date().toISOString().slice(0,10).replace(/-/g,"")} — ${rule.reason}`;
-    record.isChecked    = false; // Re-queue for fresh extraction
+    record.campTiers = [];
+    record.dates = "TBA";
+    record.cost = "TBA";
+    record.campUrl = null;
+    record.sourceUrl = null;
+    record.auditStatus = `PURGED_${new Date().toISOString().slice(0, 10).replace(/-/g, "")} — ${rule.reason}`;
+    record.isChecked = false; // Re-queue for fresh extraction
     record.scriptVersion = 0;
     record.lastUpdateDate = Date.now();
 
@@ -79,7 +85,9 @@ for (const rule of CONTAMINATION_RULES) {
   }
 }
 
-console.log(`\n📊 Summary: ${purged} records purged and re-queued for extraction.`);
+console.log(
+  `\n📊 Summary: ${purged} records purged and re-queued for extraction.`,
+);
 
 fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
 console.log(`✅ Saved. Run test_price_integrity.js to verify.`);

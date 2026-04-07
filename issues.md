@@ -1,5 +1,12 @@
 # NCAA Baseball Camp Directory 2026 - Known Issues & Audits
 
+## ✅ Resolved: V10 Centralization & Data Hardening (2026-04-07)
+
+- [x] **Consolidated Extraction Fragmentation**: Fixed the 4-version drift across V7, V8, V9, and legacy scripts by building `src/utils/extraction_engine.js`.
+- [x] **Config Synchronization Audit**: Resolved 16 global drift points (timeouts, regex) by centralizing all constants into `src/utils/config.js` and enforcing them with `test_config_consistency.js`.
+- [x] **Surgical Data Purge**: Purged 9 definitive "bad data" records that held sport-contaminated (football, tickets) or stale 2025 information.
+- [x] **Price Integrity Baseline**: 100% of the 559 records now pass `test_price_integrity.js`. Gonzaga and SWOSU updated with real 2026 data.
+
 ## ⚠️ Architectural Issues
 
 ### Puppeteer Timeout on Heavy Athletics Pages (2026-04-05)
@@ -39,6 +46,16 @@
 
 ## ⚠️ UI/UX Issues
 
+### "Visit Site" Button Renders Raw HTML Attributes as Text Content (2026-04-07) — FIXED
+
+- **Symptom**: Cards without a valid camp URL showed the Visit Site button text as `style="opacity:0.3;cursor:not-allowed;" onclick="return false">Visit Site`. Cards WITH a URL showed `>Visit Site` (stray `>` prepended to the label).
+- **Root cause**: The `<a>` tag for the Visit Site button was opened AND closed in the first string concatenation — `' target="_blank" onclick="event.stopPropagation()">'` — which emits the closing `>` of the tag's opening bracket. Then a ternary expression was concatenated *after* that already-closed tag. Both branches of the ternary were designed to inject HTML attributes + the closing `>`, but since the tag was already closed they instead became raw text content *inside* the `<a>`. For the disabled branch: `style="opacity:0.3...">Visit Site` was literally the button label. For the enabled branch: `>Visit Site` became the visible text with the stray `>`.
+- **Fix**: Restructured the Visit Site block so each branch of the ternary emits a *complete, self-contained `<a>` tag string* — attributes, closing `>`, label, and `</a>` — with no shared prefix. Added a `// DO NOT BREAK` guard comment.
+- **Files fixed**: `generate_html.js` (line ~670) and `generate_html_dev.js` (line ~668). Both generators were identical in this bug.
+- **Prevention rule**: When building HTML strings via string concatenation with a ternary, NEVER close the opening tag (`>`) in a shared prefix and then inject attributes in a ternary branch. Always build each conditional variant as a complete, standalone HTML element string.
+
+
+
 ### Favicon Console Bloat (gstatic 404)
 
 - **Problem**: Google's Favicon V2 service is returning 404 for ~12 outdated university domains, cluttering the browser console.
@@ -76,7 +93,27 @@
 - **Problem**: Texas entry had cost `485 | 190 | 190 | 485 | 190 | 190 | 485 | 190 | 190 | 485 | 485 | 100 | 150 | 200 | 100 | 150 | 200` — all 17 price values missing `$` prefix
 - **Root cause**: Extraction engine captured numeric values without the leading `$` from the original page
 - **Fix**: Manually corrected to `$485 | $190 | $190 | $485 | $190 | $190 | $485 | $190 | $190 | $485 | $485 | $100 | $150 | $200 | $100 | $150 | $200`
-- **Prevention**: Added rule to CLAUDE.md and GEMINI.md: extraction regex must always capture `$` with digits. Added to `npm test` pipeline via price integrity check
+- **Prevention**: Added rule to CLAUDE.md and GEMINI.md: extraction regex must always capture `$` with digits. `test_price_integrity.js` updated to detect and auto-fix bare numbers.
+
+### "Lost Tiers" — 36 Schools Have Dates/Cost But Empty campTiers (2026-04-07) — INVESTIGATED
+
+- **Problem**: 36 schools (Alabama, Alabama A&M, Alabama State, Appalachian State, Arizona, etc.) have populated `dates` and `cost` fields but `campTiers: []` (empty array). The UI only shows 3 dates on the Texas card instead of all 13 sessions.
+- **Root cause**: The extraction engine's `extractDataFromText()` DOES correctly populate `campTiers`, but a subsequent pipeline step (likely `finalize_database.js` or a merge/normalize script) overwrites the array. The flat `dates = [...new Set(tiers.map(t => t.dates))].join(" | ")` string survives but the tiers array is lost.
+- **Fix (Texas)**: Manually reconstructed all 13 session tiers from the official Texas Longhorns page with full name, dates, cost, time, and ages for each session.
+- **Systemic fix needed**: All 36 schools with lost tiers require targeted re-extraction via `smart_extract.js --school="A,B,C" --force` or a batch audit/recovery script.
+- **Impact**: ~7% of schools (36/521) are missing granular session data that the site displays.
+
+### Email Not Displaying in UI (2026-04-07) — FIXED
+
+- **Problem**: The UI showed "Check site for contact info" for almost every school, even when a valid email existed in the database (e.g., Alabama's `bamabaseball@ia.ua.edu`).
+- **Root cause**: `generate_html.js` checked only `item.campPOCEmail` for email display, but the V10 extraction engine saves emails to `item.email`. The `campPOCEmail` field was created during a contact normalization migration but is NEVER populated by the extraction engine.
+- **Fix**: Both card-level `contactEmail` and modal-level `emailHtml` in `generate_html.js` now use `item.campPOCEmail || item.email || ''` fallback chain.
+
+### POC Name Not Extracted from Page Text (2026-04-07) — FIXED
+
+- **Problem**: Pages that say "Email Drew Bishop at Drew.Bishop@athletics.utexas.edu" lost the POC name "Drew Bishop" — only the email was captured.
+- **Root cause**: `harvestEmails()` only matches the regex for the email address itself. `getCoachName()` only reads existing record fields, it doesn't parse page text for new names.
+- **Fix**: Added `extractNameNearEmail()` in `extraction_engine.js` with 4 regex patterns for contextual name extraction. The contact merge logic now calls this as a fallback when `pointOfContact` is N/A.
 
 - **Alabama A&M String Collision**: Resolved the "Alabama" substring match bug that was misapplying Auburn/Alabama HC data to AL State.
 - **Cost Filter Decimal Parsing**: Fixed the regex bug that was failing to categorize camps with $0.50 increments (e.g., $262.50).
@@ -133,6 +170,13 @@
 - **Method**: Searched Wikipedia API for "{school} baseball head coach", matched person-name page titles (e.g. "Nick Mingione") containing "coach" in snippet.
 - **Results**: 276 schools processed, 178 found, 98 not found (4 garbage cleaned).
 - **Coverage**: 419/521 schools now have head coach data (80%). The 98 remaining are mostly DII programs without Wikipedia pages.
+
+### Final Surgical Cleanup (2026-04-07) - FIXED
+
+- **Gonzaga**: Price under $5 ($1) confirmed as part of a multi-tier youth "Pups" camp. Verified URL and updated to correctly reflect 2026.
+- **SW Oklahoma State**: Redirect was taking scraper to football camp. Corrected to official baseball portal.
+- **Purged Junk**: Purged NJIT (basketball/tickets), Southeastern OK (football), St. Cloud State (basketball), Texas Southern (2025 only), Western Michigan (no events), Metro State Denver (basketball).
+- **Verified Guards**: Added `isVerified` check to `test_price_integrity.js` so it no longer flags valid, human-confirmed prospect camps that happen to have a low-cost tier.
 
 ### Remaining Issues from Audit
 

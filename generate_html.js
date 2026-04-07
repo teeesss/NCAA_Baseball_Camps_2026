@@ -524,8 +524,9 @@ const html = `
 
         const contactName = (item.campPOC && item.campPOC !== 'N/A' ? esc(item.campPOC) :
                              (item.headCoach && item.headCoach !== 'N/A' ? esc(item.headCoach) : 'Athletics Office'));
-        const contactEmail = (item.campPOCEmail && item.campPOCEmail !== 'N/A')
-            ? '<span style="font-size:0.75rem;color:var(--accent-color);font-weight:600;opacity:0.9;">'+esc(item.campPOCEmail)+'</span>' : '';
+        const contactEmailVal = item.campPOCEmail || item.email || '';
+        const contactEmail = (contactEmailVal && contactEmailVal !== 'N/A' && !contactEmailVal.toLowerCase().includes('tba'))
+            ? '<span style="font-size:0.75rem;color:var(--accent-color);font-weight:600;opacity:0.9;">'+esc(contactEmailVal)+'</span>' : '';
 
         const humanBadgeHtml = humanCount > 0
             ? '<div class="human-badge" title="'+humanCount+' community verifications">👤 '+humanCount+'</div>' : '';
@@ -538,8 +539,9 @@ const html = `
         // ── Modal content ──
         const headCoachVal = esc(item.headCoach || 'Athletics Staff');
         const campPocVal = esc(item.campPOC || 'Provided at registration');
-        const emailHtml = (item.campPOCEmail && item.campPOCEmail !== 'N/A')
-            ? '<a href="mailto:'+esc(item.campPOCEmail)+'" style="color:#60a5fa;text-decoration:none;font-weight:600;">'+esc(item.campPOCEmail)+'</a>'
+        const modalEmail = item.campPOCEmail || item.email || '';
+        const emailHtml = (modalEmail && modalEmail !== 'N/A' && !modalEmail.toLowerCase().includes('tba'))
+            ? '<a href="mailto:'+esc(modalEmail)+'" style="color:#60a5fa;text-decoration:none;font-weight:600;">'+esc(modalEmail)+'</a>'
             : 'Check site for contact info';
 
         let datesHtml = '';
@@ -666,12 +668,13 @@ const html = `
             '</div>'+
             '<div class="modal-data" style="display:none;">'+encodeURIComponent(modalHtml)+'</div>'+
             '<div class="actions">'+
-                '<a href="'+(item.campUrl||'#')+'" class="btn btn-visit'+(item.division==='DII'?' btn-dii':'')+'"'+
-                ' target="_blank" onclick="event.stopPropagation()">'+
+                // DO NOT BREAK: build the entire <a> tag in each branch so attributes
+                // are never injected as text content after the tag is already closed.
                 (!item.campUrl || (item.campUrl||'').includes('google.com/search')
-                    ? ' style="opacity:0.3;cursor:not-allowed;" onclick="return false">Visit Site'
-                    : '>Visit Site')+
-                '</a>'+
+                    ? '<a href="#" class="btn btn-visit'+(item.division==='DII'?' btn-dii':'')+'"
+                          style="opacity:0.3;cursor:not-allowed;" onclick="return false;event.stopPropagation();">Visit Site</a>'
+                    : '<a href="'+item.campUrl+'" class="btn btn-visit'+(item.division==='DII'?' btn-dii':'')+'"
+                          target="_blank" onclick="event.stopPropagation()">Visit Site</a>')+
                 '<button class="btn btn-human-verify'+(humanVerifyDisabled?' voted':'')+
                     '" data-verify-school="'+item.university+'"'+
                     ' '+(humanVerifyDisabled ? 'disabled' : '')+'>'+

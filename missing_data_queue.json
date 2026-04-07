@@ -25,11 +25,7 @@
       "score": 25,
       "prestige": 10000,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -46,9 +42,7 @@
       "score": 25,
       "prestige": 10000,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -65,9 +59,7 @@
       "score": 50,
       "prestige": 10000,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -84,9 +76,7 @@
       "score": 50,
       "prestige": 10000,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -103,10 +93,7 @@
       "score": 50,
       "prestige": 10000,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -123,9 +110,7 @@
       "score": 50,
       "prestige": 10000,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -142,10 +127,7 @@
       "score": 75,
       "prestige": 10000,
       "tier": "GOOD",
-      "missing": [
-        "contact",
-        "email"
-      ],
+      "missing": ["contact", "email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -162,10 +144,7 @@
       "score": 75,
       "prestige": 10000,
       "tier": "GOOD",
-      "missing": [
-        "contact",
-        "email"
-      ],
+      "missing": ["contact", "email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -182,11 +161,7 @@
       "score": 25,
       "prestige": 1000,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -203,10 +178,7 @@
       "score": 25,
       "prestige": 1000,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -223,10 +195,7 @@
       "score": 50,
       "prestige": 1000,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -243,10 +212,7 @@
       "score": 25,
       "prestige": 900,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -263,12 +229,7 @@
       "score": 25,
       "prestige": 900,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -285,10 +246,7 @@
       "score": 25,
       "prestige": 900,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -305,11 +263,7 @@
       "score": 25,
       "prestige": 900,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact"
-      ],
+      "missing": ["dates", "cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -326,9 +280,7 @@
       "score": 25,
       "prestige": 900,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -345,10 +297,7 @@
       "score": 25,
       "prestige": 900,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact"
-      ],
+      "missing": ["dates", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -365,10 +314,7 @@
       "score": 75,
       "prestige": 900,
       "tier": "GOOD",
-      "missing": [
-        "contact",
-        "email"
-      ],
+      "missing": ["contact", "email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -385,9 +331,7 @@
       "score": 75,
       "prestige": 900,
       "tier": "GOOD",
-      "missing": [
-        "contact"
-      ],
+      "missing": ["contact"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -404,9 +348,7 @@
       "score": 25,
       "prestige": 850,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -423,9 +365,7 @@
       "score": 25,
       "prestige": 850,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -442,10 +382,7 @@
       "score": 25,
       "prestige": 850,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact"
-      ],
+      "missing": ["dates", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -462,10 +399,7 @@
       "score": 25,
       "prestige": 850,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -482,9 +416,7 @@
       "score": 25,
       "prestige": 850,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -501,9 +433,7 @@
       "score": 50,
       "prestige": 850,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -520,9 +450,7 @@
       "score": 75,
       "prestige": 850,
       "tier": "GOOD",
-      "missing": [
-        "contact"
-      ],
+      "missing": ["contact"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -539,10 +467,7 @@
       "score": 75,
       "prestige": 850,
       "tier": "GOOD",
-      "missing": [
-        "contact",
-        "email"
-      ],
+      "missing": ["contact", "email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -559,11 +484,7 @@
       "score": 0,
       "prestige": 800,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -580,11 +501,7 @@
       "score": 0,
       "prestige": 800,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -601,11 +518,7 @@
       "score": 0,
       "prestige": 800,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -622,10 +535,7 @@
       "score": 25,
       "prestige": 800,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -642,11 +552,7 @@
       "score": 25,
       "prestige": 800,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -663,10 +569,7 @@
       "score": 25,
       "prestige": 800,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -683,11 +586,7 @@
       "score": 25,
       "prestige": 800,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact"
-      ],
+      "missing": ["dates", "cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -704,9 +603,7 @@
       "score": 25,
       "prestige": 800,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -723,9 +620,7 @@
       "score": 25,
       "prestige": 800,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -742,11 +637,7 @@
       "score": 50,
       "prestige": 800,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -763,10 +654,7 @@
       "score": 50,
       "prestige": 800,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact"
-      ],
+      "missing": ["cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -783,9 +671,7 @@
       "score": 50,
       "prestige": 800,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -802,9 +688,7 @@
       "score": 75,
       "prestige": 800,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -821,9 +705,7 @@
       "score": 75,
       "prestige": 800,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -840,11 +722,7 @@
       "score": 0,
       "prestige": 700,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -861,12 +739,7 @@
       "score": 0,
       "prestige": 700,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["campUrl", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -883,11 +756,7 @@
       "score": 0,
       "prestige": 700,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -904,10 +773,7 @@
       "score": 25,
       "prestige": 700,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -924,10 +790,7 @@
       "score": 25,
       "prestige": 700,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -944,12 +807,7 @@
       "score": 25,
       "prestige": 700,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -966,11 +824,7 @@
       "score": 50,
       "prestige": 700,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -987,9 +841,7 @@
       "score": 50,
       "prestige": 700,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1006,9 +858,7 @@
       "score": 75,
       "prestige": 700,
       "tier": "GOOD",
-      "missing": [
-        "contact"
-      ],
+      "missing": ["contact"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1025,10 +875,7 @@
       "score": 25,
       "prestige": 600,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1045,10 +892,7 @@
       "score": 25,
       "prestige": 600,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1065,11 +909,7 @@
       "score": 25,
       "prestige": 600,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1086,11 +926,7 @@
       "score": 25,
       "prestige": 600,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact"
-      ],
+      "missing": ["dates", "cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1107,11 +943,7 @@
       "score": 25,
       "prestige": 600,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1128,10 +960,7 @@
       "score": 0,
       "prestige": 550,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "email"
-      ],
+      "missing": ["campUrl", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1148,12 +977,7 @@
       "score": 0,
       "prestige": 550,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1170,11 +994,7 @@
       "score": 25,
       "prestige": 550,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1191,10 +1011,7 @@
       "score": 25,
       "prestige": 550,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1211,10 +1028,7 @@
       "score": 50,
       "prestige": 550,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1231,9 +1045,7 @@
       "score": 50,
       "prestige": 550,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1250,9 +1062,7 @@
       "score": 75,
       "prestige": 550,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1269,9 +1079,7 @@
       "score": 75,
       "prestige": 550,
       "tier": "GOOD",
-      "missing": [
-        "contact"
-      ],
+      "missing": ["contact"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1288,10 +1096,7 @@
       "score": 0,
       "prestige": 500,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost"
-      ],
+      "missing": ["campUrl", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1308,10 +1113,7 @@
       "score": 25,
       "prestige": 500,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1328,10 +1130,7 @@
       "score": 50,
       "prestige": 500,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact"
-      ],
+      "missing": ["cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1348,10 +1147,7 @@
       "score": 50,
       "prestige": 500,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1368,10 +1164,7 @@
       "score": 50,
       "prestige": 500,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1388,11 +1181,7 @@
       "score": 25,
       "prestige": 450,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1409,9 +1198,7 @@
       "score": 25,
       "prestige": 450,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1428,11 +1215,7 @@
       "score": 25,
       "prestige": 450,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact"
-      ],
+      "missing": ["dates", "cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1449,11 +1232,7 @@
       "score": 50,
       "prestige": 450,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1470,11 +1249,7 @@
       "score": 50,
       "prestige": 450,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1491,12 +1266,7 @@
       "score": 0,
       "prestige": 350,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1513,11 +1283,7 @@
       "score": 0,
       "prestige": 350,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1534,10 +1300,7 @@
       "score": 25,
       "prestige": 350,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1554,9 +1317,7 @@
       "score": 25,
       "prestige": 350,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1573,9 +1334,7 @@
       "score": 25,
       "prestige": 350,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1592,12 +1351,7 @@
       "score": 0,
       "prestige": 250,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1614,12 +1368,7 @@
       "score": 25,
       "prestige": 250,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1636,9 +1385,7 @@
       "score": 25,
       "prestige": 250,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1655,11 +1402,7 @@
       "score": 25,
       "prestige": 250,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1676,11 +1419,7 @@
       "score": 25,
       "prestige": 250,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1697,11 +1436,7 @@
       "score": 50,
       "prestige": 250,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -1718,9 +1453,7 @@
       "score": 75,
       "prestige": 250,
       "tier": "GOOD",
-      "missing": [
-        "contact"
-      ],
+      "missing": ["contact"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1737,13 +1470,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1760,12 +1487,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1782,10 +1504,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost"
-      ],
+      "missing": ["campUrl", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1802,13 +1521,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1825,12 +1538,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1847,12 +1555,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "contact",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1869,11 +1572,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1890,11 +1589,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1911,11 +1606,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1932,11 +1623,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1953,12 +1640,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1975,11 +1657,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -1996,13 +1674,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2019,9 +1691,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl"
-      ],
+      "missing": ["campUrl"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2038,10 +1708,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost"
-      ],
+      "missing": ["campUrl", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2058,13 +1725,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2081,12 +1742,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["campUrl", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2103,11 +1759,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2124,10 +1776,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost"
-      ],
+      "missing": ["campUrl", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2144,11 +1793,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2165,11 +1810,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2186,12 +1827,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2208,13 +1844,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2231,12 +1861,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2253,9 +1878,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl"
-      ],
+      "missing": ["campUrl"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2272,12 +1895,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2294,11 +1912,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2315,11 +1929,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2336,13 +1946,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2359,10 +1963,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost"
-      ],
+      "missing": ["campUrl", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2379,11 +1980,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost"
-      ],
+      "missing": ["campUrl", "dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2400,13 +1997,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["campUrl", "dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2423,11 +2014,7 @@
       "score": 0,
       "prestige": 100,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2444,12 +2031,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2466,9 +2048,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -2485,10 +2065,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2505,11 +2082,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2526,10 +2099,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact"
-      ],
+      "missing": ["dates", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -2546,10 +2116,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact"
-      ],
+      "missing": ["dates", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -2566,12 +2133,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2588,12 +2150,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2610,11 +2167,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact"
-      ],
+      "missing": ["dates", "cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2631,11 +2184,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact"
-      ],
+      "missing": ["dates", "cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2652,12 +2201,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2674,9 +2218,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -2693,11 +2235,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -2714,11 +2252,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2735,12 +2269,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2757,9 +2286,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -2776,10 +2303,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2796,11 +2320,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact"
-      ],
+      "missing": ["dates", "cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2817,12 +2337,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2839,12 +2354,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2861,12 +2371,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2883,12 +2388,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2905,10 +2405,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2925,11 +2422,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2946,12 +2439,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2968,10 +2456,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -2988,10 +2473,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3008,9 +2490,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3027,10 +2507,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3047,10 +2524,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3067,11 +2541,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3088,9 +2558,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3107,12 +2575,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3129,10 +2592,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3149,10 +2609,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3169,11 +2626,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3190,10 +2643,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact"
-      ],
+      "missing": ["dates", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3210,10 +2660,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3230,10 +2677,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3250,9 +2694,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3269,10 +2711,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3289,10 +2728,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3309,12 +2745,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3331,10 +2762,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3351,11 +2779,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3372,10 +2796,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3392,10 +2813,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3412,10 +2830,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact"
-      ],
+      "missing": ["dates", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3432,11 +2847,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3453,10 +2864,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3473,9 +2881,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3492,10 +2898,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3512,10 +2915,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact"
-      ],
+      "missing": ["dates", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3532,10 +2932,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3552,10 +2949,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3572,10 +2966,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3592,10 +2983,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3612,10 +3000,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3632,11 +3017,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3653,10 +3034,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact"
-      ],
+      "missing": ["dates", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3673,12 +3051,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3695,10 +3068,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3715,9 +3085,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3734,10 +3102,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact"
-      ],
+      "missing": ["dates", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3754,10 +3119,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": true,
@@ -3774,11 +3136,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3795,12 +3153,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3817,10 +3170,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": true,
@@ -3837,11 +3187,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3858,10 +3204,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3878,10 +3221,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact"
-      ],
+      "missing": ["dates", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3898,9 +3238,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -3917,11 +3255,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3938,11 +3272,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3959,10 +3289,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3979,10 +3306,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -3999,12 +3323,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4021,11 +3340,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4042,11 +3357,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact"
-      ],
+      "missing": ["dates", "cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4063,10 +3374,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4083,10 +3391,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4103,10 +3408,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "contact"
-      ],
+      "missing": ["dates", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4123,9 +3425,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates"
-      ],
+      "missing": ["dates"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4142,11 +3442,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact"
-      ],
+      "missing": ["dates", "cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4163,10 +3459,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4183,11 +3476,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4204,11 +3493,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4225,11 +3510,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4246,10 +3527,7 @@
       "score": 25,
       "prestige": 100,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost"
-      ],
+      "missing": ["dates", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4266,9 +3544,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4285,11 +3561,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4306,9 +3578,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4325,11 +3595,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4346,11 +3612,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4367,11 +3629,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4388,11 +3646,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4409,11 +3663,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4430,9 +3680,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4449,9 +3697,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4468,9 +3714,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4487,10 +3731,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4507,9 +3748,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4526,11 +3765,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4547,10 +3782,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4567,9 +3799,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4586,9 +3816,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4605,10 +3833,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact"
-      ],
+      "missing": ["cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4625,9 +3850,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4644,10 +3867,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact"
-      ],
+      "missing": ["cost", "contact"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4664,10 +3884,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4684,10 +3901,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4704,11 +3918,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4725,10 +3935,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4745,9 +3952,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4764,9 +3969,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4783,9 +3986,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4802,9 +4003,7 @@
       "score": 50,
       "prestige": 100,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -4821,9 +4020,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4840,9 +4037,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4859,9 +4054,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4878,9 +4071,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4897,9 +4088,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "contact"
-      ],
+      "missing": ["contact"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4916,9 +4105,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "contact"
-      ],
+      "missing": ["contact"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4935,10 +4122,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "contact",
-        "email"
-      ],
+      "missing": ["contact", "email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4955,10 +4139,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "contact",
-        "email"
-      ],
+      "missing": ["contact", "email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4975,10 +4156,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "contact",
-        "email"
-      ],
+      "missing": ["contact", "email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -4995,9 +4173,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "contact"
-      ],
+      "missing": ["contact"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5014,9 +4190,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "contact"
-      ],
+      "missing": ["contact"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5033,10 +4207,7 @@
       "score": 75,
       "prestige": 100,
       "tier": "GOOD",
-      "missing": [
-        "contact",
-        "email"
-      ],
+      "missing": ["contact", "email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5053,10 +4224,7 @@
       "score": 0,
       "prestige": 0,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost"
-      ],
+      "missing": ["campUrl", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5073,11 +4241,7 @@
       "score": 0,
       "prestige": 0,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5094,9 +4258,7 @@
       "score": 0,
       "prestige": 0,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl"
-      ],
+      "missing": ["campUrl"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5113,10 +4275,7 @@
       "score": 0,
       "prestige": 0,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost"
-      ],
+      "missing": ["campUrl", "cost"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5133,11 +4292,7 @@
       "score": 0,
       "prestige": 0,
       "tier": "EMPTY",
-      "missing": [
-        "campUrl",
-        "cost",
-        "email"
-      ],
+      "missing": ["campUrl", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5154,11 +4309,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5175,11 +4326,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5196,12 +4343,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5218,12 +4360,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5240,12 +4377,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5262,12 +4394,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["dates", "cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5284,11 +4411,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5305,11 +4428,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5326,11 +4445,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5347,11 +4462,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5368,11 +4479,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5389,11 +4496,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5410,11 +4513,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5431,11 +4530,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5452,11 +4547,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5473,11 +4564,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5494,11 +4581,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5515,11 +4598,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5536,11 +4615,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5557,11 +4632,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5578,11 +4649,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5599,11 +4666,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5620,11 +4683,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5641,11 +4700,7 @@
       "score": 25,
       "prestige": 0,
       "tier": "LOW",
-      "missing": [
-        "dates",
-        "cost",
-        "email"
-      ],
+      "missing": ["dates", "cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -5662,11 +4717,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5683,11 +4734,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5704,10 +4751,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5724,10 +4768,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5744,9 +4785,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5763,9 +4802,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5782,11 +4819,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5803,9 +4836,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5822,9 +4853,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5841,9 +4870,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5860,9 +4887,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5879,10 +4904,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5899,10 +4921,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5919,10 +4938,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5939,10 +4955,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5959,10 +4972,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5979,9 +4989,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -5998,10 +5006,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6018,10 +5023,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6038,9 +5040,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6057,10 +5057,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6077,10 +5074,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6097,10 +5091,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6117,10 +5108,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6137,10 +5125,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6157,10 +5142,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6177,10 +5159,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6197,10 +5176,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6217,10 +5193,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6237,10 +5210,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6257,9 +5227,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6276,10 +5244,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6296,10 +5261,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6316,10 +5278,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6336,10 +5295,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6356,10 +5312,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6376,10 +5329,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6396,10 +5346,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6416,10 +5363,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6436,10 +5380,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6456,10 +5397,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6476,10 +5414,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6496,10 +5431,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6516,10 +5448,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6536,10 +5465,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6556,10 +5482,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6576,10 +5499,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6596,10 +5516,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6616,10 +5533,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6636,10 +5550,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6656,10 +5567,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6676,10 +5584,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6696,10 +5601,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6716,10 +5618,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6736,10 +5635,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6756,10 +5652,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6776,10 +5669,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6796,10 +5686,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6816,10 +5703,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6836,10 +5720,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6856,9 +5737,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6875,10 +5754,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6895,10 +5771,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6915,10 +5788,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6935,10 +5805,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6955,10 +5822,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6975,10 +5839,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -6995,9 +5856,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7014,10 +5873,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7034,10 +5890,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7054,10 +5907,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7074,10 +5924,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7094,10 +5941,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7114,10 +5958,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7134,10 +5975,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7154,10 +5992,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7174,10 +6009,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7194,10 +6026,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7214,10 +6043,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7234,10 +6060,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7254,10 +6077,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7274,10 +6094,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7294,10 +6111,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7314,10 +6128,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7334,10 +6145,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7354,10 +6162,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7374,10 +6179,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7394,10 +6196,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7414,10 +6213,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7434,10 +6230,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7454,10 +6247,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7474,10 +6264,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7494,10 +6281,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7514,10 +6298,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7534,10 +6315,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7554,10 +6332,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7574,10 +6349,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7594,10 +6366,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7614,10 +6383,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7634,10 +6400,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7654,10 +6417,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7674,10 +6434,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7694,10 +6451,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7714,10 +6468,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7734,9 +6485,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost"
-      ],
+      "missing": ["cost"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7753,10 +6502,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7773,10 +6519,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7793,10 +6536,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7813,10 +6553,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7833,10 +6570,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7853,10 +6587,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7873,10 +6604,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7893,10 +6621,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7913,10 +6638,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7933,10 +6655,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7953,10 +6672,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7973,10 +6689,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -7993,10 +6706,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8013,10 +6723,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8033,10 +6740,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8053,10 +6757,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8073,10 +6774,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8093,10 +6791,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8113,10 +6808,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8133,10 +6825,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8153,10 +6842,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8173,10 +6859,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8193,10 +6876,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8213,10 +6893,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8233,10 +6910,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8253,10 +6927,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8273,11 +6944,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "contact",
-        "email"
-      ],
+      "missing": ["cost", "contact", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8294,10 +6961,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8314,10 +6978,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8334,10 +6995,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8354,10 +7012,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8374,10 +7029,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8394,10 +7046,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8414,10 +7063,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8434,10 +7080,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8454,10 +7097,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8474,10 +7114,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8494,10 +7131,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8514,10 +7148,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8534,10 +7165,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8554,10 +7182,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8574,10 +7199,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8594,10 +7216,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8614,10 +7233,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8634,10 +7250,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8654,10 +7267,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8674,10 +7284,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8694,10 +7301,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8714,10 +7318,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8734,10 +7335,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8754,10 +7352,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8774,10 +7369,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8794,10 +7386,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8814,10 +7403,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8834,10 +7420,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8854,10 +7437,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8874,10 +7454,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8894,10 +7471,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8914,10 +7488,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8934,10 +7505,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8954,10 +7522,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8974,10 +7539,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -8994,10 +7556,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -9014,10 +7573,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -9034,10 +7590,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -9054,10 +7607,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -9074,10 +7624,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -9094,10 +7641,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -9114,10 +7658,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -9134,10 +7675,7 @@
       "score": 50,
       "prestige": 0,
       "tier": "PARTIAL",
-      "missing": [
-        "cost",
-        "email"
-      ],
+      "missing": ["cost", "email"],
       "autoVerified": false,
       "autoVerifiedPartial": true,
       "isVerified": false,
@@ -9154,9 +7692,7 @@
       "score": 75,
       "prestige": 0,
       "tier": "GOOD",
-      "missing": [
-        "contact"
-      ],
+      "missing": ["contact"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -9173,9 +7709,7 @@
       "score": 75,
       "prestige": 0,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -9192,9 +7726,7 @@
       "score": 75,
       "prestige": 0,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -9211,9 +7743,7 @@
       "score": 75,
       "prestige": 0,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -9230,9 +7760,7 @@
       "score": 75,
       "prestige": 0,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -9249,9 +7777,7 @@
       "score": 75,
       "prestige": 0,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -9268,9 +7794,7 @@
       "score": 75,
       "prestige": 0,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -9287,9 +7811,7 @@
       "score": 75,
       "prestige": 0,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,
@@ -9306,9 +7828,7 @@
       "score": 75,
       "prestige": 0,
       "tier": "GOOD",
-      "missing": [
-        "email"
-      ],
+      "missing": ["email"],
       "autoVerified": true,
       "autoVerifiedPartial": false,
       "isVerified": false,

@@ -148,7 +148,7 @@ test("URLs with TBA dates should not claim specific dates found", () => {
 test("Records with verified=false and no campUrl should be flagged", () => {
   const bad = data.filter((r) => !r.isVerified && !r.campUrl && !r.isChecked);
   assert(
-    bad.length <= data.length * 0.40,
+    bad.length <= data.length * 0.4,
     `${bad.length} records unchecked (40% threshold — known DII programs without posted camp pages)`,
   );
 });

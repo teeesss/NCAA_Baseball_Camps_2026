@@ -28,7 +28,8 @@ const DATE_PATTERNS = [
 const STALE_YEARS = ["2021", "2022", "2023", "2024", "2025"];
 
 // Cost pattern: single prices, ranges ($175-$225), FREE, Complimentary, + suffix
-const COST_PATTERN = /\$[\d,]+(?:\.\d{2})?(?:\s*[-–\/]\s*\$[\d,]+(?:\.\d{2})?)?(?:\s*\+)?|FREE|Complimentary|No cost|Free of charge/gi;
+const COST_PATTERN =
+  /\$[\d,]+(?:\.\d{2})?(?:\s*[-–\/]\s*\$[\d,]+(?:\.\d{2})?)?(?:\s*\+)?|FREE|Complimentary|No cost|Free of charge/gi;
 
 // Simpler pattern for numeric extraction (captures the digit group after $)
 const COST_NUMERIC_PATTERN = /\$\s*(\d[\d,.]*(?:\.\d{2})?)/g;
@@ -55,8 +56,17 @@ const NO_EVENTS_PHRASES = [
 
 // Sub-crawl link keywords — what links to follow during deep page crawl
 const SUB_CRAWL_KEYWORDS = [
-  "camp", "clinic", "register", "prospect", "showcase",
-  "detail", "event", "elite", "youth", "summer", "pricing",
+  "camp",
+  "clinic",
+  "register",
+  "prospect",
+  "showcase",
+  "detail",
+  "event",
+  "elite",
+  "youth",
+  "summer",
+  "pricing",
 ];
 
 // Search providers (DDG, Bing, Yahoo) — deterministic round-robin by school DB index
@@ -113,10 +123,10 @@ const OFFICIAL_PLATFORMS = [
 ];
 
 const PRICE_THRESHOLDS = {
-  CRITICAL_ANOMALY: 5,        // < $5 -> Auto-purge and requeue 
-  SUSPICIOUS_LOW: 50,         // < $50 -> immediate flag for detailed look
-  VERIFY_MANUALLY: 100,       // < $100 -> flag, probably single day but verify
-  MAX_EXPECTED: 1500,         // > $1500 -> suspicious high
+  CRITICAL_ANOMALY: 5, // < $5 -> Auto-purge and requeue
+  SUSPICIOUS_LOW: 50, // < $50 -> immediate flag for detailed look
+  VERIFY_MANUALLY: 100, // < $100 -> flag, probably single day but verify
+  MAX_EXPECTED: 1500, // > $1500 -> suspicious high
 };
 
 const GENERIC_EMAIL_PREFIXES = [

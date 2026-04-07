@@ -25,7 +25,7 @@ function unwrapUrl(url) {
 // ── Search Engine URL Detector ────────────────────────────────────
 // Detects URLs that are search engine redirects/proxies, not real destinations
 function isSearchEngineUrl(url) {
-  if (!url) return true;
+  if (!url || url === "TBA" || !url.startsWith("http")) return false;
   const u = url.toLowerCase();
   const seHosts = [
     "duckduckgo.com/l/",
@@ -50,7 +50,7 @@ function isSearchEngineUrl(url) {
 
 // ── Generic Page Detector ─────────────────────────────────────────
 function isGenericPage(url) {
-  if (!url) return true;
+  if (!url || url === "TBA" || !url.startsWith("http")) return false;
   try {
     const u = new URL(url);
     const path = u.pathname.replace(/\/$/, "").toLowerCase();
@@ -70,7 +70,7 @@ function isGenericPage(url) {
 // Returns true if the URL path or hostname contains camp-relevant keywords
 // OR is an official athletics baseball page (valid fallback per CLAUDE.md)
 function isCampRelatedUrl(url) {
-  if (!url) return false;
+  if (!url || url === "TBA") return true;
   try {
     const u = new URL(url);
     const fullPath = (u.pathname + (u.search || "")).toLowerCase();
@@ -105,7 +105,7 @@ function isCampRelatedUrl(url) {
 
 // ── Comprehensive Blacklist Check ─────────────────────────────────
 function isBlacklistedUrl(url) {
-  if (!url) return true;
+  if (!url || url === "TBA" || !url.startsWith("http")) return false;
   // First check search engine URLs
   if (isSearchEngineUrl(url)) return true;
   // Then check centralized blacklist
@@ -113,10 +113,19 @@ function isBlacklistedUrl(url) {
 
   // Step 3: Sport Contamination & Merch Check
   const urlLower = url.toLowerCase();
-  
+
   // Exclude merch, tickets, and news sites globally
-  const rejectKeywords = ["/shop", "/store", "merchandise", "ticket", "seatgeek", "stubhub", "news", "article"];
-  if (rejectKeywords.some(k => urlLower.includes(k))) {
+  const rejectKeywords = [
+    "/shop",
+    "/store",
+    "merchandise",
+    "ticket",
+    "seatgeek",
+    "stubhub",
+    "news",
+    "article",
+  ];
+  if (rejectKeywords.some((k) => urlLower.includes(k))) {
     return true;
   }
 
@@ -124,16 +133,18 @@ function isBlacklistedUrl(url) {
   let isWrongSportDomain = false;
   try {
     const hostname = new URL(url).hostname.toLowerCase();
-    isWrongSportDomain = REJECT_SPORTS.some(sport => {
-      const cleanSport = sport.replace(/\s+/g, '');
+    isWrongSportDomain = REJECT_SPORTS.some((sport) => {
+      const cleanSport = sport.replace(/\s+/g, "");
       return hostname.includes(cleanSport) && !hostname.includes("baseball");
     });
-  } catch(e) {}
+  } catch (e) {}
 
   // Also reject path elements that explicitly designate other sports
-  const pathSportRejection = REJECT_SPORTS.some(sport => {
-       const cleanSport = sport.replace(/\s+/g, '');
-       return urlLower.includes(`/${cleanSport}`) && !urlLower.includes("baseball");
+  const pathSportRejection = REJECT_SPORTS.some((sport) => {
+    const cleanSport = sport.replace(/\s+/g, "");
+    return (
+      urlLower.includes(`/${cleanSport}`) && !urlLower.includes("baseball")
+    );
   });
 
   if (isWrongSportDomain || pathSportRejection) {
@@ -178,7 +189,13 @@ function validateUrl(url, schoolName, isGuessed = false) {
 
 // ── Score URL (centralised — all runners delegate here) ──────────────────────
 // V9 improvements: Alabama state-aware URL penalty + coach last-name bonus
-function scoreUrl(url, school, mascotGetter, getCoachSearch, isGuessed = false) {
+function scoreUrl(
+  url,
+  school,
+  mascotGetter,
+  getCoachSearch,
+  isGuessed = false,
+) {
   if (!url) return -100;
   let score = 0;
   const u = url.toLowerCase();
@@ -187,27 +204,31 @@ function scoreUrl(url, school, mascotGetter, getCoachSearch, isGuessed = false) 
     typeof getCoachSearch === "function" ? getCoachSearch(school) : "";
   const mascot = (
     school.mascot ||
-    (typeof mascotGetter === "function" ? mascotGetter(school.university) : "") ||
+    (typeof mascotGetter === "function"
+      ? mascotGetter(school.university)
+      : "") ||
     ""
   ).toLowerCase();
 
   // ── V9: Alabama vs Alabama State URL penalty ────────────────────────────
   const targetIsState = s.includes("alabama") && s.includes("state");
-  const targetIsUA    = s === "university of alabama" || s === "alabama" && !s.includes("state");
-  if (targetIsState && u.includes("rolltide")) score -= 150;  // Alabama State → rolltide is UA
-  if (targetIsUA    && u.includes("alasu"))    score -= 150;  // Alabama → alasu is Alabama State
+  const targetIsUA =
+    s === "university of alabama" || (s === "alabama" && !s.includes("state"));
+  if (targetIsState && u.includes("rolltide")) score -= 150; // Alabama State → rolltide is UA
+  if (targetIsUA && u.includes("alasu")) score -= 150; // Alabama → alasu is Alabama State
 
   // Positive signals
-  if (u.includes("baseball"))                      score += 40;
-  if (u.includes("camp") || u.includes("clinic"))  score += 30;
-  if (u.includes("/sports/baseball"))              score += 15;
+  if (u.includes("baseball")) score += 40;
+  if (u.includes("camp") || u.includes("clinic")) score += 30;
+  if (u.includes("/sports/baseball")) score += 15;
 
   // Coach last-name bonus (V8 improvement)
   if (coach && coach.split(" ").length >= 2) {
     const lastName = coach.split(" ").pop().toLowerCase();
     if (lastName && lastName.length > 3 && u.includes(lastName)) score += 35;
   }
-  if (mascot && mascot.length > 3 && u.includes(mascot.replace(/\s+/g, ""))) score += 20;
+  if (mascot && mascot.length > 3 && u.includes(mascot.replace(/\s+/g, "")))
+    score += 20;
 
   const cleanS = s.replace(/\s+/g, "");
   if (cleanS.length > 3 && u.includes(cleanS)) score += 25;
@@ -219,9 +240,9 @@ function scoreUrl(url, school, mascotGetter, getCoachSearch, isGuessed = false) 
   if (shortS.length > 3 && u.includes(shortS)) score += 15;
 
   // Third-party official camp platforms
-  if (u.includes("ryzer.com"))      score += 50;
+  if (u.includes("ryzer.com")) score += 50;
   if (u.includes("totalcamps.com")) score += 50;
-  if (u.includes("active.com"))     score += 40;
+  if (u.includes("active.com")) score += 40;
 
   // .edu bonus only if camp-related path
   if (u.includes(".edu")) {
@@ -232,9 +253,11 @@ function scoreUrl(url, school, mascotGetter, getCoachSearch, isGuessed = false) 
   if (isGuessed) score -= 40;
 
   // Negative signals
-  if (u.includes("/schedule") || u.includes("/roster") || u.includes("/news/")) score -= 30;
-  if (u.includes("2025"))  score -= 100;  // Stale year
-  if (u.includes("shop/") || u.includes("/store") || u.includes("merchandise")) score -= 150;
+  if (u.includes("/schedule") || u.includes("/roster") || u.includes("/news/"))
+    score -= 30;
+  if (u.includes("2025")) score -= 100; // Stale year
+  if (u.includes("shop/") || u.includes("/store") || u.includes("merchandise"))
+    score -= 150;
 
   // Centralised blacklist
   if (isBlacklistedUrl(url)) score -= 200;
