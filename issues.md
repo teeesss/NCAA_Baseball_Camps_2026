@@ -56,6 +56,14 @@
 
 
 
+### Uncaught SyntaxError: Invalid or unexpected token (2026-04-07) — FIXED
+
+- **Symptom**: The directory showed "Loading Camps..." indefinitely. Console showed `Uncaught SyntaxError: Invalid or unexpected token` at index.html:643.
+- **Root cause**: In an attempt to fix the "Visit Site" button, multiline string literals were introduced using single quotes (`'`). In JavaScript, standard single-quoted and double-quoted strings cannot span multiple lines. They must be escaped with `\` or use backticks (`` ` ``). The generator scripts (`generate_html.js` and `generate_html_dev.js`) produced `index.html` with literal newlines inside the string, causing the browser's JS engine to fail.
+- **Fix**: Refactored the "Visit Site" button generation logic into an Immediately Invoked Function Expression (IIFE) within the template string. Each return statement now outputs a **single-line** string. This eliminated both the HTML injection bug and the line-break syntax error.
+- **Files fixed**: `generate_html.js` (line ~670) and `generate_html_dev.js` (line ~668).
+- **Prevention rule**: NEVER include a literal newline character inside a single-quoted or double-quoted JavaScript string in the HTML generators. If a string needs to be long, keep it on one physical line in the `.js` generator or use string concatenation (`'line1' + 'line2'`).
+
 ### Favicon Console Bloat (gstatic 404)
 
 - **Problem**: Google's Favicon V2 service is returning 404 for ~12 outdated university domains, cluttering the browser console.
