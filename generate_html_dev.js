@@ -666,13 +666,15 @@ const html = `
             '</div>'+
             '<div class="modal-data" style="display:none;">'+encodeURIComponent(modalHtml)+'</div>'+
             '<div class="actions">'+
-                // DO NOT BREAK: build the entire <a> tag in each branch so attributes
-                // are never injected as text content after the tag is already closed.
-                (!item.campUrl || (item.campUrl||'').includes('google.com/search')
-                    ? '<a href="#" class="btn btn-visit'+(item.division==='DII'?' btn-dii':'')+'"
-                          style="opacity:0.3;cursor:not-allowed;" onclick="return false;event.stopPropagation();">Visit Site</a>'
-                    : '<a href="'+item.campUrl+'" class="btn btn-visit'+(item.division==='DII'?' btn-dii':'')+'"
-                          target="_blank" onclick="event.stopPropagation()">Visit Site</a>')+
+                // DO NOT BREAK: each branch builds a COMPLETE <a> tag string on one line.
+                // Never close the opening tag > in a shared prefix then inject attributes via ternary.
+                (function(){
+                    const diiClass = item.division==='DII' ? ' btn-dii' : '';
+                    if (!item.campUrl || item.campUrl.includes('google.com/search')) {
+                        return '<a href="#" class="btn btn-visit'+diiClass+'" style="opacity:0.3;cursor:not-allowed;" onclick="return false;event.stopPropagation();">Visit Site</a>';
+                    }
+                    return '<a href="'+item.campUrl+'" class="btn btn-visit'+diiClass+'" target="_blank" onclick="event.stopPropagation()">Visit Site</a>';
+                })()+
                 '<button class="btn btn-human-verify'+(humanVerifyDisabled?' voted':'')+
                     '" data-verify-school="'+item.university+'"'+
                     ' '+(humanVerifyDisabled ? 'disabled' : '')+'>'+
