@@ -1,0 +1,2397 @@
+[
+  {
+    "school": "Abilene Christian Wildcats",
+    "url": "https://www.acubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Alabama Crimson Tide",
+    "url": "https://www.alabamabaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Alabama Huntsville Chargers",
+    "url": "https://www.royerbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Albany State Golden Rams",
+    "url": "https://www.hemmingsbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Appalachian State Mountaineers",
+    "url": "https://www.kermitsmithbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Aquinas College Saints",
+    "url": "https://www.aquinasbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Arkansas Monticello Boll Weevils",
+    "url": "https://www.uambaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Arkansas State Red Wolves",
+    "url": "https://www.mikesilvabaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Arkansas Tech Wonder Boys",
+    "url": "https://www.atechbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Asbury Eagles",
+    "url": "https://baseball.AsburyEagleCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Assumption Greyhounds",
+    "url": "https://www.rocsolidbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Auburn Tigers",
+    "url": "https://www.butchthompsonbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "AUM Warhawks",
+    "url": "https://www.franklinbushbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Azusa Pacific Cougars",
+    "url": "https://www.212baseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Babson Beavers",
+    "url": "https://www.NooneBaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Baldwin Wallace Yellow Jackets",
+    "url": "https://baseball.bwathleticcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Baton Rouge CC Bears",
+    "url": "https://www.brccbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Belhaven Blazers",
+    "url": "https://www.belhavenbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Bluffton Beavers",
+    "url": "https://Baseball.BlufftonUSportsCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Bossier Parish CC Cavaliers",
+    "url": "https://www.bobbygilliambaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Bowdoin Polar Bears",
+    "url": "https://www.polarbearbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Bowling Green Falcons",
+    "url": "https://www.bgsubaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Bridgewater Eagles",
+    "url": "https://www.benspottsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Brockport Golden Eagles",
+    "url": "https://www.brockportbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Buena Vista Beavers",
+    "url": "https://www.bvubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Butler Bulldogs",
+    "url": "https://www.BeemerBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Cal State Monterey Bay Otters",
+    "url": "https://www.otterbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Calhoun CC Warhawks",
+    "url": "https://www.calhouncamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Calvin Knights",
+    "url": "https://baseball.calvinsportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Capital Comets",
+    "url": "https://www.CapitalBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Carroll Pioneers",
+    "url": "https://baseball.piocamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Centenary Cyclones",
+    "url": "https://www.worldofromecamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Centenary Gents",
+    "url": "https://www.centenarybaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Central Arkansas Bears",
+    "url": "https://www.ucabearsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Central Connecticut State Blue Devils",
+    "url": "https://www.bluedevilsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Central Dutch",
+    "url": "https://Baseball.CentralCollegeEvents.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Central Missouri Mules",
+    "url": "https://www.mulesbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Chris Langan Baseball Camps",
+    "url": "https://www.CLanganBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Christian Brothers Buccaneers",
+    "url": "https://www.zachullrichbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Coast Guard Bears",
+    "url": "https://baseball.coastguardsportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Colby Mules",
+    "url": "https://www.colbybaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Colby-Sawyer Chargers",
+    "url": "https://Baseball.colby-sawyercamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "College Baseball Coaches Camps (Showcase)",
+    "url": "https://www.collegebaseballcoachescamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "College of Charleston Cougars",
+    "url": "https://www.cofcbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "College of Wooster Fighting Scots",
+    "url": "https://www.woosterbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Colorado Christian Cougars",
+    "url": "https://baseball.ccucamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Colorado State Pueblo ThunderWolves",
+    "url": "https://www.packbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Columbia Lions",
+    "url": "https://www.brettborettibaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Concordia Cobbers",
+    "url": "https://www.cobberbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Concordia St. Paul Golden Bears",
+    "url": "https://www.concordiastpaulbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Concordia Texas Tornados",
+    "url": "https://www.Concordiatexasbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Cornell College Rams",
+    "url": "https://baseballcamps.cornellcollegesportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Crowder Roughriders",
+    "url": "https://www.crowderbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Cumberland Phoenix",
+    "url": "https://www.cumberlandbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Dallas Baptist Patriots",
+    "url": "https://baseball.dbucamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Dartmouth Big Green",
+    "url": "https://www.mcfaddenbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Defiance Yellow Jackets",
+    "url": "https://www.defiancecollegebaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Denison Big Red",
+    "url": "https://www.mikedeeganbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "DePauw Tigers",
+    "url": "https://www.nespobaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "DeSales Bulldogs",
+    "url": "https://www.desalesbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Dickinson Red Devils",
+    "url": "https://www.reddevilbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "DMACC Bears",
+    "url": "https://www.dmaccbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Drury Panthers",
+    "url": "https://www.drurybaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Earlham Quakers",
+    "url": "https://www.earlhambaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "East Stroudsburg Warriors",
+    "url": "https://Baseball.ESUWarriorCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "East Texas Baptist Tigers",
+    "url": "https://Baseball.etbusportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Eastern Kentucky Colonels",
+    "url": "https://www.colonelbaseballschool.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Eastern Mennonite Royals",
+    "url": "https://www.adamposeybaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Eastern Oklahoma State Mountaineers",
+    "url": "https://www.eoscbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Eastern University Eagles",
+    "url": "https://www.renaurobaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Eckerd Tritons",
+    "url": "https://baseball.eckerdcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Edward Waters Tigers",
+    "url": "https://www.ewubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Elmhurst Bluejays",
+    "url": "https://elmhurstbaseballcamps.ryzerevents.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Emory & Henry Wasps",
+    "url": "https://www.EHCBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Emory Eagles",
+    "url": "https://www.bobbyperezbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Evangel Valor",
+    "url": "https://baseball.evangelcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Fordham Rams",
+    "url": "https://www.fordhambaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Franklin Grizzlies",
+    "url": "https://www.grizbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Frostburg State Bobcats",
+    "url": "https://www.FrostburgBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "George Fox Bruins",
+    "url": "https://baseball.bruincamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Georgia Tech Yellow Jackets",
+    "url": "https://www.jamesramseybaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Grace Lancers",
+    "url": "https://baseball.gracecamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Grambling State Tigers",
+    "url": "https://baseball.gsutigersportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Grand Canyon Antelopes",
+    "url": "https://www.GCUBaseballAcademy.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Grand Valley State Lakers",
+    "url": "https://www.grandvalleystatebaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Grand View Vikings",
+    "url": "https://GrandViewBaseball.ryzerevents.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Greenville Panthers",
+    "url": "https://GCBaseballCamps.ryzerevents.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Guilford Quakers",
+    "url": "https://www.guilfordbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Hanover Panthers",
+    "url": "https://hanovermensbaseball.ryzerevents.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Hardin-Simmons Cowboys",
+    "url": "https://www.cowboybaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Harding Bisons",
+    "url": "https://www.hardingbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Haverford Fords",
+    "url": "https://haverfordbaseball.ryzerevents.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Heartland CC Hawks",
+    "url": "https://www.heartlandbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Henderson State Reddies",
+    "url": "https://www.hsubaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Hendrix Warriors",
+    "url": "https://www.hendrixbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Houston Christian Huskies",
+    "url": "https://www.hcubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Houston Victoria Jaguars",
+    "url": "https://www.uhvbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Howard Payne Yellow Jackets",
+    "url": "https://baseball.hpusportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Huntingdon Hawks",
+    "url": "https://www.huntingdonbaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Hutchinson CC Blue Dragons",
+    "url": "https://www.bluedragonbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Illinois Fighting Illini",
+    "url": "https://www.IlliniBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Illinois Wesleyan Titans",
+    "url": "https://www.TitanBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Indiana Hoosiers",
+    "url": "https://www.jeffmercerbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Indiana University South Bend Titans",
+    "url": "https://www.titanbaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Indiana Wesleyan Wildcats",
+    "url": "https://www.IWUBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Iowa Central Tritons",
+    "url": "https://www.iowacentralbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Jacksonville State Gamecocks",
+    "url": "https://baseball.jsugamecocksportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "JBD Athletics",
+    "url": "https://www.JBDAthletics.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Johns Hopkins Blue Jays",
+    "url": "https://www.jaysbaseballacademy.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Kansas City Kansas CC Blue Devils",
+    "url": "https://www.primebaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Kentucky Christian Knights",
+    "url": "https://www.jasonstowersbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Kentucky State Thorobreds",
+    "url": "https://kentuckystateunivbaseball.ryzerevents.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "La Salle Explorers",
+    "url": "https://www.davidmillerbaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "LaGrange Panthers",
+    "url": "https://www.davidkeltoncamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Lake Land College Lakers",
+    "url": "https://www.GodinezBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Lancaster Bible Chargers",
+    "url": "https://baseball.lbccamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Lawrence Vikings",
+    "url": "https://www.lubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "LeTourneau YellowJackets",
+    "url": "https://www.letubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Lewis & Clark Pioneers",
+    "url": "https://www.PiosBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Lindenwood Lions",
+    "url": "https://BaseballLLC.lindenwoodLionsCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Lipscomb Bisons",
+    "url": "https://www.lipscombbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Loras Duhawks",
+    "url": "https://www.lorasbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Louisiana Tech Bulldogs",
+    "url": "https://www.laneburroughscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "LSU Shreveport Pilots",
+    "url": "https://www.lsusbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Lubbock Christian Chaparrals",
+    "url": "https://www.lcubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Luther Norse",
+    "url": "https://www.lutherbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Lyon Scots",
+    "url": "https://www.lyonbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Marian Knights",
+    "url": "https://www.marianbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Marshall Thundering Herd",
+    "url": "https://www.bealsyballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Mary Baldwin Fighting Squirrels",
+    "url": "https://www.FightingSquirrelsbaseballsoftballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Mary Washington Eagles",
+    "url": "https://www.UMWBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Marymount Saints",
+    "url": "https://Baseball.MarymountSportsCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Maryville Saints",
+    "url": "https://Baseball.maryvillesportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "McDaniel Green Terror",
+    "url": "https://www.mcdanielbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "McKendree Bearcats",
+    "url": "https://baseball.mckendreecamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Meridian CC Eagles",
+    "url": "https://www.sudduthbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Michigan State Spartans",
+    "url": "https://Baseball.spartansportsclinics.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Michigan State Spartans",
+    "url": "https://www.baseballcampsmsu.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Michigan Wolverines",
+    "url": "https://camps.mgoblue.com/baseball",
+    "source": "bcusa"
+  },
+  {
+    "school": "Millsaps Majors",
+    "url": "https://www.millsapschampionsbaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Milwaukee Panthers",
+    "url": "https://baseball.sportscampsatuwm.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Minnesota Crookston Golden Eagles",
+    "url": "https://Baseball.umcsportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Minnesota Golden Gophers",
+    "url": "https://www.gopherbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Minnesota Morris Cougars",
+    "url": "https://www.morrisbsbcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Minnesota State Mavericks",
+    "url": "https://www.msumavericksbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Mississippi College Choctaws",
+    "url": "https://www.choctawbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Mississippi State Bulldogs",
+    "url": "https://www.hailstatecamps.com/baseball",
+    "source": "bcusa"
+  },
+  {
+    "school": "Missouri S&T Miners",
+    "url": "https://www.minerbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Missouri State Bears",
+    "url": "https://www.msubearsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Missouri State West Plains Grizzlies",
+    "url": "https://www.MSUWestPlainsBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Missouri Tigers",
+    "url": "https://www.nowbaseballacademy.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Missouri Western Griffons",
+    "url": "https://www.griffonbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Mobile Rams",
+    "url": "https://www.uofmobilebaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Monmouth Hawks",
+    "url": "https://baseballcamps.monmouthhawks.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Montana State Billings Yellowjackets",
+    "url": "https://www.msubbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Montclair State Red Hawks",
+    "url": "https://www.redhawkbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Montevallo Falcons",
+    "url": "https://Baseball.MontevalloSportsCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Mount Marty Lancers",
+    "url": "https://www.mmulancersbsb.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Mount Saint Mary Knights",
+    "url": "https://baseball.msmcsportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "MSU Denver Roadrunners",
+    "url": "https://www.allamericanacademybaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Muhlenberg Mules",
+    "url": "https://www.muhlenbergbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Murray State Racers",
+    "url": "https://www.danskirkabaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "NDSU Bison",
+    "url": "https://www.ndsubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Nelson Lions",
+    "url": "https://baseball.nelsonsportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Neumann Knights",
+    "url": "https://www.neumannbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Nevada Wolf Pack",
+    "url": "https://www.wolfpackbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "New Mexico State Aggies",
+    "url": "https://www.JakeAngierBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "New Orleans Privateers",
+    "url": "https://www.unobaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Newman Jets",
+    "url": "https://www.jetsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Nicholls State Colonels",
+    "url": "https://www.brentharingbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "NMMI Broncos",
+    "url": "https://www.nmmibaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Norfolk State Spartans",
+    "url": "https://www.nsubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "North Carolina Tar Heels",
+    "url": "https://www.carolinabaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Northeast Mississippi CC Tigers",
+    "url": "https://www.nemccbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Northeast Texas CC Eagles",
+    "url": "https://www.andymorganbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Northeastern State RiverHawks",
+    "url": "https://www.riverhawkbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Northern Colorado Bears",
+    "url": "https://www.bearsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Northern State Wolves",
+    "url": "https://www.northernstatebaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Northwest Nazarene Nighthawks",
+    "url": "https://www.nnubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Northwest Shoals Patriots",
+    "url": "https://www.patriotsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Northwestern Oklahoma State Rangers",
+    "url": "https://www.nwrangerbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Northwestern Wildcats",
+    "url": "https://www.northwesternbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Notre Dame of Maryland Gators",
+    "url": "https://www.ndmubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Oglethorpe Stormy Petrels",
+    "url": "https://www.petrelbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Ohio Dominican Panthers",
+    "url": "https://www.odupantherbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Ohio Wesleyan Battling Bishops",
+    "url": "https://www.SkillsNDrillsCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Oklahoma City Stars",
+    "url": "https://www.okcbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Ole Miss Rebels",
+    "url": "https://Baseball.olemisssportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Omaha Mavericks",
+    "url": "https://www.omahabaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Oregon Ducks",
+    "url": "https://www.DuckBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Otterbein Cardinals",
+    "url": "https://www.otterbeinbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Ouachita Baptist Tigers",
+    "url": "https://www.ouachitatigerbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Pearl River CC Wildcats",
+    "url": "https://www.prccbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Pellissippi State Panthers",
+    "url": "https://www.shawnhughesbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Pepperdine Waves",
+    "url": "https://www.malibubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Peru State Bobcats",
+    "url": "https://baseball.perustatecamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Pittsburgh Panthers",
+    "url": "https://www.pittbaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Purdue Boilermakers",
+    "url": "https://www.purduebaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Randolph-Macon Yellow Jackets",
+    "url": "https://www.diamondjacketcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Regis Rangers",
+    "url": "https://www.rangerbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Rhodes Lynx",
+    "url": "https://www.Rhodesbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Richmond Spiders",
+    "url": "https://www.spiderbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Rockhurst Hawks",
+    "url": "https://www.rockhurstbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Roger Williams Hawks",
+    "url": "https://www.hawkbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Rogers State Hillcats",
+    "url": "https://www.rogersstatebaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Russell Sage Gators",
+    "url": "https://www.sagebaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Rutgers Scarlet Knights",
+    "url": "https://www.rutgersbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Rutgers-Newark Scarlet Raiders",
+    "url": "https://www.CRKBaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Saint John's Johnnies",
+    "url": "https://baseball.sjujohnniescamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Saint Joseph's Monks",
+    "url": "https://www.monksbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Saint Martin's Saints",
+    "url": "https://www.saintsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Saint Mary's Gaels",
+    "url": "https://www.smcbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Samford Bulldogs",
+    "url": "https://www.subaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "San Francisco State Gators",
+    "url": "https://baseball.sfstatesportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Schreiner Mountaineers",
+    "url": "https://www.schreinerbaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Seton Hill Griffins",
+    "url": "https://www.shubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Sewanee Tigers",
+    "url": "https://www.sewaneebaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Shenandoah Hornets",
+    "url": "https://www.kevinandersonbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Simpson Storm",
+    "url": "https://www.simpsonbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Slippery Rock Rock",
+    "url": "https://www.slipperyrockbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "South Alabama Jaguars",
+    "url": "https://www.jagbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "South Dakota State Jackrabbits",
+    "url": "https://baseball.jackrabbitsportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southeastern Fire",
+    "url": "https://www.seubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southeastern Louisiana Lions",
+    "url": "https://www.bobbybarbierbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southeastern Oklahoma State Savage Storm",
+    "url": "https://www.southeasternbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southern Arkansas Muleriders",
+    "url": "https://www.muleridersbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southern Jaguars",
+    "url": "https://www.southernjaguarsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southern Miss Golden Eagles",
+    "url": "https://www.southernmissbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southern Nazarene Crimson Storm",
+    "url": "https://www.snubaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southern Wesleyan Warriors",
+    "url": "https://baseball.swuathleticscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southwest Minnesota State Mustangs",
+    "url": "https://www.SMSUbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southwest Mississippi CC Bears",
+    "url": "https://www.smccbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southwestern CC Spartans",
+    "url": "https://www.mitchellgriffithsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Southwestern Oklahoma State Bulldogs",
+    "url": "https://www.zacksaundersbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Spring Hill College Badgers",
+    "url": "https://www.kellerbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Stevenson Mustangs",
+    "url": "https://www.mustangbaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Susquehanna River Hawks",
+    "url": "https://www.susquehannavalleybaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Swarthmore Garnet",
+    "url": "https://www.garnetbaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "TCNJ Lions",
+    "url": "https://www.lionsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Tarleton State Texans",
+    "url": "https://www.texanbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Tennessee Volunteers",
+    "url": "https://www.tennesseebaseballcamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Texas Southern Tigers",
+    "url": "https://www.texassouthernbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "The Citadel Bulldogs",
+    "url": "https://www.russelltriplettbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Toledo Rockets",
+    "url": "https://Baseball.toledocamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Transylvania Pioneers",
+    "url": "https://www.dsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Trinity Tigers",
+    "url": "https://www.trinityubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Troy Trojans",
+    "url": "https://www.troybaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Truman State Bulldogs",
+    "url": "https://www.trumanbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Tuskegee Golden Tigers",
+    "url": "https://www.skeegebaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "UAB Blazers",
+    "url": "https://www.Dunnbaseballacademy.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "UC San Diego Tritons",
+    "url": "https://www.ucsdbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "UConn Huskies",
+    "url": "https://www.jimpendersbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "UMBC Retrievers",
+    "url": "https://www.retrieverbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "UMary Marauders",
+    "url": "https://www.UMaryBaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "UNOH Racers",
+    "url": "https://www.racerbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "USC Beaufort Sand Sharks",
+    "url": "https://www.sandsharksballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "UTSA Roadrunners",
+    "url": "https://www.utsabaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "UW-La Crosse Eagles",
+    "url": "https://baseball.uwlcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "UW-Oshkosh Titans",
+    "url": "https://baseball.uwoshkoshsportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "UW-Parkside Rangers",
+    "url": "https://www.parksidebaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "UW-Stout Blue Devils",
+    "url": "https://baseball.uwstoutsportscamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Union Bulldogs",
+    "url": "https://www.caseymcgeheebaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Union College Garnet Chargers",
+    "url": "https://www.garnetchargerbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "United States Sports Academy Eagles",
+    "url": "https://www.ussubaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Utah Utes",
+    "url": "https://www.utahutesbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Utica Pioneers",
+    "url": "https://www.movbaseballacademy.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Valdosta State Blazers",
+    "url": "https://www.vsubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Valparaiso Beacons",
+    "url": "https://www.valpobaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Vassar Brewers",
+    "url": "https://www.vassarbaseballclinics.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Wabash Little Giants",
+    "url": "https://www.wabashbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Wartburg Knights",
+    "url": "https://www.wartburgbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Washington & Jefferson Presidents",
+    "url": "https://www.washjeffbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Wayland Baptist Pioneers",
+    "url": "https://www.WBUBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Wayne State Warriors",
+    "url": "https://www.waynestatebaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Wayne State Wildcats",
+    "url": "https://www.wscbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Webber International Warriors",
+    "url": "https://www.collinmartinbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Wesleyan Cardinals",
+    "url": "https://www.reynoldsbaseball.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "West Alabama Tigers",
+    "url": "https://www.DuboseBaseballAcademy.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "West Chester Golden Rams",
+    "url": "https://www.larosabaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "West Florida Argonauts",
+    "url": "https://www.WestFloridaBaseballSkills.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "West Georgia Wolves",
+    "url": "https://www.jeffsmithbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Western Illinois Leathernecks",
+    "url": "https://www.leatherneckbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Western Michigan Broncos",
+    "url": "https://www.wmubaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Westfield State Owls",
+    "url": "https://www.WestfieldOwlsBaseballCamp.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Westminster Blue Jays",
+    "url": "https://www.bluejaybaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Whitman Blues",
+    "url": "https://www.whitmanbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "William Peace Pacers",
+    "url": "https://www.charlielongbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Williams College Ephs",
+    "url": "https://www.purplecowbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Wilmington Quakers",
+    "url": "https://baseball.wilmingtonathleticcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Winona State Warriors",
+    "url": "https://www.warriorbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Winthrop Eagles",
+    "url": "https://www.mikemcguirebaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Wright State Raiders",
+    "url": "https://www.AlexSogardBaseballCamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Yale Bulldogs",
+    "url": "https://www.elibaseballacademy.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "York Spartans",
+    "url": "https://ycpbaseball.yorkcollegebaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Youngstown State Penguins",
+    "url": "https://www.penguinsbaseballcamps.com",
+    "source": "bcusa"
+  },
+  {
+    "school": "Abilene Christian Wildcats",
+    "url": "https://www.playnsports.com/organization/abilene-christian-university-2/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Adams State Grizzlies",
+    "url": "https://www.playnsports.com/organization/adamsstatebaseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Air Force Falcons",
+    "url": "https://www.playnsports.com/organization/mike-kazlausky-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Akron Zips",
+    "url": "https://www.playnsports.com/organization/zipsbaseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Alcorn State Braves",
+    "url": "https://www.playnsports.com/organization/alcorn-state/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Appalachian State Mountaineers",
+    "url": "https://www.playnsports.com/organization/appalachian-state-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Arizona State Sun Devils",
+    "url": "https://www.playnsports.com/organization/sundevilbaseballcamps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Arizona Wildcats",
+    "url": "https://www.playnsports.com/organization/university-of-arizona/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Bethany Lutheran Vikings",
+    "url": "https://www.playnsports.com/organization/bethany-lutheran-college-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Biola Eagles",
+    "url": "https://www.playnsports.com/organization/biola-university-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Bradley Braves",
+    "url": "https://www.playnsports.com/organization/bradley-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Brevard Tornados",
+    "url": "https://www.playnsports.com/organization/brevard-college-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Bryant & Stratton Bobcats",
+    "url": "https://www.playnsports.com/organization/bryant-stratton-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Bushnell Beacons",
+    "url": "https://www.playnsports.com/organization/bushnell-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Butler Bulldogs",
+    "url": "https://www.playnsports.com/organization/dave-schrage-baseball-camps-at-butler-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Cal Poly Mustangs",
+    "url": "https://www.playnsports.com/organization/cal-poly-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Camp Hurricanes",
+    "url": "https://www.playnsports.com/organization/camp-community-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Campbell Camels",
+    "url": "https://www.playnsports.com/organization/running-camels-baseball-academy/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Campbellsville Tigers",
+    "url": "https://www.playnsports.com/organization/campbellsville-university-tigers-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Carl Albert State Vikings",
+    "url": "https://www.playnsports.com/organization/128009/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Catawba Indians",
+    "url": "https://www.playnsports.com/organization/catawba-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Charleston Cougars",
+    "url": "https://www.playnsports.com/organization/college-of-charleston-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Charlotte 49ers",
+    "url": "https://www.playnsports.com/organization/robert-woodard-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Clarke Pride",
+    "url": "https://www.playnsports.com/organization/gold-standard-athletics/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Clemson Tigers",
+    "url": "https://www.playnsports.com/organization/clemson-baseball-monte-lee-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Cleveland Community College Yetis",
+    "url": "https://www.playnsports.com/organization/cleveland-community-college-2/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Coker Cobras",
+    "url": "https://www.playnsports.com/organization/coker-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Concord Mountain Lions",
+    "url": "https://www.playnsports.com/organization/concord-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Connors State Cowboys",
+    "url": "https://www.playnsports.com/organization/connors-state-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Cox High Falcons",
+    "url": "https://www.playnsports.com/organization/cox-high-school/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Creighton Bluejays",
+    "url": "https://www.playnsports.com/organization/creighton-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "CSUN Matadors",
+    "url": "https://www.playnsports.com/organization/100921/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Dakota State Trojans",
+    "url": "https://www.playnsports.com/organization/54118/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Davidson Wildcats",
+    "url": "https://www.playnsports.com/organization/davidson-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Davis & Elkins Senators",
+    "url": "https://www.playnsports.com/organization/davis-elkins-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Dayton Flyers",
+    "url": "https://www.playnsports.com/organization/university-of-dayton-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Daytona State Falcons",
+    "url": "https://www.playnsports.com/organization/daytona-state-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Decatur High Eagles",
+    "url": "https://www.playnsports.com/organization/decatur-high-school-2/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Dordt Defenders",
+    "url": "https://www.playnsports.com/organization/dordt-university-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Duke Blue Devils",
+    "url": "https://www.playnsports.com/organization/duke-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "East Carolina Pirates",
+    "url": "https://www.playnsports.com/organization/cliff-godwin-baseball-camp/",
+    "source": "playnsports"
+  },
+  {
+    "school": "East Georgia State Bobcats",
+    "url": "https://www.playnsports.com/organization/east-georgia-state/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Eastern Oklahoma State Mountaineers",
+    "url": "https://www.playnsports.com/organization/eastern-oklahoma-state-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Elon Phoenix",
+    "url": "https://www.playnsports.com/organization/elon-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Ellsworth Panthers",
+    "url": "https://www.playnsports.com/organization/ellsworth-community-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Embry-Riddle Eagles",
+    "url": "https://www.playnsports.com/organization/embry-riddle-aeronautical-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Erskine Flying Fleet",
+    "url": "https://www.playnsports.com/organization/erskine-college-2/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Fairleigh Dickinson Devils",
+    "url": "https://www.playnsports.com/organization/fairleigh-dickinson-university-florham-park/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Felician Golden Falcons",
+    "url": "https://www.playnsports.com/organization/felician-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Florence-Darlington Stingers",
+    "url": "https://www.playnsports.com/organization/florence-darlington-tech-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Francis Marion Patriots",
+    "url": "https://www.playnsports.com/organization/fmu-baseball-camp/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Frederick Cougars",
+    "url": "https://www.playnsports.com/organization/frederick-community-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Fresno State Bulldogs",
+    "url": "https://www.playnsports.com/organization/fresno-state-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Galveston Whitecaps",
+    "url": "https://www.playnsports.com/organization/galveston-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Gardner-Webb Runnin' Bulldogs",
+    "url": "https://www.playnsports.com/organization/gardner-webb-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Garrett Lakers",
+    "url": "https://www.playnsports.com/organization/garrett-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Georgia Bulldogs",
+    "url": "https://www.playnsports.com/organization/wesjohnson/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Georgia Gwinnett Grizzlies",
+    "url": "https://www.playnsports.com/organization/georgia-gwinnett-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Georgia Southern Eagles",
+    "url": "https://www.playnsports.com/organization/eagles-baseball-camps-at-georgia-southern/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Greensboro Pride",
+    "url": "https://www.playnsports.com/organization/greensboro-college-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "High Point Panthers",
+    "url": "https://www.playnsports.com/organization/high-point-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Hope International Royals",
+    "url": "https://www.playnsports.com/organization/hope-international-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Houston Christian Huskies",
+    "url": "https://www.playnsports.com/organization/houston-christian-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Jacksonville Dolphins",
+    "url": "https://www.playnsports.com/organization/dolphin-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Judson Eagles",
+    "url": "https://www.playnsports.com/organization/148303/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Lander Bearcats",
+    "url": "https://www.playnsports.com/organization/155354/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Le Moyne Dolphins",
+    "url": "https://www.playnsports.com/organization/le-moyne-college-spagnolabaseballcamps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Lebanon Valley Dutchmen",
+    "url": "https://www.playnsports.com/organization/lebanon-valley-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Lenoir Community College Lancers",
+    "url": "https://www.playnsports.com/organization/llcbaseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Lenoir-Rhyne Bears",
+    "url": "https://www.playnsports.com/organization/lru/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Limestone Saints",
+    "url": "https://www.playnsports.com/organization/limestone-university-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Lincoln Lions",
+    "url": "https://www.playnsports.com/organization/vince-connor-baseball-camps-at-lincoln-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Longwood Lancers",
+    "url": "https://www.playnsports.com/organization/longwood-university-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Louisiana Ragin' Cajuns",
+    "url": "https://www.playnsports.com/organization/cajun-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Lycoming Warriors",
+    "url": "https://www.playnsports.com/organization/lycomingbaseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Maine Black Bears",
+    "url": "https://www.playnsports.com/organization/university-of-maine/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Maryland Terrapins",
+    "url": "https://www.playnsports.com/organization/maryland-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Mary Washington Eagles",
+    "url": "https://www.playnsports.com/organization/95326/",
+    "source": "playnsports"
+  },
+  {
+    "school": "McEachern High Indians",
+    "url": "https://www.playnsports.com/organization/mceachern-high-school/",
+    "source": "playnsports"
+  },
+  {
+    "school": "McPherson Bulldogs",
+    "url": "https://www.playnsports.com/organization/mcpherson-college-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Michigan Wolverines",
+    "url": "https://www.playnsports.com/organization/111484/",
+    "source": "playnsports"
+  },
+  {
+    "school": "MidAmerica Nazarene Pioneers",
+    "url": "https://www.playnsports.com/organization/mid-america-nazarene-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Middle Tennessee Blue Raiders",
+    "url": "https://www.playnsports.com/organization/middle-tennessee-state-university-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Misericordia Cougars",
+    "url": "https://www.playnsports.com/organization/misericordia-univeristy-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Missouri Western Griffons",
+    "url": "https://www.playnsports.com/organization/missouri-western-state-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Montreat Cavaliers",
+    "url": "https://www.playnsports.com/organization/montreat-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Morehead State Eagles",
+    "url": "https://www.playnsports.com/organization/morehead-state-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Mott Bears",
+    "url": "https://www.playnsports.com/organization/mott-cc-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "NC State Wolfpack",
+    "url": "https://www.playnsports.com/organization/55825/",
+    "source": "playnsports"
+  },
+  {
+    "school": "New Mexico Lobos",
+    "url": "https://www.playnsports.com/organization/university-of-new-mexico/",
+    "source": "playnsports"
+  },
+  {
+    "school": "New Orleans Privateers",
+    "url": "https://www.playnsports.com/organization/university-of-new-orleans/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Newberry Wolves",
+    "url": "https://www.playnsports.com/organization/125423/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Nicholls State Colonels",
+    "url": "https://www.playnsports.com/organization/nicholls-state-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "North Carolina A&T Aggies",
+    "url": "https://www.playnsports.com/organization/nc-at-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "North Florida Ospreys",
+    "url": "https://www.playnsports.com/organization/unf-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "North Greenville Crusaders",
+    "url": "https://www.playnsports.com/organization/north-greenville-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Northeastern State RiverHawks",
+    "url": "https://www.playnsports.com/organization/northeastern-state-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Northern Illinois Huskies",
+    "url": "https://www.playnsports.com/organization/northern-illinois-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Northern Kentucky Norse",
+    "url": "https://www.playnsports.com/organization/101163/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Northwestern State Demons",
+    "url": "https://www.playnsports.com/organization/northwestern-state-university-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Nova Southeastern Sharks",
+    "url": "https://www.playnsports.com/organization/nova-se-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Oklahoma Christian Eagles",
+    "url": "https://www.playnsports.com/organization/oklahoma-christian/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Paine Lions",
+    "url": "https://www.playnsports.com/organization/paine-college-2/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Pomperaug High Panthers",
+    "url": "https://www.playnsports.com/organization/pomperaug-high-school/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Prairie View A&M Panthers",
+    "url": "https://www.playnsports.com/organization/prairie-view-am-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Presbyterian Blue Hose",
+    "url": "https://www.playnsports.com/organization/presbyterian-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Queens Royals",
+    "url": "https://www.playnsports.com/organization/queens-university-of-charlotte/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Quinnipiac Bobcats",
+    "url": "https://www.playnsports.com/organization/133755/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Reagan High Raiders",
+    "url": "https://www.playnsports.com/organization/reagan-high-school-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Redlands Community College Cougars",
+    "url": "https://www.playnsports.com/organization/redlands-community-college-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Redmond High Panthers",
+    "url": "https://www.playnsports.com/organization/redmond-high-school-panthers/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Rice Owls",
+    "url": "https://www.playnsports.com/organization/rice-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Roanoke Maroons",
+    "url": "https://www.playnsports.com/organization/roanoke-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Rockingham Eagles",
+    "url": "https://www.playnsports.com/organization/rockingham-community-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Sacred Heart Pioneers",
+    "url": "https://www.playnsports.com/organization/sacred-heart-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Saint Elizabeth Eagles",
+    "url": "https://www.playnsports.com/organization/saint-elizabeth-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Saint Peter's Peacocks",
+    "url": "https://www.playnsports.com/organization/peacock-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "San Diego State Aztecs",
+    "url": "https://www.playnsports.com/organization/sdsu-baseball-camp/",
+    "source": "playnsports"
+  },
+  {
+    "school": "San Diego Toreros",
+    "url": "https://www.playnsports.com/organization/univ-of-san-diego-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Savannah State Tigers",
+    "url": "https://www.playnsports.com/organization/savannah-state-university-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Seminole State Raiders",
+    "url": "https://www.playnsports.com/organization/seminole-state-college-of-florida/",
+    "source": "playnsports"
+  },
+  {
+    "school": "South Florida Bulls",
+    "url": "https://www.playnsports.com/organization/bulls-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Southeast Missouri State Redhawks",
+    "url": "https://www.playnsports.com/organization/southeast-missouri-state-university-semo/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Southeastern Blackhawks",
+    "url": "https://www.playnsports.com/organization/southeastern-community-college-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Southwestern Moundbuilders",
+    "url": "https://www.playnsports.com/organization/southwestern-college/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Spring Hill Badgers",
+    "url": "https://www.playnsports.com/organization/spring-hill-college-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "St. Andrews Knights",
+    "url": "https://www.playnsports.com/organization/127683/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Stanford Cardinal",
+    "url": "https://www.playnsports.com/organization/stanford-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Tennessee Tech Golden Eagles",
+    "url": "https://www.playnsports.com/organization/tennessee-tech-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Texas State Bobcats",
+    "url": "https://www.playnsports.com/organization/102180/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Thomas Night Hawks",
+    "url": "https://www.playnsports.com/organization/thomas-university-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Toccoa Falls Screaming Eagles",
+    "url": "https://www.playnsports.com/organization/toccoa-falls-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Towson Tigers",
+    "url": "https://www.playnsports.com/organization/towson-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Trevecca Nazarene Trojans",
+    "url": "https://www.playnsports.com/organization/treveccabaseballcamps-com/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Tulane Green Wave",
+    "url": "https://www.playnsports.com/organization/tulane-university-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Tusculum Pioneers",
+    "url": "https://www.playnsports.com/organization/tusculum-university-baseball-showcase/",
+    "source": "playnsports"
+  },
+  {
+    "school": "UC Riverside Highlanders",
+    "url": "https://www.playnsports.com/organization/uc-riverside-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "UCF Knights",
+    "url": "https://www.playnsports.com/organization/rich-wallace-baseballcamps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "UIC Flames",
+    "url": "https://www.playnsports.com/organization/143254/",
+    "source": "playnsports"
+  },
+  {
+    "school": "UNC Asheville Bulldogs",
+    "url": "https://www.playnsports.com/organization/unc-asheville-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "UNC Pembroke Braves",
+    "url": "https://www.playnsports.com/organization/unc-pembroke/",
+    "source": "playnsports"
+  },
+  {
+    "school": "UNCG Spartans",
+    "url": "https://www.playnsports.com/organization/uncg-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "USC Beaufort Sand Sharks",
+    "url": "https://www.playnsports.com/organization/university-of-south-carolina-beaufort/",
+    "source": "playnsports"
+  },
+  {
+    "school": "USC Lancaster Lancers",
+    "url": "https://www.playnsports.com/organization/usc-lancaster-baseball-camps-and-clinics/",
+    "source": "playnsports"
+  },
+  {
+    "school": "USC Upstate Spartans",
+    "url": "https://www.playnsports.com/organization/usc-upstate-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "VCU Rams",
+    "url": "https://www.playnsports.com/organization/vcu-rams-baseball-camps-llc/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Virginia Tech Hokies",
+    "url": "https://www.playnsports.com/organization/john-szefc-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Wagner Seahawks",
+    "url": "https://www.playnsports.com/organization/wagner-college-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Wake Forest Demon Deacons",
+    "url": "https://www.playnsports.com/organization/wake-forest-baseball-camps/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Wake Tech Eagles",
+    "url": "https://www.playnsports.com/organization/waketech/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Wellington High Crusaders",
+    "url": "https://www.playnsports.com/organization/wellington-high-school/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Widener Pride",
+    "url": "https://www.playnsports.com/organization/widener-university/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Wingate Bulldogs",
+    "url": "https://www.playnsports.com/organization/wingate-university-baseball/",
+    "source": "playnsports"
+  },
+  {
+    "school": "Austin Peay Governors",
+    "url": "https://www.totalcamps.com/TRAVISJANSSENBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Canisius Golden Griffins",
+    "url": "https://www.totalcamps.com/CANISIUSBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Charleston Golden Eagles",
+    "url": "https://www.totalcamps.com/CHARLESTONBASEBALLCAMPS/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Cougar Baseball",
+    "url": "https://www.totalcamps.com/COUGARBASEBALLCAMPS/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "East Carolina Pirates",
+    "url": "https://www.totalcamps.com/ECUBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Fairfield Stags",
+    "url": "https://www.totalcamps.com/FAIRFIELDBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Glenville State Pioneers",
+    "url": "https://www.totalcamps.com/GLENVILLESTATEBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Gonzaga Bulldogs",
+    "url": "https://www.totalcamps.com/GONZAGABASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Hartford Hawks",
+    "url": "https://www.totalcamps.com/JUSTINBLOODBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "James Madison Dukes",
+    "url": "https://www.totalcamps.com/JMUBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Longwood Lancers",
+    "url": "https://www.totalcamps.com/LONGWOODBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Maine Black Bears",
+    "url": "https://www.totalcamps.com/MAINEBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Millersville Marauders",
+    "url": "https://www.totalcamps.com/SHEHANBASEBALLCAMPS/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Monmouth Hawks",
+    "url": "https://www.totalcamps.com/MONMOUTHBASEBALLCAMPS/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "NC State Wolfpack",
+    "url": "https://www.totalcamps.com/NCSTATEBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Northeastern Huskies",
+    "url": "https://www.totalcamps.com/MIKEGLAVINEBASEBALLCAMPS/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Old Dominion Monarchs",
+    "url": "https://www.totalcamps.com/ODUBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Radford Highlanders",
+    "url": "https://www.totalcamps.com/RUBASEBALLCAMPS/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Saint Joseph's Hawks",
+    "url": "https://www.totalcamps.com/PHDBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Saint Leo Lions",
+    "url": "https://www.totalcamps.com/SAINTLEOBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Shippensburg Raiders",
+    "url": "https://www.totalcamps.com/SHIPPENSBURGBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Stony Brook Seawolves",
+    "url": "https://www.totalcamps.com/MS10BASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Trevecca Trojans",
+    "url": "https://www.totalcamps.com/TREVECCABASEBALLCAMPS/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "UMass Lowell River Hawks",
+    "url": "https://www.totalcamps.com/KENHARRINGBASEBALLCAMPS/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "UVA Wise Highland Cavaliers",
+    "url": "https://www.totalcamps.com/UVAWISEBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "VCU Rams",
+    "url": "https://www.totalcamps.com/RAMSBASEBALLCAMP/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Virginia Cavaliers",
+    "url": "https://www.totalcamps.com/ACBC/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "VMI Keydets",
+    "url": "https://www.totalcamps.com/VMI/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Willamette Bearcats",
+    "url": "https://www.totalcamps.com/WILLAMETTEBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "William & Mary Tribe",
+    "url": "https://www.totalcamps.com/TRIBEBASEBALL/",
+    "source": "totalcamps"
+  },
+  {
+    "school": "Wingate Bulldogs",
+    "url": "https://www.totalcamps.com/WINGATEBASEBALL/",
+    "source": "totalcamps"
+  }
+]

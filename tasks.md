@@ -1,19 +1,32 @@
 # Project Tasks: NCAA Division I Baseball Camps 2026 Compilation
 
+## 🧪 Test Suite Hardening & Data Integrity Phase (2026-04-05)
+
+- [x] **Filter Sort Regression Fix**: "Latest Camp Dates" / "Latest Updates" were sorting alphabetically after a previous "fix" added guard conditions (`&& term === '' && costFilter === 'all' && confFilter === 'all'`). Removed guards — date tabs ALWAYS sort desc by date. "All" ALWAYS sorts alpha. Documented in CLAUDE.md, GEMINI.md, issues.md, tasks.md, and in-code "DO NOT BREAK" comments.
+- [x] **Bogus $1 Price Fix**: Extraction regex `/\$\d+/` captured partial prices like `$1` from `$100` or `$294` pages. Upgraded to `/\$[\d,]+(?:\.\d{2})?/` with $5 minimum threshold. Created `src/tests/test_price_integrity.js` — scans master JSON for prices under $5, has `--fix` flag. 30 bad entries purged from `camps_data.json`. Slippery Rock corrected from `$1` to `$294/$215` via verified URL.
+- [x] **Cross-Contamination Test Suite**: `test_contamination_check.js` existed for extraction unit tests but no data-level scan. Created `src/tests/test_data_contamination.js` — builds .edu domain ownership index from the data itself, then flags any school whose email domain belongs to a DIFFERENT school (e.g. gators@ufl.edu on FSU). Caught and fixed 2 real contaminations (Baylor, UMass Dartmouth).
+- [x] **Mandatory Test Pipeline**: `npm test` now runs config consistency + price integrity + data contamination + UI filter tests. `full-update` and `update` scripts include price + contamination tests automatically. Never skip — these tests catch bad data before deploy.
+
 ## 🚀 Active Optimization & Stability Phase (2026-04-04)
 
-- [ ] Implement isolated dynamic rendering testing in `/Baseball_Camps_2026_dev/`.
-- [ ] Stabilize `camps_data.json` runtime fetch for dynamic architecture.
-- [ ] Re-verify UI filter performance on the 35KB skeleton.
-- [ ] **Infrastructure**: Finalize `deploy_dev.js` for safe staging environment.
+- [x] Implement isolated dynamic rendering testing in `/Baseball_Camps_2026_dev/`.
+- [x] Stabilize `camps_data.json` runtime fetch for dynamic architecture.
+- [x] Re-verify UI filter performance on the dev skeleton.
+- [x] **Infrastructure**: Finalize `deploy_dev.js` for safe staging environment.
 - [x] **New Favicon**: Created premium "26 Baseball" favicon and linked in index.html (eliminating default look).
 - [ ] **Icon Stabilization**: Suppress remaining console 404s for external favicons.
 - [ ] **Mobile Premium Experience**: Optimize filter button touch targets for one-handed use.
-- [ ] **Contact Info Consolidation**: Eliminate duplicate POC/Email entries (ensure "First Last | email@edu" format).
+- [x] **Contact Info Consolidation**: Eliminated `contact` + `email` fields. 3 authoritative fields: `campPOC` (name), `campPOCEmail` (email), `headCoach` (separate). All 521 records migrated. 10 scripts updated. Wikipedia head coach lookup: 178 found, 419 total (80%).
 - [ ] **Data Audit - DI Programs**: SEC, Big 12 - Verify 2026 dates vs 2025 carryover.
 - [ ] **Data Audit - DII Programs**: GAC, CCAA - Confirm missing 404 domains.
-- [ ] **Word Export**: Regenerate Word Document (`NCAA-Baseball-Camps-2026.docx`) for offline reference.
+- [ ] **Word Export**: Decide if Word document is still needed; regenerate or remove.
 - [ ] **URL Maintenance**: Implement a 30-day "Refresher" bot to re-verify existing 200 OK URLs.
+- [x] **Filter Sort Bug**: Fix alphabetical re-sort when clicking "All" after "Latest Updates" filter.
+- [x] **Date Sort Regression (2026-04-06)**: "Latest Camp Dates" and "Latest Updates" tabs showed alphabetical instead of newest-first. Root cause: extra guard conditions (`&& term === '' && costFilter === 'all' && confFilter === 'all'`) were added to the date-sort branch during the alphabetical fix, causing it to fall through to the alphabetical `else` branch. Fixed by removing guards — date-sort now triggers on `currentDiv` alone. Added "DO NOT BREAK" comments in both `generate_html.js` and `generate_html_dev.js`. Documented in CLAUDE.md, GEMINI.md, and issues.md.
+- [x] **Bogus $1 Price Fix (2026-04-05)**: Extraction regex `/\$\d+/` was capturing `$1` from pages showing `$100` or `$294`. Upgraded to `/\$[\d,]+(?:\.\d{2})?/` with $5 minimum threshold. Created `test_price_integrity.js` to scan master JSON. 30 bad entries purged.
+- [x] **Cross-Contamination Test (2026-04-05)**: Created `test_data_contamination.js` to scan `camps_data.json` for emails from WRONG schools (e.g. gatorsbaseballcamps@ufl.edu on Florida State). Caught and fixed 2 real contaminations (Baylor, UMass Dartmouth).
+- [x] **Mandatory Test Suite**: `npm test` now runs config consistency, price integrity, data contamination, and UI filter tests. `full-update` and `update` scripts include these tests automatically.
+- [x] **Texas Cost Missing `$` (2026-04-06)**: Texas entry had bare numbers `485 | 190 | ...` instead of `$485 | $190 | ...`. Fixed all 17 values. Added prevention rule to CLAUDE.md, GEMINI.md, issues.md. Added pre-code-change protocol requiring reading CLAUDE.md, GEMINI.md, issues.md, tasks.md before ANY code changes.
 
 ## Current Status
 
@@ -170,6 +183,37 @@
 
 - [x] [AUTO-DISCOVERED] Add isolated unit tests inside `src/tests/` to guarantee that contact mapping regex does not falsely append data between identically-prefixed schools.
 - [ ] Monitor 'Report Error' feedback at rayjonesy@gmail.com post-launch.
+
+---
+
+## [2026-04-06] - Sessions 2 & 3: URL Validator + Contact Consolidation
+
+### ✅ URL Validator Fix (Session 2)
+
+- [x] `isCampRelatedUrl()` too strict — rejected `/sports/baseball` on official athletics domains
+- [x] Added known camp platform exemptions (playnsports.com, totalcamps.com, summercampsnavigator.com)
+- [x] Restored 42 school URLs (36 playnsports + 6 .edu athletics)
+- [x] Camp URL coverage: 331/521 (64%) — 190 still missing (all DII, expected)
+- [x] Tests: 52/52 PASS, HTML regenerated
+
+### ✅ Contact Info Consolidation (Session 3)
+
+- [x] Removed `contact` + `email` fields from all 521 records
+- [x] Schema: `campPOC` (352 populated), `campPOCEmail` (218), `headCoach` (419)
+- [x] Updated 10 scripts to use new field names
+- [x] Wikipedia head coach lookup: 276 processed, 178 found, 98 not found
+- [x] Bulk cleanup: duplicate emails split, 2025 dates removed, 114 non-baseball tiers purged, $1 prices fixed
+- [x] All tests pass (smoke: 22/22, UI filter: 31/31)
+- [x] HTML regenerated (prod + dev)
+
+### Remaining Items (from !Task099.txt consolidated)
+
+- [ ] **Mobile Touch Target Optimization**: 44px+ touch targets for filter buttons
+- [ ] **D1/DII Data Audit**: SEC, Big 12 — verify 2026 dates vs 2025; GAC, CCAA — confirm 404 domains
+- [ ] **Word Export Decision**: Regenerate or deprecate `NCAA-Baseball-Camps-2026.docx`
+- [ ] **98 Missing Head Coaches**: Wikipedia didn't find them — try NCAA.org or school rosters
+- [ ] **3 Conflicting Dates/Details**: Richmond, Ouachita Baptist, Thomas Jefferson — flag for review
+- [ ] **382 Empty sourceUrl**: Low priority — consider fallback from `campUrl`
 
 ---
 

@@ -1,0 +1,117 @@
+CAA Baseball Camp Extractor — Engine Audit & Consolidation Plan
+Generated: 2026-04-07
+
+TL;DR — Root Problem
+There are currently 4 versions of the extraction engine spread across 2 directories. smart_extract.js (the script you actually run) has its own internal extractData() function that does NOT call src/utils/extract_camp_details.js. Both exist in the codebase with different rules. This is the root cause of ghost data like Southern Arkansas.
+
+File	Location	Status
+Internal logic in smart_extract.js	Root	✅ Actually running — standalone, no external module
+extract_camp_details.js	src/utils/	🔶 Exists as module but is NOT imported by smart_extract
+extract_camp_details_v7.js	src/archives/	🗄️ Archived
+extract_camp_details_v8.js	src/archives/	🗄️ Archived
+extract_camp_details_v9.js	src/archives/	🗄️ Archived
+Feature Comparison Matrix
+Feature	smart_extract.js (runs)	extract_camp_details.js (V6)	V7	V8	V9
+Date Scope	Summer Jun/Jul/Aug via config ✅	All 12 months ❌	All 12 months ❌	Summer only ✅	Summer only ✅
+Date Config Source	config.js DATE_PATTERNS ✅	Hardcoded inline	Hardcoded	Hardcoded	Hardcoded
+Date Ranges (Jun 15-18)	❌ Not captured	❌	✅	✅	❌
+Cost Ranges ($175-$225)	❌ Single value only	❌ Single value	✅ + FREE	✅ + FREE + Complimentary + + suffix	✅ + FREE
+Cost Validation (price floor)	config.js PRICE_THRESHOLDS ✅	config.js ✅	❌ None	❌ None	❌ None
+Camp Name Keywords	Inline in runner	Inline	Extended: Academy, Tryout, Tournament ✅	Extended ✅	Shorter ❌
+Sport Filter	config.js isWrongSport() ✅	Hardcoded inline	Inline copy	Inline copy	Inline
+Stale Year Filter	2025, 2024 only	2025, 2024	2021–2024 all ✅	2021–2024 all ✅	2024 only ❌
+Tier Deduplication	Basic key	Basic	Normalized (strips ordinals) ✅	Normalized ✅	Full key
+Email Harvesting	❌ None	❌ None	✅ harvestEmails() .edu weighted	✅ + junk filter	✅ junk filter
+Dual Contact Fields	❌ merged	❌ merged	❌ merged	❌ merged	✅ email + pointOfContact separate
+Source URL Tracking	campUrl only ❌	campUrl only ❌	campUrl only ❌	campUrl only ❌	✅ sourceUrl separate
+Contamination Check	External module ✅	Inline (no bidirectional)	Bidirectional ✅	Bidirectional ✅	V8 + Alabama State-aware ✅
+URL Scoring	url_validator.js ✅	Wraps url_validator.js ✅	Self-contained copy	V7 + coach last-name +35 ✅	V8 + Alabama URL penalty ✅
+URL Guessing (mascot)	❌ None	Partial	✅ mascotbaseballcamps.com	✅	✅
+URL Guessing (coach name)	❌ None	❌	❌	✅ {lastName}baseballcamp.com	❌
+Priority DB URL (try campUrl first)	❌ Ignores DB	❌	✅	✅	❌
+Search Engines	Bing + Yahoo	N/A	DDG + Bing + Yahoo ✅	DDG + Bing + Yahoo rotated ✅	DDG + Bing + Yahoo rotated ✅
+Engine Rotation	Sequential ❌	N/A	Sequential ❌	✅ Round-robin by DB index	✅ Round-robin by DB index
+Sub-crawl Deduplication	❌ None	Set() ✅	alreadyQueued Set ✅	alreadyQueued Set ✅	Slice only ❌
+Browser Restart	❌ None	N/A	✅ Every 10 schools	✅ Every 10	✅ Every 10
+Per-School Timeout	❌ None	60s hardcoded	75s via setTimeout	80s via setTimeout	90s via setTimeout ✅
+Stealth Plugin	✅ puppeteer-extra	✅ puppeteer-extra	❌ puppeteer only	❌ puppeteer only	❌ puppeteer only
+"No Upcoming Events" Detection	❌ MISSING	❌ MISSING	❌ MISSING	❌ MISSING	❌ MISSING
+config.js Integration	✅ Full	✅ Partial	❌ Standalone	❌ Standalone	❌ Standalone
+blacklist.json Integration	✅ Central	✅ via url_validator	❌ Hardcoded inline	❌ Hardcoded inline	❌ Hardcoded inline
+What Must Move Into config.js (Currently Duplicated)
+What	Currently	Action
+Date range regex (Jun 15–18)	V7/V8 inline	Add to DATE_PATTERNS
+Cost range regex ($175 – $225)	V8/V9 inline	Upgrade COST_PATTERN
+Camp name keywords	All engines hardcoded	Add CAMP_NAME_PATTERN
+Stale year list	Inconsistent everywhere	Add STALE_YEARS array
+Search providers (DDG/Bing/Yahoo)	All runners inline	Add SEARCH_PROVIDERS
+Browser restart interval	Hardcoded 10 everywhere	Add BROWSER_RESTART_EVERY
+School timeout ms	Different per version	Add SCHOOL_TIMEOUT_MS
+Sub-crawl keywords	Inline in each runner	Add SUB_CRAWL_KEYWORDS
+"No events" page phrases	Nowhere ❌	Add NO_EVENTS_PHRASES
+Best-Of-Breed Synthesis (V10 Engine)
+Feature	Best Source
+Stealth browser	smart_extract.js (puppeteer-extra)
+Date patterns	config.js DATE_PATTERNS + V7 range support
+Cost extraction	V8 (ranges, FREE, Complimentary, + suffix)
+Cost validation	config.js PRICE_THRESHOLDS ✅
+Camp name pattern	V8 (most complete: Academy, Session, Tryout, Tournament)
+Stale year filter	V7/V8 (2021–2024, not just 2025/2024)
+Sport filter	config.js isWrongSport() ✅
+"No events" detection	Must build new — check NO_EVENTS_PHRASES before any extraction
+Contamination check	V9 (Alabama vs Alabama State state-aware + bidirectional)
+URL scoring	url_validator.js + V9 Alabama URL penalty
+URL guessing	V8 (school + short + mascot + coach last name)
+DB URL priority	V7/V8 (always try existing campUrl first)
+Search rotation	V8/V9 (deterministic round-robin by DB index)
+Email harvesting	V8 (.edu weighting) + V9 junk filter
+Dual contact fields	V9 (email + pointOfContact separate)
+Source URL tracking	V9 (sourceUrl distinct from campUrl)
+Sub-crawl dedup	V7/V8 (alreadyQueued Set)
+Browser restart	V7–V9 (every N schools, N from config)
+Per-school timeout	V9 (90s via setTimeout)
+Target Architecture
+smart_extract.js                        ← Thin shell: arg parse + call engine
+  └── src/utils/extraction_engine.js   ← V10: single authoritative engine export
+        ├── src/utils/config.js         ← ALL constants (zero hardcoding elsewhere)
+        ├── src/utils/url_validator.js  ← URL scoring + validation
+        ├── src/utils/mascot_lookup.js  ← Mascot + alias lookups
+        └── blacklist.json              ← Loaded via config.js
+src/tests/test_*.js                     ← Import config.js only, never engine internals
+generate_html.js                        ← Zero extraction logic
+deploy.js                               ← Zero extraction logic
+smart_extract.js after refactor becomes:
+
+js
+const { runExtraction } = require('./src/utils/extraction_engine');
+const args = parseArgs(process.argv.slice(2));
+runExtraction({ schoolFilter: args.school, limit: args.limit, force: args.force });
+Action Plan (Ordered)
+#	Priority	Action
+1	🔴 CRITICAL	Add NO_EVENTS_PHRASES, CAMP_NAME_PATTERN, STALE_YEARS, SEARCH_PROVIDERS, timeout/restart constants to config.js
+2	🔴 CRITICAL	Create src/utils/extraction_engine.js — merged best-of-breed V10, fully modular
+3	🔴 CRITICAL	Refactor smart_extract.js → thin shell that calls extraction_engine.js
+4	🟠 HIGH	Upgrade url_validator.js scoreUrl with V9 Alabama state-aware URL penalty
+5	🟠 HIGH	Update test_config_consistency.js to validate all new config keys
+6	🟡 MEDIUM	Move V7/V8/V9 archives to src/archives/deprecated_engines/ subfolder
+7	🟢 LOW	Migrate contact field → email + pointOfContact split (V9 schema)
+Three Decisions Needed Before I Write Any Code
+IMPORTANT
+
+Please answer these before I start the refactor — changing these mid-build causes rework:
+
+Decision 1 — Date Scope
+(A) Summer only (Jun/Jul/Aug) — cleaner, fewer false positives, may miss fall/winter instruction series
+(B) All 12 months — wider net, requires stronger sport filtering to avoid contamination like basketball schedules
+Decision 2 — "No Upcoming Events" Page Handling
+When the engine lands on a page saying "Currently there are no upcoming events. Check back soon!":
+
+(A) Skip URL, try next candidate — keep searching other pages
+(B) Mark school TBA and stop — treat official portal as authoritative
+(C) Smart hybrid — if official portal (highest scored URL), mark TBA; if lower-ranked candidate, skip and continue
+Decision 3 — Contact Field Schema
+V9 introduced separate email + pointOfContact fields:
+
+(A) Migrate all 559 existing records — split current contact string into new fields for everyone
+(B) New extractions only — leave existing data alone, apply new schema to fresh extractions
+(C) Keep contact combined — don't change the schema, works fine for now

@@ -1,0 +1,1817 @@
+[
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/abilene-christian-university-2",
+    "finalUrl": "https://www.playnsports.com/organization/abilene-christian-university-2",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Abilene Christian",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/mike-kazlausky-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/mike-kazlausky-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Air Force",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/zipsbaseball",
+    "finalUrl": "https://www.playnsports.com/organization/zipsbaseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Akron",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/alcorn-state",
+    "finalUrl": "https://www.playnsports.com/organization/alcorn-state",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Alcorn State",
+    "division": "DI",
+    "auditStatus": "FOUND"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/appalachian-state-university",
+    "finalUrl": "https://www.playnsports.com/organization/appalachian-state-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Appalachian State",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/university-of-arizona",
+    "finalUrl": "https://www.playnsports.com/organization/university-of-arizona",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Arizona",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://baseball.bruincamps.com",
+    "finalUrl": "https://baseball.bruincamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Belmont",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/bradley-university",
+    "finalUrl": "https://www.playnsports.com/organization/bradley-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Bradley",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/dave-schrage-baseball-camps-at-butler-university",
+    "finalUrl": "https://www.playnsports.com/organization/dave-schrage-baseball-camps-at-butler-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Butler",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/cal-poly-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/cal-poly-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Cal Poly",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.TitanBaseballCamps.com",
+    "finalUrl": "https://www.TitanBaseballCamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Cal State Fullerton",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.bluedevilsbaseballcamps.com",
+    "finalUrl": "https://www.bluedevilsbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Central Connecticut",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/college-of-charleston-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/college-of-charleston-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Charleston",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/robert-woodard-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/robert-woodard-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Charlotte",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/clemson-baseball-monte-lee-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/clemson-baseball-monte-lee-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Clemson",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.mikedeeganbaseballcamps.com",
+    "finalUrl": "https://www.mikedeeganbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Cornell",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/creighton-university",
+    "finalUrl": "https://www.playnsports.com/organization/creighton-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Creighton",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.mcfaddenbaseballcamps.com",
+    "finalUrl": "https://www.mcfaddenbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Dartmouth",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/davidson-college",
+    "finalUrl": "https://www.playnsports.com/organization/davidson-college",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Davidson",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/university-of-dayton-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/university-of-dayton-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Dayton",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/duke-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/duke-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Duke",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/cliff-godwin-baseball-camp",
+    "finalUrl": "https://www.playnsports.com/organization/cliff-godwin-baseball-camp",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "East Carolina",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/elon-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/elon-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Elon",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/gardner-webb-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/gardner-webb-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Gardner-Webb",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/wesjohnson",
+    "finalUrl": "https://www.playnsports.com/organization/wesjohnson",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Georgia",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/houston-christian-university",
+    "finalUrl": "https://www.playnsports.com/organization/houston-christian-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Houston Christian",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.IlliniBaseballCamps.com",
+    "finalUrl": "https://www.IlliniBaseballCamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Illinois",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.jeffmercerbaseballcamps.com",
+    "finalUrl": "https://www.jeffmercerbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Indiana",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/dolphin-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/dolphin-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Jacksonville",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://baseball.jsugamecocksportscamps.com",
+    "finalUrl": "https://baseball.jsugamecocksportscamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Jacksonville State",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/le-moyne-college-spagnolabaseballcamps",
+    "finalUrl": "https://www.playnsports.com/organization/le-moyne-college-spagnolabaseballcamps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Le Moyne",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.lipscombbaseballcamps.com",
+    "finalUrl": "https://www.lipscombbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Lipscomb",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/longwood-university-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/longwood-university-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Longwood",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/cajun-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/cajun-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Louisiana",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/university-of-maine",
+    "finalUrl": "https://www.playnsports.com/organization/university-of-maine",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Maine",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.bealsyballcamps.com",
+    "finalUrl": "https://www.bealsyballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Marshall",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/maryland-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/maryland-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Maryland",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/111484",
+    "finalUrl": "https://www.playnsports.com/organization/111484",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Michigan",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/middle-tennessee-state-university-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/middle-tennessee-state-university-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Middle Tennessee",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.gopherbaseballcamps.com",
+    "finalUrl": "https://www.gopherbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html"
+    },
+    "university": "Minnesota",
+    "division": "DI",
+    "auditStatus": "URL_UNREACHABLE"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/morehead-state-university",
+    "finalUrl": "https://www.playnsports.com/organization/morehead-state-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Morehead State",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.kermitsmithbaseballcamps.com",
+    "finalUrl": "https://www.kermitsmithbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Mount Saint Mary's",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.wolfpackbaseballcamps.com",
+    "finalUrl": "https://www.wolfpackbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Nevada",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/university-of-new-orleans",
+    "finalUrl": "https://www.playnsports.com/organization/university-of-new-orleans",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "New Orleans",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/nicholls-state-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/nicholls-state-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Nicholls",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/unf-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/unf-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "North Florida",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/northern-illinois-university",
+    "finalUrl": "https://www.playnsports.com/organization/northern-illinois-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Northern Illinois",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/101163",
+    "finalUrl": "https://www.playnsports.com/organization/101163",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Northern Kentucky",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.earlhambaseballcamps.com",
+    "finalUrl": "https://www.earlhambaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Penn",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.lsusbaseball.com",
+    "finalUrl": "https://www.lsusbaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Portland",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/prairie-view-am-university",
+    "finalUrl": "https://www.playnsports.com/organization/prairie-view-am-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Prairie View A&M",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/presbyterian-college",
+    "finalUrl": "https://www.playnsports.com/organization/presbyterian-college",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Presbyterian College",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.purduebaseballcamps.com",
+    "finalUrl": "https://www.purduebaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Purdue",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/queens-university-of-charlotte",
+    "finalUrl": "https://www.playnsports.com/organization/queens-university-of-charlotte",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Queens",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/rice-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/rice-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Rice",
+    "division": "DI",
+    "auditStatus": "unknown"
+  },
+  {
+    "status": 200,
+    "url": "https://www.spiderbaseballcamps.com",
+    "finalUrl": "https://www.spiderbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Richmond",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/sacred-heart-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/sacred-heart-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Sacred Heart",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.smcbaseballcamps.com",
+    "finalUrl": "https://www.smcbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Saint Mary's College",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/univ-of-san-diego-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/univ-of-san-diego-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "San Diego",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://baseball.jackrabbitsportscamps.com",
+    "finalUrl": "https://baseball.jackrabbitsportscamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "South Dakota State",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/bulls-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/bulls-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "South Florida",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/southeast-missouri-state-university-semo",
+    "finalUrl": "https://www.playnsports.com/organization/southeast-missouri-state-university-semo",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Southeast Missouri",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/stanford-university",
+    "finalUrl": "https://www.playnsports.com/organization/stanford-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Stanford",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://Baseball.toledocamps.com",
+    "finalUrl": "https://Baseball.toledocamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Toledo",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/towson-university",
+    "finalUrl": "https://www.playnsports.com/organization/towson-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Towson",
+    "division": "DI",
+    "auditStatus": "unknown"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/tulane-university-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/tulane-university-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Tulane",
+    "division": "DI",
+    "auditStatus": "unknown"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/rich-wallace-baseballcamps",
+    "finalUrl": "https://www.playnsports.com/organization/rich-wallace-baseballcamps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "UCF",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/unc-asheville-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/unc-asheville-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "UNC Asheville",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/uncg-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/uncg-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "UNCG",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 403,
+    "url": "https://info.collegebaseballcamps.com/rebels",
+    "finalUrl": "https://info.collegebaseballcamps.com/rebels",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "UNLV",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://camps.mgoblue.com/baseball",
+    "finalUrl": "https://camps.mgoblue.com/baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Utah Valley",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.valpobaseballcamps.com",
+    "finalUrl": "https://www.valpobaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Valparaiso",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/wagner-college-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/wagner-college-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Wagner",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/wake-forest-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/wake-forest-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Wake Forest",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.leatherneckbaseballcamps.com",
+    "finalUrl": "https://www.leatherneckbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Western Illinois",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.wmubaseballcamps.com",
+    "finalUrl": "https://www.wmubaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Western Michigan",
+    "division": "DI",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.mikemcguirebaseballcamps.com",
+    "finalUrl": "https://www.mikemcguirebaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Winthrop",
+    "division": "DI",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/adamsstatebaseball",
+    "finalUrl": "https://www.playnsports.com/organization/adamsstatebaseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Adams State University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.uhvbaseballcamps.com",
+    "finalUrl": "https://www.uhvbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Augusta University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/biola-university-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/biola-university-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Biola University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.JakeAngierBaseballCamps.com",
+    "finalUrl": "https://www.JakeAngierBaseballCamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Cameron University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/catawba-college",
+    "finalUrl": "https://www.playnsports.com/organization/catawba-college",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Catawba College",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.zachullrichbaseballcamps.com",
+    "finalUrl": "https://www.zachullrichbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Christian Brothers University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/coker-university",
+    "finalUrl": "https://www.playnsports.com/organization/coker-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Coker University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://baseball.ccucamps.com",
+    "finalUrl": "https://baseball.ccucamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Colorado Christian University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/concord-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/concord-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Concord University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/davis-elkins-college",
+    "finalUrl": "https://www.playnsports.com/organization/davis-elkins-college",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Davis & Elkins College",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.drurybaseballcamps.com",
+    "finalUrl": "https://www.drurybaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Drury University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://baseball.eckerdcamps.com",
+    "finalUrl": "https://baseball.eckerdcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Eckerd College",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.ewubaseballcamps.com",
+    "finalUrl": "https://www.ewubaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Edward Waters University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.EHCBaseballCamps.com",
+    "finalUrl": "https://www.EHCBaseballCamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Emory & Henry College",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.kevinandersonbaseballcamps.com",
+    "finalUrl": "https://www.kevinandersonbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Emporia State University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/erskine-college-2",
+    "finalUrl": "https://www.playnsports.com/organization/erskine-college-2",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Erskine College",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/felician-university",
+    "finalUrl": "https://www.playnsports.com/organization/felician-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Felician University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/fmu-baseball-camp",
+    "finalUrl": "https://www.playnsports.com/organization/fmu-baseball-camp",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Francis Marion University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.hardingbaseballcamps.com",
+    "finalUrl": "https://www.hardingbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Harding University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.hsubaseball.com",
+    "finalUrl": "https://www.hsubaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Henderson State University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://kentuckystateunivbaseball.ryzerevents.com",
+    "finalUrl": "https://kentuckystateunivbaseball.ryzerevents.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Kentucky State University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.simpsonbaseballcamps.com",
+    "finalUrl": "https://www.simpsonbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Lake Erie College",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/155354",
+    "finalUrl": "https://www.playnsports.com/organization/155354",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Lander University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/lru",
+    "finalUrl": "https://www.playnsports.com/organization/lru",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Lenoir-Rhyne University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/limestone-university-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/limestone-university-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Limestone University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.lcubaseballcamps.com",
+    "finalUrl": "https://www.lcubaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Lubbock Christian University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.allamericanacademybaseball.com",
+    "finalUrl": "https://www.allamericanacademybaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Metropolitan State University of Denver",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.NooneBaseball.com",
+    "finalUrl": "https://www.NooneBaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Minot State University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.choctawbaseballcamps.com",
+    "finalUrl": "https://www.choctawbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Mississippi College",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.minerbaseballcamps.com",
+    "finalUrl": "https://www.minerbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Missouri University of Science & Technology",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.griffonbaseballcamps.com",
+    "finalUrl": "https://www.griffonbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Missouri Western State University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.cowboybaseballcamps.com",
+    "finalUrl": "https://www.cowboybaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "New Mexico Highlands University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/125423",
+    "finalUrl": "https://www.playnsports.com/organization/125423",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Newberry College",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.jetsbaseballcamps.com",
+    "finalUrl": "https://www.jetsbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Newman University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/north-greenville-university",
+    "finalUrl": "https://www.playnsports.com/organization/north-greenville-university",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "North Greenville University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.riverhawkbaseballcamps.com",
+    "finalUrl": "https://www.riverhawkbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Northeastern State University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.northernstatebaseballcamps.com",
+    "finalUrl": "https://www.northernstatebaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Northern State University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.nnubaseballcamps.com",
+    "finalUrl": "https://www.nnubaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Northwest Nazarene University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/nova-se-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/nova-se-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Nova Southeastern University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.drurybaseballcamps.com",
+    "finalUrl": "https://www.drurybaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Ohio Dominican University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.ndsubaseballcamps.com",
+    "finalUrl": "https://www.ndsubaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Oklahoma Baptist University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/oklahoma-christian",
+    "finalUrl": "https://www.playnsports.com/organization/oklahoma-christian",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Oklahoma Christian University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.ouachitatigerbaseballcamps.com",
+    "finalUrl": "https://www.ouachitatigerbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Ouachita Baptist University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://baseball.AsburyEagleCamps.com",
+    "finalUrl": "https://baseball.AsburyEagleCamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Post University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.rockhurstbaseballcamps.com",
+    "finalUrl": "https://www.rockhurstbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Rockhurst University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.rogersstatebaseballcamps.com",
+    "finalUrl": "https://www.rogersstatebaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Rogers State University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.grandvalleystatebaseballcamps.com",
+    "finalUrl": "https://www.grandvalleystatebaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Roosevelt University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.ndmubaseballcamps.com",
+    "finalUrl": "https://www.ndmubaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "San Francisco State University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/savannah-state-university-baseball-camps",
+    "finalUrl": "https://www.playnsports.com/organization/savannah-state-university-baseball-camps",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Savannah State University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.shubaseballcamps.com",
+    "finalUrl": "https://www.shubaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Seton Hill University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.CRKBaseball.com",
+    "finalUrl": "https://www.CRKBaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Shippensburg University of Pennsylvania",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.heartlandbaseballcamps.com",
+    "finalUrl": "https://www.heartlandbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Shorter University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.WestfieldOwlsBaseballCamp.com",
+    "finalUrl": "https://www.WestfieldOwlsBaseballCamp.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Southern Connecticut State University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.snubaseballcamp.com",
+    "finalUrl": "https://www.snubaseballcamp.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Southern Nazarene University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://baseball.swuathleticscamps.com",
+    "finalUrl": "https://baseball.swuathleticscamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Southern Wesleyan University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://baseball.mckendreecamps.com",
+    "finalUrl": "https://baseball.mckendreecamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Southwest Baptist University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.smsubaseballcamps.com",
+    "finalUrl": "https://www.smsubaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Southwest Minnesota State University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/spring-hill-college-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/spring-hill-college-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Spring Hill College",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.hcubaseballcamps.com",
+    "finalUrl": "https://www.hcubaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "St. Cloud State University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.hemmingsbaseball.com",
+    "finalUrl": "https://www.hemmingsbaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Thomas Jefferson University (Formerly Philadelphia University)",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.aquinasbaseball.com",
+    "finalUrl": "https://www.aquinasbaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Thomas More University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.bluedragonbaseballcamps.com",
+    "finalUrl": "https://www.bluedragonbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Tiffin University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/treveccabaseballcamps-com",
+    "finalUrl": "https://www.playnsports.com/organization/treveccabaseballcamps-com",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Trevecca Nazarene University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.trumanbaseballcamps.com",
+    "finalUrl": "https://www.trumanbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Truman State University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/tusculum-university-baseball-showcase",
+    "finalUrl": "https://www.playnsports.com/organization/tusculum-university-baseball-showcase",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Tusculum University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.skeegebaseball.com",
+    "finalUrl": "https://www.skeegebaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Tuskegee University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.caseymcgeheebaseball.com",
+    "finalUrl": "https://www.caseymcgeheebaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Union University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.uambaseball.com",
+    "finalUrl": "https://www.uambaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "University of Arkansas at Monticello",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.mulesbaseball.com",
+    "finalUrl": "https://www.mulesbaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "University of Central Missouri",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.rocsolidbaseball.com",
+    "finalUrl": "https://www.rocsolidbaseball.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "University of Indianapolis",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.UMaryBaseballcamps.com",
+    "finalUrl": "https://www.UMaryBaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "University of Mary",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.nnubaseballcamps.com",
+    "finalUrl": "https://www.nnubaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "University of North Georgia",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.212baseballcamps.com",
+    "finalUrl": "https://www.212baseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "University of Sioux Falls",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.charlielongbaseballcamps.com",
+    "finalUrl": "https://www.charlielongbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "University of South Carolina Aiken",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://Baseball.spartansportsclinics.com",
+    "finalUrl": "https://Baseball.spartansportsclinics.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "University of Tampa",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.butchthompsonbaseballcamps.com",
+    "finalUrl": "https://www.butchthompsonbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "University of West Alabama",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.WestFloridaBaseballSkills.com",
+    "finalUrl": "https://www.WestFloridaBaseballSkills.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "University of West Florida",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.belhavenbaseballcamps.com",
+    "finalUrl": "https://www.belhavenbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Valdosta State University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.troybaseballcamps.com",
+    "finalUrl": "https://www.troybaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Virginia State University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.bobbygilliambaseballcamps.com",
+    "finalUrl": "https://www.bobbygilliambaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Walsh University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.wscbaseballcamps.com",
+    "finalUrl": "https://www.wscbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Wayne State College",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://baseball.bwathleticcamps.com",
+    "finalUrl": "https://baseball.bwathleticcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "West Virginia State University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.FrostburgBaseballCamps.com",
+    "finalUrl": "https://www.FrostburgBaseballCamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "West Virginia Wesleyan College",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.mikesilvabaseballcamps.com",
+    "finalUrl": "https://www.mikesilvabaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Western Oregon University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://www.otterbeinbaseballcamps.com",
+    "finalUrl": "https://www.otterbeinbaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "William Jewell College",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 200,
+    "url": "https://www.acubaseballcamps.com",
+    "finalUrl": "https://www.acubaseballcamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Wilmington University",
+    "division": "DII",
+    "auditStatus": "EXTRACTED_NO_DATA"
+  },
+  {
+    "status": 301,
+    "url": "https://www.playnsports.com/organization/wingate-university-baseball",
+    "finalUrl": "https://www.playnsports.com/organization/wingate-university-baseball",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8"
+    },
+    "university": "Wingate University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  },
+  {
+    "status": 200,
+    "url": "https://Baseball.ESUWarriorCamps.com",
+    "finalUrl": "https://Baseball.ESUWarriorCamps.com",
+    "headers": {
+      "content-type": "text/html;charset=UTF-8"
+    },
+    "university": "Winona State University",
+    "division": "DII",
+    "auditStatus": "NEW_SOURCE_DETECTED"
+  }
+]

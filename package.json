@@ -7,14 +7,18 @@
     "generate:word": "node src/utils/generate_word_doc.js",
     "generate:html": "node generate_html.js",
     "generate:dev": "node generate_html_dev.js",
+    "generate:backup": "node generate_html_backup.js",
     "deploy": "node deploy.js",
     "deploy:dev": "node deploy_dev.js",
     "audit": "node quality_audit.js",
     "auto-verify": "node auto_verify.js",
     "smart-extract": "node smart_extract.js",
     "sync-verifications": "node src/utils/fetch_verifications.js",
-    "update": "node src/utils/sync_verifications.js ; node auto_verify.js ; node generate_html.js ; node src/utils/generate_word_doc.js ; node deploy.js",
-    "full-update": "node src/utils/fetch_verifications.js ; node auto_verify.js ; node quality_audit.js ; node generate_html.js ; node src/utils/generate_word_doc.js ; node deploy.js"
+    "test": "node src/tests/test_config_consistency.js && node src/tests/test_price_integrity.js && node src/tests/test_cross_contamination.js && node src/tests/test_ui_filter.js && node src/tests/test_data_integrity.js && node src/tests/smoke_test.js",
+    "test:fast": "node src/tests/test_config_consistency.js && node src/tests/test_price_integrity.js && node src/tests/test_cross_contamination.js && node src/tests/test_ui_filter.js",
+    "test:full": "npm test && node src/tests/spot_check.js",
+    "update": "node src/utils/sync_verifications.js ; node auto_verify.js ; node src/tests/test_price_integrity.js ; node src/tests/test_cross_contamination.js ; node generate_html.js ; node src/utils/generate_word_doc.js ; node deploy.js",
+    "full-update": "node src/utils/fetch_verifications.js ; node auto_verify.js ; node src/tests/test_price_integrity.js ; node src/tests/test_cross_contamination.js ; node quality_audit.js ; node generate_html.js ; node src/utils/generate_word_doc.js ; node deploy.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

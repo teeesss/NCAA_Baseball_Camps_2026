@@ -1,4 +1,6 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-extra");
+const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+puppeteer.use(StealthPlugin());
 const fs = require("fs");
 const path = require("path");
 const {
@@ -6,13 +8,50 @@ const {
   buildSearchQuery,
   getUniversityAliases,
 } = require("./mascot_lookup");
+const {
+  unwrapUrl,
+  isBlacklistedUrl,
+  isGenericPage,
+  isCampRelatedUrl,
+  scoreUrl: centralizedScoreUrl,
+  isSearchEngineUrl,
+} = require("./url_validator");
+const { PRICE_THRESHOLDS, SCHOOL_TIMEOUT_MS } = require("./config");
+
+// ── URL Quality Gate: unwrap + validate candidate URLs ──
+// Called before storing any campUrl to guarantee quality
+function unwrapCandidate(candidate, schoolName) {
+  // Step 1: Unwrap DDG/Yahoo/Bing search proxy redirects
+  let url = unwrapUrl(candidate);
+
+  // Step 2: Reject search engine URLs themselves
+  if (isSearchEngineUrl(url)) {
+    return { passed: false, reason: "search_engine_redirect", url: null };
+  }
+
+  // Step 3: Reject blacklisted domains (centralized)
+  if (isBlacklistedUrl(url)) {
+    return { passed: false, reason: "blacklisted_domain", url: null };
+  }
+
+  // Step 4: Reject generic .edu root pages
+  if (isGenericPage(url)) {
+    return { passed: false, reason: "generic_page", url: null };
+  }
+
+  // Step 5: Require camp-relevant path
+  if (!isCampRelatedUrl(url)) {
+    return { passed: false, reason: "not_camp_related", url: null };
+  }
+
+  return { passed: true, url };
+}
 
 // Load master data
 let data = JSON.parse(fs.readFileSync("camps_data.json", "utf8"));
 const allSchoolNames = data.map((d) => d.university);
 
-// Configurations
-const SCHOOL_TIMEOUT_MS = 60000;
+// SCHOOL_TIMEOUT_MS imported from config.js (single source of truth)
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const LOG_FILE = path.join(__dirname, "extraction_all.log");
@@ -27,8 +66,8 @@ function log(msg) {
 
 // ─── Utility: Helpers ──────────────────────────────────────────
 function getCoachSearch(camp) {
-  if (!camp.contact || camp.contact.includes("TBA")) return "";
-  let raw = camp.contact
+  if (!camp.campPOC || camp.campPOC.includes("TBA")) return "";
+  let raw = camp.campPOC
     .split("|")[0]
     .replace(/\(.*?\)/g, "")
     .trim();
@@ -58,66 +97,7 @@ function checkContamination(title, text, targetUni) {
 }
 
 function scoreUrl(url, school, isGuessed = false) {
-  if (!url) return -100;
-  let score = 0;
-  let u = url.toLowerCase();
-  let s = (school.university || "").toLowerCase();
-  let coach = getCoachSearch(school).toLowerCase();
-  let mascot = (
-    school.mascot ||
-    getMascot(school.university) ||
-    ""
-  ).toLowerCase();
-
-  if (u.includes("baseball")) score += 40;
-  if (u.includes("camp") || u.includes("clinic")) score += 20;
-  if (u.includes("/sports/baseball")) score += 15;
-  if (coach && coach.length > 2 && u.includes(coach.split(" ")[0])) score += 35;
-  if (mascot && u.includes(mascot)) score += 20;
-
-  let cleanS = s.replace(/\s+/g, "");
-  if (u.includes(cleanS)) score += 25;
-
-  let shortS = s
-    .replace(/university|state|college/gi, "")
-    .trim()
-    .replace(/\s+/g, "");
-  if (shortS.length > 3 && u.includes(shortS)) score += 15;
-
-  if (
-    u.includes("ryzer.com") ||
-    u.includes("totalcamps.com") ||
-    u.includes("active.com")
-  )
-    score += 50;
-  if (u.endsWith(".edu")) score += 10;
-  if (isGuessed) score -= 40;
-
-  if (u.includes("/schedule") || u.includes("/roster")) score -= 30;
-
-  const bad = [
-    "wikipedia",
-    "espn",
-    "facebook",
-    "twitter",
-    "instagram",
-    "fandom",
-    "warrennolan",
-    "newsbreak",
-    "ussportscamps",
-    "zhihu",
-    "reddit",
-    "yelp",
-    "tripadvisor",
-    "search.yahoo.com",
-    "images.search.yahoo.com",
-    "video.search.yahoo.com",
-    "bing.com/images",
-    "bing.com/videos",
-  ];
-  if (bad.some((b) => u.includes(b))) score -= 100;
-
-  return score;
+  return centralizedScoreUrl(url, school, getMascot, getCoachSearch);
 }
 
 // ─── EXTRACTION LOGIC (Strictly 2026) ─────────────────────────
@@ -183,14 +163,39 @@ function extractDataFromText(fullText) {
       let dateMatch = block.match(
         /(?:(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+\d{1,2}(?:\w{2})?)|(?:\b(0?[1-9]|1[0-2])\/\d{1,2})/gi,
       );
-      let costMatch = block.match(/\$\d+/);
+      // Extract the FULL dollar amount (e.g. $295.00 not just $295, $1,350 not just $1)
+      let costMatch = block.match(/\$[\d,]+(?:\.\d{2})?/);
 
       if (dateMatch && nameMatch) {
-        campTiers.push({
-          name: nameMatch[1].trim(),
-          dates: dateMatch.slice(0, 3).join(", "),
-          cost: costMatch ? costMatch[0] : "TBA",
-        });
+        if (costMatch) {
+          // Validate the extracted price — anything under $5 is almost certainly
+          // a deposit placeholder, early-bird teaser, or parsing artifact
+          // (e.g. "$1" from ryzer.com pages that show "$100" but regex grabs the first digit)
+          const rawCost = costMatch[0];
+          const numeric = parseFloat(rawCost.replace(/[\$,]/g, ""));
+          if (isNaN(numeric) || numeric < PRICE_THRESHOLDS.CRITICAL_ANOMALY) {
+            log(
+              `       ⚠️ [Price] Rejected suspicious price "${rawCost}" (value: ${numeric}). Setting to TBA.`,
+            );
+            campTiers.push({
+              name: nameMatch[1].trim(),
+              dates: dateMatch.slice(0, 3).join(", "),
+              cost: "TBA",
+            });
+          } else {
+            campTiers.push({
+              name: nameMatch[1].trim(),
+              dates: dateMatch.slice(0, 3).join(", "),
+              cost: rawCost,
+            });
+          }
+        } else {
+          campTiers.push({
+            name: nameMatch[1].trim(),
+            dates: dateMatch.slice(0, 3).join(", "),
+            cost: "TBA",
+          });
+        }
       }
     }
   }
@@ -446,42 +451,25 @@ const run = async () => {
           let filteredSub = subLinks
             .filter((l) => {
               if (!l.href || !l.href.startsWith("http")) return false;
-              let hl = l.href.toLowerCase();
-
-              // Apply blacklist to sub-links too
-              const bad = [
-                "wikipedia",
-                "espn",
-                "facebook",
-                "twitter",
-                "instagram",
-                "fandom",
-                "warrennolan",
-                "newsbreak",
-                "ussportscamps",
-                "zhihu",
-                "reddit",
-                "yelp",
-                "tripadvisor",
-              ];
-              if (bad.some((b) => hl.includes(b))) return false;
-
+              // Skip blacklisted domains (centralized check)
+              if (isBlacklistedUrl(l.href)) return false;
+              // Skip search engine redirects
+              if (isSearchEngineUrl(l.href)) return false;
               // Only crawl internal or camp-specific external links
               if (
-                hl.includes("camp") ||
-                hl.includes("register") ||
-                hl.includes("detail") ||
-                hl.includes("prospect")
+                l.href.includes("camp") ||
+                l.href.includes("register") ||
+                l.href.includes("detail") ||
+                l.href.includes("prospect") ||
+                l.href.includes("clinic")
               )
                 return true;
-
-              // If it's a relative link (guessed by same hostname) or on a known camp portal
+              // Same-origin internal links are safe
               try {
                 const mainHost = new URL(candidate).hostname;
                 const subHost = new URL(l.href).hostname;
                 if (mainHost === subHost) return true;
               } catch (e) {}
-
               return false;
             })
             .slice(0, 8);
@@ -508,7 +496,14 @@ const run = async () => {
             camp.campTiers = campTiers;
             camp.dates =
               [...new Set(campTiers.map((t) => t.dates))].join(" | ") + " 2026";
-            camp.campUrl = candidate;
+            // URL quality gate: validate, unwrap, and ensure camp-relevant
+            const validated = unwrapCandidate(candidate, camp.university);
+            camp.campUrl = validated.url;
+            if (!validated.passed) {
+              log(
+                `      ⚠️ URL failed quality gate: ${validated.reason}. Using validated fallback.`,
+              );
+            }
             camp.isVerified = false; // Mark for final check
             success = true;
             break;

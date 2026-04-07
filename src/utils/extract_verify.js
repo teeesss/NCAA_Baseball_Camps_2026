@@ -2,13 +2,13 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
 const { getMascot } = require("./mascot_lookup");
+const { SCHOOL_TIMEOUT_MS } = require("./config"); // Central config — no hardcoding
 
 // Load master data
 let data = JSON.parse(fs.readFileSync("verify_target.json", "utf8"));
 const allSchoolNames = data.map((d) => d.university);
 
-// Configurations
-const SCHOOL_TIMEOUT_MS = 60000;
+// SCHOOL_TIMEOUT_MS imported from config.js (single source of truth)
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 // ─── Utility: Helpers ──────────────────────────────────────────
@@ -29,8 +29,8 @@ function getUniversityAliases(name) {
 }
 
 function getCoachSearch(camp) {
-  if (!camp.contact || camp.contact.includes("TBA")) return "";
-  let raw = camp.contact.split("|")[0].trim();
+  if (!camp.campPOC || camp.campPOC.includes("TBA")) return "";
+  let raw = camp.campPOC.split("|")[0].trim();
   if (raw.includes("@") || raw.includes("(") || raw.length < 3) return "";
   return raw;
 }

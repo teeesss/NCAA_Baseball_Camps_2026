@@ -2,16 +2,28 @@ const fs = require("fs");
 const path = require("path");
 
 // ── Strict Configurations to Enforce Single Source of Truth ──
+// V10: includes all original constants PLUS the 7 new constants added during the
+// V10 engine consolidation. All must be defined ONLY in config.js and imported
+// elsewhere — never hardcoded in runner scripts or engine files.
 const TARGET_CONSTANTS = [
+  // Original constants
   "REJECT_SPORTS",
   "DATE_PATTERNS",
   "COST_PATTERN",
   "EMAIL_PATTERN",
   "OFFICIAL_PLATFORMS",
   "BLACKLISTED_DOMAINS",
-  "COST_RANGE",
+  "PRICE_THRESHOLDS",
   "GENERIC_EMAIL_PREFIXES",
   "SUBDOMAIN_BLACKLIST_PREFIXES",
+  // V10 additions (must not be hardcoded in any runner or engine file)
+  "NO_EVENTS_PHRASES",
+  "STALE_YEARS",
+  "CAMP_NAME_PATTERN",
+  "SEARCH_PROVIDERS",
+  "BROWSER_RESTART_EVERY",
+  "SCHOOL_TIMEOUT_MS",
+  "SUB_CRAWL_KEYWORDS",
 ];
 
 // Folders to recursively scan
@@ -93,7 +105,7 @@ if (errors.length > 0) {
 } else {
   console.log("\n✅ PASSED: No configuration drift detected.");
   console.log(
-    `   (Verified ${TARGET_CONSTANTS.length} global config tokens across all active src files)`,
+    `   (Verified ${TARGET_CONSTANTS.length} global config tokens across all active src files — 9 original + 7 V10 additions)`,
   );
   process.exit(0);
 }

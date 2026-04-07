@@ -34,6 +34,7 @@
 
 ## Lessons Learned
 
+- **Timestamp Sort Format (Epoch vs ISO)**: `datesUpdateDate`, `lastUpdateDate`, and other granular timestamp fields may be stored as either epoch milliseconds (`1775347994959`) OR ISO strings (`2026-04-04T19:33:20.093Z`). The JS sort logic MUST handle BOTH formats. `Date.parse("1775347994959")` returns `NaN`, so a bare `new Date(da).getTime()` will zero out ALL epoch timestamps, making the "Latest Camp Dates" and "Latest Updates" tabs appear alphabetical even though the sort code looks correct. The fix: `isNaN(Date.parse(da)) ? (Number(da) || 0) : new Date(da).getTime()`. This bug affected both `generate_html.js` and `generate_html_dev.js` — ALWAYS verify this pattern exists in both generators' date-sort branches.
 - **Deduplication**: When merging data, unique hashing for university names is essential to prevent double-counting.
 - **Parsing**: Standardizing Markdown table parsing is key to importing batch-collected data.
 - **Word Formatting**: Consistent Calibri/Arial Size 11 text is expected for the Word document.
@@ -55,7 +56,9 @@
 - **All-Month Detection**: Restricted date parsing to `Jun|Jul|Aug` was a critical failure. V6 scans all 12 months to capture year-round sessions.
 - **Module Scope Stabilization**: Explicit function exposure is mandatory in complex modular environments to prevent ReferenceErrors during remote imports.
 - **Source-to-JSON Pipeline**: Every piece of data must be associated with the `sourceUrl` it was found on to ensure button fidelity.
+- **Mandatory Test Suite**: BEFORE ANY deploy, commit, or HTML regeneration, ALWAYS run: `npm run test` (which runs `test_config_consistency.js`, `test_price_integrity.js`, and `test_ui_filter.js`). The price test catches bogus `$1` prices from Ryzer pages. Never skip these tests. Added to `package.json`: `npm test` is now the gatekeeper. Full update/deploy pipelines now include the price test automatically.
 - **UI Filtering Integrity**: When implementing client-side filters (price, date), always use defensive null-guards (`|| ''`) and robust regex parsing for decimals. Failing to guard against `null` attributes from `getAttribute()` will crash the entire `filter()` loop, rendering the directory blank. Always verify filter logic with `src/tests/test_ui_filter.js`.
+- **Sorting Rules (generate_html.js / generate_html_dev.js)**: The sort block MUST be: `(currentDiv === 'newdates' || currentDiv === 'updates')` → date-desc sort (ISO timestamps, newest first); `else` → alphabetical by university. **NEVER** add guard conditions like `&& term === '' && costFilter === 'all' && confFilter === 'all'` to the date-sort branch — this breaks date tabs by falling through to alphabetical. The "All" tab sorts alphabetically because `currentDiv === ''` naturally falls to the `else` branch. Always test: click "All" → verify alphabetical; click "Latest Camp Dates" → verify newest-first; click "Latest Updates" → verify newest-first. Both generators carry a "DO NOT BREAK" comment. Regenerate HTML after any sort changes.
 - **Third-Party Showcases (Blacklist)**: Sites like `activekids.com` and `collegebaseballcamps.com` frequently match school name keywords but are not official camps. Implement domain blacklisting and link prioritization (`ryzer.com`, `.edu`) to maintain data integrity.
 - **Conference/Cost Filtering**: Massive datasets (559 schools) require multi-dimensional filtering to be usable. Harvesting unique conferences and implementing numeric cost parsing at the UI layer is essential for premium UX.
 - **DII Scarcity Awareness**: Acknowledge that a subset of NCAA DII programs may not host independent summer camps or may only do so biennially. For these schools, an exhaustive multi-engine search resulting in "No Data" is a valid terminal state.
@@ -67,6 +70,23 @@
 - **DOM Node Validation**: When extracting interactive elements from a `<template>` rendering engine (e.g., pulling a "Verify" button out of a modal template and into the parent card block), ALWAYS verify that all event listeners accessing that node (like an `openDetails` popup modal logic) are explicitly updated with `if(node)` guards. Failure to trace moved DOM elements causes hard Javascript crashes (`TypeError`).
 - **Distributed State Synchronization**: When maintaining dual representations of the same state (e.g., a "verified badge" counting on top of the card AND the number inside the verification "action button"), backend-fetches MUST recursively select and update EVERY instance of the data attribute spanning the DOM. Failure to update all mirrors results in UI "flicker" where user clicks immediately desync local state against server cache.
 - **Granular Timestamp Tracking**: To support specialized UI search/filtering (e.g., "New Dates" vs "Any Update"), the master schema must maintain section-specific timestamps (`datesUpdateDate`, `contactUpdateDate`, etc.) instead of a single binary `lastUpdateDate`. This maintains high discoverability for specific data refreshes while allowing global DESC sorting for overall freshness.
+- **Puppeteer StealthPlugin Requirement (2026-04-05)**: `smart_extract.js` MUST use `puppeteer-extra` + `StealthPlugin` instead of raw `puppeteer` with manual `webdriver: false` injection. Heavy athletics sites (`.edu` SPAs, Cloudflare-protected pages) were timing out with `networkidle0` / 25s because they load endless ads, analytics, and lazy-content. The fix is: `require("puppeteer-extra")` + `StealthPlugin()`, change all `waitUntil: "networkidle0"` to `waitUntil: "domcontentloaded"`, increase timeout to 45s, and add `await page.waitForSelector("body", { timeout: 5000 })` followed by a 3s render delay. Verified across 23 timeout-hit schools: zero failures after fix. See `task1.md` for the full diff.
+- **PDF URLs Cause net::ERR_ABORTED**: Links to `.pdf` files (e.g., Rutgers Scarlet Knights clinic flyer PDFs on scarletknights.com) trigger Puppeteer's `net::ERR_ABORTED` error because Chrome treats them as downloads rather than navigations. The extraction should skip `.pdf` extensions during URL scoring or add a `.pdf` check before `page.goto()`.
+- **HTTPS Cert Failures on Third-Party Camp Platforms**: Domains like `totalcamps.com` and `summercampsnavigator.com` return `net::ERR_CERT_COMMON_NAME_INVALID`. URLs from these platforms should be scored lower and cross-validated against official `.edu` athletics domains.
+- **Multiple `--school` Flags Overwrite**: `smart_extract.js`'s argument parser uses a simple key-value loop where repeated `--school=X --school=Y` overwrites, so only the LAST school filter is applied. If multiple schools need targeted runs, use comma-separated values (`--school=Kentucky,Auburn,TCU`) instead.
+- **Cost Field Must Always Have `$` Prefix (2026-04-06)**: The `cost` field and `campTiers[].cost` values MUST always start with `$` when they contain numeric prices. The extraction engine initially produced bare numbers (e.g., `485 | 190 | 190`) which broke UI cost filtering. The extraction regex MUST capture the `$` sign together with digits: `/\$[\d,]+(?:\.\d{2})?/`. Any extracted price without `$` will fail `test_price_integrity.js`. Run `npm test` after any data change.
+- **Hierarchical Price Integrity (2026-04-06)**: Transitioned standard `MIN_VALID_PRICE` to `PRICE_THRESHOLDS` in centralized `config.js` (`CRITICAL_ANOMALY: <$5`, `SUSPICIOUS_LOW: <$50`, `VERIFY_MANUALLY: <$100`). The V6 extraction engine uses this authoritative script to automatically discard anomalies, and backend integrity tests (`test_price_integrity.js`) use it to auto-purge critical artifacts (requiring re-extraction) and flag suspicious prices for manual review using `auditStatus = "PRICE_CHECK_NEEDED"`.
+
+## Pre-Code-Change Protocol (MANDATORY)
+
+**BEFORE making ANY code changes, ALWAYS read ALL 4 documentation files:**
+
+1. `CLAUDE.md` — this file (context, rules, lessons learned)
+2. `GEMINI.md` — mirrored context for cross-agent consistency
+3. `issues.md` — known issues, bugs, and their resolution status
+4. `tasks.md` — task queue, completed items, and pending work
+   Also read `!Task099.txt` for the current work queue from the data integrity audit.
+   This prevents repeating already-fixed issues and ensures awareness of all open/ resolved problems.
 
 ## Infrastructure
 
@@ -84,20 +104,20 @@ The pipeline has four stages that feed into each other:
 
 1. **Extraction** → `smart_extract.js` (orchestrator) calls `src/utils/extract_camp_details.js` (V6 Puppeteer engine). It processes schools from `camps_data.json` with resumption logic — only schools missing `isChecked: true` or flagged for re-queue are processed. Results flow through mascot-based search → page validation → sub-crawl → date/price/contact extraction → JSON merge.
 2. **Verification** → `auto_verify.js` validates extracted URLs via HTTP HEAD. `verify_human.php` provides a manual verification endpoint (stored in `human_verifications.json`). `src/tests/verify_*.js` scripts run spot-check audits.
-3. **Generation** → `generate_html.js` reads `camps_data.json` and produces `index.html` (5.5MB, client-side rendered, no build step). `src/utils/generate_word_doc.js` produces the Word export from the same data.
-4. **Deploy** → `deploy.js` uploads `index.html` and assets via FTP. Credentials live in `.credentials/` (gitignored).
+3. **Generation** → `generate_html.js` reads `camps_data.json` and produces `index.html` (~64KB shell, fetches JSON at runtime). `generate_html_backup.js` produces `index_1.html` (~5MB static inline bundle, kept as fallback). `src/utils/generate_word_doc.js` produces the Word export from the same data.
+4. **Deploy** → `deploy.js` uploads `index.html` and `camps_data.json` via FTP. Credentials live in `.credentials/` (gitignored).
 
-### Dynamic Rendering Test (2026-04-04)
+### Dynamic Rendering (Production — 2026-04-06)
 
-A parallel path exists for testing a lightweight dynamic rendering approach:
+The production site uses a lightweight dynamic rendering approach (~64KB HTML shell + runtime `camps_data.json` fetch):
 
-- `generate_html_dev.js` → Generates ~55KB HTML shell that fetches `camps_data.json` at runtime and renders cards client-side via `renderCard()`
+- `generate_html.js` → Generates ~64KB HTML shell that fetches `camps_data.json` at runtime and renders cards client-side via `renderCard()`
+- `generate_html_backup.js` → Generates ~5MB static inline bundle (`index_1.html`) as fallback if dynamic approach ever breaks
+- `generate_html_dev.js` → Generates ~56KB dev shell (`index_dev.html`) for staging deployments
 - `deploy_dev.js` → Deploys to `/Baseball_Camps_2026_dev/` (isolated test directory)
-- Total payload: ~855KB vs 5.4MB production — 6x reduction
 - Modal content stored as `encodeURIComponent()` on each card, decoded on click
 - Verify buttons use `data-verify-school` attributes + event delegation (no inline onclick)
 - `humanVerifications` seeded at build time
-- `npm run generate:dev` + `npm run deploy:dev` for test deployments
 
 **Key data shapes:**
 
@@ -129,8 +149,9 @@ node src/tests/test_config_consistency.js
 node src/tests/test_ui_filter.js
 
 # Regenerate HTML from camps_data.json
-npm run generate:html          # node generate_html.js  (production, 5.4MB)
-npm run generate:dev           # node generate_html_dev.js (dev, ~55KB shell)
+npm run generate:html          # node generate_html.js  (production, ~64KB dynamic)
+npm run generate:dev           # node generate_html_dev.js (dev, ~56KB dynamic)
+npm run generate:backup        # node generate_html_backup.js (fallback, ~5MB static)
 
 # Generate Word document export
 npm run generate:word          # node src/utils/generate_word_doc.js
@@ -148,6 +169,24 @@ npm run full-update
 # Finalize/process extracted data into final JSON format
 node src/utils/finalize_database.js
 ```
+
+## Completion & Autonomy Rules (MANDATORY - Apply to Every Task)
+
+**Never stop early.** Do not use phrases like "almost done", "nearly finished", "I think that's it", or any vague status unless the entire requested task is verifiably complete.
+
+For all tasks in this project (data extraction, JSON updates, HTML generation, testing, deployment, UI verification, etc.):
+
+- Work continuously and autonomously until the full user request is complete.
+- After finishing any major step, immediately move to the next required step without asking for confirmation.
+- Before declaring any task complete, you **MUST**:
+  1. Run the relevant tests (`npm test` or specific files like `test_config_consistency.js`, `test_ui_filter.js`, `test_price_integrity.js`).
+  2. Use Chrome DevTools MCP tools (`evaluate_script`, `take_snapshot`, `take_screenshot`, etc.) as needed to verify rendering, filters, sorting ("Latest Camp Dates" = newest first, "All" = alphabetical), links, and overall aesthetics.
+  3. Confirm no errors in terminal output and that outputs match project rules (aesthetics first, URL fidelity, verified data preservation, no placeholders, etc.).
+- When the entire task is verifiably done, end your final response with the **exact** marker:**✅ TASK COMPLETE**followed by a short bullet-point summary of what was accomplished and key verification results.
+- If anything blocks progress (error, permission issue, unclear requirement), clearly state the blockage, propose the next action, and continue working unless the user explicitly says to stop.
+- Default behavior for recurring project commands (`node generate_html.js`, `node generate_html_dev.js`, `npm run generate:html`, `npm run generate:dev`, `npm run deploy`, etc.): Execute them confidently when the workflow requires it. Do not ask for permission unless a genuine risk (e.g., data loss) is present.
+
+Always prioritize: Accuracy > Aesthetics > Completeness. Follow all rules in this file strictly, especially Extraction Protocol, Sorting Rules, and Verified Data Preservation.
 
 ## Notes
 

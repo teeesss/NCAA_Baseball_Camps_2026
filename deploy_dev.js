@@ -22,11 +22,16 @@ async function deployDev() {
     await client.ensureDir(targetDir);
     console.log("DEV path confirmed:", targetDir);
 
-    // Only upload dev-specific files. Dev reads camps_data.json, verify_human.php,
-    // and human_verifications.json from the production directory via relative paths.
-    console.log("Uploading dev-specific assets to DEV...");
-    await client.uploadFrom("index_dev.html", "index.html");
+    // Upload the primary dynamic index.html
+    console.log("Uploading index.html [dynamic] to DEV...");
+    await client.uploadFrom("index.html", "index.html");
     await client.uploadFrom("favicon.png", "favicon.png");
+
+    // Upload static backup too
+    if (fs.existsSync("index_1.html")) {
+      console.log("Uploading index_1.html [static backup] to DEV...");
+      await client.uploadFrom("index_1.html", "index_1.html");
+    }
 
     // Final verification
     const remoteList = await client.list(".");

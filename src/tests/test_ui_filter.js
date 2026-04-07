@@ -213,6 +213,18 @@ const tests = [
     filter: "tba",
     expected: false,
   }, // it HAS a price
+  {
+    desc: "Floor: $1 matches under150",
+    cost: "$1",
+    filter: "under150",
+    expected: true,
+  },
+  {
+    desc: "Floor: $1 treated as tba?",
+    cost: "$1",
+    filter: "tba",
+    expected: false,
+  },
 
   // --- Edge cases ---
   {

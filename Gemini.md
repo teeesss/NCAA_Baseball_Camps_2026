@@ -53,6 +53,7 @@
 - **Module Scope Stabilization**: Explicit function exposure is mandatory in complex modular environments to prevent ReferenceErrors during remote imports.
 - **Source-to-JSON Pipeline**: Every piece of data must be associated with the `sourceUrl` it was found on to ensure button fidelity.
 - **UI Filtering Integrity**: When implementing client-side filters (price, date), always use defensive null-guards (`|| ''`) and robust regex parsing for decimals. Failing to guard against `null` attributes from `getAttribute()` will crash the entire `filter()` loop, rendering the directory blank. Always verify filter logic with `src/tests/test_ui_filter.js`.
+- **Sorting Rules (generate_html.js / generate_html_dev.js)**: The sort block MUST be: `(currentDiv === 'newdates' || currentDiv === 'updates')` → date-desc sort (ISO timestamps, newest first); `else` → alphabetical by university. **NEVER** add guard conditions like `&& term === '' && costFilter === 'all' && confFilter === 'all'` to the date-sort branch — this breaks date tabs by falling through to alphabetical. The "All" tab sorts alphabetically because `currentDiv === ''` naturally falls to the `else` branch. Always test: click "All" → verify alphabetical; click "Latest Camp Dates" → verify newest-first; click "Latest Updates" → verify newest-first. Both generators carry a "DO NOT BREAK" comment. Regenerate HTML after any sort changes.
 - **Third-Party Showcases (Blacklist)**: Sites like `activekids.com` and `collegebaseballcamps.com` frequently match school name keywords but are not official camps. Implement domain blacklisting and link prioritization (`ryzer.com`, `.edu`) to maintain data integrity.
 - **Conference/Cost Filtering**: Massive datasets (559 schools) require multi-dimensional filtering to be usable. Harvesting unique conferences and implementing numeric cost parsing at the UI layer is essential for premium UX.
 - **DII Scarcity Awareness**: Acknowledge that a subset of NCAA DII programs may not host independent summer camps or may only do so biennially. For these schools, an exhaustive multi-engine search resulting in "No Data" is a valid terminal state.
@@ -64,6 +65,19 @@
 - **DOM Node Validation**: When extracting interactive elements from a `<template>` rendering engine (e.g., pulling a "Verify" button out of a modal template and into the parent card block), ALWAYS verify that all event listeners accessing that node (like an `openDetails` popup modal logic) are explicitly updated with `if(node)` guards. Failure to trace moved DOM elements causes hard Javascript crashes (`TypeError`).
 - **Distributed State Synchronization**: When maintaining dual representations of the same state (e.g., a "verified badge" counting on top of the card AND the number inside the verification "action button"), backend-fetches MUST recursively select and update EVERY instance of the data attribute spanning the DOM. Failure to update all mirrors results in UI "flicker" where user clicks immediately desync local state against server cache.
 - **Granular Timestamp Tracking**: To support specialized UI search/filtering (e.g., "New Dates" vs "Any Update"), the master schema must maintain section-specific timestamps (`datesUpdateDate`, `contactUpdateDate`, etc.) instead of a single binary `lastUpdateDate`. This maintains high discoverability for specific data refreshes while allowing global DESC sorting for overall freshness.
+- **Cost Field Must Always Have `$` Prefix (2026-04-06)**: The `cost` field and `campTiers[].cost` values MUST always start with `$` when they contain numeric prices. Extraction engine initially produced bare numbers (e.g., `485 | 190 | 190` for Texas) which broke UI cost filtering. The extraction regex MUST capture the `$` together with digits: `/\$[\d,]+(?:\.\d{2})?/`. Any extracted price without `$` will fail `test_price_integrity.js`.
+- **Hierarchical Price Integrity (2026-04-06)**: Transitioned standard `MIN_VALID_PRICE` to `PRICE_THRESHOLDS` in centralized `config.js` (`CRITICAL_ANOMALY: <$5`, `SUSPICIOUS_LOW: <$50`, `VERIFY_MANUALLY: <$100`). The V6 extraction engine uses this authoritative script to automatically discard anomalies, and backend integrity tests (`test_price_integrity.js`) use it to auto-purge critical artifacts (requiring re-extraction) and flag suspicious prices for manual review using `auditStatus = "PRICE_CHECK_NEEDED"`.
+
+## Pre-Code-Change Protocol (MANDATORY)
+
+**BEFORE making ANY code changes, ALWAYS read ALL 4 documentation files:**
+
+1. `CLAUDE.md` — context, rules, lessons learned
+2. `GEMINI.md` — mirrored context for cross-agent consistency
+3. `issues.md` — known issues, bugs, and their resolution status
+4. `tasks.md` — task queue, completed items, and pending work
+   Also read `!Task099.txt` for the current work queue from the data integrity audit.
+   This prevents repeating already-fixed issues and ensures awareness of all open/ resolved problems.
 
 ## Infrastructure
 

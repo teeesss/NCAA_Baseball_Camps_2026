@@ -98,19 +98,14 @@ async function createWordDoc(jsonData, outputPath) {
                         }),
                         new TableCell({
                           children: [
-                            new Paragraph(
-                              item.headCoach ||
-                                (item.contact && !item.contact.includes("@")
-                                  ? item.contact
-                                  : "Athletics Staff"),
-                            ),
+                            new Paragraph(item.headCoach || "Athletics Staff"),
                           ],
                         }),
                         new TableCell({
                           children: [new Paragraph(item.campPOC || "TBA")],
                         }),
                         new TableCell({
-                          children: [new Paragraph(item.email || "TBA")],
+                          children: [new Paragraph(item.campPOCEmail || "TBA")],
                         }),
                       ],
                     }),

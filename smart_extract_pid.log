@@ -1,0 +1,82 @@
+[2026-04-06T17:48:26.221Z] 🚀 STARTING BATCH
+[2026-04-06T17:48:26.283Z] 📦 Backup created: camps_data_backup_1775497706224.json
+[2026-04-06T17:48:28.284Z] 
+[1/235] Akron | Missing: campUrl
+[2026-04-06T17:48:28.491Z]   🔍 Search: Akron Zips baseball camp
+[2026-04-06T17:48:33.201Z]   ★ Consensus match: https://www.playnsports.com/organization/zipsbaseball/
+[2026-04-06T17:48:33.202Z]   ⚠️ URL rejected as generic/non-camp: https://www.playnsports.com/organization/zipsbaseball/
+[2026-04-06T17:48:33.204Z]   ❌ No URL found.
+[2026-04-06T17:48:33.279Z] 
+[2/235] Alabama A&M | Missing: campUrl
+[2026-04-06T17:48:33.347Z]   🔍 Search: Alabama A&M Bulldogs baseball camp
+[2026-04-06T17:48:37.739Z]   ★ Engine #1: https://www.playnsports.com/organization/alabama-am-baseball-camps/
+[2026-04-06T17:48:37.741Z]   ↳ Scraping: https://www.playnsports.com/organization/alabama-am-baseball-camps/
+[2026-04-06T17:48:41.995Z]   ↳ Crawling 5 sub-links...
+[2026-04-06T17:48:47.576Z]   ↳ Sub: https://www.playnsports.com/find-camps-clinics/... found baseball content
+[2026-04-06T17:48:49.647Z]   ↳ Sub: https://www.playnsports.com/organization/alabama-am-baseball... found baseball content
+[2026-04-06T17:48:56.995Z]   ↳ Sub: https://www.playnsports.com/find-camps-clinics/... found baseball content
+[2026-04-06T17:48:59.965Z]   ↳ Sub: https://www.playnsports.com/organization/alabama-am-baseball... found baseball content
+[2026-04-06T17:49:01.498Z]   ↳ Sub: https://www.playnsports.com/organization/alabama-am-baseball... found baseball content
+[2026-04-06T17:49:02.002Z] 
+[3/235] Albany | Missing: campUrl
+[2026-04-06T17:49:02.113Z]   🔍 Search: Albany Great Danes baseball camp
+[2026-04-06T17:49:05.944Z]   ★ Engine #1: https://ualbanysports.com/sports/baseball
+[2026-04-06T17:49:05.946Z]   ⚠️ URL rejected as generic/non-camp: https://ualbanysports.com/sports/baseball
+[2026-04-06T17:49:05.947Z]   ❌ No URL found.
+[2026-04-06T17:49:05.999Z] 
+[4/235] Alcorn State | Missing: campUrl
+[2026-04-06T17:49:06.066Z]   🔍 Search: Alcorn State Braves baseball camp
+[2026-04-06T17:49:10.014Z]   ★ Consensus match: https://info.collegebaseballcamps.com/alcornbaseball/
+[2026-04-06T17:49:10.015Z]   ↳ Scraping: https://info.collegebaseballcamps.com/alcornbaseball/
+[2026-04-06T17:49:13.754Z]   ↳ Crawling 8 sub-links...
+[2026-04-06T17:49:15.271Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#home... found baseball content
+[2026-04-06T17:49:16.798Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#about... found baseball content
+[2026-04-06T17:49:18.310Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Events... found baseball content
+[2026-04-06T17:49:19.824Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Coache... found baseball content
+[2026-04-06T17:49:21.349Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Contac... found baseball content
+[2026-04-06T17:49:22.877Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Events... found baseball content
+[2026-04-06T17:49:24.402Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Contac... found baseball content
+[2026-04-06T17:49:25.929Z]   ↳ Sub: https://info.collegebaseballcamps.com/alcornbaseball/#Events... found baseball content
+[2026-04-06T17:49:26.495Z] 
+[5/235] Appalachian State | Missing: campUrl
+[2026-04-06T17:49:26.563Z]   🔍 Search: Appalachian State Mountaineers baseball camp
+[2026-04-06T17:49:30.771Z]   ★ Consensus match: https://www.kermitsmithbaseballcamps.com/
+[2026-04-06T17:49:30.773Z]   ↳ Scraping: https://www.kermitsmithbaseballcamps.com/
+[2026-04-06T17:49:34.464Z] 
+[6/235] Arizona | Missing: campUrl
+[2026-04-06T17:49:34.534Z]   🔍 Search: Arizona Wildcats baseball camp
+[2026-04-06T17:49:38.491Z]   ★ Consensus match: https://rec.arizona.edu/sports/club-sports/baseball
+[2026-04-06T17:49:38.492Z]   ⚠️ URL rejected as generic/non-camp: https://rec.arizona.edu/sports/club-sports/baseball
+[2026-04-06T17:49:38.493Z]   ❌ No URL found.
+[2026-04-06T17:49:38.570Z] 
+[7/235] Arkansas-Pine Bluff | Missing: campUrl
+[2026-04-06T17:49:38.637Z]   🔍 Search: Arkansas-Pine Bluff Golden Lions baseball camp
+[2026-04-06T17:49:42.688Z]   ★ Consensus match: https://uapblionsroar.com/sb_output.aspx?form=25&path=baseball
+[2026-04-06T17:49:42.689Z]   ⚠️ URL rejected as generic/non-camp: https://uapblionsroar.com/sb_output.aspx?form=25&path=baseba
+[2026-04-06T17:49:42.690Z]   ❌ No URL found.
+[2026-04-06T17:49:42.777Z] 
+[8/235] Army | Missing: campUrl
+[2026-04-06T17:49:42.842Z]   🔍 Search: Army Black Knights baseball camp
+[2026-04-06T17:49:46.852Z]   ★ Consensus match: https://goarmywestpoint.com/sports/baseball
+[2026-04-06T17:49:46.853Z]   ⚠️ URL rejected as generic/non-camp: https://goarmywestpoint.com/sports/baseball
+[2026-04-06T17:49:46.854Z]   ❌ No URL found.
+[2026-04-06T17:49:46.929Z] 
+[9/235] Austin Peay | Missing: campUrl
+[2026-04-06T17:49:47.012Z]   🔍 Search: Austin Peay Governors baseball camp
+[2026-04-06T17:49:51.533Z]   ★ Engine #1: https://rolandfanningbaseballcamps.com/
+[2026-04-06T17:49:51.534Z]   ↳ Scraping: https://rolandfanningbaseballcamps.com/
+[2026-04-06T17:49:54.882Z]   ↳ Crawling 7 sub-links...
+[2026-04-06T17:49:59.691Z]   ↳ Sub: https://rolandfanningbaseballcamps.com/Coaches.Page1.html... found baseball content
+[2026-04-06T17:50:01.274Z]   ↳ Sub: https://rolandfanningbaseballcamps.com/General.Page1.html... found baseball content
+[2026-04-06T17:50:04.431Z]   ↳ Sub: https://rolandfanningbaseballcamps.com/Contact.Page1.html... found baseball content
+[2026-04-06T17:50:06.170Z] 
+[10/235] Ball State | Missing: campUrl
+[2026-04-06T17:50:06.258Z]   🔍 Search: Ball State Cardinals baseball camp
+[2026-04-06T17:50:10.350Z]   ★ Consensus match: https://ballstatesports.com/sports/baseball
+[2026-04-06T17:50:10.351Z]   ⚠️ URL rejected as generic/non-camp: https://ballstatesports.com/sports/baseball
+[2026-04-06T17:50:10.352Z]   ❌ No URL found.
+[2026-04-06T17:50:10.424Z] 
+[11/235] Binghamton | Missing: campUrl
+[2026-04-06T17:50:10.425Z] 
+⏹️  LIMIT REACHED (10 schools). Exiting.
+[2026-04-06T17:50:10.708Z] ✅ DONE

@@ -26,8 +26,15 @@ async function deploy() {
     console.log("Remote path confirmed:", targetDir);
 
     const localSize = fs.statSync("index.html").size;
-    console.log(`Uploading index.html (${localSize} bytes)...`);
+    console.log(`Uploading index.html [dynamic] (${localSize} bytes)...`);
     await client.uploadFrom("index.html", "index.html");
+
+    // Static 5.5MB backup
+    const backupSize = fs.statSync("index_1.html").size;
+    console.log(
+      `Uploading index_1.html [static backup] (${backupSize} bytes)...`,
+    );
+    await client.uploadFrom("index_1.html", "index_1.html");
 
     console.log("Uploading camps_data.json...");
     await client.uploadFrom("camps_data.json", "camps_data.json");

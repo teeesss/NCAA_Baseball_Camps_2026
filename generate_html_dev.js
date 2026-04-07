@@ -38,7 +38,7 @@ const html = `
     <meta http-equiv="Expires" content="0" />
     <title>NCAA Baseball Camps Directory 2026 | Div 1 & Div 2 (Dev)</title>
     <meta name="description" content="The definitive, searchable guide to 2026 NCAA Div I and Div II baseball camps and prospect clinics.">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚾</text></svg>">
 
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -336,39 +336,39 @@ const html = `
             #searchInput { padding: 6px 8px 6px 30px; font-size: 0.68rem; }
             .search-icon { left: 10px; }
             .search-icon svg { width: 14px; height: 14px; }
-            .filter-select { min-width: unset; padding: 4px 6px; font-size: 0.65rem; border-radius: 8px; flex-shrink: 0; }
+            .filter-select { min-width: unset; padding: 8px 10px; min-height: 44px; font-size: 0.75rem; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; }
             .filter-tabs {
                 display: flex; flex-wrap: nowrap; overflow-x: auto;
-                -webkit-overflow-scrolling: touch; padding: 1px; gap: 2px;
+                -webkit-overflow-scrolling: touch; padding: 2px; gap: 4px;
                 border: none; background: transparent; width: 100%; box-sizing: border-box;
             }
             .filter-tabs::-webkit-scrollbar { display: none; }
             .filter-btn {
-                white-space: nowrap; flex-shrink: 0; padding: 4px 4px;
-                font-size: 0.6rem; background: rgba(255,255,255,0.05);
+                white-space: nowrap; flex-shrink: 0; padding: 0 12px; min-height: 44px;
+                font-size: 0.75rem; background: rgba(255,255,255,0.05);
                 border: 1px solid var(--border-color);
-                display: flex; align-items: center; gap: 3px;
+                display: flex; justify-content: center; align-items: center; gap: 4px;
             }
             .hide-mobile { display: none; }
             #conf-tabs {
                 flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
-                scrollbar-width: none; margin-top: 4px; padding: 2px 0 0;
+                scrollbar-width: none; margin-top: 6px; padding: 2px 0 0; gap: 4px;
             }
             #conf-tabs::-webkit-scrollbar { display: none; }
-            .conf-btn { padding: 0 8px; height: 28px; font-size: 0.7rem; }
-            #moreConfs { height: 28px; font-size: 0.7rem; min-width: 110px !important; }
+            .conf-btn { padding: 0 12px; min-height: 44px; font-size: 0.75rem; }
+            #moreConfs { min-height: 44px; font-size: 0.75rem; min-width: 120px !important; }
             .stats-row {
                 flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
-                padding-bottom: 4px; gap: 6px; margin-top: -2px;
+                padding-bottom: 4px; gap: 6px; margin-top: 2px;
             }
             .stats-row::-webkit-scrollbar { display: none; }
-            .stat-bubble { font-size: 0.65rem; padding: 4px 10px; }
+            .stat-bubble { font-size: 0.65rem; padding: 6px 12px; }
             .camp-grid { grid-template-columns: 1fr; gap: 8px; }
-            .camp-card { padding: 8px 10px; }
-            .actions { gap: 4px; padding-top: 6px; }
-            .btn { padding: 4px 4px; font-size: 0.65rem; }
+            .camp-card { padding: 12px; }
+            .actions { gap: 6px; padding-top: 8px; }
+            .btn { padding: 10px 8px; min-height: 44px; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; }
             .modal-box { padding: 12px; width: 95%; max-height: 92vh; border-radius: 16px; }
-            .drawer-sec { padding: 10px; margin-bottom: 8px; }
+            .drawer-sec { padding: 12px; margin-bottom: 8px; }
         }
     </style>
 </head>
@@ -470,7 +470,9 @@ const html = `
         const bgColor = rColors[item.university.charCodeAt(0) % rColors.length];
         const nameWords = item.university.replace(/University|College|State|Univ/gi,'').trim().split(' ').filter(p=>p);
         const initials = (nameWords.length >= 2 ? (nameWords[0][0]+nameWords[1][0]) : (item.university[0]+(item.university[1]||''))).toUpperCase();
-        let primaryLogo = item.logoFile ? item.logoFile : (item.logoDomain ? 'https://logo.clearbit.com/'+item.logoDomain : '');
+        
+        let primaryLogo = item.logoFile; // Disable Clearbit fallback to completely suppress 404 console errors
+        
         if (!primaryLogo) {
             return '<div style="width:50px;height:50px;background-color:'+bgColor+';border-radius:50%;display:flex;justify-content:center;align-items:center;flex-shrink:0;box-shadow:0 4px 10px rgba(0,0,0,0.3);color:white;font-weight:800;font-size:1.2rem;">'+initials+'</div>';
         }
@@ -522,8 +524,8 @@ const html = `
 
         const contactName = (item.campPOC && item.campPOC !== 'N/A' ? esc(item.campPOC) :
                              (item.headCoach && item.headCoach !== 'N/A' ? esc(item.headCoach) : 'Athletics Office'));
-        const contactEmail = (item.email && item.email !== 'N/A')
-            ? '<span style="font-size:0.75rem;color:var(--accent-color);font-weight:600;opacity:0.9;">'+esc(item.email)+'</span>' : '';
+        const contactEmail = (item.campPOCEmail && item.campPOCEmail !== 'N/A')
+            ? '<span style="font-size:0.75rem;color:var(--accent-color);font-weight:600;opacity:0.9;">'+esc(item.campPOCEmail)+'</span>' : '';
 
         const humanBadgeHtml = humanCount > 0
             ? '<div class="human-badge" title="'+humanCount+' community verifications">👤 '+humanCount+'</div>' : '';
@@ -534,10 +536,10 @@ const html = `
         const humanVerifyDisabled = votedInSession.includes(item.university);
 
         // ── Modal content ──
-        const headCoachVal = esc(item.headCoach || (item.contact && !item.contact.includes('@') ? item.contact : 'Athletics Staff'));
+        const headCoachVal = esc(item.headCoach || 'Athletics Staff');
         const campPocVal = esc(item.campPOC || 'Provided at registration');
-        const emailHtml = item.email
-            ? '<a href="mailto:'+esc(item.email)+'" style="color:#60a5fa;text-decoration:none;font-weight:600;">'+esc(item.email)+'</a>'
+        const emailHtml = (item.campPOCEmail && item.campPOCEmail !== 'N/A')
+            ? '<a href="mailto:'+esc(item.campPOCEmail)+'" style="color:#60a5fa;text-decoration:none;font-weight:600;">'+esc(item.campPOCEmail)+'</a>'
             : 'Check site for contact info';
 
         let datesHtml = '';
@@ -634,7 +636,7 @@ const html = `
             ' data-dates-update="'+(item.datesUpdateDate||'')+'"'+
             ' data-university="'+item.university+'"'+
             ' data-not-verified="'+(!isManualVerif && !isAutoVerif && !isPartial)+'"'+
-            ' data-search="'+item.university.toLowerCase()+' '+((item.contact||'').toLowerCase())+'"'+
+            ' data-search="'+item.university.toLowerCase()+' '+((item.campPOC||'').toLowerCase())+' '+((item.headCoach||'').toLowerCase())+'"'+
             '>' +
             humanBadgeHtml +
             '<div class="card-header">'+
@@ -871,13 +873,28 @@ const html = `
             }
         });
 
-        // Sort by date for updates/newdates
-        if ((currentDiv === 'updates' || currentDiv === 'newdates') && term === '' && costFilter === 'all' && confFilter === 'all') {
+        // SORTING RULE (DO NOT BREAK): "newdates" and "updates" ALWAYS sort by date-descending.
+        // ALL other sort modes (including "All") sort alphabetically by university.
+        // CRITICAL: Never add extra filter conditions (term, costFilter, confFilter) to the
+        // date-sort branch — doing so causes the alphabetical else-branch to run instead,
+        // breaking Latest Camp Dates / Latest Updates order. See issues.md for history.
+        if (currentDiv === 'updates' || currentDiv === 'newdates') {
             const sortAttr = currentDiv === 'newdates' ? 'data-dates-update' : 'data-last-update';
             const sorted = Array.from(cards).sort((a, b) => {
                 const da = a.getAttribute(sortAttr) || '';
                 const db = b.getAttribute(sortAttr) || '';
-                return db.localeCompare(da);
+                // Numeric comparison — supports both ISO timestamps and epoch ms numbers — descending (newest first)
+                const ta = da ? (isNaN(Date.parse(da)) ? (Number(da) || 0) : new Date(da).getTime()) : 0;
+                const tb = db ? (isNaN(Date.parse(db)) ? (Number(db) || 0) : new Date(db).getTime()) : 0;
+                return tb - ta;
+            });
+            sorted.forEach(c => campGrid.appendChild(c));
+        } else {
+            // Re-sort alphabetically by university for all other views
+            const sorted = Array.from(cards).sort((a, b) => {
+                const ua = a.getAttribute('data-university') || '';
+                const ub = b.getAttribute('data-university') || '';
+                return ua.localeCompare(ub);
             });
             sorted.forEach(c => campGrid.appendChild(c));
         }
@@ -991,9 +1008,9 @@ const html = `
 </html>
 `;
 
-fs.writeFileSync("index_dev.html", html);
+fs.writeFileSync("index.html", html);
 console.log(
-  "[DEV] Generated index_dev.html — dynamic rendering, fetch-based card rendering.",
+  "[PROD] Generated index.html — dynamic rendering, fetch-based card rendering.",
 );
 console.log(
   "[DEV] Deploy to /Baseball_Camps_2026_dev/ to test without affecting production.",

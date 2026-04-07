@@ -329,7 +329,7 @@ const manuallyVerified = [
     dates: "Jun 15-18 / Jul 12-14 / Jul 27-30, 2026",
     cost: "$262.50 Youth / $1,312.50 Elite",
     details: "Elite & Youth Camps at Sewell-Thomas Stadium.",
-    contact: "Rob Vaughn (Head Coach)",
+    campPOC: "Rob Vaughn (Head Coach)",
     division: "DI",
     address:
       "Sewell-Thomas Stadium, 241 Paul W Bryant Dr, Tuscaloosa, AL 35401",
@@ -343,7 +343,7 @@ const manuallyVerified = [
     dates: "Jul 12, 2026 / Jul 26, 2026",
     cost: "$250",
     details: "Summer Showcase Camp at Condron Ballpark.",
-    contact: "Kevin O'Sullivan (Head Coach)",
+    campPOC: "Kevin O'Sullivan (Head Coach)",
     division: "DI",
     address: "Condron Ballpark, 2800 Citrus Road, Gainesville, FL 32608",
     whatToBring: "Position specific instruction. Bring own baseball equipment.",
@@ -354,7 +354,7 @@ const manuallyVerified = [
     dates: "Jun 22-25 / Jul 13-16 / Jul 20-23, 2026",
     cost: "$341.25",
     details: "Summer Baseball Camps at Swayze Field.",
-    contact: "Mike Bianco (Head Coach)",
+    campPOC: "Mike Bianco (Head Coach)",
     division: "DI",
     address: "Swayze Field, 101 Swayze Ln, University, MS 38677",
     whatToBring: "Baseball equipment, clearly marked with name.",
@@ -376,7 +376,7 @@ const finalData = teams.map((univ) => {
     return {
       ...cd,
       university: univ, // Standardizing to master list name
-      contact: cd.contact || coaches[univ] || "Not Listed",
+      campPOC: cd.campPOC || coaches[univ] || "Not Listed",
       address: cd.address || "On-campus facility",
       whatToBring: cd.whatToBring || "Equipment and standard items.",
     };
@@ -389,7 +389,7 @@ const finalData = teams.map((univ) => {
     dates: "TBA",
     cost: "TBA",
     details: "No 2026 camps posted as of April 2, 2026",
-    contact: coaches[univ] || "Not Listed",
+    campPOC: coaches[univ] || "Not Listed",
     division: "DI",
     address: "On-campus facility",
     whatToBring:

@@ -1,31 +1,29 @@
 # Project Status: NCAA Baseball Camps 2026 Directory
 
-# Current State: Active Data Gathering & Premium UI Polish (V8/V9 Granular Tracking Stabilized)
+## Current State: Stable & Deployed (Dynamic Rendering Production, Epoch Sort Fix)
 
-The project has achieved V8/V9 stabilization, integrating a multi-dimensional granular timestamp tracking engine. This system provides surgical visibility into when specific sections of a program's record—Dates, Contacts, Costs, or Details—were last updated. The UI now features a dual-tracking ecosystem for "Latest Camp Dates" and "Latest Updates," both dynamically sorted to float the freshest content to the top.
-
-## Key Milestones Completed:
-
-- **Granular Timestamp Engine**: Independent tracking for `dates`, `contact`, `cost`, and `details` updates within the authoritative `camps_data.json`.
-- **Dual-Tracking UI Filters**: Added specialized "Latest Camp Dates" and "Latest Updates" filters with dynamic DESC sorting by recency.
-- **Data Integrity Scrubber V2**: Refactored the core synchronization utility to intelligently manage section-specific timestamps and de-duplicate POC/Email fields across all 521+ program records.
-- **UI / UX Stabilization**: Prevented modal crash loops, stabilized verification text nodes across DOM re-renders, and tightly packed horizontal padding to fit Division and Verification filters on small phone screens.
-- **Verification Sync Engine**: Client correctly pulls crowd-sourced verifications, maintains a local vote cache to prevent visual reversion/flickering, and displays both verified badges dynamically.
-- **BCUSA Data Merge (2026-04-04)**: Recovered 295 schools from baseballcampsusa.com data file after prettier corruption. Applied mascot-based matching against `src/utils/mascot_lookup.js` to resolve 75 schools with new camp URLs. New URLs were injected into `camps_data.json` with `auditStatus: "NEW_SOURCE_DETECTED"` and queued for webcrawl extraction.
+The project is live with 559 NCAA Division I & II baseball programs. Production `index.html` is now a ~64KB dynamic shell that fetches `camps_data.json` at runtime (~99% size reduction vs the previous 5.4MB inline bundle). The static 5MB inline bundle is preserved as `index_1.html` via `generate_html_backup.js` for emergency fallback.
 
 ## Active Status:
 
-| Metric             | Status                                                                         |
-| :----------------- | :----------------------------------------------------------------------------- |
-| **Total Programs** | 559 (D1 + D2)                                                                  |
-| **Engine Status**  | **BCUSA MERGE COMPLETE — AWAITING EXTRACTION ON 75 NEW URLS**                  |
-| **Data Integrity** | High (Verified via sub-page depth & strict alias checks)                       |
-| **Live Site**      | [bmwseals.com/Baseball_Camps_2026/](https://bmwseals.com/Baseball_Camps_2026/) |
+| Metric             | Status                                                                                 |
+| :----------------- | :------------------------------------------------------------------------------------- |
+| **Total Programs** | 559 (DI + DII)                                                                         |
+| **Engine Status**  | Stable — extraction available on-demand                                                |
+| **Data Integrity** | High (Verified via sub-page depth & strict alias checks)                               |
+| **Live Site**      | [bmwseals.com/Baseball_Camps_2026/](https://bmwseals.com/Baseball_Camps_2026/)         |
+| **Dev Site**       | [bmwseals.com/Baseball_Camps_2026_dev/](https://bmwseals.com/Baseball_Camps_2026_dev/) |
 
-## Immediate Actions (Next 24h):
+## Architecture:
 
-1. Run V6 extraction on 75 BCUSA-sourced URLs via `smart_extract.js` (filter: `NEW_SOURCE_DETECTED`).
-2. Verify extracted data and regenerate HTML shell.
-3. Monitor live verification counts and filter usage via logs.
-4. Integrate team logos into the `index.html` UI for premium aesthetics.
-5. Regenerate the Word document for final user offline reference.
+The pipeline reads from a single source of truth — `camps_data.json`:
+
+1. **Extraction** → `smart_extract.js` calls V6 Puppeteer engine, writes to `camps_data.json`
+2. **Verification** → `auto_verify.js` validates URLs; `verify_human.php` handles community votes
+3. **Generation** → `generate_html.js` reads JSON and produces `index.html` (~64KB dynamic shell with runtime fetch); `generate_html_backup.js` produces `index_1.html` (~5MB static fallback)
+4. **Word Export** → `src/utils/generate_word_doc.js` produces `NCAA-Baseball-Camps-2026.docx` from same JSON
+5. **Deploy** → `deploy.js` uploads `index.html` + `camps_data.json` via FTP to production; `deploy_dev.js` to staging
+
+## Word Document Status:
+
+The Word document (`NCAA-Baseball-Camps-2026.docx`) is generated from `camps_data.json` via `src/utils/generate_word_doc.js`. It produces a table with all 559 programs. It is included in the `npm run full-update` pipeline. Consider removing if no longer needed for offline reference.
