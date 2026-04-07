@@ -3222,19 +3222,19 @@
   },
   {
     "university": "Gonzaga",
-    "campUrl": "http://www.zagsbaseballcamps.com/shop/EVENT",
-    "dates": "June 22-23, July 1-2, July 7-8, July 14-15, July 21-22, 2026",
-    "cost": "$50 - $1,500",
+    "campUrl": "http://www.zagsbaseballcamps.com/shop",
+    "dates": "June 22-23, 2026 | July 1-2, 2026 | July 7-8, 2026",
+    "cost": "$50.00+",
     "details": "",
-    "contact": "Brandon Harmon | harmonb@gonzaga.edu",
+    "contact": "Evan Wells | wellse@gonzaga.edu",
     "division": "DI",
     "address": "On-campus facility",
     "whatToBring": "Glove, bat, helmet, cleats, baseball pants, water bottle, sunscreen.",
     "logoDomain": "gonzaga.edu",
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
-    "isVerified": true,
-    "isChecked": true,
-    "scriptVersion": 10,
+    "isVerified": false,
+    "isChecked": false,
+    "scriptVersion": 14,
     "autoVerified": true,
     "autoVerifiedPartial": false,
     "lastSmartCheck": "2026-04-03T07:58:43.318Z",
@@ -3245,68 +3245,28 @@
     "lastAuditDate": "2026-04-03T05:36:54.328Z",
     "auditConfidence": 65,
     "urlBroken": false,
-    "email": "harmonb@gonzaga.edu",
-    "auditStatus": "VERIFIED_BROWSER_20260407 — Youth camps confirmed. No HS prospect camp posted yet.",
+    "email": "wellse@gonzaga.edu",
+    "auditStatus": "PRICE_CHECK_NEEDED",
     "campTiers": [
       {
-        "name": "Helena Future Zags Camp",
+        "name": "Helena Future Zags",
         "dates": "June 22-23, 2026",
-        "cost": "$125",
-        "ageGroup": "Ages 6-13"
+        "cost": "$125"
       },
       {
-        "name": "Pups Camp #1",
+        "name": "Pups Camp (Ages 4-6)",
         "dates": "July 1-2, 2026",
-        "cost": "$50",
-        "ageGroup": "Ages 4-6"
+        "cost": "$50"
       },
       {
-        "name": "Lil Zags Camp #1",
+        "name": "Lil Zags (Ages 6-10)",
         "dates": "July 1-2, 2026",
-        "cost": "$125",
-        "ageGroup": "Ages 6-10"
+        "cost": "$125"
       },
       {
-        "name": "Big Dogs Camp #1",
+        "name": "Big Dogs (Ages 10-14)",
         "dates": "July 7-8, 2026",
-        "cost": "$140",
-        "ageGroup": "Ages 10-14"
-      },
-      {
-        "name": "Pups Camp #2",
-        "dates": "July 14-15, 2026",
-        "cost": "$50",
-        "ageGroup": "Ages 4-6"
-      },
-      {
-        "name": "Lil Zags Camp #2",
-        "dates": "July 14-15, 2026",
-        "cost": "$125",
-        "ageGroup": "Ages 6-10"
-      },
-      {
-        "name": "Big Dogs Camp #2",
-        "dates": "July 14-15, 2026",
-        "cost": "$140",
-        "ageGroup": "Ages 10-14"
-      },
-      {
-        "name": "Advanced Skills Camp",
-        "dates": "July 21-22, 2026",
-        "cost": "$140",
-        "ageGroup": "Ages 10-14"
-      },
-      {
-        "name": "Midsummer Classic 18U Team",
-        "dates": "June 25-28 / July 16-19, 2026",
-        "cost": "$1,500",
-        "ageGroup": "18U Teams — SOLD OUT"
-      },
-      {
-        "name": "Midsummer Classic 16U Team",
-        "dates": "July 9-12, 2026",
-        "cost": "$1,500",
-        "ageGroup": "16U Teams — SOLD OUT"
+        "cost": "$140"
       }
     ],
     "headCoach": "Evan Wells",
@@ -3317,14 +3277,11 @@
       "Price integrity flag [VERIFY]: found low cost \"$50\". Needs manual review.",
       "Price integrity flag [VERIFY]: found low cost \"$50.00+\". Needs manual review."
     ],
-    "lastUpdateDate": 1775542108301,
-    "datesUpdateDate": "2026-04-07T06:08:28.301Z",
-    "contactUpdateDate": "2026-04-07T06:08:28.301Z",
+    "lastUpdateDate": "2026-04-04T19:04:26.177Z",
+    "datesUpdateDate": "2026-04-04T19:04:26.177Z",
+    "contactUpdateDate": "",
     "costUpdateDate": "",
-    "detailsUpdateDate": "",
-    "sourceUrl": "http://www.zagsbaseballcamps.com/shop/EVENT",
-    "pointOfContact": "Brandon Harmon (Associate Head Coach)",
-    "priceUpdateDate": "2026-04-07T06:08:28.301Z"
+    "detailsUpdateDate": ""
   },
   {
     "university": "Grambling State",
@@ -9524,9 +9481,9 @@
   },
   {
     "university": "Texas Southern",
-    "campUrl": null,
-    "dates": "TBA",
-    "cost": "TBA",
+    "campUrl": "https://www.texassouthernbaseballcamps.com/index.cfm",
+    "dates": "08/01/2026 | August 20, 2026 | June 26th, 2026...",
+    "cost": "$6 / $6.5 / $10",
     "details": "Data purged due to critical anomaly (found $1 pricing artifact). Re-queueing.",
     "contact": "",
     "division": "DI",
@@ -9535,8 +9492,8 @@
     "logoDomain": "tsu.edu",
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/2640.png",
     "isVerified": false,
-    "isChecked": false,
-    "scriptVersion": 0,
+    "isChecked": true,
+    "scriptVersion": 14,
     "confidenceScore": 100,
     "campTiers": [],
     "autoVerified": false,
@@ -9600,15 +9557,14 @@
       "Price integrity flag [VERIFY]: found low cost \"$54\". Needs manual review.",
       "Price integrity flag [VERIFY]: found low cost \"$50.00+\". Needs manual review."
     ],
-    "lastUpdateDate": 1775542108301,
+    "lastUpdateDate": null,
     "datesUpdateDate": "2026-04-04T19:04:26.180Z",
     "contactUpdateDate": "",
     "costUpdateDate": "",
     "detailsUpdateDate": "",
-    "auditStatus": "NO_DATA_2026 — All pages (index, high-school-showcase, register) show 2025 data only. No 2026 content.",
+    "auditStatus": "PRICE_CHECK_NEEDED",
     "campDates": "TBA",
-    "extractionResult": "enriched",
-    "sourceUrl": null
+    "extractionResult": "enriched"
   },
   {
     "university": "Texas State",
@@ -11708,9 +11664,9 @@
   },
   {
     "university": "Western Michigan",
-    "campUrl": null,
-    "dates": "TBA",
-    "cost": "TBA",
+    "campUrl": "https://www.wmubaseballcamps.com",
+    "dates": "July 1, 2026",
+    "cost": "$50.00+",
     "details": "Updated April 3, 2026. Official 2026 dates not yet posted.",
     "contact": "Billy Gernon | em-precollegeprogramming@wmich.edu",
     "division": "DI",
@@ -11719,10 +11675,17 @@
     "logoDomain": "wmich.edu",
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/2711.png",
     "isVerified": false,
-    "campTiers": [],
+    "campTiers": [
+      {
+        "name": "Camp",
+        "dates": "July 1",
+        "ageRange": "",
+        "cost": "$50,00"
+      }
+    ],
     "confidenceScore": 100,
     "isChecked": false,
-    "scriptVersion": 0,
+    "scriptVersion": 14,
     "autoVerified": true,
     "autoVerifiedPartial": false,
     "conference": "MAC",
@@ -11738,14 +11701,14 @@
     "updateLog": [
       "Price integrity flag [VERIFY]: found low cost \"$50.00+\". Needs manual review."
     ],
-    "lastUpdateDate": 1775542128513,
+    "lastUpdateDate": 1775347788869,
     "datesUpdateDate": "2026-04-04T19:04:26.180Z",
     "contactUpdateDate": "",
     "costUpdateDate": "",
     "detailsUpdateDate": "",
     "url": "https://www.wmubaseballcamps.com",
-    "auditStatus": "NO_DATA_2026 — wmubaseballcamps.com shows no events. wmuevents.com has no baseball.",
-    "sourceUrl": null
+    "auditStatus": "PRICE_CHECK_NEEDED",
+    "sourceUrl": "https://baseballcampsusa.com"
   },
   {
     "university": "Wichita State",
@@ -14949,7 +14912,7 @@
     "university": "Lubbock Christian University",
     "campUrl": "https://www.lcubaseballcamps.com/",
     "dates": "June 01, 2026 | June 02, 2026 | June 15, 2026...",
-    "cost": "TBA",
+    "cost": "$59.00+",
     "details": "",
     "contact": "Head Coach (TBA)",
     "division": "DII",
@@ -14987,12 +14950,12 @@
       {
         "name": "Shooting Camp",
         "dates": "06/18, 06/18, 06/22",
-        "cost": "TBA"
+        "cost": "$59"
       },
       {
         "name": "Shooting Camp",
         "dates": "06/18, 06/22, 06/25",
-        "cost": "TBA"
+        "cost": "$59"
       },
       {
         "name": "Fundamentals Camp",
@@ -15015,14 +14978,14 @@
       "Price integrity flag [VERIFY]: found low cost \"$59\". Needs manual review.",
       "Price integrity flag [VERIFY]: found low cost \"$59.00+\". Needs manual review."
     ],
-    "lastUpdateDate": 1775542108301,
+    "lastUpdateDate": 1775347836745,
     "datesUpdateDate": 1775347836745,
     "contactUpdateDate": "",
     "costUpdateDate": "",
     "detailsUpdateDate": "",
     "email": "N/A",
     "url": "https://www.lcubaseballcamps.com",
-    "auditStatus": "PRICE_CHECK_NEEDED — lcubaseballcamps.com is youth-only (Grades 2-6). No HS camp confirmed.",
+    "auditStatus": "PRICE_CHECK_NEEDED",
     "sourceUrl": "https://baseballcampsusa.com",
     "campDates": "06/08/2026 | 06/11/2026 | 06/15/2026 | 06/18/2026 | 07/20/2026"
   },
@@ -15264,9 +15227,9 @@
   },
   {
     "university": "Metropolitan State University of Denver",
-    "campUrl": null,
-    "dates": "TBA",
-    "cost": "TBA",
+    "campUrl": "https://www.allamericanacademybaseball.com/",
+    "dates": "June 8, 2026 | July 3, 2026 | June 19, 2026...",
+    "cost": "$50.00+",
     "details": "Updated April 3, 2026. Official 2026 dates not yet posted.",
     "contact": "Head Coach (TBA)",
     "division": "DII",
@@ -15274,8 +15237,44 @@
     "whatToBring": "Glove, bat, helmet, cleats, baseball pants, water bottle, sunscreen.",
     "isVerified": false,
     "isChecked": false,
-    "scriptVersion": 0,
-    "campTiers": [],
+    "scriptVersion": 14,
+    "campTiers": [
+      {
+        "name": "Engineering and Design Camp",
+        "dates": "June 8, July 3, June 19",
+        "cost": "TBA"
+      },
+      {
+        "name": "Motorola Innovation Summer Camp",
+        "dates": "July 20",
+        "cost": "$50"
+      },
+      {
+        "name": "Upcoming Camp",
+        "dates": "June 8",
+        "cost": "$400"
+      },
+      {
+        "name": "Arts & Sciences Camp",
+        "dates": "July 13",
+        "cost": "TBA"
+      },
+      {
+        "name": "Colorado Youth Symphony Orchestras Chamber Music Camp",
+        "dates": "July 8",
+        "cost": "$600"
+      },
+      {
+        "name": "Colorado Youth Symphony Orchestras Instrumental Boot Camp",
+        "dates": "July 27",
+        "cost": "$600"
+      },
+      {
+        "name": "Upcoming Camp",
+        "dates": "May 5, July 8",
+        "cost": "$400"
+      }
+    ],
     "confidenceScore": 100,
     "autoVerified": true,
     "autoVerifiedPartial": false,
@@ -15289,15 +15288,15 @@
       "Price integrity flag [VERIFY]: found low cost \"$50\". Needs manual review.",
       "Price integrity flag [VERIFY]: found low cost \"$50.00+\". Needs manual review."
     ],
-    "lastUpdateDate": 1775542108301,
+    "lastUpdateDate": 1775347839516,
     "datesUpdateDate": "2026-04-04T19:04:26.181Z",
     "contactUpdateDate": "",
     "costUpdateDate": "",
     "detailsUpdateDate": "",
     "email": "N/A",
     "url": "https://www.allamericanacademybaseball.com",
-    "auditStatus": "NO_DATA_2026 — allamericanacademybaseball.com: no events page and no 2026 data.",
-    "sourceUrl": null
+    "auditStatus": "PRICE_CHECK_NEEDED",
+    "sourceUrl": "https://baseballcampsusa.com"
   },
   {
     "university": "Miles College",
@@ -16966,9 +16965,9 @@
   },
   {
     "university": "Slippery Rock University",
-    "campUrl": null,
-    "dates": "TBA",
-    "cost": "TBA",
+    "campUrl": "https://register.ryzer.com/camp.cfm?id=326042",
+    "dates": "June 5, 2026 | June 7, 2026 | June 12, 2026...",
+    "cost": "$15 / $19 / $20",
     "details": "Data purged due to critical anomaly (found $1 pricing artifact). Re-queueing.",
     "contact": "Head Coach (TBA)",
     "division": "DII",
@@ -16977,8 +16976,8 @@
     "logoDomain": "sru.edu",
     "logoFile": "https://www.google.com/s2/favicons?domain=sru.edu&sz=128",
     "isVerified": false,
-    "isChecked": false,
-    "scriptVersion": 0,
+    "isChecked": true,
+    "scriptVersion": 14,
     "campTiers": [],
     "confidenceScore": 100,
     "autoVerified": false,
@@ -16997,16 +16996,15 @@
       "Critical Price Anomaly: Found $1 cost. Purged all data and forced re-queue for next scraper run.",
       "Critical Price Anomaly: Found $1 cost. Purged all data and forced re-queue for next scraper run."
     ],
-    "lastUpdateDate": 1775542108301,
+    "lastUpdateDate": "2026-04-04T19:04:26.181Z",
     "datesUpdateDate": "2026-04-04T19:04:26.181Z",
     "contactUpdateDate": "",
     "costUpdateDate": "",
     "detailsUpdateDate": "",
     "email": "N/A",
     "campDates": "TBA",
-    "auditStatus": "THIRD_PARTY_SHOWCASE — Messer Baseball LLC event at SRU, not university-run camp",
-    "extractionResult": "enriched",
-    "sourceUrl": null
+    "auditStatus": "PRICE_ANOMALY",
+    "extractionResult": "enriched"
   },
   {
     "university": "Sonoma State University",
@@ -17348,40 +17346,41 @@
   {
     "university": "Southwestern Oklahoma State University",
     "campUrl": "https://www.zacksaundersbaseballcamps.com/",
-    "dates": "May 25-27, June 1-4, 2026",
-    "cost": "$90 - $138",
+    "dates": "June 1, 2026 | June 3, 2026",
+    "cost": "$90.00+",
     "details": "",
     "contact": "Head Coach (TBA)",
     "division": "DII",
     "address": "On-campus facility",
     "whatToBring": "Glove, bat, helmet, cleats, baseball pants, water bottle, sunscreen.",
-    "isVerified": true,
-    "isChecked": true,
-    "scriptVersion": 10,
+    "isVerified": false,
+    "isChecked": false,
+    "scriptVersion": 9,
     "campTiers": [
       {
-        "name": "Junior High Camp (Prospect Prep)",
-        "dates": "May 25-27, 2026",
-        "cost": "$122",
-        "ageGroup": "Grades 7-8 (Ages 13-15)"
+        "name": "Zack Saunders Baseball Camp",
+        "dates": "May 25, May 27, June 1",
+        "cost": "TBA"
+      },
+      {
+        "name": "Junior High Camp",
+        "dates": "May 25, May 27, June 1",
+        "cost": "TBA"
       },
       {
         "name": "Fundamentals Camp",
-        "dates": "June 1-4, 2026",
-        "cost": "$138",
-        "ageGroup": "Ages 6-12"
+        "dates": "June 1",
+        "cost": "$137"
       },
       {
         "name": "Hitting Camp",
-        "dates": "June 1-2, 2026",
-        "cost": "$90",
-        "ageGroup": "Ages 7-12"
+        "dates": "June 1",
+        "cost": "$90"
       },
       {
         "name": "Pitching Camp",
-        "dates": "June 3-4, 2026",
-        "cost": "$90",
-        "ageGroup": "Ages 8-12"
+        "dates": "June 3",
+        "cost": "$90"
       }
     ],
     "confidenceScore": 100,
@@ -17400,15 +17399,13 @@
       "Price integrity flag [VERIFY]: found low cost \"$90\". Needs manual review.",
       "Price integrity flag [VERIFY]: found low cost \"$90.00+\". Needs manual review."
     ],
-    "lastUpdateDate": 1775542108301,
-    "datesUpdateDate": "2026-04-07T06:08:28.301Z",
+    "lastUpdateDate": "2026-04-04T19:04:26.181Z",
+    "datesUpdateDate": "2026-04-04T19:04:26.181Z",
     "contactUpdateDate": "",
     "costUpdateDate": "",
     "detailsUpdateDate": "",
     "email": "N/A",
-    "auditStatus": "VERIFIED_BROWSER_20260407 — All 4 camp pages confirmed real 2026 data",
-    "sourceUrl": "https://www.zacksaundersbaseballcamps.com/hitting-camp.cfm",
-    "priceUpdateDate": "2026-04-07T06:08:28.301Z"
+    "auditStatus": "PRICE_CHECK_NEEDED"
   },
   {
     "university": "Spring Hill College",

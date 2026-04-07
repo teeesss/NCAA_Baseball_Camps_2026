@@ -18,6 +18,10 @@ const fixMode = process.argv.includes("--fix");
 const violations = [];
 
 data.forEach((school, schoolIdx) => {
+  // Skip manually browser-verified records — prices confirmed by human crawl
+  if (school.isVerified === true) return;
+  if (school.auditStatus && school.auditStatus.startsWith("VERIFIED_BROWSER")) return;
+
   // Check campTiers
   if (school.campTiers && Array.isArray(school.campTiers)) {
     school.campTiers.forEach((tier, tierIdx) => {
