@@ -315,9 +315,16 @@ function isExternalBridge(url, linkText, targetUni) {
     const hasIdentityInUrl =
       lowerUrl.includes(uniFragment) || (mascot && mascot.length > 3 && lowerUrl.includes(mascot));
     
-    // If no identity in URL, we ONLY allow it if it's NOT a major platform
-    // Major platforms like playnsports MUST have identity in slug
-    if (!hasIdentityInUrl && (lowerUrl.includes("playnsports") || lowerUrl.includes("totalcamps") || lowerUrl.includes("ryzer"))) {
+    // V12.6 Exceptional ID-based Link Support:
+    // Some links are direct session registrations (Ryzer ID, etc.) and don't have the uni name in URL.
+    // If the link is highly granular (contains ID or specific path), we allow it.
+    const isGranularIdLink = 
+      (lowerUrl.includes("ryzer.com") && lowerUrl.includes("id=")) ||
+      (lowerUrl.includes("playnsports.com") && lowerUrl.includes("/organization/")) ||
+      (lowerUrl.includes("totalcamps.com") && lowerUrl.includes("/shop/"));
+
+    // If no identity in URL, we ONLY allow it if it's NOT a major platform OR it's a granular ID link
+    if (!hasIdentityInUrl && !isGranularIdLink && (lowerUrl.includes("playnsports") || lowerUrl.includes("totalcamps") || lowerUrl.includes("ryzer"))) {
         return false;
     }
   }

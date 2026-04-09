@@ -2446,7 +2446,7 @@
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/25.png",
     "isVerified": false,
     "isChecked": true,
-    "scriptVersion": 12.5,
+    "scriptVersion": 12.2,
     "autoVerified": true,
     "autoVerifiedPartial": false,
     "lastSmartCheck": "2026-04-03T02:33:30.392Z",
@@ -2457,12 +2457,12 @@
     "auditConfidence": 80,
     "headCoach": "Mike Neu",
     "campPOC": "N/A",
-    "lastChecked": "2026-04-09T21:48:41.886Z",
+    "lastChecked": "2026-04-09T12:17:06.483Z",
     "updateLog": [
       "April 8: Contact Standardization - Removed redundant POC string"
     ],
-    "lastUpdateDate": 1775771321886,
-    "datesUpdateDate": "2026-04-09T21:48:41.886Z",
+    "lastUpdateDate": 1775737026483,
+    "datesUpdateDate": "2026-04-09T12:17:06.483Z",
     "contactUpdateDate": "2026-04-09T04:58:22.360Z",
     "costUpdateDate": "",
     "sourceUrl": "https://www.calsportscamps.com/baseball/camps/baseball-camps",
@@ -2485,7 +2485,7 @@
       "email": false,
       "poc": false,
       "campDates": false,
-      "cost": false,
+      "cost": true,
       "campDetails": false,
       "url": false
     }
@@ -2504,7 +2504,7 @@
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/2856.png",
     "isVerified": false,
     "isChecked": true,
-    "scriptVersion": 12.5,
+    "scriptVersion": 12.2,
     "confidenceScore": 50,
     "autoVerified": false,
     "autoVerifiedPartial": false,
@@ -2515,7 +2515,7 @@
     "auditConfidence": 80,
     "headCoach": "N/A",
     "campPOC": "N/A",
-    "lastChecked": "2026-04-09T21:48:43.408Z",
+    "lastChecked": "2026-04-09T12:17:08.019Z",
     "updateLog": [
       "April 8: Contact Standardization - Removed redundant POC string"
     ],
@@ -7177,7 +7177,7 @@
     "lastAuditDate": "2026-04-03T04:56:23.449Z",
     "auditConfidence": 65,
     "headCoach": "Lane Burroughs",
-    "lastChecked": "2026-04-09T21:47:16.174Z",
+    "lastChecked": "2026-04-09T16:37:39.394Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "2026-04-04T19:04:26.177Z",
@@ -7196,8 +7196,7 @@
       "cost": true,
       "campDetails": false,
       "url": false
-    },
-    "portalPlatform": "Ryzer"
+    }
   },
   {
     "university": "Louisville",
@@ -9914,7 +9913,7 @@
     "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/2466.png",
     "isVerified": false,
     "isChecked": true,
-    "scriptVersion": 12.5,
+    "scriptVersion": 12.2,
     "confidenceScore": 0,
     "autoVerified": false,
     "autoVerifiedPartial": true,
@@ -9926,12 +9925,12 @@
     "auditConfidence": 50,
     "headCoach": "Chris Bertrand",
     "campPOC": "N/A",
-    "lastChecked": "2026-04-09T21:46:43.190Z",
+    "lastChecked": "2026-04-09T05:47:48.604Z",
     "updateLog": [
       "April 8: Contact Standardization - Removed redundant POC string"
     ],
-    "lastUpdateDate": 1775771203190,
-    "datesUpdateDate": "2026-04-09T21:46:43.190Z",
+    "lastUpdateDate": 1775713668604,
+    "datesUpdateDate": "2026-04-09T05:47:48.604Z",
     "contactUpdateDate": "2026-04-09T04:58:22.360Z",
     "costUpdateDate": "",
     "email": "N/A",
@@ -9963,8 +9962,7 @@
       "cost": false,
       "campDetails": false,
       "url": false
-    },
-    "portalPlatform": "PlayNSports"
+    }
   },
   {
     "university": "Notre Dame",

@@ -1,6 +1,22 @@
 # Project Tasks: NCAA Division I Baseball Camps 2026 Compilation
 
 ## ✅ Resolved: V12.5 Engine Hardening & Database 100% (2026-04-09)
+... (existing content) ...
+
+## 🏗️ High Priority: Deep Crawl & UI Refinement (Active)
+
+- [x] **UI Messaging Overhaul**:
+    *   Change "Verification Roadmap" to "Sync Log & Directory Updates".
+    *   Replace cryptic "April 8" internal diagnostics with user-friendly sync status.
+    *   Rename "❓ Not Verified" badge to "🔍 Direct Source (Scanned)" (since all data is validated via crawl).
+- [x] **Ryzer/Platform Deep Crawling**:
+    *   Update sub-crawl logic to follow `register.ryzer.com/camp.cfm?id=...` and other major portal links.
+    *   Allow specific whitelisted domains (Ryzer, PlayNSports) to bypass `DOMAIN_RESTRICTED_CRAWLING`.
+    *   Extract granular pricing from these specific camp registration pages.
+- [x] **Direct Portal Metadata**:
+    *   Add a variable in `camps_data.json` to explicitly log if a school uses a major portal (Ryzer, PlayNSports, etc.) to ensure we prioritize those sites.
+- [ ] **Sample Test: Northwestern State**:
+    *   Run targeted extraction on Northwestern State to verify Ryzer ID page crawling for costs.
 
 - [x] **100% Database Coverage**: Successfully processed all 521 programs (DI + DII) with current status marked as `isChecked: true`.
 - [x] **Coach Name Guard (V12.5)**: Implemented `targetCoach` whitelist in `checkContamination` to prevent false positives for portals branded after the head coach (e.g., Louisiana Tech).

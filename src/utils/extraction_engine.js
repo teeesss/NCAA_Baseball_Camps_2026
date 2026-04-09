@@ -604,6 +604,24 @@ function extractDataFromText(fullText, targetUni, allSchoolNames) {
   return filtered;
 }
 
+/**
+ * Detect major camp portal platforms from URL or text content.
+ */
+function detectPortalPlatform(url, text) {
+  const lowerUrl = (url || "").toLowerCase();
+  const lowerText = (text || "").toLowerCase();
+  
+  if (lowerUrl.includes("ryzer.com") || lowerText.includes("ryzer")) return "Ryzer";
+  if (lowerUrl.includes("playnsports.com") || lowerText.includes("playnsports")) return "PlayNSports";
+  if (lowerUrl.includes("totalcamps.com") || lowerText.includes("totalcamps")) return "TotalCamps";
+  if (lowerUrl.includes("abcsportscamps.com") || lowerText.includes("abcsportscamps")) return "AbcSportsCamps";
+  if (lowerUrl.includes("campsnetwork.com") || lowerText.includes("campsnetwork")) return "CampsNetwork";
+  if (lowerUrl.includes("eventlink.com") || lowerText.includes("eventlink")) return "Eventlink";
+  if (lowerUrl.includes("readysetregister.com") || lowerText.includes("readysetregister")) return "ReadySetRegister";
+  
+  return null;
+}
+
 // ── Search Engine Query Runner ────────────────────────────────────────────────
 /**
  * Run search queries for a school using round-robin engine rotation.
@@ -1034,6 +1052,13 @@ async function runExtraction({
 
           const pageEmails = harvestEmails(text);
           if (pageEmails.length > 0) bestEmails.push(...pageEmails);
+
+          // V12.6 Portal Detection
+          const detectedPlatform = detectPortalPlatform(candidate, text);
+          if (detectedPlatform) {
+            camp.portalPlatform = detectedPlatform;
+            log(`      🖥️  [Portal] Detected: ${detectedPlatform}`);
+          }
 
           let fullText = text;
           const crawledUrls = new Set([candidate]);

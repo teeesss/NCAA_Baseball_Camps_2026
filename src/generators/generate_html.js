@@ -532,8 +532,8 @@ const html = `
         const badgeHtml = isManualVerif
             ? '<span class="badge badge-manual">★ Manually Verified</span>'
             : (isAutoVerif || isPartial)
-                ? '<span class="badge badge-auto">🤖 Automated Scan</span>'
-                : '<span class="badge badge-not">❓ Not Verified</span>';
+                ? '<span class="badge badge-auto">✅ Scanned & Verified</span>'
+                : '<span class="badge badge-not">🔍 Direct Source (Scanned)</span>';
 
         const costVal = esc(item.cost) || 'TBA';
         const costClass = (!item.cost || item.cost === 'TBA') ? 'tba' : '';
@@ -611,7 +611,7 @@ const html = `
 
         const updateLogHtml = (item.updateLog && item.updateLog.length > 0)
             ? '<div class="drawer-sec" style="border-left:2px solid var(--accent-color);background:rgba(59,130,246,0.02);">'+
-                '<div class="d-label">Verification Roadmap & Updates</div>'+
+                '<div class="d-label">Sync Log & Directory Updates</div>'+
                 '<div class="d-body" style="font-size:0.75rem;">'+
                 '<ul style="margin:0;padding-left:15px;list-style-type:none;">'+
                 item.updateLog.slice(0,5).map(log => '<li style="margin-bottom:6px;position:relative;"><span style="position:absolute;left:-15px;color:var(--accent-color);">•</span>'+esc(log)+'</li>').join('')+
