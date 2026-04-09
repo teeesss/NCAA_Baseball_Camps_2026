@@ -10,7 +10,7 @@ The definitive, searchable guide to 2026 NCAA Division I and Division II basebal
 - **Premium UI**: Dark theme with Inter/Outfit typography, smooth card animations, and responsive layout.
 - **Multi-Dimensional Filtering**: Division, conference, price range, latest dates, latest updates, and community verification.
 - **Dynamic Rendering**: Production HTML (`index.html`, ~64KB shell with runtime JSON fetch). Static backup generator available at `generate_html_backup.js` (~5.3MB inline, kept as fallback).
-- **V6 Ultra-Fidelity Extraction**: Intelligent Puppeteer-based scraper with mascot-based search, sub-page depth crawling, and tier mapping.
+- **V12.6 Ultra-Fidelity Extraction**: Intelligent Puppeteer-based scraper with mascot-based search, portal bridge logic (Ryzer, PlayNSports), and automated session detection.
 - **Watchdog Stability**: Self-healing process monitor prevents scraper hang or crash.
 - **Community Verification**: Users can verify individual schools; counts sync live from server.
 
@@ -29,9 +29,7 @@ npm run full-update             # sync verifications → audit → generate → 
 
 ## Architecture
 
-Single source of truth: **`camps_data.json`** (559 records).
-
-1. `smart_extract.js` → V6 Puppeteer engine writes data to JSON
+1. `smart_extract.js` → V12.6 Puppeteer engine writes data to JSON
 2. `generate_html.js` reads JSON and produces `index.html`
 3. `auto_verify.js` validates URLs; `quality_audit.js` scores data completeness
 4. `deploy.js` uploads via FTP (credentials in `.credentials/`, gitignored)

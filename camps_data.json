@@ -27517,63 +27517,34 @@
     "conference": "Big Ten",
     "campUrl": "https://www.northwesternbaseballcamps.com",
     "sourceUrl": "https://www.northwesternbaseballcamps.com",
+    "isVerified": true,
     "isChecked": true,
-    "scriptVersion": 12.5,
+    "scriptVersion": 12.6,
     "campTiers": [
       {
-        "name": "Wildcat Baseball Youth Experience Camp",
-        "dates": "July 7th - 9th",
-        "cost": "$427"
-      },
-      {
-        "name": "Wildcat Baseball Youth Experience Camp",
-        "dates": "June 29th, July 1st",
-        "cost": "$427"
-      },
-      {
-        "name": "Wildcat Baseball Youth Experience Camp",
+        "name": "Wildcat Youth Experience Camp (Session 1)",
         "dates": "June 22nd - 24th",
         "cost": "$427"
       },
       {
-        "name": "Welcome and thank you for visiting the Northwestern University Baseball Camp",
-        "dates": "June 22nd - 24th, June 29th, July 1st, 06/22/2026",
-        "cost": "TBA"
+        "name": "Wildcat Youth Experience Camp (Session 2)",
+        "dates": "June 29th - July 1st",
+        "cost": "$427"
       },
       {
-        "name": "Wildcat Youth Experience Camp",
-        "dates": "June 22nd - 24th, June 29th, July 1st, July 7th - 9th",
-        "cost": "TBA"
+        "name": "Summer Prospect Camp 1",
+        "dates": "July 2nd",
+        "cost": "$216 - $242"
       },
       {
-        "name": "Wildcat Youth Experience Camp",
-        "dates": "June 29th, July 1st, July 7th - 9th, 06/29/2026",
-        "cost": "TBA"
+        "name": "Wildcat Youth Experience Camp (Session 3)",
+        "dates": "July 7th - 9th",
+        "cost": "$427"
       },
       {
-        "name": "Summer Prospect Camp",
-        "dates": "July 7th - 9th, 07/02/2026, 07/07/2026, 07/09/2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Wildcat Youth Experience Camp",
-        "dates": "July 7th - 9th, 07/07/2026, 07/09/2026, 07/15/2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Northwestern University - Baseball Camp",
-        "dates": "July 7th - 9th, Jul 7, 2026, Jul 9, 2026, Jul 5, 2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Northwestern University - Baseball Camp",
-        "dates": "June 29th, July 1st, Jun 29, 2026, Jul 1, 2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Northwestern University - Baseball Camp",
-        "dates": "June 22nd - 24th, Jun 22, 2026, Jun 24, 2026, Jun 20, 2026",
-        "cost": "TBA"
+        "name": "Summer Prospect Camp 2",
+        "dates": "July 15th",
+        "cost": "$216 - $242"
       }
     ],
     "recheck": {
@@ -27588,15 +27559,16 @@
     "email": "baseball@northwestern.edu",
     "campPOCEmail": "baseball@northwestern.edu",
     "contact": "Athletics Office | baseball@northwestern.edu",
-    "auditStatus": "EXTRACTED",
-    "lastUpdateDate": 1775773188002,
+    "auditStatus": "VERIFIED_PORTAL",
+    "lastUpdateDate": 1775774741000,
     "extractionResult": "enriched",
-    "lastChecked": "2026-04-09T22:19:48.002Z",
-    "campDates": "July 7th - 9th, June 29th, July 1st, June 22nd - 24th, June 22nd - 24th, June 29th, July 1st, 06/22/2026, June 22nd - 24th, June 29th, July 1st, July 7th - 9th, June 29th, July 1st, July 7th - 9th, 06/29/2026, July 7th - 9th, 07/02/2026, 07/07/2026, 07/09/2026, July 7th - 9th, 07/07/2026, 07/09/2026, 07/15/2026, July 7th - 9th, Jul 7, 2026, Jul 9, 2026, Jul 5, 2026, June 29th, July 1st, Jun 29, 2026, Jul 1, 2026, June 22nd - 24th, Jun 22, 2026, Jun 24, 2026, Jun 20, 2026",
-    "prices": "$427",
-    "dates": "July 7th - 9th | June 29th, July 1st | June 22nd - 24th ... [+8 more]",
-    "cost": "$427",
+    "lastChecked": "2026-04-09T22:45:41.000Z",
+    "campDates": "June 22nd-24th, June 29th-July 1st, July 2nd, July 7th-9th, July 15th",
+    "prices": "$216 - $427",
+    "dates": "June 22nd - 24th | June 29th - July 1st | July 2nd | July 7th - 9th | July 15th",
+    "cost": "$216 - $427",
     "pointOfContact": "Athletics Office",
-    "datesUpdateDate": "2026-04-09T22:19:48.002Z"
+    "datesUpdateDate": "2026-04-09T22:45:41.000Z",
+    "costUpdateDate": "2026-04-09T22:45:41.000Z"
   }
 ]
