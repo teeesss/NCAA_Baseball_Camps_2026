@@ -24,6 +24,7 @@ const TARGET_CONSTANTS = [
   "BROWSER_RESTART_EVERY",
   "SCHOOL_TIMEOUT_MS",
   "SUB_CRAWL_KEYWORDS",
+  "GENERIC_STATE_SCHOOLS",
 ];
 
 // Folders to recursively scan

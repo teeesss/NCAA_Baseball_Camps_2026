@@ -157,18 +157,14 @@ async function verifyAll() {
         report.status >= 300 &&
         report.status < 400)
     ) {
-      school._urlStatus = "LIVE";
-      school._urlCheckDate = new Date().toISOString();
       updated++;
     } else {
-      school._urlStatus = "DEAD";
-      school._urlCheckDate = new Date().toISOString();
       school.auditStatus = "URL_404";
     }
   }
 
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
-  console.log(`Updated ${updated} schools with _urlStatus in camps_data.json`);
+  console.log(`Updated ${updated} schools with auditStatus in camps_data.json`);
 }
 
 verifyAll().catch(console.error);

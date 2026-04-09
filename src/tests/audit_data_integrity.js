@@ -220,30 +220,6 @@ for (let i = 0; i < data.length; i++) {
     issues.missingConfidence.push({ idx, uni });
   }
 
-  // Division mismatch
-  if (
-    s.division === "DI" &&
-    (s.divisionLevel === "Division II" || s.divisionLevel?.includes("II"))
-  ) {
-    issues.divisionMismatch.push({
-      idx,
-      uni,
-      division: s.division,
-      level: s.divisionLevel,
-    });
-  }
-  if (
-    s.division === "DII" &&
-    (s.divisionLevel === "Division I" || s.divisionLevel?.includes("I and"))
-  ) {
-    issues.divisionMismatch.push({
-      idx,
-      uni,
-      division: s.division,
-      level: s.divisionLevel,
-    });
-  }
-
   // Failed URL status
   if (s._urlStatus && s._urlStatus !== "LIVE") {
     issues.urlStatusFailed.push({ idx, uni, status: s._urlStatus });

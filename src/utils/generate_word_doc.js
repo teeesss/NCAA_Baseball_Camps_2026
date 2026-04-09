@@ -105,7 +105,7 @@ async function createWordDoc(jsonData, outputPath) {
                           children: [new Paragraph(item.campPOC || "TBA")],
                         }),
                         new TableCell({
-                          children: [new Paragraph(item.campPOCEmail || "TBA")],
+                          children: [new Paragraph(item.campPOCEmail || item.email || "TBA")],
                         }),
                       ],
                     }),

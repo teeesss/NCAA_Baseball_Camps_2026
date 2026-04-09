@@ -14,7 +14,17 @@
 - **Blacklist Management**: Maintain a central `blacklist.json` file containing all junk, third-party, and irrelevant domains. All extraction scripts MUST load this file dynamically to ensure filtering consistency.
 - **Feedback Loop**: The UI must include a "Report Error" contact form that sends feedback to 'rayjonesy@gmail.com'.
 - **Verified Data Preservation**: High-fidelity, manually verified data (such as the Arkansas registration forms) MUST be saved as separate JSON files in the `verified/` directory. The automated extraction script MUST explicitly skip any school that possesses verified flags (`isVerified: true`, `isChecked: true`, `scriptVersion >= 5`), to ensure verified data is never accidentally overridden.
-- **Extraction Protocol (IMMUTABLE)**: The extraction engine MUST follow the **V6 Ultra-Fidelity** standard as defined in [EXTRACTION_ENGINE.md](file:///x:/NCAA-DivisonI-Baseball-Camps-2026/EXTRACTION_ENGINE.md).
+- **Extraction Protocol (IMMUTABLE)**: The extraction engine MUST follow the **V12 Ultra-Fidelity** standard.
+  - **Granular Targeted Rechecks**: The engine supports pinpoint re-extraction of specific fields (`email`, `cost`, `campDates`). Targeted runs skip healthy data fields to maintain integrity.
+  - **Strict TTL Enforcement (MANDATORY)**: To prevent website hammering, re-extraction (including targeted rechecks for missing data) is restricted by a cooling-off period:
+    - **DI Programs**: Minimum **3 days** between checks.
+    - **DII Programs**: Minimum **14 days** (2 weeks) between checks.
+    - **Exception**: Manual `--force` flag bypasses TTL.
+  - **Authoritative field_checker**: All completeness and integrity rules must be centralised in `src/utils/field_checker.js`.
+  - **Verified URL Prioritization**: Always check `!bcusa.com_fixed.json`, `!playnsports_fixed.json`, and `!totalcamps.com.json` master lists before searching. These URLs bypass generic search and receive top priority (Score 500+).
+  - **Domain Restricted Crawling**: The crawler must strictly adhere to the hostname of the identified portal. 
+  - **Path Lock (Platforms)**: When crawling platforms (Ryzer, PlayNSports), the crawler must stay within the organization-specific path fragment (e.g., `/organization/X/`) to prevent "wandering" onto generic homepages.
+  - **Recursive Depth**: Sub-crawl up to **2 levels deep** within the locked domain/path.
   - **Security First (MANDATORY)**: NEVER commit credentials, API keys, or private configuration folders to the git repository.
   - The `.credentials/` directory and `.claude/` directory MUST remain in `.gitignore`.
   - ALL shared configuration (blacklists, regex, platform lists) must be centralized in `src/utils/config.js` to avoid drift.
@@ -72,6 +82,17 @@
 - **Name-near-Email Extraction (2026-04-07)**: Pages like "Email Drew Bishop at Drew.Bishop@athletics.utexas.edu" lose the POC name because `harvestEmails()` only captures the email. The `extractNameNearEmail()` function in `extraction_engine.js` now parses contextual name patterns ("emailing X at", "contact: X |", "X — email@") and populates `pointOfContact` as a fallback when existing `pointOfContact/campPOC` is N/A.
 - **Single-Line String Enforcement (2026-04-07)**: JavaScript single-quoted (`'`) and double-quoted (`"`) strings in the HTML generators (`generate_html.js`) MUST NOT contain literal newlines. Doing so causes an `Uncaught SyntaxError` in the generated `index.html`. Always keep generated JS strings on a single line or use string concatenation.
 - **Complex UI Logic via IIFE (2026-04-07)**: When generating complex conditional HTML (like the "Visit Site" button with multiple states), wrap the logic in an Immediately Invoked Function Expression (IIFE) within the template string. This allows for cleaner, more robust logic (using `if/else`, variables, etc.) than nested ternaries and ensures attributes are not incorrectly injected as text content.
+- **V10 Engine Hardening (2026-04-07)**: Normalized `extraction_engine.js` by extracting `extractSearchLinks` helper to eliminate duplicate logic. Integrated mascot-based identity checks into `checkContamination` to handle high-fidelity rival overlap (e.g., Gators vs Seminoles), providing a more reliable validation layer than simple name-string inclusion.
+- **Sub-Crawl Path-Locking (V11)**: When recursively crawling a site, building complex keyword/domain exclusions inevitably fails and causes "platform wandering" (e.g. hitting generic `playnsports.com` pages). The absolute ONLY rule must be: `linkUrl.startsWith(candidateUrl)`. Always strip hash fragments and query strings before comparison.
+- **Contextual Price Extraction (V11)**: Blindly extracting `$XX` values guarantees false positives like $10 parking fees. Instead of a blanket minimum, use a contextual check: if the price is under $60, scan the surrounding text block for fee-related keywords (`parking`, `processing fee`, `deposit`). Reject if found.
+- **4-Tier URL Resolution (V11)**: To prevent web search from overwriting valid URLs, enforce a strict priority: Tier 1 (Authoritative JSON lists) → Tier 2 (Existing valid campUrl) → Tier 2a (Dead URL fallback) → Tier 3 (Web Search Consensus).
+- **Sidearm Sports Bloat / Navigation Timeouts (2026-04-08)**: Many DII/Mid-Major collegiate networks (e.g. `clarkatlantasports.com`) use Sidearm Sports hosting, loading massive ad-networks and analytics engines that stall the `domcontentloaded` event. If Puppeteer times out at 15s (`navigation timeout of 15000 ms exceeded`), the script must run with an expanded 25s timeout (25000ms) for validation `goto` calls.
+- **Domain Squatter Logic Proven (2026-04-08)**: Sites utilizing squatted/parked domains to catch generic camp guesses (`coachbaseballcamp.com`) will easily pass regex validation. The `getUniversityAliases()` text-body match + `getMascot()` validation checks implemented in V11 are absolutely critical — without them, parked domains overwrite official URLs.
+- **Lost Tiers Resumption Pattern (2026-04-08)**: When bugs in older extraction engines left `dates` and `cost` populated but `campTiers: []` empty, running `node smart_extract.js --school="X" --force` triggers a complete heal via the fixed logic. This prevents partial data from permanently stalling extraction loops.
+- **Single-Row Multi-Mode UI (2026-04-09)**: To maximize mobile real-estate, filters (Scope: DI/DII/All) and Sort (Dates/Updates) are consolidated into a single tier. They must operate independently. Toggling one does NOT clear the other.
+- **Verification Metrics Logic (2026-04-09)**: [RESOLVED] The headline count "87 Verified" was confusing users as it only counted 100%-confirmed session data. Updated to show "361 Active Portals" (total found schools), providing a much higher-fidelity representation of the discovered dataset.
+- **Mobile Buffer Optimization (2026-04-09)**: On iPhone viewports, vertical spacing between the search box and navigation rows must be minimized (2px-4px). Horizontal button padding on conference tabs should be aggressively reduced (7px) to maximize on-screen density.
+- **TBA Exclusion in Date Swaps (2026-04-09)**: [RESOLVED] "Latest Camp Dates" sort mode now automatically hides any schools marked as "TBA" or lacking sessions, ensuring users only see actionable data in this view.
 
 ## Pre-Code-Change Protocol (MANDATORY)
 
@@ -91,7 +112,9 @@
 
 ## Future Plans
 
-- Re-check programs in May/June 2026 for updated camp information.
+- **Sports Agnostic Framework**: We anticipate extending the V11 extraction engine to support other sports beyond baseball. Future tasks will refactor hardcoded "baseball" and "camp" terminology into programmable inputs (e.g., swapping to "softball", "soccer") so the core loop can dynamically process alternate data sets.
+- **Robust Head Coach Backfill**: Transition away from the fragile Wikipedia-only `fetch_head_coaches.js` and develop a DuckDuckGo snippet parser (`fetch_missing_coaches`) resilient enough to populate head coaches for all 521 programs natively, even from a zero-loaded state.
+- Re-check programs in May/June 2026 for updated camp information (using auto-TTL logic).
 - Finalize the Word document for the user's offline reference.
 
 ## Architecture & Data Flow
@@ -119,7 +142,7 @@ A parallel path exists for testing a lightweight dynamic rendering approach:
 
 **Key data shapes:**
 
-- `camps_data.json`: Array of school objects with fields: `university`, `division`, `conference`, `divisionLevel`, `contact`, `email`, `campDates`, `prices`, `url`, `sourceUrl`, `isVerified`, `isChecked`, `scriptVersion`, `auditStatus`, `lastUpdateDate`, and granular timestamps (`datesUpdateDate`, `contactUpdateDate`, `priceUpdateDate`, `urlUpdateDate`).
+- `camps_data.json`: Array of school objects with fields: `university`, `division`, `conference`, `contact`, `email`, `campDates`, `prices`, `url`, `sourceUrl`, `isVerified`, `isChecked`, `scriptVersion`, `auditStatus`, `lastUpdateDate`, and granular timestamps (`datesUpdateDate`, `contactUpdateDate`, `priceUpdateDate`, `urlUpdateDate`).
 - `blacklist.json`: Array of third-party/junk domains to exclude during extraction.
 
 ## Directory Structure

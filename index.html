@@ -92,9 +92,9 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        .subtitle {
-            color: var(--text-secondary); font-size: 1rem; max-width: 600px;
-            margin: 0 auto 15px; line-height: 1.5;
+        .subtitle, .hero-subtitle {
+            color: var(--text-secondary); font-size: 1rem; max-width: 800px;
+            margin: 0 auto 15px; line-height: 1.5; font-weight: 500;
         }
 
         .controls-wrapper { position: sticky; top: 20px; z-index: 1000; margin-bottom: 50px; }
@@ -137,26 +137,28 @@
 
         .filter-tabs {
             display: flex; background: rgba(255, 255, 255, 0.05); padding: 4px;
-            border-radius: 14px; border: 1px solid var(--border-color);
-            flex-wrap: wrap; gap: 6px; width: 100%;
+            border-radius: 12px; border: 1px solid var(--border-color);
+            flex-wrap: wrap; gap: 4px; width: 100%;
         }
 
-        #conf-tabs { display: flex; flex-wrap: wrap; padding: 0; gap: 8px; margin-top: 12px; }
+        #conf-tabs { display: flex; flex-wrap: wrap; padding: 0; gap: 4px; margin-top: 6px; }
 
         .conf-btn {
             height: 38px; display: flex; align-items: center; justify-content: center;
             text-align: center; border: 1px solid var(--border-color);
             background: rgba(255, 255, 255, 0.03); border-radius: 10px;
-            font-size: 0.75rem; padding: 0 12px; transition: all 0.2s ease;
+            font-size: 0.75rem; padding: 0 8px; transition: all 0.2s ease;
             color: var(--text-secondary); font-weight: 600; cursor: pointer; white-space: nowrap;
         }
         .conf-btn:hover { background: rgba(255, 255, 255, 0.08); border-color: var(--accent-color); transform: translateY(-2px); color: #fff; }
         .conf-btn.active { background: var(--accent-color); color: white; border-color: var(--accent-color); box-shadow: 0 8px 20px var(--accent-glow); }
 
         .filter-btn {
-            padding: 8px 10px; border-radius: 8px; border: none;
+            padding: 2px 6px; border-radius: 8px; border: none;
             background: transparent; color: var(--text-secondary);
-            font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;
+            font-size: 0.7rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;
+            line-height: 1.1; text-align: center; display: flex; align-items: center; justify-content: center;
+            min-height: 40px;
         }
         .filter-btn.active { background: var(--accent-color); color: white; box-shadow: 0 4px 12px var(--accent-glow); }
 
@@ -298,16 +300,16 @@
             header { padding: 0px 8px 2px; }
             h1 { font-size: 1.25rem; margin-bottom: 0; }
             .hero-badge { font-size: 0.65rem; padding: 2px 8px; margin-bottom: 2px; }
-            .subtitle { font-size: 0.72rem; margin-bottom: 2px; padding: 0 8px; }
+            .subtitle, .hero-subtitle { font-size: clamp(0.55rem, 3.2vw, 0.85rem); margin-bottom: 2px; padding: 0 4px; white-space: nowrap; }
             .desktop-text { display: none; }
             .mobile-text { display: inline; }
             .controls-wrapper { top: 2px; margin-bottom: 6px; }
-            .glass-panel { padding: 8px 8px; border-radius: 12px; gap: 4px; }
+            .glass-panel { padding: 4px 6px; border-radius: 12px; gap: 2px; }
             .top-row { display: flex; flex-direction: row; gap: 6px; align-items: center; }
-            #searchInput { padding: 6px 8px 6px 30px; font-size: 0.68rem; }
+            #searchInput { padding: 4px 8px 4px 30px; font-size: 0.68rem; }
             .search-icon { left: 10px; }
             .search-icon svg { width: 14px; height: 14px; }
-            .filter-select { min-width: unset; padding: 8px 10px; min-height: 44px; font-size: 0.75rem; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; }
+            .filter-select { min-width: unset; padding: 4px 8px; min-height: 40px; font-size: 0.75rem; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; }
             .filter-tabs {
                 display: flex; flex-wrap: nowrap; overflow-x: auto;
                 -webkit-overflow-scrolling: touch; padding: 2px; gap: 4px;
@@ -315,7 +317,7 @@
             }
             .filter-tabs::-webkit-scrollbar { display: none; }
             .filter-btn {
-                white-space: nowrap; flex-shrink: 0; padding: 0 12px; min-height: 44px;
+                white-space: nowrap; flex-shrink: 0; padding: 0 8px; min-height: 44px;
                 font-size: 0.75rem; background: rgba(255,255,255,0.05);
                 border: 1px solid var(--border-color);
                 display: flex; justify-content: center; align-items: center; gap: 4px;
@@ -323,10 +325,10 @@
             .hide-mobile { display: none; }
             #conf-tabs {
                 flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
-                scrollbar-width: none; margin-top: 6px; padding: 2px 0 0; gap: 4px;
+                scrollbar-width: none; margin-top: 2px; padding: 1px 0 0; gap: 2px;
             }
             #conf-tabs::-webkit-scrollbar { display: none; }
-            .conf-btn { padding: 0 12px; min-height: 44px; font-size: 0.75rem; }
+            .conf-btn { padding: 0 7px; min-height: 44px; font-size: 0.75rem; }
             #moreConfs { min-height: 44px; font-size: 0.75rem; min-width: 120px !important; }
             .stats-row {
                 flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
@@ -354,17 +356,17 @@
             <div class="hero-badge">Verified 2026 Season</div>
             <h1>NCAA Baseball Camps 2026</h1>
             <p class="hero-subtitle">
-                <span class="desktop-text">521 DI & DII Programs | 87 Verified Sessions | Constant Updates</span>
-                <span class="mobile-text">521 Schools | 87 Verified | Constant Updates</span>
+                <span class="desktop-text" id="desktopHeaderText">521 DI & DII Programs | 362 Camp Dates | Constant Updates</span>
+                <span class="mobile-text" id="mobileHeaderText">521 DI & DII Programs | 362 Camp Dates | Constant Updates</span>
             </p>
         </header>
 
         <div class="controls-wrapper">
             <div class="glass-panel">
-                <div class="top-row">
+                <div class="top-row" style="margin-bottom: 4px;">
                     <div class="search-inner">
-                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                        <input type="text" id="searchInput" placeholder="Search by University, Coach, or Keyword...">
+                        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" id="searchInput" placeholder="Search University, Coach, or Keyword...">
                     </div>
                     <select id="costFilter" class="filter-select">
                         <option value="all">All Prices</option>
@@ -379,12 +381,12 @@
                     </select>
                 </div>
                 <div class="filter-tabs">
-                    <button class="filter-btn active" data-div="all">All</button>
-                    <button class="filter-btn" data-div="DI">Div I</button>
-                    <button class="filter-btn" data-div="DII">Div II</button>
-                    <button class="filter-btn" data-div="newdates">📅 Latest Camp Dates</button>
-                    <button class="filter-btn" data-div="updates">✨ Latest Updates</button>
-                    <button class="filter-btn" data-div="human">👤 <span class="hide-mobile">Community </span>Verified</button>
+                    <button class="filter-btn" data-scope="all">All</button>
+                    <button class="filter-btn active" data-scope="DI">Div I</button>
+                    <button class="filter-btn" data-scope="DII">Div II</button>
+                    <button class="filter-btn" data-sort="newdates">📅 Newest<br>Camp Dates</button>
+                    <button class="filter-btn" data-sort="updates">✨ Latest<br>Updates</button>
+                    <button class="filter-btn" data-scope="human">👤 Verified</button>
                 </div>
                 <div id="conf-tabs">
                     <button class="conf-btn filter-btn active" data-conf="all">All Conf</button>
@@ -397,9 +399,9 @@
                 </div>
                 <div class="stats-row">
                     <div class="stat-bubble"><strong id="dispCount">521</strong> Results</div>
-                    <div class="stat-bubble"><strong>306</strong> Div I</div>
-                    <div class="stat-bubble"><strong>215</strong> Div II</div>
-                    <div class="stat-bubble"><strong>87</strong> Verified Sessions</div>
+                    <div class="stat-bubble"><strong id="diCount">306</strong> Div I</div>
+                    <div class="stat-bubble"><strong id="diiCount">215</strong> Div II</div>
+                    <div class="stat-bubble"><strong id="campDatesCount">220</strong> Camp Dates</div>
                 </div>
             </div>
         </div>
@@ -421,7 +423,8 @@
     // ── Globals ──
     let HUMAN_VERIFICATIONS = {};
     let allData = [];
-    let currentDiv = 'all';
+    let currentScope = 'DI';
+    let currentSort = 'alpha';
     let currentConf = 'all';
     const votedInSession = JSON.parse(localStorage.getItem('votedSchools') || '[]');
 
@@ -457,9 +460,16 @@
 
     // ── Render a single card ──
     function renderCard(item) {
-        const isTba = !item.dates || item.dates === 'TBA';
-        let dateArr = isTba ? [] : item.dates.split(' | ');
-        dateArr = [...new Set(dateArr)].filter(d => /2026/i.test(d) || !/\d{4}/.test(d));
+        const rawDates = (item.dates || '').trim();
+        const isTba = !rawDates || /tba|no data|check site|portal/i.test(rawDates);
+        let dateArr = isTba ? [] : rawDates.split(' | ');
+        dateArr = [...new Set(dateArr)].filter(d => {
+            const ld = d.toLowerCase();
+            if (ld.includes('tba') || ld.includes('no data') || ld.includes('check site') || ld.includes('portal')) return false;
+            // Must have a digit or a month name to be a legitimate date
+            return (/d/.test(d) || /(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i.test(d)) && 
+                   (/2026/i.test(d) || !/d{4}/.test(d)); // Allow 2026 or no-year fragments, block other years
+        });
 
         let displayDatesHtml;
         if (dateArr.length === 0) {
@@ -495,8 +505,11 @@
 
         const contactName = (item.campPOC && item.campPOC !== 'N/A' ? esc(item.campPOC) :
                              (item.headCoach && item.headCoach !== 'N/A' ? esc(item.headCoach) : 'Athletics Office'));
-        const contactEmail = (item.campPOCEmail && item.campPOCEmail !== 'N/A')
-            ? '<span style="font-size:0.75rem;color:var(--accent-color);font-weight:600;opacity:0.9;">'+esc(item.campPOCEmail)+'</span>' : '';
+        const contactEmailVal = item.email || item.campPOCEmail || '';
+        const contactEmail = (contactEmailVal && contactEmailVal !== 'N/A' && !contactEmailVal.toLowerCase().includes('tba'))
+            ? '<a href="mailto:'+esc(contactEmailVal)+'" onclick="event.stopPropagation();" style="display:flex;align-items:center;gap:4px;font-size:0.75rem;color:var(--accent-color);font-weight:600;opacity:0.95;text-decoration:none;margin-top:2px;">'+
+              '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>'+
+              esc(contactEmailVal)+'</a>' : '';
 
         const humanBadgeHtml = humanCount > 0
             ? '<div class="human-badge" title="'+humanCount+' community verifications">👤 '+humanCount+'</div>' : '';
@@ -509,8 +522,9 @@
         // ── Modal content ──
         const headCoachVal = esc(item.headCoach || 'Athletics Staff');
         const campPocVal = esc(item.campPOC || 'Provided at registration');
-        const emailHtml = (item.campPOCEmail && item.campPOCEmail !== 'N/A')
-            ? '<a href="mailto:'+esc(item.campPOCEmail)+'" style="color:#60a5fa;text-decoration:none;font-weight:600;">'+esc(item.campPOCEmail)+'</a>'
+        const modalEmail = item.email || item.campPOCEmail || '';
+        const emailHtml = (modalEmail && modalEmail !== 'N/A' && !modalEmail.toLowerCase().includes('tba'))
+            ? '<a href="mailto:'+esc(modalEmail)+'" style="color:#60a5fa;text-decoration:none;font-weight:600;">'+esc(modalEmail)+'</a>'
             : 'Check site for contact info';
 
         let datesHtml = '';
@@ -593,7 +607,11 @@
                 '⚠️ Report Missing or Incorrect Data</a></div>';
 
         // ── Card attributes ──
-        const hasDates = dateArr.length > 0;
+        // Force false if it really is just some placeholder text that escaped our filter
+        let hasDates = dateArr.length > 0;
+        if (hasDates && (displayDatesHtml === 'TBA' || !/d/.test(displayDatesHtml))) {
+            hasDates = false;
+        }
 
         return '<div class="camp-card"'+
             ' data-div="'+item.division+'"'+
@@ -790,7 +808,7 @@
                 if (cardBtnSpan) cardBtnSpan.innerText = count > 0 ? count : '';
             });
             console.log('✅ Synchronized ' + Object.keys(freshCounts).length + ' verification records from server.');
-            if (currentDiv === 'human') filter();
+            if (currentScope === 'human') filter();
         } catch (e) {
             console.warn("Live sync skipped:", e);
         }
@@ -809,22 +827,24 @@
             const div = card.getAttribute('data-div') || '';
             const conf = card.getAttribute('data-conference') || '';
             const cost = card.getAttribute('data-cost') || '';
-            const isAuto  = card.getAttribute('data-verified-auto') === 'true';
             const isHuman = card.getAttribute('data-verified-human') === 'true';
 
             const matchesSearch = searchTxt.includes(term);
             let matchesFilter = true;
 
-            if (currentDiv === 'DI' || currentDiv === 'DII') matchesFilter = div === currentDiv;
-            else if (currentDiv === 'human') matchesFilter = isHuman;
-            else if (currentDiv === 'updates') matchesFilter = !!card.getAttribute('data-last-update');
-            else if (currentDiv === 'newdates') matchesFilter = !!card.getAttribute('data-dates-update');
+            if (currentScope === 'DI' || currentScope === 'DII') matchesFilter = div === currentScope;
+            else if (currentScope === 'human') matchesFilter = isHuman;
+
+            let matchesSortFilter = true;
+            if (currentSort === 'newdates') {
+                matchesSortFilter = card.getAttribute('data-has-dates') === 'true';
+            }
 
             const matchesConf = (confFilter === 'all' || conf === confFilter);
 
             let matchesCost = true;
             if (costFilter !== 'all') {
-                const priceMatches = cost.match(/\d+[\d,]*(?:\.\d+)?/g);
+                const priceMatches = cost.match(/d+[d,]*(?:.d+)?/g);
                 const prices = priceMatches ? priceMatches.map(m => parseFloat(m.replace(/,/g, ''))) : [0];
                 const maxPrice = Math.max(...prices);
                 const minPrice = prices.filter(p => p > 0).length > 0 ? Math.min(...prices.filter(p => p > 0)) : 0;
@@ -839,7 +859,7 @@
                 else if (costFilter === 'tba') matchesCost = (maxPrice === 0 || cost.toLowerCase().includes('tba') || cost.toLowerCase().includes('contact'));
             }
 
-            if (matchesSearch && matchesFilter && matchesConf && matchesCost) {
+            if (matchesSearch && matchesFilter && matchesConf && matchesCost && matchesSortFilter) {
                 card.style.display = 'flex';
                 count++;
             } else {
@@ -847,24 +867,18 @@
             }
         });
 
-        // SORTING RULE (DO NOT BREAK): "newdates" and "updates" ALWAYS sort by date-descending.
-        // ALL other sort modes (including "All") sort alphabetically by university.
-        // CRITICAL: Never add extra filter conditions (term, costFilter, confFilter) to the
-        // date-sort branch — doing so causes the alphabetical else-branch to run instead,
-        // breaking Latest Camp Dates / Latest Updates order. See issues.md for history.
-        if (currentDiv === 'updates' || currentDiv === 'newdates') {
-            const sortAttr = currentDiv === 'newdates' ? 'data-dates-update' : 'data-last-update';
+        // SORTING RULE (DO NOT BREAK): Sort by either date or alphabetical.
+        if (currentSort === 'updates' || currentSort === 'newdates') {
+            const sortAttr = currentSort === 'newdates' ? 'data-dates-update' : 'data-last-update';
             const sorted = Array.from(cards).sort((a, b) => {
                 const da = a.getAttribute(sortAttr) || '';
                 const db = b.getAttribute(sortAttr) || '';
-                // Numeric comparison — supports both ISO timestamps and epoch ms numbers — descending (newest first)
                 const ta = da ? (isNaN(Date.parse(da)) ? (Number(da) || 0) : new Date(da).getTime()) : 0;
                 const tb = db ? (isNaN(Date.parse(db)) ? (Number(db) || 0) : new Date(db).getTime()) : 0;
                 return tb - ta;
             });
             sorted.forEach(c => campGrid.appendChild(c));
         } else {
-            // Re-sort alphabetically by university for all other views
             const sorted = Array.from(cards).sort((a, b) => {
                 const ua = a.getAttribute('data-university') || '';
                 const ub = b.getAttribute('data-university') || '';
@@ -883,11 +897,29 @@
     });
     document.getElementById('costFilter').addEventListener('change', filter);
 
-    document.querySelectorAll('.filter-tabs:not(#conf-tabs) .filter-btn').forEach(btn => {
+    document.querySelectorAll('.filter-tabs .filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-tabs:not(#conf-tabs) .filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentDiv = btn.getAttribute('data-div');
+            const scope = btn.getAttribute('data-scope');
+            const sort  = btn.getAttribute('data-sort');
+
+            if (scope) {
+                // Scope row logic: mutually exclusive
+                document.querySelectorAll('.filter-btn[data-scope]').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentScope = scope;
+            } else if (sort) {
+                // Sort row logic: mutually exclusive, but toggleable to 'alpha'
+                const alreadyActive = btn.classList.contains('active');
+                document.querySelectorAll('.filter-btn[data-sort]').forEach(b => b.classList.remove('active'));
+                
+                if (alreadyActive) {
+                    btn.classList.remove('active');
+                    currentSort = 'alpha';
+                } else {
+                    btn.classList.add('active');
+                    currentSort = sort;
+                }
+            }
             filter();
         });
     });
@@ -924,12 +956,11 @@
 
     // ── Boot ──
     async function init() {
-        // Step 1: Fetch human verifications first so cards render with correct verified state
-        await fetchHumanVerifications();
+        // Step 1: Fetch human verifications first so cards render with correct verified state (non-blocking)
+        fetchHumanVerifications().catch(e => console.warn(e));
 
-        // Step 2: Fetch camps data
         try {
-            const res = await fetch('camps_data.json');
+            const res = await fetch('camps_data.json?v=' + Date.now());
             if (!res.ok) throw new Error('HTTP ' + res.status);
             allData = await res.json();
         } catch (e) {
@@ -940,6 +971,23 @@
         }
 
         allData.sort((a, b) => a.university.localeCompare(b.university));
+
+        // Dynamically update Stats from fetched JSON
+        try {
+            const currentDatesCount = allData.filter(d => d.dates && d.dates !== "TBA" && /\d/.test(d.dates)).length;
+            const curDi = allData.filter(d => d.division === "DI").length;
+            const curDii = allData.filter(d => d.division === "DII").length;
+            const currentUrlCount = allData.filter((d) => d.campUrl && d.campUrl !== "TBA").length;
+            
+            document.getElementById('desktopHeaderText').innerText = allData.length + " DI & DII Programs | " + currentUrlCount + " Camp Dates | Constant Updates";
+            document.getElementById('mobileHeaderText').innerText = allData.length + " DI & DII Programs | " + currentUrlCount + " Camp Dates | Constant Updates";
+            document.getElementById('dispCount').innerText = allData.length;
+            document.getElementById('diCount').innerText = curDi;
+            document.getElementById('diiCount').innerText = curDii;
+            document.getElementById('campDatesCount').innerText = currentDatesCount;
+        } catch (e) {
+            console.warn("Failed dynamic stat update", e);
+        }
 
         // Build cards via DocumentFragment for speed
         const fragment = document.createDocumentFragment();
@@ -964,15 +1012,14 @@
             if (school && votedInSession.includes(school)) btn.classList.add('voted');
         });
 
-        // Step 3: Sync fresh counts from server (may update badges after render)
-        try {
-            await syncVerificationsFromServer();
-        } catch (e) {
-            console.warn("Initial sync failed:", e);
-        }
+        // Apply the initial filter state (e.g., default 'DI')
+        filter();
 
-        // Hide loading
+        // Hide loading immediately so user doesn't wait for background syncs
         document.getElementById('loading-overlay').style.display = 'none';
+
+        // Step 3: Sync fresh counts from server (background non-blocking)
+        syncVerificationsFromServer().catch(e => console.warn("Initial sync failed:", e));
     }
 
     init();

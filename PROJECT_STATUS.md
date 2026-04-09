@@ -1,16 +1,20 @@
 # Project Status: NCAA Baseball Camps 2026 Directory
 
-## Current State: V10 Engine Consolidated & 100% Data Integrity Baseline
+## Current State: V12.5 Engine Hardening & Auth Source Enforcement
 
-The project is live with 559 NCAA Division I & II baseball programs. Production `index.html` is now a ~64KB dynamic shell that fetches `camps_data.json` at runtime (~99% size reduction vs the previous 5.4MB inline bundle). The static 5MB inline bundle is preserved as `index_1.html` via `generate_html_backup.js` for emergency fallback.
+The project is live with 559 NCAA Division I & II baseball programs. Production `index.html` is now a ~64KB dynamic shell that fetches `camps_data.json` at runtime.
+
+The extraction engine is currently at **V12.5**, featuring **Hard-Fail Blacklist Enforcement**, authoritative platform-gatekeeping for bridges, and 4-tier URL resolution.
 
 ## Active Status:
 
 | Metric             | Status                                                                                    |
 | :----------------- | :---------------------------------------------------------------------------------------- |
-| **Total Programs** | 559 (DI + DII)                                                                            |
-| **Engine Status**  | **V10 Unified** — Authorized shell delegates to `src/utils/extraction_engine.js`          |
-| **Data Integrity** | **100% BASELINE** (Verified via `test_price_integrity.js` & `test_config_consistency.js`) |
+| **Total Programs** | 521 (Checked & Processed)                                                                 |
+| **Active Portals** | **177** (Verified 2026 Tiers) | **361** (Total Found)                                    |
+| **Engine Status**  | **V12.5 Hardened** — Final 100% DB Pass Completed                                    |
+| **UI Aesthetics**  | **Single-Row Multi-Mode** — Compact mobile-first design with independent scope/sort logic. |
+| **Data Integrity** | **V12.5 BASELINE** (100% checked, institutional mismatch scrubbed) |
 | **Live Site**      | [bmwseals.com/Baseball_Camps_2026/](https://bmwseals.com/Baseball_Camps_2026/)            |
 | **Dev Site**       | [bmwseals.com/Baseball_Camps_2026_dev/](https://bmwseals.com/Baseball_Camps_2026_dev/)    |
 

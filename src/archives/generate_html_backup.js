@@ -60,7 +60,6 @@ const html = `
     <meta http-equiv="Expires" content="0" />
     <title>NCAA Baseball Camps Directory 2026 | Div 1 & Div 2</title>
     <meta name="description" content="The definitive, searchable guide to 2026 NCAA Div I and Div II baseball camps and prospect clinics.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚾</text></svg>">
     
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -710,7 +709,7 @@ const html = `
                       data-dates-update="${item.datesUpdateDate || ""}"
                       data-university="${item.university}"
                       data-not-verified="${!isManualVerif && !isAutoVerif && !isPartial}"
-                      data-search="${item.university.toLowerCase()} ${(item.contact || "").toLowerCase()}" 
+                      data-search="${item.university.toLowerCase()} ${item.contact.toLowerCase()}" 
                       style="${index < 30 ? `animation-delay: ${index * 0.005}s;` : "animation: none;"} position: relative;">
                     ${humanCount > 0 ? `<div class="human-badge" title="${humanCount} community verifications">👤 ${humanCount}</div>` : ""}
                     
@@ -1057,35 +1056,13 @@ const html = `
                 }
             });
             
-            // SORTING RULE (DO NOT BREAK): "newdates" and "updates" ALWAYS sort by date-descending.
-            // ALL other sort modes (including "All") sort alphabetically by university.
-            // CRITICAL: Never add extra filter conditions (term === '', costFilter === 'all', confFilter === 'all')
-            // to the date-sort branch. Doing so causes the sort to fall through to the alphabetical
-            // else branch whenever any filter is active, breaking Latest Camp Dates / Latest Updates order.
-            // The date-sort condition should ONLY check currentDiv === 'updates' || currentDiv === 'newdates'.
-            // When "All" is clicked, currentDiv is set to '' (empty), which triggers the alphabetical else branch.
-            // See issues.md for history.
-            const campsContainer = document.getElementById('campGrid');
-
-            if (currentDiv === 'updates' || currentDiv === 'newdates') {
+            if ((currentDiv === 'updates' || currentDiv === 'newdates') && term === '' && costFilter === 'all' && confFilter === 'all') {
                 const sortAttr = currentDiv === 'newdates' ? 'data-dates-update' : 'data-last-update';
                 const visibleCards = Array.from(campCards).filter(c => c.style.display !== 'none');
                 visibleCards.sort((a, b) => {
                     const da = a.getAttribute(sortAttr) || '';
                     const db = b.getAttribute(sortAttr) || '';
-                    // Numeric comparison — supports both ISO timestamps and epoch ms numbers — descending (newest first)
-                    const ta = da ? (isNaN(Date.parse(da)) ? (Number(da) || 0) : new Date(da).getTime()) : 0;
-                    const tb = db ? (isNaN(Date.parse(db)) ? (Number(db) || 0) : new Date(db).getTime()) : 0;
-                    return tb - ta;
-                });
-                visibleCards.forEach(c => campsContainer.appendChild(c));
-            } else {
-                // Re-sort alphabetically by university for all other views
-                const visibleCards = Array.from(campCards).filter(c => c.style.display !== 'none');
-                visibleCards.sort((a, b) => {
-                    const ua = a.getAttribute('data-university') || '';
-                    const ub = b.getAttribute('data-university') || '';
-                    return ua.localeCompare(ub);
+                    return db.localeCompare(da);
                 });
                 visibleCards.forEach(c => campsContainer.appendChild(c));
             }
@@ -1302,5 +1279,5 @@ const html = `
 
 fs.writeFileSync("index_1.html", html);
 console.log(
-  "Regenerated searchable index_1.html (5MB static backup) with Auto & Human Verification systems.",
+  "Regenerated searchable index_1.html [STATIC] with Auto & Human Verification systems.",
 );

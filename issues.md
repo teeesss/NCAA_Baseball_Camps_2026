@@ -1,11 +1,39 @@
 # NCAA Baseball Camp Directory 2026 - Known Issues & Audits
 
+## ✅ Resolved: UI Compactness & Filtering (2026-04-09)
+
+## Fixed / Resolved Issues
+- [RESOLVED] Emails being cleared during standardization (2026-04-09)
+- [RESOLVED] "TBA" appearing in "Newest Camp Dates" (2026-04-09)
+- [RESOLVED] 404 console errors from Clearbit Logo fallback (Purged Clearbit logic)
+- [RESOLVED] Mobile search box overlapping filter row (Reduced vertical margins)
+- [RESOLVED] "87 Verified" count under-representing portal status (Updated to "361 Active Portals")
+- [RESOLVED] Double-click requirement on mobile (Fixed onclick handlers)
+- [RESOLVED] Louisiana Tech / Lindenwood Identity Contamination (V12.5 Coach Name Guard)
+- [RESOLVED] UAB / UTA / Alabama State Email Contamination (V12.5 Institutional Scrub)
+
+- [x] **Single-Row Multi-Mode Filters [RESOLVED]**: Replaced the competing tab system with a tiered single-row control. Users can now filter by Scope (DI, DII, All) and Sort (Newest Dates, Latest Updates) independently on a single line.
+- [x] **TBA Date Exclusion [RESOLVED]**: "Latest Camp Dates" sort mode now automatically hides any schools marked as "TBA" or lacking sessions, ensuring users only see actionable data in this view.
+
+## ✅ Resolved: V11 Sub-Crawl & Price Anomalies (2026-04-09)
+
+- [x] **Sub-Crawl Platform Wandering [RESOLVED]**: The fallback extraction engine was improperly navigating to generic platform domains (e.g., `playnsports.com/find-camps-clinics/`) despite complex filtering efforts. Fix: Replaced all domain/keyword blockers with a single strict `linkUrl.startsWith(candidateUrl)` rule. Hash fragments (`#`) and query strings are stripped prior to comparison.
+- [x] **4-Tier URL Resolution Priority [RESOLVED]**: Previously, the engine could override existing valid URLs with web search results. Created strict priority logic: Tier 1 (Master JSON files) → Tier 2 (Existing valid campUrl) → Tier 2a (Dead URL fallback) → Tier 3 (Web Search).
+- [x] **False Positive Price Extraction [RESOLVED]**: The regex was extracting generic "$10" prices that lacked context, leading to bogus camp costs (e.g., Alabama's $10 price which was a parking fee). Added contextual validation for prices < $60. The surrounding text block is now checked for fee-related keywords (parking, processing fee, deposit, etc.), and if found, the price is safely ignored.
+- [x] **Head Coach Extraction Engine [RESOLVED]**: Previously, ~146 DI head coaches were missing because the Wikipedia-based lookup was fragile and often returned historically famous (but dead) coaches instead of current staff. Build `fetch_missing_coaches.js` using raw Node HTTPS to bypass DuckDuckGo Captchas. Implemented a robust blacklist (Assistant, Pitching, etc.) to ensure name-accuracy. Achievement: 60%+ recovery rate on previously "Unrecoverable" blanks.
+
 ## ✅ Resolved: V10 Centralization & Data Hardening (2026-04-07)
 
 - [x] **Consolidated Extraction Fragmentation**: Fixed the 4-version drift across V7, V8, V9, and legacy scripts by building `src/utils/extraction_engine.js`.
 - [x] **Config Synchronization Audit**: Resolved 16 global drift points (timeouts, regex) by centralizing all constants into `src/utils/config.js` and enforcing them with `test_config_consistency.js`.
 - [x] **Surgical Data Purge**: Purged 9 definitive "bad data" records that held sport-contaminated (football, tickets) or stale 2025 information.
 - [x] **Price Integrity Baseline**: 100% of the 559 records now pass `test_price_integrity.js`. Gonzaga and SWOSU updated with real 2026 data.
+- [x] **Issue #15: Uncaught SyntaxError (Invalid or unexpected token) [RESOLVED]**: Construction of UI elements (like buttons) refactored to single-line strings and Immediately Invoked Function Expressions (IIFE) in `generate_html.js`.
+- [x] **Issue #16: Visit Site Button Attribute Leak [RESOLVED]**: Refactored button generator logic to use IIFE for robust tag construction, preventing raw HTML attributes from displaying as text.
+- [x] **Technical Debt: Dead Code & Duplication [RESOLVED]**:
+  - Archived `extract_camp_details.js`, `extract_verify.js`, `build_authoritative_conferences.js`, and `contamination_check.js` from `src/utils/` to `src/archives/`.
+  - Refactored `extraction_engine.js` to eliminate duplicate `page.evaluate()` blocks via a unified `getPageText()` helper.
+  - Corrected `verify_source_urls.js` log line and confirmed no dead `_urlStatus` keys are written to `camps_data.json`.
 
 ## ⚠️ Architectural Issues
 
@@ -49,12 +77,10 @@
 ### "Visit Site" Button Renders Raw HTML Attributes as Text Content (2026-04-07) — FIXED
 
 - **Symptom**: Cards without a valid camp URL showed the Visit Site button text as `style="opacity:0.3;cursor:not-allowed;" onclick="return false">Visit Site`. Cards WITH a URL showed `>Visit Site` (stray `>` prepended to the label).
-- **Root cause**: The `<a>` tag for the Visit Site button was opened AND closed in the first string concatenation — `' target="_blank" onclick="event.stopPropagation()">'` — which emits the closing `>` of the tag's opening bracket. Then a ternary expression was concatenated *after* that already-closed tag. Both branches of the ternary were designed to inject HTML attributes + the closing `>`, but since the tag was already closed they instead became raw text content *inside* the `<a>`. For the disabled branch: `style="opacity:0.3...">Visit Site` was literally the button label. For the enabled branch: `>Visit Site` became the visible text with the stray `>`.
-- **Fix**: Restructured the Visit Site block so each branch of the ternary emits a *complete, self-contained `<a>` tag string* — attributes, closing `>`, label, and `</a>` — with no shared prefix. Added a `// DO NOT BREAK` guard comment.
+- **Root cause**: The `<a>` tag for the Visit Site button was opened AND closed in the first string concatenation — `' target="_blank" onclick="event.stopPropagation()">'` — which emits the closing `>` of the tag's opening bracket. Then a ternary expression was concatenated _after_ that already-closed tag. Both branches of the ternary were designed to inject HTML attributes + the closing `>`, but since the tag was already closed they instead became raw text content _inside_ the `<a>`. For the disabled branch: `style="opacity:0.3...">Visit Site` was literally the button label. For the enabled branch: `>Visit Site` became the visible text with the stray `>`.
+- **Fix**: Restructured the Visit Site block so each branch of the ternary emits a _complete, self-contained `<a>` tag string_ — attributes, closing `>`, label, and `</a>` — with no shared prefix. Added a `// DO NOT BREAK` guard comment.
 - **Files fixed**: `generate_html.js` (line ~670) and `generate_html_dev.js` (line ~668). Both generators were identical in this bug.
 - **Prevention rule**: When building HTML strings via string concatenation with a ternary, NEVER close the opening tag (`>`) in a shared prefix and then inject attributes in a ternary branch. Always build each conditional variant as a complete, standalone HTML element string.
-
-
 
 ### Uncaught SyntaxError: Invalid or unexpected token (2026-04-07) — FIXED
 
@@ -193,3 +219,13 @@
 - **382 empty sourceUrl fields**: Low priority — `campUrl` is the primary link used in UI.
 - **98 schools missing head coaches**: Wikipedia couldn't find them (mostly DII) — alternate sources needed (NCAA.org, school athletics rosters, or manual lookup).
 - **Word export decision**: Whether to regenerate or deprecate `NCAA-Baseball-Camps-2026.docx`.
+
+### V11 Anomaly Resolution & Stabilization (2026-04-08) - FIXED
+
+- **Lost Tiers Anomaly (20 Schools)**: Finalized fix for 20 schools (including Clemson, Michigan, UAB, Fresno State) that possessed valid `dates` and `cost` strings but had an empty `campTiers: []` array causing data loss in the UI. Affected records were surgically re-extracted using `smart_extract.js --force` and completely healed.
+- **Sidearm Sports Network Bloat / Timeouts**: Bumped default Puppeteer `goto` navigation timeouts from 15,000ms to 25,000ms in `extraction_engine.js`. Many smaller collegiate networks (DII/Mid-Majors) rely on "Sidearm Sports" hosting, which loads an immense amount of ad-network bloat causing navigation to stall. The increased timeout resolved the errors for sites like `clarkatlantasports.com` and `montevallofalcons.com`.
+- **Missing Head Coaches (Wikipedia Logic Gap)**: ~146 DI schools (including Michigan State, Alabama) had missing Head Coaches because `fetch_head_coaches.js` relied strictly on rigid Wikipedia article parameters. **Resolution**: V11 native parsing helps with POCs, but planned future task to replace Wikipedia API completely with DuckDuckGo snippet extraction.
+- **TTL Stagnation (Early April)**: The dataset was skipping early April scans due to `isChecked` being true without an expiration date. **Resolution**: Integrated smart Time-To-Live auto-requeuing inside `extraction_engine.js` (DI > 3 days, DII > 14 days) and auto-normalizes version glitches like `V14`.
+- **TBA Cost Depth Issue**: A hypothesis that we need micro-clicker logic to open dropdowns on Ryzer portals for "TBA" costs. **Resolution**: Validated that V11's `MAX_SUB_CRAWL_DEPTH=2` natively drills down to grab hidden dropdown prices (e.g., California $65) without requiring custom code. Deep clicking is paused until V11 fully runs.
+- **Domain Squatter Prevention Verified**: Log audits for the V11 engine confirmed that the `getUniversityAliases()` + mascot substring checks successfully blocked guessed domains (Tier 4) that were registered by squatters, logging `"Guessed URL rejected (squatter prevention)"` instead of parsing irrelevant parked page content.
+- **Log Archival**: Preserved the tail of the final V11 validation run resolving these anomalies to `docs/completed/2026-04-08-V11-End-Of-Log.txt` for audit reference.

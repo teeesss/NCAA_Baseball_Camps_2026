@@ -621,23 +621,37 @@ function getUniversityAliases(university) {
     .trim();
   if (clean && clean.length > 2) aliases.add(clean.toLowerCase());
 
-  // 2. Hyphenated splits
+  // 2. Hyphenated splits and common state abbreviations
+  const stateShorts = {
+    Tennessee: ["UT", "Tenn"],
+    Mississippi: ["UM", "Miss"],
+    Alabama: ["AL", "Bama"],
+    "North Carolina": ["UNC"],
+    "South Carolina": ["USC"],
+    California: ["UC", "Cal"],
+    Louisiana: ["UL"],
+    Arkansas: ["ASU", "U of A", "Ar"],
+  };
+
+  Object.entries(stateShorts).forEach(([state, shorts]) => {
+    if (university.includes(state)) {
+      shorts.forEach((s) => {
+        aliases.add(university.replace(state, s).toLowerCase());
+        aliases.add(university.replace(state, s.toLowerCase()).toLowerCase());
+      });
+    }
+  });
+
+  // 12.5 Hardcoded exceptions for contamination prevention
+  if (lower === "uab" || lower.includes("birmingham")) aliases.add("alabama");
+  if (lower === "uta" || lower.includes("texas at arlington")) aliases.add("texas");
+  if (lower === "unt" || lower.includes("north texas")) aliases.add("texas");
+
   if (university.includes("-")) {
     aliases.add(university.replace(/-/g, " ").toLowerCase());
     const parts = university.split("-");
     const main = parts[0];
     const branch = parts[1];
-
-    const stateShorts = {
-      Tennessee: ["UT", "Tenn"],
-      Mississippi: ["UM", "Miss"],
-      Alabama: ["AL", "Bama"],
-      "North Carolina": ["UNC"],
-      "South Carolina": ["USC"],
-      California: ["UC", "Cal"],
-      Louisiana: ["UL"],
-      Arkansas: ["ASU", "U of A", "Ar"],
-    };
 
     const shortList = stateShorts[main];
     if (shortList) {
@@ -685,6 +699,13 @@ function getUniversityAliases(university) {
     "UT Martin": ["Tennessee Martin", "UTM"],
     "Little Rock": ["UALR", "UA Little Rock"],
     "Truman State University": ["Truman"],
+    "Arizona State": ["ASU", "Arizona St"],
+    "Florida State": ["FSU", "Florida St"],
+    "Michigan State": ["MSU", "Michigan St"],
+    "Ohio State": ["OSU", "Ohio St"],
+    "Oklahoma State": ["OSU", "Oklahoma St"],
+    "Oregon State": ["OSU", "Oregon St"],
+    "Kansas State": ["KSU", "Kansas St"],
   };
 
   if (acronyms[university]) {

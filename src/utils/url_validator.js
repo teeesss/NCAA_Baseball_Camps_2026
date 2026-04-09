@@ -198,6 +198,8 @@ function scoreUrl(
 ) {
   if (!url) return -100;
   let score = 0;
+  // Centralised blacklist — Hard fail
+  if (isBlacklistedUrl(url)) return -1000;
   const u = url.toLowerCase();
   const s = (school.university || "").toLowerCase();
   const coach =
@@ -258,9 +260,6 @@ function scoreUrl(
   if (u.includes("2025")) score -= 100; // Stale year
   if (u.includes("shop/") || u.includes("/store") || u.includes("merchandise"))
     score -= 150;
-
-  // Centralised blacklist
-  if (isBlacklistedUrl(url)) score -= 200;
 
   // Camp path bonus
   if (isCampRelatedUrl(url)) score += 25;

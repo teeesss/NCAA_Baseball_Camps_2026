@@ -1,5 +1,5 @@
 /**
- * extraction_engine.js — V10 Unified Authoritative Extraction Engine
+ * extraction_engine.js — V12.5 Unified Authoritative Extraction Engine
  *
  * THIS IS THE SINGLE SOURCE OF TRUTH FOR ALL EXTRACTION LOGIC.
  *
@@ -54,6 +54,7 @@ const {
 } = require("./url_validator");
 const {
   BLACKLISTED_DOMAINS,
+  BLACKLISTED_EMAIL_DOMAINS,
   REJECT_SPORTS,
   DATE_PATTERNS,
   STALE_YEARS,
@@ -65,19 +66,36 @@ const {
   SUB_CRAWL_KEYWORDS,
   SEARCH_PROVIDERS,
   PRICE_THRESHOLDS,
+  GENERIC_STATE_SCHOOLS,
   GENERIC_EMAIL_PREFIXES,
   BROWSER_RESTART_EVERY,
   SCHOOL_TIMEOUT_MS,
   CURRENT_SCRIPT_VERSION,
   isWrongSport,
+  isTeamCampOrLegacy,
+  isExternalBridge,
+  getVerifiedUrl,
+  MAX_SUB_CRAWL_DEPTH,
+  MAX_SUB_CRAWL_PAGES,
+  DOMAIN_RESTRICTED_CRAWLING,
 } = require("./config");
+const { shouldExtractField, clearRecheckFlag, isFullExtractionRun } = require("./schema");
+const { applyCompletenessFlags } = require("./field_checker");
 
 const DATA_FILE = path.join(__dirname, "../../camps_data.json");
-const LOG_FILE = path.join(__dirname, "../../smart_extract.log");
+const BACKUP_DIR = path.join(__dirname, "../../data/backups");
+const LOG_DIR = path.join(__dirname, "../../data/logs");
+const LOG_FILE = path.join(LOG_DIR, "smart_extract.log");
+
+// Ensure directories exist
+if (!fs.existsSync(BACKUP_DIR)) fs.mkdirSync(BACKUP_DIR, { recursive: true });
+if (!fs.existsSync(LOG_DIR)) fs.mkdirSync(LOG_DIR, { recursive: true });
 
 const logStream = fs.createWriteStream(LOG_FILE, { flags: "a" });
 function log(msg) {
-  const line = `[${new Date().toISOString()}] ${msg}`;
+  // Strip hidden line/paragraph separators that get scraped from bad HTML text
+  const cleanMsg = msg.replace(/[\u2028\u2029]/g, "");
+  const line = `[${new Date().toISOString()}] ${cleanMsg}`;
   console.log(line);
   logStream.write(line + "\n");
 }
@@ -169,6 +187,7 @@ function harvestEmails(text) {
     if (/bootstrap|example|domain|noreply|sentry|webmaster/i.test(lower))
       return false;
     if (BLACKLISTED_DOMAINS.some((b) => lower.includes(b))) return false;
+    if (BLACKLISTED_EMAIL_DOMAINS.some((b) => lower.includes(b))) return false;
     return true;
   });
   return [...new Set(cleaned)]
@@ -243,20 +262,32 @@ function extractNameNearEmail(text) {
 }
 
 /**
- * Contamination check: V9 state-aware version.
+ * Contamination check: V10 state-aware version.
  * "Alabama" vs "Alabama State" handled correctly with word boundaries.
  * Also handles bidirectional substring (Kansas in Arkansas).
+ * INTEGRATED: Mascot check (Florida State vs Florida Gators).
  */
-function checkContamination(title, targetUni, allSchoolNames) {
-  const titleLower = title.toLowerCase();
+/**
+ * Contamination check: V11 state-aware version.
+ * "Alabama" vs "Alabama State" handled correctly with word boundaries.
+ * Also handles bidirectional substring (Kansas in Arkansas).
+ * INTEGRATED: Mascot check (Florida State vs Florida Gators).
+ */
+function checkContamination(text, targetUni, allSchoolNames, targetCoach = "") {
+  const textLower = text.toLowerCase();
   const targetLower = targetUni.toLowerCase();
   const targetIsState = targetLower.includes(" state");
+  const targetMascot = (getMascot(targetUni) || "").toLowerCase();
+  const targetAliases = getUniversityAliases(targetUni);
 
+  // ── V11: Robust Alias-based Contamination Detection ──────────────────────────
+  // Check if the text contains a school name or nickname of any OTHER school.
+  // We avoid name soup by requiring word boundaries.
   for (const other of allSchoolNames) {
     if (other === targetUni) continue;
     const oLower = other.toLowerCase();
 
-    // State-aware pair check (Alabama vs Alabama State)
+    // 1. State-aware pair check (Alabama vs Alabama State)
     const otherIsState = oLower.includes(" state");
     if (targetIsState !== otherIsState) {
       const targetBase = targetLower
@@ -266,18 +297,109 @@ function checkContamination(title, targetUni, allSchoolNames) {
         .replace(/ state| university| college/g, "")
         .trim();
       if (targetBase === otherBase) {
-        const titleHasState = titleLower.includes(" state");
-        if (titleHasState !== targetIsState) return other;
+        // Only flag if the base name is even in the text
+        if (textLower.includes(targetBase)) {
+          const textHasState = textLower.includes(" state");
+          if (textHasState !== targetIsState) return other;
+        }
       }
     }
 
-    // Bidirectional substring skip (Arkansas contains Kansas)
+    // 2. Mascot-identity check (Identity logic: Gators ≠ Seminoles)
+    const otherMascot = (getMascot(other) || "").toLowerCase();
+    if (
+      otherMascot &&
+      otherMascot.length > 3 &&
+      otherMascot !== targetMascot &&
+      !targetAliases.includes(otherMascot)
+    ) {
+      // Check both plural and singular versions (Sun Devils vs Sun Devil)
+      const otherMascotSingular = otherMascot.endsWith("s")
+        ? otherMascot.slice(0, -1)
+        : otherMascot;
+      
+      // If the page mentions the other school's mascot but not our own, it's suspect
+      // But we must be careful: if both are "Wildcats", we already skipped (otherMascot !== targetMascot)
+      const hasOtherMascot = 
+        textLower.includes(otherMascot) || 
+        (otherMascotSingular.length > 3 && textLower.includes(otherMascotSingular));
+        
+      if (hasOtherMascot && !textLower.includes(targetMascot)) {
+        // Use word boundaries for mascot check
+        const mascotRegex = new RegExp(`\\b(${otherMascot}|${otherMascotSingular})\\b`, "i");
+        if (mascotRegex.test(textLower)) return `${other} (${otherMascot})`;
+      }
+    }
+
+    // 3. Bidirectional substring skip (Arkansas contains Kansas)
+    // We let these pass the simple string check because they are ambiguous 
+    // and handled by the state-aware logic above.
     if (targetLower.includes(oLower) || oLower.includes(targetLower)) continue;
 
+    // 4. Strict boundary check for other schools (e.g. "Auburn" in Alcorn State text)
     const escaped = oLower.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    if (new RegExp(`\\b${escaped}\\b`, "i").test(titleLower)) return other;
+    const otherRegex = new RegExp(`\\b${escaped}\\b`, "i");
+    if (otherRegex.test(textLower)) {
+      // V12.5: Geographic Marker Guard
+      // If 'other' is just a state name (e.g. Arkansas), only flag if it's likely a school reference
+      const isGenericState = GENERIC_STATE_SCHOOLS.includes(other);
+      if (isGenericState) {
+        // Only flag if it looks like a school reference (e.g. "Missouri University" or matching mascot)
+        const academicRegex = new RegExp(`\\b${escaped}\\b\\s*\\b(university|u of|state|college)\\b`, "i");
+        const hasAcademicRef = academicRegex.test(textLower);
+        const hasOtherMascot = otherMascot && new RegExp(`\\b${otherMascot}\\b`, "i").test(textLower);
+        
+        if (!hasAcademicRef && !hasOtherMascot) continue;
+      }
+      return other;
+    }
+    
+    // 5. Alias check (e.g. "UNF", "ULL", "FSU") - check known abbreviations
+    const aliases = getUniversityAliases(other);
+    for (const alias of aliases) {
+      if (alias.length < 3) continue; // Skip short ones like "AL", "UC"
+      // Skip if it's our school, our primary mascot, or one of our valid aliases
+      if (targetLower.includes(alias) || targetAliases.includes(alias)) continue;
+      
+      // V12.5: Coach Name Guard
+      // If the alias matches the head coach's first or last name, skip contamination check.
+      // E.g. "Lane" for Lane Burroughs (Louisiana Tech) shouldn't be flagged as "Lane College".
+      if (targetCoach && targetCoach.toLowerCase().includes(alias)) continue;
+      
+      const aliasRegex = new RegExp(`\\b${alias.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+      if (aliasRegex.test(textLower)) return `${other} (${alias})`;
+    }
   }
   return null;
+}
+
+/**
+ * Helper to extract anchor hrefs from a page given a selector.
+ */
+async function extractSearchLinks(page, selector) {
+  try {
+    return await page.evaluate(
+      (sel) =>
+        Array.from(document.querySelectorAll(sel))
+          .map((a) => a.href)
+          .filter((h) => h && h.startsWith("http")),
+      selector,
+    );
+  } catch (e) {
+    return [];
+  }
+}
+
+/**
+ * Helper to extract entire page text safely.
+ * Eliminates duplicate evaluate() blocks.
+ */
+async function getPageText(page) {
+  try {
+    return await page.evaluate(() => document.body?.innerText || "");
+  } catch (e) {
+    return "";
+  }
 }
 
 /**
@@ -296,7 +418,7 @@ function pageHasNoEvents(text) {
  * Uses all centralised patterns from config.js.
  * Returns an array of { name, dates, cost } objects.
  */
-function extractDataFromText(fullText) {
+function extractDataFromText(fullText, targetUni, allSchoolNames) {
   if (isWrongSport(fullText)) {
     log("       ⚠️ [Filter] Page not about baseball — skipping.");
     return [];
@@ -319,20 +441,16 @@ function extractDataFromText(fullText) {
     " vs. ",
     " @ ",
     " at ",
-    "tournament standings",
+    "tournament",
+    "bracket",
+    "playoffs",
+    "round",
+    "standings",
     "box score",
     "game recap",
+    "postgame",
   ];
-  const SPORT_CONTAMINATION = [
-    "basketball",
-    "soccer",
-    "volleyball",
-    "swimming",
-    "wrestling",
-    "tennis",
-    "lacrosse",
-    "gymnastics",
-  ];
+  const SPORT_CONTAMINATION = REJECT_SPORTS;
 
   for (let j = 0; j < lines.length; j++) {
     const line = lines[j];
@@ -346,7 +464,7 @@ function extractDataFromText(fullText) {
 
     // Skip game schedules
     if (SKIP_KEYWORDS.some((k) => low.includes(k))) continue;
-    if (/\d{1,2}:\d{2}\s*(?:am|pm)/i.test(block)) continue;
+
 
     // Skip stale years
     if (STALE_YEARS.some((y) => low.includes(y) && !low.includes("2026")))
@@ -381,13 +499,46 @@ function extractDataFromText(fullText) {
     let cost = "TBA";
     if (costMatch) {
       const rawCost = costMatch[0].trim();
-      // Validate price floor using PRICE_THRESHOLDS
+      
+      // V12.5 Range Fix: Extract ALL prices from the string and take the highest valid one
       COST_NUMERIC_PATTERN.lastIndex = 0;
-      const numMatch = COST_NUMERIC_PATTERN.exec(rawCost);
-      if (numMatch) {
-        const val = parseFloat(numMatch[1].replace(/,/g, ""));
-        if (!isNaN(val) && val >= PRICE_THRESHOLDS.CRITICAL_ANOMALY) {
-          cost = rawCost;
+      let m;
+      let validPrices = [];
+      while ((m = COST_NUMERIC_PATTERN.exec(rawCost)) !== null) {
+        const val = parseFloat(m[1].replace(/,/g, ""));
+        if (!isNaN(val)) {
+          // If it meets the anamoly floor, it's a candidate
+          if (val >= PRICE_THRESHOLDS.CRITICAL_ANOMALY && val <= PRICE_THRESHOLDS.MAX_EXPECTED) {
+            validPrices.push(val);
+          }
+        }
+      }
+
+      if (validPrices.length > 0) {
+        const val = Math.max(...validPrices);
+        // Validate price floor - Use the highest valid price in the range
+        if (val >= PRICE_THRESHOLDS.CRITICAL_ANOMALY) {
+          // V11: Contextual check for low prices — could be a fee, not a camp cost
+          if (val < 60) {
+            const FEE_DISQUALIFIERS = [
+              "parking", "processing fee", "deposit", "registration fee",
+              "application fee", "convenience fee", "service charge",
+              "handling", "non-refundable fee", "late fee", "admin fee",
+              "transaction fee", "facility fee", "ticket", "shipping",
+              "estimated delivery", "taxes", "order total", "subtotal",
+            ];
+            const blockLow = block.toLowerCase();
+            const isFee = FEE_DISQUALIFIERS.some((f) => blockLow.includes(f));
+            if (isFee) {
+              log(
+                `       ⚠️ [Price] Rejected low price "${rawCost}" (val: ${val}) — surrounding text indicates a fee, not a camp cost.`,
+              );
+            } else {
+              cost = rawCost;
+            }
+          } else {
+            cost = rawCost;
+          }
         } else {
           log(
             `       ⚠️ [Price] Rejected suspicious price "${rawCost}" (val: ${val}). Setting TBA.`,
@@ -402,9 +553,28 @@ function extractDataFromText(fullText) {
     // Extract camp name
     CAMP_NAME_PATTERN.lastIndex = 0;
     const nameMatch = CAMP_NAME_PATTERN.exec(block);
-    const name = nameMatch ? nameMatch[1].trim() : "Baseball Camp";
+    const tierName = nameMatch ? nameMatch[1].trim() : "Baseball Camp";
 
-    campTiers.push({ name, dates: uniqueDates.join(", "), cost });
+    // Mismatch sport check: skip if the tier name explicitly contains a wrong sport
+    // (e.g. "Football Prospect Camp" matched on a portal that also mentions baseball)
+    if (REJECT_SPORTS.some(s => tierName.toLowerCase().includes(s))) {
+      log(`       ⚠️ [Sport Filter] Tier "${tierName}" rejected (wrong sport: ${REJECT_SPORTS.find(s => tierName.toLowerCase().includes(s))}).`);
+      continue;
+    }
+
+    // V10: Per-tier contamination check — skip if this specific tier name belongs to another school
+    // This is critical for sites like playnsports.com that list many schools
+    if (allSchoolNames && targetUni) {
+      const culprit = checkContamination(tierName, targetUni, allSchoolNames);
+      if (culprit) {
+        log(
+          `       ⚠️ [Contamination] Tier "${tierName}" belongs to ${culprit}. Skipping tier.`,
+        );
+        continue;
+      }
+    }
+
+    campTiers.push({ name: tierName, dates: uniqueDates.join(", "), cost });
   }
 
   // Deduplicate: normalize dates (strip ordinals) for comparison key
@@ -466,13 +636,7 @@ async function runSearchQueries(page, camp, dbIndex) {
         waitUntil: "domcontentloaded",
         timeout: 20000,
       });
-      const found = await page.evaluate(
-        (sel) =>
-          Array.from(document.querySelectorAll(sel))
-            .map((a) => a.href)
-            .filter((h) => h && h.startsWith("http")),
-        engine.selector,
-      );
+      const found = await extractSearchLinks(page, engine.selector);
       if (found && found.length > 0) {
         links.push(...found);
         log(`      ✓ [${engine.name}] ${found.length} results`);
@@ -492,13 +656,7 @@ async function runSearchQueries(page, camp, dbIndex) {
         waitUntil: "domcontentloaded",
         timeout: 20000,
       });
-      const found2 = await page.evaluate(
-        (sel) =>
-          Array.from(document.querySelectorAll(sel))
-            .map((a) => a.href)
-            .filter((h) => h && h.startsWith("http")),
-        engine.selector,
-      );
+      const found2 = await extractSearchLinks(page, engine.selector);
       if (found2) links.push(...found2);
     } catch (e) {}
   }
@@ -525,14 +683,40 @@ async function runExtraction({
 
   // Queue: schools that need processing
   let toProcess = data.filter((d) => {
-    if (d.isVerified) return false; // Never touch manually verified
-    if (
-      !forceRequeue &&
-      d.isChecked &&
-      (d.scriptVersion || 0) >= CURRENT_SCRIPT_VERSION
-    )
-      return false;
-    return true;
+    // Before filtering, quickly apply structural completeness updates so missing data defaults to needing a recheck
+    Object.assign(d, applyCompletenessFlags(d));
+
+    if (!forceRequeue && d.isVerified) return false; // Never touch manually verified unless forced
+
+    // 1. Calculate Age
+    const lastCheckedDate = d.lastChecked || d.lastUpdateDate || 0;
+    const ageMs = Date.now() - new Date(lastCheckedDate).getTime();
+    const daysOld = ageMs / (1000 * 60 * 60 * 24);
+    
+    // 2. Define authoritative TTL rules
+    const TTL_DAYS = d.division === "DI" ? 3 : 14;
+    const isAgedOut = daysOld >= TTL_DAYS;
+    const needsTargetedRecheck = d.recheck && Object.values(d.recheck).some(flag => flag === true);
+    const isNew = !d.isChecked;
+
+    // 3. Execution Decision
+    if (forceRequeue) return true;
+    if (isNew) return true; // Brand new school never checked
+
+    // If it's already been checked and hasn't aged out yet, we skip it regardless of missing data
+    if (!isAgedOut) return false;
+
+    // It's aged out, so we re-process if:
+    // a) It has missing data flagged for recheck
+    if (needsTargetedRecheck) return true;
+
+    // b) The engine version has updated
+    if ((d.scriptVersion || 0) !== CURRENT_SCRIPT_VERSION) return true;
+
+    // c) It's just time for a periodic full refresh (e.g. checked once, succeeded, but that was > 30 days ago)
+    if (daysOld > 30) return true;
+
+    return false;
   });
 
   if (schoolFilter) {
@@ -554,9 +738,10 @@ async function runExtraction({
   );
 
   // Backup before run
-  const backup = DATA_FILE.replace(".json", `_backup_${Date.now()}.json`);
-  fs.copyFileSync(DATA_FILE, backup);
-  log(`📦 Backup: ${path.basename(backup)}`);
+  const backupName = `camps_data_backup_${Date.now()}.json`;
+  const backupPath = path.join(BACKUP_DIR, backupName);
+  fs.copyFileSync(DATA_FILE, backupPath);
+  log(`📦 Backup created in data/backups/: ${backupName}`);
 
   let browser = await puppeteer.launch({
     headless: "new",
@@ -632,52 +817,120 @@ async function runExtraction({
     }, SCHOOL_TIMEOUT_MS);
 
     try {
-      // ── Phase A: Build URL candidate list ─────────────────────────────────
-      let searchLinks = [];
+      // ── Phase A: Build URL candidate list (V11 4-Tier Resolution) ───────────
+      //
+      // TIER 1: Authoritative master JSON files take absolute priority.
+      //         If found → use it, skip all search. Score 500.
+      //
+      // TIER 2: School not in master files, but has a campUrl in DB that
+      //         resolves (HTTP 200) AND contains baseball/camp content.
+      //         Use it directly. Score 300.
+      //
+      // TIER 2a: campUrl exists but is dead (4xx/5xx/timeout) or generic.
+      //          Fall through to Tier 3.
+      //
+      // TIER 3: No URL from Tier 1 or 2. Run web search, find consensus.
 
-      // V7/V8 priority: always try existing campUrl from DB first
-      if (
+      let searchLinks = [];
+      let verifiedUrl = getVerifiedUrl(camp.university);
+      let resolvedTier = null;
+
+      if (verifiedUrl) {
+        // ── TIER 1 ──────────────────────────────────────────────────────────
+        log(`   → [TIER 1] Authoritative source: ${verifiedUrl}`);
+        searchLinks.push(verifiedUrl);
+        resolvedTier = 1;
+
+      } else if (
         camp.campUrl &&
         camp.campUrl.startsWith("http") &&
         !isBlacklistedUrl(camp.campUrl)
       ) {
-        log(`   → Priority DB URL: ${camp.campUrl}`);
-        searchLinks.push(camp.campUrl);
+        // ── TIER 2 / 2a: Validate existing campUrl ──────────────────────────
+        log(`   → [TIER 2] Checking existing campUrl: ${camp.campUrl}`);
+        try {
+          const checkResp = await p.goto(camp.campUrl, {
+            waitUntil: "domcontentloaded",
+            timeout: 25000,
+          });
+          const checkStatus = checkResp ? checkResp.status() : 0;
+
+          if (checkStatus >= 200 && checkStatus < 400) {
+            const checkText = await getPageText(p);
+            const hasBaseballOrCamp =
+              /baseball|camp|clinic|prospect|register/i.test(checkText);
+
+            if (hasBaseballOrCamp) {
+              // ── TIER 2: Valid ────────────────────────────────────────────
+              log(`   → [TIER 2] ✅ Valid — using existing campUrl`);
+              searchLinks.push(camp.campUrl);
+              verifiedUrl = camp.campUrl; // Treat like verified for scoring
+              resolvedTier = 2;
+            } else {
+              log(`   → [TIER 2a] ⚠️  campUrl resolves but has no camp content — falling to Tier 3`);
+            }
+          } else {
+            log(`   → [TIER 2a] ⚠️  campUrl returned HTTP ${checkStatus} — falling to Tier 3`);
+          }
+        } catch (e) {
+          log(`   → [TIER 2a] ⚠️  campUrl unreachable (${e.message.substring(0, 50)}) — falling to Tier 3`);
+        }
+
+        if (resolvedTier === null) {
+          log(`   → [TIER 3] Running web search (Tier 2a fallback)`);
+          const engineResults = await runSearchQueries(p, camp, dbIndex);
+          searchLinks.push(...engineResults);
+          resolvedTier = 3;
+        }
+      } else {
+        log(`   → [TIER 3] No prior URL — running web search`);
+        const engineResults = await runSearchQueries(p, camp, dbIndex);
+        searchLinks.push(...engineResults);
+        resolvedTier = 3;
       }
 
-      // Search engine results (round-robin rotation)
-      const engineResults = await runSearchQueries(p, camp, dbIndex);
-      searchLinks.push(...engineResults);
+      // URL pattern guesses (Tier 4 fallbacks only — never override Tier 1/2 or Tier 3 search results)
+      const guessed = resolvedTier <= 2 ? [] : buildGuessedUrls(camp);
 
-      // URL pattern guesses
-      const guessed = buildGuessedUrls(camp);
-
-      // Score, dedupe, drop clearly bad URLs, take top 18
-      const scored = [
-        ...searchLinks.map((u) => ({
+      // Score, dedupe, drop clearly bad URLs, take top 15 from search results
+      const scoredSearch = searchLinks
+        .map((u) => ({
           url: u,
-          score: scoreUrl(u, camp, false),
+          score: u === verifiedUrl ? (resolvedTier === 1 ? 500 : 300) : scoreUrl(u, camp, false),
           isGuessed: false,
-        })),
-        ...guessed.map((u) => ({
-          url: u,
-          score: scoreUrl(u, camp, true),
-          isGuessed: true,
-        })),
-      ]
+          tierLabel: resolvedTier === 3 ? "TIER 3" : `TIER ${resolvedTier}`,
+        }))
+        .filter((x) => x.score > -50)
         .sort((a, b) => b.score - a.score)
         .filter(
           (x, idx, self) => self.findIndex((y) => y.url === x.url) === idx,
         )
+        .slice(0, 15);
+
+      // Score guesses separately as Tier 4
+      const scoredGuessed = guessed
+        .map((u) => ({
+          url: u,
+          score: scoreUrl(u, camp, true),
+          isGuessed: true,
+          tierLabel: "TIER 4",
+        }))
         .filter((x) => x.score > -50)
-        .slice(0, 18);
+        .sort((a, b) => b.score - a.score)
+        .filter(
+          (x, idx, self) => self.findIndex((y) => y.url === x.url) === idx,
+        )
+        .slice(0, 5);
+
+      // Merge sequentially so Tier 4 is ALWAYS processed after Tier 3 failures
+      const scored = [...scoredSearch, ...scoredGuessed];
 
       log(`   → ${scored.length} candidates. Top 3:`);
       scored
         .slice(0, 3)
         .forEach((s) =>
           log(
-            `      ${s.score >= 50 ? "★" : s.score >= 20 ? "•" : "○"} [${String(s.score).padStart(3)}] ${s.url}`,
+            `      ${s.score >= 50 ? "★" : s.score >= 20 ? "•" : "○"} [${String(s.score).padStart(3)}][${s.tierLabel}] ${s.url}`,
           ),
         );
 
@@ -690,10 +943,10 @@ async function runExtraction({
       for (const item of scored) {
         const candidate = item.url;
         try {
-          log(`\n   → Navigating [${item.score}]: ${candidate}`);
+          log(`\n   → Navigating [${item.score}][${item.tierLabel}]: ${candidate}`);
           const resp = await p.goto(candidate, {
             waitUntil: "domcontentloaded",
-            timeout: 15000,
+            timeout: 25000,
           });
           if (!resp || resp.status() >= 400) {
             log(`      ✕ HTTP ${resp?.status() || "error"}`);
@@ -702,7 +955,7 @@ async function runExtraction({
           }
 
           await delay(600 + Math.random() * 400);
-          const text = await p.evaluate(() => document.body?.innerText || "");
+          const text = await getPageText(p);
           const title = (await p.title()) || "";
 
           // ── "No Upcoming Events" — smart hybrid (Decision 2C) ──
@@ -729,15 +982,34 @@ async function runExtraction({
             continue;
           }
 
-          // School alias match check
+          // School alias / mascot match check
+          const { getMascot } = require("./mascot_lookup.js");
+          const mascot = (camp.mascot || getMascot(camp.university) || "").toLowerCase();
+          const contentHasMascot = mascot && mascot !== "none" && mascot !== "tba" 
+            ? (text.toLowerCase().includes(mascot) || title.toLowerCase().includes(mascot))
+            : false;
+            
+          const contentHasAlias = aliases.find(a => text.toLowerCase().includes(a) || title.toLowerCase().includes(a));
+
+          // Base validation relies on alias matching anywhere (including URL path)
           const matchedAlias = aliases.find(
             (a) =>
               text.toLowerCase().includes(a) ||
               title.toLowerCase().includes(a) ||
               candidate.toLowerCase().includes(a.replace(/\s+/g, "")),
           );
-          if (!matchedAlias) {
-            log("      ✕ School alias mismatch.");
+
+          if (!matchedAlias && !contentHasMascot) {
+            log("      ✕ School alias/mascot mismatch.");
+            isTopUrl = false;
+            continue;
+          }
+
+          // V11 GUESSED URL (TIER 4) DOMAIN SQUATTER PREVENTION:
+          // If the URL is guessed, the alias or mascot MUST be in the page text or title.
+          // Matching the URL string is not enough, because a domain squatter registers the exact alias.
+          if (item.isGuessed && !contentHasAlias && !contentHasMascot) {
+            log("      ✕ Guessed URL rejected (squatter prevention): Alias or Mascot not found in page content.");
             isTopUrl = false;
             continue;
           }
@@ -747,6 +1019,7 @@ async function runExtraction({
             title,
             camp.university,
             allSchoolNames,
+            camp.headCoach // Pass coach to prevent false positives (e.g. Lane Burroughs)
           );
           if (culprit) {
             log(`      ✕ Contamination (${culprit}). Skip.`);
@@ -754,16 +1027,18 @@ async function runExtraction({
             continue;
           }
 
+          const validationReason = matchedAlias || mascot || "Unknown";
           log(
-            `   → ✅ VALIDATED for ${camp.university} (alias: "${matchedAlias}")`,
+            `   → ✅ VALIDATED for ${camp.university} (alias/mascot: "${validationReason}")`,
           );
 
           const pageEmails = harvestEmails(text);
           if (pageEmails.length > 0) bestEmails.push(...pageEmails);
 
           let fullText = text;
-
-          // ── Phase B.2: Deep Sub-Crawl ───────────────────────────────────
+          const crawledUrls = new Set([candidate]);
+          
+          // Pre-extract links from the main page
           const subLinks = await p.$$eval("a", (els) =>
             els.map((a) => ({
               href: a.href || "",
@@ -771,78 +1046,124 @@ async function runExtraction({
             })),
           );
 
-          const alreadyQueued = new Set([candidate]);
+          const pagesToCrawl = [{ url: candidate, depth: 0 }];
+          let pagesScanned = 0;
 
-          const filteredSub = subLinks
-            .filter((l) => {
-              if (!l.href || !l.href.startsWith("http")) return false;
-              if (alreadyQueued.has(l.href)) return false;
-              const hl = l.href.toLowerCase();
-              if (isBlacklistedUrl(l.href)) return false;
-              if (isSearchEngineUrl(l.href)) return false;
-              if (
-                hl.includes("/schedule") ||
-                hl.includes("/roster") ||
-                hl.includes("/news/") ||
-                hl.includes("/article/")
-              )
-                return false;
-              const hasCampKw = SUB_CRAWL_KEYWORDS.some(
-                (k) => hl.includes(k) || l.text.includes(k),
-              );
-              if (hasCampKw) return true;
+          const mainHost = new URL(candidate).hostname.replace(/^www\./, "");
+          log(`   → Sub-crawling (Domain Restricted to: ${mainHost})...`);
+
+          while (pagesToCrawl.length > 0 && pagesScanned < MAX_SUB_CRAWL_PAGES) {
+            const current = pagesToCrawl.shift();
+            if (current.depth >= MAX_SUB_CRAWL_DEPTH) continue;
+
+            let links = [];
+            if (current.url === candidate) {
+              // We already have the links from the initial page load via p.$$eval
+              links = subLinks;
+            } else {
+              // Need to load the subpage and get its links
               try {
-                const mainHost = new URL(candidate).hostname;
-                const subHost = new URL(l.href).hostname;
-                if (mainHost === subHost) return true;
-              } catch (e) {}
-              return false;
-            })
-            .slice(0, 8);
+                const sp = await browser.newPage();
+                await sp.goto(current.url, {
+                  waitUntil: "domcontentloaded",
+                  timeout: 25000,
+                });
+                const st = await getPageText(sp);
+                pagesScanned++;
 
-          log(`   → Sub-crawling ${filteredSub.length} pages...`);
-          for (const sl of filteredSub) {
-            alreadyQueued.add(sl.href);
-            try {
-              const sp = await browser.newPage();
-              await sp.goto(sl.href, {
-                waitUntil: "domcontentloaded",
-                timeout: 12000,
-              });
-              const st = await sp.evaluate(
-                () => document.body?.innerText || "",
-              );
-
-              if (pageHasNoEvents(st)) {
-                log(`      ↷ Sub-page has no events — skipping.`);
+                if (!pageHasNoEvents(st)) {
+                  const hasBaseball = st.toLowerCase().includes("baseball");
+                  const hasCamp = /camp|clinic|register|prospect|summer/i.test(st);
+                  if (hasBaseball || hasCamp) {
+                    log(`      ⭐ [D${current.depth}] ${current.url.substring(0, 70)}`);
+                    fullText += "\n" + st;
+                    const subEmails = harvestEmails(st);
+                    if (subEmails.length > 0) bestEmails.push(...subEmails);
+                  } else {
+                    log(`      ↳ [D${current.depth}] ${current.url.substring(0, 70)}`);
+                  }
+                  
+                  // Get new links if we haven't reached max depth
+                  if (current.depth + 1 < MAX_SUB_CRAWL_DEPTH) {
+                    links = await sp.$$eval("a", (els) =>
+                      els.map((a) => ({
+                        href: a.href || "",
+                        text: (a.innerText || "").toLowerCase().trim(),
+                      })),
+                    );
+                  }
+                }
                 await sp.close();
-                continue;
+              } catch (e) {
+                // log(`      ✕ Sub-crawl error on ${current.url}: ${e.message}`);
+              }
+            }
+
+            // ── V11 SUB-CRAWL RULE: startsWith ONLY ──────────────────────────────
+            // The ONLY rule: every link must start with the validated candidate URL.
+            // Strip hash fragments and query strings before comparison.
+            // No platform checks. No domain checks. No keyword bypasses. Just startsWith.
+            const candidateNorm = candidate.split("#")[0].split("?")[0].replace(/\/$/, "").toLowerCase();
+
+            for (const l of links) {
+              if (!l.href || !l.href.startsWith("http")) continue;
+              if (isBlacklistedUrl(l.href)) continue;
+              if (isSearchEngineUrl(l.href)) continue;
+
+              // Normalize: strip hash + query string
+              const linkNorm = l.href.split("#")[0].split("?")[0].replace(/\/$/, "").toLowerCase();
+
+              // Skip if same page (already crawled or same as candidate)
+              if (linkNorm === candidateNorm) continue;
+              if (crawledUrls.has(linkNorm)) continue;
+
+              // THE RULE: only follow sub-pages of the validated URL
+              // V12: Added exception for 'External Bridges' (high-confidence portable links)
+              const linkUrl = l.href.split("#")[0].split("?")[0];
+              const isLockViolated = !linkNorm.startsWith(candidateNorm);
+              const isBridge = isLockViolated && isExternalBridge(linkUrl, l.text, camp.university);
+
+              if (isLockViolated && !isBridge) continue;
+              
+              if (isBridge) {
+                // V12.1: Check for contamination ON THE BRIDGE LINK TEXT
+                // This prevents Arizona (Wildcats) from jumping to ASU (Sun Devils) links
+                const culprit = checkContamination(l.text || "", camp.university, allSchoolNames);
+                if (culprit) {
+                   log(`   → ⚠️ Blocked Contaminated Bridge: "${(l.text || "").substring(0,30)}" (belongs to ${culprit})`);
+                   continue;
+                }
+                log(`   → 🌉 Crossing External Bridge: ${linkUrl}`);
               }
 
-              const hasBaseball = st.toLowerCase().includes("baseball");
-              const hasCamp = /camp|clinic|register|prospect|summer/i.test(st);
-              if (hasBaseball || hasCamp) {
-                log(`      ⭐ ${sl.href.substring(0, 70)}`);
-                fullText += "\n" + st;
-                const subEmails = harvestEmails(st);
-                if (subEmails.length > 0) bestEmails.push(...subEmails);
-              } else {
-                log(`      ↳ ${sl.href.substring(0, 70)}`);
-              }
-              await sp.close();
-            } catch (e) {
-              /* ignore sub-page errors */
+              crawledUrls.add(linkNorm);
+              pagesToCrawl.push({ url: l.href.split("#")[0].split("?")[0], depth: current.depth + 1 });
             }
           }
 
           // ── Phase C: Extract ────────────────────────────────────────────
-          const campTiers = extractDataFromText(fullText);
-
-          if (campTiers.length > 0) {
-            camp.campTiers = campTiers;
-            camp.dates = [...new Set(campTiers.map((t) => t.dates))].join(
-              " | ",
+          let campTiers = [];
+          if (shouldExtractField(camp, "campDates") || shouldExtractField(camp, "cost")) {
+            campTiers = extractDataFromText(
+              fullText,
+              camp.university,
+              allSchoolNames,
             );
+          }
+
+          let fulfilledTarget = false;
+
+          // Process dates & costs if found
+          if ((shouldExtractField(camp, "campDates") || shouldExtractField(camp, "cost")) && campTiers.length > 0) {
+            camp.campTiers = campTiers;
+            
+            // V12.5 Concise Date Summary: Limit to first 3 and add count for more
+            const uniqueDateStrings = [...new Set(campTiers.map((t) => t.dates))];
+            if (uniqueDateStrings.length > 3) {
+              camp.dates = uniqueDateStrings.slice(0, 3).join(" | ") + ` ... [+${uniqueDateStrings.length - 3} more]`;
+            } else {
+              camp.dates = uniqueDateStrings.join(" | ");
+            }
             camp.campUrl = candidate;
             camp.sourceUrl = candidate; // V9: separate field for UI fidelity
 
@@ -873,42 +1194,63 @@ async function runExtraction({
               camp.cost = "FREE";
             }
 
+            clearRecheckFlag(camp, "campDates");
+            clearRecheckFlag(camp, "cost");
+            fulfilledTarget = true;
+          }
+
+          // Process emails if requested and found
+          if (shouldExtractField(camp, "email") && bestEmails.length > 0) {
             // V9 dual contact fields — never overwrite existing pointOfContact name
             const uniqueEmails = [...new Set(bestEmails)].slice(0, 2);
-            if (uniqueEmails.length > 0) {
-              camp.email = uniqueEmails[0]; // Authoritative email field
-              const nameOnly = getCoachName(camp);
-              if (nameOnly && !camp.pointOfContact)
-                camp.pointOfContact = nameOnly;
-              // Try to extract name near email from page text (e.g. "Email Drew Bishop at...")
-              if (!camp.pointOfContact || camp.pointOfContact === "N/A") {
-                const pageName = extractNameNearEmail(fullText);
-                if (pageName) camp.pointOfContact = pageName;
-              }
-              // Preserve legacy contact field for HTML rendering (append if no email yet)
-              if (camp.contact && !camp.contact.includes("@")) {
-                camp.contact = `${camp.contact} | ${uniqueEmails[0]}`;
-              } else if (camp.contact && camp.contact.includes("@")) {
-                // Existing contact is email-only — prepend extracted name if available
-                const nameForDisplay =
-                  camp.pointOfContact && camp.pointOfContact !== "N/A"
-                    ? camp.pointOfContact
-                    : extractNameNearEmail(fullText);
-                if (nameForDisplay) {
-                  camp.contact = `${nameForDisplay} | ${uniqueEmails[0]}`;
-                }
-              }
+            camp.email = uniqueEmails[0]; // Authoritative email field
+            camp.campPOCEmail = uniqueEmails[0]; // Backup mapping alias 
+            
+            const nameOnly = getCoachName(camp);
+            if (nameOnly && (!camp.pointOfContact || camp.pointOfContact === "N/A"))
+              camp.pointOfContact = nameOnly;
+              
+            // Try to extract name near email from page text (e.g. "Email Drew Bishop at...")
+            if (!camp.pointOfContact || camp.pointOfContact === "N/A") {
+              const pageName = extractNameNearEmail(fullText);
+              if (pageName) camp.pointOfContact = pageName;
             }
 
-            camp.auditStatus = "EXTRACTED";
-            camp.lastUpdateDate = Date.now();
-            camp.datesUpdateDate = new Date().toISOString();
+            // Update display-string 'contact' for backward compatibility and UI
+            const displayName = camp.pointOfContact && camp.pointOfContact !== "N/A" 
+              ? camp.pointOfContact 
+              : nameOnly || "Athletics Office";
 
-            success = true;
-            log(
-              `   → 🎯 SUCCESS — ${campTiers.length} tiers | Cost: ${camp.cost || "TBA"}`,
-            );
-            break;
+            camp.contact = `${displayName} | ${uniqueEmails[0]}`;
+            
+            clearRecheckFlag(camp, "email");
+            clearRecheckFlag(camp, "poc");
+            fulfilledTarget = true;
+          }
+
+          // Evaluate success based on run type
+          if (isFullExtractionRun(camp)) {
+            // Full run requires tiers to be considered a URL success
+            if (campTiers.length > 0) {
+              camp.auditStatus = "EXTRACTED";
+              camp.lastUpdateDate = Date.now();
+              camp.datesUpdateDate = new Date().toISOString();
+              success = true;
+              log(`   → 🎯 SUCCESS — ${campTiers.length} tiers | Cost: ${camp.cost || "TBA"}`);
+              break;
+            }
+          } else {
+            // Targeted run: if we fulfilled the specific target, it's a success
+            if (fulfilledTarget) {
+              camp.auditStatus = "TARGETED_RECOVERY";
+              camp.lastUpdateDate = Date.now();
+              // Only update date timestamp if we actually modified dates
+              if (campTiers.length > 0) camp.datesUpdateDate = new Date().toISOString();
+              
+              success = true;
+              log(`   → 🎯 TARGETED SUCCESS — Recovered specifically requested fields.`);
+              break;
+            }
           }
         } catch (e) {
           log(`   → ✕ Error on ${candidate}: ${e.message.substring(0, 80)}`);
@@ -941,6 +1283,13 @@ async function runExtraction({
       clearTimeout(schoolTimeout);
       await p.close().catch(() => {});
     }
+    
+    // Memory release logic for massive queues
+    if (i >= 19 && i < toProcess.length - 1) {
+      log(`\n🛑 Batch limit reached (20 schools). Releasing memory...`);
+      await browser.close();
+      return { batchLimitReached: true };
+    }
   }
 
   await browser.close();
@@ -956,4 +1305,5 @@ module.exports = {
   harvestEmails,
   extractNameNearEmail,
   pageHasNoEvents,
+  checkContamination,
 };

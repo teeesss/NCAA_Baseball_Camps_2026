@@ -90,9 +90,16 @@ function run() {
     }
 
     // Ensure N/A formatting for missing fields for UI logic
-    if (!record.campPOC) record.campPOC = "N/A";
-    if (!record.email) record.email = "N/A";
-    if (!record.headCoach) record.headCoach = "N/A";
+    if (record.campPOC === undefined || record.campPOC === null) record.campPOC = "N/A";
+    if (record.email === undefined || record.email === null) record.email = "N/A";
+    if (record.headCoach === undefined || record.headCoach === null) record.headCoach = "N/A";
+
+    // V11 Sync: ensure UI can find email in either campPOCEmail or email
+    if (record.email && record.email !== "N/A" && !record.campPOCEmail) {
+        record.campPOCEmail = record.email;
+    } else if (record.campPOCEmail && record.campPOCEmail !== "N/A" && !record.email) {
+        record.email = record.campPOCEmail;
+    }
 
     // Secondary sync: if hasDates is true but datesUpdateDate is empty, set it to lastChecked as a baseline
     if (hasDates && !record.datesUpdateDate) {

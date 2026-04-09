@@ -225,7 +225,7 @@ test("Required fields present in schema", () => {
     "cost",
     "campUrl",
     "campPOC",
-    "campPOCEmail",
+    "email",
     "isVerified",
     "isChecked",
     "scriptVersion",

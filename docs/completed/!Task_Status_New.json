@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-09T00:42:00.000Z",
+  "phase": "v11_complete_ready_for_batch",
+  "priority_1_sub_crawl_fix": {
+    "status": "DONE ✅",
+    "title": "Sub-Crawl startsWith Overhaul",
+    "description": "Replaced 60+ lines of complex platform/domain/keyword filtering with 12 lines and one rule: every sub-crawl link must startsWith the validated candidate URL.",
+    "verified": "Alcorn State shows zero generic playnsports.com/* links. Alabama sub-crawl stays on alabamabaseballcamps.com/*."
+  },
+  "priority_2_url_resolution_tiers": {
+    "status": "DONE ✅",
+    "title": "4-Tier URL Resolution Priority",
+    "tiers": {
+      "tier_1": "Authoritative JSON files (!bcusa, !playnsports, !totalcamps) — score 500, no search",
+      "tier_2": "Existing campUrl in DB that resolves HTTP 200 + has baseball/camp content — score 300",
+      "tier_2a": "Existing campUrl dead or generic → fall through to Tier 3",
+      "tier_3": "No URL → web search consensus"
+    },
+    "verified": "Alabama → TIER 1, Alabama State → TIER 2, Alabama A&M → TIER 3"
+  },
+  "priority_3_price_context_filter": {
+    "status": "DONE ✅",
+    "title": "Contextual Price Filtering (<$60)",
+    "description": "Prices under $60 are checked against fee-related disqualifiers in surrounding text. Only rejected if context indicates a fee (parking, processing fee, deposit, etc.).",
+    "verified": "Alabama's $10 rejected → cost now $262-$1312 (correct)"
+  },
+  "priority_4_hash_dedup": {
+    "status": "DONE ✅",
+    "title": "Hash Fragment Dedup",
+    "description": "# and query strings stripped from URLs before startsWith check and crawledUrls dedup. Prevents re-visiting same page with different anchors."
+  },
+  "completed_tasks": [
+    "Identified contamination bug in extraction engine (Arizona State false positive) — FIXED",
+    "Implemented verified URL prioritization (Score 500+) from 3 master JSON files",
+    "V11 Sub-crawl startsWith rewrite — DONE",
+    "V11 4-tier URL resolution — DONE",
+    "V11 contextual price filter <$60 — DONE",
+    "V11 hash fragment dedup — DONE",
+    "Verified all fixes on Alabama, Alabama State, Alabama A&M, Alcorn State"
+  ],
+  "current_status": {
+    "total_schools_in_db": 521,
+    "verified_schools": 16,
+    "di_schools": 306,
+    "engine_version": "V11",
+    "blocking_issues": "NONE — ready for batch processing"
+  },
+  "next_steps": [
+    "1. Run batch of 5-10 DI schools to confirm clean behavior at scale",
+    "2. If clean, expand to full DI run (node smart_extract.js --limit=50)",
+    "3. Monitor logs — should see TIER 1/2/3 labels, only startsWith sub-links",
+    "4. [DONE] Update TASKS.md with V11 completion",
+    "5. [DONE] Update CLAUDE.md / GEMINI.md lessons learned with startsWith sub-crawl rule"
+  ]
+}

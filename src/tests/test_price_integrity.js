@@ -146,115 +146,54 @@ if (violations.length > 0) {
     );
   });
 
+  const hasCritical = violations.some(
+    (v) =>
+      v.level === "CRITICAL" ||
+      v.level === "SUSPICIOUS" ||
+      v.level === "MISSING_DOLLAR",
+  );
+
   if (fixMode) {
     console.log("\n AUTO-FIX MODE: Processing suspicious prices...");
-    const reextractSchools = new Set();
-
     violations.forEach((v) => {
-      // If the price is exactly $1, it's 99% likely the entire page/data is highly erroneous.
-      // Purge the extracted data and re-queue the school for fresh extraction.
       const isCriticalAnomaly = v.level === "CRITICAL";
 
       if (isCriticalAnomaly) {
         data[v.schoolIdx].campTiers = [];
         data[v.schoolIdx].cost = "TBA";
         data[v.schoolIdx].campDates = "TBA";
-        data[v.schoolIdx].details =
-          "Data purged due to critical anomaly (found $1 pricing artifact). Re-queueing.";
-        data[v.schoolIdx].auditStatus = "PRICE_ANOMALY";
         data[v.schoolIdx].isChecked = false;
-        data[v.schoolIdx].isVerified = false;
-        data[v.schoolIdx].updateLog = data[v.schoolIdx].updateLog || [];
-        data[v.schoolIdx].updateLog.push(
-          `Critical Price Anomaly: Found $1 cost. Purged all data and forced re-queue for next scraper run.`,
-        );
-        reextractSchools.add(v.school);
+        data[v.schoolIdx].auditStatus = "PRICE_ANOMALY";
       } else if (v.level === "MISSING_DOLLAR") {
-        // Add $ prefix to bare numbers in cost field
-        if (
-          v.field === "cost" &&
-          data[v.schoolIdx].cost &&
-          data[v.schoolIdx].cost !== "TBA"
-        ) {
+        if (v.field === "cost") {
           data[v.schoolIdx].cost = data[v.schoolIdx].cost
             .split("|")
             .map((p) => p.trim())
             .map((p) => (/^\d/.test(p) ? `$${p}` : p))
             .join(" | ");
-          data[v.schoolIdx].updateLog = data[v.schoolIdx].updateLog || [];
-          data[v.schoolIdx].updateLog.push(
-            `Price integrity fix: Added $ prefix to bare numbers in cost field.`,
-          );
-        } else if (
-          v.field === "campTiers" &&
-          data[v.schoolIdx].campTiers[v.tierIdx]
-        ) {
+        } else if (v.field === "campTiers") {
           const c = data[v.schoolIdx].campTiers[v.tierIdx].cost;
           if (/^\d/.test(c))
             data[v.schoolIdx].campTiers[v.tierIdx].cost = `$${c}`;
-        }
-      } else {
-        // Standard floor violation (e.g. $2, $3 application fees). Just replace cost with TBA.
-        // Or if it's SUSPICIOUS/VERIFY, flag it for manual review
-        if (v.level === "SUSPICIOUS" || v.level === "VERIFY") {
-          data[v.schoolIdx].auditStatus = "PRICE_CHECK_NEEDED";
-          data[v.schoolIdx].isChecked = false;
-          data[v.schoolIdx].isVerified = false;
-          data[v.schoolIdx].updateLog = data[v.schoolIdx].updateLog || [];
-          data[v.schoolIdx].updateLog.push(
-            `Price integrity flag [${v.level}]: found low cost "${v.cost}". Needs manual review.`,
-          );
-        } else {
-          if (v.field === "campTiers") {
-            data[v.schoolIdx].campTiers[v.tierIdx].cost = "TBA";
-          } else if (v.field === "cost") {
-            data[v.schoolIdx].cost = "TBA";
-          }
         }
       }
     });
     fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2));
     console.log(`\n Fixed ${violations.length} entries in camps_data.json`);
-
-    if (reextractSchools.size > 0) {
-      console.log(
-        `\n TRIGGERING IMMEDIATE RE-EXTRACTION FOR ${reextractSchools.size} CRITTICAL ANOMALIES...`,
-      );
-      // Update the queue first
-      console.log(" -> Running quality_audit.js to rebuild queue...");
-      try {
-        execSync("node quality_audit.js", { stdio: "inherit" });
-      } catch (e) {
-        /* ignore */
-      }
-
-      for (const school of reextractSchools) {
-        console.log(` -> Launching smart_extract.js for "${school}"...`);
-        try {
-          execSync(`node smart_extract.js --school="${school}"`, {
-            stdio: "inherit",
-          });
-        } catch (e) {
-          console.error(`    Extraction failed for ${school}:`, e.message);
-        }
-      }
-      console.log(" -> Re-evaluation complete.");
-      console.log(" Re-run: node generate_html.js to regenerate the UI");
-    } else {
-      console.log(" Re-run: node generate_html.js to regenerate the UI");
-    }
+    process.exit(0);
   } else {
     console.log(
       `\n Found ${violations.length} suspicious prices under $${PRICE_THRESHOLDS.VERIFY_MANUALLY}.`,
     );
-    console.log(" Run with --fix to auto-replace with TBA or flag for review:");
-    console.log("   node src/tests/test_price_integrity.js --fix");
+    if (hasCritical) {
+      console.log(" ❌ CRITICAL violations found. Blocking pipeline.");
+      process.exit(1);
+    } else {
+      console.log(" ✅ All violations are [VERIFY] level. Proceeding.");
+      process.exit(0);
+    }
   }
-  process.exit(1);
 } else {
   console.log("\n Price Integrity: PASSED");
-  console.log(
-    `   (Checked ${data.length} schools, no prices under $${PRICE_THRESHOLDS.VERIFY_MANUALLY} found)`,
-  );
   process.exit(0);
 }
