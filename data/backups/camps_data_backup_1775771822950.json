@@ -8310,10 +8310,10 @@
     "lastAuditDate": "2026-04-03T05:08:25.294Z",
     "auditConfidence": 65,
     "headCoach": "Brian O'Connor",
-    "lastChecked": "2026-04-09T21:58:33.772Z",
+    "lastChecked": "2026-04-09T21:52:26.074Z",
     "updateLog": [],
-    "lastUpdateDate": 1775771913772,
-    "datesUpdateDate": "2026-04-09T21:58:33.772Z",
+    "lastUpdateDate": 1775771546073,
+    "datesUpdateDate": "2026-04-09T21:52:26.073Z",
     "contactUpdateDate": 1775581747258,
     "costUpdateDate": "",
     "campDates": "TBA",
@@ -9844,6 +9844,67 @@
     }
   },
   {
+    "university": "Northwestern",
+    "campUrl": "https://www.northwesternbaseballcamps.com",
+    "dates": "June 22nd - 24th, June 29th, July 1st, 06/22/2026 | July 7th - 9th, 07/02/2026, 07/07/2026, 07/09/2026",
+    "cost": "TBA",
+    "details": "Portal shows no upcoming 2026 events as of April 7.",
+    "contact": "Ben Greenspan | baseball@northwestern.edu",
+    "division": "DI",
+    "address": "On-campus facility",
+    "whatToBring": "Glove, bat, helmet, cleats, baseball pants, water bottle, sunscreen.",
+    "logoDomain": "gntc.edu",
+    "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/77.png",
+    "isVerified": false,
+    "isChecked": true,
+    "scriptVersion": 12.5,
+    "campTiers": [
+      {
+        "name": "Welcome and thank you for visiting the Northwestern University Baseball Camp",
+        "dates": "June 22nd - 24th, June 29th, July 1st, 06/22/2026",
+        "cost": "TBA"
+      },
+      {
+        "name": "Summer Prospect Camp",
+        "dates": "July 7th - 9th, 07/02/2026, 07/07/2026, 07/09/2026",
+        "cost": "TBA"
+      }
+    ],
+    "confidenceScore": 100,
+    "autoVerified": false,
+    "autoVerifiedPartial": true,
+    "conference": "Big Ten",
+    "isHumanVerified": false,
+    "verificationStatus": "Automated Scan",
+    "email": "baseball@northwestern.edu",
+    "campPOC": "N/A",
+    "isUrlAudited": true,
+    "lastAuditDate": "2026-04-03T05:56:09.766Z",
+    "auditConfidence": 65,
+    "headCoach": "Ben Greenspan",
+    "lastChecked": "2026-04-09T12:58:57.150Z",
+    "updateLog": [],
+    "lastUpdateDate": 1775739537149,
+    "datesUpdateDate": "2026-04-09T12:58:57.149Z",
+    "contactUpdateDate": "2026-04-04T19:04:26.178Z",
+    "costUpdateDate": "",
+    "campDates": "TBA",
+    "auditStatus": "EXTRACTED",
+    "sourceUrl": "https://www.northwesternbaseballcamps.com",
+    "pointOfContact": "Ben Greenspan",
+    "extractionResult": "enriched",
+    "detailsUpdateDate": "",
+    "campPOCEmail": "baseball@northwestern.edu",
+    "recheck": {
+      "email": false,
+      "poc": false,
+      "campDates": false,
+      "cost": true,
+      "campDetails": false,
+      "url": false
+    }
+  },
+  {
     "university": "Northwestern State",
     "campUrl": "https://www.playnsports.com/organization/northwestern-state-university-baseball/",
     "dates": "Jun 8, Jun 10, Jul 22, Jul 24 | Jul 22, Jul 24, Aug 15 | Aug 15",
@@ -9869,12 +9930,12 @@
     "auditConfidence": 50,
     "headCoach": "Chris Bertrand",
     "campPOC": "N/A",
-    "lastChecked": "2026-04-09T22:19:27.036Z",
+    "lastChecked": "2026-04-09T21:54:30.523Z",
     "updateLog": [
       "April 8: Contact Standardization - Removed redundant POC string"
     ],
-    "lastUpdateDate": 1775773167036,
-    "datesUpdateDate": "2026-04-09T22:19:27.036Z",
+    "lastUpdateDate": 1775771670523,
+    "datesUpdateDate": "2026-04-09T21:54:30.523Z",
     "contactUpdateDate": "2026-04-09T04:58:22.360Z",
     "costUpdateDate": "",
     "email": "N/A",
@@ -9907,9 +9968,7 @@
       "campDetails": false,
       "url": false
     },
-    "portalPlatform": "PlayNSports",
-    "campDates": "Jun 8, Jun 10, Jul 22, Jul 24, Jul 22, Jul 24, Aug 15, Aug 15",
-    "prices": "$150"
+    "portalPlatform": "PlayNSports"
   },
   {
     "university": "Notre Dame",
@@ -13831,10 +13890,10 @@
   {
     "university": "Texas",
     "campUrl": "https://texaslonghorns.com/sports/2023/3/22/baseball-camp",
-    "dates": "June 29, July 2, 2026, June 30, 2026 | July 1, 2026, July 6-9, 2026, July 7, 2026 | July 6-9, 2026, July 7, 2026, July 8, 2026, July 13-16, 2026 ... [+7 more]",
-    "cost": "$100 - $650",
+    "dates": "June 29 - July 2, 2026 | June 30, 2026 | July 1, 2026 | July 6-9, 2026 | July 7, 2026 | July 8, 2026 | July 13-16, 2026 | July 14, 2026 | July 15, 2026 | July 20-23, 2026 | July 27-30, 2026 | August 22, 2026 | August 23, 2026",
+    "cost": "$485 | $190 | $190 | $485 | $190 | $190 | $485 | $190 | $190 | $485 | $485 | $100/$150/$200 | $100/$150/$200",
     "details": "",
-    "contact": "Drew Bishop | Drew.Bishop@athletics.utexas.edu",
+    "contact": "Drew Bishop | drew.bishop@athletics.utexas.edu",
     "division": "DI",
     "address": "UFCU Disch-Falk Field, 11300 E Martin Luther King Jr Blvd, Austin, TX 78702",
     "whatToBring": "See camp FAQ for details. Contact: (512) 416-8660",
@@ -13843,67 +13902,103 @@
     "isVerified": true,
     "campTiers": [
       {
-        "name": "Pitcher/Catcher Camp",
-        "dates": "June 29, July 2, 2026, June 30, 2026",
-        "cost": "$650"
+        "name": "Skills & Scrimmage Session 1",
+        "ages": "K-6th grade",
+        "dates": "June 29 - July 2, 2026",
+        "cost": "$485",
+        "time": "9:00am - 1:00pm (+extra session 1:00-3:00pm for $650)"
       },
       {
-        "name": "Pitcher/Catcher Camp",
-        "dates": "July 1, 2026, July 6-9, 2026, July 7, 2026",
-        "cost": "$190"
+        "name": "Hitting Under the Lights Session 1",
+        "ages": "K-6th grade",
+        "dates": "June 30, 2026",
+        "cost": "$190",
+        "time": "6:00pm - 9:00pm"
+      },
+      {
+        "name": "Pitcher/Catcher Camp Session 1",
+        "ages": "4th-8th grade",
+        "dates": "July 1, 2026",
+        "cost": "$190",
+        "time": "6:00pm - 9:00pm"
+      },
+      {
+        "name": "Skills & Scrimmage Session 2",
+        "ages": "K-6th grade",
+        "dates": "July 6-9, 2026",
+        "cost": "$485",
+        "time": "9:00am - 1:00pm (+extra session 1:00-3:00pm for $650)"
+      },
+      {
+        "name": "Hitting Under the Lights Session 2",
+        "ages": "K-6th grade",
+        "dates": "July 7, 2026",
+        "cost": "$190",
+        "time": "6:00pm - 9:00pm"
       },
       {
         "name": "Longhorn Infield Camp",
-        "dates": "July 1, 2026, July 6-9, 2026, July 7, 2026",
-        "cost": "$190"
+        "ages": "4th-8th grade",
+        "dates": "July 8, 2026",
+        "cost": "$190",
+        "time": "6:00pm - 9:00pm"
       },
       {
-        "name": "Longhorn Infield Camp",
-        "dates": "July 6-9, 2026, July 7, 2026, July 8, 2026, July 13-16, 2026",
-        "cost": "$485"
+        "name": "Junior Longhorn Experience Session 1",
+        "ages": "4th-8th grade",
+        "dates": "July 13-16, 2026",
+        "cost": "$485",
+        "time": "9:00am - 1:00pm"
       },
       {
-        "name": "Longhorn Infield Camp",
-        "dates": "July 8, 2026, July 13-16, 2026, July 14, 2026",
-        "cost": "$190"
+        "name": "Hitting Under the Lights Session 3",
+        "ages": "4th-8th grade",
+        "dates": "July 14, 2026",
+        "cost": "$190",
+        "time": "6:00pm - 9:00pm"
       },
       {
-        "name": "Pitcher/Catcher Camp",
-        "dates": "July 13-16, 2026, July 14, 2026, July 15, 2026",
-        "cost": "$485"
+        "name": "Pitcher/Catcher Camp Session 2",
+        "ages": "4th-8th grade",
+        "dates": "July 15, 2026",
+        "cost": "$190",
+        "time": "6:00pm - 9:00pm"
       },
       {
-        "name": "Pitcher/Catcher Camp",
-        "dates": "July 15, 2026, July 20-23, 2026, July 27-30, 2026",
-        "cost": "$190"
+        "name": "Skills & Scrimmage Session 3",
+        "ages": "K-6th grade",
+        "dates": "July 20-23, 2026",
+        "cost": "$485",
+        "time": "9:00am - 1:00pm (+extra session 1:00-3:00pm for $650)"
       },
       {
-        "name": "Elite Prospect Camp",
-        "dates": "July 15, 2026, July 20-23, 2026, July 27-30, 2026, August 22, 2026",
-        "cost": "$190"
+        "name": "Skills & Scrimmage Session 4",
+        "ages": "K-6th grade",
+        "dates": "July 27-30, 2026",
+        "cost": "$485",
+        "time": "9:00am - 1:00pm (+extra session 1:00-3:00pm for $650)"
       },
       {
-        "name": "Elite Prospect Camp",
-        "dates": "July 20-23, 2026, July 27-30, 2026, August 22, 2026",
-        "cost": "$485"
+        "name": "Elite Prospect Camp Session 1",
+        "ages": "2027-2030 graduates",
+        "dates": "August 22, 2026",
+        "cost": "$100/$150/$200",
+        "time": "9:00am - 2:00pm"
       },
       {
-        "name": "Elite Prospect Camp",
-        "dates": "July 27-30, 2026, August 22, 2026, August 23, 2026",
-        "cost": "$485"
-      },
-      {
-        "name": "Elite Prospect Camp",
+        "name": "Elite Prospect Camp Session 2",
+        "ages": "2027-2030 graduates",
         "dates": "August 23, 2026",
-        "cost": "$100/$150"
+        "cost": "$100/$150/$200",
+        "time": "9:00am - 2:00pm"
       }
     ],
     "confidenceScore": 100,
     "isChecked": true,
-    "scriptVersion": 12.5,
+    "scriptVersion": 13,
     "autoVerified": true,
     "autoVerifiedPartial": false,
-    "email": "Drew.Bishop@athletics.utexas.edu",
+    "email": "drew.bishop@athletics.utexas.edu",
     "lastSmartCheck": "2026-04-03T07:53:56.629Z",
     "conference": "SEC",
     "isHumanVerified": false,
@@ -13912,27 +14007,25 @@
     "lastAuditDate": "2026-04-03T06:59:03.555Z",
     "campPOC": "Drew Bishop",
     "sourceUrl": "https://texaslonghorns.com/sports/2023/3/22/baseball-camp",
-    "auditStatus": "EXTRACTED",
+    "auditStatus": "FOUND",
     "lastAuditAttempt": "2026-04-03T06:59:03.589Z",
     "headCoach": "Jim Schlossnagle",
-    "lastChecked": "2026-04-09T21:58:57.281Z",
+    "lastChecked": "2026-04-04T19:04:26.179Z",
     "updateLog": [],
-    "lastUpdateDate": 1775771937281,
-    "datesUpdateDate": "2026-04-09T21:58:57.281Z",
+    "lastUpdateDate": null,
+    "datesUpdateDate": "2026-04-07T06:31:41.858Z",
     "contactUpdateDate": "2026-04-09T04:12:14.684Z",
     "costUpdateDate": 1775581747258,
     "detailsUpdateDate": "",
-    "campPOCEmail": "Drew.Bishop@athletics.utexas.edu",
+    "campPOCEmail": "drew.bishop@athletics.utexas.edu",
     "recheck": {
       "email": false,
       "poc": false,
       "campDates": false,
-      "cost": false,
+      "cost": true,
       "campDetails": false,
       "url": false
-    },
-    "pointOfContact": "Drew Bishop",
-    "extractionResult": "enriched"
+    }
   },
   {
     "university": "Texas A&M",
@@ -13965,7 +14058,7 @@
     "auditStatus": "FOUND",
     "lastAuditAttempt": "2026-04-03T06:59:42.507Z",
     "headCoach": "Not Listed",
-    "lastChecked": "2026-04-09T21:58:59.830Z",
+    "lastChecked": "2026-04-09T13:05:25.129Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "",
@@ -13986,7 +14079,7 @@
   {
     "university": "Texas A&M-Corpus Christi",
     "campUrl": "https://goislanders.com/sports/2025/5/21/baseball-camps.aspx",
-    "dates": "June 8-10, June 15-17, June 23, July 13-15 | June 8-10, June 15-17, July 13-15, July 27-29",
+    "dates": "June 8-10, June 15-17, June 23, July 13-15 | June 8-10, June 15-17, July 13-15, July 27-29 | June 23, July 16, August 5",
     "cost": "$150 - $250",
     "details": "Legacy 2025 data purged.",
     "contact": "Scott Malone | noe.ruizjr@tamucc.edu",
@@ -14003,6 +14096,11 @@
       {
         "name": "Youth Skills Camp",
         "dates": "June 8-10, June 15-17, July 13-15, July 27-29",
+        "cost": "$150"
+      },
+      {
+        "name": "Prospect Camp",
+        "dates": "June 23, July 16, August 5",
         "cost": "$150"
       }
     ],
@@ -14022,10 +14120,10 @@
     "lastAuditDate": "2026-04-03T06:40:17.238Z",
     "auditConfidence": 50,
     "headCoach": "Scott Malone",
-    "lastChecked": "2026-04-09T21:59:04.628Z",
+    "lastChecked": "2026-04-09T17:07:55.881Z",
     "updateLog": [],
-    "lastUpdateDate": 1775771944628,
-    "datesUpdateDate": "2026-04-09T21:59:04.628Z",
+    "lastUpdateDate": 1775754475881,
+    "datesUpdateDate": "2026-04-09T17:07:55.881Z",
     "contactUpdateDate": 1775543376924,
     "costUpdateDate": 1775543376924,
     "campDates": "TBA",
@@ -14071,11 +14169,11 @@
     "urlBrokenAt": "2026-04-03T07:31:01.162Z",
     "headCoach": "Michael Robertson",
     "campPOC": "N/A",
-    "lastChecked": "2026-04-09T21:59:06.592Z",
+    "lastChecked": "2026-04-09T13:05:53.433Z",
     "updateLog": [
       "April 8: Contact Standardization - Removed redundant POC string"
     ],
-    "lastUpdateDate": 1775771946545,
+    "lastUpdateDate": 1775739953376,
     "datesUpdateDate": "2026-04-04T19:04:26.180Z",
     "contactUpdateDate": "2026-04-09T04:58:22.360Z",
     "costUpdateDate": "",
@@ -14131,7 +14229,7 @@
     "headCoach": "Steven Trout",
     "campPOC": "N/A",
     "email": "",
-    "lastChecked": "2026-04-09T21:59:10.967Z",
+    "lastChecked": "2026-04-09T13:05:57.702Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "2026-04-04T19:04:26.180Z",
@@ -14149,8 +14247,7 @@
       "cost": false,
       "campDetails": false,
       "url": false
-    },
-    "portalPlatform": "PlayNSports"
+    }
   },
   {
     "university": "Texas Tech",
@@ -14158,7 +14255,7 @@
     "dates": "June 1st, June 12th, 2026, June 15th, June 26th, 2026 | June 15th, June 26th, 2026, July 6th, July 17th, 2026",
     "cost": "$325",
     "details": "",
-    "contact": "Athletics Office | recreation@ttu.edu",
+    "contact": "",
     "division": "DI",
     "address": "On-campus facility",
     "whatToBring": "Glove, bat, helmet, cleats, baseball pants, water bottle, sunscreen.",
@@ -14179,7 +14276,7 @@
     ],
     "confidenceScore": 100,
     "isChecked": true,
-    "scriptVersion": 12.5,
+    "scriptVersion": 11,
     "autoVerified": true,
     "autoVerifiedPartial": false,
     "email": "recreation@ttu.edu",
@@ -14193,12 +14290,12 @@
     "urlBrokenReason": "generic root domain",
     "urlBrokenAt": "2026-04-03T07:53:59.209Z",
     "headCoach": "Tim Tadlock",
-    "lastChecked": "2026-04-09T21:59:13.887Z",
+    "lastChecked": "2026-04-09T03:29:02.612Z",
     "updateLog": [
       "April 8: Integrity Sync - Dates prioritized over stale details"
     ],
-    "lastUpdateDate": 1775771953887,
-    "datesUpdateDate": "2026-04-09T21:59:13.887Z",
+    "lastUpdateDate": "2026-04-09T04:58:22.360Z",
+    "datesUpdateDate": "2026-04-09T04:58:22.360Z",
     "contactUpdateDate": "2026-04-09T04:12:20.472Z",
     "costUpdateDate": 1775581747258,
     "sourceUrl": "https://www.depts.ttu.edu/recreation/specialevents/summercamp.php",
@@ -22823,7 +22920,7 @@
     "campPOC": "N/A",
     "logoDomain": "nwrangerbaseballcamps.com",
     "logoFile": "https://www.google.com/s2/favicons?domain=nwrangerbaseballcamps.com&sz=128",
-    "lastChecked": "2026-04-09T22:19:32.590Z",
+    "lastChecked": "2026-04-09T05:49:20.268Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "",
@@ -22841,10 +22938,7 @@
       "cost": true,
       "campDetails": false,
       "url": false
-    },
-    "portalPlatform": "Ryzer",
-    "campDates": "TBA",
-    "prices": "N/A"
+    }
   },
   {
     "university": "Nova Southeastern University",
@@ -25110,10 +25204,10 @@
     "headCoach": "Head Coach (TBA)",
     "campPOC": "N/A",
     "email": "enroll@tamiu.edu",
-    "lastChecked": "2026-04-09T21:59:16.506Z",
+    "lastChecked": "2026-04-09T13:27:21.165Z",
     "updateLog": [],
-    "lastUpdateDate": 1775771956506,
-    "datesUpdateDate": "2026-04-09T21:59:16.506Z",
+    "lastUpdateDate": 1775741241165,
+    "datesUpdateDate": "2026-04-09T13:27:21.165Z",
     "contactUpdateDate": 1775581747258,
     "costUpdateDate": 1775581747258,
     "sourceUrl": "https://www.tamiu.edu/ce/camps-and-programs.shtml",
@@ -25126,7 +25220,7 @@
       "email": false,
       "poc": false,
       "campDates": false,
-      "cost": false,
+      "cost": true,
       "campDetails": false,
       "url": false
     }
@@ -26921,7 +27015,7 @@
   {
     "university": "West Texas A&M University",
     "campUrl": "https://gobuffsgo.com/sports/baseball",
-    "dates": "Jun 6",
+    "dates": "TBA",
     "cost": null,
     "details": "Updated April 4, 2026 at 2:04 PM. Official 2026 dates not yet posted.",
     "contact": "Head Coach (TBA)",
@@ -26940,12 +27034,12 @@
     "urlBrokenAt": "2026-04-03T07:43:39.140Z",
     "headCoach": "Head Coach (TBA)",
     "campPOC": "N/A",
-    "lastChecked": "2026-04-09T21:59:23.550Z",
+    "lastChecked": "2026-04-04T19:04:26.182Z",
     "updateLog": [
       "April 8: Contact Standardization - Removed redundant POC string"
     ],
-    "lastUpdateDate": 1775771963550,
-    "datesUpdateDate": "2026-04-09T21:59:23.550Z",
+    "lastUpdateDate": "2026-04-09T04:58:22.360Z",
+    "datesUpdateDate": "",
     "contactUpdateDate": "2026-04-09T04:58:22.360Z",
     "costUpdateDate": "",
     "email": "N/A",
@@ -26954,20 +27048,11 @@
     "recheck": {
       "email": false,
       "poc": false,
-      "campDates": false,
+      "campDates": true,
       "cost": true,
       "campDetails": false,
       "url": false
-    },
-    "campTiers": [
-      {
-        "name": "Baseball Camp",
-        "dates": "Jun 6",
-        "cost": "TBA"
-      }
-    ],
-    "auditStatus": "EXTRACTED",
-    "extractionResult": "enriched"
+    }
   },
   {
     "university": "West Virginia State University",
@@ -27510,93 +27595,5 @@
       "campDetails": false,
       "url": false
     }
-  },
-  {
-    "university": "Northwestern",
-    "division": "DI",
-    "conference": "Big Ten",
-    "campUrl": "https://www.northwesternbaseballcamps.com",
-    "sourceUrl": "https://www.northwesternbaseballcamps.com",
-    "isChecked": true,
-    "scriptVersion": 12.5,
-    "campTiers": [
-      {
-        "name": "Wildcat Baseball Youth Experience Camp",
-        "dates": "July 7th - 9th",
-        "cost": "$427"
-      },
-      {
-        "name": "Wildcat Baseball Youth Experience Camp",
-        "dates": "June 29th, July 1st",
-        "cost": "$427"
-      },
-      {
-        "name": "Wildcat Baseball Youth Experience Camp",
-        "dates": "June 22nd - 24th",
-        "cost": "$427"
-      },
-      {
-        "name": "Welcome and thank you for visiting the Northwestern University Baseball Camp",
-        "dates": "June 22nd - 24th, June 29th, July 1st, 06/22/2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Wildcat Youth Experience Camp",
-        "dates": "June 22nd - 24th, June 29th, July 1st, July 7th - 9th",
-        "cost": "TBA"
-      },
-      {
-        "name": "Wildcat Youth Experience Camp",
-        "dates": "June 29th, July 1st, July 7th - 9th, 06/29/2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Summer Prospect Camp",
-        "dates": "July 7th - 9th, 07/02/2026, 07/07/2026, 07/09/2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Wildcat Youth Experience Camp",
-        "dates": "July 7th - 9th, 07/07/2026, 07/09/2026, 07/15/2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Northwestern University - Baseball Camp",
-        "dates": "July 7th - 9th, Jul 7, 2026, Jul 9, 2026, Jul 5, 2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Northwestern University - Baseball Camp",
-        "dates": "June 29th, July 1st, Jun 29, 2026, Jul 1, 2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Northwestern University - Baseball Camp",
-        "dates": "June 22nd - 24th, Jun 22, 2026, Jun 24, 2026, Jun 20, 2026",
-        "cost": "TBA"
-      }
-    ],
-    "recheck": {
-      "email": false,
-      "poc": false,
-      "campDates": false,
-      "cost": false,
-      "campDetails": false,
-      "url": false
-    },
-    "portalPlatform": "Ryzer",
-    "email": "baseball@northwestern.edu",
-    "campPOCEmail": "baseball@northwestern.edu",
-    "contact": "Athletics Office | baseball@northwestern.edu",
-    "auditStatus": "EXTRACTED",
-    "lastUpdateDate": 1775773188002,
-    "extractionResult": "enriched",
-    "lastChecked": "2026-04-09T22:19:48.002Z",
-    "campDates": "July 7th - 9th, June 29th, July 1st, June 22nd - 24th, June 22nd - 24th, June 29th, July 1st, 06/22/2026, June 22nd - 24th, June 29th, July 1st, July 7th - 9th, June 29th, July 1st, July 7th - 9th, 06/29/2026, July 7th - 9th, 07/02/2026, 07/07/2026, 07/09/2026, July 7th - 9th, 07/07/2026, 07/09/2026, 07/15/2026, July 7th - 9th, Jul 7, 2026, Jul 9, 2026, Jul 5, 2026, June 29th, July 1st, Jun 29, 2026, Jul 1, 2026, June 22nd - 24th, Jun 22, 2026, Jun 24, 2026, Jun 20, 2026",
-    "prices": "$427",
-    "dates": "July 7th - 9th | June 29th, July 1st | June 22nd - 24th ... [+8 more]",
-    "cost": "$427",
-    "pointOfContact": "Athletics Office",
-    "datesUpdateDate": "2026-04-09T22:19:48.002Z"
   }
 ]

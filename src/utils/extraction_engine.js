@@ -578,30 +578,55 @@ function extractDataFromText(fullText, targetUni, allSchoolNames) {
   }
 
   // Deduplicate: normalize dates (strip ordinals) for comparison key
+  // V12.6 P0: Sort to ensure costed tiers come BEFORE TBA tiers, then dedupe.
+  const dedupeSorted = campTiers.sort((a, b) => {
+    const aHasCost = a.cost && a.cost !== "TBA";
+    const bHasCost = b.cost && b.cost !== "TBA";
+    if (aHasCost && !bHasCost) return -1;
+    if (!aHasCost && bHasCost) return 1;
+    return 0;
+  });
+
   const seen = new Set();
-  const filtered = campTiers.filter((t) => {
+  const filtered = dedupeSorted.filter((t) => {
+    // Key: Name(30) + Primary Date + Cost
     const firstDate = (t.dates.split(",")[0] || "")
       .trim()
       .toLowerCase()
       .replace(/st|nd|rd|th/g, "");
+    
+    // We allow different prices for the same camp name/date if they exist uniquely
     const key = t.name.toLowerCase().substring(0, 30) + "::" + firstDate;
+    
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
   });
 
-  if (filtered.length > 0) {
-    log(
-      `       📋 [Tiers] ${filtered.length} found. Sample: ${filtered
-        .slice(0, 2)
-        .map((t) => `"${t.name}"`)
-        .join(" | ")}`,
-    );
-  } else {
-    log("       📋 [Tiers] None found on this page.");
+  const finalTiers = filtered;
+  if (finalTiers.length === 0) {
+    return { campDates: "TBA", prices: "N/A", campTiers: [] };
   }
 
-  return filtered;
+  // Final metadata summary
+  const allDates = [...new Set(finalTiers.map(t => t.dates))].join(', ');
+  const numericPrices = finalTiers
+    .map(t => t.cost.replace(/[$,]/g, ""))
+    .map(parseFloat)
+    .filter(p => !isNaN(p));
+    
+  let pricesStr = "N/A";
+  if (numericPrices.length > 0) {
+    const min = Math.min(...numericPrices);
+    const max = Math.max(...numericPrices);
+    pricesStr = min === max ? `$${min}` : `$${min} - $${max}`;
+  }
+
+  return {
+    campDates: allDates,
+    prices: pricesStr,
+    campTiers: finalTiers
+  };
 }
 
 /**
@@ -867,8 +892,10 @@ async function runExtraction({
         // ── TIER 2 / 2a: Validate existing campUrl ──────────────────────────
         log(`   → [TIER 2] Checking existing campUrl: ${camp.campUrl}`);
         try {
+          const detectedPortal = detectPortalPlatform(camp.campUrl, "");
+          const waitCond = detectedPortal ? "networkidle2" : "domcontentloaded";
           const checkResp = await p.goto(camp.campUrl, {
-            waitUntil: "domcontentloaded",
+            waitUntil: waitCond,
             timeout: 25000,
           });
           const checkStatus = checkResp ? checkResp.status() : 0;
@@ -962,8 +989,10 @@ async function runExtraction({
         const candidate = item.url;
         try {
           log(`\n   → Navigating [${item.score}][${item.tierLabel}]: ${candidate}`);
+          const detectedPortal = detectPortalPlatform(candidate, "");
+          const waitCond = detectedPortal ? "networkidle2" : "domcontentloaded";
           const resp = await p.goto(candidate, {
-            waitUntil: "domcontentloaded",
+            waitUntil: waitCond,
             timeout: 25000,
           });
           if (!resp || resp.status() >= 400) {
@@ -1071,15 +1100,20 @@ async function runExtraction({
             })),
           );
 
-          const pagesToCrawl = [{ url: candidate, depth: 0 }];
-          let pagesScanned = 0;
+           const pagesToCrawl = [{ url: candidate, depth: 0 }];
+           let pagesScanned = 0;
+           const mainHost = new URL(candidate).hostname.replace(/^www\./, "");
+ 
+           // V12.6 P0 Ryzer/Portal Depth Boost: If we detected a valid platform, increase sub-crawl limits.
+           const isPlatformPortal = camp.portalPlatform && camp.portalPlatform !== "None";
+           const currentMaxPages = isPlatformPortal ? 25 : MAX_SUB_CRAWL_PAGES;
+           const currentMaxDepth = isPlatformPortal ? 3 : MAX_SUB_CRAWL_DEPTH;
 
-          const mainHost = new URL(candidate).hostname.replace(/^www\./, "");
-          log(`   → Sub-crawling (Domain Restricted to: ${mainHost})...`);
+          log(`   → Sub-crawling (Domain Restricted to: ${mainHost}${isPlatformPortal ? ' | Portal Depth Boost Active' : ''})...`);
 
-          while (pagesToCrawl.length > 0 && pagesScanned < MAX_SUB_CRAWL_PAGES) {
+          while (pagesToCrawl.length > 0 && pagesScanned < currentMaxPages) {
             const current = pagesToCrawl.shift();
-            if (current.depth >= MAX_SUB_CRAWL_DEPTH) continue;
+            if (current.depth >= currentMaxDepth) continue;
 
             let links = [];
             if (current.url === candidate) {
@@ -1089,8 +1123,12 @@ async function runExtraction({
               // Need to load the subpage and get its links
               try {
                 const sp = await browser.newPage();
+                // V12.6 P0: Use networkidle2 for whitelisted portal bridges to ensure dynamic prices load.
+                const isBridgeUrl = isExternalBridge(current.url, "", camp.university);
+                const waitCondition = isBridgeUrl ? "networkidle2" : "domcontentloaded";
+                
                 await sp.goto(current.url, {
-                  waitUntil: "domcontentloaded",
+                  waitUntil: waitCondition,
                   timeout: 25000,
                 });
                 const st = await getPageText(sp);
@@ -1135,8 +1173,13 @@ async function runExtraction({
               if (isBlacklistedUrl(l.href)) continue;
               if (isSearchEngineUrl(l.href)) continue;
 
-              // Normalize: strip hash + query string
-              const linkNorm = l.href.split("#")[0].split("?")[0].replace(/\/$/, "").toLowerCase();
+              // Normalize: strip hash. ONLY strip query string if NOT a whitelisted portal bridge.
+              // V12.6 P0: Portals use query strings (id=) to differentiate sessions. Stripping them causes 100% deduplication failure.
+              const isBridgeLink = isExternalBridge(l.href, "", camp.university);
+              let linkNorm = l.href.split("#")[0].replace(/\/$/, "").toLowerCase();
+              if (!isBridgeLink) {
+                 linkNorm = linkNorm.split("?")[0];
+              }
 
               // Skip if same page (already crawled or same as candidate)
               if (linkNorm === candidateNorm) continue;
@@ -1144,21 +1187,31 @@ async function runExtraction({
 
               // THE RULE: only follow sub-pages of the validated URL
               // V12: Added exception for 'External Bridges' (high-confidence portable links)
-              const linkUrl = l.href.split("#")[0].split("?")[0];
+              const linkUrl = isBridgeLink ? l.href.split("#")[0] : l.href.split("#")[0].split("?")[0];
               const isLockViolated = !linkNorm.startsWith(candidateNorm);
               const isBridge = isLockViolated && isExternalBridge(linkUrl, l.text, camp.university);
+              
+              // V12.6 P0 Diagnostic: Only log for suspicious platform domains
+              if (linkUrl.includes("ryzer.com") || linkUrl.includes("playnsports.com")) {
+                 log(`   🔍 [Bridge Check] link: ${linkUrl.substring(0,60)} | lockViolated: ${isLockViolated} | isBridge: ${isBridge}`);
+              }
 
               if (isLockViolated && !isBridge) continue;
-              
               if (isBridge) {
+                // V12.6 P0 Diagnostic: Log all bridge links found on the page
+                log(`   → 🌉 Crossing External Bridge (P0 Ryzer/Portal): ${linkUrl}`);
+                
                 // V12.1: Check for contamination ON THE BRIDGE LINK TEXT
-                // This prevents Arizona (Wildcats) from jumping to ASU (Sun Devils) links
                 const culprit = checkContamination(l.text || "", camp.university, allSchoolNames);
                 if (culprit) {
                    log(`   → ⚠️ Blocked Contaminated Bridge: "${(l.text || "").substring(0,30)}" (belongs to ${culprit})`);
                    continue;
                 }
-                log(`   → 🌉 Crossing External Bridge: ${linkUrl}`);
+                log(`   → 🌉 Crossing External Bridge (P0 Ryzer/Portal): ${linkUrl}`);
+                // P0 Fast-Track: Follow whitelisted portals immediately by unshifting to queue
+                pagesToCrawl.unshift({ url: linkUrl, depth: current.depth + 1 });
+                crawledUrls.add(linkNorm);
+                continue;
               }
 
               crawledUrls.add(linkNorm);
@@ -1169,11 +1222,13 @@ async function runExtraction({
           // ── Phase C: Extract ────────────────────────────────────────────
           let campTiers = [];
           if (shouldExtractField(camp, "campDates") || shouldExtractField(camp, "cost")) {
-            campTiers = extractDataFromText(
+            const extraction = extractDataFromText(
               fullText,
-              camp.university,
-              allSchoolNames,
+              camp
             );
+            campTiers = extraction.campTiers;
+            camp.campDates = extraction.campDates;
+            camp.prices = extraction.prices;
           }
 
           let fulfilledTarget = false;

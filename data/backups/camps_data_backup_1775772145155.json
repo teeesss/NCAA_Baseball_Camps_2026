@@ -9844,6 +9844,67 @@
     }
   },
   {
+    "university": "Northwestern",
+    "campUrl": "https://www.northwesternbaseballcamps.com",
+    "dates": "June 22nd - 24th, June 29th, July 1st, 06/22/2026 | July 7th - 9th, 07/02/2026, 07/07/2026, 07/09/2026",
+    "cost": "TBA",
+    "details": "Portal shows no upcoming 2026 events as of April 7.",
+    "contact": "Ben Greenspan | baseball@northwestern.edu",
+    "division": "DI",
+    "address": "On-campus facility",
+    "whatToBring": "Glove, bat, helmet, cleats, baseball pants, water bottle, sunscreen.",
+    "logoDomain": "gntc.edu",
+    "logoFile": "https://a.espncdn.com/i/teamlogos/ncaa/500/77.png",
+    "isVerified": false,
+    "isChecked": true,
+    "scriptVersion": 12.5,
+    "campTiers": [
+      {
+        "name": "Welcome and thank you for visiting the Northwestern University Baseball Camp",
+        "dates": "June 22nd - 24th, June 29th, July 1st, 06/22/2026",
+        "cost": "TBA"
+      },
+      {
+        "name": "Summer Prospect Camp",
+        "dates": "July 7th - 9th, 07/02/2026, 07/07/2026, 07/09/2026",
+        "cost": "TBA"
+      }
+    ],
+    "confidenceScore": 100,
+    "autoVerified": false,
+    "autoVerifiedPartial": true,
+    "conference": "Big Ten",
+    "isHumanVerified": false,
+    "verificationStatus": "Automated Scan",
+    "email": "baseball@northwestern.edu",
+    "campPOC": "N/A",
+    "isUrlAudited": true,
+    "lastAuditDate": "2026-04-03T05:56:09.766Z",
+    "auditConfidence": 65,
+    "headCoach": "Ben Greenspan",
+    "lastChecked": "2026-04-09T12:58:57.150Z",
+    "updateLog": [],
+    "lastUpdateDate": 1775739537149,
+    "datesUpdateDate": "2026-04-09T12:58:57.149Z",
+    "contactUpdateDate": "2026-04-04T19:04:26.178Z",
+    "costUpdateDate": "",
+    "campDates": "TBA",
+    "auditStatus": "EXTRACTED",
+    "sourceUrl": "https://www.northwesternbaseballcamps.com",
+    "pointOfContact": "Ben Greenspan",
+    "extractionResult": "enriched",
+    "detailsUpdateDate": "",
+    "campPOCEmail": "baseball@northwestern.edu",
+    "recheck": {
+      "email": false,
+      "poc": false,
+      "campDates": false,
+      "cost": true,
+      "campDetails": false,
+      "url": false
+    }
+  },
+  {
     "university": "Northwestern State",
     "campUrl": "https://www.playnsports.com/organization/northwestern-state-university-baseball/",
     "dates": "Jun 8, Jun 10, Jul 22, Jul 24 | Jul 22, Jul 24, Aug 15 | Aug 15",
@@ -9869,12 +9930,12 @@
     "auditConfidence": 50,
     "headCoach": "Chris Bertrand",
     "campPOC": "N/A",
-    "lastChecked": "2026-04-09T22:19:27.036Z",
+    "lastChecked": "2026-04-09T21:54:30.523Z",
     "updateLog": [
       "April 8: Contact Standardization - Removed redundant POC string"
     ],
-    "lastUpdateDate": 1775773167036,
-    "datesUpdateDate": "2026-04-09T22:19:27.036Z",
+    "lastUpdateDate": 1775771670523,
+    "datesUpdateDate": "2026-04-09T21:54:30.523Z",
     "contactUpdateDate": "2026-04-09T04:58:22.360Z",
     "costUpdateDate": "",
     "email": "N/A",
@@ -9907,9 +9968,7 @@
       "campDetails": false,
       "url": false
     },
-    "portalPlatform": "PlayNSports",
-    "campDates": "Jun 8, Jun 10, Jul 22, Jul 24, Jul 22, Jul 24, Aug 15, Aug 15",
-    "prices": "$150"
+    "portalPlatform": "PlayNSports"
   },
   {
     "university": "Notre Dame",
@@ -22823,7 +22882,7 @@
     "campPOC": "N/A",
     "logoDomain": "nwrangerbaseballcamps.com",
     "logoFile": "https://www.google.com/s2/favicons?domain=nwrangerbaseballcamps.com&sz=128",
-    "lastChecked": "2026-04-09T22:19:32.590Z",
+    "lastChecked": "2026-04-09T05:49:20.268Z",
     "updateLog": [],
     "lastUpdateDate": null,
     "datesUpdateDate": "",
@@ -22841,10 +22900,7 @@
       "cost": true,
       "campDetails": false,
       "url": false
-    },
-    "portalPlatform": "Ryzer",
-    "campDates": "TBA",
-    "prices": "N/A"
+    }
   },
   {
     "university": "Nova Southeastern University",
@@ -26955,7 +27011,7 @@
       "email": false,
       "poc": false,
       "campDates": false,
-      "cost": true,
+      "cost": false,
       "campDetails": false,
       "url": false
     },
@@ -27510,93 +27566,5 @@
       "campDetails": false,
       "url": false
     }
-  },
-  {
-    "university": "Northwestern",
-    "division": "DI",
-    "conference": "Big Ten",
-    "campUrl": "https://www.northwesternbaseballcamps.com",
-    "sourceUrl": "https://www.northwesternbaseballcamps.com",
-    "isChecked": true,
-    "scriptVersion": 12.5,
-    "campTiers": [
-      {
-        "name": "Wildcat Baseball Youth Experience Camp",
-        "dates": "July 7th - 9th",
-        "cost": "$427"
-      },
-      {
-        "name": "Wildcat Baseball Youth Experience Camp",
-        "dates": "June 29th, July 1st",
-        "cost": "$427"
-      },
-      {
-        "name": "Wildcat Baseball Youth Experience Camp",
-        "dates": "June 22nd - 24th",
-        "cost": "$427"
-      },
-      {
-        "name": "Welcome and thank you for visiting the Northwestern University Baseball Camp",
-        "dates": "June 22nd - 24th, June 29th, July 1st, 06/22/2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Wildcat Youth Experience Camp",
-        "dates": "June 22nd - 24th, June 29th, July 1st, July 7th - 9th",
-        "cost": "TBA"
-      },
-      {
-        "name": "Wildcat Youth Experience Camp",
-        "dates": "June 29th, July 1st, July 7th - 9th, 06/29/2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Summer Prospect Camp",
-        "dates": "July 7th - 9th, 07/02/2026, 07/07/2026, 07/09/2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Wildcat Youth Experience Camp",
-        "dates": "July 7th - 9th, 07/07/2026, 07/09/2026, 07/15/2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Northwestern University - Baseball Camp",
-        "dates": "July 7th - 9th, Jul 7, 2026, Jul 9, 2026, Jul 5, 2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Northwestern University - Baseball Camp",
-        "dates": "June 29th, July 1st, Jun 29, 2026, Jul 1, 2026",
-        "cost": "TBA"
-      },
-      {
-        "name": "Northwestern University - Baseball Camp",
-        "dates": "June 22nd - 24th, Jun 22, 2026, Jun 24, 2026, Jun 20, 2026",
-        "cost": "TBA"
-      }
-    ],
-    "recheck": {
-      "email": false,
-      "poc": false,
-      "campDates": false,
-      "cost": false,
-      "campDetails": false,
-      "url": false
-    },
-    "portalPlatform": "Ryzer",
-    "email": "baseball@northwestern.edu",
-    "campPOCEmail": "baseball@northwestern.edu",
-    "contact": "Athletics Office | baseball@northwestern.edu",
-    "auditStatus": "EXTRACTED",
-    "lastUpdateDate": 1775773188002,
-    "extractionResult": "enriched",
-    "lastChecked": "2026-04-09T22:19:48.002Z",
-    "campDates": "July 7th - 9th, June 29th, July 1st, June 22nd - 24th, June 22nd - 24th, June 29th, July 1st, 06/22/2026, June 22nd - 24th, June 29th, July 1st, July 7th - 9th, June 29th, July 1st, July 7th - 9th, 06/29/2026, July 7th - 9th, 07/02/2026, 07/07/2026, 07/09/2026, July 7th - 9th, 07/07/2026, 07/09/2026, 07/15/2026, July 7th - 9th, Jul 7, 2026, Jul 9, 2026, Jul 5, 2026, June 29th, July 1st, Jun 29, 2026, Jul 1, 2026, June 22nd - 24th, Jun 22, 2026, Jun 24, 2026, Jun 20, 2026",
-    "prices": "$427",
-    "dates": "July 7th - 9th | June 29th, July 1st | June 22nd - 24th ... [+8 more]",
-    "cost": "$427",
-    "pointOfContact": "Athletics Office",
-    "datesUpdateDate": "2026-04-09T22:19:48.002Z"
   }
 ]

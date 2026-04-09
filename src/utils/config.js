@@ -279,9 +279,14 @@ function isExternalBridge(url, linkText, targetUni) {
   try {
     const urlObj = new URL(url);
     const path = urlObj.pathname.toLowerCase();
+    
+    // Explicit exclusions for known policy/generic pages tracking down the P0 Ryzer issue
+    const policyPaths = ["/privacy", "/terms", "/policies", "/cookies", "/contact-us", "/about-us", "/index", "/search"];
+    if (policyPaths.some(p => path.includes(p))) return false;
+
     if (
       GENERIC_PORTAL_SUBPATHS.some(
-        (p) => path.startsWith(p) || path === p || path === p + "/",
+        (p) => (path.startsWith(p) && !path.includes(".cfm")) || path === p || path === p + "/",
       )
     ) {
       return false;
@@ -296,40 +301,27 @@ function isExternalBridge(url, linkText, targetUni) {
 
   // Rule 1: Link text must be strong
   const lowerText = (linkText || "").toLowerCase();
-  const hasStrongText = /register|here|portal|details|info|camp/i.test(
+  const hasStrongText = /register|here|portal|details|info|camp|prospect|showcase|elite|youth/i.test(
     lowerText,
   );
+  
+  // Rule 2 / V12.6 P0: Host must match a known AUTHORITATIVE platform
+  const isRyzer = lowerUrl.includes("ryzer.com");
+  const isPlayNSports = lowerUrl.includes("playnsports.com");
+  const isTotalCamps = lowerUrl.includes("totalcamps.com");
+  const isAbc = lowerUrl.includes("abcsportscamps.com");
+  
+  if (!isRyzer && !isPlayNSports && !isTotalCamps && !isAbc) return false;
+
+  // Pattern specifically for registration/detail paths
+  const isDirectReg = lowerUrl.includes("camp.cfm") || lowerUrl.includes("id=") || lowerUrl.includes("/registration/") || lowerUrl.includes("/shop/") || lowerUrl.includes("/camps/");
+
+  // Rule 3: Platform specific bridge rules
+  // If it's a direct registration link on an authoritative platform, we follow it REGARDLESS of text (handles image buttons)
+  if (isDirectReg) return true;
+
+  // Otherwise, respect the strong text requirement
   if (!hasStrongText) return false;
-
-  // Rule 2: Host must match a known AUTHORITATIVE platform
-  const matchesPortal = OFFICIAL_PLATFORMS.some((platform) => lowerUrl.includes(platform));
-  if (!matchesPortal) return false;
-
-  // Rule 3: Identity in URL (V12.1 Safeguard)
-  // For platforms like playnsports or totalcamps, the URL should have a fragment of the uni or mascot
-  if (targetUni) {
-    const uniFragment = targetUni.split(" ")[0].toLowerCase();
-    const { getMascot } = require("./mascot_lookup");
-    const mascot = (getMascot(targetUni) || "").toLowerCase().split(" ")[0];
-
-    const hasIdentityInUrl =
-      lowerUrl.includes(uniFragment) || (mascot && mascot.length > 3 && lowerUrl.includes(mascot));
-    
-    // V12.6 Exceptional ID-based Link Support:
-    // Some links are direct session registrations (Ryzer ID, etc.) and don't have the uni name in URL.
-    // If the link is highly granular (contains ID or specific path), we allow it.
-    const isGranularIdLink = 
-      (lowerUrl.includes("ryzer.com") && lowerUrl.includes("id=")) ||
-      (lowerUrl.includes("playnsports.com") && lowerUrl.includes("/organization/")) ||
-      (lowerUrl.includes("totalcamps.com") && lowerUrl.includes("/shop/"));
-
-    // If no identity in URL, we ONLY allow it if it's NOT a major platform OR it's a granular ID link
-    if (!hasIdentityInUrl && !isGranularIdLink && (lowerUrl.includes("playnsports") || lowerUrl.includes("totalcamps") || lowerUrl.includes("ryzer"))) {
-        return false;
-    }
-  }
-
-  return true;
 }
 
 // ── Shared Logic Helpers ─────────────────────────────────────

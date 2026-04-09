@@ -1,10 +1,10 @@
 # Project Status: NCAA Baseball Camps 2026 Directory
 
-## Current State: V12.5 Engine Hardening & Auth Source Enforcement
+## Current State: V12.6 Engine Hardening & P0 Ryzer Portal Fix
 
 The project is live with 559 NCAA Division I & II baseball programs. Production `index.html` is now a ~64KB dynamic shell that fetches `camps_data.json` at runtime.
 
-The extraction engine is currently at **V12.5**, featuring **Hard-Fail Blacklist Enforcement**, authoritative platform-gatekeeping for bridges, and 4-tier URL resolution.
+The extraction engine is currently at **V12.6**, featuring **P0 Portal Bridge Fast-Track**, query-string preservation for session IDs, and `networkidle2` portal navigation.
 
 ## Active Status:
 
@@ -12,7 +12,7 @@ The extraction engine is currently at **V12.5**, featuring **Hard-Fail Blacklist
 | :----------------- | :---------------------------------------------------------------------------------------- |
 | **Total Programs** | 521 (Checked & Processed)                                                                 |
 | **Active Portals** | **177** (Verified 2026 Tiers) | **361** (Total Found)                                    |
-| **Engine Status**  | **V12.5 Hardened** — Final 100% DB Pass Completed                                    |
+| **Engine Status**  | **V12.6 Hardened** — P0 Ryzer Portal Bridge Sync Completed                             |
 | **UI Aesthetics**  | **Single-Row Multi-Mode** — Compact mobile-first design with independent scope/sort logic. |
 | **Data Integrity** | **V12.5 BASELINE** (100% checked, institutional mismatch scrubbed) |
 | **Live Site**      | [bmwseals.com/Baseball_Camps_2026/](https://bmwseals.com/Baseball_Camps_2026/)            |

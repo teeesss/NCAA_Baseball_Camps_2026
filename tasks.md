@@ -3,7 +3,15 @@
 ## ✅ Resolved: V12.5 Engine Hardening & Database 100% (2026-04-09)
 ... (existing content) ...
 
-## 🏗️ High Priority: Deep Crawl & UI Refinement (Active)
+- [x] **P0 Ryzer/Portal Bridge Fast-Track**: Implemented `unshift` logic in `extraction_engine.js` to prioritize registration bridges (Ryzer, PlayNSports, etc.) in the sub-crawl queue.
+- [x] **P0 Portal Depth Boost**: Increased sub-crawl limits to Depth 3 and 25 pages specifically for whitelisted platforms, ensuring no granular session data is missed.
+- [x] **Comprehensive Platform Whitelist**: Updated `isExternalBridge` in `config.js` to allow ID-based links from any domain, bypassing strict locks for authoritative portals.
+- [x] **Query-String Preservation**: Fixed a major bug in `extraction_engine.js` where query strings (containing session IDs) were stripped during normalization, causing deduplication of unique camp links.
+- [x] **Dynamic Portal Rendering**: Updated initial navigation to use `networkidle2` for whitelisted platforms, ensuring JS-injected registration buttons are visible to the crawler.
+- [x] **Northwestern Success (Big 10)**: Verified that the new logic successfully recovers 11 tiers and $427+ pricing for the Northwestern Wildcats portal, resolving the P0 user request.
+- [x] **Mississippi State & Arkansas Audit**: Verified successful session extraction across SEC/Big 10 programs using the V12.6 engine.
+
+## 🏗️ High Priority: Global Data Refresh (Active)
 
 - [x] **UI Messaging Overhaul**:
     *   Change "Verification Roadmap" to "Sync Log & Directory Updates".
@@ -15,8 +23,8 @@
     *   Extract granular pricing from these specific camp registration pages.
 - [x] **Direct Portal Metadata**:
     *   Add a variable in `camps_data.json` to explicitly log if a school uses a major portal (Ryzer, PlayNSports, etc.) to ensure we prioritize those sites.
-- [ ] **Sample Test: Northwestern State**:
-    *   Run targeted extraction on Northwestern State to verify Ryzer ID page crawling for costs.
+- [x] **Sample Test: Northwestern State**:
+    *   Run targeted extraction on Northwestern State to verify Ryzer ID page crawling for costs. (Verified: 3 tiers found, Cost $150)
 
 - [x] **100% Database Coverage**: Successfully processed all 521 programs (DI + DII) with current status marked as `isChecked: true`.
 - [x] **Coach Name Guard (V12.5)**: Implemented `targetCoach` whitelist in `checkContamination` to prevent false positives for portals branded after the head coach (e.g., Louisiana Tech).
